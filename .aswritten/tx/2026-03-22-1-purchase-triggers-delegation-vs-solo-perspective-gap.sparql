@@ -1,0 +1,408 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ───────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260322T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-22T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-22-purchase-triggers-delegation-solo-professional-perspective-gap.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_PurchaseTriggers_20260322,
+      narr:Narrative_TwoPurchaseTriggers,
+      narr:Narrative_AIAsNewHireBridgingInsight,
+      narr:Narrative_SupplierSideDistribution,
+      narr:Narrative_StarterPerspectivesAnalysis,
+      narr:Narrative_DemoGIFStory,
+      narr:Claim_Trigger1SoloProfessional,
+      narr:Claim_Trigger2Delegator,
+      narr:Claim_StarterPerspectivesWeakTrigger,
+      narr:Claim_MarketplaceNotNeededAtLaunch,
+      narr:Obs_ScarletPurchaseTriggerQuote,
+      narr:Obs_CustomerArchitectCloneMeQuote,
+      narr:Obs_AIAsNewHireQuote,
+      narr:Obs_UndocumentedKnowledgeQuote,
+      narr:Obs_PitchDirectionSolo,
+      narr:StyleObs_AntithesisTriggers,
+      narr:StyleObs_ArchetypeNaming,
+      narr:StyleObs_DirectQuoteEvidence .
+} ;
+
+# ── New Sample node ───────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260322T120000Z {
+    narr:Sample_PurchaseTriggers_20260322 a narr:Sample ;
+      dct:title "Purchase Triggers: Delegation vs. Solo Professional, and the Perspective Gap (2026-03-22)" ;
+      dct:created "2026-03-22"^^xsd:date ;
+      dct:description "Extended walk-and-talk session between Scarlet Dame (founder) and Claude (AI coworker) working through why people who understand the product's value don't buy. Identifies two real purchase triggers: Trigger 1 (solo professional re-explaining context every session) and Trigger 2 (delegator needing others to work without them). Reframes the product around perspective installation. an early prospect's Mar 22 message confirmed as evidence of neither trigger firing." ;
+      narr:inputLength 6842 ;
+      narr:styleProfile "narr:Antithesis narr:ToneDirectPersonal narr:IdiolectPhrasing narr:ShortPunchyCadence narr:RuleOfThree" .
+  }
+} ;
+
+# ── UPDATE: narr:Archetype_KnowledgeRichConsumer → adds solo professional trigger ──
+DELETE {
+  GRAPH ?g {
+    narr:Archetype_KnowledgeRichConsumer skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260322T120000Z {
+    narr:Archetype_KnowledgeRichConsumer skos:note "Archetype C2: The Knowledge-Rich Consumer. People like a beta user from outside tech who have deep domain knowledge but are consumers of AI technology, not tinkerers. Use Claude or ChatGPT. May be the first time they've used a tool that provides collaborative context outside regular projects. Main barrier is technical (MCP installation, GitHub abstraction), not behavioral. Maps to the Free and Individual tiers. UPDATED 2026-03-22: a beta user from outside tech is the canonical Trigger 1 (solo professional) archetype — she uses the product daily and receives immense value as a single consultant producing materials for clients. The purchase trigger is: 'I can't get AI to do my work without babysitting it.' Every session she re-explains client context, methodology, project history, and specific language. Without this, AI output is generic or actively harmful for complex deliverables. Frequency: every single session. Maps to Individual tier ([amount]/month). Pitch direction: 'Information isn't enough to do your work. You need perspective. So does your AI.'" ;
+      narr:hasConvictionLevel narr:Conviction_Boulder .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Archetype_KnowledgeRichConsumer skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Archetype_KnowledgePackager → adds delegator trigger framing ──
+DELETE {
+  GRAPH ?g {
+    narr:Archetype_KnowledgePackager skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260322T120000Z {
+    narr:Archetype_KnowledgePackager skos:note "Archetype A: The Knowledge Packager. Has expertise they want to distribute. an early prospect with courses. Practice owners. Team leads who onboard. Pain: 'I keep repeating myself / my knowledge doesn't scale / I can't be in every room.' Purchase trigger is clearest but time-to-value is longest under the current 'build it yourself' model. Sales-as-Delivery (extracting knowledge in the demo call and handing them a pre-populated repo) is the proposed solution but hasn't been fully tested — an engineering manager at the customer never received his repo because a follow-up call with a practitioner beta user was planned and then deferred. UPDATED 2026-03-22: This archetype maps to Trigger 2 (Delegator). The canonical example is the customer's chief architect: 'I wish we could clone me.' The specific pain moment is hiring someone, onboarding a contractor, or assigning a task that requires their context — they are the bottleneck, the other person is blocked without their expertise. Frequency: occasional but high-stakes. Maps to Publisher/Organization tier ([amount]-[amount]/month). Pitch direction: 'Stop being the bottleneck. Install your expertise so your team can work without you. Verify through citations.' an early prospect will feel this trigger when he hires and needs practitioners to work without him." ;
+      narr:hasConvictionLevel narr:Conviction_Boulder .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Archetype_KnowledgePackager skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_ActivationGap → adds purchase trigger diagnosis ──
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_ActivationGap skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260322T120000Z {
+    narr:Narrative_ActivationGap skos:note "People get excited about the concept but defer adoption. The product is currently positioned as an investment you make, not a tool you use. Build your knowledge base → eventually get value. That's the wrong side of the activation curve. The missing piece: 'We're missing the immediate hook of the thing I'm doing today is painful and could be made better.' The prepackaged module concept is the proposed solution. UPDATED 2026-03-22: The core diagnosis is now sharper — understanding the product value does not equal a sale. Every prospect so far (an early prospect, the customer's chief architect, a collaborator, a founder beta user Klepsch) sees the value. None have paid. The question is: what makes someone reach for their wallet? Answer: two specific purchase triggers must be firing. Trigger 1 fires when the solo professional experiences the daily re-explanation pain. Trigger 2 fires at a specific delegation moment (hiring, onboarding, assigning a task requiring their context). an early prospect's Mar 22 message confirms: neither trigger is currently firing for him — no hiring, no daily re-explanation pain with the product." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_ActivationGap skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_PerspectiveVsInformation → adds pitch direction ──
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_PerspectiveVsInformation skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260322T120000Z {
+    narr:Narrative_PerspectiveVsInformation skos:note "Modules provide not just information but the way to interpret information — approaches, processes, opinions, narratives about how that information is used, framed, what it means, and what it shifts in different contexts. This is the exact difference between a human expert and an AI. Taxonomy: Information (facts, data — what search and RAG provide); Perspective (how to interpret, frame, and apply — what modules provide); Wisdom (when and how to apply perspective in context — what layering and compilation enable). Common AI criticisms (tone-deaf, collaborative flatness, 'good catch') are the kind of behavior worldview encoding can address. UPDATED 2026-03-22: The crystallized pitch direction from the purchase trigger session: 'Information isn't enough to do your work. You need perspective. So does your AI.' This is the tagline-level statement that bridges both triggers — the solo professional needs their perspective installed for their own AI; the delegator needs their perspective installed so others can work with it." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_PerspectiveVsInformation skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_ExpertiseOnDemandReframe → adds bridging insight ──
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_ExpertiseOnDemandReframe skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260322T120000Z {
+    narr:Narrative_ExpertiseOnDemandReframe skos:note "The fundamental reframe of the session: the current product behavior is ambient — compile worldview at session start. The reframe positions expertise as invoked at the moment of need, mid-task. The organizational use case (compile at session start) becomes a specific configuration of this core behavior, not the default. Core value proposition crystallized: 'A way to install expertise into your AI and verify where it's coming from.' Scarlet confirmed: 'That's gold.' UPDATED 2026-03-22: The bridging insight from the purchase trigger session: 'It's the same for an AI as a new hire. They need your perspective.' The AI is a new hire you onboard every session (Trigger 1). The actual new hire is someone you onboard once and they carry your perspective forward (Trigger 2). Same product, same features, different scale. The features that felt disconnected from the 'expertise on demand' reframe are actually the onboarding lifecycle applied to both AI and people: Perspective distillation = the onboarding process; Review = how the org maintains quality of what the AI/hire believes; Citation = how you verify the work came from the right place; Remember = how the perspective grows over time." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_ExpertiseOnDemandReframe skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_KnowledgePackagingMoment → adds delegation framing ──
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_KnowledgePackagingMoment skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260322T120000Z {
+    narr:Narrative_KnowledgePackagingMoment skos:note "an early prospect's moment of excitement: 'So does this mean that I can record each of my classes, so a course series, and then bundle that knowledge and then provide it to either a student or a new practitioner that I'm onboarding into my practice?' He immediately extended it: could he create a bundle for a prescribing practitioner he's building a relationship with? Scarlet: 'Being able to package AI like that is really powerful.' The ability to clearly segment different bodies of knowledge and treat them as discrete, trustworthy packages — like sending someone a folder of documents, but the folder talks back and cites its sources. UPDATED 2026-03-22: This moment maps precisely to Trigger 2 (Delegator). The purchase trigger fires at a specific delegation moment — hiring someone, onboarding a contractor, assigning a task that requires their context. an engineering manager at the customer's aha was imagining that moment. His Mar 22 message confirms the trigger has not yet fired in practice because he is not currently hiring." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_KnowledgePackagingMoment skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_ContentDistributionAIAge → adds supplier-side distribution ──
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_ContentDistributionAIAge skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260322T120000Z {
+    narr:Narrative_ContentDistributionAIAge skos:note "For content creators who traditionally publish mailing lists, blogs, courses, or content: the question becomes how do people using AI access this? The answer: a curated expertise package installed to AI. Pitch to content creators and course builders: 'Your book is a snapshot. Your course is a fixed curriculum. Your module is alive, citable, installable, and evolves with your thinking. How do your readers' AIs access your expertise?' Applies to anyone thinking about content distribution in the age of AI. UPDATED 2026-03-22: The expert is not coming to a marketplace to browse. They encounter aswritten because an expert they trust distributed it to them (QR code in a clinic, link in a training, install instructions from an employer). This is supplier-side distribution, not buyer-side marketplace. an engineering manager at the customer distributes his perspective to students/practitioners (when he hires — Trigger 2). An accountant distributes to clients (to stop answering repetitive questions — Trigger 2). a beta user from outside tech does not distribute — she uses it herself every day (Trigger 1). The marketplace concept shifts from buyer-side browsing to supplier-side distribution." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_ContentDistributionAIAge skos:note ?oldNote .
+  }
+} ;
+
+# ── New entities: INSERT DATA ─────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260322T120000Z {
+
+    # ── Narrative: Two Purchase Triggers ──────────────────────────────────────
+    narr:Narrative_TwoPurchaseTriggers a narr:Narrative ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:broader narr:FrictionFailure ;
+      skos:prefLabel "Two Distinct Purchase Triggers: Solo Professional and Delegator" ;
+      skos:note "The session identifies two real purchase triggers that explain why people who understand the product's value still don't buy. Trigger 1: 'I can't get AI to do my work without babysitting it' — the solo professional who re-explains context every session. Trigger 2: 'I need someone else to work without me' — the delegator who hits a specific moment of needing others to carry their expertise. Understanding the product value does not equal a sale. The trigger must be firing." ;
+      narr:theme "Purchase triggers are specific pain moments, not general value understanding — two distinct triggers map to two distinct tiers and pitch directions" .
+
+    # ── Narrative: AI as New Hire Bridging Insight ────────────────────────────
+    narr:Narrative_AIAsNewHireBridgingInsight a narr:Narrative ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:prefLabel "AI as New Hire: The Bridging Insight Across Both Triggers" ;
+      skos:note "Scarlet: 'It's the same for an AI as a new hire. They need your perspective.' The AI is a new hire you onboard every session (Trigger 1). The actual new hire is someone you onboard once and they carry your perspective forward (Trigger 2). Same product, same features, different scale. This bridges both triggers into a single coherent narrative." ;
+      narr:theme "The AI is a new hire you onboard every session; the actual new hire is someone you onboard once — same product, different scale" .
+
+    # ── Narrative: Supplier-Side Distribution ────────────────────────────────
+    narr:Narrative_SupplierSideDistribution a narr:Narrative ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:broader narr:ExpansionPathway ;
+      skos:prefLabel "Supplier-Side Distribution: Experts Push, Not Buyers Browse" ;
+      skos:note "The expert is not coming to a marketplace to browse. They encounter aswritten because an expert they trust distributed it to them — QR code in a clinic, link in a training, install instructions from an employer. This is supplier-side distribution, not buyer-side marketplace. The product may not need a marketplace at launch, just a share/install flow." ;
+      narr:theme "Distribution is supplier-side: experts push perspectives to their networks; buyers do not browse a marketplace" .
+
+    # ── Narrative: Starter Perspectives Analysis ──────────────────────────────
+    narr:Narrative_StarterPerspectivesAnalysis a narr:Narrative ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:broader narr:ProductOverview ;
+      skos:prefLabel "Starter Perspectives: Weak Purchase Trigger, Strong On-Ramp" ;
+      skos:note "In the delegation framing, starter/generic perspectives have no purchase trigger — nobody delegates a task that requires generic 'good writing.' In the solo professional framing, they might — if the perspective genuinely makes your AI better at something you do every day. But the strongest case is still: YOUR expertise, installed for YOUR AI (Trigger 1) or for YOUR team's AI (Trigger 2). Starter perspectives are demos and on-ramps, not the core product." ;
+      narr:theme "Starter perspectives are on-ramps and demos, not the core product — the core product is YOUR expertise installed for YOUR AI or YOUR team" .
+
+    # ── Narrative: Demo GIF Story ─────────────────────────────────────────────
+    narr:Narrative_DemoGIFStory a narr:Narrative ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "The Money GIF Story: Before and After Perspective Installation" ;
+      skos:note "Before: Open AI. It doesn't know you. Explain your context. Get generic output. Correct. Repeat. Every session. (~10 seconds). After: Perspective installed. Open AI. It already knows how you think. Cited, domain-specific output. Verify through citations. Done. (~10 seconds). The demo shows Trigger 1 pain resolved — the same 10-second before/after that makes the value visceral." ;
+      narr:theme "The demo GIF shows the before/after of perspective installation in 10 seconds — the same pain Trigger 1 users feel every session" .
+
+    narr:Claim_Trigger1SoloProfessional a narr:Claim ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "Trigger 1: 'I can't get AI to do my work without babysitting it.' Archetype: a beta user from outside tech. The solo consultant or professional who uses AI daily for complex domain-specific work. Every session, she re-explains the client's context, her methodology, the project history, the specific language. Without this, AI output is generic and useless — or worse, actively harmful for complex deliverables. Frequency: every single session. High frequency, moderate intensity. Maps to Individual tier ([amount]/month). Pitch: 'Information isn't enough to do your work. You need perspective. So does your AI.'" ;
+      narr:aboutNode narr:Narrative_TwoPurchaseTriggers ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_TwoPurchaseTriggers .
+
+    narr:Claim_Trigger2Delegator a narr:Claim ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "Trigger 2: 'I need someone else to work without me.' Archetype: the customer's chief architect. The team lead, practice owner, or senior expert who needs other people (or their AIs) to work with their expertise. Specific moment: hiring someone, onboarding a contractor, assigning a task that requires their context. They are the bottleneck. The other person is blocked without their expertise. Frequency: occasional but high-stakes. Maps to Publisher/Organization tier ([amount]-[amount]/month). Pitch: 'Stop being the bottleneck. Install your expertise so your team can work without you. Verify through citations.'" ;
+      narr:aboutNode narr:Narrative_TwoPurchaseTriggers ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_TwoPurchaseTriggers .
+
+    narr:Claim_StarterPerspectivesWeakTrigger a narr:Claim ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "In the delegation framing, generic/starter perspectives have no purchase trigger — nobody delegates a task that requires generic 'good writing.' In the solo professional framing, they might — if the perspective genuinely makes your AI better at something you do every day. But the strongest case is still YOUR expertise installed for YOUR AI or YOUR team's AI. Starter perspectives are demos and on-ramps, not the core product." ;
+      narr:aboutNode narr:Narrative_StarterPerspectivesAnalysis ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_PrepackagedModuleConcept .
+
+    narr:Claim_MarketplaceNotNeededAtLaunch a narr:Claim ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "The marketplace concept shifts from buyer-side browsing to supplier-side distribution. The product may not need a marketplace at launch — just a share/install flow. Experts do not come to a marketplace to browse; they encounter aswritten because an expert they trust distributed it to them." ;
+      narr:aboutNode narr:Narrative_SupplierSideDistribution ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:FocusSequencing .
+
+    # ── Observations with selectors ───────────────────────────────────────────
+    narr:Obs_ScarletPurchaseTriggerQuote a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "Scarlet's articulation of the core finding: understanding ≠ sale." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PurchaseTriggers_20260322 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 397 ;
+          oa:end 516
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Each one of these is somebody telling us really valuable information about why them understanding the product value does not equal a sale." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_CustomerArchitectCloneMeQuote a narr:Observation ;
+      skos:broader narr:CaseStudies ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "the customer's chief architect's verbatim articulation of the Trigger 2 (delegator) pain." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PurchaseTriggers_20260322 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2241 ;
+          oa:end 2275
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I wish we could clone me." ;
+          oa:prefix "the customer's chief architect: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_AIAsNewHireQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "Scarlet's bridging insight connecting both triggers through the new hire metaphor." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PurchaseTriggers_20260322 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2357 ;
+          oa:end 2415
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's the same for an AI as a new hire. They need your perspective." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_UndocumentedKnowledgeQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "Scarlet's canonical statement of the undocumented knowledge thesis — why distillation and remember matter." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PurchaseTriggers_20260322 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5621 ;
+          oa:end 5730
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If we want expertise, not just information, we need to distill perspective into a format that AI can understand." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_PitchDirectionSolo a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "The crystallized pitch direction for Trigger 1 (solo professional) — the line that bridges both triggers." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PurchaseTriggers_20260322 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1421 ;
+          oa:end 1491
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Information isn't enough to do your work. You need perspective. So does your AI." ;
+          oa:prefix "The pitch direction: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── Style Observations ────────────────────────────────────────────────────
+    narr:StyleObs_AntithesisTriggers a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "Heavy antithesis structure throughout: 'Understanding the product value does not equal a sale.' / 'Information isn't enough... You need perspective.' / 'You're installing YOUR perspective so YOUR AI can do your work' vs. 'You're installing your perspective so OTHERS can work with it.' Antithesis is the primary rhetorical device for distinguishing the two triggers." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PurchaseTriggers_20260322 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 270 ;
+          oa:end 360
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Understanding the product value does not equal a sale." ;
+          oa:prefix "**" ;
+          oa:suffix " Every prospect so far"
+        ]
+      ] .
+
+    narr:StyleObs_ArchetypeNaming a narr:StyleObservation ;
+      skos:broader narr:NamingConventions ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "Named archetypes (a beta user from outside tech, the customer's chief architect) used as shorthand throughout — not just as examples but as canonical type references. 'a beta user from outside tech' becomes the solo professional archetype; 'the customer's chief architect' becomes the delegator archetype. This is idiolect phrasing: using proper names as concept anchors." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PurchaseTriggers_20260322 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 700 ;
+          oa:end 760
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Archetype: a beta user from outside tech. The solo consultant or professional" ;
+          oa:prefix "**" ;
+          oa:suffix " who uses AI daily"
+        ]
+      ] .
+
+    narr:StyleObs_DirectQuoteEvidence a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_PurchaseTriggers_20260322 ;
+      skos:note "Direct verbatim quotes from prospects (the customer's chief architect: 'I wish we could clone me'; an early prospect's full text message) used as primary evidence throughout. The document treats prospect quotes as data points, not anecdotes — each quote is labeled with speaker and used to validate or refute trigger hypotheses. This is the 'show don't tell' rhetorical pattern applied to sales analysis." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PurchaseTriggers_20260322 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2241 ;
+          oa:end 2275
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I wish we could clone me." ;
+          oa:prefix "the customer's chief architect: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+  }
+}

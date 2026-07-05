@@ -1,0 +1,279 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260220T223148Z a prov:Activity ;
+    prov:wasAssociatedWith  "aswritten.ai" ;
+    prov:wasAttributedTo    "n8n.aswritten.ai" ;
+    prov:generatedAtTime    "2026-02-20T22:31:48.028Z"^^xsd:dateTime ;
+    sb:originPath           ".aswritten/memories/2026-02-20-tony-weekly-feb19-2026.md" ;
+    sb:originRef            "main" .
+} ;
+
+# =============================================================
+# ADD — all newly extracted triples
+# =============================================================
+INSERT DATA {
+
+  # --- Transaction (source extraction run) ---
+  narr:Transaction_TonyWeekly_20260219 a prov:Activity ;
+    prov:wasAssociatedWith narr:ExtractionPipeline ;
+    prov:generatedAtTime   "2026-02-19T00:00:00Z"^^xsd:dateTime ;
+    prov:wasAttributedTo   narr:Actor_ScarletDame ;
+    sb:originPath          "tony-weekly-feb-19-2026" ;
+    sb:originRef           "main" ;
+    prov:wasGeneratedBy    narr:Tx_20260220T223148Z .
+
+  # --- Sample ---
+  narr:Sample_TonyWeekly_20260219 a narr:Sample ;
+    dct:title              "Tony Weekly — Feb 19, 2026" ;
+    narr:inputLength       8450 ;
+    prov:wasGeneratedBy    narr:Transaction_TonyWeekly_20260219 .
+
+  # --- Narratives ---
+  narr:Narrative_WatcherAgent a narr:Narrative ;
+    dct:source             narr:Sample_TonyWeekly_20260219 ;
+    narr:theme             narr:TechnologiesSocialSystems ;
+    skos:note              "The watcher agent concept: instead of one person intentionally saving memories, an agent watches the evolving worldview and proactively notifies affected parties when someone else's contribution changes their domain. Cross-domain notification without synchronous communication." ;
+    prov:wasGeneratedBy    narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Narrative_ConsensusAsSMS a narr:Narrative ;
+    dct:source             narr:Sample_TonyWeekly_20260219 ;
+    narr:theme             narr:ProductOverview ;
+    skos:note              "SMS-first consensus product: text a topic, name contacts, AI interviews each asynchronously, updates flow as contributions arrive, resolution produces a shared state object that merges into the worldview." ;
+    prov:wasGeneratedBy    narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Narrative_PRasConsensus a narr:Narrative ;
+    dct:source             narr:Sample_TonyWeekly_20260219 ;
+    narr:theme             narr:NarrativeAnchor ;
+    skos:note              "Git PR as organizational consensus metaphor: memory = PR, AI-mediated interview = automated review, approval = merge into worldview. Scales to any novelty requiring group consensus." ;
+    prov:wasGeneratedBy    narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Narrative_GitHubAsInfrastructure a narr:Narrative ;
+    dct:source             narr:Sample_TonyWeekly_20260219 ;
+    narr:theme             narr:ArchitectureOverview ;
+    skos:note              "GitHub-native architecture is infrastructure, not product. The product is the channel-agnostic interface on top — non-engineers never see GitHub; they interact via simple natural language triggers." ;
+    prov:wasGeneratedBy    narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Narrative_DensityInversion a narr:Narrative ;
+    dct:source             narr:Sample_TonyWeekly_20260219 ;
+    narr:theme             narr:TrendForecasting ;
+    skos:note              "Density inversion: for AI, conceptual input density has no upper bound and more dense is always better; for humans it is the opposite. Dense thinkers become gold mines for AI-mediated communication." ;
+    prov:wasGeneratedBy    narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Narrative_AsyncSharedMemory a narr:Narrative ;
+    dct:source             narr:Sample_TonyWeekly_20260219 ;
+    narr:theme             narr:SocioTechnicalTouchpoints ;
+    skos:note              "Shared persistent memory solves the broken synchronization problem: decisions currently fragment across Slack, email, Teams, recordings. Shared memory enables async work with real progress and no synchronous overhead." ;
+    prov:wasGeneratedBy    narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Narrative_AINativeOrgSize a narr:Narrative ;
+    dct:source             narr:Sample_TonyWeekly_20260219 ;
+    narr:theme             narr:RoleTopology ;
+    skos:note              "AI-native companies need only 2–6 senior core people who control AI tooling. Roles: Architect, PM (technical), Senior DevOps, Product-literate coder/strategist, Sales/partnerships, Designer." ;
+    prov:wasGeneratedBy    narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Narrative_ViralSMSModel a narr:Narrative ;
+    dct:source             narr:Sample_TonyWeekly_20260219 ;
+    narr:theme             narr:NarrativeDrivenRoadmap ;
+    skos:note              "Natural viral loop: first topic free, each named recipient experiences product free, post-resolution invitation triggers 1-in-5 conversion. Cost model: expensive models (Claude/Opus) for extraction, Gemini Flash for everything else." ;
+    prov:wasGeneratedBy    narr:Transaction_TonyWeekly_20260219 .
+
+  # --- Claims ---
+  narr:Claim_CrossContextPainIsReal a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode          narr:Narrative_AsyncSharedMemory ;
+    narr:supports           narr:Narrative_WatcherAgent ;
+    skos:note               "Tony, a sophisticated AI user, explicitly validated cross-context AI fragmentation as a daily problem — physically moving between locations to switch work streams. Pain is real even for the ideal customer." ;
+    narr:similarityScore    "0.95"^^xsd:decimal ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Claim_DensityInversionIsTrue a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode          narr:Narrative_DensityInversion ;
+    narr:supports           narr:Narrative_AsyncSharedMemory ;
+    skos:note               "Both Scarlet and Tony personally validated that AI mediates dense thinking into human-approachable formats. Dense thinkers' communication liability becomes an asset." ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Claim_GitHubIsInfraNotProduct a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode          narr:Narrative_GitHubAsInfrastructure ;
+    skos:note               "Scarlet articulated that the GitHub-native layer is infrastructure on which many products can be built; the product is abstracting GitHub completely away for non-engineers." ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Claim_SpeedRequiresConsensus a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode          narr:Narrative_AsyncSharedMemory ;
+    skos:note               "The faster AI development moves, the more critical it is to maintain consensus on direction. Getting Claude to write a feature is easy; getting it to interact correctly with other features requires shared context." ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:Claim_TwoToSixCoreTeam a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode          narr:Narrative_AINativeOrgSize ;
+    skos:note               "Tony's view: AI-native companies need 2–6 senior people who control AI tooling; AI assistance means two people can handle defining, categorization, and documentation that previously required larger teams." ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  # --- Style Observations ---
+  narr:StyleObs_WatcherAgentQuote a narr:StyleObservation ;
+    skos:broader            narr:IdiolectPhrasing ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:KeyPhrases ;
+    rdf:value               true ;
+    skos:note               "Colloquial register with possessive slang ('your shit') signals authentic voice capture; paraphrase attribution preserves speaker identity." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 672 ; oa:end 745 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "Mark just took a meeting with so and so — actually, this changes your shit in this way." ; oa:prefix "saying:\n\n> " ; oa:suffix "\n> — Scarlet" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_PRMetaphorQuote a narr:StyleObservation ;
+    skos:broader            narr:Metaphor ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:NarrativeAnchor ;
+    rdf:value               true ;
+    skos:note               "Explicit structural metaphor mapping Git workflow onto organizational decision-making; plain declarative syntax reinforces clarity of the analogy." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 2498 ; oa:end 2641 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "Behind the scenes, that's just a memory that creates a pull request. And the interview is just an automated review process where AI mediates the PR review with multiple people." ; oa:prefix "> " ; oa:suffix "\n> — Scarlet" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_DensityInversionQuote a narr:StyleObservation ;
+    skos:broader            narr:Antithesis ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:KeyPhrases ;
+    rdf:value               true ;
+    skos:note               "Antithetical structure: 'no real upper bound / more dense is always better' vs 'almost exactly the opposite' — rhetorical contrast used to crystallize the insight." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 4820 ; oa:end 4960 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "When you're working with AI, content, the density of conceptual input has no real upper bound. Actually, more dense is always better, whereas for humans it's almost exactly the opposite." ; oa:prefix "> " ; oa:suffix "\n> — Scarlet" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_SuperpowerIdiom a narr:StyleObservation ;
+    skos:broader            narr:StockPhrases ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:ToneVoice ;
+    rdf:value               true ;
+    skos:note               "'Not a plug-in superpower, a real life superpower' — emphatic self-correction cadence; escalating intensifier pattern used to signal genuine conviction." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 6320 ; oa:end 6395 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "It's a superpower for me. Like, not a plug in superpower, a real life superpower." ; oa:prefix "interact with. " ; oa:suffix "\n> — Tony" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_BrokenSyncQuote a narr:StyleObservation ;
+    skos:broader            narr:RhetoricalQuestion ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:ProblemStakes ;
+    rdf:value               true ;
+    skos:note               "Path A / Path B binary framing with rhetorical self-answer; 'It fizzles out' as a short punchy cadence close — vivid human cost articulation." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 6680 ; oa:end 6880 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "Path A is I actually do that. Path B is I just feel that's rude or can't be bothered and nothing happens. It fizzles out." ; oa:prefix "go, 'you remember that thing you were talking about?' " ; oa:suffix "\n> — Tony" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_MindBlowingCadence a narr:StyleObservation ;
+    skos:broader            narr:ShortPunchyCadence ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:Tagline ;
+    rdf:value               true ;
+    skos:note               "Two-fragment declarative close: 'Mind blowing. Totally easy sell.' — zero-subject elliptical sentences used as emphatic verdict; characteristic of spoken-register written capture." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 4260 ; oa:end 4295 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "Mind blowing. Totally easy sell." ; oa:prefix "Tony's assessment: \"" ; oa:suffix "\"" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_AhaMoment a narr:StyleObservation ;
+    skos:broader            narr:IdiolectPhrasing ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:KeyPhrases ;
+    rdf:value               true ;
+    skos:note               "'big aha moment' — colloquial product-discovery idiom; signals informal register and authentic voice in meeting notes." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 760 ; oa:end 800 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "big aha moment" ; oa:prefix "Scarlet confirmed this was a \"" ; oa:suffix "\" — the key insight" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_GoldMineMetaphor a narr:StyleObservation ;
+    skos:broader            narr:Metaphor ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:ResonanceUse ;
+    rdf:value               true ;
+    skos:note               "'gold mines for AI' — value-extraction metaphor applied to dense thinkers; economically resonant framing that reframes a perceived liability as an asset." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 5010 ; oa:end 5060 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "gold mines for AI" ; oa:prefix "Dense thinkers (like a technical collaborator's architecture diagrams) are \"" ; oa:suffix "\" — the density" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_HowMadRhetQ a narr:StyleObservation ;
+    skos:broader            narr:RhetoricalQuestion ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:ProblemStakes ;
+    rdf:value               true ;
+    skos:note               "Rhetorical self-interrogation after vivid behavioral anecdote; British-inflected idiom ('How mad is that?') adds authenticity and invites reader alignment." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 3060 ; oa:end 3160 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "I literally get up from one location to go to the other location to switch work streams now just because it's easier. How mad is that?" ; oa:prefix "> " ; oa:suffix "\n> — Tony" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_SideDoorMetaphor a narr:StyleObservation ;
+    skos:broader            narr:Metaphor ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:PositioningThesis ;
+    rdf:value               true ;
+    skos:note               "'side door' as spatial metaphor for indirect access path; concise framing of a nuanced access-control value proposition." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 6000 ; oa:end 6040 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "side door" ; oa:prefix "Scarlet identified the \"" ; oa:suffix "\" value: organizations" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_BrainPersonification a narr:StyleObservation ;
+    skos:broader            narr:Metaphor ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:ResonanceUse ;
+    rdf:value               true ;
+    skos:note               "Personification of shared memory as 'the brain' — humanizes the system and elevates it from tool to cognitive partner; reinforces the superpower framing." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 6270 ; oa:end 6320 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "If I'm traveling, the brain is still there for me to interact with." ; oa:prefix "> \"" ; oa:suffix " It's a superpower" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  narr:StyleObs_KidsInheritingQuote a narr:StyleObservation ;
+    skos:broader            narr:ToneAuthoritative ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    skos:related            narr:TrendForecasting ;
+    rdf:value               true ;
+    skos:note               "Generational framing ('the kids are inheriting') used to signal macro-level trend conviction; authoritative declarative tone with colloquial warmth." ;
+    oa:hasSelector          [ a oa:TextPositionSelector ; oa:start 6100 ; oa:end 6185 ] ;
+    oa:hasSelector          [ a oa:TextQuoteSelector ; oa:exact "That's what the kids are inheriting... You don't need to do all the work around the work anymore." ; oa:prefix "Tony: \"" ; oa:suffix "\"" ] ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+  # --- Style Metrics ---
+  narr:StyleMetrics_TonyWeekly a narr:StyleMetrics ;
+    skos:broader            narr:StyleMetrics ;
+    dct:source              narr:Sample_TonyWeekly_20260219 ;
+    narr:AverageSentenceLength "18"^^xsd:integer ;
+    narr:ActiveVoiceRatio   "0.82"^^xsd:decimal ;
+    narr:JargonDensity      "0.12"^^xsd:decimal ;
+    narr:Conciseness        "0.75"^^xsd:decimal ;
+    skos:note               "Meeting notes format with embedded verbatim quotes. Dominant register: informal spoken-capture with product/technical vocabulary. High active voice ratio. Moderate jargon density (Git/PR metaphors, AI tooling terms). Short punchy declaratives alternate with longer explanatory passages. Multiple rhetorical devices: antithesis, metaphor, rhetorical question, idiolect." ;
+    prov:wasGeneratedBy     narr:Transaction_TonyWeekly_20260219 .
+
+} ;
+
+# =============================================================
+# UPDATE — actor label / note corrections (DELETE/INSERT WHERE)
+# =============================================================
+
+# narr:Actor_ScarletDame — type enriched, note updated, prov:wasGeneratedBy added
+DELETE {
+  narr:Actor_ScarletDame  a ?oldType ;
+                          skos:note ?oldNote ;
+                          prov:wasGeneratedBy ?oldTx .
+}
+INSERT {
+  narr:Actor_ScarletDame  a narr:Actor ;
+                          skos:prefLabel "Scarlet Dame" ;
+                          skos:note "Product founder/builder; uses the product herself; dense thinker who leverages AI to translate ideas into human-approachable formats." ;
+                          prov:wasGeneratedBy narr:Transaction_TonyWeekly_20260219 .
+}
+WHERE {
+  narr:Actor_ScarletDame  a ?oldType .
+  OPTIONAL { narr:Actor_ScarletDame skos:note ?oldNote . }
+  OPTIONAL { narr:Actor_ScarletDame prov:wasGeneratedBy ?oldTx . }
+} 

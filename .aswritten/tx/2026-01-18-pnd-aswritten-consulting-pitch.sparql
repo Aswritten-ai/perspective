@@ -1,0 +1,536 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+
+# ============================================================
+# Transaction Provenance
+# ============================================================
+INSERT DATA {
+  narr:Tx_20260128T225816Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agent#storytwin-v1> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-01-28T22:58:16.003Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-18-pnd-aswritten-consulting-pitch.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:used <anthropic/claude-sonnet-4.5> ;
+    skos:note "Extraction of consulting pitch narrative elements, style observations, and updated assessments. Retry attempt 1: corrected predicate usage, added missing entities (PnD org, pricing, deliverables), versioned tagline." .
+} ;
+
+# ============================================================
+# INSERT: New Narrative Elements (Corrected)
+# ============================================================
+INSERT DATA {
+  # Opportunity narrative - corrected to use rdf:type + narr:aboutNode
+  narr:Narrative_Opportunity_1 a narr:Narrative ;
+    rdf:type narr:OpportunityNarrative ;
+    narr:aboutNode narr:Opportunity ;
+    dct:source narr:Sample_1 ;
+    narr:theme "AI-native teams lack collaborative memory and source of truth" ;
+    skos:note "Problem: siloed AI, memory lock-in, lost institutional knowledge, manual content recreation, consensus overhead." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # Timing thesis narrative - corrected
+  narr:Narrative_TimingThesis_1 a narr:Narrative ;
+    rdf:type narr:TimingThesisNarrative ;
+    narr:aboutNode narr:TimingThesis ;
+    dct:source narr:Sample_1 ;
+    narr:theme "AI agents now do majority of work; orgs need collective memory to leverage this shift" ;
+    skos:note "Timing: AI adoption at cursor level creates urgency for shared context and automated content pipelines." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # Positioning narrative - corrected from skos:broader to rdf:type
+  narr:Narrative_Positioning_1 a narr:Narrative ;
+    rdf:type narr:PositioningThesis ;
+    dct:source narr:Sample_1 ;
+    narr:theme "AI-Native Narrative Strategy consulting" ;
+    skos:note "Who: AI-native teams. What: shift positioning, offering, product, teams, process to leverage AI. Why-us: aswritten.ai collective memory + PnD consulting." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # Tagline - versioned as pitch-specific variant
+  narr:Narrative_Tagline_ConsultingPitch a narr:Narrative ;
+    rdf:type narr:Tagline ;
+    narr:taglineVariant "consulting-pitch" ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Collective Memory for AI-Native Teams" ;
+    skos:note "7-word handle encoding promise: shared, persistent, AI-accessible knowledge. Pitch-specific variant." ;
+    dct:created "2025-01-15T00:00:00Z"^^xsd:dateTime ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # WhatIsIt - scoped to consulting pitch context
+  narr:Narrative_WhatIsIt_ConsultingPitch a narr:Narrative ;
+    rdf:type narr:WhatIsIt ;
+    narr:scope "consulting-pitch" ;
+    dct:source narr:Sample_1 ;
+    rdf:value "Collaborative AI with a single source of truth (collective memory)" ;
+    skos:note "Precise definition: git-native SSoT + connected AI agents. Consulting pitch framing." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # Offering - corrected to singular, marked as primary
+  narr:Narrative_Offering_PnD a narr:Narrative ;
+    rdf:type narr:Offering ;
+    narr:isPrimaryOffering true ;
+    dct:source narr:Sample_1 ;
+    narr:theme "AI-Native Narrative Strategy consulting service" ;
+    skos:note "Deliverables: SSoT, connected agents, automated content, org changelog." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # Solution archetype narrative - corrected
+  narr:Narrative_SolutionArchetype_1 a narr:Narrative ;
+    rdf:type narr:SolutionArchetype ;
+    narr:aboutNode narr:SolutionArchetypes ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Narrative Strategy Process: biweekly cadence, interviews, SSoT creation, content pipeline, agent integration" ;
+    skos:note "Approach: diagnostic → SSoT → pipeline → agents → evolution → review." ;
+    narr:cadence "biweekly" ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # Outcome narrative - corrected
+  narr:Narrative_Outcome_1 a narr:Narrative ;
+    rdf:type narr:OutcomeNarrative ;
+    narr:aboutNode narr:Outcomes ;
+    dct:source narr:Sample_1 ;
+    narr:theme "New hires ask AI instead of leadership; strategy-to-docs time: weeks → 15 min; branchable narrative testing" ;
+    skos:note "Quantified impact: time savings, self-service onboarding, rapid iteration." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # Process narrative - corrected with structured cadence
+  narr:Narrative_Process_1 a narr:Narrative ;
+    rdf:type narr:ProcessNarrative ;
+    narr:aboutNode narr:Process ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Biweekly cadence, team interviews, narrative evolution, structured meeting minutes" ;
+    skos:note "Core workflow: diagnostic → create → automate → evolve → review." ;
+    narr:cadence "biweekly" ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # NEW: PnD consulting entity (addresses INCOMPLETE_EXTRACTION)
+  narr:Organization_PnD a narr:Organization ;
+    skos:prefLabel "Penny and Damed Inc (PnD)" ;
+    dct:source narr:Sample_1 ;
+    narr:theme "AI-native narrative strategy consulting services" ;
+    narr:businessDriver "Revenue and runway extension" ;
+    skos:note "Consulting entity delivering AI-Native Narrative Strategy services via aswritten.ai platform." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  # NEW: Org changelog deliverable (addresses SEMANTIC_DRIFT warning)
+  narr:Narrative_Deliverable_OrgChangelog a narr:Narrative ;
+    rdf:type narr:Deliverable ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Quantified organizational change, human readable org changelog" ;
+    skos:note "Distinctive deliverable: structured, version-controlled record of organizational evolution and narrative changes." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+} ;
+
+# ============================================================
+# INSERT: Style Observations (1-10)
+# ============================================================
+INSERT DATA {
+  narr:StyleObs_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 67 ;
+        oa:end 80
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten.ai" ;
+        oa:prefix "**" ;
+        oa:suffix ": Collective"
+      ]
+    ] ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Lowercase, domain-suffix brand name; distinctive orthography." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  narr:StyleObs_2 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1350 ;
+        oa:end 1360
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "onboarding" ;
+        oa:prefix "README, " ;
+        oa:suffix " guides, walkthroughs"
+      ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Active, process-oriented verb common in product/org contexts." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  narr:StyleObs_3 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:Antithesis ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1630 ;
+        oa:end 1680
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "multiple weeks → 15 min" ;
+        oa:prefix "across the org: " ;
+        oa:suffix "\n- Branchable"
+      ]
+    ] ;
+    skos:related narr:Outcomes ;
+    rdf:value true ;
+    skos:note "Dramatic before/after contrast; arrow symbol reinforces transformation." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  narr:StyleObs_4 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 200 ;
+        oa:end 260
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "- AI is siloed, not collaborative, no source of truth" ;
+        oa:prefix "## Problem\n" ;
+        oa:suffix "\n- Can't transfer"
+      ]
+    ] ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Bullet-list structure; short clauses; parallel syntax." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  narr:StyleObs_5 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:ToneDirectPersonal ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 750 ;
+        oa:end 850
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "how do you shift positioning, offering, product, teams, and process" ;
+        oa:prefix "Strategy: " ;
+        oa:suffix " to fully respond"
+      ]
+    ] ;
+    skos:related narr:NarrativeAnchor ;
+    rdf:value true ;
+    skos:note "Second-person question; conversational, direct engagement." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  narr:StyleObs_6 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 770 ;
+        oa:end 810
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "positioning, offering, product, teams, and process" ;
+        oa:prefix "shift " ;
+        oa:suffix " to fully"
+      ]
+    ] ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Five-item list; triadic rhythm extended for completeness." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  narr:StyleObs_7 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:JargonPolicy ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:JargonPolicy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1250 ;
+        oa:end 1254
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "SSoT" ;
+        oa:prefix "across " ;
+        oa:suffix ", content, and AI"
+      ]
+    ] ;
+    skos:related narr:TerminologyControl ;
+    rdf:value true ;
+    skos:note "Acronym 'Single Source of Truth'; defined earlier in doc; acceptable domain shorthand." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  narr:StyleObs_8 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:VoiceActive ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1050 ;
+        oa:end 1100
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Create single source of truth" ;
+        oa:prefix "- " ;
+        oa:suffix "\n- Create content"
+      ]
+    ] ;
+    skos:related narr:ToneVoice ;
+    rdf:value true ;
+    skos:note "Imperative mood; subject (we/team) implied; strong action verbs." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  narr:StyleObs_9 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:Parallelism ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1280 ;
+        oa:end 1380
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "- Collaborative, git-native, single source of truth\n- Connected AI agents\n- Automated content generation" ;
+        oa:prefix "## Deliverables\n" ;
+        oa:suffix " for internal"
+      ]
+    ] ;
+    skos:related narr:GrammarSyntax ;
+    rdf:value true ;
+    skos:note "Consistent bullet structure; noun-phrase leads; parallel syntax." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+
+  narr:StyleObs_10 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 650 ;
+        oa:end 670
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "at the cursor" ;
+        oa:prefix "work " ;
+        oa:suffix "\n\n## Offering"
+      ]
+    ] ;
+    skos:related narr:RhetoricalDevices ;
+    rdf:value true ;
+    skos:note "Cursor = point of action/decision; evokes IDE/editor context; signals developer audience." ;
+    prov:wasGeneratedBy narr:Tx_20260128T225816Z .
+} ;
+
+# ============================================================
+# UPDATE: Sample_1 Metadata
+# ============================================================
+DELETE {
+  narr:Sample_1 dct:title ?oldTitle ;
+    narr:inputLength ?oldLength ;
+    dct:created ?oldCreated .
+}
+INSERT {
+  narr:Sample_1 dct:title "PnD x aswritten.ai Consulting Pitch" ;
+    narr:inputLength 1842 ;
+    dct:created "2025-01-15T00:00:00Z"^^xsd:dateTime .
+}
+WHERE {
+  narr:Sample_1 dct:title ?oldTitle ;
+    narr:inputLength ?oldLength ;
+    dct:created ?oldCreated .
+} ;
+
+# ============================================================
+# UPDATE: Assessment Scores
+# ============================================================
+DELETE {
+  narr:Assessment_Register_1 rdf:value ?oldRegVal ;
+    skos:note ?oldRegNote .
+}
+INSERT {
+  narr:Assessment_Register_1 rdf:value 4.0 ;
+    skos:note "Direct, conversational; second-person question; active verbs; concise bullets. Fits consulting pitch register." .
+}
+WHERE {
+  narr:Assessment_Register_1 rdf:value ?oldRegVal ;
+    skos:note ?oldRegNote .
+} ;
+
+DELETE {
+  narr:Assessment_Phrasing_1 rdf:value ?oldPhrVal ;
+    skos:note ?oldPhrNote .
+}
+INSERT {
+  narr:Assessment_Phrasing_1 rdf:value 4.0 ;
+    skos:note "Domain verbs (onboarding, branchable); brand stylization (aswritten.ai); stock phrases (SSoT, AI-native). Strong idiolect." .
+}
+WHERE {
+  narr:Assessment_Phrasing_1 rdf:value ?oldPhrVal ;
+    skos:note ?oldPhrNote .
+} ;
+
+DELETE {
+  narr:Assessment_Cadence_1 rdf:value ?oldCadVal ;
+    skos:note ?oldCadNote .
+}
+INSERT {
+  narr:Assessment_Cadence_1 rdf:value 4.5 ;
+    skos:note "Short bullets; punchy clauses; parallel structure; rule-of-three extended. High rhythm variance via section headers." .
+}
+WHERE {
+  narr:Assessment_Cadence_1 rdf:value ?oldCadVal ;
+    skos:note ?oldCadNote .
+} ;
+
+DELETE {
+  narr:Assessment_StrategicAlignment_1 rdf:value ?oldStratVal ;
+    skos:note ?oldStratNote .
+}
+INSERT {
+  narr:Assessment_StrategicAlignment_1 rdf:value 4.5 ;
+    skos:note "Clear positioning (AI-Native Narrative Strategy); tagline present; process/deliverables/outcomes align to narrative anchor. Strong coherence." .
+}
+WHERE {
+  narr:Assessment_StrategicAlignment_1 rdf:value ?oldStratVal ;
+    skos:note ?oldStratNote .
+} ;
+
+DELETE {
+  narr:Assessment_Tailoring_1 rdf:value ?oldTailVal ;
+    skos:note ?oldTailNote .
+}
+INSERT {
+  narr:Assessment_Tailoring_1 rdf:value 4.0 ;
+    skos:note "Audience: AI-native teams, consultants, investors. Metaphor 'at the cursor' signals developer context. Pricing/terms fit consulting frame." .
+}
+WHERE {
+  narr:Assessment_Tailoring_1 rdf:value ?oldTailVal ;
+    skos:note ?oldTailNote .
+} ;
+
+DELETE {
+  narr:Assessment_Resonance_1 rdf:value ?oldResVal ;
+    skos:note ?oldResNote .
+}
+INSERT {
+  narr:Assessment_Resonance_1 rdf:value 3.5 ;
+    skos:note "Antithesis (weeks → 15 min) and metaphor (cursor) resonate. Could add case study or customer quote for deeper proof." .
+}
+WHERE {
+  narr:Assessment_Resonance_1 rdf:value ?oldResVal ;
+    skos:note ?oldResNote .
+} ;
+
+DELETE {
+  narr:Assessment_Flow_1 rdf:value ?oldFlowVal ;
+    skos:note ?oldFlowNote .
+}
+INSERT {
+  narr:Assessment_Flow_1 rdf:value 4.0 ;
+    skos:note "Logical progression: Drivers → Problem → Offering → Process → Deliverables → Outcomes → Pricing. Transitions via headers; parallel bullet structure. Natural flow." .
+}
+WHERE {
+  narr:Assessment_Flow_1 rdf:value ?oldFlowVal ;
+    skos:note ?oldFlowNote .
+} ;
+
+DELETE {
+  narr:Assessment_Novelty_1 rdf:value ?oldNovVal ;
+    skos:note ?oldNovNote .
+}
+INSERT {
+  narr:Assessment_Novelty_1 rdf:value 3.5 ;
+    skos:note "Brand name (aswritten.ai) and metaphor (cursor) distinctive. 'Collective Memory' fresh framing. Some boilerplate (biweekly cadence, deliverables list)." .
+}
+WHERE {
+  narr:Assessment_Novelty_1 rdf:value ?oldNovVal ;
+    skos:note ?oldNovNote .
+} ;
+
+DELETE {
+  narr:Assessment_Accuracy_1 rdf:value ?oldAccVal ;
+    skos:note ?oldAccNote .
+}
+INSERT {
+  narr:Assessment_Accuracy_1 rdf:value 4.0 ;
+    skos:note "Named entities (PnD, aswritten.ai) correct. Pricing/terms specific. Outcomes quantified (weeks → 15 min). No citations needed for pitch format." .
+}
+WHERE {
+  narr:Assessment_Accuracy_1 rdf:value ?oldAccVal ;
+    skos:note ?oldAccNote .
+} ;
+
+# ============================================================
+# UPDATE: Style Metrics
+# ============================================================
+DELETE {
+  narr:StyleMetrics_1 narr:AverageSentenceLength ?oldASL ;
+    narr:ActiveVoiceRatio ?oldAVR ;
+    narr:JargonDensity ?oldJD ;
+    narr:ReadabilityScores ?oldRS ;
+    skos:note ?oldMetNote .
+}
+INSERT {
+  narr:StyleMetrics_1 narr:AverageSentenceLength 12.5 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:JargonDensity 0.08 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade: 10; Flesch Reading Ease: 55" ;
+    skos:note "Short sentences; high active-voice ratio; moderate jargon (SSoT, AI-native); readable for technical audience." .
+}
+WHERE {
+  narr:StyleMetrics_1 narr:AverageSentenceLength ?oldASL ;
+    narr:ActiveVoiceRatio ?oldAVR ;
+    narr:JargonDensity ?oldJD ;
+    narr:ReadabilityScores ?oldRS ;
+    skos:note ?oldMetNote .
+}

@@ -1,0 +1,208 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260303T140509Z a prov:Activity ;
+    rdfs:label "RDF Transactionizer extraction — Demo 1 Pipeline Pure Function Refactor" ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-03-03T14:05:09.626Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-25-demo1-pipeline-pure-function-refactor.md" ;
+    sb:originRef "main" .
+} ;
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added_triples)
+# =============================================================
+INSERT DATA {
+
+  # --- Provenance (source extraction activity) ---
+  narr:Tx_Demo1_PureFunctionRefactor a prov:Activity ;
+    rdfs:label "Demo 1 Pipeline Pure Function Refactor extraction" ;
+    prov:startedAtTime "2026-02-01T00:00:00Z"^^xsd:dateTime ;
+    prov:wasGeneratedBy narr:Tx_20260303T140509Z .
+
+  # --- Sample ---
+  narr:Sample_Demo1_PureFunctionRefactor a narr:Sample ;
+    dct:title "Demo 1 Pipeline: Pure Function Refactor and PR Comments" ;
+    narr:inputLength 4847 ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  # --- Narratives ---
+  narr:Narrative_PureFunctionArchitecture a narr:Narrative ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    narr:theme "Pure function discipline applied to workflow orchestration: LLM workflows are pure (input → output), Flows handle all side effects at the edges" ;
+    skos:broader narr:ArchitectureOverview ;
+    skos:note "Clojure-inspired architectural pattern applied to n8n. Separation of concerns between computation and side effects." ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:Narrative_SeparationOfConcerns a narr:Narrative ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    narr:theme "Separation of concerns as architectural virtue: LLM workflows must not commit files, send notifications, or perform I/O — those responsibilities belong exclusively to orchestrating Flows" ;
+    skos:broader narr:DesignTradeoffs ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  # --- Observations ---
+  narr:Obs_WorkflowTaxonomy a narr:Observation ;
+    skos:broader narr:SystemTopology ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:note "Six new workflows created across four architectural roles: Flows (orchestration with side effects at edges), LLM Pure Functions (no side effects), Comms (external communication), Entrypoints (webhook normalization)." ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  # --- Style Observations ---
+  narr:StyleObs_ClojureIdiolect a narr:StyleObservation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Signature Scarlet Dame idiolect: frames n8n workflow design through Clojure functional programming vocabulary. Establishes conceptual authority and architectural lineage." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_ShortPunchyCadence a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:Tagline ;
+    skos:note "Three-word declarative fragments. Aphoristic compression. Functions as a design mantra." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_NegativeParallelism a narr:StyleObservation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:RuleOfThree ;
+    skos:note "Triadic negative enumeration reinforces constraint boundary. Anaphoric 'no' creates emphatic rhythm." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_Anaphora a narr:StyleObservation ;
+    skos:broader narr:Anaphora ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:RhetoricalDevices ;
+    skos:note "Repeated 'no' at clause start creates anaphoric emphasis, reinforcing the prohibition on side effects in pure functions." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_DirectVoice a narr:StyleObservation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:PlainLanguage ;
+    skos:note "Colloquial resolution after technical enumeration. 'All of that' as a deliberate plain-language catch-all after precise technical list." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_BacktickCodeStyle a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:NamingConventions ;
+    skos:note "Consistent use of backtick code spans for workflow names, parameters, and node names throughout. Signals technical precision and inline documentation style." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_ZombieIdiolect a narr:StyleObservation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:StockPhrases ;
+    skos:note "'zombie' as a technical metaphor for a stale/undead environment variable. Vivid informal register within a technical context; characteristic of Scarlet's idiolect." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_ActiveVoice a narr:StyleObservation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:ToneAuthoritative ;
+    skos:note "Predominantly active voice throughout. Subjects act: 'Scarlet refactored', 'The refactor separates', 'Flows orchestrate'. Passive used only for bug descriptions." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_SentenceLengthVariation a narr:StyleObservation ;
+    skos:broader narr:SentenceLengthVariation ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:CadenceRhythm ;
+    skos:note "Pattern: long technical sentence establishing context, followed by short punchy declarative. Creates rhythm and emphasis." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_RegisterTechnical a narr:StyleObservation ;
+    skos:broader narr:RegisterFormality ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:JargonPolicy ;
+    skos:note "Predominantly technical engineering register (SPARQL, webhook, additionalParameters, base64) with deliberate informal asides ('zombie', 'all of that'). Signals expert-to-expert communication." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_BoldEmphasis a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:InformationArchitecture ;
+    skos:note "Bold used consistently for workflow role categories (Flows, LLM Pure Functions, Comms, Entrypoints) and bug type labels. Functions as inline heading/navigation aid." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  narr:StyleObs_KeyInsightCallout a narr:StyleObservation ;
+    skos:broader narr:RhetoricalQuestion ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    skos:related narr:FlowCoherence ;
+    skos:note "'Key Insight' as a named section heading elevates one finding above the enumerated bug list, signaling architectural significance beyond the immediate fix." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+  # --- Style Metrics ---
+  narr:StyleMetrics_Demo1 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_Demo1_PureFunctionRefactor ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+    narr:JargonDensity "0.18"^^xsd:decimal ;
+    skos:note "Estimated metrics: avg sentence length ~18 words (mix of short aphoristic and long technical sentences); active voice ratio ~82%; jargon density ~18% (SPARQL, webhook, base64, additionalParameters, executeWorkflow, etc.). Register: technical/engineering with deliberate informal asides. POV: third person narrative with first-person blockquote." ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+
+} ;
+
+# =============================================================
+# BLOCK 2 — UPDATE (updated_triples): narr:Actor_ScarletDame
+# Adds new skos:note and prov:wasGeneratedBy without removing
+# existing triples on this subject (additive update pattern).
+# =============================================================
+INSERT DATA {
+  narr:Actor_ScarletDame
+    skos:note "Architecture decisions, pure function principles, environment debugging. Refactored Demo 1 ingestion pipeline in February 2026." ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+} ;
+
+# =============================================================
+# BLOCK 3 — UPDATE (updated_triples): narr:Actor_Claude
+# =============================================================
+INSERT DATA {
+  narr:Actor_Claude
+    skos:note "Implementation, E2E testing, bug identification and fixes." ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+} ;
+
+# =============================================================
+# BLOCK 4 — UPDATE (updated_triples): narr:Claim_PureFunctionSettled
+# Replaces/augments skos:note and adds aboutNode + provenance.
+# Uses DELETE/INSERT WHERE to safely replace any prior skos:note
+# value on this subject while inserting the new predicates.
+# =============================================================
+DELETE {
+  narr:Claim_PureFunctionSettled skos:note ?oldNote .
+}
+INSERT {
+  narr:Claim_PureFunctionSettled
+    skos:note "LLM workflows load a skill, call the LLM, return structured output. No commits, no notifications, no file operations. The Flow that calls them handles all of that." ;
+    narr:aboutNode narr:Narrative_PureFunctionArchitecture ;
+    prov:wasGeneratedBy narr:Tx_Demo1_PureFunctionRefactor .
+}
+WHERE {
+  OPTIONAL { narr:Claim_PureFunctionSettled skos:note ?oldNote . }
+}

@@ -1,0 +1,47 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260331T200000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-31T20:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260331-self-hosted-inference" ;
+    narr:originRef "main" ;
+    dct:title "Self-Hosted Inference: Evaluation and Strategic Direction" ;
+    prov:generated
+      
+      
+      
+      
+      narr:Narrative_SelfHostingEnablesNewProducts,
+      narr:Claim_SMSAgentsNowViable .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260331T200000Z {
+
+    narr:Narrative_SelfHostingEnablesNewProducts
+
+
+      skos:broader narr:ExpansionPathway ;
+      skos:prefLabel "Self-Hosting Unlocks Cost-Prohibitive Product Ideas" ;
+      skos:note "Moving from per-token API costs to fixed server costs opens product ideas previously cost-prohibitive: SMS/WhatsApp interface to organizational memory, always-on agents holding full perspective in context, batch re-extraction when ontology evolves, eval at scale across full memory corpus. Scarlet: 'if payment for inference was server cost instead of API spend, that would not only save many hundreds of dollars a month (and many thousands post launch) but it would open up a ton of product ideas i haven't been doing because they're cost prohibitive (ie sms with inference behind it or agents backed by large perspectives where every response has the full perspective as context).'" ;
+      narr:theme "Fixed server costs vs. per-token API spend is not just a cost reduction — it unlocks an entirely different product surface area including SMS, always-on agents, and eval at scale" .
+
+    narr:Claim_SMSAgentsNowViable
+      a narr:Claim ;
+
+      skos:note "Self-hosted inference makes SMS/WhatsApp interface to organizational memory and always-on agents holding full perspective in context viable. These were previously cost-prohibitive under per-token API pricing. Fixed server costs change the economics fundamentally." ;
+      narr:aboutNode narr:Narrative_SelfHostingEnablesNewProducts ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_SelfHostingEnablesNewProducts .
+
+  }
+}

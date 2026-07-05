@@ -1,0 +1,29 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_PlainLanguage> {
+  <https://aswritten.ai/narrative#Digest_PlainLanguage> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#PlainLanguage> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers observations of Scarlet's plain-language style across founder-facing documents. The dominant thread is an accessibility standard stated as an [absolute imperative](narr:StyleObs_TamarackReview_PlainLanguage) on 2026-03-13: no jargon unless defined first. Two mechanisms recur. One is outright [jargon exclusion](narr:StyleObs_PlainLanguagePolicy) — no git, no MCP, no RDF — describing the pipeline in two sentences. The other is gloss-in-place: [inline parentheticals](narr:StyleObs_ParentheticalClarification) like '(that's scope)', the organic [branch-and-trunk analogy](narr:StyleObs_BranchTrunkAnalogy) for version control, and [plain explanation](narr:StyleObs_ExtractionPlainLanguage) of backend extraction. Voice traits reinforce it: [first-person, active, alternating](narr:StyleObs_9) long sentences with short verdicts ('Cents, not dollars.'), [triadic momentum and high-stakes declaration](narr:StyleObs_7), [colloquial catch-alls](narr:StyleObs_DirectVoice) ('All of that'), and a [quantified value prop](narr:StyleObs_RatioValueProp) using a ratio with no dollar anchor. Note the counter-current: the same observer flags deliberate retention of precise terms — 'navigates' vs 'queries', 'FOUNDATION' all-caps as semantic weight — so plainness coexists with chosen technical precision rather than erasing it.""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_9> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TamarackReview_PlainLanguage> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BranchTrunkAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DirectVoice> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ExtractionPlainLanguage> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ParentheticalClarification> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_PlainLanguagePolicy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RatioValueProp> ;
+    narr:keyPhrase [ narr:text "F&F document shouldn't use any jargon unless it defines it first and attempts to plain language regardless" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TamarackReview_PlainLanguage> ] ;
+    narr:keyPhrase [ narr:text "New hires operate at ~50% productivity for 3-6 months" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RatioValueProp> ] ;
+    narr:keyPhrase [ narr:text "This is my life's work." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:keyPhrase [ narr:text "no git, no MCP, no RDF, no GitHub Actions, no narrative architecture" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_PlainLanguagePolicy> ] ;
+    narr:keyPhrase [ narr:text "'navigates' vs 'queries' — deliberate verb choice to distinguish LLM associativity from formal query paradigm" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "Plain language as absolute standard (no jargon unless defined) sits against deliberate retention of precise/formal terms — 'navigates' vs 'queries', 'FOUNDATION' all-caps carrying semantic weight." ; narr:over <https://aswritten.ai/narrative#StyleObs_TamarackReview_PlainLanguage> ; narr:over <https://aswritten.ai/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "Two opposed mechanisms for the same goal: total jargon exclusion vs translate-in-place via parentheticals and analogy." ; narr:over <https://aswritten.ai/narrative#StyleObs_PlainLanguagePolicy> ; narr:over <https://aswritten.ai/narrative#StyleObs_ParentheticalClarification> ; narr:over <https://aswritten.ai/narrative#StyleObs_BranchTrunkAnalogy> ] ;
+    narr:variation [ narr:text "Most children are general voice/rhetoric observations; only a collaborator's review states plainness as a governing policy with a date — the rest are descriptive, not prescriptive." ; narr:over <https://aswritten.ai/narrative#StyleObs_TamarackReview_PlainLanguage> ; narr:over <https://aswritten.ai/narrative#StyleObs_9> ; narr:over <https://aswritten.ai/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "Quantification framed as a plain-language device — ratio with no dollar anchor, 'Cents, not dollars.' — rather than financial precision." ; narr:over <https://aswritten.ai/narrative#StyleObs_RatioValueProp> ; narr:over <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:writer "claude (subscription)" .
+}

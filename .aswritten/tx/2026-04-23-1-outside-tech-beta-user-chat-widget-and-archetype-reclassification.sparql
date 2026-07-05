@@ -1,0 +1,249 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260423T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-23T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath "inline-message-20260423-a beta user from outside tech-channel-strategy-archetype" ;
+    narr:originRef "main" ;
+    dct:title "a beta user from outside tech Channel-Strategy Feedback and Archetype Reclassification (Apr 23, 2026)" ;
+    prov:generated
+      
+      narr:Narrative_ChatWidgetSharePage,
+      narr:Claim_ChatWidgetEvaluatorContext,
+      narr:Claim_TypologyAxisCollision,
+      narr:Obs_OutsideTechBetaUserSMSSpamCodedQuote,
+      narr:Obs_OutsideTechBetaUserChatWidgetRequestQuote,
+      narr:Obs_OutsideTechBetaUserToolLanguageFeedback,
+      narr:Obs_OutsideTechBetaUserGitHubOpacityFeedback,
+      narr:Metrics_OutsideTechBetaUserChannelStrategy_20260423 .
+} ;
+
+# ── UPDATE 3: narr:Claim_SMSFormatHonesty ───────────────────────────────────
+# Memory explicitly states the SMS-removes-bot-frame claim is
+# "context-dependent, not universal" — a direct functional contradiction.
+DELETE {
+  GRAPH ?g {
+    narr:Claim_SMSFormatHonesty skos:note ?oldNote ;
+                                narr:hasConvictionLevel ?oldLevel .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260423T120000Z {
+    narr:Claim_SMSFormatHonesty
+      skos:note "CORRECTED (Apr 23, 2026): The SMS-feels-honest-not-bot framing holds when the sender is already trusted. It flips in evaluator contexts — SMS is MORE suspicious because spam has trained people to distrust unexpected texts. Scarlet's prior claim that SMS removes the 'bot' mental frame is context-dependent, not universal. a beta user from outside tech's insight: 'Text message, in certain contexts, is absolutely the right move. But in a lot of skeptical or lower-trust contexts, texting is so associated with spam now that requiring someone to text might actually be a real downside. People might not want to give their number.' The original claim (SMS format makes AI personalization feel honest rather than fake because it removes the 'bot' mental frame) applies only in high-trust, post-consent, consumer-viral contexts where the sender is already welcome." ;
+      narr:hasConvictionLevel narr:Conviction_Stake .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_SMSFormatHonesty skos:note ?oldNote ;
+                                narr:hasConvictionLevel ?oldLevel .
+  }
+} ;
+
+# ── INSERT: Sample + new entities ───────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260423T120000Z {
+
+    # ── Narrative: Chat widget on share page ────────────────────────────────
+    narr:Narrative_ChatWidgetSharePage
+
+
+      skos:broader narr:Interfaces ;
+      skos:prefLabel "Chat Widget on Share Page as Evaluator-Context Channel" ;
+      skos:note "a beta user from outside tech's proposal: 'Can you just give me a chat widget on a web form?' Scarlet's architectural sketch: Front already has a chat widget (integration exists). Inboxes may need manual creation (open question) but channels under an inbox should be automatable. One widget per share ID — provisioning a channel and widget at share-creation time means each share has its own conversation surface. Multiple widgets alive at once makes comparison across share IDs and branches natural. A managed aswritten-org inbox holds all conversations; conversations do not get assigned to anyone by default, including Scarlet. No default-assignment avoids the 'every new conversation lands on the founder' failure mode. Lower lift for the demo, lower lift for a beta user from outside tech and others in her category, potentially much more useful than SMS for evaluator contexts." ;
+      narr:theme "A chat widget provisioned per share ID is the right channel for evaluator, skeptic, first-touch, and demo contexts — no number, no verification, no opt-in form, no spam frame; the share page itself is the trust context" ;
+      narr:supports narr:Narrative_V0_SMS_DeepLink .
+
+    narr:Claim_ChatWidgetEvaluatorContext
+      a narr:Claim ;
+
+      skos:note "A chat widget on the share page is the right channel fit for evaluator, skeptic, first-touch, and demo contexts. No phone number required, no verification path, no opt-in form, no spam frame. The share page itself is the trust context, so the widget inherits it. The toll-free verification cost per beta user stops being load-bearing for demo strategy, but SMS stays alive in high-trust, post-consent, consumer-viral contexts where it actually works. This is a scoping of SMS, not a replacement. Whether the chat widget replaces or augments SMS for Demo 1 is a decision, not a drift — the Apr 13 the enterprise customer call used live SMS." ;
+      narr:aboutNode narr:Narrative_ChatWidgetSharePage ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      .
+
+    narr:Claim_TypologyAxisCollision
+      a narr:Claim ;
+
+      skos:note "The archetype typology mixed two orthogonal axes — AI-fluency (tinkerer vs consumer) and distribution-motion (packager vs solo-practitioner) — and classified a beta user from outside tech on fluency only. This is the underlying error that produced the C2 misclassification. The fluency-vs-distribution axis collision may misclassify others in the typology beyond a beta user from outside tech. Whether the underlying typology needs fixing is an open question." ;
+      narr:aboutNode narr:PersonasJTBD ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:challenges narr:Archetype_KnowledgeRichConsumer .
+
+    # ── Observations (grounded quotes) ──────────────────────────────────────
+
+    narr:Obs_OutsideTechBetaUserSMSSpamCodedQuote
+      a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+
+      skos:note "a beta user from outside tech's verbatim insight on SMS trust tax in low-trust contexts — the founding evidence for the channel scoping decision." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1050 ;
+          oa:end 1290
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Text message, in certain contexts, is absolutely the right move. But in a lot of skeptical or lower-trust contexts, texting is so associated with spam now that requiring someone to text might actually be a real downside." ;
+          oa:prefix "a beta user from outside tech's response, reconstructed from Scarlet's summary:\n\n> " ;
+          oa:suffix " People might not want to give their number."
+        ]
+      ] .
+
+    narr:Obs_OutsideTechBetaUserChatWidgetRequestQuote
+      a narr:Observation ;
+      skos:broader narr:Interfaces ;
+
+      skos:note "a beta user from outside tech's verbatim request for a chat widget — the direct trigger for the share-page widget architecture sketch." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2230
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Can you just give me a chat widget on a web form?" ;
+          oa:prefix "Verbatim from a beta user from outside tech (as relayed by Scarlet):\n\n> " ;
+          oa:suffix "\n\nScarlet's architectural response"
+        ]
+      ] .
+
+    narr:Obs_OutsideTechBetaUserToolLanguageFeedback
+      a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+
+      skos:note "a beta user from outside tech's March 4 prescription for clearer tool-language prompts after getting stuck post-connector-install. Scarlet named the pattern: 'Feel like this is actually one of the hardest parts about this thing. Someone's like, what do I say now?' a beta user from outside tech's fix: 'It's almost like once connected, blah, come back and compile. I feel like it's really like, visit this link, install it, come back and say done.' This is a specific prescription for step-by-step tool-language prompts at the post-installation moment. Surfaced from March 4 Bluebird onboarding session transcript (~59:59–01:05:03) — captured in transcript but not previously surfaced in a beta user from outside tech's beta-tester record." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6450 ;
+          oa:end 6750
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's almost like once connected, blah, come back and compile. I feel like it's really like, visit this link, install it, come back and say done." ;
+          oa:prefix "a beta user from outside tech's response prescribed the fix directly:\n\n> " ;
+          oa:suffix "\n\nThis is a specific prescription for clearer tool-language prompts."
+        ]
+      ] .
+
+    narr:Obs_OutsideTechBetaUserGitHubOpacityFeedback
+      a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+
+      skos:note "a beta user from outside tech's March 4 feedback on GitHub opacity (~01:01:10): committing, pulling, and backend terminology were completely foreign. The above-the-line abstraction work is motivated in part by exactly this cognitive cost. Surfaced from March 4 Bluebird onboarding session — captured in transcript but not previously surfaced in a beta user from outside tech's beta-tester record." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6900 ;
+          oa:end 7180
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Everything you said about committing and pulling and all of that is completely foreign to me." ;
+          oa:prefix "**GitHub opacity feedback [~01:01:10]:**\n\n> " ;
+          oa:suffix " And so, you know, because I don't understand how that works"
+        ]
+      ] .
+
+    # ── Style Observations ──────────────────────────────────────────────────
+
+    narr:StyleObs_OutsideTechBetaUserChannel_Antithesis
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      skos:note "Heavy antithesis structure throughout: SMS works / SMS flips; scoping not replacement; high-trust contexts / evaluator contexts; does not validate / does not invalidate. The document's rhetorical spine is built on paired oppositions that sharpen each correction." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3200 ;
+          oa:end 3480
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "SMS remains viable for high-trust, post-consent, consumer-viral contexts — the channel works where the sender is already welcome. A chat widget on the share page is the right fit for evaluator, skeptic, first-touch, and demo contexts" ;
+          oa:prefix "" ;
+          oa:suffix " — no number, no verification, no opt-in form, no spam frame."
+        ]
+      ] .
+
+    narr:StyleObs_OutsideTechBetaUserChannel_ThreeFactsSeparated
+      a narr:StyleObservation ;
+      skos:broader narr:Parallelism ;
+
+      skos:note "Explicit enumeration of three facts that 'the perspective has collapsed into one classification' — a rhetorical device used to force analytical separation of conflated concepts. Pattern recurs in the commercial-status correction section." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5100 ;
+          oa:end 5380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Three facts that the perspective has collapsed into one classification should be held separately" ;
+          oa:prefix "" ;
+          oa:suffix ":\n\nHer archetype by work motion is Knowledge Packager."
+        ]
+      ] .
+
+    narr:StyleObs_OutsideTechBetaUserChannel_LoadBearing
+      a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+
+      skos:note "Distinctive phrase 'load-bearing' used twice to signal that a contextual detail is structurally important to the argument, not incidental. 'The Twilio rejection context is load-bearing here, not incidental.' Idiolect marker for Scarlet's analytical register." ;
+      rdf:value true ;
+      skos:related narr:IdiolectPhrasing ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1650 ;
+          oa:end 1730
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The Twilio rejection context is load-bearing here, not incidental." ;
+          oa:prefix "" ;
+          oa:suffix " Seven numbers, rejected en masse"
+        ]
+      ] .
+
+    # ── Style Metrics ───────────────────────────────────────────────────────
+
+    narr:Metrics_OutsideTechBetaUserChannelStrategy_20260423
+      a narr:StyleMetrics ;
+
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic correction memo format. Mixed register: analytical prose in section headers and argument sections; verbatim a beta user from outside tech blockquotes in first person (reconstructed). Antithesis-heavy structure (SMS works / SMS flips; scoping not replacement; validates / invalidates). Active voice dominant. Jargon density moderate — product terms (Twilio, Front, MCP, share ID, opt-in form) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier. Idiolect marker: 'load-bearing' used as structural signal." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.09"^^xsd:decimal .
+  }
+}

@@ -1,0 +1,268 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260205T222250Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-05T22:22:50.667Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-05-founder-beta-user-discovery-call.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:generated narr:Sample_FounderBetaUser_DiscoveryCall,
+                   narr:Claim_ThreeLayerConvergence,
+                   narr:StyleObs_ThreeLayerQuote,
+                   narr:StyleObs_GodsMetaphor,
+                   narr:Claim_WorldviewPropagation,
+                   narr:Claim_OperationsICP,
+                   narr:StyleObs_OpsPersonaQuote,
+                   narr:Claim_AmbientAdoption,
+                   narr:StyleObs_AmbientQuote,
+                   narr:Obs_GitNativeReaction,
+                   narr:Obs_CascadeReaction,
+                   narr:Metrics_FounderBetaUserCall,
+                   narr:Rubric_Register_FounderBetaUser,
+                   narr:Rubric_Phrasing_FounderBetaUser,
+                   narr:Rubric_Cadence_FounderBetaUser,
+                   narr:Rubric_StrategicAlignment_FounderBetaUser,
+                   narr:Rubric_Tailoring_FounderBetaUser,
+                   narr:Rubric_Resonance_FounderBetaUser,
+                   narr:Rubric_Flow_FounderBetaUser,
+                   narr:Rubric_Novelty_FounderBetaUser,
+                   narr:Rubric_Accuracy_FounderBetaUser .
+}
+;
+
+# Extracted narrative entities
+INSERT DATA {
+  narr:Sample_FounderBetaUser_DiscoveryCall a narr:Sample ;
+    dct:title "a founder beta user — Discovery Call & Beta Commitment" ;
+    narr:inputLength 9847 ;
+    dct:created "2026-02-05"^^xsd:date ;
+    skos:note "Discovery call transcript: former Google engineer, founder pivoting from voice agents in staffing to embedded voice infrastructure; independent validation of three-layer model and worldview propagation thesis." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Claim_ThreeLayerConvergence a narr:Claim ;
+    narr:aboutNode narr:StrategyOverview ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    skos:prefLabel "Independent validation of three-layer problem decomposition" ;
+    skos:note "a founder beta user arrived independently at execution → tactical planning → organizational memory model, validating aswritten.ai's core positioning." ;
+    narr:supports narr:PositioningThesis ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:StyleObs_ThreeLayerQuote a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    skos:related narr:KeyPhrases ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_FounderBetaUser_DiscoveryCall ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1820 ;
+        oa:end 2100
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "There's the execution layer, there's sort of a tactical planning layer... And then there's the organizational memory side of things" ;
+        oa:prefix "a founder beta user arrived independently at the same problem decomposition: " ;
+        oa:suffix ", which is like all the context that you need to know"
+      ]
+    ] ;
+    skos:note "Clear three-part structure; domain-specific framing; validates product positioning." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:StyleObs_GodsMetaphor a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    skos:related narr:ResonanceUse ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_FounderBetaUser_DiscoveryCall ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2850 ;
+        oa:end 3050
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "It's almost like the gods of Olympus. If Zeus decides to strike you with lightning, one, there's nothing you can do about it." ;
+        oa:prefix "a founder beta user described Google's organizational whiplash with a striking metaphor: " ;
+        oa:suffix "Two, you can't reason about why Zeus wanted to strike you"
+      ]
+    ] ;
+    skos:note "Vivid metaphor for organizational opacity; validates worldview propagation thesis; memorable framing." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Claim_WorldviewPropagation a narr:Claim ;
+    narr:aboutNode narr:OrganizationalChangeManual ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    skos:prefLabel "Worldview propagation validation" ;
+    skos:note "Organizations need real-time strategic decision cascading vs. months-long trickle through management layers. Validated by Google example: projects hitting OKRs canceled due to decisions '6 months ago from someone 14 layers above you'." ;
+    narr:supports narr:ChangeCommunications ;
+    narr:evidencedBy narr:StyleObs_GodsMetaphor ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Claim_OperationsICP a narr:Claim ;
+    narr:aboutNode narr:Segmentation ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    skos:prefLabel "Operations persona as high-value ICP" ;
+    skos:note "Series A operations people have acute pain: fragmented context (Notion hodgepodge), high decision velocity, CEO chaos, already live in ChatGPT. Sits at intersection of customer knowledge and internal process." ;
+    narr:supports narr:PrimaryActors ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:StyleObs_OpsPersonaQuote a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    skos:related narr:PersonasJTBD ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_FounderBetaUser_DiscoveryCall ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5300 ;
+        oa:end 5480
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Look for operations people because they've got the most chaotic job right now... We're making 75 decisions a day." ;
+        oa:prefix "a founder beta user's strongest unprompted advice for go-to-market: " ;
+        oa:suffix "Our CEO's crazy and making other decisions behind my back."
+      ]
+    ] ;
+    skos:note "Concrete verb 'making 75 decisions'; quantifies pain; direct language." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Claim_AmbientAdoption a narr:Claim ;
+    narr:aboutNode narr:FrictionFailure ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    skos:prefLabel "Ambient adoption is critical" ;
+    skos:note "Tool must be ambient, not extra work. Real organizational knowledge lives in DMs, Zoom calls, Slack threads, CEO decisions—not in engineer docs. MCP-native integration validates this but messaging must extend beyond developer tooling." ;
+    narr:supports narr:IntegrationPoints ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:StyleObs_AmbientQuote a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    skos:related narr:WhatDoesItDo ;
+    oa:hasBody narr:ToneDirectPersonal ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_FounderBetaUser_DiscoveryCall ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6800 ;
+        oa:end 6950
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "You don't have to open a new tool. You're just using Claude Code... And in the middle of your current work, it's like, you should save that" ;
+        oa:prefix "Scarlet's response resonated: " ;
+        oa:suffix " as memory."
+      ]
+    ] ;
+    skos:note "Second-person direct address; active verbs; conversational tone; addresses objection." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Obs_GitNativeReaction a narr:Observation ;
+    skos:broader narr:OutcomesProof ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    skos:note "Git-native versioning resonated: 'the provenance of goals, the evolution of goals, is really key.' Validates technical architecture choice." ;
+    skos:related narr:DataModelLifecycle ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Obs_CascadeReaction a narr:Observation ;
+    skos:broader narr:OutcomesProof ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    skos:note "Knowledge graph propagation demo: slogan change cascading through graph. a founder beta user saw non-obvious downstream implication: 'It's less intuitive that you have to update job descriptions.'" ;
+    skos:related narr:Narratives ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Metrics_FounderBetaUserCall a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    narr:AverageSentenceLength 28 ;
+    skos:note "Mix of short declarative statements and longer analytical passages; high use of direct quotes; conversational register with technical precision." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Rubric_Register_FounderBetaUser a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    rdf:value 4.5 ;
+    skos:note "Professional but conversational; technical precision without jargon overload; appropriate for founder-to-founder context; direct quotes preserve speaker voice." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Rubric_Phrasing_FounderBetaUser a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    rdf:value 4.0 ;
+    skos:note "Strong use of domain-specific terms ('three-layer model', 'worldview propagation', 'ambient adoption'); memorable metaphors ('gods of Olympus'); clear key phrases ('rock star engineers', 'MCP-native')." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Rubric_Cadence_FounderBetaUser a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    rdf:value 3.5 ;
+    skos:note "Varied sentence length; some long analytical passages balanced by punchy quotes; section headers provide rhythm; could benefit from more short declarative statements in analysis sections." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Rubric_StrategicAlignment_FounderBetaUser a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    rdf:value 5.0 ;
+    skos:note "Directly validates core positioning (three-layer model); surfaces new ICP (operations persona); validates worldview propagation thesis; connects demo reactions to product strategy; identifies VC channel opportunity." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Rubric_Tailoring_FounderBetaUser a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    rdf:value 4.5 ;
+    skos:note "Tailored to technical founder audience; preserves a founder beta user's voice and framing; extracts strategic implications relevant to aswritten.ai positioning; operations persona insight shows audience awareness." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Rubric_Resonance_FounderBetaUser a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    rdf:value 4.5 ;
+    skos:note "'Gods of Olympus' metaphor is vivid and memorable; Google example provides concrete story; operations persona pain ('75 decisions a day') is specific and relatable; demo reactions show real-time validation." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Rubric_Flow_FounderBetaUser a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    rdf:value 4.0 ;
+    skos:note "Clear section structure (Who/Three-Layer/Gods/Operations/etc.); logical progression from context → validation → implications; transitions between sections are natural; some sections could be tightened." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Rubric_Novelty_FounderBetaUser a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    rdf:value 4.0 ;
+    skos:note "'Gods of Olympus' metaphor is fresh; 'ambient adoption' framing is distinctive; operations persona angle is new; avoids generic startup/SaaS clichés; some standard discovery call structure." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+
+  narr:Rubric_Accuracy_FounderBetaUser a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_FounderBetaUser_DiscoveryCall ;
+    rdf:value 4.5 ;
+    skos:note "Specific revenue figure ([amount]); precise date (Feb 5, 2026); direct quotes with timestamps; named entities (Press Warner Ventures, Google, LiveKit, Sierra); clear attribution of claims to a founder beta user; pending action items noted." ;
+    prov:wasGeneratedBy narr:Tx_20260205T222250Z .
+}

@@ -1,0 +1,189 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+PREFIX storytwin: <https://aswritten.ai/storytwin#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+
+INSERT DATA {
+
+  narr:Tx_20260226T175929Z a prov:Activity ;
+    rdfs:label "Extraction transaction: Demo 1 Pipeline Architecture" ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-26T17:59:29.542Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-26-demo1-pipeline-architecture.md" ;
+    sb:originRef "main" ;
+    storytwin:model "anthropic/claude-sonnet-4.6" .
+
+} ;
+
+# =============================================================
+# INSERT DATA — added_triples
+# =============================================================
+
+INSERT DATA {
+
+  # --- Provenance (extraction-time activity node) ---
+
+  narr:Tx_Demo1Pipeline a prov:Activity ;
+    rdfs:label "Extraction transaction: Demo 1 Pipeline Architecture" ;
+    prov:startedAtTime "2025-07-14T00:00:00Z"^^xsd:dateTime ;
+    prov:wasGeneratedBy narr:Tx_20260226T175929Z .
+
+  # --- Sample ---
+
+  narr:Sample_Demo1Pipeline a narr:Sample ;
+    dct:title "Demo 1 Pipeline Architecture: Principles and Process" ;
+    narr:inputLength 3821 ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  # --- Narratives ---
+
+  narr:Narrative_CoreProductLoop a narr:Narrative ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    narr:theme "Memory-to-worldview-shift pipeline as the core product loop" ;
+    skos:broader narr:NarrativeDrivenRoadmap ;
+    skos:note "The pipeline moves from human knowledge saving through LLM extraction to story diff visibility — the telltale mechanism." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:Narrative_PureFunctionDesign a narr:Narrative ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    narr:theme "Pure function architecture separates orchestration from computation" ;
+    skos:broader narr:ArchitectureOverview ;
+    skos:note "Borrowed from Clojure: orchestrators own paths and side effects; LLM workflows return structured data only." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:Narrative_NoSecretsOnboarding a narr:Narrative ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    narr:theme "Client repos require no secrets for onboarding" ;
+    skos:broader narr:StrategyOverview ;
+    skos:note "GitHub tokens generated server-side via GitHub App installation tokens; OPENROUTER_API_KEY is optional BYOK." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  # --- Claims ---
+
+  narr:Claim_PureFunctionSettled a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_PureFunctionDesign ;
+    narr:supports narr:ArchitectureOverview ;
+    skos:note "Settled design decision: Scarlet articulated it 3+ times, documented in backlog doc-006. Orchestrators own paths and side effects; pure functions return structured data." ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:Claim_NoSecretsRequired a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Narrative_NoSecretsOnboarding ;
+    narr:supports narr:StrategyOverview ;
+    skos:note "Client repo should not need any secrets to use collective memory. OPENROUTER_API_KEY is optional BYOK exception." ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  # --- Observations ---
+
+  narr:Obs_PipelineSteps a narr:Observation ;
+    skos:broader narr:CoreWorkflows ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:note "Six-step pipeline: memory commit → GitHub Action → SPARQL transaction → PR with comment → story draft regeneration → PR diff as telltale." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:Obs_FolderTaxonomy a narr:Observation ;
+    skos:broader narr:SystemTopology ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:note "Folder taxonomy maps to architectural roles: Entrypoints, Flows, LLM workflows, Repo, Comms." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  # --- Style Observations ---
+
+  narr:StyleObs_BoldKeyPrinciple a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:related narr:NarrativeAnchor ;
+    rdf:value true ;
+    skos:note "Bold used to foreground architectural principles as standalone declarative statements." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:StyleObs_EmDashRhetoric a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Em dash used as a rhetorical pivot to introduce the payoff clause — a recurring cadence pattern." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:StyleObs_BrandNameCode a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Backtick inline code used consistently for product/system proper nouns: workflow names, file paths, branch names, CLI commands." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:StyleObs_BulletedConsequences a narr:StyleObservation ;
+    skos:broader narr:GrammarSyntax ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:related narr:WhatDoesItDo ;
+    rdf:value true ;
+    skos:note "Consequences of design decisions rendered as tight bullet lists with parallel structure, reinforcing logical inevitability." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:StyleObs_DirectImperative a narr:StyleObservation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:related narr:EditorialRules ;
+    rdf:value true ;
+    skos:note "Imperative mood used for rules and policies without hedging — authoritative, no passive voice." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:StyleObs_SettledDecisionMarker a narr:StyleObservation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:related narr:StockPhrases ;
+    rdf:value true ;
+    skos:note "Phrase 'settled design decision' used as a conviction marker to signal non-negotiable architectural choices." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:StyleObs_TelltaleMetaphor a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "'Telltale' used as a product metaphor — a nautical/mechanical term for a visible indicator of system state, applied to PR diffs showing worldview shift." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:StyleObs_ScaffoldingMetaphor a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:related narr:NarrativeAnchor ;
+    rdf:value true ;
+    skos:note "'Architectural scaffolding waiting for real data' frames incomplete infrastructure as structurally sound but unfurnished — minimizes alarm while acknowledging gap." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  narr:StyleObs_BYOKAcronym a narr:StyleObservation ;
+    skos:broader narr:AcronymPluralization ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "BYOK (Bring Your Own Key) introduced with parenthetical expansion — industry-standard acronym used without assuming reader familiarity." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+  # --- Style Metrics ---
+
+  narr:Metrics_Demo1Pipeline a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_Demo1Pipeline ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio "0.88"^^xsd:decimal ;
+    narr:JargonDensity "0.12"^^xsd:decimal ;
+    skos:note "High active voice ratio; technical jargon (SPARQL, n8n, BYOK, SHA) is domain-appropriate and consistently expanded on first use. Sentence length varies: short punchy imperatives alternate with longer explanatory sentences." ;
+    prov:wasGeneratedBy narr:Tx_Demo1Pipeline .
+
+} 

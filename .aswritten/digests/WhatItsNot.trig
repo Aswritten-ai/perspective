@@ -1,0 +1,28 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_WhatItsNot> {
+  <https://aswritten.ai/narrative#Digest_WhatItsNot> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#WhatItsNot> ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub collects the positioning negatives — what aswritten is *not*. The load-bearing boundary is [search vs. aswritten](narr:Narrative_SearchVsAswritten): an AI can already web-search foreign policy, so the product \"doesn't replace search — it replaces the expert in the room\" (witnessed 2026-03-19), the difference being provenance, expert backing, and curated worldview. A second boundary handles the [ChatGPT-upload objection](narr:Obs_PlainLanguageDifferentiator) with a retained plain-language differentiator. A third, the [Apple/opinionated-workflow framing](narr:Obs_CoreThesisQuote2) (2026-03-26), defines it as a workflow with a conviction, *not a tool that does everything*. Underneath sits an explicit [retirement of the zero-context framing](narr:Obs_WhatItsNot_ZeroContext) — a road no longer taken. Three `related` style children — [the X-not-Y antithesis device](narr:StyleObs_NotPattern), [hybrid register](narr:StyleObs_8), and [first-person life's-work voice](narr:StyleObs_9) — describe *how* these boundaries get rhetorically sharpened rather than what they assert. The region narrates definition-by-exclusion across distinct competitor frames; it does not converge on a single one.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SearchVsAswritten> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CoreThesisQuote2> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_PlainLanguageDifferentiator> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_WhatItsNot_ZeroContext> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_8> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_9> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NotPattern> ;
+    narr:keyPhrase [ narr:text "The product doesn't replace search — it replaces the expert in the room." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SearchVsAswritten> ] ;
+    narr:keyPhrase [ narr:text "aswritten replaces the expert in the room, not search" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SearchVsAswritten> ] ;
+    narr:keyPhrase [ narr:text "Apple comparison: opinionated workflow, not a tool that does everything" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CoreThesisQuote2> ] ;
+    narr:keyPhrase [ narr:text "how is this different from uploading docs to ChatGPT?" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_PlainLanguageDifferentiator> ] ;
+    narr:keyPhrase [ narr:text "Refract is NOT content retrieval... Refract is CHANGE DETECTION" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_NotPattern> ] ;
+    narr:keyPhrase [ narr:text "This is my life's work." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:variation [ narr:text "The negatives target three different competitors, not one: random web search, ChatGPT doc-upload, and do-everything tools — each a distinct boundary, easy to conflate into a single 'not X'." ; narr:over <https://aswritten.ai/narrative#Narrative_SearchVsAswritten> ; narr:over <https://aswritten.ai/narrative#Obs_PlainLanguageDifferentiator> ; narr:over <https://aswritten.ai/narrative#Obs_CoreThesisQuote2> ] ;
+    narr:variation [ narr:text "A superseded framing lives here: zero-context positioning was explicitly retired — someone reaching for it would be reaching for an abandoned road." ; narr:over <https://aswritten.ai/narrative#Obs_WhatItsNot_ZeroContext> ] ;
+    narr:variation [ narr:text "Three children are `related` style-observations about the 'X, not Y' rhetorical device itself, not substantive positioning claims — conviction-signaling form vs. content." ; narr:over <https://aswritten.ai/narrative#StyleObs_NotPattern> ; narr:over <https://aswritten.ai/narrative#StyleObs_8> ; narr:over <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:variation [ narr:text "The NOT-pattern reframes constraints as features by exclusion — a high-conviction device that can overstate scope boundaries as settled fact rather than positioning choice." ; narr:over <https://aswritten.ai/narrative#StyleObs_NotPattern> ] ;
+    narr:writer "claude (subscription)" .
+}

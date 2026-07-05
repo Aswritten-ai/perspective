@@ -1,0 +1,19 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_OrgWorldview> {
+  <https://aswritten.ai/narrative#Digest_Narrative_OrgWorldview> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_OrgWorldview> ;
+    narr:childCount "3"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the org's account of how aswritten builds its understanding of a client. Two foundation-level children describe the mechanism: an [extraction methodology](narr:Claim_ExtractionMethodology) that interviews you to surface what sits *underneath* the text, and a [worldview-building practice](narr:Claim_WorldviewBuilding) that works with the org to assemble a comprehensive picture — sourced to a competitive-analysis session dated Feb 5, 2026. Both frame the work as upstream and foundational rather than surface editing. A third child, [direction-not-context](narr:Claim_DirectionNotContext), carries no content here but names a distinct stance worth expanding: it reads as a corrective emphasis — the product supplies *direction*, not merely *context* — which cuts against a purely extractive/understanding framing of the other two. Read together the children narrate a methodology (interview → extract → build worldview) while leaving open whether the deliverable is understanding or steering.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DirectionNotContext> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ExtractionMethodology> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_WorldviewBuilding> ;
+    narr:keyPhrase [ narr:text "Interviews you to understand what's underneath the text. Foundation-level, extraction methodology." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ExtractionMethodology> ] ;
+    narr:keyPhrase [ narr:text "comprehensive worldview" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_WorldviewBuilding> ] ;
+    narr:keyPhrase [ narr:text "Foundation-level from competitive analysis session (Feb 5, 2026)." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_WorldviewBuilding> ] ;
+    narr:variation [ narr:text "Direction vs. context: one child frames the output as direction, not just contextual understanding — pushing against the extraction/worldview 'understanding' emphasis of the other two." ; narr:over <https://aswritten.ai/narrative#Claim_DirectionNotContext> ; narr:over <https://aswritten.ai/narrative#Claim_ExtractionMethodology> ; narr:over <https://aswritten.ai/narrative#Claim_WorldviewBuilding> ] ;
+    narr:variation [ narr:text "The direction-not-context child has no content in this hub — its stance is named but not elaborated, so its tension with the methodology framing is only expandable, not stated." ; narr:over <https://aswritten.ai/narrative#Claim_DirectionNotContext> ] ;
+    narr:writer "claude (subscription)" .
+}

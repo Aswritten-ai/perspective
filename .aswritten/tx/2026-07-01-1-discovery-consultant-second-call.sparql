@@ -1,0 +1,351 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260630T150000Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-30T15:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - [email]\n---\n\n# Second Call with a consultant who ran enterprise discovery engagements for fifteen years" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_DiscoveryConsultant_20260630,
+      narr:Narrative_DiscoveryToolGTMWedge,
+      narr:Narrative_ChineseWhispersProvenance,
+      narr:Narrative_NarrativeStrategyReport,
+      narr:Narrative_ExpertNetworkTranscriptMarket,
+      narr:Narrative_AntiConwayClusteringVision,
+      narr:Narrative_GeneralVsSellableTension,
+      narr:Claim_DiscoveryToolBatteringRam,
+      narr:Claim_ThirdBridgeMarketSegment,
+      narr:Claim_DiscoveryConsultantClipWingsRaven,
+      narr:Claim_DiscoveryConsultantHATEOASParallel,
+      narr:Claim_NarrativeStrategyReportDeliverable,
+      narr:Obs_DiscoveryConsultantDiscoveryToolQuote,
+      narr:Obs_DiscoveryConsultantChineseWhispersQuote,
+      narr:Obs_DiscoveryConsultantHATEOASQuote,
+      narr:Obs_DiscoveryConsultantClipWingsQuote,
+      narr:Obs_ScarletNavigationScalingQuote,
+      narr:Obs_DiscoveryConsultantBobAnnaCharlieQuote,
+      narr:StyleObs_DiscoveryConsultantCallRegister,
+      narr:StyleObs_DiscoveryConsultantCallMetaphor,
+      narr:StyleObs_DiscoveryConsultantCallCadence,
+      narr:StyleMetrics_DiscoveryConsultant_20260630 .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260630T150000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────────────
+    narr:Sample_DiscoveryConsultant_20260630
+      a narr:Sample ;
+      dct:title "Second Call with a consultant who ran enterprise discovery engagements for fifteen years — Live Demo, the Discovery-Tool Wedge, and a Warming Relationship" ;
+      dct:created "2026-06-30"^^xsd:date ;
+      dct:description "Second call (first was Jun 4). a consultant who ran enterprise discovery engagements for fifteen years is co-founder building an adjacent RDF org-knowledge system (JUXT). Scarlet ran a live demo. a consultant who ran enterprise discovery engagements for fifteen years named the clearest sellable use case: aswritten as a consulting discovery tool. Covers relationship framing, technical convergence on navigation vs. query, Chinese Whispers provenance thesis, GTM discovery-tool wedge, expert-network market segment, anti-Conway clustering vision, general vs. sellable tension, adoption friction, and meta-loop demo problem." ;
+      narr:inputLength 9847 .
+
+    # ── NARRATIVES ──────────────────────────────────────────────────────────
+    narr:Narrative_DiscoveryToolGTMWedge
+
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:FocusSequencing ;
+      skos:prefLabel "Discovery Tool as GTM Wedge: Consulting Discovery Powered by aswritten" ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years (15 years at JUXT) named a bounded, sellable use case: aswritten as the infrastructure for consulting discovery engagements. The model: go into an org with a problem-child system, interview every stakeholder, produce a report where every claim traces to a specific person's statement. The economics: a discovery is a 'battering ram' — a loss-leader ([amount]-20K) whose real value is getting the consultancy in the door, after which 'you become a super valuable consultant because you know all the problems.' aswritten's provenance model is the differentiator: 'you'd not just get the transcript, and you wouldn't be getting oh, Claude thinks you should do this — which would be terrible, because why does Claude think that? You want: well, Bob, the previous senior developer, said the reason this goes down every night is it garbage collects and runs out of memory.' This is the clearest sellable use case anyone has offered Scarlet." ;
+      narr:theme "aswritten as the infrastructure for consulting discovery engagements — provenance-backed reports where every claim traces to a named stakeholder" ;
+      narr:supports narr:Narrative_EnterpriseShapePrimaryFocus .
+
+    narr:Narrative_ChineseWhispersProvenance
+
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Chinese Whispers: What aswritten Fights" ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's framing of the core problem aswritten solves, which Scarlet affirmed as 'spot on': 'I'd call it Chinese Whispers... even if every actor is trying honestly to retain the fidelity of the message, it is surprising how bad humans are... how the message gets distorted.' Scarlet's response: 'we're abstracting concrete statements into directional nodes — directional vectors that guide LLM thinking... narrative... paralinguistic, how it was said... the emotional content... conviction. And we have full provenance down to the source memory for every node.' The Chinese Whispers frame is a strong, accessible articulation of the provenance thesis for non-technical audiences." ;
+      narr:theme "aswritten fights Chinese Whispers — the inevitable distortion of meaning as it passes through human intermediaries — by preserving full provenance from source statement to derived insight" .
+
+    narr:Narrative_NarrativeStrategyReport
+
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Narrative-Strategy Report: Productized Consulting Engagement" ;
+      skos:note "Scarlet's productized extension of a consultant who ran enterprise discovery engagements for fifteen years's discovery-tool framing, mapped onto her pre-aswritten consulting (business + 'narrative strategy' — crafting the directional-vector statements a company works from). Proposed deliverable: 'I'll take the last four to six months of your conversations, sign an NDA, and write this beautiful report about not only how your ideas have been changing over that time, but how they're shared across different teams, where there's dissenting opinion... and where you need to go to converge on the things you're actually trying to do.' A 2-4 week, NDA'd, fixed-deliverable engagement that rides alongside a pilot. The most concrete initial-services offering Scarlet has articulated, and a direct answer to 'what do I hand them in two-to-four weeks.'" ;
+      narr:theme "A 2-4 week NDA'd narrative-strategy report — showing how ideas have changed over time, where they're shared across teams, and where dissenting opinion lives — is the most concrete initial consulting deliverable" ;
+      narr:supports narr:Narrative_ConsultingIsMeUsingProduct .
+
+    narr:Narrative_ExpertNetworkTranscriptMarket
+
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:Segmentation ;
+      skos:prefLabel "Expert Networks and Transcript-Rich Research Firms as Market Segment" ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years raised the market of transcript-based research firms — Third Bridge, Gartner, Forrester — that hold 'millions of transcripts' and sell subscription access. 'These are pretty substantial — [amount] a year... multiple offices around the world.' His framing: 'you become one of these companies, or you sell into one,' and 'anywhere there are already existing transcripts' is a candidate market. He also flagged compliance/audit as transcript-rich: SOC 2 / QSA audits, PwC-style financial audits, UK R&D tax-credit interviews (XTDB qualified as novel), and patent-attorney interviews. a consultant who ran enterprise discovery engagements for fifteen years offered a warm intro to a collaborator at a collaborator a collaborator re: Third Bridge relationship." ;
+      narr:theme "Transcript-rich research firms (Third Bridge, Gartner, Forrester) and compliance/audit processes are candidate markets — anywhere existing transcripts accumulate is a candidate for aswritten" ;
+      narr:supports narr:Narrative_TranscriptBootstrappingUnderplayed .
+
+    narr:Narrative_AntiConwayClusteringVision
+
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:MarketContext ;
+      skos:prefLabel "Anti-Conway Clustering: Finding Duplication of Work Across Large Orgs" ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's recurring obsession: finding duplication of work across large orgs (investment banks with many people solving the same problem). He tied it to a rejection of Conway's Law: 'the point of information technology is to provide the tools so that we don't default to Conway's Law... this allows you to have multidimensional organizations [rather than] physically located teams.' He contrasted aswritten with Obsidian/Roam — 'those are around people getting their own personal thoughts together... your tool is all around the shared conversations that people have.' Organizational and collaborative, not personal knowledge management." ;
+      narr:theme "aswritten enables anti-Conway multidimensional organizations by surfacing duplication of work across teams — organizational and collaborative, not personal knowledge management" .
+
+    narr:Narrative_GeneralVsSellableTension
+
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:StrategyOverview ;
+      skos:prefLabel "General vs. Sellable: The Tricky Rope to Walk" ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years: 'what you do is so general, it's hard for me to wrap my head around it... you've got to package it in different wrapping paper for different industries.' And: 'as an engineer you always want to... not restrict your product too early. You don't want to clip the wings of the raven — it won't fly if you do that.' Scarlet: 'it's really hard to sell if you don't have a specific focus.' Both agreed it's 'a tricky rope to walk, and not many do.' This is the same abstract-vs-focus knot the perspective already carries — the discovery-tool wedge is attractive precisely because it offers a focus without amputating the general capability." ;
+      narr:theme "The general capability is the moat; the sellable focus is the wedge — the discovery-tool framing offers focus without clipping the wings of the raven" ;
+      narr:supports narr:Narrative_EnterpriseShapePrimaryFocus .
+
+    narr:Claim_DiscoveryToolBatteringRam
+      a narr:Claim ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's intel on discovery economics: a discovery is a 'battering ram' — a loss-leader, [amount]-20K, whose real value is getting the consultancy in the door, after which 'you become a super valuable consultant because you know all the problems.' This is the economic model that makes the discovery-tool wedge attractive: the discovery pays for itself in relationship value, not in direct revenue." ;
+      narr:aboutNode narr:Narrative_DiscoveryToolGTMWedge ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_SalesAsDelivery .
+
+    narr:Claim_ThirdBridgeMarketSegment
+      a narr:Claim ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's brother uses Third Bridge-style reports for equity research. a consultant who ran enterprise discovery engagements for fifteen years's framing: 'you become one of these companies, or you sell into one.' Third Bridge and similar firms hold millions of transcripts and sell subscription access at ~[amount]/year revenue scale. This is a candidate market for aswritten — either as a product sold to these firms or as a competitor in the same space." ;
+      narr:aboutNode narr:Narrative_ExpertNetworkTranscriptMarket ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_ExpertNetworkTranscriptMarket .
+
+    narr:Claim_DiscoveryConsultantClipWingsRaven
+      a narr:Claim ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's articulation of the general-vs-sellable tension: 'as an engineer you always want to... not restrict your product too early. You don't want to clip the wings of the raven — it won't fly if you do that.' This is the strongest articulation of the risk of over-focusing that the perspective has received from an external peer. The discovery-tool wedge is the proposed resolution: focus without restriction." ;
+      narr:aboutNode narr:Narrative_GeneralVsSellableTension ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_GeneralVsSellableTension .
+
+    narr:Claim_DiscoveryConsultantHATEOASParallel
+      a narr:Claim ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years independently arrived at the same navigation-over-query instinct as aswritten, framed through link relations / HATEOAS / RFC 8288: 'the primary way of navigating any information base... is through discovery and navigation, going link by link... It's like surfing the web in the 90s. I'm going to find something out, I click on a blue link, it turns purple... traversing a graph rather than asking big SPARQL queries of it.' He noted the layer difference: 'every traversal in your world is a very small operation; in my world it's actually a network call' — but with HEAD requests returning link relations, 'with 50 network calls you're going to get quite a lot.' Same instinct — traverse, don't big-query — at two layers." ;
+      narr:aboutNode narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_NavigationReplacesEmbeddedSnapshot .
+
+    narr:Claim_NarrativeStrategyReportDeliverable
+      a narr:Claim ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:note "The narrative-strategy report is the most concrete initial-services offering Scarlet has articulated: a 2-4 week, NDA'd, fixed-deliverable engagement that rides alongside a pilot. It directly answers 'what do I hand them in two-to-four weeks.' The deliverable shows how ideas have changed over time, how they're shared across teams, where dissenting opinion lives, and where convergence is needed. This is Scarlet's pre-aswritten consulting practice (business + narrative strategy) productized through aswritten." ;
+      narr:aboutNode narr:Narrative_NarrativeStrategyReport ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ConsultingIsMeUsingProduct .
+
+    # ── OBSERVATIONS (grounded) ──────────────────────────────────────────────
+    narr:Obs_DiscoveryConsultantDiscoveryToolQuote
+      a narr:Observation ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's verbatim articulation of the discovery-tool use case — the founding evidence for Narrative_DiscoveryToolGTMWedge." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultant_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4820 ;
+          oa:end 5100
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you'd not just get the transcript, and you wouldn't be getting \"oh, Claude thinks you should do this\" — which would be terrible, because why does Claude think that?" ;
+          oa:prefix "Why aswritten fits — evidence-backed provenance vs. lossy summary: " ;
+          oa:suffix " ... You want: well, Bob, the previous senior developer, said the reason this goes down every night"
+        ]
+      ] .
+
+    narr:Obs_DiscoveryConsultantChineseWhispersQuote
+      a narr:Observation ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's verbatim Chinese Whispers framing — the founding evidence for Narrative_ChineseWhispersProvenance." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultant_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3820 ;
+          oa:end 4050
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'd call it Chinese Whispers... even if every actor is trying honestly to retain the fidelity of the message, it is surprising how bad humans are... how the message gets [distorted]." ;
+          oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years's framing of the core problem, which Scarlet affirmed as 'spot on': " ;
+          oa:suffix " Scarlet: 'we're abstracting concrete statements into directional nodes'"
+        ]
+      ] .
+
+    narr:Obs_DiscoveryConsultantHATEOASQuote
+      a narr:Observation ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:TechnicalExplainers ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's verbatim HATEOAS/navigation framing — the founding evidence for Claim_DiscoveryConsultantHATEOASParallel." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultant_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3200 ;
+          oa:end 3500
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the primary way of navigating any information base... is through discovery and navigation, going link by link... It's like surfing the web in the 90s." ;
+          oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years's parallel from his own work — link relations / HATEOAS / RFC 8288: " ;
+          oa:suffix " I'm going to find something out, I click on a blue link, it turns purple"
+        ]
+      ] .
+
+    narr:Obs_DiscoveryConsultantClipWingsQuote
+      a narr:Observation ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:StrategyOverview ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's verbatim 'clip the wings of the raven' articulation — the founding evidence for Claim_DiscoveryConsultantClipWingsRaven." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultant_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6820 ;
+          oa:end 7000
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you don't want to clip the wings of the raven — it won't fly if you do that." ;
+          oa:prefix "as an engineer you always want to... not restrict your product too early. " ;
+          oa:suffix " Scarlet: 'it's really hard to sell if you don't have a specific focus.'"
+        ]
+      ] .
+
+    narr:Obs_ScarletNavigationScalingQuote
+      a narr:Observation ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:TechnicalExplainers ;
+      skos:note "Scarlet's verbatim articulation of the scaling reason for navigation over full-graph-dump — the founding evidence for the attention-dilution problem at scale." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultant_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2900 ;
+          oa:end 3100
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "as graphs get into the 400,000–500,000 token range... you start to get attention dilution where LLMs just stop looking." ;
+          oa:prefix "She noted the scaling reason she moved off full-graph-dump: " ;
+          oa:suffix " The goal is 'an O(1) query — or not query, but navigation'"
+        ]
+      ] .
+
+    narr:Obs_DiscoveryConsultantBobAnnaCharlieQuote
+      a narr:Observation ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's verbatim articulation of the provenance value in discovery reports — Bob, Anna, Charlie as named stakeholders whose perspectives are preserved." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultant_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5100 ;
+          oa:end 5350
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "aswritten would keep what Bob thinks and what Anna thinks and what Charlie thinks in the provenance. They're different perspectives. I think there is value in marketing this as a discovery tool." ;
+          oa:prefix "...said the reason this goes down every night is it garbage collects and runs out of memory... " ;
+          oa:suffix " The economics (his intel): a discovery is a 'battering ram'"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────────────
+    narr:StyleObs_DiscoveryConsultantCallRegister
+      a narr:StyleObservation ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:SpeakerIdiolects ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's idiolect: technical-philosophical, draws on RFC/IETF vocabulary (HATEOAS, RFC 8288, HEAD requests), uses historical computing metaphors ('surfing the web in the 90s', 'blue link turns purple'), and frames product problems through engineering architecture. Distinct from Scarlet's founder-strategic register." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultant_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3200 ;
+          oa:end 3600
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "link relations / HATEOAS / RFC 8288" ;
+          oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years's parallel from his own work — " ;
+          oa:suffix ": 'the primary way of navigating any information base'"
+        ]
+      ] .
+
+    narr:StyleObs_DiscoveryConsultantCallMetaphor
+      a narr:StyleObservation ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:Metaphor ;
+      skos:note "Two strong metaphors in this call: (1) 'Chinese Whispers' for provenance distortion — accessible, culturally resonant, immediately understood; (2) 'clip the wings of the raven' for over-focusing risk — poetic, memorable, from a consultant who ran enterprise discovery engagements for fifteen years's engineering-philosophy register. Both are quotable and pitch-ready." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultant_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6820 ;
+          oa:end 6900
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "clip the wings of the raven" ;
+          oa:prefix "You don't want to " ;
+          oa:suffix " — it won't fly if you do that."
+        ]
+      ] .
+
+    narr:StyleObs_DiscoveryConsultantCallCadence
+      a narr:StyleObservation ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:SentenceLengthVariation ;
+      skos:note "The memory alternates between long analytical passages (a consultant who ran enterprise discovery engagements for fifteen years's HATEOAS explanation, Scarlet's demo walkthrough) and short punchy declaratives at conviction peaks ('This is the most valuable thing the call produced.', 'Same instinct — traverse, don't big-query — at two layers.'). Active voice dominant throughout. Jargon density moderate-high (RDF, HATEOAS, SPARQL, MCP, XTDB, SOC 2, QSA) but always contextualised." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultant_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3480 ;
+          oa:end 3560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Same instinct — traverse, don't big-query — at two layers." ;
+          oa:prefix "with 50 network calls you're going to get quite a lot.' " ;
+          oa:suffix " ## Chinese Whispers: what aswritten fights"
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────────────────
+    narr:StyleMetrics_DiscoveryConsultant_20260630
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_DiscoveryConsultant_20260630 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Call notes format with heavy embedded verbatim quotes from two speakers. a consultant who ran enterprise discovery engagements for fifteen years's quoted speech is expansive and philosophical (~30 words avg per sentence); Scarlet's is more analytical and declarative (~20 words avg). Active voice dominant in editorial prose. Jargon density moderate-high — technical terms (RDF, HATEOAS, RFC 8288, SPARQL, MCP, XTDB, SOC 2, QSA) used without definition, implying internal audience. Antithesis-heavy structure (general vs. sellable, traverse vs. query, transcript vs. provenance, customer vs. competitor). Short punchy declaratives at conviction peaks. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.13"^^xsd:decimal .
+
+  }
+}

@@ -1,0 +1,57 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__KeyPhrases> {
+  <https://aswritten.ai/narrative#Digest_ns__KeyPhrases> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#KeyPhrases> ;
+    narr:childCount "34"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub collects the canonical vocabulary of the pitch for [collective memory](narr:StyleObs_keyphrase_1) — the anchor term, repeated 20+ times and explicitly distinguished from individual AI memory. The product positioning clusters around [intellectual property as code](narr:Observation_IPAsCode) / [IP-as-code](narr:StyleObs_IPAsCode) (15+ uses), [narrative source of truth](narr:StyleObs_StockPhrase_1), [narrative architecture](narr:StyleObs_KeyPhrase_NarrArch), and git-parallel coinages like [witness repository](narr:StyleObs_7). The problem framing is vivid: [state secrets to AI](narr:Observation_StateSecrets), the [AI-context rich vs poor](narr:KeyPhrase_AIContextRich) divide, the [strategy-execution disconnect](narr:KeyPhrase_StrategyExecutionGap) \"[amount] mistake,\" and the flat [\"you can't\"](narr:KeyPhrase_YouCant) impossibility. Movement language sets [single-player vs multiplayer](narr:Observation_MultiplayerShift) and [intentional memory](narr:Observation_IntentionalMemory) against autosummarization. Metaphors run [steering wheel / backdoor / fault lines](narr:StyleObs_Metaphor_Steering), [steering vector](narr:StyleObs_Metaphor_Vector), and [deepest lever](narr:Observation_DeepestLever). Beneath the brand terms sits an internal technical layer — [Memory](narr:Obs_MemoryDefinition), [Transaction](narr:Obs_TransactionDefinition), [tool signatures and ontology](narr:StyleObs_TechTerms) — plus speculative coinages and two distinct pitch voices.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#KeyPhrase_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#KeyPhrase_2> ;
+    narr:covers <https://aswritten.ai/ns/narrative#KeyPhrase_3> ;
+    narr:covers <https://aswritten.ai/ns/narrative#KeyPhrase_4> ;
+    narr:covers <https://aswritten.ai/ns/narrative#KeyPhrase_5> ;
+    narr:covers <https://aswritten.ai/ns/narrative#KeyPhrase_AIContextRich> ;
+    narr:covers <https://aswritten.ai/ns/narrative#KeyPhrase_StrategyExecutionGap> ;
+    narr:covers <https://aswritten.ai/ns/narrative#KeyPhrase_YouCant> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_KeyPhrases_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Obs_MemoryDefinition> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Obs_TransactionDefinition> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_DeepestLever> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_IPAsCode> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_IntentionalMemory> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_MultiplayerShift> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_StateSecrets> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_2> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_6> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_7> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_CollectiveMemoryTerm> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_IPAsCode> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_IPAsCode> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_NarrArch> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_NetworkEffects> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_PMF> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_StateSec> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Steering> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Vector> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_CustomerArchitectPitch_DirectSpeech> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TechTerms> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TonyInterruption> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_keyphrase_1> ;
+    narr:keyPhrase [ narr:text "collective memory" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_keyphrase_1> ] ;
+    narr:keyPhrase [ narr:text "intellectual property as code" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_IPAsCode> ] ;
+    narr:keyPhrase [ narr:text "every single employee in your company, CEO included, is telling state secrets to AI" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_StateSecrets> ] ;
+    narr:keyPhrase [ narr:text "This eliminates strategy-execution disconnect - the \"[amount] mistake\" in startups where engineering builds features customers don't want." ; narr:phraseSource <https://aswritten.ai/ns/narrative#KeyPhrase_StrategyExecutionGap> ] ;
+    narr:keyPhrase [ narr:text "There is actually no network problem here. This is just as useful for one person, but it is even more useful for two people" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ] ;
+    narr:keyPhrase [ narr:text "narrative is not only the backdoor to the models, it's the steering wheel, it's the fault lines" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Steering> ] ;
+    narr:keyPhrase [ narr:text "See, just not having to stop what I'm doing to tell somebody something all the fucking time. Yeah, I'm in." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_TonyInterruption> ] ;
+    narr:variation [ narr:text "Internal tension on where value lives: 'no network problem — useful for one person' vs the 'network effects: more people = more value' multiplier framing." ; narr:over <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_NetworkEffects> ] ;
+    narr:variation [ narr:text "A distinct speculative/far-future register — storyTWIN, individuation pipeline, evolved variant, collective memory marketplace — sits apart from the grounded pitch vocabulary." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_KeyPhrases_1> ] ;
+    narr:variation [ narr:text "'update their worldview' is deliberately chosen to replace passive 'query' — yet the customer's chief architect's pitch still describes the product as something 'everybody else can query'." ; narr:over <https://aswritten.ai/ns/narrative#KeyPhrase_5> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_CustomerArchitectPitch_DirectSpeech> ] ;
+    narr:variation [ narr:text "Two divergent voices in the corpus: Tony's blunt, profane, snap-decision register vs the customer's chief architect's measured outcome-first conversational framing." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TonyInterruption> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_CustomerArchitectPitch_DirectSpeech> ] ;
+    narr:variation [ narr:text "An internal technical lexicon (Memory, Transaction, tool signatures, snapshot, ontology) runs beneath the market-facing brand terms — different audience, different vocabulary." ; narr:over <https://aswritten.ai/ns/narrative#Obs_MemoryDefinition> ; narr:over <https://aswritten.ai/ns/narrative#Obs_TransactionDefinition> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TechTerms> ] ;
+    narr:writer "claude (subscription)" .
+}

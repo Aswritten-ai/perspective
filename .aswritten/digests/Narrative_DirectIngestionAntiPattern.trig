@@ -1,0 +1,22 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_DirectIngestionAntiPattern> {
+  <https://aswritten.ai/narrative#Digest_Narrative_DirectIngestionAntiPattern> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_DirectIngestionAntiPattern> ;
+    narr:childCount "3"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub was framed (2026-05-01) as an anti-pattern: that bulk [direct historical transcript ingestion is a trap discovered by failing](narr:Claim_DirectIngestionIsTrap). That framing did not hold. On 2026-05-21 Scarlet corrected it directly — [the trap framing is overplayed and bulk AI-summarization ingestion is valid and effective](narr:Claim_DirectIngestionIsTrap), advised to the customer's chief architect for the enterprise customer ARB transcripts because it was faster, and the prior Foundation-level conviction is marked superseded. What survives is a different, narrower problem the children actually witness: [unmarked speculation pollution during the customer's chief architect's sales-demo prep](narr:Claim_CustomerArchitectDemoPollutionProductEvidence), where mixing real and speculative capabilities convinced Claude that the enterprise customer had features that never existed — a documented production failure on the first paying enterprise customer. And because memories carried no temporal/speculative markers, [the only corrective action was full deletion and restart](narr:Claim_FullDeletionOnlyRemedy): the customer's chief architect planned to wipe all demo-prep memories, keeping only two foundational overviews. So the region's center of gravity moved from 'ingestion is dangerous' to 'speculation without temporality markers is dangerous' — narrate the move, not a verdict.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DirectIngestionIsTrap> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FullDeletionOnlyRemedy> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CustomerArchitectDemoPollutionProductEvidence> ;
+    narr:keyPhrase [ narr:text "The direct ingestion framing is overplayed. It is not an explicit anti-pattern. Bulk historical ingestion via AI summarization is a valid and effective method" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DirectIngestionIsTrap> ] ;
+    narr:keyPhrase [ narr:text "The 'we discovered it by failing' framing was a bad AI artifact. Prior Foundation-level conviction is superseded." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DirectIngestionIsTrap> ] ;
+    narr:keyPhrase [ narr:text "the only available corrective action when speculation pollution occurs is full deletion of the affected memories and starting over" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FullDeletionOnlyRemedy> ] ;
+    narr:keyPhrase [ narr:text "Claude became convinced the enterprise customer had capabilities that do not exist and never existed in the project" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CustomerArchitectDemoPollutionProductEvidence> ] ;
+    narr:keyPhrase [ narr:text "The failure mode is not hypothetical — it happened to the first paying enterprise customer during the first real use of the product." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CustomerArchitectDemoPollutionProductEvidence> ] ;
+    narr:variation [ narr:text "The hub's own headline ('ingestion is a trap') is contradicted by its load-bearing child: Scarlet ruled the anti-pattern framing overplayed and direct ingestion valid, even recommending it." ; narr:over <https://aswritten.ai/narrative#Claim_DirectIngestionIsTrap> ] ;
+    narr:variation [ narr:text "The witnessed failure was never about ingestion mechanics — it was unmarked speculation mixing real and hypothetical capabilities; the real problem is temporality/speculation marking, not bulk loading." ; narr:over <https://aswritten.ai/narrative#Claim_CustomerArchitectDemoPollutionProductEvidence> ; narr:over <https://aswritten.ai/narrative#Claim_DirectIngestionIsTrap> ] ;
+    narr:variation [ narr:text "Full deletion as the 'only remedy' is a claim about missing temporality modeling, not about ingestion at all — a destructive high-cost workaround that would be unnecessary with creation-time markers." ; narr:over <https://aswritten.ai/narrative#Claim_FullDeletionOnlyRemedy> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,334 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────
+INSERT DATA {
+  narr:Tx_20260701T233458Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-01T23:34:58Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-01-1-self-serve-funnel-surface-and-write-model" ;
+    narr:originRef "dev" ;
+    dct:title "Individual self-serve product — funnel, surface, content/commentary write model (2026-06-24)" ;
+    prov:generated
+      narr:Sample_SelfServeProductSurface_20260624,
+      narr:Actor_Scarlet_SelfServe,
+      narr:Narrative_ContentCommentarySplit,
+      narr:Narrative_SynchronousPerMessageIntegration,
+      narr:Narrative_DigestBrowserProductSurface,
+      narr:Narrative_ReconciliationAsSetTransaction,
+      narr:Narrative_IndividuationCurveConversionMechanic,
+      narr:Narrative_GraphInMemoryStorage,
+      narr:Claim_SyncIntegrationDriftArgument,
+      narr:Claim_ContentLayerPerMessage,
+      narr:Claim_ReconciliationIsCommentaryLayer,
+      narr:Claim_SourceAppendOnlyNeverDedup,
+      narr:Claim_PassesNotTransactions,
+      narr:Claim_AreYouTalkingAboutThese,
+      narr:Claim_OwnByDefaultPayToContinue,
+      narr:Claim_GitHubOptionalNotRequired,
+      narr:Obs_DigestBrowserUIQuote,
+      narr:Obs_AsyncDriftArgumentQuote,
+      narr:Obs_ContentCommentaryKeystoneQuote,
+      narr:Obs_ReconciliationSetTransactionQuote,
+      narr:Obs_AreYouTalkingAboutTheseQuote,
+      narr:StyleObs_SelfServe_VerbatimBlockquote,
+      narr:StyleObs_SelfServe_TechnicalMetaphor,
+      narr:StyleObs_SelfServe_AntipatternAntithesis,
+      narr:StyleMetrics_SelfServeProductSurface .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260701T233458Z {
+
+    # ── Sample ──────────────────────────────────────────────────
+    narr:Sample_SelfServeProductSurface_20260624 a narr:Sample ;
+      dct:title "Individual self-serve product — funnel, surface, and the content/commentary write model" ;
+      dct:created "2026-06-24"^^xsd:date ;
+      narr:inputLength 8368 ;
+      dct:description "Scarlet working session (2026-06-24). Provisional/forward conviction. Covers digest browser surface, synchronous per-message integration, content/commentary split, multi-pass extraction pipeline, reconciliation-as-set-transaction, unified write path, individuation curve, and graph-in-memory storage." .
+
+    # ── Actor ───────────────────────────────────────────────────
+    narr:Actor_Scarlet_SelfServe a narr:Actor ;
+      skos:prefLabel "Scarlet" ;
+      skos:note "Primary speaker in the 2026-06-24 self-serve product design session. Verbatim quotes sourced from this session." .
+
+    # ── Narrative 1: Content / Commentary Split ──────────────────
+    narr:Narrative_ContentCommentarySplit a narr:Narrative ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      narr:theme "Content/commentary split: per-message integration is the content layer; reconciliation is the authored commentary layer" ;
+      skos:broader narr:Primitives ;
+      skos:note "The keystone design decision of the session. Current memories conflate primary source content with commentary. The correct model: per-message integration captures primary source material (content layer); reconciliation is authored commentary about a referent set of previously extracted nodes (commentary layer). The read model already separates these (digest renders grounded position + RECONCILED conclusion); the write practice has not yet implemented the split. This is a write primitive that is read-implemented but not yet written." ;
+      skos:related narr:Narrative_NavigationReplacesEmbeddedSnapshot, narr:Narrative_DigestAsRecognitionAid .
+
+    # ── Narrative 2: Synchronous Per-Message Integration ─────────
+    narr:Narrative_SynchronousPerMessageIntegration a narr:Narrative ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      narr:theme "Integration is synchronous, per-message, and silent — async breaks the individual and the deliberate feedback-in-chat decision" ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:note "The drift argument: a stale individual breaks the promise. Async integration was deliberately rejected because: (1) feedback from extraction results must appear directly in chat, not hidden behind the scenes; (2) the next extraction must wait for the previous to finish or it extracts against a stale state; (3) async creates drift between the individual and the actual experience of the individual. Synchronous per-message integration is the safer and easier starting point. MCP integration may require a hybrid model since MCP clients cannot be forced to call a tool every message." ;
+      skos:related narr:Narrative_NavigationReplacesEmbeddedSnapshot .
+
+    # ── Narrative 3: Digest Browser as Product Surface ───────────
+    narr:Narrative_DigestBrowserProductSurface a narr:Narrative ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      narr:theme "The product surface is the digest browser — the human as consumer of the same collapse/expand navigation that extraction and citation already use" ;
+      skos:broader narr:ProductOverview ;
+      skos:note "The individual self-serve surface looks like a digest browser where the user can collapse and expand up and down the tree. A clean UI: chat on one side, each message's transaction expandable next to it to show its effect on the graph. Scrolling to the bottom reveals the current graph with the full digest browser. Possibly an Undo Tree-style interface above the transaction view. The human is a consumer of the same read path that extraction and citation already use — the surface is the read model made visible." ;
+      skos:related narr:Narrative_DigestAsRecognitionAid, narr:Narrative_NavigationReplacesEmbeddedSnapshot .
+
+    # ── Narrative 5: Reconciliation as Set Transaction ───────────
+    narr:Narrative_ReconciliationAsSetTransaction a narr:Narrative ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      narr:theme "Reconciliation is a transaction about a set of transactions or nodes — the design of correction and commentary about the past" ;
+      skos:broader narr:Primitives ;
+      skos:note "Reconciliation is structurally a transaction about a set of transactions or a set of nodes in the graph. This is exactly what correction and commentary about the past are. The product surface: select multiple transactions, say something about them, submit a reconciliation request. The system asks 'are you talking about these?' — surfacing which graph nodes it is reasoning from. This is the legibility differentiator: unlike current AI use where the user never knows what the AI is reasoning from, aswritten surfaces the referent set explicitly. Disambiguate, never permission — the prompt rule." ;
+      skos:related narr:Narrative_ContentCommentarySplit, narr:Narrative_DigestAsRecognitionAid .
+
+    # ── Narrative 7: Individuation Curve + Conversion Mechanic ───
+    narr:Narrative_IndividuationCurveConversionMechanic a narr:Narrative ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      narr:theme "Engagement = individuation curve (generic → first divergence → accretion → ownership → expansion); conversion mechanic is own-by-default, pay-to-continue" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "The individuation curve describes the engagement arc for the individual self-serve product: generic (no divergence from base) → first divergence (graph begins to reflect the individual) → accretion (graph grows richer) → ownership (the individual identifies with the graph) → expansion (the individual extends the graph to others). The conversion mechanic is own-by-default, pay-to-continue: the graph belongs to the user by default; payment is required to continue building it past the free threshold." ;
+      skos:related narr:Narrative_B2CPivot, narr:Narrative_TierContinuumNotDistinctMarkets .
+
+    # ── Narrative 8: Graph-in-Memory / GitHub-Optional Storage ───
+    narr:Narrative_GraphInMemoryStorage a narr:Narrative ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      narr:theme "The graph can live in memory, stored nowhere by default — download at session end, upload to resume; GitHub becomes optional storage, not a required third party" ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:note "A later refinement on ownership: the graph can live in memory, stored nowhere by default. The user downloads it at session end and uploads to resume. GitHub becomes optional storage, not a required third party. This structurally mitigates the demo-pollution problem by confining conviction and pollution risk to the commentary layer, and removes the GitHub dependency from the individual self-serve path." ;
+      skos:related narr:Narrative_GraphInMemoryStorage, narr:Narrative_IndividuationCurveConversionMechanic .
+
+    # ── Claims ───────────────────────────────────────────────────
+    narr:Claim_SyncIntegrationDriftArgument a narr:Claim ;
+      narr:aboutNode narr:Narrative_SynchronousPerMessageIntegration ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_SynchronousPerMessageIntegration ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Drift argument: async integration creates drift between the individual and the actual experience of the individual. The next extraction must wait for the previous to finish or it extracts against a stale state. Synchronous per-message integration is safer and easier in the beginning. Provisional/notion-level conviction — unbuilt." .
+
+    narr:Claim_ContentLayerPerMessage a narr:Claim ;
+      narr:aboutNode narr:Narrative_ContentCommentarySplit ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_ContentCommentarySplit ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Per-message integration is the content layer. Each message's primary source material is transacted individually as it happens. This is what the current memory model is missing — the per-message integrations that memories are then saved about." .
+
+    narr:Claim_ReconciliationIsCommentaryLayer a narr:Claim ;
+      narr:aboutNode narr:Narrative_ContentCommentarySplit ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_ContentCommentarySplit ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Reconciliation is the authored commentary — a write primitive that is read-implemented but not yet written. The read model already separates primary-source grounding from authored reconciliation (the digest renders a position grounded in source plus a separate RECONCILED conclusion). The write practice has conflated them by requiring memories to include enough primary source content." .
+
+    narr:Claim_SourceAppendOnlyNeverDedup a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Source is append-only and never deduplicated. All dedup/merge/supersession lives in the reconciliation layer. This is a pipeline law, not a preference." .
+
+    narr:Claim_PassesNotTransactions a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Passes ≠ transactions. A pass is a compute stage; a transaction is an atomic write. Fan out the compute, write atomically at the edge. This distinction prevents conflating pipeline orchestration with graph mutation." .
+
+    narr:Claim_AreYouTalkingAboutThese a narr:Claim ;
+      narr:aboutNode narr:Narrative_ReconciliationAsSetTransaction ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_ReconciliationAsSetTransaction ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "'Are you talking about these?' is the legibility differentiator and one of the most important questions aswritten can surface. It shows the user exactly what the AI is currently reasoning from in their graph — a huge differentiator from current AI use where the user never knows what the AI is referencing in memory. Disambiguate, never permission — the prompt rule." .
+
+    narr:Claim_OwnByDefaultPayToContinue a narr:Claim ;
+      narr:aboutNode narr:Narrative_IndividuationCurveConversionMechanic ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_IndividuationCurveConversionMechanic ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Own-by-default, pay-to-continue is the conversion mechanic for the individual self-serve product. The graph belongs to the user by default; payment gates continued building past the free threshold. This is the individuation curve's monetization point." .
+
+    narr:Claim_GitHubOptionalNotRequired a narr:Claim ;
+      narr:aboutNode narr:Narrative_GraphInMemoryStorage ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_GraphInMemoryStorage ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "GitHub becomes optional storage, not a required third party. The graph can live in memory, stored nowhere by default. Download at session end, upload to resume. This removes the GitHub dependency from the individual self-serve path and structurally mitigates demo-pollution risk." .
+
+    # ── Observations (verbatim quotes) ───────────────────────────
+    narr:Obs_DigestBrowserUIQuote a narr:Observation ;
+      skos:broader narr:ProductOverview ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Scarlet's description of the digest browser surface" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SelfServeProductSurface_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 584 ; oa:end 700
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "it just looks like the digest. It looks like a digest browser where you can collapse and expand up and down the tree" ;
+          oa:prefix "So what does the surface look like? One obvious answer is that " ;
+          oa:suffix "... I could almost see an Undo Tree-style interface above that"
+        ]
+      ] .
+
+    narr:Obs_AsyncDriftArgumentQuote a narr:Observation ;
+      skos:broader narr:ArchitectureOverview ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Scarlet's drift argument for synchronous integration" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SelfServeProductSurface_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1250 ; oa:end 1361
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you have drift between the individual and the actual experience of the individual, which I think is problematic" ;
+          oa:prefix "or else it's extracting against a stale state... " ;
+          oa:suffix ". I think probably it's much safer and easier to do it synchronously"
+        ]
+      ] .
+
+    narr:Obs_ContentCommentaryKeystoneQuote a narr:Observation ;
+      skos:broader narr:Primitives ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Scarlet's articulation of the content/commentary keystone" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SelfServeProductSurface_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2187 ; oa:end 2328
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "What we want the memory to be, what we want the reconciliation to be, is the commentary about the previously extracted primary source content" ;
+          oa:prefix "Right now I think we're conflating those two in our memories... " ;
+          oa:suffix " for each message."
+        ]
+      ] .
+
+    narr:Obs_ReconciliationSetTransactionQuote a narr:Observation ;
+      skos:broader narr:Primitives ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Scarlet's definition of reconciliation as a transaction about a set" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SelfServeProductSurface_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3603 ; oa:end 3713
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The design of reconciliation is a transaction about a set of transactions or about a set of nodes in the graph" ;
+          oa:prefix "> " ;
+          oa:suffix ". That's exactly what you're doing when you're doing a correction"
+        ]
+      ] .
+
+    narr:Obs_AreYouTalkingAboutTheseQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      skos:note "Scarlet's articulation of 'are you talking about these?' as the legibility differentiator" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SelfServeProductSurface_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4149 ; oa:end 4282
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "are you talking about these? It is such an important question and something that is such a huge differentiator between current AI use" ;
+          oa:prefix "> " ;
+          oa:suffix ", where you never really have any idea what an AI is currently reasoning from"
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────
+    narr:StyleObs_SelfServe_VerbatimBlockquote a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      rdf:value true ;
+      skos:note "Primary source sections use verbatim blockquote format (> prefix) to distinguish Scarlet's direct speech from editorial framing. This is the idiolect pattern: raw session speech as evidentiary primary source, editorial conclusions in plain prose." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SelfServeProductSurface_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 519 ; oa:end 556
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "> So what does the surface look like?" ;
+          oa:prefix "### On the surface and integration frequency\n" ;
+          oa:suffix " One obvious answer is that"
+        ]
+      ] .
+
+    narr:StyleObs_SelfServe_TechnicalMetaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      rdf:value true ;
+      skos:note "Technical metaphors from software engineering applied to product design: 'Undo Tree-style interface', 'transport envelope', 'closures merged via channels', 'fan out the compute, write atomically at the edge'. Characteristic of Scarlet's idiom: borrowing engineering vocabulary to make architectural decisions legible." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SelfServeProductSurface_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5257 ; oa:end 5355
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "maybe an argument for extraction moving to closures... merged via channels when they all come back" ;
+          oa:prefix "This can also be parallelized... " ;
+          oa:suffix "\n\n> You could also provide a resolve tool"
+        ]
+      ] .
+
+    narr:StyleObs_SelfServe_AntipatternAntithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      rdf:value true ;
+      skos:note "Repeated antithesis structure used to sharpen architectural distinctions: 'content layer vs. commentary layer', 'passes ≠ transactions', 'resolve is the inverse of cite', 'GitHub becomes optional storage, not a required third party', 'disambiguate, never permission'. Each antithesis names both what the thing IS and what it is NOT." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SelfServeProductSurface_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 7795 ; oa:end 7874
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "passes ≠ transactions (a pass is a compute stage, a transaction an atomic write" ;
+          oa:prefix "Pipeline decisions: source is append-only and never deduplicated... " ;
+          oa:suffix " — fan out the compute, write atomically at the edge)"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────
+    narr:StyleMetrics_SelfServeProductSurface a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_SelfServeProductSurface_20260624 ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.18"^^xsd:decimal ;
+      skos:note "Mixed register: verbatim first-person blockquotes (conversational, exploratory) interleaved with editorial framing prose (authoritative, declarative). Active voice dominant in editorial sections. Jargon density moderate — product-internal terms (reconciliation, transaction, digest browser, individuation curve, resolve tool) used without definition, implying internal audience. Antithesis-heavy structure at architectural decision points. Short punchy declaratives at conviction peaks ('disambiguate, never permission'). Consistent with Scarlet session-memo idiolect." .
+
+  }
+}

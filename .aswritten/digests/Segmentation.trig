@@ -1,0 +1,55 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Segmentation> {
+  <https://aswritten.ai/narrative#Digest_Segmentation> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Segmentation> ;
+    narr:childCount "31"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """Segmentation tracks a moving target market, not a settled one. Earliest framing was developer-first ([validated dev-shop ICP](narr:Obs_Segmentation_ICP), 10-50 person shops). By Mar 2026 a demo-call prospect's plan recorded an [SMB pivot](narr:Narrative_SMBPivot) — \"bigger market than devs\" — surfacing a consistent [SMB beta pattern](narr:Narrative_SycamoreCohortPattern) of owners training staff and automating marketing. Apr-May the frame shifted again toward expertise: the [target is the packaged expert](narr:Obs_ScarletTargetMarketQuote), engagement defined by [shape not org size](narr:Obs_EnterpriseShapeDefinition), culminating May 18 in the [two-subsegment ICP refinement](narr:Narrative_ICPRefinedTwoSubsegments) — functional volume across enterprise SaaS vendors and small professional practices, [explicitly excluding Fortune 500](narr:Claim_ICPExcludesFortune500). Structure firmed alongside: [three expansion tracks](narr:Narrative_ExpansionTracks) (Core/Enterprise/Executive), [three contract tiers](narr:Narrative_ContractTiers), and an [~1M-firm TAM](narr:Narrative_TAMExpansion). Concrete beachheads include the [cash-pay NYC alternative-care wedge](narr:Narrative_WedgeCashPayNYC), [architecture teams](narr:Narrative_ArchitectureTeamsBeachhead), and [Series A operations personas](narr:Claim_OperationsICP). The arc moves dev→SMB→expert-practice; no human has signed a final landing.""" ;
+    narr:covers <https://aswritten.ai/narrative#Actor_FounderBetaUser> ;
+    narr:covers <https://aswritten.ai/narrative#Alignment_TonyDualPurpose> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ICPExcludesFortune500> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ICPTwoSubsegmentPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MarketShift> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OperationsICP> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SMBBusinessPlan> ;
+    narr:covers <https://aswritten.ai/narrative#ExpansionTrack_Core> ;
+    narr:covers <https://aswritten.ai/narrative#ExpansionTrack_Enterprise> ;
+    narr:covers <https://aswritten.ai/narrative#ExpansionTrack_Executive> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AdditiveVsIncremental> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ArchitectureTeamsBeachhead> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContractTiers> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ExpansionTracks> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ICPRefinedTwoSubsegments> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_KnowledgeExtractionBeachhead> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_MCPVsChatbotCohortDistinction> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SycamoreCohortPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SMBPivot> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TAMExpansion> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_WedgeCashPayNYC> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_DomainsNotRealQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_EnterpriseShapeDefinition> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectChatbotThirdGroupQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectMCPLeadQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_NumbersWorkB2C> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_EarlyProspectHubDeployment> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_RetireeSegment> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletTargetMarketQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_Segmentation_ICP> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_MarketSegmentation> ;
+    narr:keyPhrase [ narr:text "And id prefer to work with that icp, 50-250 to maybe 500max employees. Which means they have budget but not huge existing line items for this stuff." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ICPExcludesFortune500> ] ;
+    narr:keyPhrase [ narr:text "the engagement is actually the same shape, even though that's an organization of like 5 versus 150" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_EnterpriseShapeDefinition> ] ;
+    narr:keyPhrase [ narr:text "The target market is becoming an expert that currently packages their work in a static and bounded way." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletTargetMarketQuote> ] ;
+    narr:keyPhrase [ narr:text "These segmented domains don't really exist in practice. You may have a strategist in the company, but they do product and they do sales, and they touch all this other stuff." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_DomainsNotRealQuote> ] ;
+    narr:keyPhrase [ narr:text "Think about the numbers though, right? The numbers really work. B2C. Because if we take theory that every single person is now their own team." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_NumbersWorkB2C> ] ;
+    narr:keyPhrase [ narr:text "At 1% penetration: [amount]+ ARR." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TAMExpansion> ] ;
+    narr:variation [ narr:text "B2C is the road not taken: Tony argues the volume numbers work because 'every single person is now their own team' — pushing against the B2B mid-market/enterprise consensus." ; narr:over <https://aswritten.ai/narrative#Obs_NumbersWorkB2C> ; narr:over <https://aswritten.ai/narrative#Alignment_TonyDualPurpose> ] ;
+    narr:variation [ narr:text "Fortune 500 is explicitly excluded (committee procurement, existing AI line items) — a deliberate ceiling, not just a default focus." ; narr:over <https://aswritten.ai/narrative#Claim_ICPExcludesFortune500> ] ;
+    narr:variation [ narr:text "Headcount vs functional-volume tension: the refined ICP rejects employee count as the segment axis, claiming a 5-person practice and 150-person consultancy share one shape." ; narr:over <https://aswritten.ai/narrative#Narrative_ICPRefinedTwoSubsegments> ; narr:over <https://aswritten.ai/narrative#Claim_ICPTwoSubsegmentPattern> ; narr:over <https://aswritten.ai/narrative#Obs_EnterpriseShapeDefinition> ] ;
+    narr:variation [ narr:text "A deeper claim undercuts segmentation itself: domains don't exist in practice because people span product/sales/strategy at once." ; narr:over <https://aswritten.ai/narrative#Obs_DomainsNotRealQuote> ] ;
+    narr:variation [ narr:text "Apparent outlier from a different product line: a retiree / geographic-arbitrage (SortaRich) segment, unrelated to the expert-practice ICP — check before treating as same market." ; narr:over <https://aswritten.ai/narrative#Obs_RetireeSegment> ; narr:over <https://aswritten.ai/narrative#Claim_MarketShift> ] ;
+    narr:variation [ narr:text "Healthcare SMB raises an unresolved HIPAA/on-prem question that the mid-market line-item thesis doesn't yet answer." ; narr:over <https://aswritten.ai/narrative#Obs_EarlyProspectHubDeployment> ; narr:over <https://aswritten.ai/narrative#ExpansionTrack_Enterprise> ] ;
+    narr:variation [ narr:text "MCP-vs-chatbot splits one buyer into two change-management cohorts; leading with MCP is a deliberate sequencing bet, not the obvious default." ; narr:over <https://aswritten.ai/narrative#Narrative_MCPVsChatbotCohortDistinction> ; narr:over <https://aswritten.ai/narrative#Obs_CustomerArchitectChatbotThirdGroupQuote> ] ;
+    narr:writer "claude (subscription)" .
+}

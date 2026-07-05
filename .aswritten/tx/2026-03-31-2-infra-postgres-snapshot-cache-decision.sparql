@@ -1,0 +1,35 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance
+INSERT DATA {
+  narr:Tx_20260331T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-31T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-31-postgres-snapshot-cache.md" ;
+    narr:originRef "main" ;
+    prov:generated       narr:StyleObs_ProprietaryMoat .
+} ;
+
+# Extracted entities
+INSERT DATA {
+  GRAPH narr:Tx_20260331T120000Z {
+
+    narr:StyleObs_ProprietaryMoat a narr:StyleObservation ;
+      skos:broader narr:MoatLeverage ;
+
+      skos:note "Rhetorical framing of the graph as a 'proprietary moat' to justify architectural shifts." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 240 ; oa:end 310 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "proprietary (it reveals the compiled knowledge graph — a moat)" ]
+      ] .
+  }
+}

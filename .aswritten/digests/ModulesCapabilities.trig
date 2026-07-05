@@ -1,0 +1,41 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ModulesCapabilities> {
+  <https://aswritten.ai/narrative#Digest_ModulesCapabilities> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#ModulesCapabilities> ;
+    narr:childCount "19"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the product's tool surface and capability decisions, mostly dated March–May 2026. The dominant arc is aggressive consolidation: a March–April sweep settled the [five user-facing MCP tools](narr:Claim_FiveCoreMCPTools) — perspective, cite, introspect, remember, review — while [refract and its registry](narr:Claim_RefractRegistryRemovedFromProduct), the [memories/source tool](narr:Claim_MemoriesSourceToolRemoved), [discoveries](narr:Claim_RemoveDiscoveries), the [notifications system](narr:Claim_RemoveNotificationsSystem), and [auto-generated TX summaries](narr:Claim_TXSummariesAutoGenRemoved) were removed; scope and lens folded inward. The [review tool was widened to three cases](narr:Claim_ReviewToolThreeCases). Capability framing runs alongside: [compilation layers](narr:Obs_CompilationLayers) from 4K bootstrap to 100K expansion, [perspective layering](narr:Obs_ChineseHerbalismLayeringExample), [transcript bootstrapping](narr:Claim_TranscriptBootstrapOnramp) as a lighter onramp, and a [public perspective module](narr:Narrative_PublicPerspectiveModule). Against the removal current, the [Feedback/Help tool](narr:Claim_FeedbackHelpAboveLine) was pulled *above* the line as primary churn prevention. Early usage (May) showed [two organic loop patterns](narr:Claim_FourToolLoopEngagedUserPattern) across the enterprise customer's first nine days.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CompileRename> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FeedbackHelpAboveLine> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FiveCoreMCPTools> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FourToolLoopEngagedUserPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MemoriesSourceToolRemoved> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RefractRegistryRemovedFromProduct> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RemoveDiscoveries> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RemoveNotificationsSystem> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ReviewToolThreeCases> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TXSummariesAutoGenRemoved> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TranscriptBootstrapOnramp> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_MCPToolSurface_FiveTools> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PublicPerspectiveModule> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ChineseHerbalismLayeringExample> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CompilationLayers> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ModulesCapabilities> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ReviewToolQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_MonorepoHarness> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_FiveToolTable> ;
+    narr:keyPhrase [ narr:text "The five user-facing MCP tools are: perspective, cite, introspect, remember, and review. Scope, refract, and lens are removed from the user-facing surface." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FiveCoreMCPTools> ] ;
+    narr:keyPhrase [ narr:text "Primary churn-prevention mechanism — response within minutes from Scarlet personally." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FeedbackHelpAboveLine> ] ;
+    narr:keyPhrase [ narr:text "Review tool extended to three cases" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ReviewToolThreeCases> ] ;
+    narr:keyPhrase [ narr:text "Memories are just files in the repo — anyone with a coding agent can read them directly. Org-only skill at most." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MemoriesSourceToolRemoved> ] ;
+    narr:keyPhrase [ narr:text "Worth confirming on subsequent customer engagements before treating as a settled finding" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FourToolLoopEngagedUserPattern> ] ;
+    narr:keyPhrase [ narr:text "4K-token worldview bootstrap to full 100K-token domain expansion" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CompilationLayers> ] ;
+    narr:variation [ narr:text "Against the prevailing removal/consolidation arc, Feedback/Help was added above the MVP line — a tool grows, not shrinks, here." ; narr:over <https://aswritten.ai/narrative#Claim_FeedbackHelpAboveLine> ] ;
+    narr:variation [ narr:text "Tension in tool count: the canonical surface is five tools, but the observed engaged-user loop is named as four core tools (review sits outside the loop patterns)." ; narr:over <https://aswritten.ai/narrative#Claim_FiveCoreMCPTools> ; narr:over <https://aswritten.ai/narrative#Claim_FourToolLoopEngagedUserPattern> ] ;
+    narr:variation [ narr:text "The usage-pattern finding is explicitly held open, not settled — flagged to confirm on later engagements before treating as established." ; narr:over <https://aswritten.ai/narrative#Claim_FourToolLoopEngagedUserPattern> ] ;
+    narr:variation [ narr:text "a collaborator's reader-grounder pattern (perspective→cite, zero authoring) is an outlier against the customer's chief architect's full-loop 'expert' archetype." ; narr:over <https://aswritten.ai/narrative#Claim_FourToolLoopEngagedUserPattern> ] ;
+    narr:variation [ narr:text "Removal isn't total: memories and refract survive in reduced form as org-only / local Claude Code skills rather than disappearing outright (unlike discoveries, removed fully)." ; narr:over <https://aswritten.ai/narrative#Claim_MemoriesSourceToolRemoved> ; narr:over <https://aswritten.ai/narrative#Claim_RefractRegistryRemovedFromProduct> ; narr:over <https://aswritten.ai/narrative#Claim_RemoveDiscoveries> ] ;
+    narr:writer "claude (subscription)" .
+}

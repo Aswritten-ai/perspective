@@ -1,0 +1,24 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ProblemStakes> {
+  <https://aswritten.ai/narrative#Digest_ProblemStakes> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#ProblemStakes> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub frames the **stakes** of the problem the pitch addresses, and across its children one rhetorical move dominates: opening with felt pain rather than mechanism. The [hallucination-fear hook](narr:Narrative_HallucinationFear) describes pain in language anyone asked to use AI recognizes, explicitly *replacing* the enterprise/org-knowledge-retention framing. The style observations show how that stakes-setting is executed: a [problem-section opening](narr:StyleObs_11) using a two-item numbered list and a falsifiable closing hypothesis; a [Path A / Path B binary](narr:StyleObs_BrokenSyncQuote) with the punchy cadence close 'It fizzles out'; [British-inflected self-interrogation](narr:StyleObs_HowMadRhetQ) after a behavioral anecdote; and [rhetorical questions](narr:StyleObs_RhetoricalQuestion) that universalize the hallucination fear and invite the reader into the problem before the solution. One dated witness (2025-05-22) grounds the device in a concrete user question. The region is about *how the problem is staked rhetorically* — pain-first framing, binary cost articulation, rhetorical-question hooks — not about solution architecture or product mechanism.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_HallucinationFear> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_11> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BrokenSyncQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_HowMadRhetQ> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RhetoricalQuestion> ;
+    narr:keyPhrase [ narr:text "Universal fear of AI hallucination as the primary hook for enterprise AI adoption" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_HallucinationFear> ] ;
+    narr:keyPhrase [ narr:text "It fizzles out" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BrokenSyncQuote> ] ;
+    narr:keyPhrase [ narr:text "How mad is that?" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_HowMadRhetQ> ] ;
+    narr:keyPhrase [ narr:text "how do you extract that thinking?" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RhetoricalQuestion> ] ;
+    narr:keyPhrase [ narr:text "Should Scarlet apply to EV before or after the August YC reapplication?" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RhetoricalQuestion> ] ;
+    narr:variation [ narr:text "The pain-first hallucination hook explicitly displaces an alternative framing — the mechanism-focused enterprise/org-knowledge-retention pitch that was set aside, a road not taken still reachable." ; narr:over <https://aswritten.ai/narrative#Narrative_HallucinationFear> ] ;
+    narr:variation [ narr:text "The hallucination opener is annotated as the only 'unsupported' factual item — a rhetorical device, not a claim — so its persuasive weight rests on recognition, not evidence." ; narr:over <https://aswritten.ai/narrative#StyleObs_RhetoricalQuestion> ] ;
+    narr:variation [ narr:text "StyleObs_11 escalates uncertainty (Foundation-level / Boulder / Boulder) and closes with a falsifiable test hypothesis — a more tentative, conviction-graded register against the confident pain-first hooks." ; narr:over <https://aswritten.ai/narrative#StyleObs_11> ] ;
+    narr:writer "claude (subscription)" .
+}

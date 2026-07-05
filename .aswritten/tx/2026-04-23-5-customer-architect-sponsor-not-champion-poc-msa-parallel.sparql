@@ -1,0 +1,165 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260421T220000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-21T22:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - [email]\n---\n\n# the customer's chief architect as Sponsor Not Champion: POC/MSA Parallelism Playbook" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ,
+      narr:Narrative_SponsorVsChampionPlaybook ,
+      narr:Narrative_POCMSAParallelism ,
+      narr:Claim_SponsorNotChampionYouAreChampion ,
+      narr:Claim_POCMSAParallelNotSequential   ,
+      narr:Claim_TeamVsEnterpriseTierCleanBreak ,
+      narr:StyleObs_TonyTimestampCitation_CustomerArchitectSponsor ,
+      narr:StyleObs_Antithesis_SponsorChampion ,
+      narr:StyleObs_DirectSpeechPlaybook ,
+      narr:StyleMetrics_CustomerArchitectSponsorNotChampion .
+} ;
+
+# ── New entities (named graph) ───────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260421T220000Z {
+
+    # Sample
+    narr:Sample_CustomerArchitectSponsorNotChampion_20260421
+      a narr:Sample ;
+      dct:title "the customer's chief architect as Sponsor Not Champion: POC/MSA Parallelism Playbook (April 21, 2026)" ;
+      dct:created "2026-04-21"^^xsd:date ;
+      dct:description "Check-in call between Tony Maley and Scarlet Dame. Tony diagnoses the customer's chief architect as sponsor (not champion) and dictates a five-step playbook: write the explicit next-steps email, run POC and MSA paperwork in parallel, define POC success criteria explicitly, use the Team trial timeout as a forcing function, and resolve the MSA question (Team tier = credit card, Enterprise tier = MSA)." ;
+      narr:inputLength 5200 .
+
+    # Narrative 1: Sponsor vs Champion — the core insight
+    narr:Narrative_SponsorVsChampionPlaybook
+
+      dct:source narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Sponsor ≠ Champion: When You Have a Sponsor, You Become the Champion" ;
+      skos:note "Tony's diagnosis: the customer's chief architect is a sponsor (excited, aligned) but not a champion (will not ram it through internally). When you have a sponsor but not a champion, you ARE the champion — or the deal dies in limbo. The playbook: make it as easy as possible for the sponsor to do what you need them to do. Do the job for them. Enterprise sales cycles take as long as time exists; the only way out is to push it and do their job for them. Tony [12:10]: 'You've got something that most people don't get and that's a sponsor. Right. So what my advice there is you need to make it as easy as possible for your sponsor to do what you need them to do.' Tony [12:27]: 'And that's to kind of do the job for them. Right. And it is literally give them the thing that they need to show someone as much as you can without them having to spend time or be on the hook for it.'" ;
+      narr:theme "When you have a sponsor but not a champion, you become the champion — or the deal dies; the playbook is to do the sponsor's job for them" .
+
+    # Narrative 2: POC/MSA Parallelism
+    narr:Narrative_POCMSAParallelism
+
+      dct:source narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "POC and MSA Paperwork in Parallel, Not Sequentially" ;
+      skos:note "Tony [26:07]: 'That's the POC that leads to the MSA being signed. Right. So to get the MSA signed, you need to start in parallel now talking to supply chain. Right. Because that's. That could take weeks. Right. Weeks of effort to get through with some guy in procurement.' Tony [26:42]: 'The successful POC is that, you know, you're confident that it's representative of you and you're getting value and you're seeing real conversations. But you know, in parallel you can go and work with the procurement supply chain, whatever they call it, right. And start working on what an MSA could look like should that success be there. Right. So that the transition from POC to actually using it is, you know, low impact and without large spiky work required. Right. So you're managing it for him, you're moving it forward, but he's got the go, no go post poc.' The key: POC success and MSA readiness arrive at the same time. The sponsor keeps go/no-go authority. You remove the bottleneck of sequential procurement time." ;
+      narr:theme "Run POC and MSA procurement in parallel so both arrive at the same time — the sponsor keeps go/no-go authority while you remove the sequential procurement bottleneck" .
+
+    # Claim 1: Sponsor ≠ Champion → you are the champion
+    narr:Claim_SponsorNotChampionYouAreChampion
+      a narr:Claim ;
+      dct:source narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+      skos:note "Scarlet [25:07]: 'the customer's chief architect is interested, but he's not. He may be like ally, but I wouldn't say he's necessarily a champion. You know, he's like, excited about it, but isn't going to ram it through, you know.' Tony's framing: a sponsor is excited and aligned; a champion rams it through internally. When you have a sponsor but not a champion, you are the champion — or the deal dies in limbo. Tony [25:18]: 'If you don't manage the project for them, no one will. Right. And you need a really motivated stakeholder that's going to do that for you.'" ;
+      narr:aboutNode narr:Narrative_SponsorVsChampionPlaybook ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_EnterpriseShapePrimaryFocus .
+
+    # Claim 2: POC and MSA in parallel
+    narr:Claim_POCMSAParallelNotSequential
+      a narr:Claim ;
+      dct:source narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+      skos:note "Tony's structural unlock: start MSA/procurement conversations in parallel with the POC, not after. Procurement can take weeks. If you wait for POC success before starting MSA, you add weeks of dead time. Running in parallel means the transition from POC to production is low-impact with no large spiky work required. Tony [26:42]: 'So that the transition from POC to actually using it is, you know, low impact and without large spiky work required.'" ;
+      narr:aboutNode narr:Narrative_POCMSAParallelism ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PackagingPricing .
+
+    # Claim 5: Team vs Enterprise tier clean break
+    narr:Claim_TeamVsEnterpriseTierCleanBreak
+      a narr:Claim ;
+      dct:source narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+      skos:note "Scarlet [16:20]: Team tier ([amount]/mo) is credit card signup — develop a perspective and have people read from it via MCP. Enterprise tier ([amount]/mo + [amount] setup) requires MSA because of channel provisioning (phone numbers, Slack integration, deployed agents with transparent observation). Clean break between tiers; don't muddy it. The MSA is attached to the next-steps email at the same time as requesting the credit card — not sequentially." ;
+      narr:aboutNode narr:PackagingPricing ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_POCMSAParallelism .
+
+    # Style Observations
+    narr:StyleObs_TonyTimestampCitation_CustomerArchitectSponsor
+      a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+      skos:note "Timestamp citation convention throughout: Tony [12:10], Scarlet [25:07], Tony [26:07], Tony [30:15]. Every quoted claim is anchored to a call timestamp, functioning as an in-text citation system for spoken evidence." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 487 ;
+          oa:end 620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Tony [12:10]: \"You've got something that most people don't get and that's a sponsor." ;
+          oa:prefix "Tony's framing of what this means:\n\n> " ;
+          oa:suffix " Right. So what my advice there is"
+        ]
+      ] .
+
+    narr:StyleObs_Antithesis_SponsorChampion
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+      skos:note "Antithesis-heavy structure throughout: sponsor vs. champion, excited vs. rams it through, POC sequential vs. parallel, Team credit card vs. Enterprise MSA. The document's core argument is built on a series of binary contrasts that sharpen the tactical prescription." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 1960
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Sponsor ≠ champion. A sponsor is excited and aligned; a champion rams it through internally." ;
+          oa:prefix "" ;
+          oa:suffix " When you have a sponsor but not a champion"
+        ]
+      ] .
+
+    narr:StyleObs_DirectSpeechPlaybook
+      a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+      skos:note "Tony's quoted speech is directive and filler-heavy ('Right. Right. Blah, blah, blah.') — a characteristic idiolect that signals informal authority. The playbook steps are dictated verbatim in Tony's voice, giving the document a transcript-as-prescription register. Scarlet's speech is more analytical and self-diagnostic." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2210 ;
+          oa:end 2420
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "need the credit card in here's the MSA attached, blah, blah. Who should I speak to in supply chain" ;
+          oa:prefix "Tony [24:23]: \"Why don't you just send the, hey, you know, here's next steps. You know, " ;
+          oa:suffix " to move forward with that?"
+        ]
+      ] .
+
+    # Style Metrics
+    narr:StyleMetrics_CustomerArchitectSponsorNotChampion
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_CustomerArchitectSponsorNotChampion_20260421 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Call transcript register with heavy embedded verbatim quotes from two speakers. Tony's quoted speech is short, directive, filler-heavy ('Right. Right. Blah, blah, blah.') averaging ~14 words. Scarlet's speech is more analytical (~22 words avg). Antithesis-heavy structure (sponsor vs. champion, sequential vs. parallel, Team vs. Enterprise). Timestamp citation convention throughout. Active voice dominant in editorial prose. Jargon density low-moderate — product terms (MSA, POC, Team plan, MCP) used without definition, implying internal audience. Numbered list structure for playbook steps. Short punchy declaratives at conviction peaks ('Sponsor ≠ champion.')." ;
+      narr:AverageSentenceLength "16"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.07"^^xsd:decimal .
+
+  }
+} 

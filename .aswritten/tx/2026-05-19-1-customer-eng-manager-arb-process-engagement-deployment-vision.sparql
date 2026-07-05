@@ -1,0 +1,172 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260519T140000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-19T14:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-05-19-customer-eng-manager-deployment-vision.md" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_CustomerEngManagerVision_20260519, 
+                   narr:Narrative_Phase1Phase2Pattern, 
+                   narr:Narrative_DayToDayRelitigation, 
+                   narr:Narrative_GraphLLMMoat, 
+                   narr:Claim_Phase2SharperThroughCapture, 
+                   narr:Claim_PerspectiveTracksARBEvolution, 
+                   narr:Claim_SurvivingNextTuesday, 
+                   narr:Claim_GraphGroundsLLM, 
+                   narr:Claim_InterpretationPreservation, 
+                   narr:Claim_AnonymizationSeed, 
+                   narr:Observation_CustomerEngManagerBridgeRole, 
+                   narr:Observation_TwoPassPattern, 
+                   narr:Observation_JohnDyessExample, 
+                   narr:Observation_CodeInferenceMoment, 
+                   narr:Observation_StaticVsLiveKB, 
+                   narr:StyleObs_CustomerEngManager_Antithesis, 
+                   narr:StyleObs_CustomerEngManager_Metaphor, 
+                   narr:StyleObs_CustomerEngManager_DirectPersonal, 
+                   narr:Metrics_CustomerEngManagerVision .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260519T140000Z {
+    narr:Sample_CustomerEngManagerVision_20260519 a narr:Sample ;
+      dct:title "an engineering manager at the customer — ARB Process Engagement and Deployment Vision — May 19, 2026" ;
+      dct:created "2026-05-19"^^xsd:date ;
+      narr:inputLength 7500 .
+
+    narr:Narrative_Phase1Phase2Pattern a narr:Narrative ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      narr:theme "The Two-Pass ARB Pattern" ;
+      skos:broader narr:Process ;
+      skos:note "ARB sessions work in two passes: Phase 1 (exploratory) and Phase 2 (finalization). aswritten bridges the lag between them." .
+
+    narr:Narrative_DayToDayRelitigation a narr:Narrative ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      narr:theme "Surviving Next Tuesday: The Day-to-Day Re-litigation Problem" ;
+      skos:broader narr:FrictionFailure ;
+      skos:note "Decision memory pain is often about recurring weekly conflations of 'options' vs 'decisions' between architects and devs." .
+
+    narr:Narrative_GraphLLMMoat a narr:Narrative ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      narr:theme "The Technical Moat: Graph Store + LLM Fuzzy Traversal" ;
+      skos:broader narr:MoatLeverage ;
+      skos:note "The combination of facts + value statements in a graph, traversed by an LLM, produces emergent behavior neither can achieve alone." .
+
+    narr:Claim_Phase2SharperThroughCapture a narr:Claim ;
+      narr:aboutNode narr:Narrative_Phase1Phase2Pattern ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "Phase 2 ARB is sharper because Phase 1 has been captured and the gaps have surfaced." .
+
+    narr:Claim_PerspectiveTracksARBEvolution a narr:Claim ;
+      narr:aboutNode narr:Narrative_Phase1Phase2Pattern ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "The system must surface how other ARB sessions during the lag period affect original guidance." .
+
+    narr:Claim_SurvivingNextTuesday a narr:Claim ;
+      narr:aboutNode narr:Narrative_DayToDayRelitigation ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "Decision memory isn't just about surviving turnover; it's about surviving the next week's meeting." .
+
+    narr:Claim_GraphGroundsLLM a narr:Claim ;
+      narr:aboutNode narr:Narrative_GraphLLMMoat ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "The graph store grounds the LLM; the LLM makes the graph navigable." .
+
+    narr:Claim_InterpretationPreservation a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveVsInformation ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "The ARB discusses why some options are worse than others; a perspective preserves this interpretation where code-grounding loses it." .
+
+    narr:Claim_AnonymizationSeed a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "The 'partition perspectives for individual clients' framing is the seed for the anonymization layer." .
+
+    narr:Observation_CustomerEngManagerBridgeRole a narr:Observation ;
+      skos:broader narr:PrimaryActors ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "an engineering manager at the customer acts as the bridge between ARB decisions and implementation teams, using aswritten to maintain coherence." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 410 ; oa:end 580 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "is the day-to-day bridge between product owners writing user stories and the ARB (Architecture Review Board) that approves how those stories get built" ] .
+
+    narr:Observation_TwoPassPattern a narr:Observation ;
+      skos:broader narr:CoreWorkflows ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "an engineering manager at the customer articulates the Phase 1 (exploratory) and Phase 2 (finalization) pattern of ARB sessions." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2060 ; oa:end 2150 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Phase one for me is the early days of architecture... Phase two ARB three weeks later" ] .
+
+    narr:Observation_JohnDyessExample a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "Recurring conflation where devs mistake 'options' for 'decisions' leading to re-litigation." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3400 ; oa:end 3600 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "John might go away. And maybe in John's head, he says, oh, well, the customer's chief architect told us how to do it, but actually he's just been told of some options." ] .
+
+    narr:Observation_CodeInferenceMoment a narr:Observation ;
+      skos:broader narr:TechnologiesSocialSystems ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "The system inferred a code change from past discussions even without a specific captured claim." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4700 ; oa:end 4850 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "It had no claim, but somehow it read the code and inferred this change from things that we had discussed in the past." ] .
+
+    narr:Observation_StaticVsLiveKB a narr:Observation ;
+      skos:broader narr:CompetitiveLandscape ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "an engineering manager at the customer contrasts aswritten's live information against static-data knowledge bases." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5250 ; oa:end 5400 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "It was driven by static data, whereas as written is driven by yesterday's live information, which is much better." ] .
+
+    narr:StyleObs_CustomerEngManager_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      oa:hasTarget [ 
+        a oa:SpecificResource ; 
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5250 ; oa:end 5400 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "driven by static data, whereas as written is driven by yesterday's live information" ]
+      ] .
+
+    narr:StyleObs_CustomerEngManager_Metaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      oa:hasTarget [ 
+        a oa:SpecificResource ; 
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2330 ; oa:end 2370 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "when we're up against the cold face" ]
+      ] .
+
+    narr:StyleObs_CustomerEngManager_DirectPersonal a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      oa:hasTarget [ 
+        a oa:SpecificResource ; 
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1200 ; oa:end 1300 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "I'm a key candidate for this because I forget as much as I remember right." ]
+      ] .
+
+    narr:Metrics_CustomerEngManagerVision a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      narr:AverageSentenceLength 19 ;
+      narr:ActiveVoiceRatio 0.82 ;
+      narr:JargonDensity 0.08 ;
+      skos:note "Analytical memo with heavy verbatim blockquotes. High active voice in editorial framing." .
+  }
+} 

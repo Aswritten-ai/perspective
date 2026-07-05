@@ -1,0 +1,29 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Flows> {
+  <https://aswritten.ai/narrative#Digest_Flows> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Flows> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers \"flows\" in several incompatible senses, only loosely unified by sequence. A three-beat demo storyline runs [generic-vs-grounded Claude](narr:Beat1_WithVsWithout) → [conversational gap extraction into versioned memory](narr:Beat2_GapExtraction) → [post-commit propagation across roles](narr:Beat3_Propagation), illustrating collective memory beating hallucination. Alongside sits a product-capability sketch, the [shared agent memory hub-and-spoke model](narr:Narrative_SharedAgentMemory), and a UI flow spec, the [three-state adaptive tool model](narr:Obs_AdaptiveToolStates). A second cluster is validation scenarios: [QA zero-context onboarding](narr:SolutionArchetype_QAOnboarding), flagged the strongest internal demo, and [CEO knowledge transfer without meetings](narr:SolutionArchetype_CEOKnowledgeTransfer), aimed at strategic decisions. Finally, two style notes both describe the [arrow-as-flow notation](narr:StyleObs_ArrowFlowNotation) and the [arrow yields-operator](narr:StyleObs_ArrowOperator). Read across, the region is about how knowledge moves — narrative beats, agent-memory architecture, onboarding archetypes, and the arrow notation used to write flows down — rather than one settled story.""" ;
+    narr:covers <https://aswritten.ai/narrative#Beat1_WithVsWithout> ;
+    narr:covers <https://aswritten.ai/narrative#Beat2_GapExtraction> ;
+    narr:covers <https://aswritten.ai/narrative#Beat3_Propagation> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SharedAgentMemory> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_AdaptiveToolStates> ;
+    narr:covers <https://aswritten.ai/narrative#SolutionArchetype_CEOKnowledgeTransfer> ;
+    narr:covers <https://aswritten.ai/narrative#SolutionArchetype_QAOnboarding> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowFlowNotation> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowOperator> ;
+    narr:keyPhrase [ narr:text "the customer's chief architect identified this as 'the killer sales demo' — concrete, measurable, imminent. Strongest internal validation scenario." ; narr:phraseSource <https://aswritten.ai/narrative#SolutionArchetype_QAOnboarding> ] ;
+    narr:keyPhrase [ narr:text "CEO gains working knowledge of feature without meetings. Validates knowledge transfer fidelity." ; narr:phraseSource <https://aswritten.ai/narrative#SolutionArchetype_CEOKnowledgeTransfer> ] ;
+    narr:keyPhrase [ narr:text "Three-state adaptive tool model: no repos → setup tools; repos connected, none selected → management + switch-repo; repo selected → full suite." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_AdaptiveToolStates> ] ;
+    narr:keyPhrase [ narr:text "→ (arrow) used consistently as a flow/yields operator in both prose and lists: 'refract(document, tx) → focus areas'" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ArrowOperator> ] ;
+    narr:keyPhrase [ narr:text "Shared Agent Memory (Hub-and-Spoke Model)" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SharedAgentMemory> ] ;
+    narr:variation [ narr:text "Heterogeneous hub: a demo storyline, a product architecture, a UI state spec, validation archetypes, and prose-style notes coexist under one 'Flows' label — different kinds, not one arc." ; narr:over <https://aswritten.ai/narrative#Beat1_WithVsWithout> ; narr:over <https://aswritten.ai/narrative#Obs_AdaptiveToolStates> ; narr:over <https://aswritten.ai/narrative#StyleObs_ArrowOperator> ; narr:over <https://aswritten.ai/narrative#SolutionArchetype_QAOnboarding> ] ;
+    narr:variation [ narr:text "Competing 'best validation scenario' claims: QA onboarding is called the killer sales demo / strongest internal scenario, while CEO knowledge transfer targets a different audience and decision." ; narr:over <https://aswritten.ai/narrative#SolutionArchetype_QAOnboarding> ; narr:over <https://aswritten.ai/narrative#SolutionArchetype_CEOKnowledgeTransfer> ] ;
+    narr:variation [ narr:text "Two near-duplicate style observations both describe the same arrow notation — one as flow notation, one as a yields operator — possibly a merge candidate." ; narr:over <https://aswritten.ai/narrative#StyleObs_ArrowFlowNotation> ; narr:over <https://aswritten.ai/narrative#StyleObs_ArrowOperator> ] ;
+    narr:variation [ narr:text "The three beats are a tight narrative sequence (1→2→3); the other children are static specs/archetypes with no temporal ordering, so 'flow' means two different things here." ; narr:over <https://aswritten.ai/narrative#Beat2_GapExtraction> ; narr:over <https://aswritten.ai/narrative#Beat3_Propagation> ; narr:over <https://aswritten.ai/narrative#Narrative_SharedAgentMemory> ] ;
+    narr:writer "claude (subscription)" .
+}

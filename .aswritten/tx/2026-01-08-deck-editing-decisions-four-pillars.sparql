@@ -1,0 +1,387 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+
+# ============================================================
+# Transaction Provenance
+# ============================================================
+
+INSERT DATA {
+  narr:Tx_20260128T223221Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-01-28T22:32:21.113Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-08-deck-editing-decisions-four-pillars.md" ;
+    sb:originRef "main" ;
+    prov:used "anthropic/claude-sonnet-4.5" .
+} ;
+
+# ============================================================
+# INSERT DATA: Added Triples
+# ============================================================
+
+INSERT DATA {
+  # New Sample
+  narr:Sample_DeckEditing_20260108 a narr:Sample ;
+    dct:title "Deck Editing Decisions: From Tony Feedback to Four Pillars Structure" ;
+    narr:inputLength 13847 ;
+    dct:created "2026-01-08"^^xsd:date ;
+    skos:note "Iterative deck revision session incorporating Tony's feedback and evolving pitch structure from scattered benefits to four clear pillars." ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  # New Narratives - Product
+  narr:Narrative_CodingAgentsContext a narr:Narrative ;
+    skos:broader narr:Differentiators ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    narr:theme "Coding agents (Cursor, Claude Code, GitHub Copilot) query witness while implementing, aligning features to org direction automatically" ;
+    skos:note "PM freed from constant context questions. Rework rate 15% → <5%. Differentiates from ChatGPT Teams/Claude Projects (just chat, not coding agents)." ;
+    skos:related narr:ModulesCapabilities, narr:PersonasJTBD ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  narr:Narrative_OrgChangeTracking a narr:Narrative ;
+    skos:broader narr:CoreNarratives ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    narr:theme "Every witnessed change creates queryable organizational history; auto-generate stakeholder reports" ;
+    skos:note "Board deck preparation: days → 15 minutes. Positions product as infrastructure for organizational transparency, not just memory. Novel: organizational change as code." ;
+    skos:related narr:MetricsMonitoring, narr:Proof ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  narr:Narrative_VCChannel a narr:Narrative ;
+    skos:broader narr:ActorIncentiveAnalysis ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    narr:theme "VCs get better portfolio visibility (queryable, not just reported), faster board prep, cross-portfolio learning" ;
+    skos:note "New GTM channel: VCs introduce to portfolio companies. VCs want to add value; this is concrete operational improvement. Addresses 'who's the buyer?': Primary = CEO/founder, Champion = Strategy/CTO, Channel = VCs/advisors." ;
+    skos:related narr:ValueExchange, narr:PowerDependency ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  # Style Observations
+  narr:StyleObs_TonyPainFirst a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    oa:hasBody narr:IdiolectPhrasing ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_DeckEditing_20260108 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1523 ;
+        oa:end 1720
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "You're making the point you're going straight to the cost. But that's not the problem. Cost isn't the problem, actually. It's a way to measure the problem." ;
+        oa:prefix "**Tony's exact words:**\n> \"" ;
+        oa:suffix " Right. The problem is people have no fucking clue"
+      ]
+    ] ;
+    skos:related narr:Tagline ;
+    skos:note "Tony's direct, conversational register; uses 'actually' as emphasis; reframes cost as metric, not problem." ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  narr:StyleObs_TonyInterruption a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_DeckEditing_20260108 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2050 ;
+        oa:end 2188
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "See, just not having to stop what I'm doing to tell somebody something all the fucking time. Yeah, I'm in." ;
+        oa:prefix "> \"" ;
+        oa:suffix " Yeah, right. I don't care what it costs.\""
+      ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Short, punchy sentences. Profanity for emphasis. Immediate decision ('I'm in'). Dismisses cost concern." ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  narr:StyleObs_ScarletCodingAgents a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ResonanceUse ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    oa:hasBody narr:ResonanceUse ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_DeckEditing_20260108 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3850 ;
+        oa:end 4100
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "One of the most powerful parts (for technical orgs, and I know we're moving away from that but digital agencies do still do a lot of dev, etc) is that the AI agent working on the code directly now understands the entire business context" ;
+        oa:prefix "Scarlet: \"" ;
+        oa:suffix ", so is much less likely to implement features"
+      ]
+    ] ;
+    skos:related narr:WhatDoesItDo ;
+    skos:note "Parenthetical aside shows strategic awareness. 'Most powerful parts' signals conviction. Connects technical capability to business outcome." ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  narr:StyleObs_ScarletPMBurden a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_DeckEditing_20260108 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5650 ;
+        oa:end 5900
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Communicating vision etc with developers is half the point of all-hands, product process, putting context in tickets, etc and we're able to free devs now to focus on working and ask their coworker (the AI) for context" ;
+        oa:prefix "> \"" ;
+        oa:suffix " when they need it. PMs don't have to constantly worry"
+      ]
+    ] ;
+    oa:hasBody narr:Analogy ;
+    skos:related narr:PersonasJTBD ;
+    skos:note "'Coworker (the AI)' analogy humanizes the tool. 'Half the point' quantifies PM burden. 'Free devs' frames as liberation, not replacement." ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  narr:StyleObs_OrgChangeAsCode a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_DeckEditing_20260108 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 7450 ;
+        oa:end 7620
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I'd also like to add something about organizational change as code, ie being able to quantify the way the org is changing" ;
+        oa:prefix "**Scarlet's request:**\n> \"" ;
+        oa:suffix ", and using that both to automatically generate reports"
+      ]
+    ] ;
+    skos:related narr:NamingConventions ;
+    skos:note "'Organizational change as code' metaphor extends git-native positioning. 'Quantify the way the org is changing' makes abstract concrete." ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  narr:StyleObs_BrandStylization a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_DeckEditing_20260108 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 0 ;
+        oa:end 80
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Deck Editing Decisions: From Tony Feedback to Four Pillars Structure" ;
+        oa:prefix "" ;
+        oa:suffix "\n\n**Date**: 2026-01-08"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Title case for heading. No brand name in title (context-focused, not brand-focused)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+
+  # Style Metrics
+  narr:StyleMetrics_DeckEditing a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    narr:AverageSentenceLength 22 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: ~10 (college-level but accessible)" ;
+    skos:note "Mix of short punchy sentences (Tony's quotes) and longer analytical sentences (Scarlet's insights, decision rationale). High active voice ratio. Technical terms defined in context. Bulleted lists aid scannability." ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+} ;
+
+# ============================================================
+# UPDATE: Rubric Assessments
+# ============================================================
+
+DELETE {
+  narr:RubricAssess_Register skos:broader ?oldBroader5 ;
+    dct:source ?oldSource5 ;
+    rdf:value ?oldValue5 ;
+    skos:note ?oldNote5 ;
+    skos:related ?oldRelated5 .
+  
+  narr:RubricAssess_Phrasing skos:broader ?oldBroader6 ;
+    dct:source ?oldSource6 ;
+    rdf:value ?oldValue6 ;
+    skos:note ?oldNote6 ;
+    skos:related ?oldRelated6 .
+  
+  narr:RubricAssess_Cadence skos:broader ?oldBroader7 ;
+    dct:source ?oldSource7 ;
+    rdf:value ?oldValue7 ;
+    skos:note ?oldNote7 ;
+    skos:related ?oldRelated7 .
+  
+  narr:RubricAssess_StrategicAlignment skos:broader ?oldBroader8 ;
+    dct:source ?oldSource8 ;
+    rdf:value ?oldValue8 ;
+    skos:note ?oldNote8 ;
+    skos:related ?oldRelated8 .
+  
+  narr:RubricAssess_Tailoring skos:broader ?oldBroader9 ;
+    dct:source ?oldSource9 ;
+    rdf:value ?oldValue9 ;
+    skos:note ?oldNote9 ;
+    skos:related ?oldRelated9 .
+  
+  narr:RubricAssess_Resonance skos:broader ?oldBroader10 ;
+    dct:source ?oldSource10 ;
+    rdf:value ?oldValue10 ;
+    skos:note ?oldNote10 ;
+    skos:related ?oldRelated10 .
+  
+  narr:RubricAssess_Flow skos:broader ?oldBroader11 ;
+    dct:source ?oldSource11 ;
+    rdf:value ?oldValue11 ;
+    skos:note ?oldNote11 .
+  
+  narr:RubricAssess_Novelty skos:broader ?oldBroader12 ;
+    dct:source ?oldSource12 ;
+    rdf:value ?oldValue12 ;
+    skos:note ?oldNote12 ;
+    skos:related ?oldRelated12 .
+  
+  narr:RubricAssess_Accuracy skos:broader ?oldBroader13 ;
+    dct:source ?oldSource13 ;
+    rdf:value ?oldValue13 ;
+    skos:note ?oldNote13 ;
+    skos:related ?oldRelated13 .
+}
+INSERT {
+  narr:RubricAssess_Register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    rdf:value 4.5 ;
+    skos:note "Direct, conversational register throughout. Tony's quotes use profanity for emphasis ('no fucking clue', 'all the fucking time'). Scarlet's voice is strategic, parenthetical asides show awareness. Mix of informal (Tony) and analytical (Scarlet) fits collaborative decision-making context." ;
+    skos:related narr:StyleObs_TonyPainFirst, narr:StyleObs_TonyInterruption ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+  
+  narr:RubricAssess_Phrasing a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    rdf:value 4.0 ;
+    skos:note "Strong idiolect: Tony's 'I'm in', 'I don't care what it costs'; Scarlet's 'most powerful parts', 'half the point'. Domain-specific phrasing: 'coding agents', 'git-native', 'organizational change as code'. Stock phrases: 'pain-first', 'four pillars', 'tool-agnostic'." ;
+    skos:related narr:StyleObs_ScarletCodingAgents ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+  
+  narr:RubricAssess_Cadence a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    rdf:value 4.0 ;
+    skos:note "Short, punchy sentences in Tony's quotes. Longer analytical sentences in Scarlet's insights. Bulleted lists for structure. Headings use parallel construction ('Decision:', 'What was happening:', 'What we did:'). Rhythm varies by speaker but maintains clarity." ;
+    skos:related narr:StyleObs_TonyInterruption ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+  
+  narr:RubricAssess_StrategicAlignment a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    rdf:value 5.0 ;
+    skos:note "Entire document is strategic decision-making. Every section ties back to positioning thesis, target market, value prop hierarchy. Explicit connections: pain-first structure → decision maker focus; four pillars → product positioning; VC channel → GTM strategy. Demonstrates narrative-driven roadmap in action." ;
+    skos:related narr:Narrative_PositioningShift, narr:Narrative_FourPillars ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+  
+  narr:RubricAssess_Tailoring a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    rdf:value 4.5 ;
+    skos:note "Explicitly segments audiences: decision makers (pain), procurement (ROI), VCs (transparency), end users (workflow). Tony's feedback tailored to non-tech buyers. Scarlet's insights tailored to technical orgs/agencies. 'Audience segmentation' section codifies this." ;
+    skos:related narr:Narrative_PainFirstStructure, narr:Narrative_VCChannel ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+  
+  narr:RubricAssess_Resonance a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    rdf:value 4.5 ;
+    skos:note "Strong use of analogies: 'coworker (the AI)', 'organizational change as code'. Concrete examples: healthcare pivot, board deck prep days → 15 minutes. Tony's pain stories resonate ('stop what I'm doing to tell somebody something'). Scarlet's PM burden reduction connects to lived experience." ;
+    skos:related narr:StyleObs_ScarletPMBurden, narr:StyleObs_OrgChangeAsCode ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+  
+  narr:RubricAssess_Flow a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    rdf:value 4.0 ;
+    skos:note "Clear section structure: Major Structural Decisions → Cleaner How It Works → Two Deck Versions → Key Principles → Files Created → Next Actions. Each decision has: Decision, Original/Revised, Why this works. Transitions explicit ('What was happening:', 'What we did:', 'Why this matters:'). Some repetition across sections (intentional for emphasis)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+  
+  narr:RubricAssess_Novelty a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    rdf:value 4.0 ;
+    skos:note "Novel framing: 'organizational change as code', 'infrastructure for organizational transparency'. Fresh metaphors: 'coworker (the AI)', 'witness' terminology. Some domain-standard phrases: 'pain-first', 'four pillars', 'git-native'. Balance of originality and clarity." ;
+    skos:related narr:StyleObs_OrgChangeAsCode ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+  
+  narr:RubricAssess_Accuracy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_DeckEditing_20260108 ;
+    rdf:value 5.0 ;
+    skos:note "Verbatim quotes from Tony and Scarlet with exact attribution. Specific metrics cited: [amount], rework rate 15% → <5%, board prep days → 15 minutes. File names referenced: working-deck-v3.md, landing-page-deck.md. Date and context metadata present. No unsupported claims." ;
+    skos:related narr:StyleObs_TonyPainFirst, narr:StyleObs_ScarletCodingAgents ;
+    prov:wasGeneratedBy narr:Tx_20260128T223221Z .
+}
+WHERE {
+  OPTIONAL { narr:RubricAssess_Register skos:broader ?oldBroader5 ;
+    dct:source ?oldSource5 ;
+    rdf:value ?oldValue5 ;
+    skos:note ?oldNote5 ;
+    skos:related ?oldRelated5 . }
+  OPTIONAL { narr:RubricAssess_Phrasing skos:broader ?oldBroader6 ;
+    dct:source ?oldSource6 ;
+    rdf:value ?oldValue6 ;
+    skos:note ?oldNote6 ;
+    skos:related ?oldRelated6 . }
+  OPTIONAL { narr:RubricAssess_Cadence skos:broader ?oldBroader7 ;
+    dct:source ?oldSource7 ;
+    rdf:value ?oldValue7 ;
+    skos:note ?oldNote7 ;
+    skos:related ?oldRelated7 . }
+  OPTIONAL { narr:RubricAssess_StrategicAlignment skos:broader ?oldBroader8 ;
+    dct:source ?oldSource8 ;
+    rdf:value ?oldValue8 ;
+    skos:note ?oldNote8 ;
+    skos:related ?oldRelated8 . }
+  OPTIONAL { narr:RubricAssess_Tailoring skos:broader ?oldBroader9 ;
+    dct:source ?oldSource9 ;
+    rdf:value ?oldValue9 ;
+    skos:note ?oldNote9 ;
+    skos:related ?oldRelated9 . }
+  OPTIONAL { narr:RubricAssess_Resonance skos:broader ?oldBroader10 ;
+    dct:source ?oldSource10 ;
+    rdf:value ?oldValue10 ;
+    skos:note ?oldNote10 ;
+    skos:related ?oldRelated10 . }
+  OPTIONAL { narr:RubricAssess_Flow skos:broader ?oldBroader11 ;
+    dct:source ?oldSource11 ;
+    rdf:value ?oldValue11 ;
+    skos:note ?oldNote11 . }
+  OPTIONAL { narr:RubricAssess_Novelty skos:broader ?oldBroader12 ;
+    dct:source ?oldSource12 ;
+    rdf:value ?oldValue12 ;
+    skos:note ?oldNote12 ;
+    skos:related ?oldRelated12 . }
+  OPTIONAL { narr:RubricAssess_Accuracy skos:broader ?oldBroader13 ;
+    dct:source ?oldSource13 ;
+    rdf:value ?oldValue13 ;
+    skos:note ?oldNote13 ;
+    skos:related ?oldRelated13 . }
+}

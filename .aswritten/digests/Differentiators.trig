@@ -1,0 +1,55 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Differentiators> {
+  <https://aswritten.ai/narrative#Digest_Differentiators> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Differentiators> ;
+    narr:childCount "30"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers what makes aswritten distinct from generic AI. The most-cited enterprise hook is [cross-repo, cross-platform, org-owned memory](narr:Narrative_CrossRepoMemoryEnterpriseHook) — the customer's chief architect's Mar-2026 point that [Copilot Memories is repo-scoped](narr:Claim_CrossRepoMemoryUnsolvedProblem) and nobody spans BitBucket, GitHub Enterprise, and customer repos while staying org-owned. A second pillar is the [citation-engine-not-synthesis moat](narr:Narrative_CitationEngineNotSynthesis) (Scarlet, Apr): aswritten cites specific methodology rather than collapsing content to platitude, extending the [provenance moment of value](narr:Narrative_ProvenanceCitationMoment) and [agents citing which memories shaped them](narr:Obs_AgentsCiteMemories). A third cluster is composability: [module layering](narr:Narrative_ModuleLayeringComposability) via [multi-repo compilation on one ontology](narr:Obs_MultiRepoCompilationQuote), [living auto-updating modules](narr:Narrative_LivingEvolvingModules), and [knowledge packaging](narr:Narrative_KnowledgePackagingMoment). Further differentiators: [worldview encoding of AI behavior](narr:Claim_WorldviewEncodesAIBehavior), [undocumented-knowledge extraction](narr:Obs_UndocumentedKnowledgeQuote), [introspect surfacing the product's own roadmap](narr:Narrative_ProductSurfacesOwnRoadmap) (62 gaps in nine days), and [strategic design folded into product](narr:Differentiator_StrategicCapability). Lighter channel/interface claims (cognitive interface, HTML, SMS) sit at the edge.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CognitiveInterface> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CrossRepoMemoryUnsolvedProblem> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_HTMLSuperior> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_LayeringCoreFeatureDifferentiator> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SMSTrustSignalChannelProperty> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SharedAgentMemoryProductFit> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_WorldviewEncodesAIBehavior> ;
+    narr:covers <https://aswritten.ai/narrative#Differentiator_StrategicCapability> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CitationEngineNotSynthesis> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CrossRepoMemoryEnterpriseHook> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_GitHubAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_KnowledgePackagingMoment> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_LivingEvolvingModules> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ModuleLayeringComposability> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ProductSurfacesOwnRoadmap> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ProvenanceCitationMoment> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SharedAgentMemory> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_UndocumentedKnowledgeExtraction> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_AIOpinionQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_AgentsCiteMemories> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_AutoUpdateQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_DifferentiatorFolded> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_GIFLooksRealQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_IntrospectGapExamples> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectCrossRepoQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_MultiRepoCompilationQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletCitationEngineQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_StyleVoiceEncoding> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_UndocumentedKnowledgeQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_WorldviewEncodingCriticismsQuote> ;
+    narr:keyPhrase [ narr:text "Nobody seems to be solving this problem in a way that I like. Copilot has a feature called Copilot Memories, but it's scoped to a repo" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomerArchitectCrossRepoQuote> ] ;
+    narr:keyPhrase [ narr:text "Aswritten does not tell you a practitioner takes a trauma informed approach" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletCitationEngineQuote> ] ;
+    narr:keyPhrase [ narr:text "You can compile multiple repos in a single chat and since it's all the same ontology, it all fits together." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_MultiRepoCompilationQuote> ] ;
+    narr:keyPhrase [ narr:text "they, by nature, are auto. They can be updated, right? The publishing process allows someone to publish a module but also to add to it over time and it'll automatically update for the person consuming it." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_AutoUpdateQuote> ] ;
+    narr:keyPhrase [ narr:text "If we want expertise, not just information, we need to distill perspective into a format that AI can understand." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_UndocumentedKnowledgeQuote> ] ;
+    narr:keyPhrase [ narr:text "Agents should cite which memories shaped their recommendations." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_AgentsCiteMemories> ] ;
+    narr:keyPhrase [ narr:text "All the criticisms that people have about AI responding... that's the kind of stuff that we're able to encode in worldview." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_WorldviewEncodingCriticismsQuote> ] ;
+    narr:variation [ narr:text "Competing 'primary moment of value' claims: provenance/citation is framed as primary, while knowledge packaging is framed as the second primary moment — they vie for top billing." ; narr:over <https://aswritten.ai/narrative#Narrative_ProvenanceCitationMoment> ; narr:over <https://aswritten.ai/narrative#Narrative_KnowledgePackagingMoment> ] ;
+    narr:variation [ narr:text "The differentiators are explicitly ranked against each other: cross-repo memory is asserted stronger than onboarding and stronger than knowledge extraction as the enterprise hook." ; narr:over <https://aswritten.ai/narrative#Narrative_CrossRepoMemoryEnterpriseHook> ; narr:over <https://aswritten.ai/narrative#Narrative_UndocumentedKnowledgeExtraction> ] ;
+    narr:variation [ narr:text "Citation-engine framing is a mid-session correction that positions aswritten against synthesis/summary — the road deliberately not taken (it expands sources, refuses to compress)." ; narr:over <https://aswritten.ai/narrative#Narrative_CitationEngineNotSynthesis> ; narr:over <https://aswritten.ai/narrative#Obs_ScarletCitationEngineQuote> ] ;
+    narr:variation [ narr:text "SMS trust-signal is scoped down by correction to a channel property, not product identity — 'a bonus; it's an upsell,' an outlier among the core differentiators." ; narr:over <https://aswritten.ai/narrative#Claim_SMSTrustSignalChannelProperty> ] ;
+    narr:variation [ narr:text "Knowledge-packaging aha is qualified: the purchase trigger has not yet fired in practice because an engineering manager at the customer is not currently hiring — excitement without conversion." ; narr:over <https://aswritten.ai/narrative#Narrative_KnowledgePackagingMoment> ] ;
+    narr:variation [ narr:text "Shared agent memory is a proposed stake needing user validation, not yet a proven differentiator like the others." ; narr:over <https://aswritten.ai/narrative#Claim_SharedAgentMemoryProductFit> ; narr:over <https://aswritten.ai/narrative#Narrative_SharedAgentMemory> ] ;
+    narr:variation [ narr:text "Peripheral channel/interface claims (data-viz cognitive interface, HTML-over-Markdown) lack dates and witnesses, sitting apart from the dated enterprise/moat through-line." ; narr:over <https://aswritten.ai/narrative#Claim_CognitiveInterface> ; narr:over <https://aswritten.ai/narrative#Claim_HTMLSuperior> ] ;
+    narr:writer "claude (subscription)" .
+}

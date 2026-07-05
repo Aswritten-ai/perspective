@@ -1,0 +1,103 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260405T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-05T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260405-fundraising-brief-review" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      narr:Narrative_CalmCompanyThesis,
+      narr:Claim_FundraisingBriefStale_WinterTrajectory,
+      narr:Claim_FundraisingBriefStale_GTMRationale,
+      narr:Obs_ScarletCalmCompanyQuote,
+      narr:StyleObs_FundraisingBriefReview_DirectQuoteAnchor .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260405T120000Z {
+
+    # ── NARRATIVE: Calm Company Thesis ──────────────────────────────────────
+    narr:Narrative_CalmCompanyThesis
+
+
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "The Calm Company Thesis: Ambitious Bootstrapped, Not Lifestyle, Not VC" ;
+      skos:note "The Calm Company thesis frames aswritten as an ambitious bootstrapped company with deep founder expertise in a niche domain — not a lifestyle business and not a venture-scale company. The goal is a single raise that produces a company capable of sustaining itself and returning profit to investors. If money is taken in the future, it is by choice of scale, not necessity. This supersedes the prior fundraising framing that positioned the F&F raise as a stepping stone to venture capital." ;
+      narr:theme "Ambitious bootstrapped companies with deep niche expertise raise once, sustain themselves, and return profit — money taken later is by choice of scale, not necessity" .
+
+    # ── CLAIM: Fundraising Brief Stale — Winter Trajectory ──────────────────
+    narr:Claim_FundraisingBriefStale_WinterTrajectory
+      a narr:Claim ;
+
+      skos:note "The winter trajectory section (lines 321-323) of the fundraising brief states 'Raise venture or sustain on revenue,' which inverts the actual posture. Organic scaling is the thesis; VC is a specific tool for a specific phase, not a default milestone. The brief must be corrected to reflect that organic scale is the goal and venture capital is an optional future choice, not a planned outcome." ;
+      narr:aboutNode narr:Narrative_VCPivot_OrganicScale ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:challenges narr:Narrative_VCPivot_OrganicScale .
+
+    # ── CLAIM: Fundraising Brief Stale — GTM Rationale ──────────────────────
+    narr:Claim_FundraisingBriefStale_GTMRationale
+      a narr:Claim ;
+
+      skos:note "The Go-To-Market section (lines 237-239) of the fundraising brief is missing the deeper rationale for the interview-first sales motion. The brief treats it as an efficiency play, but the real reason is that it is the forcing function that keeps development human-driven — it prevents building without a human anchor. This rationale must be made explicit." ;
+      narr:aboutNode narr:Narrative_InterviewForcingFunction ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_InterviewForcingFunction .
+
+    # ── OBSERVATION: Scarlet Calm Company Quote ──────────────────────────────
+    narr:Obs_ScarletCalmCompanyQuote
+      a narr:Observation ;
+
+      skos:broader narr:PositioningThesis ;
+      skos:note "Scarlet's verbatim articulation of the Calm Company / one-round-ever thesis, contrasting with the stale VC-stepping-stone framing in the fundraising brief." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1182 ;
+          oa:end 1451
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "We are assuming that money is raised as shares or shared earnings from aligned investors, with the goal that only a single round will ever need to be raised." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " The goal of that round is to produce a company"
+        ]
+      ] .
+
+    # Style Obs 3: Direct quote as conviction anchor
+    narr:StyleObs_FundraisingBriefReview_DirectQuoteAnchor
+      a narr:StyleObservation ;
+
+      skos:broader narr:SpeakerIdiolects ;
+      skos:note "Both major sections (PnD correction and Calm Company thesis) are anchored by a direct Scarlet quote in bold. This is a consistent idiolect pattern across aswritten memories: the founder's verbatim speech functions as the conviction marker, elevating the claim from editorial assertion to attributed decision. The quotes are long, run-on, and conversational — characteristic of voice-memo transcription style." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1182 ;
+          oa:end 1560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "We are assuming that money is raised as shares or shared earnings from aligned investors, with the goal that only a single round will ever need to be raised. The goal of that round is to produce a company that can then sustain itself and give profit back to the investors." ;
+          oa:prefix "**Scarlet**: \"" ;
+          oa:suffix " If money is taken in the future"
+        ]
+      ] .
+
+  }
+}

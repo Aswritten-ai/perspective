@@ -1,0 +1,29 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Segmentation> {
+  <https://aswritten.ai/narrative#Digest_ns__Segmentation> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Segmentation> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers competing cuts at *who the customer is*. The quantitative spine is a [dev-shop ICP](narr:Narrative_ICPValidation) — [5-150 people, [amount]-50M revenue](narr:Narrative_ICPValidation) — echoed in the [voiced ICP framing](narr:StyleObs_ICPQuote) and reinforced by a [Google analogy](narr:StyleObs_GoogleAnalogy) that even large orgs run small core teams. But the *vertical* cut diverges sharply: one child names [creative/consulting/digital agencies (5-50)](narr:Narrative_TargetMarket), explicitly excluding tech startups and enterprise; another targets [high-IP technical verticals](narr:Observation_Segmentation_HighIPTechnical) — AI/ML, dev tools, SaaS-with-methodology — i.e. the very tech firms agencies-thesis rules out. A third altitude drops to the [solo-developer persona](narr:Persona_SoloDeveloper) on Claude Code/Cursor/Windsurf. Cutting across all of it, an [audience-strategy question](narr:Question_AudienceStrategy) flags whether developer-pain and exec-IP-threat framings are one motion or two. The [actor profile](narr:Narrative_SIC_PrimaryActors_1) — Git-literate entrepreneurs, designers, consultants — sits beneath these. No reconciliation has been authored; the segment remains genuinely contested across vertical, size, and altitude.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_ICPValidation> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_PrimaryActors_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_TargetMarket> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_Segmentation_HighIPTechnical> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Persona_SoloDeveloper> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Question_AudienceStrategy> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_GoogleAnalogy> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_ICPQuote> ;
+    narr:keyPhrase [ narr:text "5-150 people, [amount]-50M revenue dev shops" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_ICPValidation> ] ;
+    narr:keyPhrase [ narr:text "Primary: Creative agencies, consulting firms, digital agencies (5-50 people). Not tech startups (will build themselves), not enterprise (too slow)." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_TargetMarket> ] ;
+    narr:keyPhrase [ narr:text "AI/ML companies, developer tools/infrastructure, SaaS with proprietary methodology, infrastructure/platform companies—where IP is the moat" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_Segmentation_HighIPTechnical> ] ;
+    narr:keyPhrase [ narr:text "Solo developers / small teams using Claude Code, Cursor, Windsurf" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Persona_SoloDeveloper> ] ;
+    narr:keyPhrase [ narr:text "You're looking for a dev shop that's got 10 to 50 people, probably something like 10 to [amount] in revenue." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ICPQuote> ] ;
+    narr:keyPhrase [ narr:text "Developer-first PLG vs exec-first threat narrative — same motion or parallel entry points?" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Question_AudienceStrategy> ] ;
+    narr:variation [ narr:text "Vertical contradiction: agencies-thesis explicitly excludes tech startups, while the high-IP cut targets exactly those AI/ML and dev-tool firms." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_TargetMarket> ; narr:over <https://aswritten.ai/ns/narrative#Observation_Segmentation_HighIPTechnical> ] ;
+    narr:variation [ narr:text "Altitude split: org-level ICP (5-150 people dev shops) vs a solo-developer/small-team persona using AI coding tools." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_ICPValidation> ; narr:over <https://aswritten.ai/ns/narrative#Persona_SoloDeveloper> ] ;
+    narr:variation [ narr:text "Unresolved framing question — developer-pain PLG vs exec-IP-threat narrative: one motion or parallel entry points?" ; narr:over <https://aswritten.ai/ns/narrative#Question_AudienceStrategy> ] ;
+    narr:variation [ narr:text "Size-range drift: 5-150 vs 5-50 vs 10-50 people across the children; no single agreed band." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_ICPValidation> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_TargetMarket> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ICPQuote> ] ;
+    narr:writer "claude (subscription)" .
+}

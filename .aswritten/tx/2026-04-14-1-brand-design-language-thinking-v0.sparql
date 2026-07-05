@@ -1,0 +1,117 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250522T140000Z a prov:Activity ;
+    prov:generatedAtTime "2025-05-22T14:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-14-brand-design-language.md" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_BrandDesignLanguage_20260414, 
+                   narr:Actor_ScarletDame, 
+                   narr:Actor_DesignCollaborator,
+                   narr:Narrative_ExpertiseProvenancePositioning,
+                   narr:Claim_GoldAccentAuthority,
+                   narr:Claim_LowercaseBrandStylization,
+                   narr:StyleObservation_LowercaseSignal,
+                   narr:StyleObservation_EditorialSerif,
+                   narr:StyleObservation_MonospaceDocs,
+                   narr:StyleMetrics_BrandDesignLanguage .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20250522T140000Z {
+    narr:Sample_BrandDesignLanguage_20260414 a narr:Sample ;
+      dct:title "Brand Design Language: Thinking Before a design collaborator's Style Guide" ;
+      dct:created "2026-04-14"^^xsd:date ;
+      narr:inputLength 4850 .
+
+    narr:Actor_ScarletDame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Founder of aswritten" .
+
+    narr:Actor_DesignCollaborator a narr:Actor ;
+      skos:prefLabel "a design collaborator" ;
+      skos:note "Designer providing style guide v1" .
+
+    narr:Narrative_ExpertiseProvenancePositioning a narr:Narrative ;
+      dct:source narr:Sample_BrandDesignLanguage_20260414 ;
+      narr:theme "Positioning on Expertise and Provenance" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "aswritten deliberately avoids AI-space defaults (blue/sans-serif) to signal authoritative, editorial expertise." .
+
+    narr:Claim_GoldAccentAuthority a narr:Claim ;
+      narr:aboutNode narr:Narrative_ExpertiseProvenancePositioning ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_BrandDesignLanguage_20260414 ;
+      skos:note "Gold/amber is reserved for expertise-signaling chrome, differentiating from generic B2B SaaS blue." .
+
+    narr:Claim_LowercaseBrandStylization a narr:Claim ;
+      narr:aboutNode narr:BrandNameStylization ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_BrandDesignLanguage_20260414 ;
+      skos:note "Lowercase 'aswritten' signals a code-adjacent, anti-corporate identity." .
+
+    narr:StyleObservation_LowercaseSignal a narr:StyleObservation ;
+      skos:broader narr:BrandNameStylization ;
+      dct:source narr:Sample_BrandDesignLanguage_20260414 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BrandDesignLanguage_20260414 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2300 ; oa:end 2330 ] ;
+        oa:hasSelector [ 
+          a oa:TextQuoteSelector ; 
+          oa:exact "Lowercase aswritten and aswritten.ai" ;
+          oa:prefix "decisions - " ;
+          oa:suffix ". Never AsWritten"
+        ]
+      ] ;
+      skos:note "Lowercase signals code-adjacent and anti-corporate." .
+
+    narr:StyleObservation_EditorialSerif a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_BrandDesignLanguage_20260414 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BrandDesignLanguage_20260414 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3250 ; oa:end 3300 ] ;
+        oa:hasSelector [ 
+          a oa:TextQuoteSelector ; 
+          oa:exact "headings in a display serif. Editorial, more declarative." ;
+          oa:prefix "Landing surface - " ;
+          oa:suffix " Not yet decided"
+        ]
+      ] .
+
+    narr:StyleObservation_MonospaceDocs a narr:StyleObservation ;
+      skos:broader narr:OrthographySpelling ;
+      dct:source narr:Sample_BrandDesignLanguage_20260414 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BrandDesignLanguage_20260414 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3100 ; oa:end 3150 ] ;
+        oa:hasSelector [ 
+          a oa:TextQuoteSelector ; 
+          oa:exact "headings in monospace. The code-adjacent aesthetic" ;
+          oa:prefix "Docs surface - " ;
+          oa:suffix " reinforces the library-like"
+        ]
+      ] .
+
+    narr:StyleMetrics_BrandDesignLanguage a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_BrandDesignLanguage_20260414 ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.12 ;
+      skos:note "Authoritative, editorial register with technical/code-adjacent terminology." .
+  }
+}

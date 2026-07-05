@@ -1,0 +1,28 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ChangeManagement> {
+  <https://aswritten.ai/narrative#Digest_ChangeManagement> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#ChangeManagement> ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers how change flows through aswritten's repo-native operations — across handoffs, research promotion, review rounds, and branch policy. On process: [handoffs are never documents](narr:Claim_HandoffsNeverDocuments) (Jun 2026), living in task notes and the ledger, with the 811-line launch-plan blob as the named failure mode. On research-to-canon, [promotion is rewriting, not merging](narr:Claim_PromotionByRewriting) (Apr 2026): the research branch is raw material, not a merge target. Review mechanics recur twice — [the corrections-vs-merge semantics](narr:Claim_ReviewMemorySemantics) and [the same flow as narrative](narr:Narrative_ReviewMemoryFlow) — both holding that corrections take at least two rounds. Branch policy is [git merge into dev, never rebase](narr:Obs_GitMergePolicy), with squashing flagged as problematic. The [Notion retirement narrative](narr:Narrative_NotionRetirement) (Jun 2026) makes explicit a long-abandoned tool's formal end, the first Organization-domain memory, with [Scarlet's Mar 2026 merge-constraint quote](narr:Observation_ScarletDevMergeQuote) marking an in-flight pause on new pushes.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_HandoffsNeverDocuments> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PromotionByRewriting> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ReviewMemorySemantics> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_NotionRetirement> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ReviewMemoryFlow> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_GitMergePolicy> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_ScarletDevMergeQuote> ;
+    narr:keyPhrase [ narr:text "Handoffs are never documents." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_HandoffsNeverDocuments> ] ;
+    narr:keyPhrase [ narr:text "Promotion is rewriting memories into main's voice and structure at the moment of decision — not cherry-picking commits or merging the branch." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PromotionByRewriting> ] ;
+    narr:keyPhrase [ narr:text "A review with corrections always takes at least two rounds." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ReviewMemorySemantics> ] ;
+    narr:keyPhrase [ narr:text "Use git merge main to pull changes into dev; never rebase." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_GitMergePolicy> ] ;
+    narr:keyPhrase [ narr:text "CRM migration (task-268) is the last Notion dependency." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_NotionRetirement> ] ;
+    narr:keyPhrase [ narr:text "I'm trying to get all of this stuff merged from dev domain, but we're not doing any new pushes." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_ScarletDevMergeQuote> ] ;
+    narr:variation [ narr:text "Two opposed change-flow models coexist: research changes are rewritten into canon (never merged), while dev changes are pulled in via git merge — promotion vs merge are deliberately different mechanisms." ; narr:over <https://aswritten.ai/narrative#Claim_PromotionByRewriting> ; narr:over <https://aswritten.ai/narrative#Obs_GitMergePolicy> ] ;
+    narr:variation [ narr:text "Notion retirement is asserted as complete yet qualified: CRM migration (task-268) is still an open dependency, so 'fully retired' is aspirational, not finished." ; narr:over <https://aswritten.ai/narrative#Narrative_NotionRetirement> ] ;
+    narr:variation [ narr:text "Scarlet's Mar 2026 quote signals a freeze — merging from dev is in scope but no new pushes — a temporal constraint that sits against the otherwise forward-moving merge/promotion process." ; narr:over <https://aswritten.ai/narrative#Observation_ScarletDevMergeQuote> ] ;
+    narr:variation [ narr:text "Review semantics appear in duplicate (a Claim and a Narrative carrying the same corrections-vs-merge rule), one tagged aboutNode rather than broader — possible redundancy or a node-level vs narrative-level distinction." ; narr:over <https://aswritten.ai/narrative#Claim_ReviewMemorySemantics> ; narr:over <https://aswritten.ai/narrative#Narrative_ReviewMemoryFlow> ] ;
+    narr:writer "claude (subscription)" .
+}

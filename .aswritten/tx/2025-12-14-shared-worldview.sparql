@@ -1,0 +1,479 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+
+# Transaction-level provenance
+narr:Tx_20261228T185729Z a prov:Activity ;
+  prov:wasAssociatedWith <http://aswritten.ai> ;
+  prov:wasAttributedTo <http://n8n.aswritten.ai> ;
+  prov:generatedAtTime "2026-01-28T18:57:29.337Z"^^xsd:dateTime ;
+  sb:originPath ".aswritten/memories/2025-12-14-shared-worldview.md" ;
+  sb:originRef "refs/heads/main" ;
+  prov:generated narr:Sample_ADR002, narr:Opportunity_ADR002, narr:ActorPain_CodingAgents, narr:ActorPain_ExecutiveAssistants, narr:ActorPain_ContentGeneration, narr:TimingThesis_ADR002, narr:PositioningThesis_ADR002, narr:Tagline_ADR002, narr:WhatIsIt_ADR002, narr:MoatLeverage_ADR002, narr:FocusSequencing_ADR002, narr:KeyPhrase_StrategyExecutionGap, narr:UseCase_CodingAgents, narr:UseCase_ExecutiveAssistance, narr:UseCase_ContentGeneration, narr:Persona_SoloDeveloper, narr:Outcome_EliminateStrategyExecutionGap, narr:StyleObs_BrandStylization, narr:StyleObs_Metaphor_Pillars, narr:StyleObs_Simile_10Mmistake, narr:StyleObs_RuleOfThree_UseCases, narr:StyleObs_DirectTone, narr:StyleObs_ActiveVoice, narr:StyleObs_Parallelism_Alternatives, narr:StyleObs_TerminologyControl, narr:Metrics_ADR002, narr:RubricAssess_Register_ADR002, narr:RubricAssess_Phrasing_ADR002, narr:RubricAssess_Cadence_ADR002, narr:RubricAssess_StrategicAlignment_ADR002, narr:RubricAssess_Tailoring_ADR002, narr:RubricAssess_Resonance_ADR002, narr:RubricAssess_Flow_ADR002, narr:RubricAssess_Novelty_ADR002, narr:RubricAssess_Accuracy_ADR002 .
+
+# Data triples
+INSERT DATA {
+  narr:Sample_ADR002 a narr:Sample ;
+    dct:title "ADR-002: Three Pillars - Coding, Executive, Content" ;
+    narr:inputLength 3421 ;
+    dct:created "2024-12-23"^^xsd:date ;
+    skos:note "Memory 2: Target Use Cases & Market Positioning" ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:Opportunity_ADR002 a narr:Observation ;
+    skos:broader narr:MarketContext ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Current AI tools are context-starved across coding, executive, and content domains. Each domain uses separate tools with no shared context, leading to strategy-execution gaps." ;
+    narr:theme "Context starvation in AI tooling" ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:ActorPain_CodingAgents a narr:Observation ;
+    skos:broader narr:PrimaryActors ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Coding agents (Claude Code, Cursor) rely on brittle personas and scattered docs; AI agents forget context between sessions, docs go stale." ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 127 ;
+        oa:end 227
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Coding agents (Claude Code, Cursor) rely on brittle personas (\"You are a senior developer\") and scattered docs" ;
+        oa:prefix "Current AI tools are context-starved across different domains:\n\n" ;
+        oa:suffix " (README, architecture.md)\nExecutive assistants lack persistent memory"
+      ]
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:ActorPain_ExecutiveAssistants a narr:Observation ;
+    skos:broader narr:PrimaryActors ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Executive assistants lack persistent memory of strategic decisions, priorities, worldview." ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 251 ;
+        oa:end 341
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Executive assistants lack persistent memory of strategic decisions, priorities, worldview" ;
+        oa:prefix "(README, architecture.md)\n" ;
+        oa:suffix "\nContent generation produces generic output"
+      ]
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:ActorPain_ContentGeneration a narr:Observation ;
+    skos:broader narr:PrimaryActors ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Content generation produces generic output disconnected from actual organizational perspective." ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 342 ;
+        oa:end 432
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Content generation produces generic output disconnected from actual organizational perspective" ;
+        oa:prefix "Executive assistants lack persistent memory of strategic decisions, priorities, worldview\n" ;
+        oa:suffix "\nEach domain typically uses separate tools"
+      ]
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:TimingThesis_ADR002 a narr:Observation ;
+    skos:broader narr:TimingThesis ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Strategy-execution gaps caused by separate tools with no shared context create urgency for unified worldview layer." ;
+    narr:theme "Why now: AI agent proliferation without shared memory" ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:PositioningThesis_ADR002 a narr:Observation ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Worldview layer for AI agents (not semantic memory API). Shared and collaborative worldview backs AI agents across coding, executive, and content use cases." ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2831 ;
+        oa:end 2906
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Market positioning: \"Worldview layer for AI agents\" (not \"semantic memory API\")" ;
+        oa:prefix "Consequences:\n\n" ;
+        oa:suffix "\nGo-to-market: Developer tools first"
+      ]
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:Tagline_ADR002 a narr:Observation ;
+    skos:broader narr:Tagline ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value "Worldview layer for AI agents" ;
+    skos:note "5-word handle encoding the promise: unified context across AI tools." ;
+    skos:related narr:BrandNameStylization ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:WhatIsIt_ADR002 a narr:Observation ;
+    skos:broader narr:WhatIsIt ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value "collective memory provides a shared and collaborative worldview that backs AI agents across three primary use cases: AI-Assisted Development, Executive Assistance, Content Generation." ;
+    skos:note "Precise definition disambiguating category and scope." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:MoatLeverage_ADR002 a narr:Observation ;
+    skos:broader narr:MoatLeverage ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Unique Value: Same collective memory snapshot backs all three use cases. When sales learns a customer pain point, that memory informs product roadmap, feature implementation, and marketing content. Eliminates strategy-execution disconnect." ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1485 ;
+        oa:end 1799
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The same collective memory snapshot backs all three use cases. When sales learns a customer pain point, that memory informs both:\n\nProduct roadmap discussions (executive AI sees it)\nFeature implementation (coding agent builds solution to actual problem)\nMarketing content (blog posts address real customer needs)" ;
+        oa:prefix "Unique Value Proposition:\n" ;
+        oa:suffix "\nThis eliminates strategy-execution disconnect"
+      ]
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:FocusSequencing_ADR002 a narr:Observation ;
+    skos:broader narr:FocusSequencing ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Developer-first adoption (PLG motion): Solo developers / small teams using Claude Code, Cursor, Windsurf. Hook: 'Add collective memory to your repo, never write README again'. Expansion: Once developers see value, expand to executive/content use cases." ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1933 ;
+        oa:end 2186
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Developer-first adoption (PLG motion):\n\nSolo developers / small teams using Claude Code, Cursor, Windsurf\nPain: AI agents forget context between sessions, docs go stale\nHook: \"Add collective memory to your repo, never write README again\"\nExpansion: Once developers see value, expand to executive/content use cases" ;
+        oa:prefix "Target Customer (Initial Focus):\n" ;
+        oa:suffix "\nAlternatives Considered:"
+      ]
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:KeyPhrase_StrategyExecutionGap a narr:Observation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value "strategy-execution disconnect" ;
+    skos:note "Canonical term for the [amount] mistake in startups where engineering builds features customers don't want." ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1800 ;
+        oa:end 1930
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "This eliminates strategy-execution disconnect - the \"[amount] mistake\" in startups where engineering builds features customers don't want." ;
+        oa:prefix "(blog posts address real customer needs)\n" ;
+        oa:suffix "\n\nTarget Customer (Initial Focus):"
+      ]
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:UseCase_CodingAgents a narr:Observation ;
+    skos:broader narr:SolutionArchetypes ;
+    dct:source narr:Sample_ADR002 ;
+    skos:prefLabel "AI-Assisted Development" ;
+    skos:note "Coding agents read from compiled snapshot (know product strategy, past decisions). Developers save ADRs as memories via conversation with AI. Auto-generated documentation (README, architecture.md) stays current. New developers onboard by querying collective memory for decision rationale." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:UseCase_ExecutiveAssistance a narr:Observation ;
+    skos:broader narr:SolutionArchetypes ;
+    dct:source narr:Sample_ADR002 ;
+    skos:prefLabel "Executive Assistance" ;
+    skos:note "Strategy discussions become queryable memories. AI agents maintain organizational worldview (goals, values, market position). Cross-team alignment (sales, product, engineering work from same context). Meeting notes and decisions persist as structured knowledge." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:UseCase_ContentGeneration a narr:Observation ;
+    skos:broader narr:SolutionArchetypes ;
+    dct:source narr:Sample_ADR002 ;
+    skos:prefLabel "Content Generation" ;
+    skos:note "Speeches, presentations, blog posts generated from organizational worldview. Brand voice consistency (narrative architecture encodes style/perspective). Automatic updates when worldview changes (strategies compile into stories)." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:Persona_SoloDeveloper a narr:Observation ;
+    skos:broader narr:Segmentation ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Solo developers / small teams using Claude Code, Cursor, Windsurf. Pain: AI agents forget context between sessions, docs go stale." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:Outcome_EliminateStrategyExecutionGap a narr:Observation ;
+    skos:broader narr:Outcomes ;
+    dct:source narr:Sample_ADR002 ;
+    skos:note "Eliminates the [amount] mistake in startups where engineering builds features customers don't want by ensuring same collective memory snapshot backs product, engineering, and marketing." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:StyleObs_BrandStylization a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_ADR002 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 543 ;
+        oa:end 560
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "collective memory" ;
+        oa:prefix "Decision:\n" ;
+        oa:suffix " provides a shared and collaborative worldview"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Lowercase brand stylization consistently applied." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:StyleObs_Metaphor_Pillars a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_ADR002 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 0 ;
+        oa:end 62
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Memory 2: Target Use Cases & Market Positioning\nTitle: ADR-002: Three Pillars" ;
+        oa:prefix "" ;
+        oa:suffix " - Coding, Executive, Content"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Architectural metaphor 'Three Pillars' frames use cases as structural supports." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:StyleObs_Simile_10Mmistake a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:Simile ;
+    dct:source narr:Sample_ADR002 ;
+    oa:hasBody narr:Simile ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1843 ;
+        oa:end 1930
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the \"[amount] mistake\" in startups where engineering builds features customers don't want" ;
+        oa:prefix "This eliminates strategy-execution disconnect - " ;
+        oa:suffix ".\n\nTarget Customer (Initial Focus):"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Concrete financial metaphor quantifies cost of misalignment." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:StyleObs_RuleOfThree_UseCases a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_ADR002 ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 649 ;
+        oa:end 748
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "AI-Assisted Development\nCoding agents read from compiled snapshot\nExecutive Assistance\nContent Generation" ;
+        oa:prefix "backs AI agents across three primary use cases:\n\n" ;
+        oa:suffix "\nSpeeches, presentations, blog posts"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Triadic structure for memorability: three use cases, three customer types." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:StyleObs_DirectTone a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_ADR002 ;
+    oa:hasBody narr:ToneDirectPersonal ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2095 ;
+        oa:end 2154
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Hook: \"Add collective memory to your repo, never write README again\"" ;
+        oa:prefix "Pain: AI agents forget context between sessions, docs go stale\n" ;
+        oa:suffix "\nExpansion: Once developers see value"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Imperative mood, second-person address, concrete action verb." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:StyleObs_ActiveVoice a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_ADR002 ;
+    oa:hasBody narr:VoiceActive ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1800 ;
+        oa:end 1843
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "This eliminates strategy-execution disconnect" ;
+        oa:prefix "(blog posts address real customer needs)\n" ;
+        oa:suffix " - the \"[amount] mistake\" in startups"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Subject 'This' performs action 'eliminates'; strong verb choice." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:StyleObs_Parallelism_Alternatives a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_ADR002 ;
+    oa:hasBody narr:Parallelism ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR002 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2187 ;
+        oa:end 2485
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Alternatives Considered:\n\nSingle use case focus (e.g., just coding agents) - Rejected\nEnterprise-first (sell to Capitol-like companies) - Rejected\nHorizontal \"AI memory platform\" (any use case) - Rejected" ;
+        oa:prefix "expand to executive/content use cases\n" ;
+        oa:suffix ": too vague, hard to message"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Parallel structure in list: [Option] - Rejected: [Reason]." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:StyleObs_TerminologyControl a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_ADR002 ;
+    oa:hasBody narr:TerminologyControl ;
+    skos:note "Consistent use of 'worldview' (not 'context' or 'knowledge base') and 'collective memory' (not 'semantic memory')." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:Metrics_ADR002 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_ADR002 ;
+    narr:AverageSentenceLength 18.5 ;
+    narr:ActiveVoiceRatio 0.82 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: 11.2" ;
+    narr:JargonDensity 0.08 ;
+    skos:note "Metrics computed from full ADR text; high active voice, moderate complexity." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:RubricAssess_Register_ADR002 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value 4.0 ;
+    skos:note "Professional register with conversational clarity; active voice dominates; concise phrasing." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:RubricAssess_Phrasing_ADR002 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value 4.0 ;
+    skos:note "Strong idiolect: 'worldview layer', 'strategy-execution disconnect', '[amount] mistake'. Canonical terms consistently applied." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:RubricAssess_Cadence_ADR002 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value 4.0 ;
+    skos:note "Short, punchy sentences in key sections (Hook, Unique Value). Bulleted lists create rhythm and scanability." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:RubricAssess_StrategicAlignment_ADR002 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value 5.0 ;
+    skos:note "Directly articulates positioning thesis, moat, focus/sequencing, and target customer. Explicitly ties to narrative architecture (ADR-001, ADR-003, ADR-005)." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:RubricAssess_Tailoring_ADR002 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value 4.5 ;
+    skos:note "Tailored to developer persona (Claude Code, Cursor, Windsurf references). Hook speaks directly to pain point. Expansion path acknowledges executive/content audiences." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:RubricAssess_Resonance_ADR002 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value 4.0 ;
+    skos:note "[amount] mistake metaphor resonates with startup audience. 'Three Pillars' architectural metaphor aids recall. Concrete examples (README, ADRs) ground abstract concepts." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:RubricAssess_Flow_ADR002 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value 4.5 ;
+    skos:note "Natural progression: Context → Decision → Use Cases → Unique Value → Target Customer → Alternatives → Consequences. Transitions clear; ADR template structure aids coherence." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:RubricAssess_Novelty_ADR002 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value 4.0 ;
+    skos:note "'Worldview layer' positioning is fresh vs. generic 'AI memory'. '[amount] mistake' quantifies pain memorably. Avoids boilerplate; specific tool names (Claude Code, Cursor) add authenticity." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+
+  narr:RubricAssess_Accuracy_ADR002 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_ADR002 ;
+    rdf:value 4.5 ;
+    skos:note "Named entities (Claude Code, Cursor, Windsurf) accurate. Cross-references to ADR-001, ADR-003, ADR-005, ADR-006 present. No unsupported claims; decision rationale explicit." ;
+    prov:wasGeneratedBy narr:Tx_20261228T185729Z .
+}

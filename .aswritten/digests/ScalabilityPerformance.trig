@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ScalabilityPerformance> {
+  <https://aswritten.ai/narrative#Digest_ScalabilityPerformance> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#ScalabilityPerformance> ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the [scalability and performance](narr:Narrative_PostgresSnapshotCache) work, dominated by a dated infra trajectory. In Mar (26th), [memory rebalancing](narr:Claim_MemoryRebalancing) addressed the transactor as primary OOM culprit (4 kills at 768MB). By Mar 31 the [Postgres snapshot cache](narr:Narrative_PostgresSnapshotCache) migration replaced GitHub-hosted files, resolving [concurrent-compile OOM crashes](narr:Claim_ConcurrentCompileOOMFix) at the 3.5GB container limit, with [cache HITs now ~500ms](narr:Obs_CachePerformance). But the same date logs a still-open [256K context wall](narr:Obs_256KContextWall) for the canonical repo. Most recently (May 16), [memory-commit latency](narr:Claim_MemoryCommitLatencyFriction) surfaced as the acute friction — 3-5min median, 16% error rate, flagged a renewal risk. Sitting apart from the technical thread is an organizational scalability claim: [assistant-led revenue](narr:Claim_AssistantLedRevenue), decoupling growth from an engineering manager at the customer's hours. The infra OOM problems are largely resolved; latency and context limits remain live.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AssistantLedRevenue> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ConcurrentCompileOOMFix> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MemoryCommitLatencyFriction> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MemoryRebalancing> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PostgresSnapshotCache> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_256KContextWall> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CachePerformance> ;
+    narr:keyPhrase [ narr:text "OOM crashes at the 3.5GB container limit caused by concurrent compiles reading 7MB JSON payloads" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ConcurrentCompileOOMFix> ] ;
+    narr:keyPhrase [ narr:text "Cache HITs now take ~500ms via Postgres read, bypassing the GitHub API entirely." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CachePerformance> ] ;
+    narr:keyPhrase [ narr:text "transactor 2GB, n8n 3.5GB (3GB heap), aswritten proxy 1.5GB" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MemoryRebalancing> ] ;
+    narr:keyPhrase [ narr:text "the most acute UX issue in the product right now and would be a real renewal-risk if it stays this way" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MemoryCommitLatencyFriction> ] ;
+    narr:keyPhrase [ narr:text "the 256k token limit is an issue for the canonical repo currently, but we need to consider how to compress or do passes to prune stale stuff from the snapshot anyway" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_256KContextWall> ] ;
+    narr:keyPhrase [ narr:text "Revenue growth is decoupled from an engineering manager at the customer's hours by using assistants to execute treatment plans" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AssistantLedRevenue> ] ;
+    narr:variation [ narr:text "Infra OOM is fixed but UX latency is not: the most recent claim (May 16) flags memory-commit latency at 3-5min/16% errors as an acute renewal risk, not promised externally yet — a regression in user-felt performance even as crashes resolved." ; narr:over <https://aswritten.ai/narrative#Claim_MemoryCommitLatencyFriction> ] ;
+    narr:variation [ narr:text "Road not yet taken: the 256K context wall on the canonical repo remains an open constraint after the Postgres cache solved OOM — compression/pruning of stale snapshot data is acknowledged but unbuilt." ; narr:over <https://aswritten.ai/narrative#Obs_256KContextWall> ] ;
+    narr:variation [ narr:text "Structural outlier: assistant-led revenue is organizational/business scalability (decoupling growth from an engineering manager at the customer's hours), distinct in kind from all the technical memory/cache/latency children under this hub." ; narr:over <https://aswritten.ai/narrative#Claim_AssistantLedRevenue> ] ;
+    narr:writer "claude (subscription)" .
+}

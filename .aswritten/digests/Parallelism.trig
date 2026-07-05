@@ -1,0 +1,43 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Parallelism> {
+  <https://aswritten.ai/narrative#Digest_Parallelism> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Parallelism> ;
+    narr:childCount "21"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub collects the many faces of **parallelism** in Scarlet's writing — the dominant load-bearing device across the corpus. The mainline is syntactic: [tripartite parallel verb phrases](narr:https://aswritten.ai/narrative#StyleObs_Parallelism) ('pull out... lay out... give tools'), [role+gerund list rhythm](narr:https://aswritten.ai/narrative#StyleObs_Parallelism_1), [anaphoric specialist enumeration](narr:https://aswritten.ai/narrative#StyleObs_Parallelism_SpecialistList), and [tricolon/quoted-voice structures](narr:StyleObs_6). It widens into list architecture — [numbered failure progressions](narr:https://aswritten.ai/narrative#StyleObs_FailureProgression), [convergent-problem triads](narr:https://aswritten.ai/narrative#StyleObs_NumberedConvergence), [bold-label friction bullets](narr:https://aswritten.ai/narrative#StyleObs_CognitiveFrictionList) and [adaptive-state bullets](narr:https://aswritten.ai/narrative#StyleObs_BulletParallelism) — and into structural form: [funding-tier section headers](narr:https://aswritten.ai/narrative#StyleObs_SectionHeaderParallelism), [decision tables as argument](narr:https://aswritten.ai/narrative#StyleObs_TableAsArgument), [deferral tables](narr:https://aswritten.ai/narrative#StyleObs_DeferralTable), and the [three-camp taxonomy](narr:https://aswritten.ai/narrative#StyleObs_CampStructure). A distinct sub-mode chains steps with arrows ([extract → lens → repeat](narr:https://aswritten.ai/narrative#StyleObs_ArrowParallelism)). Dated observations (Mar–Apr 2026) show the device turned toward analytical separation — [Postgres-eliminates rationale](narr:https://aswritten.ai/narrative#StyleObs_NumberedRationaleList) and [forced fact-separation](narr:https://aswritten.ai/narrative#StyleObs_OutsideTechBetaUserChannel_ThreeFactsSeparated) — rather than pure rhythm.""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_10> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_3> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_5> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_6> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_9> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowParallelism> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BulletParallelism> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CampStructure> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CognitiveFrictionList> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DeferralTable> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_FailureProgression> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NegativeParallelism> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NoCompanyAnaphora> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NumberedConvergence> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NumberedRationaleList> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Parallelism> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Parallelism_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Parallelism_SpecialistList> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SectionHeaderParallelism> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TableAsArgument> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OutsideTechBetaUserChannel_ThreeFactsSeparated> ;
+    narr:keyPhrase [ narr:text "extract → lens → micro-telltale → human feedback → modify triples → re-lens → repeat" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ArrowParallelism> ] ;
+    narr:keyPhrase [ narr:text "No company would develop software without GitHub. No company should deploy AI agents without versioned organizational context." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_NoCompanyAnaphora> ] ;
+    narr:keyPhrase [ narr:text "pull out all of the pieces... lay them out... give tools" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Parallelism> ] ;
+    narr:keyPhrase [ narr:text "a digestion specialist, a pain specialist, a musculoskeletal specialist, a migraine specialist" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Parallelism_SpecialistList> ] ;
+    narr:keyPhrase [ narr:text "Three facts that the perspective has collapsed into one classification should be held separately" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_OutsideTechBetaUserChannel_ThreeFactsSeparated> ] ;
+    narr:keyPhrase [ narr:text "Postgres eliminates:" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_NumberedRationaleList> ] ;
+    narr:variation [ narr:text "Parallelism is not only syntactic — it migrates into layout: markdown tables and section headers carry the device as visual/structural argument, not rhythm." ; narr:over <https://aswritten.ai/narrative#StyleObs_TableAsArgument> ; narr:over <https://aswritten.ai/narrative#StyleObs_DeferralTable> ; narr:over <https://aswritten.ai/narrative#StyleObs_SectionHeaderParallelism> ] ;
+    narr:variation [ narr:text "Negative/anaphoric mode ('No company...', triadic 'no', specialist list) uses repetition for emphatic constraint and implausibility — opposite force from the forward-momentum enumerations." ; narr:over <https://aswritten.ai/narrative#StyleObs_NegativeParallelism> ; narr:over <https://aswritten.ai/narrative#StyleObs_NoCompanyAnaphora> ; narr:over <https://aswritten.ai/narrative#StyleObs_Parallelism_SpecialistList> ] ;
+    narr:variation [ narr:text "Recent (Mar–Apr 2026) shift: parallel structure deployed to force analytical separation and correction, not rhythmic build — a functional repurposing of the device." ; narr:over <https://aswritten.ai/narrative#StyleObs_NumberedRationaleList> ; narr:over <https://aswritten.ai/narrative#StyleObs_OutsideTechBetaUserChannel_ThreeFactsSeparated> ] ;
+    narr:variation [ narr:text "The 'related' (vs 'broader') children are impure exemplars — they carry parallelism bundled with metaphor, voice, and conviction labels rather than as the primary feature." ; narr:over <https://aswritten.ai/narrative#StyleObs_10> ; narr:over <https://aswritten.ai/narrative#StyleObs_3> ; narr:over <https://aswritten.ai/narrative#StyleObs_5> ] ;
+    narr:variation [ narr:text "Arrow-chaining is a structurally distinct sub-mode: sequential process flow rather than co-equal list items." ; narr:over <https://aswritten.ai/narrative#StyleObs_ArrowParallelism> ] ;
+    narr:writer "claude (subscription)" .
+}

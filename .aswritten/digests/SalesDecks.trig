@@ -1,0 +1,42 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_SalesDecks> {
+  <https://aswritten.ai/narrative#Digest_SalesDecks> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#SalesDecks> ;
+    narr:childCount "19"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the evolving sales-materials and sales-motion thinking. a demo-call prospect's early ask (Mar 11) was concrete artifacts: a [pre-read deck](narr:Narrative_PreReadDeckConcept) framed as a \"McDonald picture menu\" plus a [written sales guide and module repo](narr:Claim_SalesGuideRequest). Through spring the center of gravity shifted from documents to demonstrations: [GIF-based materials](narr:Narrative_GIFBasedSalesMaterials) — hook GIF, story page, picture-menu deck (Mar 17) — the [before/after money GIF](narr:Narrative_DemoGIFStory) (Mar 22), and a finalized [four-step a beta user from outside tech/Bluebird demo script](narr:Narrative_DemoScriptOutsideTechBetaUser) (Mar 23). A larger reframe followed: the [interview itself as the sales motion](narr:Narrative_PodcastInterviewSalesMotion) — one conversation yielding product, content, and demo — later cast by Scarlet as a [forcing function](narr:Narrative_InterviewForcingFunction) for human-driven development (Apr 1). Tony extended it to [selling the process before any case study exists](narr:Narrative_SellTheProcessPreCaseStudy) (Apr 21). The [a collaborator demo](narr:Narrative_TamarackDemoAsLiveSalesMotion) is framed as the ordinary SMB motion, and the [hero video](narr:Narrative_HeroVideoFormat) as a human moment, not a screen recording (Mar 23).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PreReadDeckRequest> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SalesGuideRequest> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TamarackDemoAsLiveSalesMotion> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DemoGIFStory> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DemoRepoNeeded> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DemoScriptOutsideTechBetaUser> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DocumentGenerationAsProductDemo> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_GIFBasedSalesMaterials> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_HeroVideoFormat> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_InterviewForcingFunction> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PodcastInterviewSalesMotion> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PreReadDeckConcept> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ReportAsDeliverablePattern> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SellTheProcessPreCaseStudy> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_WhitePaperAIFilter> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_GIFHookFeature> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletInterviewSalesMotionQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_EnterpriseCustomerDemoReframe> ;
+    narr:covers <https://aswritten.ai/narrative#Question_DemoRepoDomain> ;
+    narr:keyPhrase [ narr:text "McDonald picture menu" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PreReadDeckRequest> ] ;
+    narr:keyPhrase [ narr:text "Just looks real" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_GIFBasedSalesMaterials> ] ;
+    narr:keyPhrase [ narr:text "The human moment sells, not the text." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_HeroVideoFormat> ] ;
+    narr:keyPhrase [ narr:text "The sales motion becomes. I do an interview with an actual human and the result of the interview is the start of your perspective and you get to be able to read from that for free." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletInterviewSalesMotionQuote> ] ;
+    narr:keyPhrase [ narr:text "busy executives won't read a white paper — they'll put it into Claude and ask for a summary." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_WhitePaperAIFilter> ] ;
+    narr:keyPhrase [ narr:text "you want a hook gif. And then after that, you could have feature gifts." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_GIFHookFeature> ] ;
+    narr:variation [ narr:text "Format war — documents vs demonstrations: execs AI-summarize white papers rather than read them, GIFs \"just look real,\" and the hero video must be a human moment, not a screen recording. The deck/white-paper vehicle is being displaced for initial engagement." ; narr:over <https://aswritten.ai/narrative#Narrative_WhitePaperAIFilter> ; narr:over <https://aswritten.ai/narrative#Narrative_GIFBasedSalesMaterials> ; narr:over <https://aswritten.ai/narrative#Narrative_HeroVideoFormat> ] ;
+    narr:variation [ narr:text "a demo-call prospect's polished executive pre-read deck vs the raw GIF hook — competing artifact philosophies and audiences (absorb-before-call primer vs attention-grab)." ; narr:over <https://aswritten.ai/narrative#Narrative_PreReadDeckConcept> ; narr:over <https://aswritten.ai/narrative#Claim_PreReadDeckRequest> ; narr:over <https://aswritten.ai/narrative#Narrative_GIFBasedSalesMaterials> ] ;
+    narr:variation [ narr:text "Acquisition vs retention motion: the monthly curated usage report anchors renewals in the customer's own usage evidence — a distinct, later (May 25) sales pattern unlike all the new-prospect material here." ; narr:over <https://aswritten.ai/narrative#Narrative_ReportAsDeliverablePattern> ] ;
+    narr:variation [ narr:text "Hook-first vs feature-first sequencing within the GIF strategy — one hook to grab attention, feature GIFs only after." ; narr:over <https://aswritten.ai/narrative#Obs_GIFHookFeature> ] ;
+    narr:variation [ narr:text "Unresolved blocker: the demo repo's domain (fictional / public / OSS) is still open, gating the \"here's what you get\" collective-memory artifact." ; narr:over <https://aswritten.ai/narrative#Narrative_DemoRepoNeeded> ; narr:over <https://aswritten.ai/narrative#Question_DemoRepoDomain> ] ;
+    narr:variation [ narr:text "the enterprise customer demo positioning reframed from \"goal-directed agent primitive\" to \"handing you back peace\" — emotional framing pushing against the technical one." ; narr:over <https://aswritten.ai/narrative#Observation_EnterpriseCustomerDemoReframe> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,131 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260518T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-18T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-05-17-tranche1-bridge-raise-decisions.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      narr:Narrative_BaseCampNotCamp4                           ,
+      narr:Obs_BaseCampQuote   ,
+      narr:StyleObs_Tranche1_MountainMetaphor  ,
+      narr:StyleObs_Tranche1_ProfanityIntensifier ,
+      narr:StyleMetrics_Tranche1BridgeRaise .
+} ;
+
+# ── UPDATE: Claim_SeedRound600k — superseded by [amount] two-tranche envelope ──
+DELETE {
+  GRAPH ?g {
+    narr:Claim_SeedRound600k skos:note ?note ;
+      narr:hasConvictionLevel ?lvl .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260518T120000Z {
+    narr:Claim_SeedRound600k
+      skos:note "SUPERSEDED 2026-05-17: Prior [amount] angels cap replaced by two-tranche structure totaling ~[amount]: Tranche 1 [amount] bridge SAFE + Shared Earnings Letter (close Aug 2026), Tranche 2 [amount] milestone raise (close Q1 2027). Total expected dilution ~12-16%." ;
+      narr:hasConvictionLevel narr:Conviction_Foundation .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_SeedRound600k skos:note ?note ;
+      narr:hasConvictionLevel ?lvl .
+  }
+} ;
+
+# ── INSERT: New entities ─────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260518T120000Z {
+
+    # ── Narratives ──────────────────────────────────────────────────────────
+    narr:Narrative_BaseCampNotCamp4 a narr:Narrative ;
+
+      skos:broader narr:InflectionPoints ;
+      skos:prefLabel "Base Camp, Not Camp 4: Real Inflection but Long Climb" ;
+      skos:note "Scarlet's self-named pattern entering the May 17-18 session. the enterprise customer pilot week 1 produced strong engagement (8/16 users immediately engaging, license expansion 2→7→16 in one week, MSA out to lawyer). Strategic question shifted from 'can we get a customer' to 'what do we do with one.' The inflection is real but the climb is long — base camp, not camp 4." ;
+      narr:theme "A real inflection point (first paying enterprise customer, strong week-1 engagement) marks base camp — the strategic question shifts from customer acquisition to customer success, but the mountain remains" .
+
+    narr:Obs_BaseCampQuote a narr:Observation ;
+
+      skos:broader narr:Quotes ;
+      skos:note "Scarlet's canonical base-camp metaphor: 'I had a bit of an internal sit the fuck down at the finish line kind of pit. Now I'm looking up, and there's still a mountain to climb to get into base camps, a long track, but this is definitely base camp, not camp 4 for whatever it is.'" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 570 ;
+          oa:end 760
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "this is definitely base camp, not camp 4 for whatever it is" ;
+          oa:prefix "a long track, but " ;
+          oa:suffix "."
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_Tranche1_MountainMetaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+
+      skos:note "Extended mountain-climbing metaphor (base camp / camp 4 / mountain to climb) used to frame the inflection point. Self-named pattern by Scarlet. Metaphor does double duty: signals genuine progress while resisting premature celebration. Consistent with Scarlet's idiolect of physical-exertion metaphors for business milestones." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 570 ;
+          oa:end 760
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "there's still a mountain to climb to get into base camps, a long track, but this is definitely base camp, not camp 4" ;
+          oa:prefix "Now I'm looking up, and " ;
+          oa:suffix " for whatever it is."
+        ]
+      ] .
+
+    narr:StyleObs_Tranche1_ProfanityIntensifier a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+
+      skos:note "Scarlet uses profanity as a rhetorical intensifier at conviction peaks: 'sit the fuck down at the finish line kind of pit.' Consistent with her idiolect pattern across sessions — profanity signals genuine emotional weight, not casual register. The phrase is self-aware ('kind of pit') and immediately followed by reorientation ('Now I'm looking up')." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 570 ;
+          oa:end 660
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "sit the fuck down at the finish line kind of pit" ;
+          oa:prefix "I had a bit of an internal '" ;
+          oa:suffix "'."
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+    narr:StyleMetrics_Tranche1BridgeRaise a narr:StyleMetrics ;
+
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo with embedded verbatim blockquotes from Scarlet. Mixed register: structured markdown with H2 section headers and markdown tables (memo genre) vs. conversational first-person in blockquoted speech. Antithesis-heavy structure (base camp vs. camp 4, solo vs. team, bridge vs. milestone, acquisition vs. calm-company). Active voice dominant in editorial prose. Jargon density moderate — financial terms (SAFE, SEL, dilution, MRR, EDO) and product terms (Org tier, Team tier, Expert tier) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.11"^^xsd:decimal .
+  }
+}

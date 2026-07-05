@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ext__http___example_org_narrative_ShortPunchyCadence> {
+  <https://aswritten.ai/narrative#Digest_ext__http___example_org_narrative_ShortPunchyCadence> a narr:Digest ;
+    narr:digestOf <http://example.org/narrative#ShortPunchyCadence> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers style observations on a single cadence: short, declarative, punchy sentences. The [analytical-memo register](narr:StyleObs_3) favors terse section headers ('The bug', 'Implication'), bullet brevity, and inversions like 'Less May Be Better', crystallizing decisions via declarative rhetorical questions. The [contrast-engine register](narr:StyleObs_4) runs on antithesis ('not a connected concept mesh') and rule-of-three triads, plus imperative active voice for action-oriented directness. A [developer-idiolect strand](narr:StyleObs_7) packs domain terms of art — 'conviction', 'msg/*' glob notation, 'introspect call' — into two-word declaratives signaling analytical confidence. The [channel-definition cadence](narr:StyleObs_Cadence_1) applies the same punchy rhythm to product copy. Across all, brevity is the through-line: clipped sentences, finality markers, contrast as the load-bearing rhetorical move.""" ;
+    narr:covers <http://example.org/narrative#StyleObs_3> ;
+    narr:covers <http://example.org/narrative#StyleObs_4> ;
+    narr:covers <http://example.org/narrative#StyleObs_7> ;
+    narr:covers <http://example.org/narrative#StyleObs_Cadence_1> ;
+    narr:covers <http://example.org/narrative#StyleObs_TonySummary> ;
+    narr:keyPhrase [ narr:text "Less May Be Better" ; narr:phraseSource <http://example.org/narrative#StyleObs_3> ] ;
+    narr:keyPhrase [ narr:text "nil-pun" ; narr:phraseSource <http://example.org/narrative#StyleObs_3> ] ;
+    narr:keyPhrase [ narr:text "Don't block waiting for the slow responder." ; narr:phraseSource <http://example.org/narrative#StyleObs_4> ] ;
+    narr:keyPhrase [ narr:text "an introspect call" ; narr:phraseSource <http://example.org/narrative#StyleObs_7> ] ;
+    narr:keyPhrase [ narr:text "What it does, who it's for, what it costs, social proof. Not a reading destination." ; narr:phraseSource <http://example.org/narrative#StyleObs_Cadence_1> ] ;
+    narr:keyPhrase [ narr:text "its just 2.5k per project or team (up to 10 users) end of" ; narr:phraseSource <http://example.org/narrative#StyleObs_TonySummary> ] ;
+    narr:variation [ narr:text "Two distinct rhetorical engines coexist under 'punchy': contrast/antithesis as the driver versus pure two-word brevity for impact — not the same technique." ; narr:over <http://example.org/narrative#StyleObs_4> ; narr:over <http://example.org/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "Register outlier: TonySummary's colloquial, lowercase 'its just... end of' breaks from the polished analytical-memo voice the other observations describe." ; narr:over <http://example.org/narrative#StyleObs_TonySummary> ; narr:over <http://example.org/narrative#StyleObs_3> ] ;
+    narr:variation [ narr:text "A developer-native technical idiolect (nil-pun, msg/*, introspect, conviction) is a separate stylistic signal from plain short-declarative cadence — brevity plus jargon, not brevity alone." ; narr:over <http://example.org/narrative#StyleObs_7> ; narr:over <http://example.org/narrative#StyleObs_3> ] ;
+    narr:writer "claude (subscription)" .
+}

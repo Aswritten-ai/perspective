@@ -1,0 +1,226 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260312T000000Z a prov:Activity ;
+    dct:title "Strategic Pivot: SMB Replaces Enterprise as Primary Market" ;
+    prov:generatedAtTime "2026-03-12T00:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-13-smb-pivot-replacing-enterprise-primary-market.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_SMBPivot_20260312,
+      narr:Narrative_SMBPrimaryMarket,
+      narr:Narrative_EnterpriseAsRevenueNotPositioning,
+      narr:Narrative_SycamoreCohortPattern,
+      narr:Claim_SMBBiggerThanDevs,
+      narr:Claim_EnterpriseRemainsRevenue,
+      narr:Claim_GitHubAbstractionHighPriority,
+      narr:Actor_Spruce,
+      narr:Obs_EarlyProspectHubDeployment,
+      narr:Obs_SMBProductImplications,
+      narr:Obs_SMBOpenQuestions,
+      narr:StyleObs_SMB_BoldEmphasis,
+      narr:StyleObs_SMB_DiscoveryQuestion,
+      narr:StyleObs_SMB_BulletedExamples .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260312T000000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────
+    narr:Sample_SMBPivot_20260312 a narr:Sample ;
+      dct:title "Strategic Pivot: SMB Replaces Enterprise as Primary Market" ;
+      dct:created "2026-03-12T00:00:00Z"^^xsd:dateTime ;
+      narr:inputLength 1821 .
+
+    # ── NARRATIVES ──────────────────────────────────────────────
+
+    narr:Narrative_SMBPrimaryMarket a narr:Narrative ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "SMB as Primary Market" ;
+      skos:note "As of March 12, 2026, SMB replaces enterprise as the primary market focus for fundraising, product direction, and sales materials. This is not a second track — it is a replacement of the primary framing. Scarlet's assessment: 'SMB is a bigger market than devs.' The SMB pattern is clear from beta cohort: small business owners who need to train new staff, communicate value to partners, and automate marketing." ;
+      narr:theme "SMB small business owners replace enterprise as the primary market thesis for aswritten.ai" .
+
+    narr:Narrative_EnterpriseAsRevenueNotPositioning a narr:Narrative ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:broader narr:StrategyOverview ;
+      skos:prefLabel "Enterprise Consulting as Revenue Path, Not Positioning" ;
+      skos:note "The enterprise consulting motion ([amount] pilot, knowledge extraction engagements) remains a valid revenue path but is no longer the framing for fundraising or product positioning. Sales materials target SMB decision-makers, not enterprise procurement." ;
+      narr:theme "Enterprise consulting remains a revenue source but is no longer the strategic positioning or fundraising frame" .
+
+    narr:Narrative_SycamoreCohortPattern a narr:Narrative ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:broader narr:Segmentation ;
+      skos:prefLabel "SMB Beta Cohort Pattern" ;
+      skos:note "Beta cohort reveals a consistent SMB pattern: small business owners who need to train new staff, communicate value to partners, and automate marketing. Calls and meetings leave knowledge on the table. The product captures and operationalizes that knowledge. Examples: an early prospect (a collaborator), a founder beta user K, a collaborator, Weaver's Way cooperative." ;
+      narr:theme "Small business owners with staff training, partner communication, and marketing automation needs form the core SMB pattern" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────
+
+    narr:Claim_SMBBiggerThanDevs a narr:Claim ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:note "Scarlet's assessment: 'SMB is a bigger market than devs.' This drives the pivot from developer-first PLG to SMB as primary market thesis." ;
+      narr:aboutNode narr:Narrative_SMBPrimaryMarket ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PositioningThesis .
+
+    narr:Claim_EnterpriseRemainsRevenue a narr:Claim ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:note "Enterprise consulting ([amount] pilot, knowledge extraction engagements) remains a valid revenue path but is no longer the framing for fundraising or product positioning. Business plan and investor materials should lead with SMB thesis." ;
+      narr:aboutNode narr:Narrative_EnterpriseAsRevenueNotPositioning ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:FocusSequencing .
+
+    narr:Claim_GitHubAbstractionHighPriority a narr:Claim ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:note "How to abstract GitHub from signup is high priority — SMB users won't have GitHub accounts. This is an open question flagged as high priority for the SMB market." ;
+      narr:aboutNode narr:Narrative_SMBPrimaryMarket ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:NarrativeDrivenRoadmap .
+
+    # ── ACTORS ──────────────────────────────────────────────────
+
+    narr:Actor_Spruce a narr:Actor ;
+      skos:prefLabel "Weaver's Way" ;
+      skos:note "Cooperative/retail SMB beta cohort member. Use case: staff training and value communication. Similar engagement structure to an early prospect and a founder beta user K." .
+
+    # ── OBSERVATIONS ────────────────────────────────────────────
+
+    narr:Obs_EarlyProspectHubDeployment a narr:Observation ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:broader narr:Segmentation ;
+      skos:note "an early prospect (a collaborator): small business owner + assistant. Hub deployment pattern. Healthcare context raises HIPAA/on-prem questions (open question). Some SMB will need on-prem deployment — HIPAA compliance is an open question for healthcare SMB." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SMBPivot_20260312 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 530 ;
+          oa:end 680
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "an early prospect (a collaborator) — small business owner + assistant. Hub deployment pattern. Healthcare context raises HIPAA/on-prem questions" ;
+          oa:prefix "## Examples from the Beta Cohort\n\n- **" ;
+          oa:suffix " (open question)."
+        ]
+      ] .
+
+    narr:Obs_SMBProductImplications a narr:Observation ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      skos:note "Product implications of SMB pivot: modules for grantwriting, decks, LinkedIn posts, graph coverage goals; target audiences beyond tech (arts orgs, cultural orgs, early entrepreneurs, artists); business plan and investor materials should lead with SMB thesis; landing page needs updating to reflect SMB positioning; 'Who else is like an early prospect?' becomes the discovery question for new prospects." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SMBPivot_20260312 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 900 ;
+          oa:end 1150
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Modules for: grantwriting, decks, LinkedIn posts, graph coverage goals" ;
+          oa:prefix "## Product Implications\n\n- " ;
+          oa:suffix "\n- Target audiences beyond tech"
+        ]
+      ] .
+
+    narr:Obs_SMBOpenQuestions a narr:Observation ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:broader narr:RisksMitigations ;
+      skos:note "Three open questions for SMB market: (1) HIPAA / zero-data-residency on-prem deployment option for healthcare SMB; (2) How to abstract GitHub from signup (high priority — SMB users won't have GitHub accounts); (3) Custom ontology for non-technical business domains." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SMBPivot_20260312 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1550 ;
+          oa:end 1821
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "HIPAA / zero-data-residency on-prem deployment option for healthcare SMB" ;
+          oa:prefix "## Open Questions\n\n- " ;
+          oa:suffix "\n- How to abstract GitHub"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────
+
+    narr:StyleObs_SMB_BoldEmphasis a narr:StyleObservation ;
+      skos:broader narr:PunctuationTypography ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:note "Bold used for rhetorical emphasis on the replacement claim: 'replaces' bolded mid-sentence to signal this is not additive but substitutive. Typographic stress as conviction signal." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SMBPivot_20260312 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 120 ;
+          oa:end 200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "SMB **replaces** enterprise as the primary market focus" ;
+          oa:prefix "This is not a second track — " ;
+          oa:suffix " for fundraising, product direction"
+        ]
+      ] .
+
+    narr:StyleObs_SMB_DiscoveryQuestion a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:note "Rhetorical question framed as a discovery heuristic: 'Who else is like an early prospect?' becomes the canonical prospect-finding question. Idiolect pattern: using a named beta user as the ICP archetype, converting a person into a discovery algorithm." ;
+      rdf:value true ;
+      skos:related narr:KeyPhrases ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SMBPivot_20260312 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1140 ;
+          oa:end 1210
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "\"Who else is like an early prospect?\" becomes the discovery question for new prospects" ;
+          oa:prefix "- " ;
+          oa:suffix "\n\n## What This Changes"
+        ]
+      ] .
+
+    narr:StyleObs_SMB_BulletedExamples a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+      dct:source narr:Sample_SMBPivot_20260312 ;
+      skos:note "Beta cohort examples presented as bolded-name bullets with parenthetical org context and brief engagement descriptor. Register: internal strategic memo with informal shorthand. Pattern: Name (Org) — descriptor. Consistent with prior session note style across the corpus." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SMBPivot_20260312 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 530 ;
+          oa:end 750
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**an early prospect** (a collaborator) — small business owner + assistant. Hub deployment pattern." ;
+          oa:prefix "- " ;
+          oa:suffix " Healthcare context raises HIPAA"
+        ]
+      ] .
+
+  }
+}

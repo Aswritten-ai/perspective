@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_ClojureOwnsLogic> {
+  <https://aswritten.ai/narrative#Digest_Narrative_ClojureOwnsLogic> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_ClojureOwnsLogic> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub argues the orchestration logic belongs in Clojure, with the build-vs-wrap boundary drawn explicitly. The [event-bus design](narr:Claim_EventBusDesign) settles on core.async pub/sub plus a SQLite append-only log, rejecting external brokers at current scale. State is owned by [clj-statecharts as the FSM library](narr:Claim_FSMLibraryChoice), chosen over three alternatives, with Salon concurrent review modeled as independent FSM instances under a parent coordinator rather than parallel regions. The [factory-factory framework is rejected](narr:Claim_CedarCedarRejected) as too PR-centric for aswritten's full use-case taxonomy (Solo, Parallel, Hub, Salon, Teams). The [n8n boundary](narr:Claim_N8nBoundary) is the load-bearing partition: of 53 workflows, 27 migrate to Clojure, 20 remain as thin LLM wrappers, 4 die — so Clojure owns logic, not everything. Finally the [RAM-upgrade gate](narr:Claim_RAMUpgrade) flags an operational precondition: 4GB risks OOM during Salon bursts, requiring 8GB plus several P0 reliability items before deploy.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_EventBusDesign> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FSMLibraryChoice> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CedarCedarRejected> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_N8nBoundary> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RAMUpgrade> ;
+    narr:keyPhrase [ narr:text "External brokers (NATS, Redis) rejected as unnecessary at current scale (<100 msg/day)." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EventBusDesign> ] ;
+    narr:keyPhrase [ narr:text "clj-statecharts v0.1.7 chosen over tilakone (too simple), automat (DFA only), and custom maps+multimethods." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FSMLibraryChoice> ] ;
+    narr:keyPhrase [ narr:text "factory-factory rejected: opinionated toward PR-centric loops" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CedarCedarRejected> ] ;
+    narr:keyPhrase [ narr:text "Of 53 workflows: 27 move to Clojure, 20 stay in n8n as thin LLM wrappers, 4 die." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_N8nBoundary> ] ;
+    narr:keyPhrase [ narr:text "Upgrade to 8GB ([amount]/mo) required before deploying." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_RAMUpgrade> ] ;
+    narr:variation [ narr:text "\"Clojure owns logic\" is bounded, not total: 20 of 53 workflows deliberately stay in n8n as thin LLM wrappers and 4 are killed." ; narr:over <https://aswritten.ai/narrative#Claim_N8nBoundary> ] ;
+    narr:variation [ narr:text "Salon concurrency is modeled as independent FSM instances + a parent coordinator, explicitly NOT statechart parallel regions — a structural fork another design might have taken." ; narr:over <https://aswritten.ai/narrative#Claim_FSMLibraryChoice> ] ;
+    narr:variation [ narr:text "Multiple roads not taken: external brokers (NATS/Redis), the factory-factory framework, and three rival FSM libraries were all evaluated and rejected." ; narr:over <https://aswritten.ai/narrative#Claim_EventBusDesign> ; narr:over <https://aswritten.ai/narrative#Claim_CedarCedarRejected> ; narr:over <https://aswritten.ai/narrative#Claim_FSMLibraryChoice> ] ;
+    narr:variation [ narr:text "An operational caveat pushes against readiness: current 4GB RAM risks OOM during Salon bursts, gating deploy behind an 8GB upgrade and unresolved P0 items." ; narr:over <https://aswritten.ai/narrative#Claim_RAMUpgrade> ] ;
+    narr:writer "claude (subscription)" .
+}

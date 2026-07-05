@@ -1,0 +1,143 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250714T143000Z a prov:Activity ;
+    prov:generatedAtTime "2025-07-14T14:30:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260330-github-tier" ;
+    narr:originRef "main" ;
+    dct:title "GitHub Abstraction & Tier Model Design — Style Extraction" ;
+    prov:generated
+      narr:StyleObs_GitHubTier_Analogy,
+      narr:StyleObs_GitHubTier_Antithesis,
+      narr:StyleObs_GitHubTier_JargonPolicy,
+      narr:StyleObs_GitHubTier_ToneAuthoritative,
+      narr:Metrics_GitHubTierDesign_Updated .
+} ;
+
+# Fix placeholder ActiveVoiceRatio and add JargonDensity to existing StyleMetrics node
+DELETE {
+  GRAPH ?g {
+    narr:Metrics_GitHubTierDesign narr:ActiveVoiceRatio ?oldRatio .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250714T143000Z {
+    narr:Metrics_GitHubTierDesign
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.14"^^xsd:decimal ;
+      skos:note "Semi-formal design notes with direct dialogue. Voice is predominantly active and first-person attributed. Jargon is product-specific (org-provisioned repo, proxy config, installation token, append-only log, retraction-first) but intentionally contrasted with plain-language user-facing terms throughout. Antithesis-heavy structure (remember vs. forget, additive vs. retraction, Free vs. Expert vs. Team). Short punchy declaratives at decision moments; longer analytical sentences in rationale sections." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Metrics_GitHubTierDesign narr:ActiveVoiceRatio ?oldRatio .
+  }
+} ;
+
+# New StyleObservations (minimum 3 required)
+INSERT DATA {
+  GRAPH narr:Tx_20250714T143000Z {
+
+    narr:StyleObs_GitHubTier_Analogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_GitHubTierDesign_20260330 ;
+      skos:note "expertise-transfer-as-studying-under-expert" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_GitHubTierDesign_20260330 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2201 ;
+          oa:end 2340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you studied under an expert, internalized their framework, then developed your own. That's not weird — that's how expertise works." ;
+          oa:prefix "The new `forget` tool can remove unwanted inherited knowledge. And the real-world analogy holds: " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:StyleObs_GitHubTier_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_GitHubTierDesign_20260330 ;
+      skos:note "additive-first-vs-retraction-first structural contrast" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_GitHubTierDesign_20260330 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2430 ;
+          oa:end 2530
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Remember is additive-first (may implicitly supersede). Forget is retraction-first (explicit removal, no replacement required)." ;
+          oa:prefix "A new tool symmetric with `remember`. " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:StyleObs_GitHubTier_JargonPolicy a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_GitHubTierDesign_20260330 ;
+      skos:note "technical-jargon-contrasted-with-plain-user-language" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_GitHubTierDesign_20260330 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5180 ;
+          oa:end 5310
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Especially for the free and expert tier, you shouldn't need to know anything about GitHub or that the product even runs on GitHub." ;
+          oa:prefix "Scarlet on Expert tier: " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:StyleObs_GitHubTier_ToneAuthoritative a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_GitHubTierDesign_20260330 ;
+      skos:note "declarative-design-decision-tone" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_GitHubTierDesign_20260330 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5420 ;
+          oa:end 5530
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The product does NOT expose git operations (history, rewind, branch, diff) as product tools. If you want version control power, connect GitHub and use a coding agent." ;
+          oa:prefix "" ;
+          oa:suffix ""
+        ]
+      ] .
+
+    # Placeholder for updated metrics node reference (actual update done via DELETE/INSERT above)
+    narr:Metrics_GitHubTierDesign_Updated a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_GitHubTierDesign_20260330 ;
+      skos:note "Supplementary metrics record for this extraction pass. Primary node is narr:Metrics_GitHubTierDesign." ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.14"^^xsd:decimal .
+  }
+}

@@ -1,0 +1,462 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+PREFIX storytwin: <http://storytwin.com/ontology#>
+
+# ============================================================================
+# TRANSACTION PROVENANCE
+# ============================================================================
+
+INSERT DATA {
+  narr:Tx_20260128T215815Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai/agent#storytwin-v1> ;
+    prov:wasAttributedTo <http://n8n.aswritten.ai/actor#workflow> ;
+    prov:generatedAtTime "2026-01-28T21:58:15.824Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-07-primary-hook-onboarding-impossibility.md"^^xsd:string ;
+    sb:originRef "refs/heads/main"^^xsd:string ;
+    storytwin:model "anthropic/claude-sonnet-4.5"^^xsd:string ;
+    prov:generated narr:Sample_20260107_onboarding_impossibility,
+                   narr:Opportunity_OnboardingCrisis,
+                   narr:TimingThesis_AIContextFragmentation,
+                   narr:PositioningThesis_OrgMemory,
+                   narr:NarrativeAnchor_DayOneProductivity,
+                   narr:KeyPhrase_YouCant,
+                   narr:KeyPhrase_AIContextRich,
+                   narr:SolutionArchetype_OnboardingElimination,
+                   narr:ArchetypeTitle_OnboardingElim,
+                   narr:ProblemContext_OnboardingImpossibility,
+                   narr:ApproachPattern_SharedWorldview,
+                   narr:OutcomesProof_OnboardingMetrics,
+                   narr:Cost_VendorLockIn,
+                   narr:Cost_Fragmentation,
+                   narr:Cost_ToolSuboptimization,
+                   narr:Cost_InnovationParalysis,
+                   narr:Outcome_OnboardingSavings,
+                   narr:Outcome_KnowledgeLossPrevention,
+                   narr:Outcome_ToolOptimization,
+                   narr:Outcome_TotalValue,
+                   narr:RubricAssess_Register,
+                   narr:RubricAssess_Phrasing,
+                   narr:RubricAssess_Cadence,
+                   narr:RubricAssess_StrategicAlignment,
+                   narr:RubricAssess_Tailoring,
+                   narr:RubricAssess_Resonance,
+                   narr:RubricAssess_Flow,
+                   narr:RubricAssess_Novelty,
+                   narr:RubricAssess_Accuracy,
+                   narr:StyleObs_YouCantFraming,
+                   narr:StyleObs_ShortPunchyCadence,
+                   narr:StyleObs_RuleOfThree,
+                   narr:StyleObs_Antithesis,
+                   narr:StyleObs_StockPhrase_StateSecrets,
+                   narr:StyleObs_TerminologyControl_IPasCode,
+                   narr:StyleObs_ActiveVoice,
+                   narr:StyleMetrics_Sample .
+} ;
+
+# ============================================================================
+# ADDED TRIPLES: New Entities and Relationships
+# ============================================================================
+
+INSERT DATA {
+  # Sample Node (using existing lowercase URI variant)
+  narr:Sample_20260107_onboarding_impossibility a narr:Sample ;
+    dct:title "Primary Hook: The Onboarding Impossibility & Four Lock-In Costs" ;
+    narr:inputLength 31847 ;
+    dct:created "2026-01-07"^^xsd:date ;
+    skos:note "Major reframing of core problem from 'training risk' to 'lock-in & onboarding impossibility'. Developed through analysis of quantifiable costs felt by CEOs/managers daily." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  # New Opportunity & Timing Concepts
+  narr:Opportunity_OnboardingCrisis a skos:Concept ;
+    skos:broader narr:MarketContext ;
+    skos:prefLabel "Onboarding Impossibility as Market Opportunity" ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:definition "Organizations face [amount]+/year in AI context fragmentation costs: onboarding tax, knowledge loss, tool lock-in, innovation paralysis." ;
+    skos:scopeNote "Immediate, quantifiable pain point felt by every CEO/manager. Not future threat—happening now." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z ;
+    prov:wasAttributedTo "Scarlet" .
+
+  narr:TimingThesis_AIContextFragmentation a skos:Concept ;
+    skos:broader narr:TimingThesis ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Why Now: AI Context Fragmentation Reaches Crisis" ;
+    skos:definition "Every employee now uses AI daily, accumulating context in siloed instances. New hires take 3-6 months to build AI context senior employees have. Knowledge walks out door on departure." ;
+    skos:scopeNote "Converging forces: AI adoption + knowledge inequality + onboarding costs + tool proliferation" ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  # New Positioning & Strategy Concepts
+  narr:PositioningThesis_OrgMemory a skos:Concept ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Organizational AI Memory vs Individual AI Memory" ;
+    skos:definition "They solve memory for individuals. We solve memory for organizations. They create lock-in. We create freedom. They make onboarding take 3-6 months. We make it take 5 minutes." ;
+    skos:related narr:MoatLeverage ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z ;
+    prov:wasAttributedTo "Scarlet" .
+
+  narr:NarrativeAnchor_DayOneProductivity a skos:Concept ;
+    skos:broader narr:NarrativeAnchor ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Day 1 Productivity + Zero Knowledge Loss + Tool Freedom" ;
+    skos:definition "Eliminate 3-6 month AI onboarding tax. Make knowledge loss on departure impossible. Give everyone supercharged AI from day 1." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  # Four Lock-In Costs (extracted as individual entities)
+  narr:Cost_VendorLockIn a skos:Concept ;
+    skos:broader narr:Costs ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Vendor Lock-In Cost" ;
+    skos:definition "When you tell state secrets to AI, you depend on that AI's memory. Switching providers means losing accumulated context. Cost: months of re-training, productivity loss during transition." ;
+    skos:scopeNote "Triggering condition: Considering switching AI providers. Stakes: Impossible to migrate context, so you're locked in." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:Cost_Fragmentation a skos:Concept ;
+    skos:broader narr:Costs ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Context Fragmentation Cost" ;
+    skos:definition "Every employee has their own AI instance with unique accumulated context. Knowledge is siloed. No shared institutional memory. Cost: duplicated effort, inconsistent outputs, knowledge inequality." ;
+    skos:scopeNote "Triggering condition: Every day of normal operations. Stakes: Invisible productivity tax, compounding over time." ;
+    rdf:value 1500000 ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:Cost_ToolSuboptimization a skos:Concept ;
+    skos:broader narr:Costs ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Tool Suboptimization Cost" ;
+    skos:definition "Locked into one AI provider means using suboptimal tool for many tasks. Can't use best-in-class for each use case. Cost: 50% productivity loss vs optimal tool selection." ;
+    skos:scopeNote "Triggering condition: Every task where locked-in tool isn't best fit. Stakes: [amount]/year for 10-person team." ;
+    rdf:value 780000 ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:Cost_InnovationParalysis a skos:Concept ;
+    skos:broader narr:Costs ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Innovation Paralysis Cost" ;
+    skos:definition "Fear of losing accumulated context prevents experimentation with new AI tools. Can't adopt better solutions as they emerge. Cost: competitive disadvantage, missed opportunities." ;
+    skos:scopeNote "Triggering condition: New AI capability emerges. Stakes: Can't adopt without losing months of context investment." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  # New Key Phrases
+  narr:KeyPhrase_YouCant a skos:Concept ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "You can't" ;
+    skos:definition "Core impossibility framing: not 'it's hard' or 'it takes time'—fundamentally impossible with current architecture." ;
+    skos:example "How long does it take to set up a new employee to get the same answers from AI that you do? You can't." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:KeyPhrase_AIContextRich a skos:Concept ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "AI-context rich vs AI-context poor" ;
+    skos:definition "Knowledge inequality divide: Senior people have supercharged AIs. Junior people have dumb AIs. New hires have useless AIs." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  # New Solution Archetypes
+  narr:SolutionArchetype_OnboardingElimination a skos:Concept ;
+    skos:broader narr:SolutionArchetypes ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Onboarding Elimination Archetype" ;
+    skos:scopeNote "Day 1 productivity via shared worldview" ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:ArchetypeTitle_OnboardingElim a skos:Concept ;
+    skos:broader narr:ArchetypeTitle ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Eliminate 3-6 Month AI Onboarding Tax" ;
+    skos:definition "New hire connects to org worldview in 5 minutes. Day 1 AI productivity comparable to 6-month employee." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:ProblemContext_OnboardingImpossibility a skos:Concept ;
+    skos:broader narr:ProblemContext ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Onboarding Impossibility Problem" ;
+    skos:definition "New employee AI has zero context. Senior employee AI has months/years of accumulated context. You literally cannot transfer your AI's knowledge to theirs. Gap is invisible but massive." ;
+    skos:scopeNote "Triggering conditions: Every new hire, every departure. Stakes: [amount] per new hire, [amount] per departure, [amount]+/year for 10-person team." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:ApproachPattern_SharedWorldview a skos:Concept ;
+    skos:broader narr:ApproachPattern ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "IP-as-Code Shared Worldview" ;
+    skos:definition "Canonical flow: Connect any AI to org worldview (git-backed, version-controlled). All queries backed by same institutional knowledge. Context persists across people, tools, time." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:OutcomesProof_OnboardingMetrics a skos:Concept ;
+    skos:broader narr:OutcomesProof ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "Onboarding Metrics" ;
+    skos:definition "Before: 3 months @ 50% productivity. After: Day 1 @ 80% productivity. Savings: [amount] per new hire. Senior time freed: 8 hours/week × [amount]/hr = [amount]/year for 5 seniors." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  # Outcome Nodes with enriched structure
+  narr:Outcome_OnboardingSavings a skos:Concept ;
+    skos:broader narr:Outcomes ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "[amount]/year Onboarding Savings" ;
+    skos:definition "5 new hires/year: [amount] saved in ramp time. Senior time freed: [amount]/year. Total: [amount]/year." ;
+    rdf:value 625000 ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:Outcome_KnowledgeLossPrevention a skos:Concept ;
+    skos:broader narr:Outcomes ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "[amount]/year Knowledge Loss Prevention" ;
+    skos:definition "2 departures/year: [amount] saved per replacement (6 months @ 50% productivity eliminated). Plus: Institutional knowledge preserved (priceless)." ;
+    rdf:value 90000 ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:Outcome_ToolOptimization a skos:Concept ;
+    skos:broader narr:Outcomes ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "[amount]/year Tool Optimization Gain" ;
+    skos:definition "10-person team: Use best AI for each task (not locked into one). Productivity gain: 50% from optimal tools vs locked-in tool." ;
+    rdf:value 780000 ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:Outcome_TotalValue a skos:Concept ;
+    skos:broader narr:Outcomes ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    skos:prefLabel "[amount]+/year Total Value" ;
+    skos:definition "10-person team, 5 new hires/year, 2 departures/year: Onboarding [amount] + Knowledge loss [amount] + Tool optimization [amount] = [amount]+/year." ;
+    rdf:value 1500000 ;
+    skos:note "Payback period: Immediate (first new hire or departure)" ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  # Rubric Assessments
+  narr:RubricAssess_Register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    rdf:value 4.5 ;
+    skos:note "Direct, conversational, second-person ('you'). Active voice dominant. Concise, punchy. Fits strategic memo/sales pitch register perfectly." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:RubricAssess_Phrasing a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    rdf:value 4.5 ;
+    skos:note "Strong idiolect: 'state secrets to AI', 'You can't', 'AI-context rich/poor'. Stock phrases used consistently. Domain verbs precise ('onboards', 'ramp', 'locked in')." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:RubricAssess_Cadence a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    rdf:value 5.0 ;
+    skos:note "Exemplary short & punchy cadence. Staccato rhythm. Rule of three. Parallel structures. Em-dashes for emphasis. Varies sentence length for impact." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:RubricAssess_StrategicAlignment a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    rdf:value 5.0 ;
+    skos:note "Entire document IS strategic alignment: reframes core problem, repositions product, defines narrative anchor, sets GTM direction. Explicit ties to mission/vision/positioning." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:RubricAssess_Tailoring a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    rdf:value 4.5 ;
+    skos:note "Highly tailored to CEO/VP Eng personas: quantified costs, ROI framing, role-specific questions. Addresses economic buyer (CEO), technical buyer (CTO), end user (team)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:RubricAssess_Resonance a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    rdf:value 4.5 ;
+    skos:note "Strong resonance: onboarding pain universally felt. Analogies clear (AI-context rich/poor). Quantified examples ([amount]/year). Visceral impossibility framing ('You can't')." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:RubricAssess_Flow a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    rdf:value 4.0 ;
+    skos:note "Clear progression: Problem reframing → Four lock-in costs → Onboarding as primary hook → Solution → Proof → GTM implications. Some repetition for emphasis (intentional). Transitions natural." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:RubricAssess_Novelty a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    rdf:value 4.5 ;
+    skos:note "High novelty: 'You can't' impossibility framing fresh. 'AI-context rich/poor' divide original. 'IP-as-code' terminology distinct. Avoids generic SaaS clichés." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:RubricAssess_Accuracy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    rdf:value 4.0 ;
+    skos:note "Quantified metrics throughout ([amount], [amount], etc.). Cites source material (Scarlet's insights). Calculations shown. Some assumptions stated (10-person team, 5 new hires/year). Could strengthen with external citations." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  # Style Observations with OA Annotations
+  narr:StyleObs_YouCantFraming a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    oa:hasBody narr:ToneDirectPersonal ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_onboarding_impossibility ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5234 ;
+        oa:end 5330
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "How long does it take to set up a new employee to get the same answers from AI that you do? (You can't)" ;
+        oa:prefix "Associated with How much does it cost to switch AI providers: " ;
+        oa:suffix ". And user's confirmation: 'Yea it's absolutely the primary hook.'"
+      ]
+    ] ;
+    skos:note "Impossibility framing: not 'it's hard'—fundamentally impossible. Parenthetical '(You can't)' creates visceral impossibility." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:StyleObs_ShortPunchyCadence a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_onboarding_impossibility ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 8456 ;
+        oa:end 8542
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "You can't. It's impossible. Not 'it's hard' or 'it takes time'—fundamentally impossible." ;
+        oa:prefix "Answer: " ;
+        oa:suffix " This makes the problem feel broken at a structural level."
+      ]
+    ] ;
+    skos:note "Staccato rhythm: short declaratives, em-dash for emphasis, repetition of 'impossible' for cadence." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:StyleObs_RuleOfThree a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_onboarding_impossibility ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 12789 ;
+        oa:end 12901
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Senior people have supercharged AIs. Junior people have dumb AIs. New hires have useless AIs." ;
+        oa:prefix "Result: " ;
+        oa:suffix " This creates invisible productivity inequality."
+      ]
+    ] ;
+    skos:note "Triadic parallelism: three parallel clauses escalating in severity (supercharged → dumb → useless)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:StyleObs_Antithesis a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    oa:hasBody narr:Antithesis ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_onboarding_impossibility ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 18234 ;
+        oa:end 18356
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "They solve memory for individuals. We solve memory for organizations. They create lock-in. We create freedom." ;
+        oa:prefix "The narrative: " ;
+        oa:suffix " They make onboarding take 3-6 months."
+      ]
+    ] ;
+    skos:note "Parallel antithesis: They/We, individuals/organizations, lock-in/freedom. Creates sharp competitive contrast." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:StyleObs_StockPhrase_StateSecrets a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_onboarding_impossibility ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1456 ;
+        oa:end 1512
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "when you tell state secrets to AI, you depend on that AI's memory" ;
+        oa:prefix "The problem is that " ;
+        oa:suffix " to leverage them to produce the work you need."
+      ]
+    ] ;
+    skos:note "Recurring phrase 'state secrets to AI' used throughout as shorthand for proprietary context." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:StyleObs_TerminologyControl_IPasCode a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_onboarding_impossibility ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 14567 ;
+        oa:end 14623
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "IP-as-code / Collaborative Worldview" ;
+        oa:prefix "After (" ;
+        oa:suffix "): Tool-agnostic (use whatever's best)"
+      ]
+    ] ;
+    skos:note "Canonical product terminology: 'IP-as-code' and 'Collaborative Worldview' used consistently." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  narr:StyleObs_ActiveVoice a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    oa:hasBody narr:VoiceActive ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_20260107_onboarding_impossibility ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 16789 ;
+        oa:end 16891
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "We eliminate the 3-6 month AI onboarding tax. We make knowledge loss on departure impossible." ;
+        oa:prefix "Primary positioning: " ;
+        oa:suffix " We give everyone supercharged AI from day 1."
+      ]
+    ] ;
+    skos:note "Strong active voice: 'We eliminate', 'We make', 'We give'—direct agency, no hedging." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+
+  # Style Metrics
+  narr:StyleMetrics_Sample a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_20260107_onboarding_impossibility ;
+    narr:AverageSentenceLength 18.3 ;
+    narr:ActiveVoiceRatio 0.87 ;
+    narr:JargonDensity 0.12 ;
+    narr:TypeTokenRatio 0.68 ;
+    narr:Conciseness 0.91 ;
+    skos:note "High active voice, moderate jargon (domain-appropriate), strong conciseness, good lexical diversity." ;
+    prov:wasGeneratedBy narr:Tx_20260128T215815Z .
+}

@@ -1,0 +1,124 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260406T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-06T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-04-06-mcp-tool-surface.md" ;
+    narr:originRef "dev@b0811095" ;
+    prov:generated narr:Sample_MCPToolSurface_20260406, narr:Narrative_MCPToolSurface_FiveTools, narr:Narrative_IntrospectAbsorbedScope, narr:Claim_ScopeIsNotSeparate, narr:Claim_TriGOverJSON, narr:StyleObs_Antithesis_TriG, narr:StyleObs_Tone_Authoritative, narr:StyleObs_Jargon_MCP, narr:Metrics_MCPToolSurface_20260406 .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260406T120000Z {
+    narr:Sample_MCPToolSurface_20260406 a narr:Sample ;
+      dct:title "MCP Tool Surface: Five Core Tools (scope removed)" ;
+      dct:created "2026-04-06"^^xsd:date ;
+      narr:inputLength 1850 .
+
+    narr:Narrative_MCPToolSurface_FiveTools a narr:Narrative ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      narr:theme "The five user-facing MCP tools are perspective, cite, introspect, remember, and review" ;
+      skos:broader narr:ModulesCapabilities ;
+      skos:note "Refract and lens were moved to the product repo only; scope was absorbed into introspect." .
+
+    narr:Narrative_IntrospectAbsorbedScope a narr:Narrative ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      narr:theme "Introspect absorbed scope's subgraph retrieval functionality" ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:note "When a focus parameter is provided to introspect, it performs subgraph selection alongside gap analysis." .
+
+    narr:Claim_ScopeIsNotSeparate a narr:Claim ;
+      narr:aboutNode narr:Narrative_IntrospectAbsorbedScope ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      skos:note "Scope is not a separate tool, it's a mode of introspect. The 'graph-scope' workflow was deleted." .
+
+    narr:Claim_TriGOverJSON a narr:Claim ;
+      narr:aboutNode narr:TechnicalExplainers ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      skos:note "Subgraph format is TriG, not structured JSON. JSON was 1.94x the token cost with no information gain." .
+
+    narr:StyleObs_Antithesis_TriG a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MCPToolSurface_20260406 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1250 ; oa:end 1350 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Subgraph format is TriG, not structured JSON." ]
+      ] .
+
+    narr:StyleObs_Tone_Authoritative a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MCPToolSurface_20260406 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 100 ; oa:end 250 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Scarlet corrected a stale claim in collective memory." ]
+      ] .
+
+    narr:StyleObs_Jargon_MCP a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MCPToolSurface_20260406 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 300 ; oa:end 450 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "subgraph (filtered TriG), existing_knowledge with provenance" ]
+      ] .
+
+    narr:Metrics_MCPToolSurface_20260406 a narr:StyleMetrics ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      skos:broader narr:StyleMetrics ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.15 .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Claim_ScopeIsNewSeparateTool narr:hasConvictionLevel ?oldConviction .
+    narr:Claim_ScopeIsNewSeparateTool skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260406T120000Z {
+    narr:Claim_ScopeIsNewSeparateTool narr:hasConvictionLevel narr:Conviction_Notion ;
+      skos:note "SUPERSEDED: Scope is not a separate tool; it is a mode of introspect. Functional absorption landed on dev at b0811095." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_ScopeIsNewSeparateTool narr:hasConvictionLevel ?oldConviction ;
+      skos:note ?oldNote .
+  }
+} ;
+
+DELETE {
+  GRAPH ?g {
+    narr:Claim_FiveCoreMCPTools skos:note ?oldNoteTools .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260406T120000Z {
+    narr:Claim_FiveCoreMCPTools skos:note "The five user-facing MCP tools are: perspective, cite, introspect, remember, and review. Scope, refract, and lens are removed from the user-facing surface." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_FiveCoreMCPTools skos:note ?oldNoteTools .
+  }
+} 

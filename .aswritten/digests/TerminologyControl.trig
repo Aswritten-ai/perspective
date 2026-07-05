@@ -1,0 +1,51 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_TerminologyControl> {
+  <https://aswritten.ai/narrative#Digest_TerminologyControl> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#TerminologyControl> ;
+    narr:childCount "29"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub tracks the project's deliberate terminology control — what a term is called, who sees it, and when it changed. The dominant trajectory is a move toward plain English and away from metaphor: conviction levels were [renamed from stake/boulder/foundation to claim/decision/principle](narr:Narrative_ConvictionLevelRename) in Mar 2026 because [the metaphors needed decoding](narr:Obs_ConvictionLabelPlainEnglish), and the cognition model was [simplified to remember → process → perspective](narr:Narrative_CognitionModelSimplification), dropping Jungian 'individuate'/'internalize'. User-facing/internal splits are enforced: ['shifts' is what users see, 'optometrist model' is internal](narr:Claim_ShiftsTerminology) (Jul 2025), and ['lenses', 'story drafts', 'telltales' were redefined or retired](narr:Observation_VocabDefinitions). Separately, ['memory' was let go for 'installable expertise'](narr:StyleObs_InstallableExpertiseTerm) (Mar 2026), an outcome-framing move. Beneath these sit canonical brand terms — [lowercase 'aswritten'](narr:StyleObs_1), ['collective memory'](narr:StyleObs_CollectiveMemory), ['lens'/'micro-telltale'](narr:StyleObs_LensMicroTelltale), 'Priority Stack', 'Pilot', SEAL — plus a register of style markers (staccato fragments, scare-quotes, backtick code spans) and a stated rule to [preserve new vocabulary verbatim](narr:StyleObs_VerbatimVocabulary).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ShiftsTerminology> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CognitionModelSimplification> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ConvictionLevelRename> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ConvictionLabelPlainEnglish> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_VocabDefinitions> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_2> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BacktickTerms> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BrandNameMCP> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CitedOrFlagged> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CollectiveMemory> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DomainJargon> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_InlineTaskRef> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_InstallableExpertiseTerm> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_LensMicroTelltale> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_MCP> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NotSellingPanacea> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OnrampCategorization> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_PilotPricing> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_PriorityStack> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_QuotedTermReframe> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_StructuralContent> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TXFactReview> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Terminology_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Terminology_SEAL> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Terminology_V0> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_VerbatimVocabulary> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObservation_BoundedSetPhrasing> ;
+    narr:keyPhrase [ narr:text "The confusion is with stake and boulder without prior explanation." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ConvictionLabelPlainEnglish> ] ;
+    narr:keyPhrase [ narr:text "I've let go of the memory word sort of entirely and I'm now calling it installable expertise." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_InstallableExpertiseTerm> ] ;
+    narr:keyPhrase [ narr:text "New vocabulary, preserved verbatim because paraphrasing will blunt it" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VerbatimVocabulary> ] ;
+    narr:keyPhrase [ narr:text "System generates micro-telltales — small content artifacts that exercise the triples in a given lens." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_LensMicroTelltale> ] ;
+    narr:keyPhrase [ narr:text "collective memory" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_CollectiveMemory> ] ;
+    narr:keyPhrase [ narr:text "Pilot pricing revised from [amount]to [amount]." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_PilotPricing> ] ;
+    narr:variation [ narr:text "'lens' is listed as redefined/retired in favor of user-facing 'shifts', yet stays a live canonical domain term elsewhere." ; narr:over <https://aswritten.ai/narrative#Claim_ShiftsTerminology> ; narr:over <https://aswritten.ai/narrative#Observation_VocabDefinitions> ; narr:over <https://aswritten.ai/narrative#StyleObs_LensMicroTelltale> ; narr:over <https://aswritten.ai/narrative#StyleObs_DomainJargon> ] ;
+    narr:variation [ narr:text "'memory' was said to be let go entirely for 'installable expertise', but 'collective memory' is still used as a canonical product term." ; narr:over <https://aswritten.ai/narrative#StyleObs_InstallableExpertiseTerm> ; narr:over <https://aswritten.ai/narrative#StyleObs_CollectiveMemory> ] ;
+    narr:variation [ narr:text "The conviction rename is mid-migration: frontend labels updated, but backend (n8n, SPARQL, snapshots) still emits old enum values." ; narr:over <https://aswritten.ai/narrative#Narrative_ConvictionLevelRename> ] ;
+    narr:variation [ narr:text "Most moves strip metaphor toward plain English, but 'installable expertise' shifts toward value framing and core physics/flocking metaphors are deliberately retained." ; narr:over <https://aswritten.ai/narrative#Narrative_CognitionModelSimplification> ; narr:over <https://aswritten.ai/narrative#StyleObs_InstallableExpertiseTerm> ; narr:over <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:variation [ narr:text "Some terms are insider jargon used without definition (TX, MCP, lens, zone), trading accessibility for precision against the plain-English push." ; narr:over <https://aswritten.ai/narrative#StyleObs_DomainJargon> ; narr:over <https://aswritten.ai/narrative#StyleObs_MCP> ; narr:over <https://aswritten.ai/narrative#StyleObs_TXFactReview> ] ;
+    narr:writer "claude (subscription)" .
+}

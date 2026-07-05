@@ -1,0 +1,51 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260331T180000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-31T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-31-rdf-extract-model-comparison.md" ;
+    narr:originRef "main" ;
+    dct:title "rdf/extract Model Comparison and Eval Architecture — March 31, 2026" ;
+    prov:generated
+      
+      
+      
+      
+      narr:StyleObs_ModelComparison_VerdictCadence .
+} ;
+
+# INSERT: New actor and claim for anthropic/claude-opus-4.6 (not in snapshot)
+INSERT DATA {
+  GRAPH narr:Tx_20260331T180000Z {
+
+    narr:StyleObs_ModelComparison_VerdictCadence a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+
+      skos:note "Short punchy verdict sentences alternate with dense technical elaborations; antithesis structure in update problem section" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3200 ;
+          oa:end 3380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The third option — recognizing when evidence has accreted enough to warrant abstraction — is the hardest and most valuable extraction behavior. None of the tested models did it." ;
+          oa:prefix "" ;
+          oa:suffix " This is the core gap driving task-176."
+        ]
+      ] .
+  }
+}

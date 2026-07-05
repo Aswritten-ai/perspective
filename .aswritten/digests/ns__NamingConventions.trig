@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__NamingConventions> {
+  <https://aswritten.ai/narrative#Digest_ns__NamingConventions> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#NamingConventions> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the project's naming and positioning conventions, which cohere around two devices. First, a consistent **lowercase brand stylization**: the [system handle](narr:Obs_SystemHandle) \"aswritten\" as a centralized constant and the [domain-style brand name](narr:StyleObs_BrandName) with its .ai TLD. Second, an extended **code metaphor** running through the positioning — [intellectual property as code](narr:Observation_IPAsCode) as the core phrase, the [compiled-target framing](narr:Observation_CompiledTarget) applied in parallel to both content and the application, and a proposed extension to [organizational change as code](narr:StyleObs_OrgChangeAsCode) aimed at quantifying how the org changes. Against this settled stylistic vocabulary sits one genuinely open thread: the [product name itself](narr:Question_ProductNaming) is uncommitted, with stated dissatisfaction toward 'collective memory' and 'collaborative AI' recurring as an alternative. So the region reads as a firm convention layer (lowercase + code-as-X metaphor) wrapped around an unresolved product-naming decision.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Obs_SystemHandle> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_CompiledTarget> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_IPAsCode> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Question_ProductNaming> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_BrandName> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_OrgChangeAsCode> ;
+    narr:keyPhrase [ narr:text "intellectual property as code" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_IPAsCode> ] ;
+    narr:keyPhrase [ narr:text "content is a compiled target. The application is a compiled target" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_CompiledTarget> ] ;
+    narr:keyPhrase [ narr:text "**Handle**: \"aswritten\" (centralized constant)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Obs_SystemHandle> ] ;
+    narr:keyPhrase [ narr:text "aswritten.ai" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_BrandName> ] ;
+    narr:keyPhrase [ narr:text "I'd also like to add something about organizational change as code, ie being able to quantify the way the org is changing" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_OrgChangeAsCode> ] ;
+    narr:variation [ narr:text "Product name is explicitly unresolved: dissatisfaction with 'collective memory', 'collaborative AI' surfaces repeatedly, direction TBD — the one uncommitted decision amid settled conventions." ; narr:over <https://aswritten.ai/ns/narrative#Question_ProductNaming> ] ;
+    narr:variation [ narr:text "The 'as code' metaphor is still being stretched — 'organizational change as code' is a proposed addition, not yet an established convention like 'IP as code'." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_OrgChangeAsCode> ; narr:over <https://aswritten.ai/ns/narrative#Observation_IPAsCode> ] ;
+    narr:variation [ narr:text "Attachment is mostly skos:related (loose style observations) except the product-naming question, which attaches as skos:broader — structurally the odd one out." ; narr:over <https://aswritten.ai/ns/narrative#Question_ProductNaming> ] ;
+    narr:writer "claude (subscription)" .
+}

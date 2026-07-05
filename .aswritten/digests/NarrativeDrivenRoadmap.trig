@@ -1,0 +1,57 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_NarrativeDrivenRoadmap> {
+  <https://aswritten.ai/narrative#Digest_NarrativeDrivenRoadmap> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#NarrativeDrivenRoadmap> ;
+    narr:childCount "33"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the roadmap, GTM, and document strategy for aswritten. Spine: the [strategy doc as single internal source of truth](narr:Narrative_DocumentEcosystem) from which nine audience-specific documents derive, and the [memory-to-worldview core product loop](narr:Narrative_CoreProductLoop). The near-term ship discipline lives in an [April-1 above-the-line list](narr:Claim_AboveTheLine_April1) (witnessed 20260320, revised 20260408) and a [three-blocker V1 scope](narr:Narrative_ThreeBlockers). GTM is framed several ways: a [[amount]–[amount] funding ladder](narr:Narrative_FundingLadder), an [expansion path](narr:Narrative_ExpansionPath), [three buyer-specific expansion tracks](narr:Narrative_ExpansionTracks), and [influence-first selling](narr:Narrative_InfluenceSales). A March SMB pivot reframes product ([GitHub abstraction](narr:Claim_GitHubAbstractionHighPriority) 20260312→20260319, [SMB module implications](narr:Obs_SMBProductImplications)). Product gaps name [onboarding/cognitive bootstrapping](narr:Claim_OnboardingModeHighestLeverage) as highest leverage, plus the [lens/layer parameter](narr:Claim_MissingCompileTimeLayerParameter) (20260414) and [topic-analysis as platform feature](narr:Claim_TopicAnalysisPlatformFeature) (20260501). a demo-call prospect and YC feedback drive [material priorities](narr:Obs_DemoProspectMaterialPriorities) and the [YC three-beat demo](narr:Decision_YCDemoBeats).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_6> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AboveTheLine_April1> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DemoEqualsDelivery> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FundraisingBriefGaps> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_GitHubAbstractionHighPriority> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_GitHubActionsWorkToday> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MissingCompileTimeLayerParameter> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OnboardingModeHighestLeverage> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_Phase1Manual> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ScopeBuildFirst> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StrategyDocAsInternalSourceOfTruth> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TopicAnalysisPlatformFeature> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_VoiceDroppedFromRoadmap> ;
+    narr:covers <https://aswritten.ai/narrative#Decision_YCDemoBeats> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ChatFirstCodeLater> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CoreProductLoop> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DocumentEcosystem> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ExpansionPath> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ExpansionTracks> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_FineTuningExtractionPath> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_FundingLadder> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_InfluenceSales> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ScalingContent> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ThreeBlockers> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_DemoProspectMaterialPriorities> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_DocumentEcosystemTable> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_FearAwareNorthStar> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_SMBProductImplications> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_FutureLensTool> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_LensDraftingProcess> ;
+    narr:covers <https://aswritten.ai/narrative#PriorityStack_2026_02_10> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldArrowFraming> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SectionHeaderParallelism> ;
+    narr:keyPhrase [ narr:text "The strategy document is the internal source of truth." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_StrategyDocAsInternalSourceOfTruth> ] ;
+    narr:keyPhrase [ narr:text "The demo IS the delivery — every sales call produces the deliverable." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DemoEqualsDelivery> ] ;
+    narr:keyPhrase [ narr:text "Onboarding mode is the highest-leverage product gap for beta." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OnboardingModeHighestLeverage> ] ;
+    narr:keyPhrase [ narr:text "Technical infrastructure works; cognitive bootstrapping does not." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OnboardingModeHighestLeverage> ] ;
+    narr:keyPhrase [ narr:text "Voice interviews are explicitly dropped from the roadmap." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_VoiceDroppedFromRoadmap> ] ;
+    narr:keyPhrase [ narr:text "[amount] / [amount] / [amount] / [amount] as sequential conviction milestones" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_FundingLadder> ] ;
+    narr:keyPhrase [ narr:text "Even dev-focused users should treat aswritten as a chat session first, not a coding session." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ChatFirstCodeLater> ] ;
+    narr:variation [ narr:text "Roads dropped/superseded: voice interviews explicitly cut (20260408), and the landing-page redo superseded by the deep-link move — items removed, not just deprioritized." ; narr:over <https://aswritten.ai/narrative#Claim_VoiceDroppedFromRoadmap> ; narr:over <https://aswritten.ai/narrative#Claim_AboveTheLine_April1> ] ;
+    narr:variation [ narr:text "GitHub abstraction flipped from open high-priority blocker (20260312) to a resolved tier-design feature (20260319) — a question that closed rather than persisting." ; narr:over <https://aswritten.ai/narrative#Claim_GitHubAbstractionHighPriority> ] ;
+    narr:variation [ narr:text "Counter-intuitive adoption: even dev-focused users are steered chat-first, populating worldview before any coding — pushes against a code-tool framing." ; narr:over <https://aswritten.ai/narrative#Narrative_ChatFirstCodeLater> ] ;
+    narr:variation [ narr:text "Expansion is framed three incompatible ways — linear funding ladder, advisor/VC-channel expansion path, and three parallel buyer tracks — not yet reconciled into one motion." ; narr:over <https://aswritten.ai/narrative#Narrative_FundingLadder> ; narr:over <https://aswritten.ai/narrative#Narrative_ExpansionPath> ; narr:over <https://aswritten.ai/narrative#Narrative_ExpansionTracks> ] ;
+    narr:variation [ narr:text "Manual-now vs automate-later tension: Phase 1 is Scarlet doing it by hand; pipeline automation and LoRA self-hosted extraction are explicitly post-raise long-term bets." ; narr:over <https://aswritten.ai/narrative#Claim_Phase1Manual> ; narr:over <https://aswritten.ai/narrative#Narrative_FineTuningExtractionPath> ] ;
+    narr:variation [ narr:text "Priority sequencing is dated and shifting — the 2026-02-10 post-YC stack (pipeline→outreach→incubators) coexists with later a demo-call prospect-driven material priorities; no single canonical order." ; narr:over <https://aswritten.ai/narrative#PriorityStack_2026_02_10> ; narr:over <https://aswritten.ai/narrative#Obs_DemoProspectMaterialPriorities> ] ;
+    narr:writer "claude (subscription)" .
+}

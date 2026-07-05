@@ -1,0 +1,34 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Rubric_Accuracy> {
+  <https://aswritten.ai/narrative#Digest_ns__Rubric_Accuracy> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Rubric_Accuracy> ;
+    narr:childCount "14"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers accuracy assessments across the corpus's document types — memos, pitch decks, ADRs, call notes, and collective-memory entries — each judging factual precision, named-entity correctness, and citation discipline. Technical specs are checked for exactness: the [collective-memory assessment](narr:Assess_Accuracy_collective_memory) credits precise type definitions and accurate sequence diagrams, while the [code-memory assessment](narr:Assess_Accuracy_cm) notes precise type signatures and a SHACL schema. Pitch and GTM material is judged on quantified outcomes and named entities — the [investor pitch](narr:Assessment_Accuracy_1), [the customer's chief architect call](narr:Assessment_Accuracy_CustomerArchitect), and [GTM doc](narr:RubricAssess_Accuracy_GTM). Decision records ([ADR-001](narr:RubricAssess_Accuracy_ADR001), [ADR-002](narr:RubricAssess_Accuracy_ADR002)) are checked for cross-references and explicit status. The [Tony call](narr:RubricAssess_Accuracy_TonyCall) preserves dense dated numbers and verbatim quotes; the [Jan-7 GTM memory](narr:RubricAssess_Accuracy_20260107) and [IP-crisis](narr:Assessment_Accuracy_IPCrisis) entries foreground provenance and attribution. Recurring praise: verifiable claims, no false precision, consistent terminology.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assess_Accuracy_cm> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assess_Accuracy_collective_memory> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assess_Accuracy_rebrand> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Accuracy_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Accuracy_IPCrisis> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Accuracy_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_20260107> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_ADR001> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_ADR002> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_GTM> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_TonyCall> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_accuracy> ;
+    narr:keyPhrase [ narr:text "explicit 'uncommitted' status for exploratory claims" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Accuracy_IPCrisis> ] ;
+    narr:keyPhrase [ narr:text "precise pricing signal ([amount]-150K)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Accuracy_CustomerArchitect> ] ;
+    narr:keyPhrase [ narr:text "10-20% equity, [amount] triggers, [amount]-[amount] checks" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_TonyCall> ] ;
+    narr:keyPhrase [ narr:text "could add external citations for 5.0." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_GTM> ] ;
+    narr:keyPhrase [ narr:text "minor: 'Clawd bot' spelling uncertain" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy> ] ;
+    narr:keyPhrase [ narr:text "explicit provenance" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_20260107> ] ;
+    narr:variation [ narr:text "Citation stance splits: several entries rule citations unnecessary for the format (pitch, internal decision record, strategic doc) while others flag they could be strengthened with external citations." ; narr:over <https://aswritten.ai/ns/narrative#Assessment_Accuracy_1> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_accuracy> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_ADR001> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_GTM> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy> ] ;
+    narr:variation [ narr:text "Handling of uncertainty differs: some assessments praise explicit hedging ('uncommitted', open questions) while others log unresolved minor doubts ('Clawd bot' spelling, 'missing piece' product state)." ; narr:over <https://aswritten.ai/ns/narrative#Assessment_Accuracy_IPCrisis> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Accuracy_1> ] ;
+    narr:variation [ narr:text "Only the collective-memory entry credits documented self-correction (a 'Technical Corrections Made' section), an outlier among otherwise forward-asserting assessments." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Accuracy_collective_memory> ] ;
+    narr:writer "claude (subscription)" .
+}

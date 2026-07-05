@@ -1,0 +1,105 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260611T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-11T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# June 11 Crystallization: Consolidate, Then Push — Angel-First Sequencing, Publish Liberally, and the Solo-Partner Bridge Pitch" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      narr:Narrative_PublishLiberally,
+      narr:Claim_PublishLiberallyDecision,
+      narr:StyleObs_CastleMetaphor,
+      narr:StyleObs_PathDependentTrajectoryQuote,
+      narr:StyleMetrics_June11Crystallization .
+} ;
+
+# ── New entities ─────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260611T120000Z {
+
+    # Narrative: Publish liberally
+    narr:Narrative_PublishLiberally
+
+
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Publish Liberally: The Moat Is the Graph, Not the Ideas" ;
+      skos:note "Decision to publish liberally and not hold IP back. The moat is the transformation pipeline and the accumulated graph, not the ideas. Content posture: full tour of the castle — you could bring them everywhere except maybe the metaphorical security room, and even that you could probably show them the camera feeds. The line between what to publish and what not to publish is known and understood." ;
+      narr:theme "The competitive moat is the transformation pipeline and accumulated graph, not the ideas — publish liberally because ideas are not the defensible asset" .
+
+    narr:Claim_PublishLiberallyDecision
+      a narr:Claim ;
+
+      skos:note "Decision to publish liberally and not try to hold IP back. The line between what to publish and what not to publish is known and understood — you can give a full tour of the castle except maybe the metaphorical security room where all the cameras are, and even that you could probably walk someone in and show them the camera feeds. The moat is the transformation pipeline and the accumulated graph, not the ideas." ;
+      narr:aboutNode narr:Narrative_PublishLiberally ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:MoatLeverage .
+
+    # Style observations
+    narr:StyleObs_CastleMetaphor
+      a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+
+      skos:note "Extended castle metaphor for IP disclosure posture: 'full tour of the castle... You could bring them everywhere in the castle except maybe the metaphorical security room where all the cameras are. Even that you could probably walk someone in and show them the camera feeds. Why not?' Scarlet's idiolect uses spatial metaphors to make abstract IP strategy concrete and visceral." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1102 ;
+          oa:end 1340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "You could bring them everywhere in the castle except maybe the metaphorical security room where all the cameras are. Even that you could probably walk someone in and show them the camera feeds. Why not?" ;
+          oa:prefix "full tour of the castle... " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:StyleObs_PathDependentTrajectoryQuote
+      a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+
+      skos:note "The phrase 'path-dependent, trajectory-grounded reactions' as a description of what the solo-partner demo produces — a technically precise, jargon-dense formulation used in a fundraising context. Characteristic of Scarlet's idiolect: borrowing from systems/complexity vocabulary to describe product behavior." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 1920
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "path-dependent, trajectory-grounded reactions — 'you've been softening on this for three weeks'" ;
+          oa:prefix "the solo partner doubles as the fundraise demo (\"" ;
+          oa:suffix "\");"
+        ]
+      ] .
+
+    # Style metrics
+    narr:StyleMetrics_June11Crystallization
+      a narr:StyleMetrics ;
+
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic decision memo with embedded verbatim blockquotes from Scarlet. Mixed register: structured markdown with H2 section headers (memo genre) vs. first-person stream-of-consciousness in blockquoted speech. Antithesis-heavy structure (consolidate vs. push, angel-first vs. family-first, R&D line vs. product line, PoC vs. application). Active voice dominant in editorial prose. Jargon density moderate — product terms (solo-partner, V2, EDO, clearance, federation, role topology, cross-repo) and fundraising terms (SAFE, A1/A2, anchor) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "19"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.10"^^xsd:decimal .
+
+  }
+}

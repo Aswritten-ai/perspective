@@ -1,0 +1,28 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_DesignTradeoffs> {
+  <https://aswritten.ai/narrative#Digest_DesignTradeoffs> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#DesignTradeoffs> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the recurring design tensions in the system's architecture and vocabulary. A foundational pair is framed as [introspect vs. annotate as inverted complements](narr:Observation_InvertedComplement) operating on the same graph from opposite directions, alongside an unresolved [scope-vs-introspect tradeoff](narr:Claim_ScopeVsIntrospect). Vocabulary itself is contested: Scarlet's [core frustration with 'compile' as a tool name](narr:Obs_CoreFrustrationCompile) (Jul 2025) and her later [transform-over-query distinction](narr:Obs_TransformVerbQuote) (Apr 2026) reframe what the operation *is* — shifting focus, removing triples, reweighting — rather than retrieving. A second thread draws the boundary of what belongs in a memory: the [directional-and-relational 'how'](narr:Obs_ScarletQuote_RealDifference) versus implementation detail, with [text-hierarchy and emotional feeling as perspective](narr:Obs_ScarletQuote_TextHierarchy) but pixel values excluded. the customer's chief architect contributes the [architectural-decision-support pain](narr:Obs_ARBPainPoint2_Quote) — pull inside, push outside, or new extension point (Jul 2025). A sharp mental-model correction sits in [TX merge as reconciliation, not rebase](narr:Narrative_TXMergeReconciliation), flagged as Scarlet's top process frustration and a demo blocker.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ScopeVsIntrospect> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TXMergeReconciliation> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ARBPainPoint2_Quote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CoreFrustrationCompile> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletQuote_RealDifference> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletQuote_TextHierarchy> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_TransformVerbQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_InvertedComplement> ;
+    narr:keyPhrase [ narr:text "Is X something that would make sense to pull inside to the product, or should we. Should we push it outside?" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ARBPainPoint2_Quote> ] ;
+    narr:keyPhrase [ narr:text "We're really taking the existing perspective and shifting the focus... In some cases, that is removing triples. In other cases, it might be changing the weighting of things." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_TransformVerbQuote> ] ;
+    narr:keyPhrase [ narr:text "TX merge is reconciliation (merge + append), not rebase — a critical mental model correction" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TXMergeReconciliation> ] ;
+    narr:keyPhrase [ narr:text "the how that belongs in a memory is directional and relational" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletQuote_RealDifference> ] ;
+    narr:keyPhrase [ narr:text "the nature of a text hierarchy, ratio between elements, emotional impact, feeling — these are perspective" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletQuote_TextHierarchy> ] ;
+    narr:variation [ narr:text "Merge framed as rebase is explicitly corrected to merge+append reconciliation — a road-not-taken in mental model, and called Scarlet's #1 process frustration plus a demo blocker." ; narr:over <https://aswritten.ai/narrative#Narrative_TXMergeReconciliation> ] ;
+    narr:variation [ narr:text "The scope-vs-introspect tradeoff is named but unresolved, sitting against the introspect/annotate inverted-complement framing." ; narr:over <https://aswritten.ai/narrative#Claim_ScopeVsIntrospect> ; narr:over <https://aswritten.ai/narrative#Observation_InvertedComplement> ] ;
+    narr:variation [ narr:text "Where the memory boundary falls is contested: directional/relational 'why' and emotional feeling count as perspective, but code specifics, color values, layout, and pixel multiples are excluded." ; narr:over <https://aswritten.ai/narrative#Obs_ScarletQuote_RealDifference> ; narr:over <https://aswritten.ai/narrative#Obs_ScarletQuote_TextHierarchy> ] ;
+    narr:variation [ narr:text "Vocabulary tension across a year: 'compile' rejected (Jul 2025), reframed as transform/shift-focus (Apr 2026) — operation-as-transform vs operation-as-query." ; narr:over <https://aswritten.ai/narrative#Obs_CoreFrustrationCompile> ; narr:over <https://aswritten.ai/narrative#Obs_TransformVerbQuote> ] ;
+    narr:writer "claude (subscription)" .
+}

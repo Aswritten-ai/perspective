@@ -1,0 +1,41 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_KPIsSuccess> {
+  <https://aswritten.ai/narrative#Digest_KPIsSuccess> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#KPIsSuccess> ;
+    narr:childCount "18"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers aswritten's success metrics across two horizons. The long-horizon KPI is an [acquisition-sized exit](narr:Claim_AcquisitionExitTarget) Scarlet states as [amount] in 5 years, scoped in the May 17-18 session into a [Y5-Y6 base-case target](narr:Claim_500MTargetY5Y6) ('Achievable, not guaranteed') with a dated ramp — Y3 acqui-hire [amount]-80M, Y4 defensive [amount]-250M, Y5 strategic [amount]-600M, Y6-7 premium [amount]-[amount]+. The mechanics decompose into [five acquirer categories](narr:Claim_FiveAcquirerCategories), [five tipping-point triggers](narr:Claim_FiveTippingPoints), and a fuller [tipping analysis](narr:Narrative_AcquisitionTippingAnalysis). [Founder economics](narr:Narrative_FounderEconomicsPath19M) reframe the bar as [amount] post-tax. The near-horizon KPI is operational: [6-7 Org customers for self-sufficiency](narr:Claim_SixSevenOrgCustomersSelfSufficiency), a [team-thesis scaling math](narr:Claim_TeamThesisScalingMath), [Phase 1 cycle-time sign-off](narr:Narrative_Phase1SuccessCriterionNarrowed) ~2026-06-29, and [April YC-reapplication traction](narr:Narrative_TractionGoalsApril). Fundraising frames everything through a [three-scenario model](narr:Narrative_ThreeScenarioModel) funded for the pessimistic case.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_500MTargetY5Y6> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AcquisitionExitTarget> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ExitPathAcquisition> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FiveAcquirerCategories> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FiveTippingPoints> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FullUtilityTesting> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SixSevenOrgCustomersSelfSufficiency> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TeamThesisScalingMath> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AcquisitionTippingAnalysis> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_FounderEconomicsPath19M> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_Phase1SuccessCriterionNarrowed> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PricingModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_RevenueLevers> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ThreeScenarioModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TractionGoalsApril> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_FormulaNotNumbers> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletFinancialProjections> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_YCTop10Quote> ;
+    narr:keyPhrase [ narr:text "[amount] target is Y5-Y6 territory at base-case growth. Achievable, not guaranteed." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_500MTargetY5Y6> ] ;
+    narr:keyPhrase [ narr:text "Target: 6-7 mid-market Org customers carries full team ([amount]/mo burn). 6 × [amount] avg = [amount]/mo recurring." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SixSevenOrgCustomersSelfSufficiency> ] ;
+    narr:keyPhrase [ narr:text "any exit >[amount] crosses [amount] post-tax" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ExitPathAcquisition> ] ;
+    narr:keyPhrase [ narr:text "150 Org customers / 3 customer-facing delivery people = ~50 customers per delivery person" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_TeamThesisScalingMath> ] ;
+    narr:keyPhrase [ narr:text "Numbers can work for you or go against you. The formula is what you need, not the numbers." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_FormulaNotNumbers> ] ;
+    narr:keyPhrase [ narr:text "YC app said no, but you were in the top 10% of applications and we encourage you to apply for the next round." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_YCTop10Quote> ] ;
+    narr:variation [ narr:text "The headline [amount] exit KPI sits beside an explicitly hedged framing — 'Achievable, not guaranteed' — and Y3-Y7 ranges that span [amount] acqui-hire to [amount]+ premium, so the 'target' is a band, not a point." ; narr:over <https://aswritten.ai/narrative#Claim_500MTargetY5Y6> ; narr:over <https://aswritten.ai/narrative#Claim_AcquisitionExitTarget> ] ;
+    narr:variation [ narr:text "Exit is not single-path: Path A acquisition is 'most likely,' but Path B calm-company distributions and Path C secondary both reach the [amount] post-tax bar 'without a forced sale' — competing definitions of what success even requires." ; narr:over <https://aswritten.ai/narrative#Narrative_FounderEconomicsPath19M> ; narr:over <https://aswritten.ai/narrative#Claim_ExitPathAcquisition> ] ;
+    narr:variation [ narr:text "A near-term operational KPI (6-7 Org customers for self-sufficiency, Tranche-2 trigger) pulls against the long-horizon moonshot KPI — the digest holds both as 'success' with different time bases and audiences." ; narr:over <https://aswritten.ai/narrative#Claim_SixSevenOrgCustomersSelfSufficiency> ; narr:over <https://aswritten.ai/narrative#Claim_AcquisitionExitTarget> ] ;
+    narr:variation [ narr:text "Phase 1 success was deliberately narrowed from soft 'answers flowing to other team members' to a measurable Austria 9091 cycle-time outcome — a worked example of a KPI being hardened, and the prior framing someone might still reach for." ; narr:over <https://aswritten.ai/narrative#Narrative_Phase1SuccessCriterionNarrowed> ] ;
+    narr:variation [ narr:text "Tension on how to present numbers: detailed three-scenario and ramp models everywhere, yet 'Sell the equation, not the dollar figures' advises showing the formula and avoiding numeric scrutiny in fundraising." ; narr:over <https://aswritten.ai/narrative#Obs_FormulaNotNumbers> ; narr:over <https://aswritten.ai/narrative#Narrative_ThreeScenarioModel> ] ;
+    narr:variation [ narr:text "The 50-customers-per-delivery-person scaling math is conditional ('works only if' product-led delivery, ~2-week onboarding, self-serve tiers), so the team-thesis KPI is an unproven assumption, not a validated metric." ; narr:over <https://aswritten.ai/narrative#Claim_TeamThesisScalingMath> ] ;
+    narr:writer "claude (subscription)" .
+}

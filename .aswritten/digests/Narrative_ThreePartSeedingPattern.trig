@@ -1,0 +1,29 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_ThreePartSeedingPattern> {
+  <https://aswritten.ai/narrative#Digest_Narrative_ThreePartSeedingPattern> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_ThreePartSeedingPattern> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """A three-step onboarding playbook for seeding aswritten.ai from historical recordings, articulated around the enterprise customer's ARB transcripts (May 2026). [Step 1: code-base review](narr:Claim_CodeBaseReviewStep1) runs Claude/Copilot CLI over the code with structured questions, persisting a paragraph per workflow to memory. [Step 2: topic analysis](narr:Claim_TopicAnalysisStep2) surfaces what a corpus covers and its open questions, then scopes memories — but [requires a domain expert](narr:Claim_UserDomainCommentaryRequired) (at the enterprise customer, only the customer's chief architect) to annotate, or seeding goes sparse or wrong. [Step 3: ongoing iteration](narr:Claim_OngoingIterationStep3) treats each new transcript as a diagnostic, with a 30-minute voice memo filling gaps. The pattern is pitched as an Enterprise playbook that [generalizes beyond the enterprise customer](narr:Claim_OnboardingMethodologyGeneralizes) without new tooling, while [Step 2 itself](narr:Claim_TopicAnalysisPlatformFeature) is flagged as a future Platform feature. Note a dated reframing: a [May 21 claim validates bulk AI summarization](narr:Claim_BulkIngestionViaAISummarizationValid) — what the customer's chief architect did — as effective, retracting the earlier 'failure' framing, and [ranks three ingestion methods](narr:Claim_ThreeRankedIngestionMethods) with a reconciliation-based hybrid as best.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_BulkIngestionViaAISummarizationValid> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CodeBaseReviewStep1> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OnboardingMethodologyGeneralizes> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OngoingIterationStep3> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ThreeRankedIngestionMethods> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TopicAnalysisPlatformFeature> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TopicAnalysisStep2> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_UserDomainCommentaryRequired> ;
+    narr:keyPhrase [ narr:text "read the code base, understand what the core pre-built workflows are and write a paragraph about each one and persist that paragraph to collective memory" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CodeBaseReviewStep1> ] ;
+    narr:keyPhrase [ narr:text "The transcript is the diagnostic, not the memory." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OngoingIterationStep3> ] ;
+    narr:keyPhrase [ narr:text "Dump the transcript into aswritten and over the course of a couple weeks or even a couple months, you'll converge on having pretty much everything covered." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OngoingIterationStep3> ] ;
+    narr:keyPhrase [ narr:text "The 'we discovered it by failing' framing was a bad AI artifact; they did not fail." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_BulkIngestionViaAISummarizationValid> ] ;
+    narr:keyPhrase [ narr:text "Method 3 is best but depends on the reconciliation tool, which is not yet built." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ThreeRankedIngestionMethods> ] ;
+    narr:keyPhrase [ narr:text "Without that, the seeding will produce sparse or wrong knowledge." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_UserDomainCommentaryRequired> ] ;
+    narr:variation [ narr:text "Dated reversal: May 1 framing treats direct historical ingestion as an anti-pattern to avoid (and possibly block via UX), but May 21 declares bulk AI summarization valid and effective, superseding Foundation Claim_DirectIngestionIsTrap." ; narr:over <https://aswritten.ai/narrative#Claim_BulkIngestionViaAISummarizationValid> ; narr:over <https://aswritten.ai/narrative#Claim_TopicAnalysisPlatformFeature> ; narr:over <https://aswritten.ai/narrative#Claim_TopicAnalysisStep2> ] ;
+    narr:variation [ narr:text "The stated-best ingestion method (batched + human reconciliation pass) is aspirational — it depends on a reconciliation tool that does not yet exist; only methods 1 and 2 are actually available." ; narr:over <https://aswritten.ai/narrative#Claim_ThreeRankedIngestionMethods> ] ;
+    narr:variation [ narr:text "The whole methodology is gated on a hard precondition: a customer domain expert who can validate the topic analysis. At the enterprise customer that is a single person (the customer's chief architect); without such a reviewer the pattern degrades to sparse or wrong knowledge." ; narr:over <https://aswritten.ai/narrative#Claim_UserDomainCommentaryRequired> ; narr:over <https://aswritten.ai/narrative#Claim_TopicAnalysisStep2> ] ;
+    narr:variation [ narr:text "Tension between 'no new tooling needed, just sequence existing capabilities' (generalizable playbook) and the claims that Step 2 should become a Platform feature and that the best method needs an unbuilt reconciliation tool." ; narr:over <https://aswritten.ai/narrative#Claim_OnboardingMethodologyGeneralizes> ; narr:over <https://aswritten.ai/narrative#Claim_TopicAnalysisPlatformFeature> ; narr:over <https://aswritten.ai/narrative#Claim_ThreeRankedIngestionMethods> ] ;
+    narr:writer "claude (subscription)" .
+}

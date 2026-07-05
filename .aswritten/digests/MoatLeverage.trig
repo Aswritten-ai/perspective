@@ -1,0 +1,37 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_MoatLeverage> {
+  <https://aswritten.ai/narrative#Digest_MoatLeverage> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#MoatLeverage> ;
+    narr:childCount "16"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers competing answers to one question — *what is the moat?* — and they do not converge. The dominant aswritten thread locates defensibility in the **extraction pipeline**: [creator owns data, not consumer](narr:Claim_MoatCreatorOwnsData), the [source → transactions → compilable graph process](narr:Narrative_MoatExtractionProcess) yields compiled perspective consumers can't reverse, articulated in [Scarlet's technical-moat quote](narr:Obs_ScarletMoatQuote) (Mar 23). Parallel framings stack on top: [git-native versioned worldview vs Frontier's runtime layer](narr:Claim_Differentiation_1), [upstream knowledge extraction the customer's chief architect validated](narr:Claim_Differentiation_2), [AI-to-AI provenance as a new pattern](narr:Narrative_AItoAIProvenance), the [GitHub category-creation analogy](narr:Narrative_GitHubAnalogy), and (Apr 8) the [trust contract wedge](narr:Narrative_TrustContractWedge). [a collaborator's data-integrity moat](narr:Claim_DataIntegrityMoat) (formal sources vs Nomad List) and [a design collaborator's strategic-design-thinking-folded-into-product](narr:Differentiator_StrategicCapability) add further, non-identical definitions. Cutting against all of these, [an early prospect insists the moat is time](narr:Claim_MoatIsTime), not technology or capital. The collection narrates an unsettled multi-definition space, not a settled thesis.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DataIntegrityMoat> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_Differentiation_1> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_Differentiation_2> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MoatCreatorOwnsData> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MoatIsTime> ;
+    narr:covers <https://aswritten.ai/narrative#Differentiator_StrategicCapability> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_4> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AItoAIProvenance> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_GitHubAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_MoatExtractionProcess> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ReferralMoat> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TrustContractWedge> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_MoatLeverage> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletMoatQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_MoatQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ProprietaryMoat> ;
+    narr:keyPhrase [ narr:text "They could not reconstruct the original content from what we serve." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MoatCreatorOwnsData> ] ;
+    narr:keyPhrase [ narr:text "The real differentiator and the technical moat is that I take textual documents and I extract perspective from them and then I make that perspective citable in the individual task." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletMoatQuote> ] ;
+    narr:keyPhrase [ narr:text "No company would develop software without GitHub. No company should deploy AI agents without versioned organizational context." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_GitHubAnalogy> ] ;
+    narr:keyPhrase [ narr:text "60-70% of referrals come from MDs, PTs, and concierge doctors." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ReferralMoat> ] ;
+    narr:keyPhrase [ narr:text "proprietary (it reveals the compiled knowledge graph — a moat)" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ProprietaryMoat> ] ;
+    narr:variation [ narr:text "Technology-vs-time split: the aswritten thread roots the moat in extraction/provenance technology, but an early prospect flatly asserts the moat is time (5-year relationship building), not technology or capital." ; narr:over <https://aswritten.ai/narrative#Claim_MoatIsTime> ; narr:over <https://aswritten.ai/narrative#Observation_MoatQuote> ; narr:over <https://aswritten.ai/narrative#Narrative_MoatExtractionProcess> ] ;
+    narr:variation [ narr:text "Structural outlier: the referral-relationship moat (60-70% from MDs/PTs/concierge doctors) belongs to a different business domain entirely and may be foreign source material clustered here." ; narr:over <https://aswritten.ai/narrative#Narrative_ReferralMoat> ; narr:over <https://aswritten.ai/narrative#Observation_MoatQuote> ] ;
+    narr:variation [ narr:text "What the moat IS is itself contested — extraction process, data integrity (formal sources), AI-to-AI provenance, strategic design thinking, and trust contract are non-identical, sometimes competing definitions, not facets of one." ; narr:over <https://aswritten.ai/narrative#Claim_DataIntegrityMoat> ; narr:over <https://aswritten.ai/narrative#Differentiator_StrategicCapability> ; narr:over <https://aswritten.ai/narrative#Narrative_AItoAIProvenance> ; narr:over <https://aswritten.ai/narrative#Narrative_TrustContractWedge> ] ;
+    narr:variation [ narr:text "Skeptical meta-note: 'proprietary moat' is flagged (Mar 31) as rhetorical framing used to justify architectural shifts — i.e. the moat language may be doing persuasive rather than descriptive work." ; narr:over <https://aswritten.ai/narrative#StyleObs_ProprietaryMoat> ] ;
+    narr:variation [ narr:text "Even the failure case is invoked as moat: proprietary system, 7 org case studies and deep deployment knowledge are cited as durable 'even in failure scenario' — a defensibility claim independent of the others." ; narr:over <https://aswritten.ai/narrative#Obs_MoatLeverage> ] ;
+    narr:writer "claude (subscription)" .
+}

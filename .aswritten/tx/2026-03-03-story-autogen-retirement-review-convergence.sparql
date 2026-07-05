@@ -1,0 +1,138 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE  (retry_attempt=1)
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260303T131232Z a prov:Activity ;
+    dct:title              "Story Auto-Generation Retirement and Review Flow Convergence — SPARQL Transaction (retry 1)" ;
+    prov:wasAssociatedWith <https://aswritten.ai/agents/rdf-transactionizer> ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-03-03T13:12:32.805Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-03-03-story-autogen-retirement-review-convergence.md" ;
+    sb:originRef           "main" ;
+    sb:model               "anthropic/claude-sonnet-4.6" .
+};
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added_triples)
+# Corrections applied:
+#   • StyleObs_6: skos:broader changed from narr:RhetoricalQuestion
+#                 to narr:IdiolectPhrasing  [ERROR fix: WRONG_PREDICATE]
+#   • StyleObs_1: skos:related changed from narr:Tagline
+#                 to narr:TerminologyControl  [WARNING fix: WRONG_PREDICATE]
+#   • StyleObs_4: skos:related changed from narr:NarrativeAnchor
+#                 to narr:RhetoricalDevices  [WARNING fix: WRONG_PREDICATE]
+# =============================================================
+INSERT DATA {
+
+  # --- Sample_1 new properties ---
+  narr:Sample_1
+    dct:title  "Story Auto-Generation Retirement and Review Flow Convergence" ;
+    dct:date   "2026-03-03"^^xsd:date ;
+    narr:inputLength 1247 ;
+    .
+
+  # --- Updated note on existing Actor: ScarletDame ---
+  narr:Actor_ScarletDame
+    skos:note "Founder; participant in convergence session on 2026-03-03" ;
+    .
+
+  # --- Observations ---
+  narr:Observation_Pipeline a narr:Observation ;
+    skos:broader narr:CoreWorkflows ;
+    dct:source   narr:Sample_1 ;
+    skos:note    "Five-step pipeline: Memory→extraction→provisional triples; TX commits to branch→PR opens (no story gen); Reviewers notified→start_review in Claude; Review IS optometrist: lenses exercise triples, iterate to convergence; Merge→reviewed triples in main" ;
+    .
+
+  narr:Observation_VocabDefinitions a narr:Observation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source   narr:Sample_1 ;
+    skos:note    "Controlled vocabulary: Lenses, Optometrist model, Story drafts, Telltales — four terms redefined or retired" ;
+    .
+
+  # --- Style Observations ---
+
+  # StyleObs_1: skos:related corrected from narr:Tagline → narr:TerminologyControl
+  narr:StyleObs_1 a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source   narr:Sample_1 ;
+    skos:related narr:TerminologyControl ;
+    skos:note    "Staccato declarative fragments used as vocabulary definitions — no verbs, maximum compression" ;
+    rdf:value    true ;
+    .
+
+  narr:StyleObs_2 a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source   narr:Sample_1 ;
+    skos:note    "Single-word sentence as retirement declaration — maximum rhetorical finality" ;
+    rdf:value    true ;
+    .
+
+  narr:StyleObs_3 a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source   narr:Sample_1 ;
+    skos:related narr:NamingConventions ;
+    skos:note    "Task IDs used as proper nouns with hyphenated dot notation (task-038.03, task-116/117) — internal naming convention" ;
+    rdf:value    true ;
+    .
+
+  # StyleObs_4: skos:related corrected from narr:NarrativeAnchor → narr:RhetoricalDevices
+  narr:StyleObs_4 a narr:StyleObservation ;
+    skos:broader narr:ToneAuthoritative ;
+    dct:source   narr:Sample_1 ;
+    skos:related narr:RhetoricalDevices ;
+    skos:note    "Emphatic capitalization of IS for rhetorical stress — spoken-word authority marker in written text" ;
+    rdf:value    true ;
+    .
+
+  narr:StyleObs_5 a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+    dct:source   narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    skos:note    "Optometrist model as extended metaphor: lenses, iterative convergence — borrowed from ophthalmology to describe review UX" ;
+    rdf:value    true ;
+    .
+
+  # StyleObs_6: skos:broader corrected from narr:RhetoricalQuestion → narr:IdiolectPhrasing
+  narr:StyleObs_6 a narr:StyleObservation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source   narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    skos:note    "Quoted direct speech from demo context used as evidence of UX failure — first-person embedded testimony" ;
+    rdf:value    true ;
+    .
+
+  narr:StyleObs_7 a narr:StyleObservation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source   narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    skos:note    "'Quality gate theater' — compound noun coinage; dismissive framing of a failed process pattern" ;
+    rdf:value    true ;
+    .
+
+  narr:StyleObs_8 a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source   narr:Sample_1 ;
+    skos:related narr:WhatItsNot ;
+    skos:note    "Explicit negation pattern used to clarify scope: 'Not quality control', 'not on every commit' — antithetical definition" ;
+    rdf:value    true ;
+    .
+
+  narr:StyleObs_9 a narr:StyleObservation ;
+    skos:broader narr:Parallelism ;
+    dct:source   narr:Sample_1 ;
+    skos:related narr:GrammarSyntax ;
+    skos:note    "Parallel list structure for three collapsing gates — symmetric bullet form reinforces the equivalence argument" ;
+    rdf:value    true ;
+    .
+
+}

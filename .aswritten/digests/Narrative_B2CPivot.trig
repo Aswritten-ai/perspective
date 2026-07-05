@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_B2CPivot> {
+  <https://aswritten.ai/narrative#Digest_Narrative_B2CPivot> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_B2CPivot> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub holds aswritten's reframing of its primary market. On Mar 17, Scarlet and Tony [independently converged on B2C over B2B](narr:Claim_B2CPrimaryMarket), extending the earlier SMB pivot to individuals building companies alone, with [enterprise retained as the top tier, not a separate business](narr:Claim_EnterpriseDoesNotSupersedB2C). The animating thesis: [AI has made every individual their own team](narr:Claim_EveryIndividualIsTheirOwnTeam) — solopreneurs and consultants, not just enterprises, chase structure for context and memory; a parallel reading holds that [AI made everyone individual contributors again](narr:Claim_AIRestoredICStatus), pushing the real work back to strategy and curation. The trajectory then surfaces tension: on Apr 21 an [open question](narr:Claim_SMBPivotReconciliationNeeded) flagged that the volume-B2C pivot sits awkwardly against an enterprise-shape engagement pattern. By May 21 Scarlet framed a resolution — [Expert, Team, and Org as a continuum of one use case](narr:Narrative_TierContinuumNotDistinctMarkets), differing only by how many people write to and read from the perspective, with solo Expert as the on-ramp into organizational tiers.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AIRestoredICStatus> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_B2CPrimaryMarket> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_EnterpriseDoesNotSupersedB2C> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_EveryIndividualIsTheirOwnTeam> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SMBPivotReconciliationNeeded> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TierContinuumNotDistinctMarkets> ;
+    narr:keyPhrase [ narr:text "Both Scarlet and Tony independently converged on aswritten being fundamentally more B2C than B2B." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_B2CPrimaryMarket> ] ;
+    narr:keyPhrase [ narr:text "90% of what Tony sees people chasing is structure for context and memory." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EveryIndividualIsTheirOwnTeam> ] ;
+    narr:keyPhrase [ narr:text "AI has made everyone individual contributors again." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AIRestoredICStatus> ] ;
+    narr:keyPhrase [ narr:text "Expert, Team, and Org tiers are a continuum of one use case differentiated only by the number of people writing to and consuming the perspective — not by distinct market segments" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TierContinuumNotDistinctMarkets> ] ;
+    narr:keyPhrase [ narr:text "the solo Expert tier is the on-ramp into them, not a separate business" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EnterpriseDoesNotSupersedB2C> ] ;
+    narr:variation [ narr:text "Apr 21: explicit open tension — volume-B2C pivot vs. enterprise-shape engagement pattern; flagged as needing reconciliation, not yet resolved." ; narr:over <https://aswritten.ai/narrative#Claim_SMBPivotReconciliationNeeded> ] ;
+    narr:variation [ narr:text "'Enterprise shape' may be orthogonal to org size — the pattern applies to both 5-person and 150-person orgs, complicating any B2C-by-headcount reading." ; narr:over <https://aswritten.ai/narrative#Claim_SMBPivotReconciliationNeeded> ] ;
+    narr:variation [ narr:text "May 21 continuum framing presents the resolution as settled, but it is an internal claim layered over the still-open Apr 21 question — the two coexist rather than one superseding." ; narr:over <https://aswritten.ai/narrative#Narrative_TierContinuumNotDistinctMarkets> ; narr:over <https://aswritten.ai/narrative#Claim_EnterpriseDoesNotSupersedB2C> ; narr:over <https://aswritten.ai/narrative#Claim_SMBPivotReconciliationNeeded> ] ;
+    narr:variation [ narr:text "Alternative lens: the shift is less about market segment than about AI collapsing execution, returning experienced people to strategy/curation as their asset." ; narr:over <https://aswritten.ai/narrative#Claim_AIRestoredICStatus> ] ;
+    narr:writer "claude (subscription)" .
+}

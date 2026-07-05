@@ -1,0 +1,32 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__StrategyOverview> {
+  <https://aswritten.ai/narrative#Digest_ns__StrategyOverview> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#StrategyOverview> ;
+    narr:childCount "12"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the strategy behind the [strategic rebrand](narr:Decision_Rebrand_2025) from storyBASE/witness to aswritten.ai, plus the foundational commitments framing it. The through-line is repositioning: from a [team-memory tool toward organizational-knowledge infrastructure](narr:StrategyShift_1), from [the cryptic 'The Witness' toward 'Collective memory for AI'](narr:StrategyShift_2), and from a [narrow employee audience toward new hires, clients and investors](narr:StrategyShift_3). The product [positioning](narr:Narrative_positioning) insists it is one unifying worldview, not three persona tools, paired with [canonical terminology](narr:Narrative_terminology). Two reframes recur: [human-centric to AI-centric](narr:StrategyShift_HumanToAICentric) and [AI as passive tool to active collaborator](narr:StrategyShift_PassiveToActive). Beneath the go-to-market sit deeper anchors — [first principles of safety, alignment, ethics](narr:Concept_FirstPrinciples) and [leverage through narrative steering](narr:Concept_Leverage) — and a sales-deck structural note from [Tony's pain-first feedback](narr:Narrative_PainFirstStructure). No dates accompany these children, so the digest holds the sequence as concurrent strategy rather than a dated arc.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Concept_FirstPrinciples> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Concept_Leverage> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Decision_Rebrand_2025> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_PainFirstStructure> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_positioning> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_terminology> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StrategyShift_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StrategyShift_2> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StrategyShift_3> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StrategyShift_HumanToAICentric> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StrategyShift_InfraToProduct> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StrategyShift_PassiveToActive> ;
+    narr:keyPhrase [ narr:text "NOT three separate AI tools for three personas; IS one worldview that unifies how AI assists everyone in the organization" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_positioning> ] ;
+    narr:keyPhrase [ narr:text "From: 'The Witness' (requires explanation). To: 'Collective memory for AI' (immediately comprehensible)." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StrategyShift_2> ] ;
+    narr:keyPhrase [ narr:text "Pain leads, cost supports." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_PainFirstStructure> ] ;
+    narr:keyPhrase [ narr:text "remember as written, draft a memory, write to collective memory" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_terminology> ] ;
+    narr:keyPhrase [ narr:text "From: AI as passive retrieval tool | To: AI as active collaborator with shared context" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StrategyShift_PassiveToActive> ] ;
+    narr:variation [ narr:text "Two positioning axes point opposite ways: one frames the move as tool→infrastructure, the other as infrastructure (storyBASE)→product identity (aswritten.ai)." ; narr:over <https://aswritten.ai/ns/narrative#StrategyShift_1> ; narr:over <https://aswritten.ai/ns/narrative#StrategyShift_InfraToProduct> ] ;
+    narr:variation [ narr:text "Tony's feedback pushes against a cost-led deck: operational pain (onboarding, interruptions) must lead, ROI/procurement slides move to the end." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_PainFirstStructure> ] ;
+    narr:variation [ narr:text "The AI-centric and passive-to-active reframes recenter the product away from people-facing documentation toward AI agents as the primary user." ; narr:over <https://aswritten.ai/ns/narrative#StrategyShift_HumanToAICentric> ; narr:over <https://aswritten.ai/ns/narrative#StrategyShift_PassiveToActive> ] ;
+    narr:variation [ narr:text "Foundational commitments — safety/alignment/ethics and leverage-through-narrative-steering — sit apart from the rebrand mechanics as deeper rationale, not go-to-market positioning." ; narr:over <https://aswritten.ai/ns/narrative#Concept_FirstPrinciples> ; narr:over <https://aswritten.ai/ns/narrative#Concept_Leverage> ] ;
+    narr:writer "claude (subscription)" .
+}

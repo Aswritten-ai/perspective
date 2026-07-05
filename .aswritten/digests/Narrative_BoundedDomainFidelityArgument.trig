@@ -1,0 +1,24 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_BoundedDomainFidelityArgument> {
+  <https://aswritten.ai/narrative#Digest_Narrative_BoundedDomainFidelityArgument> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_BoundedDomainFidelityArgument> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """Argues that [expertise modules are higher fidelity than org memory](narr:Claim_BoundedDomainHigherFidelity) because courses, books, and consulting deliverables are bounded and intentionally updated by the expert, while org memory tracks a moving target and is inherently lossy — a structural case for leading with the expertise-module vertical (framed 20260319). The mainline carries its own caution: [stale graph plus citations is worse than no citations](narr:Claim_StaleGraphCitationsWorse), so the fidelity claim is also a risk argument against the org-memory case. A user-research qualifier sits underneath: [the founder is a poor example of a user](narr:Claim_FounderAsPoorUserExample), the power user par excellence whose memories stay current in ways most users' won't. On extraction, [a collaborator AI voice interviews are proposed](narr:Claim_BirchVoiceInterviewModel) as the answer to getting undocumented expertise out of people — but this was [explicitly dropped from the roadmap](narr:Claim_VoiceDroppedFromRoadmap) three weeks later (20260408), native phone voice-to-text removing the integration need.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_BoundedDomainHigherFidelity> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FounderAsPoorUserExample> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_BirchVoiceInterviewModel> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StaleGraphCitationsWorse> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_VoiceDroppedFromRoadmap> ;
+    narr:keyPhrase [ narr:text "The bounded case is actually higher fidelity than the org case. This is a structural advantage for leading with the expertise module vertical." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_BoundedDomainHigherFidelity> ] ;
+    narr:keyPhrase [ narr:text "stale graph + citations = worse than having no citations at all" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_StaleGraphCitationsWorse> ] ;
+    narr:keyPhrase [ narr:text "I'm a poor example of a user because I am the power user par excellence. My memories are going to stay about as current as you may ever get." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FounderAsPoorUserExample> ] ;
+    narr:keyPhrase [ narr:text "the question of how to initially get expertise out of people where it is undocumented is the key challenge" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_BirchVoiceInterviewModel> ] ;
+    narr:keyPhrase [ narr:text "Native voice-to-text on phones eliminates the need for Retell/Vapi integration complexity." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_VoiceDroppedFromRoadmap> ] ;
+    narr:variation [ narr:text "Voice interviews proposed as the extraction mechanism (20260319) then explicitly dropped from the roadmap (20260408) — native phone voice-to-text supersedes Retell/Vapi integration." ; narr:over <https://aswritten.ai/narrative#Claim_BirchVoiceInterviewModel> ; narr:over <https://aswritten.ai/narrative#Claim_VoiceDroppedFromRoadmap> ] ;
+    narr:variation [ narr:text "The founder concedes he is a poor user example — power user whose graph stays current — qualifying how much the fidelity advantage generalizes to ordinary users." ; narr:over <https://aswritten.ai/narrative#Claim_FounderAsPoorUserExample> ] ;
+    narr:variation [ narr:text "The fidelity claim doubles as a hazard argument: an inaccurate org graph with citations is worse than generic AI with none." ; narr:over <https://aswritten.ai/narrative#Claim_StaleGraphCitationsWorse> ] ;
+    narr:writer "claude (subscription)" .
+}

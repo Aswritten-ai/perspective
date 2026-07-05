@@ -1,0 +1,28 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__DataModelLifecycle> {
+  <https://aswritten.ai/narrative#Digest_ns__DataModelLifecycle> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#DataModelLifecycle> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the architectural design of a data-model lifecycle built on Git. The spine is an append-only, [Git-centric transaction model](narr:Narrative_RepoAsSourceOfTruth) — content committed before extraction, async processing via Actions — realized as an [append-only transaction log in .aswritten directories](narr:Narrative_SIC_DataModelLifecycle_1) with hierarchical compilation across ancestor directories. Social structure maps onto the filesystem: [Discourse category→folder, thread→subfolder, post→transaction](narr:Obs_CategoryMapping). Several type decisions firm up the schema: [Memory decomposed into Message/Provenance/File](narr:Decision_MemoryDecomp) to kill duplicate provenance, [Snapshot+Ontology bundled into one State type](narr:Decision_StateAbstraction) for caching and synchronization, and a [batch of six open questions resolved](narr:Decision_ResolvedQuestions). Above the engineering sits a generative framing — [worldview as source of truth, everything else a compiled target](narr:Narrative_CompilationTargets) — and a philosophical sibling, [AI identity as resonant body](narr:Concept_AIIdentity).""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Concept_AIIdentity> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Decision_MemoryDecomp> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Decision_ResolvedQuestions> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Decision_StateAbstraction> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_CompilationTargets> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_RepoAsSourceOfTruth> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_DataModelLifecycle_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Obs_CategoryMapping> ;
+    narr:keyPhrase [ narr:text "Message = content + author; Provenance = attribution metadata; File = storage details separate from content semantics" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Decision_MemoryDecomp> ] ;
+    narr:keyPhrase [ narr:text "Simplifies tool signatures, enforces synchronization, enables session-level caching, maps to Standard Context Tier (15K tokens)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Decision_StateAbstraction> ] ;
+    narr:keyPhrase [ narr:text "All content committed to Git before extraction; GitHub Actions handle async processing; append-only transactions" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_RepoAsSourceOfTruth> ] ;
+    narr:keyPhrase [ narr:text "Append-only transaction log in .aswritten directories. Hierarchical compilation across ancestor directories. Immutable transaction files with provenance metadata." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_SIC_DataModelLifecycle_1> ] ;
+    narr:keyPhrase [ narr:text "Everything becomes a compiled target; worldview is source of truth" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_CompilationTargets> ] ;
+    narr:variation [ narr:text "Two competing 'source of truth' framings sit side by side: the worldview/ontology state vs. the Git repo as the committed ground truth." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_CompilationTargets> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_RepoAsSourceOfTruth> ] ;
+    narr:variation [ narr:text "State-vs-Snapshot tension: bundling them into one type buys caching and sync but removes the ability to vary them independently in tool signatures." ; narr:over <https://aswritten.ai/ns/narrative#Decision_StateAbstraction> ; narr:over <https://aswritten.ai/ns/narrative#Decision_ResolvedQuestions> ] ;
+    narr:variation [ narr:text "AI-identity-as-resonant-body is a philosophical outlier among otherwise concrete schema/storage decisions — only loosely (skos:related) attached." ; narr:over <https://aswritten.ai/ns/narrative#Concept_AIIdentity> ] ;
+    narr:variation [ narr:text "ResolvedQuestions declares six issues closed, yet the underlying decisions (memory decomposition, state bundling) remain individually expandable — 'resolved' frames but does not erase the trade-offs." ; narr:over <https://aswritten.ai/ns/narrative#Decision_ResolvedQuestions> ; narr:over <https://aswritten.ai/ns/narrative#Decision_MemoryDecomp> ] ;
+    narr:writer "claude (subscription)" .
+}

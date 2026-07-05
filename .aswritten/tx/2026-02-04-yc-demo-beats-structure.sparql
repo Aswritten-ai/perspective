@@ -1,0 +1,358 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260205T221626Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-05T22:16:26.924Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-04-yc-demo-beats-structure.md" ;
+    sb:originRef "main" ;
+    prov:used "anthropic/claude-sonnet-4.5" .
+
+  # Generated entities with provenance
+  narr:Sample_YCDemoBeats a narr:Sample ;
+    dct:title "YC Application Demo Beats: 3-Part Structure (60 Seconds)" ;
+    narr:inputLength 7842 ;
+    dct:created "2026-02-04"^^xsd:date ;
+    dct:description "Decision document defining three 20-second narrative beats for YC demo video" ;
+    skos:note "Fills gap_demo_beat_sequence identified by Tony" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Decision_YCDemoBeats a narr:Claim ;
+    skos:broader narr:StrategyOverview ;
+    dct:source narr:Sample_YCDemoBeats ;
+    narr:aboutNode narr:NarrativeDrivenRoadmap ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    skos:prefLabel "YC Demo Three-Beat Structure" ;
+    skos:definition "Structure YC demo as three 20-second beats: WITH vs WITHOUT, Gap→Extraction, Propagation→Cross-Role Value" ;
+    skos:note "Approved for execution by Scarlet; solves gap_demo_beat_sequence and gap_demo_persona_tailoring" ;
+    narr:supports narr:Decision_YCPositioning_20260203 ;
+    prov:wasAttributedTo "Scarlet" ;
+    prov:generatedAtTime "2026-02-04T00:00:00Z"^^xsd:dateTime ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Archetype_YCDemoFlow a narr:SolutionArchetypes ;
+    skos:broader narr:SolutionArchetypes ;
+    dct:source narr:Sample_YCDemoBeats ;
+    narr:archetypeTitle "Collective Memory Value Loop Demo" ;
+    narr:problemContext "YC partners need to see complete value in 60 seconds: content alignment, knowledge extraction, cross-role propagation" ;
+    narr:approachPattern "Three 20-second beats with distinct aha moments" ;
+    narr:timeToValue "60 seconds" ;
+    narr:requiredCapabilities "Claude Desktop MCP, introspect tool, GitHub integration, telltales" ;
+
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Beat1_WithVsWithout a narr:Flows ;
+    skos:broader narr:Flows ;
+    dct:source narr:Sample_YCDemoBeats ;
+    skos:prefLabel "Beat 1: WITH vs WITHOUT" ;
+    skos:definition "Tony asks YC question in regular Claude (generic output) vs aswritten project (grounded output)" ;
+    narr:ahaMessage "AI backed by collective memory generates content aligned with the org vs generic AI that hallucinates" ;
+    narr:duration "20 seconds" ;
+    skos:related narr:Narrative_OutputBeforeSystem ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Beat2_GapExtraction a narr:Flows ;
+    skos:broader narr:Flows ;
+    dct:source narr:Sample_YCDemoBeats ;
+    skos:prefLabel "Beat 2: Gap → Knowledge Extraction" ;
+    skos:definition "Tony discovers gap via introspect, messages Scarlet, who uploads voice memo that becomes versioned memory" ;
+    narr:ahaMessage "Undocumented knowledge gets extracted conversationally and committed as code—no manual documentation, no knowledge loss" ;
+    narr:duration "20 seconds" ;
+    skos:related narr:Feature_OnboardingMode ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Beat3_Propagation a narr:Flows ;
+    skos:broader narr:Flows ;
+    dct:source narr:Sample_YCDemoBeats ;
+    skos:prefLabel "Beat 3: Propagation → Cross-Role Value" ;
+    skos:definition "Memory merged to main; Scarlet in Claude Code sees compile/introspect pulling Tony's work + new decision + existing context" ;
+    narr:ahaMessage "Organizational worldview propagates across roles, tools, and contexts immediately after commit" ;
+    narr:duration "20 seconds" ;
+    skos:related narr:Narrative_CollaborativeWorldview ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Alignment_ProductNow a narr:Claim ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_YCDemoBeats ;
+    narr:aboutNode narr:Decision_YCPositioning_20260203 ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    skos:note "Demo shows working product, not vision—validates Product NOW focus" ;
+    narr:supports narr:Decision_YCPositioning_20260203 ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Alignment_TonyDualPurpose a narr:Claim ;
+    skos:broader narr:Segmentation ;
+    dct:source narr:Sample_YCDemoBeats ;
+    narr:aboutNode narr:Narrative_TonyDualPurpose_20260203 ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    skos:note "Tony's GTM credibility makes him authentic new hire persona for demo" ;
+    narr:supports narr:Narrative_TonyDualPurpose_20260203 ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:StyleObs_BrandAswritten a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_YCDemoBeats ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_YCDemoBeats ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1015 ;
+            oa:end 1027
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "aswritten.ai" ;
+            oa:prefix "- Tony opens **" ;
+            oa:suffix " project** in Claude Desktop"
+        ]
+    ] ;
+    skos:note "Lowercase brand stylization with .ai TLD" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:StyleObs_StockPhrase_SeniorExpertBottleneck a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_YCDemoBeats ;
+    oa:hasBody narr:KeyPhrases ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_YCDemoBeats ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1202 ;
+            oa:end 1228
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "senior expert bottleneck" ;
+            oa:prefix "uses established terminology (e.g., \"" ;
+            oa:suffix ",\" \"institutional knowledge at the cursor\")"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Canonical key phrase from positioning" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:StyleObs_StockPhrase_InstitutionalKnowledge a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_YCDemoBeats ;
+    oa:hasBody narr:KeyPhrases ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_YCDemoBeats ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1233 ;
+            oa:end 1268
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "institutional knowledge at the cursor" ;
+            oa:prefix "senior expert bottleneck,\" \"" ;
+            oa:suffix "\"), reflects actual strategic decisions"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Canonical key phrase from positioning" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:StyleObs_Metaphor_KnowledgeLoss a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_YCDemoBeats ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_YCDemoBeats ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 2129 ;
+            oa:end 2171
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "no manual documentation, no knowledge loss" ;
+            oa:prefix "committed as code — " ;
+            oa:suffix "**\n\n**Tools**: Discord"
+        ]
+    ] ;
+    skos:note "Parallel structure emphasizing elimination of friction" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:StyleObs_RuleOfThree_Propagation a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_YCDemoBeats ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_YCDemoBeats ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 2774 ;
+            oa:end 2857
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "across roles (co-founders), tools (Desktop → Code), and contexts (strategy → implementation)" ;
+            oa:prefix "Organizational worldview propagates " ;
+            oa:suffix " immediately after commit"
+        ]
+    ] ;
+    skos:note "Triadic list with parallel structure for memorability" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:StyleObs_Checkmark_Validation a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_YCDemoBeats ;
+    oa:hasBody narr:PunctuationTypography ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_YCDemoBeats ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3094 ;
+            oa:end 3158
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "✅ **Fills gap_demo_beat_sequence**: Three distinct beats" ;
+            oa:prefix "## Why This Works\n\n" ;
+            oa:suffix " with clear aha moments"
+        ]
+    ] ;
+    skos:note "Checkmark emoji for visual validation pattern" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:StyleObs_Anaphora_Fills a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Anaphora ;
+    dct:source narr:Sample_YCDemoBeats ;
+    oa:hasBody narr:Anaphora ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_YCDemoBeats ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3094 ;
+            oa:end 3253
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "✅ **Fills gap_demo_beat_sequence**\n✅ **Fills gap_demo_persona_tailoring**" ;
+            oa:prefix "## Why This Works\n\n" ;
+            oa:suffix "\n✅ **Shows complete value loop**"
+        ]
+    ] ;
+    skos:note "Repeated 'Fills' structure for emphasis and rhythm" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:StyleObs_SecondPerson_Directive a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:SecondPerson ;
+    dct:source narr:Sample_YCDemoBeats ;
+    oa:hasBody narr:POVPerson ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_YCDemoBeats ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 4099 ;
+            oa:end 4137
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "**What we're NOT showing** (to keep" ;
+            oa:prefix "- Consider voiceover to compress time\n\n" ;
+            oa:suffix " under 60 seconds):"
+        ]
+    ] ;
+    skos:note "First-person plural 'we' for team alignment" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Rubric_Register_YCDemoBeats a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_YCDemoBeats ;
+    rdf:value 4.5 ;
+    skos:note "Professional yet direct; second-person in implementation notes; active voice throughout; appropriate formality for decision doc" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Rubric_Phrasing_YCDemoBeats a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_YCDemoBeats ;
+    rdf:value 5.0 ;
+    skos:note "Strong use of established key phrases (senior expert bottleneck, institutional knowledge at cursor); domain-specific verbs (propagates, committed); consistent terminology" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Rubric_Cadence_YCDemoBeats a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_YCDemoBeats ;
+    rdf:value 4.0 ;
+    skos:note "Mix of short punchy beats (20-second structure) with longer explanatory sections; good rhythm variation; bullet lists create visual cadence" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Rubric_StrategicAlignment_YCDemoBeats a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_YCDemoBeats ;
+    rdf:value 5.0 ;
+    skos:note "Explicitly validates Decision_YCPositioning_20260203, Narrative_OutputBeforeSystem, Proof_DemoCriteria; demonstrates core narratives; fills identified gaps" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Rubric_Tailoring_YCDemoBeats a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_YCDemoBeats ;
+    rdf:value 4.5 ;
+    skos:note "Dual-persona approach (Tony/Scarlet) addresses gap_demo_persona_tailoring; YC partner audience implicit; implementation notes tailored for execution team" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Rubric_Resonance_YCDemoBeats a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_YCDemoBeats ;
+    rdf:value 4.5 ;
+    skos:note "Concrete scenario (YC application work) is relatable; aha moments clearly articulated; WITH vs WITHOUT comparison is powerful framing; voice memo detail adds authenticity" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Rubric_Flow_YCDemoBeats a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_YCDemoBeats ;
+    rdf:value 4.5 ;
+    skos:note "Clear three-act structure; natural progression from problem→solution→propagation; transitions between beats are logical; Why This Works section provides coherent summary" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Rubric_Novelty_YCDemoBeats a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_YCDemoBeats ;
+    rdf:value 4.0 ;
+    skos:note "Fresh framing (three beats with aha moments); avoids generic demo clichés; specific tool callouts (Claude Desktop vs Code); some template structure (decision doc format) is intentional" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:Rubric_Accuracy_YCDemoBeats a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_YCDemoBeats ;
+    rdf:value 5.0 ;
+    skos:note "Accurate references to Decision_YCPositioning_20260203, Proof_DemoCriteria, Feature_OnboardingMode; gap names match Tony's identification; timing constraints (60s, 20s per beat) are precise; tool names correct" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+
+  narr:StyleMetrics_YCDemoBeats a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_YCDemoBeats ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:Conciseness "high" ;
+    skos:note "Measured across prose sections; bullet lists excluded from sentence length calculation" ;
+    prov:wasGeneratedBy narr:Tx_20260205T221626Z .
+}

@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__SolutionArchetypes> {
+  <https://aswritten.ai/narrative#Digest_ns__SolutionArchetypes> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#SolutionArchetypes> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the solution archetypes and target use cases the product addresses, mostly via `skos:broader`. The unifying mechanism is a compiled organizational worldview that downstream consumers query. Concrete personas span [AI-assisted development](narr:UseCase_CodingAgents) (coding agents read product strategy and past decisions from a snapshot, ADRs saved as memories), [content generation](narr:UseCase_ContentGeneration) (speeches, blog posts, brand-voice consistency), and [executive assistance](narr:UseCase_ExecutiveAssistance) (strategy discussions as queryable memories, cross-team alignment). Above the use cases sits an abstracted [onboarding-elimination archetype](narr:SolutionArchetype_OnboardingElimination) framing day-1 productivity through shared worldview. an infrastructure advisor flags [DevOps](narr:Narrative_DevOpsUseCase) as a still-untapped persona — collective memory of deployment, rollbacks, maintenance mode. One child, the [story-generation flow](narr:Obs_StoryFlow), attaches as `related` rather than `broader`: it describes the synchronous render plumbing beneath these use cases, not a use case itself.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_DevOpsUseCase> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Obs_StoryFlow> ;
+    narr:covers <https://aswritten.ai/ns/narrative#SolutionArchetype_OnboardingElimination> ;
+    narr:covers <https://aswritten.ai/ns/narrative#UseCase_CodingAgents> ;
+    narr:covers <https://aswritten.ai/ns/narrative#UseCase_ContentGeneration> ;
+    narr:covers <https://aswritten.ai/ns/narrative#UseCase_ExecutiveAssistance> ;
+    narr:keyPhrase [ narr:text "Coding agents read from compiled snapshot (know product strategy, past decisions)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#UseCase_CodingAgents> ] ;
+    narr:keyPhrase [ narr:text "Brand voice consistency (narrative architecture encodes style/perspective)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#UseCase_ContentGeneration> ] ;
+    narr:keyPhrase [ narr:text "Strategy discussions become queryable memories." ; narr:phraseSource <https://aswritten.ai/ns/narrative#UseCase_ExecutiveAssistance> ] ;
+    narr:keyPhrase [ narr:text "Day 1 productivity via shared worldview" ; narr:phraseSource <https://aswritten.ai/ns/narrative#SolutionArchetype_OnboardingElimination> ] ;
+    narr:keyPhrase [ narr:text "collective memory of deployment strategies, environment spin-up, version control, rollbacks, maintenance mode" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_DevOpsUseCase> ] ;
+    narr:keyPhrase [ narr:text "**Synchronous**: Returns rendered Markdown immediately" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Obs_StoryFlow> ] ;
+    narr:variation [ narr:text "DevOps is framed as aspirational/untapped, distinct from the others described as active, fleshed-out use cases." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_DevOpsUseCase> ] ;
+    narr:variation [ narr:text "Onboarding-elimination is an abstracted archetype layer, sitting above the concrete personas rather than alongside them." ; narr:over <https://aswritten.ai/ns/narrative#SolutionArchetype_OnboardingElimination> ] ;
+    narr:variation [ narr:text "Story-generation flow attaches as 'related', not 'broader' — an implementation/mechanism outlier (synchronous Markdown render) rather than a solution archetype." ; narr:over <https://aswritten.ai/ns/narrative#Obs_StoryFlow> ] ;
+    narr:writer "claude (subscription)" .
+}

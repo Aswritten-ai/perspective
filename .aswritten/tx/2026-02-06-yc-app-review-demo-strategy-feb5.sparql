@@ -1,0 +1,403 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+
+# ========================================
+# Transaction-level Provenance
+# ========================================
+INSERT DATA {
+  narr:Tx_20260206T155839Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-06T15:58:39.551Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-06-yc-app-review-demo-strategy-feb5.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:generated 
+                   
+                   narr:Narrative_CodeAsCompilation,
+                   narr:StyleObs_BrandName_1,
+                   narr:StyleObs_Idiolect_1,
+                   narr:StyleObs_Metaphor_1,
+                   narr:StyleObs_Analogy_1,
+                   narr:StyleObs_Simile_1,
+                   narr:StyleObs_ActiveVoice_1,
+                   narr:StyleObs_Cadence_1,
+                   narr:StyleObs_RuleOfThree_1,
+                   narr:Rubric_Register_YC_Call,
+                   narr:Rubric_Phrasing_YC_Call,
+                   narr:Rubric_Cadence_YC_Call,
+                   narr:Rubric_StrategicAlignment_YC_Call,
+                   narr:Rubric_Tailoring_YC_Call,
+                   narr:Rubric_Resonance_YC_Call,
+                   narr:Rubric_Flow_YC_Call,
+                   narr:Rubric_Novelty_YC_Call,
+                   narr:Rubric_Accuracy_YC_Call .
+} ;
+
+# ========================================
+# Added Triples
+# ========================================
+INSERT DATA {
+
+  narr:Narrative_CodeAsCompilation a narr:Narrative ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    narr:theme "Worldview as source, code as output" ;
+    skos:prefLabel "Code as Compilation Output from Worldview" ;
+    skos:definition "Applications and content process are compiled surface for organizational worldview. Code becomes the compilation output, not the source. Captures current memory of people, not just legacy memory." ;
+    narr:direction "Positive" ;
+    narr:supports narr:PositioningThesis ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:StyleObs_BrandName_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1234 ;
+        oa:end 1247
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten.ai" ;
+        oa:prefix "built " ;
+        oa:suffix " solo over"
+      ]
+    ] ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Lowercase brand stylization with .ai TLD." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:StyleObs_Idiolect_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    oa:hasBody narr:IdiolectPhrasing ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 567 ;
+        oa:end 587
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "separated at birth" ;
+        oa:prefix "you were like, wow, we were " ;
+        oa:suffix "."
+      ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Colloquial idiom signaling immediate chemistry." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:StyleObs_Metaphor_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 789 ;
+        oa:end 799
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "deli email" ;
+        oa:prefix "Tony on the follow-up \"" ;
+        oa:suffix "\": \"It's like"
+      ]
+    ] ;
+    skos:related narr:RhetoricalDevices ;
+    rdf:value true ;
+    skos:note "Metaphor for crystallized vision email; not product doc but proof of chemistry." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:StyleObs_Analogy_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 8456 ;
+        oa:end 8492
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the code becomes the compilation output" ;
+        oa:prefix "I actually think " ;
+        oa:suffix "."
+      ]
+    ] ;
+    skos:related narr:PositioningThesis ;
+    rdf:value true ;
+    skos:note "Technical analogy repositioning code as downstream artifact of worldview." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:StyleObs_Simile_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Simile ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    oa:hasBody narr:Simile ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 11234 ;
+        oa:end 11273
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "It's like watching someone read the newspaper" ;
+        oa:prefix "super snappy. " ;
+        oa:suffix ". So it's all"
+      ]
+    ] ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Simile illustrating editing principle: avoid boring pacing." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:StyleObs_ActiveVoice_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    oa:hasBody narr:VoiceActive ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4567 ;
+        oa:end 4575
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "onboards" ;
+        oa:prefix "3-6 month " ;
+        oa:suffix " tax"
+      ]
+    ] ;
+    skos:related narr:VerbChoice ;
+    rdf:value true ;
+    skos:note "Active verb choice; domain-specific." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:StyleObs_Cadence_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 11456 ;
+        oa:end 11470
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Snappy, snappy" ;
+        oa:prefix "Focus on the result... " ;
+        oa:suffix ""
+      ]
+    ] ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Repetition for emphasis; short imperative." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:StyleObs_RuleOfThree_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 13456 ;
+        oa:end 13512
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "what you know, how it's changed, IP as quantifiable code" ;
+        oa:prefix "Introspection — " ;
+        oa:suffix ""
+      ]
+    ] ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Triadic list for memorability." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:Rubric_Register_YC_Call a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    rdf:value 4.0 ;
+    skos:note "Conversational, direct, second-person ('you'); active verbs; confident tone. Fits startup/founder register well." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:Rubric_Phrasing_YC_Call a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    rdf:value 4.5 ;
+    skos:note "Strong idiolect ('separated at birth', 'deli email'); domain verbs ('onboards'); simple analogies ('code as compilation output'). Distinctive phrasing." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:Rubric_Cadence_YC_Call a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    rdf:value 4.0 ;
+    skos:note "Short, punchy sentences; repetition for emphasis ('Snappy, snappy'); rule of three. Strong rhythm." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:Rubric_StrategicAlignment_YC_Call a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    rdf:value 4.5 ;
+    skos:note "Directly addresses YC application strategy; founding story aligns with mission/vision; product vision ties to organizational authority narrative. Strong alignment." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:Rubric_Tailoring_YC_Call a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    rdf:value 4.0 ;
+    skos:note "Tailored to YC audience (references YC questions, founder video, demo video); addresses enterprise buyers and technical reviewers. Good audience fit." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:Rubric_Resonance_YC_Call a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    rdf:value 4.5 ;
+    skos:note "Strong use of founding story ('deli email' as proof of chemistry); analogies (code as compilation output); metaphors (twins as subset). Resonant storytelling." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:Rubric_Flow_YC_Call a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    rdf:value 4.0 ;
+    skos:note "Natural progression from founding story → product vision → YC strategy → demo storyboard → open gaps. Coherent structure; transitions clear." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:Rubric_Novelty_YC_Call a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    rdf:value 4.0 ;
+    skos:note "Distinctive framing ('worldview vs. skills', 'code as compilation output', 'superset framing'); avoids generic startup clichés. Fresh positioning." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+
+  narr:Rubric_Accuracy_YC_Call a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_YC_Call_2026_02_05 ;
+    rdf:value 4.5 ;
+    skos:note "Specific dates (Feb 5, 2026), names (Scarlet Dame, Tony Maley, the customer's chief architect, an infrastructure advisor), metrics (6 users → 12 next week, ~68 minutes, 3 years ago). High factual precision." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+} ;
+
+# ========================================
+# Updated Triples (DELETE/INSERT WHERE)
+# ========================================
+DELETE {
+  narr:Sample_YC_Call_2026_02_05 narr:inputLength ?oldLength ;
+    skos:note ?oldNote .
+}
+INSERT {
+  narr:Sample_YC_Call_2026_02_05 narr:inputLength 14823 ;
+    skos:note "Transcript of video call between Scarlet Dame (founder/CEO) and Tony Maley (co-founder/COO). Duration ~68 minutes. Purpose: review YC Spring 2026 application draft, plan demo video storyboard, discuss founder video, and brainstorm 50-character company description." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+}
+WHERE {
+  OPTIONAL { narr:Sample_YC_Call_2026_02_05 narr:inputLength ?oldLength . }
+  OPTIONAL { narr:Sample_YC_Call_2026_02_05 skos:note ?oldNote . }
+} ;
+
+DELETE {
+  narr:Narrative_FoundingStory skos:definition ?oldDef1 ;
+    narr:direction ?oldDir1 ;
+    narr:supports ?oldSupp1 .
+}
+INSERT {
+  narr:Narrative_FoundingStory skos:definition "Co-founder relationship originated ~3 years ago when Scarlet sought best developers (all working for Tony at Vouch) → cold-email → immediate connection → 'deli email' solidified chemistry → Scarlet hired as consultant → co-ran Vouch → shared vision of delegated authority for AI agents → constrained by enterprise shackles → Scarlet left to solve upstream dependency (organizational worldview for AI) → built aswritten.ai solo over 4 months → brought Tony back in." ;
+    narr:direction "Positive" ;
+    narr:supports narr:Mission ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_FoundingStory skos:definition ?oldDef1 . }
+  OPTIONAL { narr:Narrative_FoundingStory narr:direction ?oldDir1 . }
+  OPTIONAL { narr:Narrative_FoundingStory narr:supports ?oldSupp1 . }
+} ;
+
+DELETE {
+  narr:Narrative_ProductVision skos:definition ?oldDef2 .
+}
+INSERT {
+  narr:Narrative_ProductVision skos:definition "Git-native platform that eliminates AI context problem by capturing undocumented knowledge, enabling agents to act with organizational authority. Vision: marketplace of reusable organizational perspective." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_ProductVision skos:definition ?oldDef2 . }
+} ;
+
+DELETE {
+  narr:Narrative_SupersetFraming skos:definition ?oldDef3 .
+}
+INSERT {
+  narr:Narrative_SupersetFraming skos:definition "AI twin synthetic companies clone single person, not organizational perspective. This is a superset; twins are subset. Person cloned without organizational context isn't helpful." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_SupersetFraming skos:definition ?oldDef3 . }
+} ;
+
+DELETE {
+  narr:Narrative_WorkflowUnlockGap skos:definition ?oldDef4 ;
+    skos:note ?oldNote4 .
+}
+INSERT {
+  narr:Narrative_WorkflowUnlockGap skos:definition "Missing: how actual workflow within organization works. What is being ingested, what's being remembered, who is doing that, what context? Benefit is clear but mechanism needs to be tangible for non-technical buyers and YC reviewers. How does a collaborator the grizzled engineer's knowledge get captured and become permanent organizational memory? What does that workflow look like day-to-day?" ;
+    skos:note "Active gap being addressed in YC application." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_WorkflowUnlockGap skos:definition ?oldDef4 . }
+  OPTIONAL { narr:Narrative_WorkflowUnlockGap skos:note ?oldNote4 . }
+} ;
+
+DELETE {
+  narr:StyleMetrics_YC_Call narr:AverageSentenceLength ?oldASL ;
+    narr:ActiveVoiceRatio ?oldAVR ;
+    narr:JargonDensity ?oldJD ;
+    narr:TypeTokenRatio ?oldTTR ;
+    skos:note ?oldNote5 .
+}
+INSERT {
+  narr:StyleMetrics_YC_Call narr:AverageSentenceLength 18.5 ;
+    narr:ActiveVoiceRatio 0.78 ;
+    narr:JargonDensity 0.12 ;
+    narr:TypeTokenRatio 0.64 ;
+    skos:note "Metrics computed from transcript. High active voice ratio; moderate jargon density (domain-specific terms like 'git native', 'MCP', 'worldview'); high lexical diversity." ;
+    prov:wasGeneratedBy narr:Tx_20260206T155839Z .
+}
+WHERE {
+  OPTIONAL { narr:StyleMetrics_YC_Call narr:AverageSentenceLength ?oldASL . }
+  OPTIONAL { narr:StyleMetrics_YC_Call narr:ActiveVoiceRatio ?oldAVR . }
+  OPTIONAL { narr:StyleMetrics_YC_Call narr:JargonDensity ?oldJD . }
+  OPTIONAL { narr:StyleMetrics_YC_Call narr:TypeTokenRatio ?oldTTR . }
+  OPTIONAL { narr:StyleMetrics_YC_Call skos:note ?oldNote5 . }
+}

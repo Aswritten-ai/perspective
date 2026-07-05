@@ -1,0 +1,46 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_RhetoricalDevices> {
+  <https://aswritten.ai/narrative#Digest_RhetoricalDevices> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#RhetoricalDevices> ;
+    narr:childCount "22"^^xsd:integer ;
+    narr:generatedFrom "0a92f1347943270df0bd7f8026c934d7b28f1544" ;
+    narr:narration """This hub catalogs rhetorical and stylistic devices observed across the corpus, spanning extended metaphor, aphoristic compression, anaphoric structure, antithesis, and recursive self-reference. The [optometrist as iterative review model](narr:StyleObs_OptometristMetaphor) anchors the product's explanatory logic — lenses, convergence rounds, \"better through A or B?\" — sustained across multiple sections. Alongside it, [arrows/archery as productivity argument](narr:Obs_FeatherArrowsClose) closes the flocking piece (Jul 2026), with a draft flag that the EV version should pivot toward the voices question rather than land on productivity. The [road/running spatial analogy](narr:StyleObs_RunDownRoad) maps AI misalignment onto directional movement. Capitalized IS appears as a [spoken-word authority marker](narr:StyleObs_4) and as [aphoristic product principle](narr:StyleObs_CallIsMemory). Antithesis recurs as a core move — [\"not just\" inversions](narr:StyleObs_2), [\"running it, not evaluating it\"](narr:StyleObs_Antithesis), [\"It's not X, it's Y\" reframes](narr:StyleObs_VerbatimReframe). Anaphora structures both [identity claims](narr:StyleObs_Anaphora) and [imperative command sequences](narr:StyleObs_4). The [self-documenting release](narr:StyleObs_SelfDocumentingRelease) (Jul 5 2026) enacts a recursive rhetorical move — artifact describing itself as instrument. [Archetype testing](narr:StyleObs_ArchetypeTesting) (Apr 2026) and [methodology validation](narr:StyleObs_MethodologyValidation) (May 2026) mark earlier moments where principles were stress-tested against the full perspective.""" ;
+    narr:covers <https://aswritten.ai/narrative#Obs_FeatherArrowsClose> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_2> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_4> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_5> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_6> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_AnalogyReadableTest> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Anaphora> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Antithesis> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArchetypeTesting> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CallIsMemory> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CounterIntuitivelyPowerful> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DiagramAsNarrative> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_HolyGrail> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_IncrediblyMarker> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Metaphor_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_MethodologyValidation> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OptometristMetaphor> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ProductTestingItself> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_QuotedTermReframe> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RunDownRoad> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SelfDocumentingRelease> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_VerbatimReframe> ;
+    narr:keyPhrase [ narr:text "I built aswritten to feather our arrows, that our first attempt may always take us further in the direction we're headed. That our work is to adjust our heading so that all arrows find target, not spend our time moving the ones that already missed." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_5> ] ;
+    narr:keyPhrase [ narr:text "narrative operates like a velocity or acceleration vector in these particle systems" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:keyPhrase [ narr:text "the cutover decision was saved as a memory through the new production pipeline, its citation offsets landing slice-exact on the first try" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SelfDocumentingRelease> ] ;
+    narr:keyPhrase [ narr:text "testing it against every archetype in the perspective" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ArchetypeTesting> ] ;
+    narr:keyPhrase [ narr:text "This directly validates 2026-05-01-6-onboarding-codebase-review-topic-analysis-not-direct-ingestion — the customer's chief architect independently arrived at the same anti-pattern conclusion" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_MethodologyValidation> ] ;
+    narr:keyPhrase [ narr:text "a readable test framework becomes the critical human review interface" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AnalogyReadableTest> ] ;
+    narr:keyPhrase [ narr:text "We are the future, as written." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_6> ] ;
+    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_6> ] ;
+    narr:variation [ narr:text "The arrows/archery metaphor closes on productivity, but a draft flag explicitly calls for the EV version to open out to the voices/alignment question instead — the same device, two competing endpoints." ; narr:over <https://aswritten.ai/narrative#Obs_FeatherArrowsClose> ] ;
+    narr:variation [ narr:text "Antithesis is used both to clarify (binary process semantics, deployment vs. evaluation) and to assert belief-action gaps where \"the reframe exists at FOUNDATION level but the behavior has not followed\" — the device cuts both ways." ; narr:over <https://aswritten.ai/narrative#StyleObs_Antithesis> ; narr:over <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:variation [ narr:text "Technical metaphors (OS bootloading, asymptotic convergence, ASCII block diagrams as architecture) sit alongside humanistic/clinical ones (optometrist, eye chart, deli email) — the corpus does not resolve which register dominates." ; narr:over <https://aswritten.ai/narrative#StyleObs_6> ; narr:over <https://aswritten.ai/narrative#StyleObs_5> ; narr:over <https://aswritten.ai/narrative#StyleObs_OptometristMetaphor> ; narr:over <https://aswritten.ai/narrative#StyleObs_DiagramAsNarrative> ] ;
+    narr:variation [ narr:text "The self-documenting release enacts the product thesis recursively, but this structural demonstration is a single dated instance (Jul 5 2026) — whether it represents a stable rhetorical pattern or a one-off payoff is unresolved." ; narr:over <https://aswritten.ai/narrative#StyleObs_SelfDocumentingRelease> ; narr:over <https://aswritten.ai/narrative#StyleObs_ProductTestingItself> ] ;
+    narr:variation [ narr:text "Block-quoted founder voice (conversational, thinking-aloud) contrasts with surrounding analytical prose — the two registers coexist without a stated hierarchy of authority." ; narr:over <https://aswritten.ai/narrative#StyleObs_4> ; narr:over <https://aswritten.ai/narrative#StyleObs_6> ] ;
+    narr:writer "anthropic/claude-sonnet-4.6" .
+}

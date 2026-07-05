@@ -1,0 +1,352 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_LensArchReview_20260309 a prov:Activity ;
+    dct:title "Extraction transaction: Lens Architecture Design Session 2026-03-09" ;
+    prov:startedAtTime "2026-03-09T00:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-03-09T15:05:12Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-03-09-lens-review-architecture-design-session.md" ;
+    sb:originRef "main" .
+} ;
+
+# =============================================================
+# SAMPLE
+# =============================================================
+INSERT DATA {
+  narr:Sample_LensArchReview_20260309 a narr:Sample ;
+    dct:title "Lens-Based Review: Architecture Design Session, March 9, 2026" ;
+    narr:inputLength 9800 ;
+    dct:date "2026-03-09"^^xsd:date ;
+    skos:note "Design session between Scarlet Dame and Claude Opus 4.6. Corrected March 8 plan, ran manual lens test against PR #91, arrived at three-tool architecture." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+} ;
+
+# =============================================================
+# NARRATIVES (new)
+# =============================================================
+INSERT DATA {
+  narr:Narrative_CorrectBeforeBuilding a narr:Narrative ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    narr:theme "Foundational misunderstandings must be corrected before any building begins" ;
+    skos:broader narr:Process ;
+    skos:note "The entire session was devoted to correcting five misunderstandings from the March 8 plan before any implementation started." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Narrative_ConvergenceNotCompleteness a narr:Narrative ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    narr:theme "The goal of review is convergence on the branch's intent, not exhaustive completeness" ;
+    skos:broader narr:QualityReviewGates ;
+    skos:note "Lenses push toward and away from the branch thesis to confirm sharpness. The optometrist analogy: iterative correction rounds, not a single pass." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Narrative_LossyCompressionProblem a narr:Narrative ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    narr:theme "A compressed worldview summary is already a lens — shifting it shifts lossy data, not knowledge" ;
+    skos:broader narr:Architecture ;
+    skos:note "The manual lens test exposed that compile(layer=worldview) is ~4-8K editorially compressed tokens. The lens needs the relevant subgraph at full fidelity, not the summary." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Narrative_ARRepoIdentity a narr:Narrative ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    narr:theme "Every aswritten repo IS a perspective — there is no special category of perspective repo" ;
+    skos:broader narr:NarrativeAnchor ;
+    skos:note "AR (Artificial Representative) repos are not a subtype of aswritten repos with perspective baked in. All aswritten repos are perspectives. The lens tool queries the same graph from a different angle." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+} ;
+
+# =============================================================
+# CLAIMS
+# =============================================================
+INSERT DATA {
+  narr:Claim_ARRepoIsAswrittenRepo a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:NarrativeAnchor ;
+    narr:supports narr:Narrative_ARRepoIdentity ;
+    narr:challenges narr:Claim_ARRepoHasPerspectiveBakedIn ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Scarlet Dame correction: An AR repo is not an aswritten repo with a perspective baked in. All aswritten repos are perspectives. An AR is just an aswritten repo." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_ARRepoHasPerspectiveBakedIn a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Notion ;
+    narr:aboutNode narr:NarrativeAnchor ;
+    skos:note "Superseded claim from March 8 session: AR repo described as aswritten repo with perspective baked in. Corrected by Scarlet Dame." ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_TextAndEyeChartSameOperation a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Narrative_SeparationOfConcerns ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Both text (refraction mode) and eye chart (generation mode) are mechanically identical: run this prompt against the snapshot with this lens applied. Eye chart is a saved/curated prompt; user-provided text is an ad-hoc prompt." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_EyeChartIsDocumentBeingEvaluated a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Narrative_SeparationOfConcerns ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Eye chart is the document or set of domain statements being evaluated. In review mode, an existing document IS the eye chart. In drafting mode, the outline/structure IS the eye chart. The chart is the prompt; the refracted chart is the prompt run against snapshot + lens." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_AbsenceIsIntrospect a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Narrative_SeparationOfConcerns ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Absence as a lens shift dimension duplicates introspect. Scarlet confirmed: absence is what introspect does." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_LensIsCompoundNotStacked a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Narrative_SeparationOfConcerns ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "A lens is inherently multi-dimensional — it can combine audience + conviction + domain into one perspective. You do not stack lenses; you craft one compound lens. The shift is the delta between canonical view and lens-weighted view." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_WorldviewSummaryIsAlreadyLens a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Narrative_LossyCompressionProblem ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "compile(layer=worldview) is ~4-8K tokens, already editorially compressed — the everything-weighted-equally-and-compressed lens. Shifting a summary shifts lossy compression, not knowledge. The lens needs full-depth content for the domains it touches." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_CompileNoFocusParam a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Narrative_SeparationOfConcerns ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Adding focus to compile risks agents calling compile(focus=task) instead of full worldview bootstrap. Compile/worldview should always ground the agent in the WHOLE organizational context first." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_IntrospectNoSubgraphReturn a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Narrative_SeparationOfConcerns ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Returning subgraph alongside introspect analysis causes attention dilution. Analysis (gaps, tensions, questions) and subgraph content serve different purposes at different moments." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_ScopeIsNewSeparateTool a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Narrative_SeparationOfConcerns ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Scope tool: takes focus and context like introspect, returns windowed graph to full depth in LLM-readable format. Effectively deprecates worldview:domain layers." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_LensToolIsGenerator a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Narrative_SeparationOfConcerns ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "The lens tool does not run lenses — it generates them. Output: a set of lenses each containing a centrist focus prompt, a shift prompt, an eye chart, and usage instructions." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_EveryMemorySaveEndsReviewRound a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:QualityReviewGates ;
+    narr:supports narr:Narrative_ConvergenceNotCompleteness ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Every saved memory ends that review round and shifts the branch closer to the target. Extraction updates the graph; next round's lenses reflect the updated graph." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_LensesConvergeOnBranchIntent a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:QualityReviewGates ;
+    narr:supports narr:Narrative_ConvergenceNotCompleteness ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Some lenses push TOWARD the branch thesis (confirm sharpening); some push AWAY (confirm alternatives are worse). Goal is sharpness on what the branch is trying to do, not answering all questions." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Claim_WorldviewDomainLayersDeprecated a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Architecture ;
+    narr:supports narr:Claim_ScopeIsNewSeparateTool ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "worldview:domain layers are rarely useful and have only been called a few times. Scope with arbitrary focus effectively deprecates them." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+} ;
+
+# =============================================================
+# OBSERVATIONS
+# =============================================================
+INSERT DATA {
+  narr:Obs_ThreeToolArchitecture a narr:Observation ;
+    skos:broader narr:SystemTopology ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Three-tool architecture: compile (session bootstrap, full org context, compressed snapshot), introspect (analytical, gaps/tensions/questions), scope (content retrieval, full-depth subgraph for arbitrary focus)." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Obs_ReviewFlowSteps a narr:Observation ;
+    skos:broader narr:CoreWorkflows ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Six-step iterative review flow: start_review → focus groupings → per-group (introspect, lens, scope, centrist run, shift run, delta table, commentary) → summary/preview → save memory → re-extraction → notify reviewer." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Obs_ManualLensTestPR91 a narr:Observation ;
+    skos:broader narr:CaseIntervention ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Manual lens test against PR #91 (Synthetic Representatives voice memo): compile worldview → introspect → draft centrist org model at three scales → re-draft through investor lens → delta table. Exposed the lossy compression problem." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:Obs_OpenQuestions a narr:Observation ;
+    skos:broader narr:RiskGuardrails ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:note "Six open questions: scope return format, lens tool focus grouping from TXes, eye chart format for generated charts, convergence criteria, compile rename to worldview, register tool timing." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+} ;
+
+# =============================================================
+# STYLE OBSERVATIONS
+# =============================================================
+INSERT DATA {
+  narr:StyleObs_DirectCorrection a narr:StyleObservation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:NarrativeAnchor ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "Corrections are delivered as flat declarative assertions, not hedged. The speaker restates the wrong claim then replaces it with the correct one in a single sentence." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:StyleObs_RuleOfThreeScales a narr:StyleObservation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "Triadic structure used repeatedly: three tools, three purposes; three scales in drafting; three-part lens output (centrist prompt, shift prompt, eye chart)." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:StyleObs_OptometristMetaphor a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:RhetoricalDevices ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "The optometrist metaphor structures the entire review process: iterative lens corrections, 'better through A or B?', convergence rounds, not a single pass." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:StyleObs_BetterThroughAOrB a narr:StyleObservation ;
+    skos:broader narr:RhetoricalQuestion ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:Calibration ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "Optometrist idiom used as a rhetorical device to frame convergence testing: 'Better through A or B?' encapsulates the entire lens comparison mechanism." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:StyleObs_BlockquoteCorrections a narr:StyleObservation ;
+    skos:broader narr:ToneAuthoritative ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:StyleProfiles ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "Scarlet Dame's corrections are consistently set in blockquotes (> \"...\"), distinguishing authoritative source voice from analytical commentary. Creates a two-register document." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:StyleObs_TableDrivenArchitecture a narr:StyleObservation ;
+    skos:broader narr:InformationArchitecture ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:SystemTopology ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "Markdown tables used to crystallize architecture decisions: the three-tool table (Tool | Purpose | Returns) is the definitive statement of the architecture, not the prose." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:StyleObs_ShiftingNotKnowledge a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:KeyPhrases ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "Antithetical phrasing used to sharpen the lossy compression argument: 'shifting a summary, not shifting knowledge' — the contrast between the two objects makes the problem visceral." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:StyleObs_BrandNameStylization a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:NamingConventions ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "Consistent lowercase stylization for tool names (compile, introspect, scope, lens) and system names (aswritten). Backtick code formatting used for tool invocations: compile(layer=worldview), introspect(focus=...)." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:StyleObs_ArrowChaining a narr:StyleObservation ;
+    skos:broader narr:CadenceRhythm ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:FlowCoherence ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "Arrow notation (→) used to chain sequential operations, creating a visual pipeline cadence. Appears in the review flow steps, tool output descriptions, and the lens execution sequence." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+
+  narr:StyleObs_AICompanyizedEmphasis a narr:StyleObservation ;
+    skos:broader narr:AICompanyizationCase ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    skos:related narr:ToneAuthoritative ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "All-caps used for semantic emphasis on key architectural constraints: WHOLE, TOWARD, AWAY. Signals non-negotiable design intent rather than stylistic preference." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+} ;
+
+# =============================================================
+# STYLE METRICS
+# =============================================================
+INSERT DATA {
+  narr:StyleMetrics_LensArchReview a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    narr:AverageSentenceLength 22 ;
+    narr:ActiveVoiceRatio "0.88"^^xsd:decimal ;
+    narr:JargonDensity "0.12"^^xsd:decimal ;
+    narr:Conciseness "0.78"^^xsd:decimal ;
+    skos:note "Technical design document. High active voice ratio. Jargon is domain-specific (compile, introspect, scope, lens, TriG, SPARQL) and intentional. Sentence length varies: short declarative corrections alternate with longer analytical passages. Two-register structure: blockquoted source voice vs. analytical prose." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+} ;
+
+# =============================================================
+# UPDATES — Actor_ScarletDame (new source + provenance)
+# =============================================================
+DELETE {
+  narr:Actor_ScarletDame
+    dct:source ?oldSource .
+}
+INSERT {
+  narr:Actor_ScarletDame
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+}
+WHERE {
+  OPTIONAL { narr:Actor_ScarletDame dct:source ?oldSource . }
+} ;
+
+# =============================================================
+# UPDATES — Narrative_SeparationOfConcerns (extended source + theme + note)
+# =============================================================
+DELETE {
+  narr:Narrative_SeparationOfConcerns
+    narr:theme ?oldTheme ;
+    skos:note ?oldNote ;
+    dct:source ?oldSource .
+}
+INSERT {
+  narr:Narrative_SeparationOfConcerns
+    dct:source narr:Sample_LensArchReview_20260309 ;
+    narr:theme "Architectural clarity emerges from strict separation of concerns: each tool does exactly one thing" ;
+    skos:note "The three-tool architecture (compile/worldview, introspect, scope) is justified by preventing agents from accidentally narrowing their worldview and by keeping analysis separate from content retrieval." ;
+    prov:wasGeneratedBy narr:Tx_LensArchReview_20260309 .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_SeparationOfConcerns narr:theme ?oldTheme . }
+  OPTIONAL { narr:Narrative_SeparationOfConcerns skos:note ?oldNote . }
+  OPTIONAL { narr:Narrative_SeparationOfConcerns dct:source ?oldSource . }
+}

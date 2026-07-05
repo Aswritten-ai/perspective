@@ -1,0 +1,29 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Antithesis> {
+  <https://aswritten.ai/narrative#Digest_ns__Antithesis> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Antithesis> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers uses of **antithesis** as a recurring rhetorical pattern across the aswritten.ai narrative and pitch. Most children are style observations cataloguing the device's forms: the [They/We competitive contrast](narr:StyleObs_Antithesis) (\"individuals/organizations, lock-in/freedom\"), the [NOT/IS differentiation](narr:StyleObs_antithesis_not_is) and [From/To framing](narr:StyleObs_antithesis_1) repeated within sections, the [platform-not-infrastructure positioning](narr:StyleObs_PlatformVsInfra), and the [past-vs-AI-native paradigm shift](narr:StyleObs_9). A quantified strand uses sharp before/after contrasts — [\"multiple weeks → 15 min\"](narr:StyleObs_3) and [days/weeks compressions](narr:StyleObs_Antithesis_WeeksToMinutes). Two children carry substantive claims rather than pure form: the [single-player vs multiplayer shift](narr:Observation_MultiplayerShift) toward collaborative experience, and the [no-network-problem framing](narr:Observation_NoNetworkProblem) arguing incremental utility. No dates accompany any child, so no trajectory is assertable.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_MultiplayerShift> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_3> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_9> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Antithesis> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Antithesis_WeeksToMinutes> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_PlatformVsInfra> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_antithesis_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_antithesis_not_is> ;
+    narr:keyPhrase [ narr:text "They solve memory for individuals. We solve memory for organizations. They create lock-in. We create freedom." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Antithesis> ] ;
+    narr:keyPhrase [ narr:text "We want to be a platform (complete product users adopt), not infrastructure (low-margin vendor others build on)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_PlatformVsInfra> ] ;
+    narr:keyPhrase [ narr:text "There is actually no network problem here. This is just as useful for one person, but it is even more useful for two people" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ] ;
+    narr:keyPhrase [ narr:text "The past 20-25 years optimized for human-readable documentation; AI-native paradigm optimizes for machine-queryable worldview" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_9> ] ;
+    narr:keyPhrase [ narr:text "multiple weeks → 15 min" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_3> ] ;
+    narr:variation [ narr:text "Two registers coexist: substantive content claims about the product vs. pure stylistic/structural observations about the antithesis device itself." ; narr:over <https://aswritten.ai/ns/narrative#Observation_MultiplayerShift> ; narr:over <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_3> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_antithesis_1> ] ;
+    narr:variation [ narr:text "Outward competitive contrasts (They/We, platform-not-infrastructure) sit alongside inward paradigm contrasts (human→AI-centric, From/To) — different axes of the same device." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Antithesis> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_PlatformVsInfra> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_antithesis_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_9> ] ;
+    narr:variation [ narr:text "The no-network-problem claim qualifies the multiplayer/collaborative thesis: it concedes single-user value rather than asserting network dependence." ; narr:over <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ; narr:over <https://aswritten.ai/ns/narrative#Observation_MultiplayerShift> ] ;
+    narr:variation [ narr:text "A purely quantitative antithesis strand (weeks→minutes, days→15min) measures transformation, distinct from the qualitative positioning contrasts." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_3> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Antithesis_WeeksToMinutes> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_MarketContext> {
+  <https://aswritten.ai/narrative#Digest_MarketContext> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#MarketContext> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """MarketContext is a heterogeneous catch-all of market and domain observations, not a single arc. One thread is **data-reliability caution**: [aggregator data lags primary sources](narr:Claim_AggregatorDataUnreliable) (Tracxn, VCSheet, Crunchbase, 1-3 yrs, verify before recommending, May '26), and a collaborator's [PPP extrapolation methodology](narr:Obs_PPP_Methodology) for adjusting World Bank figures. A second thread is **sector opportunity**: the [German energy market](narr:Observation_GermanEnergyMarket) framed as a traditional, stability-prizing niche for AI consultancy. A third is **early-childhood inclusion pressure**, carried by two children at different altitudes — a [single-classroom IEP datum](narr:Observation_IEPCountIncrease) (1-2 → 6) and a [broader inclusion-crisis framing](narr:Narrative_InclusionCrisis) naming screen time, economic instability, and teacher overwhelm. A fourth is an **absence finding**: research could not locate [out trans investors in 2026](narr:Narrative_TransAbsencePattern), an asymmetry rather than a positive market signal. These children share the hub by being situational context an agent draws on, not by converging. Route here for market-data hygiene, sector-niche framing, IEP/inclusion pressure, or VC-demographic gaps; topics outside these regions are not under this hub.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AggregatorDataUnreliable> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_InclusionCrisis> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TransAbsencePattern> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_PPP_Methodology> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_GermanEnergyMarket> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_IEPCountIncrease> ;
+    narr:keyPhrase [ narr:text "Aggregator data (Tracxn, VCSheet, Crunchbase) lags 1-3 years." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AggregatorDataUnreliable> ] ;
+    narr:keyPhrase [ narr:text "extrapolate World Bank data using real-time exchange rate changes and relative inflation differentials" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_PPP_Methodology> ] ;
+    narr:keyPhrase [ narr:text "significant niche opportunity for AI consultancy with domain expertise" ; narr:phraseSource <https://aswritten.ai/narrative#Observation_GermanEnergyMarket> ] ;
+    narr:keyPhrase [ narr:text "Number of children with IEPs in a single classroom has jumped from 1-2 to 6" ; narr:phraseSource <https://aswritten.ai/narrative#Observation_IEPCountIncrease> ] ;
+    narr:keyPhrase [ narr:text "The rise in students requiring IEPs and additional supports is one of the greatest modern challenges in early childhood education." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_InclusionCrisis> ] ;
+    narr:keyPhrase [ narr:text "could not identify out trans angels with sustained activity or trans GPs at general-purpose VC funds" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TransAbsencePattern> ] ;
+    narr:variation [ narr:text "Inclusion appears twice at different altitudes: a single-classroom IEP count vs. a systemic crisis framing with named stressors — same theme, different scope." ; narr:over <https://aswritten.ai/narrative#Observation_IEPCountIncrease> ; narr:over <https://aswritten.ai/narrative#Narrative_InclusionCrisis> ] ;
+    narr:variation [ narr:text "The trans-investor child is an absence/negative finding, not a positive market datum — it reports what could NOT be located." ; narr:over <https://aswritten.ai/narrative#Narrative_TransAbsencePattern> ] ;
+    narr:variation [ narr:text "Two children are epistemic-caution rules (data lags, extrapolation method) while others are substantive market claims — methodology mixed in with content." ; narr:over <https://aswritten.ai/narrative#Claim_AggregatorDataUnreliable> ; narr:over <https://aswritten.ai/narrative#Obs_PPP_Methodology> ] ;
+    narr:variation [ narr:text "The hub spans unrelated domains (VC demographics, German energy, ECE/IEP, PPP economics) with no convergence — relatedness is 'situational context,' not topic." ; narr:over <https://aswritten.ai/narrative#Observation_GermanEnergyMarket> ; narr:over <https://aswritten.ai/narrative#Narrative_InclusionCrisis> ; narr:over <https://aswritten.ai/narrative#Narrative_TransAbsencePattern> ] ;
+    narr:writer "claude (subscription)" .
+}

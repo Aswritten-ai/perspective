@@ -1,0 +1,24 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_PreRegisteredEvalDiscipline> {
+  <https://aswritten.ai/narrative#Digest_Narrative_PreRegisteredEvalDiscipline> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_PreRegisteredEvalDiscipline> ;
+    narr:childCount "4"^^xsd:integer ;
+    narr:generatedFrom "0a92f1347943270df0bd7f8026c934d7b28f1544" ;
+    narr:narration """Framed in Jul 2025, [aswritten-as-first-user discipline](narr:https://aswritten.ai/narrative#Claim_AswrittenFirstUserEvalRigor) established the foundational bar: a pre-registered battery run in full with numbers reported counts as validated; informal smoke-tests do not. The deliberate revert of the merge — keeping dev as a clean \"before\" baseline — was the first concrete act of that discipline. By Jul 2026, [the single-run timing condition](narr:https://aswritten.ai/narrative#Claim_IterateBatchesResolvesSingleRunCondition) was resolved: the final full comparison runs once, against the converged pipeline, after queued fixes (retry-repair, quote-suffix elision) and the prompt-cache dividend land — running earlier would invalidate results at full re-run cost. Simultaneously, [ADDENDUM-A3](narr:https://aswritten.ai/narrative#Claim_PreRegAddendumA3) operationalized the pre-registration: every case record now carries its pipeline SHA, making mixed-version masquerade structurally impossible. Days later, [anchor-5 replay validation](narr:https://aswritten.ai/narrative#Claim_ReplayMethodologyValidated) closed the methodology loop — May-era transactions replayed identically to fresh production, confirming the measured 0%→100% citation-offset gap reflects pipeline improvement rather than environmental drift.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AswrittenFirstUserEvalRigor> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_IterateBatchesResolvesSingleRunCondition> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PreRegAddendumA3> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ReplayMethodologyValidated> ;
+    narr:keyPhrase [ narr:text "A pre-registered battery, run in full with the numbers reported, is the bar for 'validated'; 'the smokes passed' is not." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AswrittenFirstUserEvalRigor> ] ;
+    narr:keyPhrase [ narr:text "The control matters more than the appearance of being finished." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AswrittenFirstUserEvalRigor> ] ;
+    narr:keyPhrase [ narr:text "resolves Scarlet's 'only if we only need to do this once' condition" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_IterateBatchesResolvesSingleRunCondition> ] ;
+    narr:keyPhrase [ narr:text "Every case record carries the pipeline SHA it ran against so mixed-version results can never masquerade as one run." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PreRegAddendumA3> ] ;
+    narr:keyPhrase [ narr:text "the measured gap (0% → 100% position-exact citation offsets) is pipeline improvement, not environmental drift" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ReplayMethodologyValidated> ] ;
+    narr:keyPhrase [ narr:text "The replay methodology is self-validating." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ReplayMethodologyValidated> ] ;
+    narr:variation [ narr:text "\"The smokes passed\" is explicitly named as an insufficient bar — tension between the appearance of being finished and the discipline of a full pre-registered run." ; narr:over <https://aswritten.ai/narrative#Claim_AswrittenFirstUserEvalRigor> ] ;
+    narr:variation [ narr:text "The single-run constraint cuts both ways: it resolves Scarlet's condition but also means premature execution (before queued fixes land) forces a costly full re-run — timing is a hard dependency, not a preference." ; narr:over <https://aswritten.ai/narrative#Claim_IterateBatchesResolvesSingleRunCondition> ] ;
+    narr:variation [ narr:text "The self-validation claim for replay methodology rests on one empirical anchor (May-era vs. fresh production parity); the 0%→100% gap interpretation as pipeline-not-drift is load-bearing and could be contested if environmental conditions differed." ; narr:over <https://aswritten.ai/narrative#Claim_ReplayMethodologyValidated> ] ;
+    narr:writer "anthropic/claude-sonnet-4.6" .
+}

@@ -1,0 +1,155 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+
+  narr:Tx_20260220T224354Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agents/aswritten.ai> ;
+    prov:wasAttributedTo   <https://n8n.aswritten.ai> ;
+    prov:generatedAtTime   "2026-02-20T22:43:54.599Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-02-20-fundraising-breakpoints-ff-facing.md" ;
+    sb:originRef           "pre-seed/ff-addendum" .
+
+} ;
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added_triples)
+# =============================================================
+INSERT DATA {
+
+  # --- Actor additions (new triples on existing node) ---
+  narr:Actor_ScarletDame
+    skos:note              "Founder; author of fundraising breakpoints memo dated 2026-02-20" ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  narr:Narrative_InPersonSalesAdvantage a narr:Narrative ;
+
+    narr:theme             "Physical presence enables organic live demos that convert to warm referrals in ways remote calls cannot replicate" ;
+    skos:broader           narr:ActorIncentiveAnalysis ;
+    skos:note              "Sales motion narrative: NYC presence unlocks serendipitous pitch moments" ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  narr:StyleObs_LowercaseIdiolect a narr:StyleObservation ;
+    skos:broader           narr:SpeakerIdiolects ;
+
+    skos:related           narr:ToneDirectPersonal ;
+    skos:note              "Founder voice in blockquotes uses consistent lowercase, no sentence-initial caps, stream-of-consciousness cadence — signals authenticity and informality" ;
+    rdf:value              true ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  narr:StyleObs_ShortPunchyCadence a narr:StyleObservation ;
+    skos:broader           narr:ShortPunchyCadence ;
+
+    skos:related           narr:ToneAuthoritative ;
+    skos:note              "Single declarative sentence used as a hard stop after a longer setup — creates rhetorical emphasis through contrast" ;
+    rdf:value              true ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  narr:StyleObs_BrandNameStylization a narr:StyleObservation ;
+    skos:broader           narr:BrandNameStylization ;
+
+    skos:related           narr:KeyPhrases ;
+    skos:note              "Uses brand name as a tier/quality benchmark ('Crooked Media-tier') — shorthand for high-visibility, credibility-signaling partners without elaboration" ;
+    rdf:value              true ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  narr:StyleObs_SystemSketchMetaphor a narr:StyleObservation ;
+    skos:broader           narr:Metaphor ;
+
+    skos:related           narr:WhatIsIt ;
+    skos:note              "'system sketch' as metaphor for prototype — implies incompleteness and artistic/provisional quality; contrasted with 'robust and ultimately ready to scale'" ;
+    rdf:value              true ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  narr:StyleObs_LowercaseProperName a narr:StyleObservation ;
+    skos:broader           narr:AICompanyizationCase ;
+
+    skos:related           narr:SpeakerIdiolects ;
+    skos:note              "Proper name 'the planned engineering/architecture hire' rendered in lowercase within founder blockquote — consistent with idiolect pattern; signals informal register and familiarity" ;
+    rdf:value              true ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  narr:StyleObs_Antithesis a narr:StyleObservation ;
+    skos:broader           narr:Antithesis ;
+
+    skos:related           narr:Proof ;
+    skos:note              "Antithesis used to sharpen the [amount] outcome: 'running it, not evaluating it' — draws a hard line between deployment and consideration" ;
+    rdf:value              true ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  narr:StyleObs_SecondPerson a narr:StyleObservation ;
+    skos:broader           narr:SecondPerson ;
+
+    skos:related           narr:ToneDirectPersonal ;
+    skos:note              "Section header uses second-person possessive ('Your Investment') to directly address F&F audience — creates personal stake and ownership framing" ;
+    rdf:value              true ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  narr:StyleObs_IdiolectPhrasing a narr:StyleObservation ;
+    skos:broader           narr:IdiolectPhrasing ;
+
+    skos:related           narr:FrictionFailure ;
+    skos:note              "Phrasal idiom 'pulled back and forth' used in founder voice to describe the building/selling attention split — visceral, kinetic language" ;
+    rdf:value              true ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+  # --- Style Metrics ---
+  narr:StyleMetrics_FundraisingBreakpoints a narr:StyleMetrics ;
+    skos:broader           narr:StyleMetrics ;
+
+    narr:AverageSentenceLength 14 ;
+    narr:ActiveVoiceRatio  "0.88"^^xsd:decimal ;
+    narr:Conciseness       "high — bullet-driven structure, minimal subordinate clauses in formal sections; blockquotes use run-on stream-of-consciousness for contrast" ;
+    skos:note              "Dual register: formal structured bullets (headers, tiers) vs. informal lowercase founder voice in blockquotes. Active voice dominates. Short punchy sentences used for emphasis." ;
+
+    prov:wasGeneratedBy    narr:Tx_20260220T224354Z .
+
+} ;
+
+# =============================================================
+# PROVENANCE — connect pipeline transaction to run transaction
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260220T224354Z prov:generated narr:Transaction_FundraisingBreakpoints ;
+
+
+
+    prov:generated narr:Narrative_InPersonSalesAdvantage ;
+
+
+
+
+    prov:generated narr:Claim_EnterpriseCompliance ;
+
+
+
+
+    prov:generated narr:StyleObs_LowercaseIdiolect ;
+    prov:generated narr:StyleObs_ShortPunchyCadence ;
+    prov:generated narr:StyleObs_BrandNameStylization ;
+    prov:generated narr:StyleObs_SystemSketchMetaphor ;
+    prov:generated narr:StyleObs_LowercaseProperName ;
+    prov:generated narr:StyleObs_Antithesis ;
+    prov:generated narr:StyleObs_SecondPerson ;
+    prov:generated narr:StyleObs_IdiolectPhrasing ;
+    prov:generated narr:StyleMetrics_FundraisingBreakpoints .
+}

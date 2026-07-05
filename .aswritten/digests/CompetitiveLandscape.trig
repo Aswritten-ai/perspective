@@ -1,0 +1,37 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_CompetitiveLandscape> {
+  <https://aswritten.ai/narrative#Digest_CompetitiveLandscape> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#CompetitiveLandscape> ;
+    narr:childCount "15"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub positions aswritten against everyone adjacent by a single axis: rivals do **orchestration or retrieval of what's already documented**; aswritten does upstream extraction. [RAG pipelines](narr:Obs_CompetitiveLandscape_RAG) retrieve existing docs with no architectural opinion; [Notion/Confluence graphs](narr:Obs_CompetitiveLandscape_Notion) go silent when strategic knowledge lives in a founder's head. The [enterprise agent-platform field](narr:Observation_CompetitiveLandscape_2) — OpenAI Frontier, Anthropic Cowork, Microsoft Agent 365, Salesforce Agentforce, Gemini Enterprise, Glean — is framed as solving orchestration, not knowledge extraction. [OpenAI Frontier](narr:Observation_CompetitiveLandscape_1) (launched Feb 5 2026, Intuit/State Farm/Uber/Oracle) is cast as plausibly [downstream of aswritten](narr:Obs_CompetitiveLandscape_Frontier). Category framings: aswritten as [superset of AI-twin clones](narr:Narrative_SupersetOfAITwins) and as [contribution-side vs conversation-side](narr:Obs_CompetitiveLandscape_MultiPlayer). On price, the [trimodal landscape](narr:Narrative_TrimodalCompLandscape) (Light SaaS / Heavy Enterprise / Custom Build, dated May 2026) sits aswritten 2-10x under Tier-B assembly. [DreamDB](narr:Observation_DreamDBConvergence) appears as a near-peer sharing RDF/propositions/provenance, diverging on general-purpose-platform vs extraction layer.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SupersetOfAITwins> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TrimodalCompLandscape> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CompetitiveLandscape_Frontier> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CompetitiveLandscape_MultiPlayer> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CompetitiveLandscape_Notion> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CompetitiveLandscape_RAG> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_PsychologyTodayNegativeExample> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_StaffingDecline> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_ChatGPTtoClaudeShift> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_CompetitiveLandscape> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_CompetitiveLandscape_1> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_CompetitiveLandscape_2> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_DreamDBConvergence> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_DreamDBDivergence> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_HubModelFinancials> ;
+    narr:keyPhrase [ narr:text "retrieves existing docs, no architectural opinion, cannot extract undocumented knowledge or steer vs. dilute" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CompetitiveLandscape_RAG> ] ;
+    narr:keyPhrase [ narr:text "All platforms solve agent orchestration, not upstream knowledge extraction" ; narr:phraseSource <https://aswritten.ai/narrative#Observation_CompetitiveLandscape_2> ] ;
+    narr:keyPhrase [ narr:text "aswritten sits 2-10x cheaper than comparable Tier B assembly." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TrimodalCompLandscape> ] ;
+    narr:keyPhrase [ narr:text "The mid-market ICP competitor is DIY engineering time plus currently-fragmented AI tools, not enterprise platforms like Glean — that is the buy-vs-build conversation that lands" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TrimodalCompLandscape> ] ;
+    narr:keyPhrase [ narr:text "aswritten.ai is the superset." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SupersetOfAITwins> ] ;
+    narr:keyPhrase [ narr:text "none of that says anything about how you approach it" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_PsychologyTodayNegativeExample> ] ;
+    narr:variation [ narr:text "Two contradictory readings of OpenAI Frontier: a marquee-customer enterprise platform (a threat) vs. a semantic layer that could sit DOWNSTREAM of aswritten and assumes knowledge already exists in systems." ; narr:over <https://aswritten.ai/narrative#Observation_CompetitiveLandscape_1> ; narr:over <https://aswritten.ai/narrative#Obs_CompetitiveLandscape_Frontier> ; narr:over <https://aswritten.ai/narrative#Observation_CompetitiveLandscape_2> ] ;
+    narr:variation [ narr:text "The real mid-market competitor is DIY build + fragmented tools, NOT enterprise platforms like Glean — qualifies the entire enterprise-platform framing as the wrong buy-vs-build conversation for the ICP." ; narr:over <https://aswritten.ai/narrative#Narrative_TrimodalCompLandscape> ; narr:over <https://aswritten.ai/narrative#Observation_CompetitiveLandscape_2> ] ;
+    narr:variation [ narr:text "DreamDB is a near-peer (shared RDF/propositions/provenance/System1+System2), not a competitor in the usual sense — convergence and divergence held side by side." ; narr:over <https://aswritten.ai/narrative#Observation_DreamDBConvergence> ; narr:over <https://aswritten.ai/narrative#Observation_DreamDBDivergence> ] ;
+    narr:variation [ narr:text "Structurally distinct outliers under this hub: ChatGPT→Claude platform-preference shift, staffing-industry decline, and the Psychology Today property-based-matching critique — market/domain observations, not direct competitors." ; narr:over <https://aswritten.ai/narrative#Observation_ChatGPTtoClaudeShift> ; narr:over <https://aswritten.ai/narrative#Obs_StaffingDecline> ; narr:over <https://aswritten.ai/narrative#Obs_PsychologyTodayNegativeExample> ] ;
+    narr:variation [ narr:text "HubModelFinancials (consultant vs FTE cost model) is attached here but reads as pricing/GTM economics rather than competitor positioning — possible mis-placement." ; narr:over <https://aswritten.ai/narrative#Observation_HubModelFinancials> ] ;
+    narr:writer "claude (subscription)" .
+}

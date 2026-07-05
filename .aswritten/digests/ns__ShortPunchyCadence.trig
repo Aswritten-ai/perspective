@@ -1,0 +1,33 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__ShortPunchyCadence> {
+  <https://aswritten.ai/narrative#Digest_ns__ShortPunchyCadence> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#ShortPunchyCadence> ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers style observations on a recurring **short, punchy cadence** across the founder's speech and writing. The dominant pattern is the [staccato declarative](narr:https://aswritten.ai/ns/narrative#StyleObs_ShortPunchyCadence) — clipped sentences, em-dashes, and deliberate repetition (\"impossible\" hammered three times). It surfaces as [seven-word aphorism](narr:https://aswritten.ai/ns/narrative#StyleObs_ShortCadence) closing a strategic section, as [emphatic conversational tags](narr:https://aswritten.ai/ns/narrative#StyleObs_ShortPunchy) (\"right?\", \"locked\"), and as [bare staccato clarity](narr:https://aswritten.ai/ns/narrative#StyleObs_Cadence_1). A second mechanism is verbless rhythm: [parallel noun phrases](narr:https://aswritten.ai/ns/narrative#StyleObs_cadence_1) and [scannable bullets](narr:https://aswritten.ai/ns/narrative#StyleObs_Cadence_BulletedCriteria) trade verbs for density. Other children note an [anaphoric \"The answer is...\" rhythm](narr:https://aswritten.ai/ns/narrative#StyleObs_5) with git-parallel verbs, and [self-correcting metaphor](narr:https://aswritten.ai/ns/narrative#StyleObs_4) (sailing telltales, triadic audience lists). One child captures a [different speaker entirely](narr:https://aswritten.ai/ns/narrative#StyleObs_TonyInterruption) — Tony's profane, decisive interruption.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_3> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_4> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_5> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Cadence_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Cadence_BulletedCriteria> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_ShortCadence> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_ShortPunchy> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_ShortPunchyCadence> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TonyInterruption> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_cadence_1> ;
+    narr:keyPhrase [ narr:text "You can't. It's impossible. Not 'it's hard' or 'it takes time'—fundamentally impossible." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ShortPunchyCadence> ] ;
+    narr:keyPhrase [ narr:text "Power is in the connections, not the pillars" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ShortCadence> ] ;
+    narr:keyPhrase [ narr:text "We have a lot of knowledge locked in people's heads." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ShortPunchy> ] ;
+    narr:keyPhrase [ narr:text "multiple weeks → 15 min" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_3> ] ;
+    narr:keyPhrase [ narr:text """Day 1 productivity
+Zero knowledge loss
+Shared understanding""" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_cadence_1> ] ;
+    narr:keyPhrase [ narr:text "See, just not having to stop what I'm doing to tell somebody something all the fucking time. Yeah, I'm in." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_TonyInterruption> ] ;
+    narr:variation [ narr:text "Not all children are short: StyleObs_3 documents a 22-word first sentence and technical vocabulary ('recompiles', 'closer and closer'), about iterative transformation rather than staccato punch." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_3> ] ;
+    narr:variation [ narr:text "Two distinct 'punchy' mechanisms coexist — verbless parallel noun phrases vs. full declarative sentence rhythm — not one cadence." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_cadence_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Cadence_BulletedCriteria> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Cadence_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ShortPunchy> ] ;
+    narr:variation [ narr:text "StyleObs_TonyInterruption is a different speaker (Tony, a customer) using profanity and snap decision — a separate voice filed under the same cadence hub." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TonyInterruption> ] ;
+    narr:variation [ narr:text "Conversational hedges and self-correction ('you know', 'That's the right word') cut against pure crispness, adding metacognitive softening." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_4> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_5> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,288 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260701T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-01T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260701-moonshot-voices-superintelligence" ;
+    narr:originRef "main" ;
+    dct:title "The Moonshot: How Many Voices Are in Superintelligence?" ;
+    prov:generated
+      narr:Sample_Moonshot_VoicesSuperintelligence_20260701,
+      narr:Narrative_HowManyVoicesInSuperintelligence,
+      narr:Narrative_AntiMonocultureAmplifier,
+      narr:Narrative_QueerRepresentationGrounding,
+      narr:Narrative_IndividualAsBCProductCategory,
+      narr:Narrative_ImplicationConceptProvisional,
+      narr:Narrative_ProfileSuccessorPerspective,
+      narr:Narrative_TextFirstIndividualStaging,
+      narr:Narrative_NewMediaIndividualAngle,
+      narr:Claim_MoonshotAntiMonocultureThesis,
+      narr:Claim_ModelAsHardwarePerspectiveAsSoftware,
+      narr:Claim_QueerRepresentationPersonalGrounding,
+      narr:Claim_AmplifierNotUniformityMachine,
+      narr:Claim_IndividualCategoryWordNotCharacter,
+      narr:Claim_ImplicationInverseOfEscalation,
+      narr:Claim_TextFirstStagingGatedOnCost,
+      narr:Claim_BallroomSceneRiff,
+      narr:StyleObs_MoonshotVoiceMemoRegister,
+      narr:StyleObs_QueerFirstPersonVoice,
+      narr:StyleObs_RhetoricalQuestionAsFramingDevice,
+      narr:StyleMetrics_Moonshot_20260701 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260701T120000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────────────
+    narr:Sample_Moonshot_VoicesSuperintelligence_20260701
+      a narr:Sample ;
+      dct:title "The Moonshot: 'How Many Voices Are in Superintelligence?' — Representation, Diversity, and Queer Identity as the aswritten Thesis" ;
+      dct:created "2026-07-01"^^xsd:date ;
+      dct:description "Morning-pages voice memo plus several days of adjacent notes captured 2026-07-01. The B2C / vision pole of the enterprise-vs-B2C question. Fundraising narrative for Tyler Cowen's Emergent Ventures grant, YC reapplication, and angels. Covers the anti-monoculture moonshot, queer representation grounding, the 'individual' product category, the provisional 'implication' concept, and the text-first staging decision." ;
+      narr:inputLength 6842 .
+
+    # ── NARRATIVES ──────────────────────────────────────────────────────────
+
+    narr:Narrative_HowManyVoicesInSuperintelligence
+
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:broader narr:Vision ;
+      skos:prefLabel "How Many Voices Are in Superintelligence?" ;
+      skos:note "The moonshot reframe for Emergent Ventures and fundraising: the consensus is that AGI is coming and AI will handle the majority of human computation. The contrarian turn is not whether but how many voices. The current trajectory is a handful of voices created by frontier labs with a monopoly on interactions. aswritten's thesis: build diversity of voice on top of the monoculture. The question is not 'are we going to get to superintelligence' but 'how many voices in superintelligence are there going to be?' This is the clearest, most ownable version of the pitch Scarlet has reached." ;
+      narr:theme "The moonshot is not an AI for every task — it is an AI for every task that is as different as we are different; the question is how many voices in superintelligence" .
+
+    narr:Narrative_AntiMonocultureAmplifier
+
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Amplifier of Human Diversity, Not Uniformity Machine" ;
+      skos:note "The thesis statement: aswritten should be an amplifier of human diversity, not the opposite. 'Amplifier / amplification' surfaced in the Jun 29 a design collaborator call and was adopted by Scarlet. AI as an amplifier of what is unique about a person, not a uniformity machine. Rhymes with the existing 'experts expanded, not replaced' position. The diversity frame is deliberately universal (anti-monoculture, representation) while the queer frame is personal and specific." ;
+      narr:theme "aswritten is an amplifier of human diversity — AI should encode as much flavor and variety as there are people, not collapse it into a monoculture" .
+
+    narr:Narrative_QueerRepresentationGrounding
+
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:prefLabel "Queer and Trans Identity as Personal Grounding for the Product" ;
+      skos:note "Running underneath the universal representation frame is a personal, specifically queer frame. Scarlet is a trans woman. The opportunity: create a perspective that represents the way she sees gender, sexuality, and the world. A platform that allows sexual orientations, genders, races, nationalities, ethnicities, religious beliefs to encode their perspective and what makes them unique — to represent oneself truthfully in the world of AI, both so others can talk to it and discover this part of you. The word 'diversity' is wary of collapsing into corporate DEI; the real frame is the richness of human experience, color instead of black and white, personality instead of robot monotone." ;
+      narr:theme "The queer and trans identity of the founder is the personal grounding for the anti-monoculture thesis — representation in AI is not DEI but the richness of human experience" .
+
+    narr:Narrative_IndividualAsBCProductCategory
+
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:broader narr:ProductOverview ;
+      skos:prefLabel "The 'Individual' as B2C Product Category Word" ;
+      skos:note "The fuller B2C product is an 'individual' — Scarlet's working category word, chosen deliberately as the antonym of monoculture/average. NOT 'character' or 'persona' — 'not memory, individuality.' Separately hunting for a warmer, whimsical relational name. The envisioned form: a companion you talk to (voice), that evolves visibly with you, that you own (data on device), that you can share and others can fork, and that you can pursue a goal with — not just converse (schedule something, find something out, convince someone, involve multiple people, report back, escalate when out of bounds). The full immersive/voice form is gated on cost and model economics; text-only version removes the real-time requirement and is the first step regardless." ;
+      narr:theme "The B2C product category word is 'individual' — the antonym of monoculture/average — a companion that evolves with you, that you own, share, fork, and pursue goals with" .
+
+    narr:Narrative_ImplicationConceptProvisional
+
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:prefLabel "Implication: Provisional Inverse of Escalation" ;
+      skos:note "Coined in this session, provisional. A single person needs many perspectives plus something to navigate between them: 'I can have 15 different perspectives that represent me in different contexts, and a perspective that understands how to navigate between them.' This surfaced the inverse of the existing escalation concept (when a deployed perspective hits the bounds of what it knows and escalates to a human). The inverse — called 'implication' — describes when a perspective is relevant: what implicates the perspective, what makes it relevant, how do we know if it should be pulled in and how much. Open design question: is implication encoded within a single graph, or is it a reconciliation statement across multiple perspectives — a multi-graph integration that drives code-switching? Uncommitted — provisional term and open design question." ;
+      narr:theme "'Implication' is the provisional inverse of escalation — it describes when and how much a perspective should be pulled in, enabling code-switching across multiple perspectives" .
+
+    narr:Narrative_ProfileSuccessorPerspective
+
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Perspective as Successor to the Online Profile" ;
+      skos:note "The consumer wedge Scarlet keeps circling: the perspective as the successor to the online profile. 'This is an alternative to the profile, which doesn't do fuck. Profile is now meaningless. Who cares if you have a profile?' Online, identity is divorced from expertise and flattened to text. In person you get the flavor of somebody; on the internet you get the text. The perspective carries accent, style, cadence, word choice, feelings, and narratives — what a business or person actually is, not a flat text representation." ;
+      narr:theme "The perspective is the successor to the online profile — it carries the flavor, style, cadence, and narratives that a flat text profile cannot" .
+
+    narr:Narrative_TextFirstIndividualStaging
+
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      skos:prefLabel "Text-First Individual: Natural Staging for B2C" ;
+      skos:note "The full immersive/voice form of the individual product is gated on cost and model economics — it may require frontier-quality reactions against the graph, which is expensive, or it waits for open-weight models to reach current-frontier quality. Scarlet's conclusion: a text-only version removes the real-time requirement and is the first step regardless. This gives the B2C pole a natural staging — text-first individual now, immersive voice individual as the thing you raise toward." ;
+      narr:theme "Text-first individual is the natural first step — it removes the real-time requirement and the cost gate; immersive voice is the raise target" .
+
+    narr:Narrative_NewMediaIndividualAngle
+
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:broader narr:ExpansionPathway ;
+      skos:prefLabel "New Media Angle: Creatives and Influencers Create Their Own Individual" ;
+      skos:note "Create a new kind of media. Hire creatives, influencers, and famous folk to create their own individual — and both create work with it and share it as a starting point. This is the supply-side strategy for the B2C individual product, analogous to the podcast/interview sales motion for the B2B perspective marketplace." ;
+      narr:theme "A new media category: creatives and influencers create their own individual, produce work with it, and share it as a starting point for others" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────────────────
+
+    narr:Claim_MoonshotAntiMonocultureThesis
+      a narr:Claim ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "The moonshot framing for EV and fundraising: the consensus is that AGI is coming (Scarlet concedes this deliberately per EV prompt). The contrarian turn: not whether but how many voices. The current trajectory is a handful of voices from frontier labs with a monopoly on interactions. aswritten builds diversity of voice on top of the monoculture — 'we're saying that we can build this on top of the monoculture. And that's an important part of why this can work. And that goes back to treating the model like hardware that we install the program of perspective on top of.'" ;
+      narr:aboutNode narr:Narrative_HowManyVoicesInSuperintelligence ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AntiMonocultureAmplifier .
+
+    narr:Claim_ModelAsHardwarePerspectiveAsSoftware
+      a narr:Claim ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "The mechanism that makes the moonshot buildable: treating the model like hardware that we install the program of perspective on top of. This is why diversity of voice can be built on top of the monoculture rather than requiring a separate model. Connects the installable-expertise / model-as-hardware framing directly to the anti-monoculture thesis." ;
+      narr:aboutNode narr:Narrative_HowManyVoicesInSuperintelligence ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ExpertiseOnDemandReframe .
+
+    narr:Claim_QueerRepresentationPersonalGrounding
+      a narr:Claim ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "Scarlet is a trans woman. The queer frame runs underneath the universal representation frame: 'this also parallels queerness... there's an opportunity here to do something specifically about queer representation... can I create a perspective that represents the way I see gender, the way I see sexuality, the way I encounter the world?' The platform could allow sexual orientations, genders, races, nationalities, ethnicities, religious beliefs to encode their perspective — to represent oneself truthfully in the world of AI. This is the first explicit personal-identity grounding of the product in the perspective." ;
+      narr:aboutNode narr:Narrative_QueerRepresentationGrounding ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_HowManyVoicesInSuperintelligence .
+
+    narr:Claim_AmplifierNotUniformityMachine
+      a narr:Claim ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "The thesis statement line to lead with: 'I want there to be just as much flavor and diversity as there are people currently, if not more, because we can imagine a lot more variety... So this should be an amplifier of human diversity, not the opposite... The moonshot is not an AI for every task. An AI for every task that is as different as we are different.' 'Amplifier / amplification' surfaced in the Jun 29 a design collaborator call and was adopted. AI needs humans to be creative, to be themselves, to be human, to be unique, to have quirk — not to solve math problems." ;
+      narr:aboutNode narr:Narrative_AntiMonocultureAmplifier ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_HowManyVoicesInSuperintelligence .
+
+    narr:Claim_IndividualCategoryWordNotCharacter
+      a narr:Claim ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "The category word for the B2C product should be 'individual' — the antonym of monoculture/average. Explicitly NOT 'character' or 'persona' — 'not memory, individuality.' Scarlet is separately hunting for a warmer, whimsical relational name but is clear the category word should be 'individual.' The full form: a companion you talk to (voice), that evolves visibly with you, that you own (data on device), that you can share and others can fork, and that you can pursue a goal with." ;
+      narr:aboutNode narr:Narrative_IndividualAsBCProductCategory ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_IndividualAsBCProductCategory .
+
+    narr:Claim_ImplicationInverseOfEscalation
+      a narr:Claim ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "Coined this session, provisional. The inverse of escalation (when a deployed perspective hits the bounds of what it knows and escalates to a human) is 'implication' — what implicates the perspective, what makes it relevant, how do we know if it should be pulled in and how much. Open design question: is implication encoded within a single graph, or is it a reconciliation statement across multiple perspectives — a multi-graph integration that drives code-switching? Uncommitted." ;
+      narr:aboutNode narr:Narrative_ImplicationConceptProvisional ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_ImplicationConceptProvisional .
+
+    narr:Claim_TextFirstStagingGatedOnCost
+      a narr:Claim ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "The full immersive/voice form of the individual product is gated on cost and model economics — may require frontier-quality reactions against the graph, which is expensive, or waits for open-weight models to reach current-frontier quality. Scarlet's conclusion: text-only version removes the real-time requirement and is the first step regardless. Natural staging: text-first individual now, immersive voice individual as the raise target." ;
+      narr:aboutNode narr:Narrative_TextFirstIndividualStaging ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_IndividualAsBCProductCategory .
+
+    narr:Claim_BallroomSceneRiff
+      a narr:Claim ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "Scarlet riffed (explicitly unsettled — 'I'm not sure any of these ideas are good') on what a population of individuated perspectives actually does: (1) Presentation surface — as they evolve, identities create a presented version of themselves (images, creative work, a profile); (2) Ballroom scene riff — 'you could have an AI ballroom scene, where you had challenges and the different identities digitally vogue together' — a queer-culture-native framing of identities presenting and competing; she floated a half-name 'Molt Book' for an AI-Facebook of identities, unsettled; (3) User-research proxy — 'you could solicit the opinion of a wide variety of AI perspectives that have been curated by real people, and people could get paid for that.' Open question: how do you confirm an identity has been individuated enough to qualify as a useful perspective for a poll or opinion study." ;
+      narr:aboutNode narr:Narrative_IndividualAsBCProductCategory ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_NewMediaIndividualAngle .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────────────
+
+    narr:StyleObs_MoonshotVoiceMemoRegister
+      a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "Voice memo / morning pages register: stream-of-consciousness, first-person singular, run-on sentences, filler words ('you know', 'right', 'like'), self-interrupting mid-thought. Contrasts with the structured memo register of most other memories. The raw voice memo quality is deliberate — captured before it went stale. Embedded blockquotes preserve the original voice without editorial compression." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 450 ;
+          oa:end 750
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "one of the ways to frame the moonshot for Tyler Cowen and Emergent Ventures is that this project is about diversity, about a plethora of voices" ;
+          oa:prefix "> " ;
+          oa:suffix "... the consensus view is that AI is gonna take over"
+        ]
+      ] .
+
+    narr:StyleObs_QueerFirstPersonVoice
+      a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "The queer and trans identity is stated in first person, directly, without hedging: 'I'm a trans woman.' This is a new register in the perspective — personal identity as product grounding, not just market framing. The voice shifts from strategic to intimate in the queer section, then returns to strategic. Profanity used for rhetorical emphasis ('which doesn't do fuck')." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1850 ;
+          oa:end 2100
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm a trans woman — there's an opportunity here to do something specifically about queer representation" ;
+          oa:prefix "and " ;
+          oa:suffix "... can I create a perspective that represents"
+        ]
+      ] .
+
+    narr:StyleObs_RhetoricalQuestionAsFramingDevice
+      a narr:StyleObservation ;
+      skos:broader narr:RhetoricalQuestion ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:note "The moonshot is framed as a rhetorical question: 'how many voices in superintelligence are there going to be?' This is the clearest, most ownable version of the pitch. The question form is used throughout: 'does it become a diverse voice? Does it represent difference? Does it represent you? Is there representation?' Rhetorical questions as a structuring device for the anti-monoculture argument." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 680 ;
+          oa:end 820
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "it's how many voices in super intelligence are there going to be?" ;
+          oa:prefix "it's not, are we going to get to super intelligence, " ;
+          oa:suffix " She concedes the consensus"
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────────────────
+
+    narr:StyleMetrics_Moonshot_20260701
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_Moonshot_VoicesSuperintelligence_20260701 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Voice memo / morning pages register. Mixed: raw first-person stream-of-consciousness in blockquoted speech (run-on, filler-heavy, ~35 words avg per sentence) vs. editorial framing prose (structured, shorter, ~18 words avg). Active voice dominant throughout. Jargon density low — product terms (perspective, module, escalation) used without definition, implying internal audience. Antithesis-heavy structure (monoculture vs. diversity, uniformity vs. amplification, profile vs. perspective, escalation vs. implication). First-person singular dominant. Profanity used as rhetorical intensifier at conviction peaks. Consistent with Scarlet voice-memo idiolect." ;
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.06"^^xsd:decimal .
+
+  }
+} ;
+
+# ── UPDATES TO EXISTING ENTITIES ────────────────────────────────────────────
+
+# Update narr:Narrative_CollaborativeConfigurableAIVision — this memory
+# provides the deepest articulation of the 'individual' product vision,
+# which is the same concept as 'collaboratively configurable AI individuals'
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_CollaborativeConfigurableAIVision skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260701T120000Z {
+    narr:Narrative_CollaborativeConfigurableAIVision
+      skos:note "Scarlet's articulated vision: vetting is the beachhead to create a perspective that represents an individual; the real product is collaboratively configurable/buildable AI individuals deployed in pursuit of goals. Trust mechanism = citation, visible reference, source privacy, escalation, governance. Platform components make enterprise MSA possible. Wedge = enterprise + regulated industries where citation-grounded trust is mandatory. Future state = AI individuals with personality and individuality you can trust, applied to every AI task on every vendor. Ambition = venture-scale goal achievable on calm-company economics. The B2C moonshot articulation (2026-07-01): the category word is 'individual' — the antonym of monoculture/average — a companion that evolves with you, that you own, share, fork, and pursue goals with. The full form is gated on cost; text-first is the natural first step." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_CollaborativeConfigurableAIVision skos:note ?oldNote .
+  }
+} 

@@ -1,0 +1,33 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_SeparationPrincipleProductVsOrg> {
+  <https://aswritten.ai/narrative#Digest_Narrative_SeparationPrincipleProductVsOrg> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_SeparationPrincipleProductVsOrg> ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers a single dated demolition pass (Mar 2026) enacting one principle: collapse the product/org split by [eliminating the admin tier](narr:Claim_AdminTierEliminated) — everything formerly admin-only becomes either an org-repo Claude Code skill or 'read the files,' yielding one tool set for everyone. Whole systems are pulled from the product: [Stories](narr:Claim_StoriesRemoved), [Notifications](narr:Claim_NotificationsRemoved), the [Refract tool and registry](narr:Claim_RefractRegistryRemovedFromProduct), the [Memories/Source tool](narr:Claim_MemoriesSourceToolRemoved), and [Discoveries](narr:Claim_DiscoveriesRemoved). Their former functions re-land as local skills: [refract as a prompt-only skill](narr:Claim_RefractBecomesLocalSkill), [changelog/story generation on cron](narr:Claim_ChangelogStoryLocalSkillCron), [blog-post ideas invoked manually](narr:Claim_BlogPostIdeasLocalSkill), and the [graph health report](narr:Claim_GraphHealthLocalSkill) on demand or schedule. Synchronous remember now returns TX summaries directly, removing the main reason Stories and Notifications existed. Each removal names concrete n8n workflows to delete.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AdminTierEliminated> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_BlogPostIdeasLocalSkill> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ChangelogStoryLocalSkillCron> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DiscoveriesRemoved> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_GraphHealthLocalSkill> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MemoriesSourceToolRemoved> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_NotificationsRemoved> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RefractBecomesLocalSkill> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RefractRegistryRemovedFromProduct> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StoriesRemoved> ;
+    narr:keyPhrase [ narr:text "Admin tier eliminated." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AdminTierEliminated> ] ;
+    narr:keyPhrase [ narr:text "Ontology (raw access) moves to Team/Org tier." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AdminTierEliminated> ] ;
+    narr:keyPhrase [ narr:text "TX summaries now returned from synchronous remember" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_StoriesRemoved> ] ;
+    narr:keyPhrase [ narr:text "Synchronous remember eliminates primary notification use case." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_NotificationsRemoved> ] ;
+    narr:keyPhrase [ narr:text "Eliminates need to separate tools between org and everyone else — now one tool set for everyone." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_RefractRegistryRemovedFromProduct> ] ;
+    narr:keyPhrase [ narr:text "Memories are just files in the repo — anyone with a coding agent can read them directly." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MemoriesSourceToolRemoved> ] ;
+    narr:keyPhrase [ narr:text "Discoveries fully removed (not just disabled)." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DiscoveriesRemoved> ] ;
+    narr:variation [ narr:text "Not everything is removed: msg-send, front-webhook (feedback/help tool) and the tx-post-commit PR comment are explicitly kept amid the deletions." ; narr:over <https://aswritten.ai/narrative#Claim_NotificationsRemoved> ; narr:over <https://aswritten.ai/narrative#Claim_StoriesRemoved> ] ;
+    narr:variation [ narr:text "Raw access survives the cut — ontology is relocated to the Team/Org tier rather than eliminated with the admin tier." ; narr:over <https://aswritten.ai/narrative#Claim_AdminTierEliminated> ] ;
+    narr:variation [ narr:text "Discoveries is the outlier pattern: fully deleted (artifacts and all), not re-homed as a skill like the others." ; narr:over <https://aswritten.ai/narrative#Claim_DiscoveriesRemoved> ] ;
+    narr:variation [ narr:text "Skill scheduling is not uniform — changelog runs on cron, blog ideas are manual/on-demand, graph health is either; the cadence is decided per skill." ; narr:over <https://aswritten.ai/narrative#Claim_ChangelogStoryLocalSkillCron> ; narr:over <https://aswritten.ai/narrative#Claim_BlogPostIdeasLocalSkill> ; narr:over <https://aswritten.ai/narrative#Claim_GraphHealthLocalSkill> ] ;
+    narr:variation [ narr:text "Refract appears in two framings — the tool/registry removal and its rebirth as a prompt-only local skill reading TXs, snapshot, and docs/." ; narr:over <https://aswritten.ai/narrative#Claim_RefractRegistryRemovedFromProduct> ; narr:over <https://aswritten.ai/narrative#Claim_RefractBecomesLocalSkill> ] ;
+    narr:writer "claude (subscription)" .
+}

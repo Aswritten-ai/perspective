@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__MarketContext> {
+  <https://aswritten.ai/narrative#Digest_ns__MarketContext> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#MarketContext> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the framings of the market problem the venture addresses, all circling a single root — AI tooling starved of shared organizational context. The [context-starvation thesis](narr:Opportunity_ADR002) holds that coding, executive, and content domains each run on separate tools with no shared context, producing strategy-execution gaps; the [fragmentation problem](narr:Narrative_FragmentationProblem) names the same disconnect from the developer's side. The [context-quality angle](narr:Narrative_SIC_Opportunity_1) reframes it as output quality: high-quality AI output needs extensive context, which models currently approximate via search. Two children escalate the stakes differently. The [IP crisis](narr:Narrative_IPCrisis) narrates a paradigm shift from developer convenience to a threat-level, existential business problem — employees leaking secrets, models absorbing IP into training data. The [onboarding crisis](narr:Opportunity_OnboardingCrisis) quantifies it instead: [amount]+/year in fragmentation costs, framed as pain felt now by every CEO. Read together they span problem (fragmentation, starvation) and stakes (existential risk vs. quantified present cost), without converging on one framing.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_FragmentationProblem> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_IPCrisis> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_Opportunity_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Opportunity_ADR002> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Opportunity_OnboardingCrisis> ;
+    narr:keyPhrase [ narr:text "Current AI tools are context-starved across coding, executive, and content domains. Each domain uses separate tools with no shared context, leading to strategy-execution gaps." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Opportunity_ADR002> ] ;
+    narr:keyPhrase [ narr:text "Creating high quality output with AI requires extensive context. Currently models are trying to do that with search." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_SIC_Opportunity_1> ] ;
+    narr:keyPhrase [ narr:text "Every employee tells state secrets to AI; models lift IP into training data; existential business risk" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_IPCrisis> ] ;
+    narr:keyPhrase [ narr:text "Paradigm shift from developer convenience to threat-level business problem" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_IPCrisis> ] ;
+    narr:keyPhrase [ narr:text "Organizations face [amount]+/year in AI context fragmentation costs: onboarding tax, knowledge loss, tool lock-in, innovation paralysis." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Opportunity_OnboardingCrisis> ] ;
+    narr:keyPhrase [ narr:text "Immediate, quantifiable pain point felt by every CEO/manager. Not future threat—happening now." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Opportunity_OnboardingCrisis> ] ;
+    narr:variation [ narr:text "Stakes framed as future/existential threat (IP lifted into training data) vs. explicitly present, quantified pain ([amount]+/yr) — the onboarding child directly rejects the 'future threat' framing." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_IPCrisis> ; narr:over <https://aswritten.ai/ns/narrative#Opportunity_OnboardingCrisis> ] ;
+    narr:variation [ narr:text "Problem cast as quality of AI output (needs context) vs. organizational coordination/strategy-execution gap — different root diagnoses of the same starvation." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_Opportunity_1> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_FragmentationProblem> ; narr:over <https://aswritten.ai/ns/narrative#Opportunity_ADR002> ] ;
+    narr:variation [ narr:text "IP crisis introduces a security/threat axis (secrecy, IP leakage) absent from the other children, which stay on productivity and cost." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_IPCrisis> ] ;
+    narr:writer "claude (subscription)" .
+}

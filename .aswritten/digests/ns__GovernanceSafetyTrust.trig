@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__GovernanceSafetyTrust> {
+  <https://aswritten.ai/narrative#Digest_ns__GovernanceSafetyTrust> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#GovernanceSafetyTrust> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers two distinct registers of governance, safety, and trust. The conceptual register frames AI through [AI identity as a resonant body](narr:Concept_AIIdentity) shaped by training data into structures that embody collective meaning, anchored to [foundational commitments to safety, alignment, and ethics](narr:Concept_FirstPrinciples) as starting points. The operational register is concrete and enterprise-driven: an infrastructure advisor flagged [inbound content filtering for API keys and credentials](narr:Narrative_SecurityFiltering) as an enterprise requirement, citing a College Board bitcoin-miner incident, with a [deck update to add filtering/security scanning to 'Under the Hood'](narr:DeckUpdate_SecurityFiltering) before enterprise sales. The argued posture is build-it-in-early. Style observations sit alongside as meta-commentary: an [imperative, authoritative voice](narr:StyleObs_Imperative) and [self-answered rhetorical framing of the enterprise objection](narr:StyleObs_RhetoricalQ). The material spans abstract ethics, identity theory, and a pragmatic pre-sales security checklist — recognize it as governance-as-philosophy and governance-as-product-requirement coexisting, not yet reconciled.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Concept_AIIdentity> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Concept_FirstPrinciples> ;
+    narr:covers <https://aswritten.ai/ns/narrative#DeckUpdate_SecurityFiltering> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SecurityFiltering> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Imperative> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQ> ;
+    narr:keyPhrase [ narr:text "It's a hell of a lot easier to put it in now than it is to try to bolt that stuff on later" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Imperative> ] ;
+    narr:keyPhrase [ narr:text "an infrastructure advisor flagged inbound content filtering (API keys, credentials) as enterprise requirement; shared College Board bitcoin miner incident as cautionary tale" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_SecurityFiltering> ] ;
+    narr:keyPhrase [ narr:text "Add content filtering/security scanning to 'Under the Hood'; address inbound API key/credential detection before enterprise sales" ; narr:phraseSource <https://aswritten.ai/ns/narrative#DeckUpdate_SecurityFiltering> ] ;
+    narr:keyPhrase [ narr:text "AI systems as shaped by training data into resonant structures that embody collective meaning and values." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Concept_AIIdentity> ] ;
+    narr:keyPhrase [ narr:text "How do I make sure that some of the mass didn't put something into the shared repository they shouldn't have?" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQ> ] ;
+    narr:variation [ narr:text "Two registers coexist unreconciled: abstract ethics/identity theory vs a concrete pre-sales security checklist — the hub is both philosophy and product requirement." ; narr:over <https://aswritten.ai/ns/narrative#Concept_AIIdentity> ; narr:over <https://aswritten.ai/ns/narrative#Concept_FirstPrinciples> ; narr:over <https://aswritten.ai/ns/narrative#DeckUpdate_SecurityFiltering> ] ;
+    narr:variation [ narr:text "Safety is framed as commercially driven (enterprise sales gate, cautionary incident) rather than purely ethical — a different motivation than the first-principles framing." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SecurityFiltering> ; narr:over <https://aswritten.ai/ns/narrative#Concept_FirstPrinciples> ] ;
+    narr:variation [ narr:text "Style observations are meta-commentary on rhetoric, not governance substance — structurally distinct outliers under this hub." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Imperative> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQ> ] ;
+    narr:writer "claude (subscription)" .
+}

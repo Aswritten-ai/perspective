@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_TranscriptBootstrappingUnderplayed> {
+  <https://aswritten.ai/narrative#Digest_Narrative_TranscriptBootstrappingUnderplayed> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_TranscriptBootstrappingUnderplayed> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub argues transcript bootstrapping is aswritten's strongest underused onramp — and that the company keeps failing to pitch it. The core promise is concrete and confirmed: [six-months-to-perspective-tomorrow](narr:Claim_OnboardingPromiseSixMonthsTranscripts) (validated May 21) and the [last-10-Fireflies-transcripts opener](narr:Claim_FirefliesWebhookActivePitch), which the children want moved from \"waiting to build\" to actively pitched because it removes the favor framing of scheduling an interview. A [language constraint](narr:Claim_CreatePerspectiveNotTrain) governs the whole pitch: say \"create a perspective,\" never \"train.\" Running alongside is a self-indictment thread: [the enterprise customer's surprise](narr:Claim_TranscriptSurpriseSignal) that their own ARB transcripts were an asset, and [Scarlet's own voice-memo-and-transcript workflow](narr:Claim_VoiceMemosAndTranscriptsPrimaryInputs) going uncommunicated — both read as a pitch gap, not just a value prop. The [a practitioner beta user case (Apr 30)](narr:Claim_PractitionerBetaUserContentAvailability) extends the thesis to unstructured non-marketing content — podcasts, a forthcoming book — while carrying its own caveat. Dates run Apr 16 → Apr 30 → May 21, firming rather than reversing.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CreatePerspectiveNotTrain> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FirefliesWebhookActivePitch> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PractitionerBetaUserContentAvailability> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OnboardingPromiseSixMonthsTranscripts> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TranscriptSurpriseSignal> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_VoiceMemosAndTranscriptsPrimaryInputs> ;
+    narr:keyPhrase [ narr:text "Send us six months of transcripts and get a perspective tomorrow" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OnboardingPromiseSixMonthsTranscripts> ] ;
+    narr:keyPhrase [ narr:text "send me your last 10 Fireflies transcripts and I'll give you back a working perspective tomorrow" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FirefliesWebhookActivePitch> ] ;
+    narr:keyPhrase [ narr:text "Do NOT say 'train' — say 'create a perspective'" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CreatePerspectiveNotTrain> ] ;
+    narr:keyPhrase [ narr:text "conversations you're already having" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CreatePerspectiveNotTrain> ] ;
+    narr:keyPhrase [ narr:text "The pattern of surprise-to-them is the pitch gap." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_TranscriptSurpriseSignal> ] ;
+    narr:variation [ narr:text "Two readings of the same evidence: transcripts are a useful asset vs. aswritten is failing to communicate them as the default pitch — the surprise IS the gap." ; narr:over <https://aswritten.ai/narrative#Claim_TranscriptSurpriseSignal> ; narr:over <https://aswritten.ai/narrative#Claim_VoiceMemosAndTranscriptsPrimaryInputs> ] ;
+    narr:variation [ narr:text "a practitioner beta user caveat qualifies the 'ready asset' mainline: many podcasts don't contain direct statements about his own practice — the framing is implied, not stated 'I do those things in these ways.'" ; narr:over <https://aswritten.ai/narrative#Claim_PractitionerBetaUserContentAvailability> ] ;
+    narr:variation [ narr:text "Pitch-mechanics tension: the Fireflies opener is favored over 'let's schedule an interview' specifically because it removes the favor framing — a positioning claim, not just a capability claim." ; narr:over <https://aswritten.ai/narrative#Claim_FirefliesWebhookActivePitch> ] ;
+    narr:variation [ narr:text "Scope outlier: condensing unstructured content never intended as marketing into an interrogable perspective extends the thesis beyond call transcripts into podcasts/book/blog." ; narr:over <https://aswritten.ai/narrative#Claim_PractitionerBetaUserContentAvailability> ] ;
+    narr:variation [ narr:text "Hard language constraint that can override otherwise-accurate phrasing: 'train' is forbidden even though bulk AI-summarization ingestion is the underlying mechanism." ; narr:over <https://aswritten.ai/narrative#Claim_CreatePerspectiveNotTrain> ; narr:over <https://aswritten.ai/narrative#Claim_OnboardingPromiseSixMonthsTranscripts> ] ;
+    narr:writer "claude (subscription)" .
+}

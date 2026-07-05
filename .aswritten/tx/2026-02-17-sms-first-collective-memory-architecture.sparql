@@ -1,0 +1,261 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260217T235453Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-17T23:54:53.375Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-17-sms-first-collective-memory-architecture.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:generated narr:Sample_ProductArchSMS ,
+                   narr:Product_SMSCollectiveMemory ,
+                   narr:Module_V1Spike ,
+                   narr:Module_V11GroupConsensus ,
+                   narr:Positioning_SMSProduct ,
+                   narr:Moat_SharedBackend ,
+                   narr:Sequencing_SMSProduct ,
+                   narr:Arch_GroupAsRepo ,
+                   narr:Arch_IdentityViaPhone ,
+                   narr:Arch_ParticipantsFree ,
+                   narr:Arch_PaywallBoundary  ,
+                   narr:Pricing_PerGroupSubscription ,
+                   narr:Tagline_SMSProduct ,
+                   narr:WhatIsIt_SMSProduct ,
+                   narr:StyleObs_ProductIsPhoneNumber ,
+                   narr:StyleObs_YesAndNo ,
+                   narr:StyleObs_BrandStylization ,
+                   narr:StyleObs_TableForClarity ,
+                   narr:StyleObs_StockPhrase ,
+                   narr:RubricAssess_Register ,
+                   narr:RubricAssess_Phrasing ,
+                   narr:RubricAssess_Cadence ,
+                   narr:RubricAssess_StrategicAlignment ,
+                   narr:RubricAssess_Tailoring ,
+                   narr:RubricAssess_Resonance ,
+                   narr:RubricAssess_Flow ,
+                   narr:RubricAssess_Novelty ,
+                   narr:RubricAssess_Accuracy ,
+                   narr:StyleMetrics_ProductArchSMS .
+} ;
+
+# Extracted entities and relationships
+INSERT DATA {
+  narr:Sample_ProductArchSMS a narr:Sample ;
+    dct:title "Product Architecture: SMS-First Collective Memory" ;
+    narr:inputLength 6847 ;
+    dct:created "2026-02-17"^^xsd:date ;
+    skos:note "Architecture session with Scarlet Dame and Claude following Tony Maley weekly call; exploring shared agent memory concept evolved into standalone product direction." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Product_SMSCollectiveMemory a narr:Product ;
+    skos:broader narr:ProductOverview ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "SMS-First Collective Memory" ;
+    skos:definition "Text a Twilio number. State your topic. Name your contacts. The AI interviews everyone asynchronously over SMS (and eventually Discord, Slack, email). It synthesizes perspectives, surfaces contradictions with provenance, and notifies you when consensus forms or shifts." ;
+    skos:note "No app. No install. No login. No git. The product is a phone number." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Module_V1Spike a narr:ModulesCapabilities ;
+    skos:broader narr:Product_SMSCollectiveMemory ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "V1 Spike (n8n only, no new infrastructure)" ;
+    skos:definition "Webhook on Fireflies (or Crisp, or manual SMS) detects a call/event. n8n receives webhook, runs novelty check against current snapshot (introspect). If novel: DM interview over Discord/Slack/SMS using existing interview skill protocol. Memory committed via existing remember tool. Post-extraction: notification of worldview shift to topic initiator. Role/interest-specific interpretation notifications sent to other group members." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Module_V11GroupConsensus a narr:ModulesCapabilities ;
+    skos:broader narr:Product_SMSCollectiveMemory ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "V1.1: Group Consensus / Async Deliberation" ;
+    skos:definition "Create a topic. Assign N people. AI interviews each privately and asynchronously. Synthesizes perspectives. Surfaces contradictions with provenance. Iterates until resolution or explicit decision. Like a meeting that happens over days, where everyone gets heard without scheduling conflicts, and the AI maintains the thread of argument." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Positioning_SMSProduct a narr:PositioningThesis ;
+    skos:broader narr:StrategyOverview ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "SMS-First Collective Memory Positioning" ;
+    skos:definition "Zero friction acquisition via SMS. Every interview recipient experiences the product for free. First topic free. Recipients become initiators. They've seen what the AI does, they want it for their own questions." ;
+    skos:note "SMS is acquisition, platform is expansion. Power users graduate to the full aswritten platform (Claude Code integration, MCP, stories, etc.). Both exist: SMS product and developer platform share the same backend (graph, extraction, compilation). Different UIs for different users." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Moat_SharedBackend a narr:MoatLeverage ;
+    skos:broader narr:StrategyOverview ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "Shared Backend Moat" ;
+    skos:definition "Same graph, same ontology, same SPARQL transactions. Same compile, same introspect (different LLM backing). Same memory format, same ingestion pipeline. Compile is free and local. Anyone can clone a public aswritten repo and compile it. That's the V3 marketplace — 'reusable organizational perspective.' But you can't produce a graph to compile without paid extraction." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Sequencing_SMSProduct a narr:FocusSequencing ;
+    skos:broader narr:StrategyOverview ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "SMS Product Sequencing" ;
+    skos:definition "V1: SMS-first collective memory — text a number, interview flow, worldview synthesis. V1.1: Group consensus — async deliberation with synthesis and provenance. V2: Multi-channel (Slack, Discord, email, web) + OpenClaw or similar local agent runtime. V3: Marketplace — public aswritten repos as reusable organizational perspective (compile free, extract paid). V4: Delegated authority — agents approved to act on behalf of org with worldview + authority." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Arch_GroupAsRepo a narr:SystemTopology ;
+    skos:broader narr:ArchitectureOverview ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "Group = Repo" ;
+    skos:definition "You pay for a 'collective memory' (a named group, e.g., 'aswritten advisory group'). Service account (bot) owns all repos — users never touch GitHub. One repo per group. GitHub supports 100K repos per org — plenty for now." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Arch_IdentityViaPhone a narr:SecurityPrivacyModel ;
+    skos:broader narr:ArchitectureOverview ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "Identity = Phone Number" ;
+    skos:definition "No accounts, no passwords, no OAuth for end users. Phone number is the identity. Stripe payment links for billing (SMS-delivered)." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Arch_ParticipantsFree a narr:ValueExchange ;
+    skos:broader narr:ActorIncentiveAnalysis ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "Participants are free" ;
+    skos:definition "You pay monthly per group. You invite people to topics within your group. Once someone is part of a group, they see it as a venue for their own topics. 'Is this for the aswritten advisory group?' not 'is this the group with those 3 names?'" ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Arch_PaywallBoundary a narr:ArchitectureOverview ;
+    skos:broader narr:Architecture ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "Paywall Architecture" ;
+    skos:definition "Clean line between deterministic and LLM operations. Remember (commit) and Compile (assemble graph) are free (deterministic). Extract (memory → RDF), Introspect (gap analysis), Lens (scoped compile via LLM), Stories (content generation), and Notifications (per-actor interpretation) are paid (LLM operations)." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Pricing_PerGroupSubscription a narr:PackagingEntitlement ;
+    skos:broader narr:ProductOverview ;
+    dct:source narr:Sample_ProductArchSMS ;
+    skos:prefLabel "Per-group monthly subscription" ;
+    skos:definition "Per-group monthly subscription (back to pay-per-repo). First topic free (viral acquisition). Participants free (removes friction from the viral loop). Topic lists are dynamic within a group." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:Tagline_SMSProduct a narr:Tagline ;
+    skos:broader narr:NarrativeAnchor ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value "The product is a phone number." ;
+    skos:note "Encodes zero-friction promise: no app, no install, no login, no git." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:WhatIsIt_SMSProduct a narr:WhatIsIt ;
+    skos:broader narr:NarrativeAnchor ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value "SMS-first collective memory: text a number, state your topic, name your contacts. The AI interviews everyone asynchronously, synthesizes perspectives, surfaces contradictions with provenance, and notifies you when consensus forms or shifts." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:StyleObs_ProductIsPhoneNumber a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_ProductArchSMS ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    rdf:value true ;
+    skos:note "Single-sentence paragraph. Declarative. Punchy. Encodes entire positioning thesis." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:StyleObs_YesAndNo a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_ProductArchSMS ;
+    oa:hasBody narr:Antithesis ;
+    rdf:value true ;
+    skos:note "Rhetorical question followed by antithetical answer. Sets up dual-product thesis." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:StyleObs_BrandStylization a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_ProductArchSMS ;
+    oa:hasBody narr:BrandNameStylization ;
+    rdf:value true ;
+    skos:note "Lowercase brand stylization consistent across document." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:StyleObs_TableForClarity a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:InformationArchitecture ;
+    dct:source narr:Sample_ProductArchSMS ;
+    oa:hasBody narr:InformationArchitecture ;
+    rdf:value true ;
+    skos:note "Markdown table for paywall boundary. Structured, scannable, technical clarity." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:StyleObs_StockPhrase a narr:StyleObservation , oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_ProductArchSMS ;
+    oa:hasBody narr:StockPhrases ;
+    rdf:value true ;
+    skos:note "Recurring phrase for V3 marketplace concept. Canonical term for graph-as-product." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:RubricAssess_Register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value 4.5 ;
+    skos:note "Direct, technical, conversational. Second-person ('you pay'). Active voice dominant. Appropriate for internal architecture doc." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:RubricAssess_Phrasing a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value 4.0 ;
+    skos:note "Domain-specific verbs (introspect, compile, extract). Stock phrases ('reusable organizational perspective'). Idiolect present but not heavy." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:RubricAssess_Cadence a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value 4.5 ;
+    skos:note "Short, punchy sentences. 'The product is a phone number.' 'Yes and no.' Variation with longer explanatory passages. Strong rhythm." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:RubricAssess_StrategicAlignment a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value 5.0 ;
+    skos:note "Explicit strategy articulation: positioning, moat, sequencing, vision scaling. Directly addresses 'Could This Be The Whole Product?' Tight alignment with narrative anchor." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:RubricAssess_Tailoring a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value 4.0 ;
+    skos:note "Tailored for internal architecture session. Assumes familiarity with aswritten primitives (introspect, remember, compile). Would need adaptation for external audiences." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:RubricAssess_Resonance a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value 4.0 ;
+    skos:note "Analogy: 'Like a meeting that happens over days.' Concrete examples (Fireflies, Crisp, Twilio). Provenance to Tony Maley call. Good grounding." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:RubricAssess_Flow a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value 4.5 ;
+    skos:note "Natural progression: origin → product → V1 spike → V1.1 → vision scaling → architecture → pricing → open questions. Transitions clear. Minimal formulaic scaffolding." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:RubricAssess_Novelty a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value 4.0 ;
+    skos:note "Fresh framing: 'The product is a phone number.' 'SMS is acquisition, platform is expansion.' Some domain boilerplate (V1, V1.1, V2 labels). Overall high originality." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:RubricAssess_Accuracy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_ProductArchSMS ;
+    rdf:value 5.0 ;
+    skos:note "Accurate references to existing skills (interview skill, agents skill, aswritten primitives). Correct technical details (GitHub 100K repo limit, n8n nodes). Provenance to Tony Maley call. No factual errors detected." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+
+  narr:StyleMetrics_ProductArchSMS a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_ProductArchSMS ;
+    narr:AverageSentenceLength 18.2 ;
+    narr:ActiveVoiceRatio 0.82 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: 10.5" ;
+    skos:note "Concise, active, technical. Appropriate for internal architecture documentation." ;
+    prov:wasGeneratedBy narr:Tx_20260217T235453Z .
+}

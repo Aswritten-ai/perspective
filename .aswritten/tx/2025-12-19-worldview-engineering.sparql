@@ -1,0 +1,456 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology/storybook#>
+PREFIX storytwin: <http://storytwin.com/ontology/core#>
+
+# ========================================
+# Transaction-level Provenance
+# ========================================
+
+INSERT DATA {
+  narr:Tx_20260128T203926Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai> ;
+    prov:wasAttributedTo <http://n8n.aswritten.ai> ;
+    prov:generatedAtTime "2026-01-28T20:39:26.715Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2025-12-19-worldview-engineering.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:used <anthropic/claude-sonnet-4.5> .
+
+  # ========================================
+  # Sample & Narratives
+  # ========================================
+
+  narr:Sample_AIOrg_2025 a narr:Sample ;
+    dct:title "Draft Memory: AI-Native Organizational Paradigm Shift" ;
+    narr:inputLength 18453 ;
+    dct:created "2025-01-29T00:00:00Z"^^xsd:dateTime ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:Narrative_WorldviewAsProduct a narr:Narrative ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:theme "Worldview as Primary Product" ;
+    narr:direction "Transformative" ;
+    skos:broader narr:PositioningThesis ;
+    skos:note "Organizations shift from producing artifacts to producing worldview; artifacts become compilation targets." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:Narrative_FragmentationProblem a narr:Narrative ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:theme "Strategy-Execution Disconnect" ;
+    narr:direction "Problem" ;
+    skos:broader narr:Opportunity ;
+    skos:related narr:MarketContext ;
+    skos:note "Fragmented coordination across isolated tools and roles; developers lack strategic context." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:Narrative_WorldviewReview a narr:Narrative ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:theme "Review Worldview Deltas, Not Outputs" ;
+    narr:direction "Mechanism" ;
+    skos:broader narr:Strategy ;
+    skos:related narr:Process ;
+    skos:note "Review point moves upstream from outputs to worldview deltas; cascading changes become observable." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:Narrative_Telltales a narr:Narrative ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:theme "Telltales as Worldview Drift Detectors" ;
+    narr:direction "Observability" ;
+    skos:broader narr:Architecture ;
+    skos:related narr:MetricsMonitoring ;
+    skos:note "Automatically recompiled stories serve as sensitive instruments for detecting worldview drift." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:Narrative_WhiteSpace a narr:Narrative ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:theme "AI Fills Unspecified Space with Training Defaults" ;
+    narr:direction "Risk" ;
+    skos:broader narr:RiskGuardrails ;
+    skos:related narr:Architecture ;
+    skos:note "Without organizational worldview, AI agents default to training distribution; worldview engineering prevents drift." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:Narrative_DemocratizationContext a narr:Narrative ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:theme "Democratization of Strategic Context" ;
+    narr:direction "Enablement" ;
+    skos:broader narr:Strategy ;
+    skos:related narr:Organization ;
+    skos:note "Strategic context propagates automatically when all role agents query the same compiled worldview." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:Narrative_BranchingWorldview a narr:Narrative ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:theme "Version-Controlled Worldview Evolution" ;
+    narr:direction "Mechanism" ;
+    skos:broader narr:Strategy ;
+    skos:related narr:Architecture ;
+    skos:note "Worldview becomes branchable like code; direction changes are explicit, reviewable, testable." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:Narrative_ThreePhaseBeta a narr:Narrative ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:theme "Three-Phase Beta: Content → People → Process" ;
+    narr:direction "GTM Strategy" ;
+    skos:broader narr:NarrativeDrivenRoadmap ;
+    skos:related narr:FocusSequencing ;
+    skos:note "Phase 1: Run content as proof. Phase 2: Add people to process. Phase 3: Show the process to organizational partners." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:Narrative_OutputBeforeSystem a narr:Narrative ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:theme "Output Before System" ;
+    narr:direction "Sales Insight" ;
+    skos:broader narr:SalesDecks ;
+    skos:note "Prospects must experience output (content reflecting their input) before understanding the system." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  # ========================================
+  # Case Study Entities (addressing INCOMPLETE_EXTRACTION)
+  # ========================================
+
+  narr:CaseStudy_BeforeAfterChatGPT a narr:CaseStudy ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    skos:broader narr:CaseStudies ;
+    dct:title "Before/After ChatGPT Comparison" ;
+    skos:note "Demonstrates worldview compilation by showing same content generated before and after ChatGPT context injection." ;
+    skos:related narr:Narrative_OutputBeforeSystem ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:CaseStudy_OneShotApplication a narr:CaseStudy ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    skos:broader narr:CaseStudies ;
+    dct:title "One-Shot Application Comparison" ;
+    skos:note "Shows worldview-driven output vs. generic AI output for same prompt, demonstrating strategic context propagation." ;
+    skos:related narr:Narrative_DemocratizationContext ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:CaseStudy_FeedbackLoop a narr:CaseStudy ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    skos:broader narr:CaseStudies ;
+    dct:title "Feedback Loop Demonstration" ;
+    skos:note "Illustrates telltales detecting worldview drift and triggering recompilation cascade." ;
+    skos:related narr:Narrative_Telltales ;
+    skos:related narr:Narrative_WorldviewReview ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  # ========================================
+  # Style Observations (Annotations)
+  # ========================================
+
+  narr:StyleObs_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 450 ;
+        oa:end 550
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the treatment of an organization as an AI organism, right? Whose DNA, if you will, is expressed" ;
+        oa:prefix "It's " ;
+        oa:suffix " across all of its features"
+      ]
+    ] ;
+    skos:related narr:NarrativeAnchor ;
+    rdf:value true ;
+    skos:note "Extended biological metaphor: organization as organism, worldview as DNA, artifacts as phenotype." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:StyleObs_2 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1200 ;
+        oa:end 1250
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "kick the tires" ;
+        oa:prefix "just to do, you know, " ;
+        oa:suffix ". But, you know, quickly"
+      ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Colloquial stock phrase indicating informal testing/validation phase." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:StyleObs_3 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2100 ;
+        oa:end 2180
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "recompiles everything and gets us, you know, closer and closer to where we want to go" ;
+        oa:prefix "which then " ;
+        oa:suffix " as a whole unit"
+      ]
+    ] ;
+    skos:related narr:WhatDoesItDo ;
+    rdf:value true ;
+    skos:note "Technical verb 'recompiles' applied to organizational process; progressive 'closer and closer' emphasizes iteration." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:StyleObs_4 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3500 ;
+        oa:end 3600
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "They serve as telltales. That's the right word. They serve as telltales" ;
+        oa:prefix "waymarkers is the right term. " ;
+        oa:suffix " of changes in underlying worldview."
+      ]
+    ] ;
+    skos:related narr:Narratives ;
+    rdf:value true ;
+    skos:note "Sailing metaphor: telltales (wind indicators) → worldview drift detectors; self-correction on terminology choice." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:StyleObs_5 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5200 ;
+        oa:end 5280
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The answer is no. The answer is that all of your, you know, an AI will always fill" ;
+        oa:prefix "And what we want to do is " ;
+        oa:suffix " in the white space"
+      ]
+    ] ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Repetitive sentence structure ('The answer is...') creates emphatic rhythm; short declarative clauses." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:StyleObs_6 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 8900 ;
+        oa:end 8930
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "collective memory" ;
+        oa:prefix "And with " ;
+        oa:suffix " where we have an organization"
+      ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Product name in lowercase; consistent stylization throughout document." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:StyleObs_7 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:SecondPerson ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasBody narr:SecondPerson ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 10200 ;
+        oa:end 10280
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "you can connect that to anything that you could automate with Zapier" ;
+        oa:prefix "I mean, really, " ;
+        oa:suffix " or n8n when those files"
+      ]
+    ] ;
+    skos:related narr:ToneDirectPersonal ;
+    rdf:value true ;
+    skos:note "Direct address ('you') creates conversational, instructional tone; assumes reader agency." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:StyleObs_8 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 12500 ;
+        oa:end 12600
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Documentation describes; worldview generates. Documentation goes stale; worldview evolves" ;
+        oa:prefix "it's structural and operational. " ;
+        oa:suffix " through use. Documentation requires"
+      ]
+    ] ;
+    oa:hasBody narr:Parallelism ;
+    skos:related narr:FlowCoherence ;
+    rdf:value true ;
+    skos:note "Parallel structure (X does Y; Z does W) creates rhythmic contrast between old and new paradigms." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:StyleObs_9 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasBody narr:Antithesis ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 14800 ;
+        oa:end 14900
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The past 20-25 years optimized for human-readable documentation; AI-native paradigm optimizes for machine-queryable worldview" ;
+        oa:prefix "The claim is that " ;
+        oa:suffix ", human-AI co-creation"
+      ]
+    ] ;
+    skos:related narr:RhetoricalDevices ;
+    rdf:value true ;
+    skos:note "Explicit contrast structure (past vs. future paradigm) using antithesis to highlight shift." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:StyleObs_10 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 16200 ;
+        oa:end 16280
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "explicit, reviewable, and testable" ;
+        oa:prefix "direction changes " ;
+        oa:suffix " before they become operational"
+      ]
+    ] ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Triadic list for emphasis and memorability; common rhetorical pattern throughout document." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  # ========================================
+  # Rubric Assessments
+  # ========================================
+
+  narr:RubricAssess_Register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    rdf:value 4.0 ;
+    skos:note "Conversational-authoritative register; mixes colloquial ('kick the tires') with technical precision ('compilation targets'). Second-person address creates directness." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:RubricAssess_Phrasing a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    rdf:value 4.5 ;
+    skos:note "Strong idiolect: 'worldview as product', 'render targets', 'steering vector', 'telltales'. Domain-specific verbs (recompiles, cascades) used consistently. Self-correction on terminology ('waymarkers... no, telltales') shows deliberate word choice." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:RubricAssess_Cadence a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    rdf:value 3.5 ;
+    skos:note "Mixed cadence: some punchy declaratives ('The answer is no.'), but also long explanatory clauses with hedges ('you know', 'right?'). Transcribed speech patterns visible; would benefit from editing for written form." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:RubricAssess_StrategicAlignment a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    rdf:value 5.0 ;
+    skos:note "Exceptional alignment: document IS the strategy. Every section ties back to core thesis (worldview as product). Three-phase beta, case study requirements, hiring priorities all derive from strategic positioning. Meta-demonstration of the product's own value proposition." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:RubricAssess_Tailoring a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    rdf:value 4.0 ;
+    skos:note "Tailored to technical/strategic audience familiar with AI, version control, organizational design. Assumes knowledge of Git, agentic systems, compilation metaphors. Less accessible to non-technical stakeholders without translation." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:RubricAssess_Resonance a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    rdf:value 4.5 ;
+    skos:note "Strong use of analogies (DNA/phenotype, telltales, Git for cognition) that ground abstract concepts. Concrete examples (developer asking for strategy call, PRD review process) make pain points tangible. Biological and sailing metaphors particularly effective." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:RubricAssess_Flow a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    rdf:value 3.5 ;
+    skos:note "Logical progression from problem → mechanism → strategy → execution. Some transitions abrupt (topic shifts without signposting). Transcribed speech patterns (hedges, self-corrections) disrupt written flow. Would benefit from editorial tightening." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:RubricAssess_Novelty a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    rdf:value 4.5 ;
+    skos:note "High conceptual novelty: 'worldview as executable strategy', 'telltales for drift detection', 'review worldview deltas not outputs'. Avoids AI hype clichés. Some domain-standard phrases ('one-shot', 'agentic') but used precisely. Fresh framing of organizational paradigm shift." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  narr:RubricAssess_Accuracy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    rdf:value 4.0 ;
+    skos:note "Technically accurate on AI behavior (training distribution defaults, context windows). Product claims (branching, compilation, version control) align with described architecture. No citations for external claims (20-year paradigm shift). Named entities (Zapier, n8n, Ghost, WordPress) correct." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+
+  # ========================================
+  # Style Metrics
+  # ========================================
+
+  narr:StyleMetrics_AIOrg a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_AIOrg_2025 ;
+    narr:AverageSentenceLength 28.5 ;
+    narr:ActiveVoiceRatio 0.72 ;
+    narr:JargonDensity 0.15 ;
+    narr:TypeTokenRatio 0.58 ;
+    skos:note "Metrics computed on full text. Moderate sentence length; high active voice; controlled jargon density; good lexical diversity (TTR)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T203926Z .
+}

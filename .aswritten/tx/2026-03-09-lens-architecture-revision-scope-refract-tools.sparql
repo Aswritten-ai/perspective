@@ -1,0 +1,277 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260309T152827Z a prov:Activity ;
+    dct:title "Lens Architecture Revision: Scope, Refract, and the Five-Tool Model" ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-03-09T15:28:27Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-03-09-lens-architecture-revision-scope-refract-tools.md" ;
+    sb:originRef "main" ;
+    sb:model "anthropic/claude-sonnet-4.6" .
+} ;
+
+# =============================================================
+# ADDS — Sample
+# =============================================================
+INSERT DATA {
+  narr:Sample_LensArchRevision a narr:Sample ;
+    dct:title "Lens Architecture Revision: Scope, Refract, and the Five-Tool Model, March 9, 2026" ;
+    narr:inputLength 5842 ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+} ;
+
+# =============================================================
+# ADDS — Narratives
+# =============================================================
+INSERT DATA {
+  narr:Narrative_DesignByRejection a narr:Narrative ;
+    dct:source narr:Sample_LensArchRevision ;
+    narr:theme "Architecture emerges through successive rejection of conflation and metadata drift" ;
+    skos:broader narr:StrategyOverview ;
+    skos:note "Scarlet rejects focus-in-compile, rejects subgraph-in-introspect, rejects metadata in registry — each rejection sharpens tool boundaries" ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:Narrative_DocumentAsSelfDescribing a narr:Narrative ;
+    dct:source narr:Sample_LensArchRevision ;
+    narr:theme "The document speaks for itself; metadata is brittle and prone to drift" ;
+    skos:broader narr:DataModelLifecycle ;
+    skos:note "Registry simplified to paths only; scope and refract operate on actual text, not keyword annotations" ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:Narrative_ConvergenceAsSharpness a narr:Narrative ;
+    dct:source narr:Sample_LensArchRevision ;
+    narr:theme "The goal of review is sharpness on the branch's intent, not exhaustive coverage" ;
+    skos:broader narr:QualityReviewGates ;
+    skos:note "Lenses converge toward the branch target and its opposite to confirm directional correctness" ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+} ;
+
+# =============================================================
+# ADDS — Claims
+# =============================================================
+INSERT DATA {
+  narr:Claim_CompileRename a narr:Claim ;
+    narr:aboutNode narr:ModulesCapabilities ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:assertsStatement [ rdf:value "compile should be renamed worldview or something; it should almost always return the core worldview at the top of the chat" ] ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:Claim_ScopeVsIntrospect a narr:Claim ;
+    narr:aboutNode narr:DesignTradeoffs ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:assertsStatement [ rdf:value "Analysis (gaps, tensions) is for picking the lens; content (claims, convictions, provenance) is for drafting from; mixing them makes both harder to use" ] ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:Claim_ScopeDefinition a narr:Claim ;
+    narr:aboutNode narr:Primitives ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:assertsStatement [ rdf:value "scope takes arbitrary focus + context (both free text); the text defines the scope; no keywords, no predefined domain buckets" ] ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:Claim_RefractDefinition a narr:Claim ;
+    narr:aboutNode narr:Primitives ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:assertsStatement [ rdf:value "refract takes a document and a TX (or arbitrary prompt) and returns focus areas for shifts in the document; it is change detection + focus generation, not content retrieval" ] ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:Claim_RegistrySimplification a narr:Claim ;
+    narr:aboutNode narr:DataModelLifecycle ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:assertsStatement [ rdf:value "Registry is now just paths; no focus or intent metadata; checking for changes against focus is brittle, it should check against actual text" ] ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:Claim_ScopeBuildFirst a narr:Claim ;
+    narr:aboutNode narr:NarrativeDrivenRoadmap ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:assertsStatement [ rdf:value "Build order: scope → refract → register → lens → enhanced start_review; scope is the foundation — everything else depends on it" ] ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:Claim_ScopeFragility a narr:Claim ;
+    narr:aboutNode narr:RiskGuardrails ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:assertsStatement [ rdf:value "Scope with narrow keywords risks excluding relevant material; passing a full document as context mitigates this; better than compressed worldview" ] ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:Claim_TXIsPrompt a narr:Claim ;
+    narr:aboutNode narr:Primitives ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:assertsStatement [ rdf:value "A TX is really just a structured description of a change; refract can accept an arbitrary prompt as the change description" ] ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+} ;
+
+# =============================================================
+# ADDS — Style Observations
+# =============================================================
+INSERT DATA {
+  narr:StyleObs_DirectRejection a narr:StyleObservation ;
+    skos:broader narr:ToneDirectPersonal ;
+    skos:related narr:SpeakerIdiolects ;
+    skos:note "Scarlet's voice: blunt, first-person rejection with embedded rationale" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_ScopeImperative a narr:StyleObservation ;
+    skos:broader narr:ToneAuthoritative ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Declarative definition pattern: tool name + takes + returns; no hedging" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_BacktickToolNames a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    skos:related narr:NamingConventions ;
+    skos:note "Tool names consistently wrapped in backticks: `scope`, `refract`, `lens`, `worldview`, `introspect` — code-style naming in prose" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_NotPattern a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    skos:related narr:WhatItsNot ;
+    skos:note "Explicit NOT-pattern used to sharpen definitions: 'Refract is NOT content retrieval... Refract is CHANGE DETECTION'" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_AllCapsEmphasis a narr:StyleObservation ;
+    skos:broader narr:AICompanyizationCase ;
+    skos:related narr:ToneAuthoritative ;
+    skos:note "ALL-CAPS used for definitional emphasis: NOT, CHANGE DETECTION, FOCUS GENERATION — signals architectural finality" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_FiveToolTable a narr:StyleObservation ;
+    skos:broader narr:InformationArchitecture ;
+    skos:related narr:ModulesCapabilities ;
+    skos:note "Markdown table used as canonical architecture definition: Tool | Question | Input | Output — four-column single-responsibility matrix" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_NumberedFlow a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    skos:related narr:CoreWorkflows ;
+    skos:note "Numbered list cadence for process flows: each step is a single action verb phrase, no subordinate clauses — imperative procedural register" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_ArrowOperator a narr:StyleObservation ;
+    skos:broader narr:NamingConventions ;
+    skos:related narr:Flows ;
+    skos:note "→ (arrow) used consistently as a flow/yields operator in both prose and lists: 'refract(document, tx) → focus areas'" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_ConvergenceQuote a narr:StyleObservation ;
+    skos:broader narr:ToneDirectPersonal ;
+    skos:related narr:Mission ;
+    skos:note "Scarlet defines review purpose with a binary opposition: 'sharp on the thing the branch is trying to do' vs. 'answer all questions'" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_FragilityHedge a narr:StyleObservation ;
+    skos:broader narr:ToneVoice ;
+    skos:related narr:RiskGuardrails ;
+    skos:note "Concession pattern: risk acknowledged then immediately bounded — 'This is acknowledged... This is acceptable: better than...'" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_OpenQuestions a narr:StyleObservation ;
+    skos:broader narr:RhetoricalQuestion ;
+    skos:related narr:FeedbackLoops ;
+    skos:note "Open Questions section uses direct rhetorical questions to surface unresolved design decisions — each question is a bounded scope" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+
+  narr:StyleObs_ParentheticalClarification a narr:StyleObservation ;
+    skos:broader narr:ClauseComplexity ;
+    skos:related narr:PlainLanguage ;
+    skos:note "Inline parentheticals used to immediately gloss technical terms: '(that's scope)', '(or arbitrary change description — a TX is really just...)'" ;
+    rdf:value true ;
+    dct:source narr:Sample_LensArchRevision ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+} ;
+
+# =============================================================
+# ADDS — Style Metrics
+# =============================================================
+INSERT DATA {
+  narr:StyleMetrics_LensArchRevision a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_LensArchRevision ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio "0.88"^^xsd:decimal ;
+    narr:JargonDensity "0.12"^^xsd:decimal ;
+    narr:Conciseness "high — numbered lists, single-action steps, no subordinate padding" ;
+    skos:note "Technical-procedural register; high active voice; moderate jargon (domain-specific tool names); short imperative sentences dominate process flows; prose sections use longer analytical sentences" ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+} ;
+
+# =============================================================
+# UPDATES — Actor_ScarletDame: add new skos:note and provenance link
+# =============================================================
+DELETE {
+  narr:Actor_ScarletDame skos:note ?oldNote .
+}
+INSERT {
+  narr:Actor_ScarletDame
+    skos:note "Primary decision-maker and product designer in the lens architecture session" ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+}
+WHERE {
+  OPTIONAL { narr:Actor_ScarletDame skos:note ?oldNote . }
+} ;
+
+# =============================================================
+# UPDATES — Narrative_SeparationOfConcerns: source, broader, theme, note
+# =============================================================
+DELETE {
+  narr:Narrative_SeparationOfConcerns dct:source ?oldSource .
+  narr:Narrative_SeparationOfConcerns narr:theme ?oldTheme .
+  narr:Narrative_SeparationOfConcerns skos:broader ?oldBroader .
+  narr:Narrative_SeparationOfConcerns skos:note ?oldNote .
+  narr:Narrative_SeparationOfConcerns prov:wasGeneratedBy ?oldTx .
+}
+INSERT {
+  narr:Narrative_SeparationOfConcerns
+    dct:source narr:Sample_LensArchRevision ;
+    narr:theme "Each tool does exactly one thing; no tool tries to do two things" ;
+    skos:broader narr:ArchitectureOverview ;
+    skos:note "The Five-Tool Model converges on strict single-responsibility: worldview, introspect, scope, refract, lens each answer one distinct question" ;
+    prov:wasGeneratedBy narr:Tx_20260309T152827Z .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_SeparationOfConcerns dct:source ?oldSource . }
+  OPTIONAL { narr:Narrative_SeparationOfConcerns narr:theme ?oldTheme . }
+  OPTIONAL { narr:Narrative_SeparationOfConcerns skos:broader ?oldBroader . }
+  OPTIONAL { narr:Narrative_SeparationOfConcerns skos:note ?oldNote . }
+  OPTIONAL { narr:Narrative_SeparationOfConcerns prov:wasGeneratedBy ?oldTx . }
+}

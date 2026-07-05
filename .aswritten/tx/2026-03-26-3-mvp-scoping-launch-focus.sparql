@@ -1,0 +1,472 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction Provenance (default graph) ────────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260326T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-26T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-26-mvp-scoping-session.md" ;
+    narr:originRef "main" ;
+    dct:title "MVP Scoping Session: What Ships, What's Cut, and Why" ;
+    prov:generated
+      narr:Sample_ScarletMVPScoping_20260326,
+      narr:Narrative_FocusOvertooling,
+      narr:Narrative_SeparationPrincipleProductVsOrg,
+      narr:Narrative_ExpertSingleStreamWorldview,
+      narr:Claim_StoriesRemoved,
+      narr:Claim_NotificationsRemoved,
+      narr:Claim_DiscoveriesRemoved,
+      narr:Claim_RefractRegistryRemovedFromProduct,
+      narr:Claim_TXSummariesAutoGenRemoved,
+      narr:Claim_MemoriesSourceToolRemoved,
+      narr:Claim_AdminTierEliminated,
+      narr:Claim_FeedbackHelpAboveLine,
+      narr:Claim_TeamPlanAtLaunch,
+      narr:Claim_ExpertSingleStreamNoGitBranching,
+      narr:Claim_ReviewToolThreeCases,
+      narr:Claim_PlanGatedInstructionsFromCompile,
+      narr:Claim_FreeIsTheTrial,
+      narr:Claim_RefractBecomesLocalSkill,
+      narr:Claim_ChangelogStoryLocalSkillCron,
+      narr:Claim_BlogPostIdeasLocalSkill,
+      narr:Claim_GraphHealthLocalSkill,
+      narr:Claim_ReviewEyeChartsSkillPrompt,
+      narr:Obs_CoreThesisQuote1,
+      narr:Obs_CoreThesisQuote2,
+      narr:Obs_StoriesRemovalQuote,
+      narr:Obs_SeparationPrincipleQuote,
+      narr:Obs_FeedbackHelpQuote,
+      narr:Obs_ExtractionEvalsQuote,
+      narr:Obs_ExpertSingleStreamQuote,
+      narr:Obs_ReviewToolQuote,
+      narr:Obs_PlanGatedQuote,
+      narr:Obs_FreeTrialQuote,
+      narr:Obs_RefractSkillQuote,
+      narr:StyleObs_OpinionatedWorkflowAnalogy,
+      narr:StyleObs_ConflatingProcessesRetraction,
+      narr:StyleObs_SuperSuper,
+      narr:StyleMetrics_ScarletMVPScoping .
+} ;
+
+# ── Extracted Entities (named graph) ─────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260326T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_ScarletMVPScoping_20260326 a narr:Sample ;
+      dct:title "MVP Scoping Session: What Ships, What's Cut, and Why" ;
+      dct:created "2026-03-26"^^xsd:date ;
+      narr:inputLength "9842"^^xsd:integer ;
+      dct:description "Walking voice memo → session. Scarlet reviewing what's above/below the line for April 1 launch. Major scoping decisions driven by the synchronous extraction pipeline (Mar 24) fundamentally changing what's needed." .
+
+    # ── Narratives ──────────────────────────────────────────────────────────
+
+    narr:Narrative_FocusOvertooling a narr:Narrative ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      narr:theme "Radical product focus: bounded behaviors done extremely well over feature breadth" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "The governing principle for all MVP scoping decisions: the product does a bounded set of behaviors that perform a bounded set of tasks extremely well. Explicitly compared to Apple (opinionated workflow) vs. Microsoft (does everything). The hardest thing is focus." .
+
+    narr:Narrative_SeparationPrincipleProductVsOrg a narr:Narrative ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      narr:theme "Separation of product features from org automation: what ships vs. what Scarlet runs internally" ;
+      skos:broader narr:FocusSequencing ;
+      skos:note "Running through the entire session: a distinction between product features (compile, remember, review, introspect, annotate, feedback/help) and org automation (changelog, graph health, refract, blog post generation). The latter become local skills or scheduled crons." .
+
+    narr:Narrative_ExpertSingleStreamWorldview a narr:Narrative ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      narr:theme "Expert plan adopts single-stream worldview: no branching, no PRs, one worldview updated on every remember" ;
+      skos:broader narr:OperatingModelShifts ;
+      skos:note "Major architectural decision for Expert tier: memories save to main by default, no multiple review, no concurrent branch handling. The remember → review → merge cycle becomes remember → get TX → optionally review → done." .
+
+    # ── Claims: Hard Removes ─────────────────────────────────────────────────
+
+    narr:Claim_StoriesRemoved a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Stories system entirely removed from product. TX summaries now returned directly from synchronous remember; blog post ideas, changelog, graph health become on-demand local skills. Workflows to delete: stories-list, story-draft, story-write, story-backfill, story-narrate-diff. Strip story calls from tx-post-commit (keep PR comment)." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    narr:Claim_NotificationsRemoved a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Notifications system entirely removed. Synchronous remember eliminates primary use case (memory processed notification). Secondary case (review requests) handled by GitHub natively. Workflows to delete: review-notify, msg-review-notify. Keep msg-send and front-webhook for feedback/help tool." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    narr:Claim_DiscoveriesRemoved a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Discoveries fully removed (not just disabled). Already disabled but artifacts remain. Full deletion required." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    narr:Claim_RefractRegistryRemovedFromProduct a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Refract tool and registry removed from product. Registry is just the docs folder. Refract becomes a local Claude Code skill. Eliminates need to separate tools between org and everyone else — now one tool set for everyone. Workflows to delete: graph-refract, graph-scope (scope rolling into introspect). Remove from mcp-generic tool routing." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    narr:Claim_TXSummariesAutoGenRemoved a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "TX summaries on PR removed as auto-generated feature. Agent provides this from the returned transaction. Keep the PR comment mechanism in tx-post-commit — not hurting anything." .
+
+    narr:Claim_MemoriesSourceToolRemoved a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Memories/source tool removed from product. Memories are just files in the repo — anyone with a coding agent can read them directly. Org-only skill at most." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    narr:Claim_AdminTierEliminated a narr:Claim ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Admin tier eliminated. Everything that was admin-only (stories, register, refract, memories/source) is now either an org-repo Claude Code skill or just 'read the files.' No separate admin tier needed. Ontology (raw access) moves to Team/Org tier." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    # ── Claims: What's Added / Elevated ─────────────────────────────────────
+
+    narr:Claim_FeedbackHelpAboveLine a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Feedback/help tool is above the line for launch. MCP tool that sends user a confirmation message (phone or email) and forwards request text to Scarlet. Front stays active to support this — only use of Front going forward. Prompt user to add phone to Outseta." .
+
+    narr:Claim_TeamPlanAtLaunch a narr:Claim ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Team plan available at launch. Doesn't need full automation (task-169 repo transfer stays below the line) but manual flow must work. People being talked to need collaboration features." .
+
+    # ── Claims: Expert Plan Architecture ────────────────────────────────────
+
+    narr:Claim_ExpertSingleStreamNoGitBranching a narr:Claim ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Expert plan: memories save to main by default. No PRs, no branches, no merge-via-MCP (task-171 moved below the line), no concurrent branch handling, no rebase bugs. Single-stream worldview — every remember updates the one worldview." ;
+      narr:supports narr:Narrative_ExpertSingleStreamWorldview .
+
+    narr:Claim_ReviewToolThreeCases a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Review tool extended to three cases: (1) review PR (review a set of transactions) — team/org; (2) review a named transaction; (3) review arbitrary content. Cases 2 and 3 may be the same. Primary use case: passing a transaction or concept into review. Enables fixing wrong information by agent submitting a new memory as result of review." .
+
+    narr:Claim_PlanGatedInstructionsFromCompile a narr:Claim ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Feature gating mechanism: compile returns different instructions based on authenticated plan level. Not separate tool sets — different prompts guiding agent behavior per plan. Remember exists at all plan levels but returns upgrade prompt on free plan." .
+
+    # ── Claims: Upgrade Path UX ──────────────────────────────────────────────
+
+    narr:Claim_FreeIsTheTrial a narr:Claim ;
+      narr:aboutNode narr:ConversionPaths ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Free IS the trial. Direct link to upgrade page (not manage account → change plan). Post-upgrade instructions must be explicit. Require card at point of conversion. Don't constantly nag about upgrading. No redirect-back annoyance — push from agent with explicit next step." .
+
+    # ── Claims: Product → Skill Migration ───────────────────────────────────
+
+    narr:Claim_RefractBecomesLocalSkill a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Refract becomes a Claude Code skill (prompt-only, no n8n workflow). Reads recent TXs + snapshot + docs/ folder. Produces list of suggestions and focus areas for document update passes. Can run on cron if desired." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    narr:Claim_ChangelogStoryLocalSkillCron a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Changelog/story generation becomes a Claude Code skill on cron. Reads recent TXs/commits, compiles context, generates changelog or blog post suggestions. Scheduled weekly or after N transactions accumulate." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    narr:Claim_BlogPostIdeasLocalSkill a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Blog post ideas become a Claude Code skill invoked manually on demand. Pulls recent TXs, contextualizes, suggests posts. Natural pipeline with /draft and /ghost." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    narr:Claim_GraphHealthLocalSkill a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Graph health report moves from auto-generated story draft to a local skill producing a graph health report on demand or schedule." ;
+      narr:supports narr:Narrative_SeparationPrincipleProductVsOrg .
+
+    narr:Claim_ReviewEyeChartsSkillPrompt a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Review eye charts no longer pulled from registry. In Claude Code: review prompt offers documents from project intersecting review domains. In chat: offers documents from conversation or collective memory. In agent: pulls from repo directly. Can ask user which doc to use or generate something." .
+
+    # ── Observations ─────────────────────────────────────────────────────────
+
+    narr:Obs_CoreThesisQuote1 a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Scarlet's governing principle for all scoping decisions: bounded behaviors, bounded tasks, done extremely well." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 349 ;
+        oa:end 527
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The most important thing right now is focus. And I don't mean my personal focus, I mean, the product doing the bounded set of behaviors" ;
+        oa:prefix "Scarlet articulated the governing principle for all scoping decisions:\n\n> \"" ;
+        oa:suffix " that perform the bounded set of tasks extremely well."
+      ] .
+
+    narr:Obs_CoreThesisQuote2 a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Opinionated workflow framing: simple, beautiful, intuitive surface with real science underneath." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 570 ;
+        oa:end 740
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the goal here is an opinionated workflow that works really well. It is simple, beautiful, intuitive, but that has a lot of real science and complexity underneath the hood" ;
+        oa:prefix "> \"I think for me this has been obvious from the beginning... " ;
+        oa:suffix " that you don't have to know about."
+      ] .
+
+    narr:Obs_StoriesRemovalQuote a narr:Observation ;
+      skos:broader narr:FocusSequencing ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Clear decision to remove stories entirely from the product." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1010 ;
+        oa:end 1060
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I feel pretty clear we can remove stories entirely." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nReasoning: Stories were serving multiple purposes"
+      ] .
+
+    narr:Obs_SeparationPrincipleQuote a narr:Observation ;
+      skos:broader narr:FocusSequencing ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "The separation principle stated explicitly: conflating org automation with product is the error being corrected." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1640 ;
+        oa:end 1760
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I've been conflating processes that I could automate manually or for the org, with the product, and it's really important to separate those." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\n**Workflows to delete:**"
+      ] .
+
+    narr:Obs_FeedbackHelpQuote a narr:Observation ;
+      skos:broader narr:FeedbackLoops ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Feedback/help tool justified as churn prevention: personal response within minutes." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3020 ;
+        oa:end 3200
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Feedback and reliability at this point is super super key, and it's the number one thing that might prevent churn." ;
+        oa:prefix "> \"" ;
+        oa:suffix " If someone has a problem, they get a response within a couple minutes"
+      ] .
+
+    narr:Obs_ExtractionEvalsQuote a narr:Observation ;
+      skos:broader narr:NorthStarMetrics ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Extraction quality declared the most important part of the product, bar none." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3380 ;
+        oa:end 3460
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The most important part of the product, bar none, is does it extract valuable information from the memories." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nDecision: Capture input/output at extraction time"
+      ] .
+
+    narr:Obs_ExpertSingleStreamQuote a narr:Observation ;
+      skos:broader narr:OperatingModelShifts ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Expert plan single-stream worldview: memories to main by default, one worldview updated on every remember." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4430 ;
+        oa:end 4620
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "memories should get saved to main by default. You're not dealing with branching worldview... there is no multiple review. The user flow and interaction is single stream." ;
+        oa:prefix "> \"For the expert plan... " ;
+        oa:suffix " Every time you remember, you're updating the worldview"
+      ] .
+
+    narr:Obs_ReviewToolQuote a narr:Observation ;
+      skos:broader narr:ModulesCapabilities ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Review tool extended to three cases: review PR, review named transaction, review arbitrary content." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4820 ;
+        oa:end 4980
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I think we can extend review to have three cases... existing case, review PR, which is really just review a set of transactions." ;
+        oa:prefix "> \"" ;
+        oa:suffix " The second case is review a named transaction."
+      ] .
+
+    narr:Obs_PlanGatedQuote a narr:Observation ;
+      skos:broader narr:PackagingEntitlement ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Plan-gated instructions from compile: different prompts per plan level, not separate tool sets." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5220 ;
+        oa:end 5310
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Can we return different instructions for the server depending on authenticated plan?" ;
+        oa:prefix "> \"" ;
+        oa:suffix " Because that would be really helpful."
+      ] .
+
+    narr:Obs_FreeTrialQuote a narr:Observation ;
+      skos:broader narr:ConversionPaths ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Free plan IS the trial — converting the sale right then." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5820 ;
+        oa:end 5900
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "My argument is that free is the trial. And we're trying to make the converted sale right then." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n- Direct link to upgrade page"
+      ] .
+
+    narr:Obs_RefractSkillQuote a narr:Observation ;
+      skos:broader narr:CoreWorkflows ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Refract as local skill: reads last TX, snapshot, docs folder, produces suggestions for update pass." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6820 ;
+        oa:end 7010
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "write a skill that, after, look at the last transaction, the snapshot, and look through the docs folder... give me a list of suggestions and focus areas for us to do an update pass." ;
+        oa:prefix "And really what I'm saying is, " ;
+        oa:suffix "\"\n\nImplementation: Claude Code skill"
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+
+    narr:StyleObs_OpinionatedWorkflowAnalogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Apple vs. Microsoft analogy used to frame opinionated workflow positioning. Recurring rhetorical device: contrast with a negative archetype to sharpen identity." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletMVPScoping_20260326 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 800 ;
+          oa:end 900
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "This is the Apple comparison she's made before — not Microsoft, not a tool that does everything. An opinionated workflow." ;
+          oa:prefix "Unless you want to.\"\n\n" ;
+          oa:suffix "\n\n## Hard Removes"
+        ]
+      ] .
+
+    narr:StyleObs_ConflatingProcessesRetraction a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Self-corrective first-person voice: Scarlet explicitly names her own prior error ('I've been conflating') as the framing for the removal decisions. Authoritative yet self-aware register." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletMVPScoping_20260326 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1640 ;
+          oa:end 1760
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I've been conflating processes that I could automate manually or for the org, with the product, and it's really important to separate those." ;
+          oa:prefix "> \"" ;
+          oa:suffix "\"\n\n**Workflows to delete:**"
+        ]
+      ] .
+
+    narr:StyleObs_SuperSuper a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      skos:note "Idiolect marker: 'super super key' — doubled intensifier used for emphasis. Characteristic of Scarlet's spoken/informal register when stressing priority." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletMVPScoping_20260326 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3020 ;
+          oa:end 3080
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Feedback and reliability at this point is super super key" ;
+          oa:prefix "> \"" ;
+          oa:suffix ", and it's the number one thing that might prevent churn."
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+
+    narr:StyleMetrics_ScarletMVPScoping a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_ScarletMVPScoping_20260326 ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.21"^^xsd:decimal ;
+      skos:note "Voice memo transcription register: conversational but directive. High active voice ratio. Moderate jargon density (n8n, MCP, TX, cron, Claude Code, Postgres, Timbre, Outseta). Sentence length varies widely — short declarative decisions interspersed with longer reasoning chains. First-person singular dominant. Ellipsis used to indicate trailing speech." .
+
+  }
+}

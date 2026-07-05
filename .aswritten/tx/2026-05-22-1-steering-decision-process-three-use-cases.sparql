@@ -1,0 +1,350 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260526T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-26T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# The central frame is \"steering a decision process\" — three use cases under it" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_SteeringDecisionProcess_May2026,
+      narr:Narrative_SteeringDecisionProcess,
+      narr:Narrative_GovernanceAsSpeciesOfSteering,
+      narr:Narrative_AswrittenIsMemorySubstrate,
+      narr:Narrative_UseCase1GoverningHumanTeam,
+      narr:Narrative_UseCase2AgenticSteering,
+      narr:Narrative_UseCase3SharedProcessSteering,
+      narr:Narrative_SteeringLoopPlusMemorySubstrate,
+      narr:Claim_SteeringIsFoundingThesis,
+      narr:Claim_GovernanceGraveyardCategory,
+      narr:Claim_UseCase2Underrepresented,
+      narr:Claim_CedarCedarLoopAswrittenMemory,
+      narr:Claim_UseCase3MethodologyLayer,
+      narr:Claim_AswrittenNeverTheLoop,
+      narr:Obs_SteeringGenusQuote,
+      narr:Obs_GovernanceGraveyardQuote,
+      narr:Obs_UseCase1Quote,
+      narr:Obs_UseCase2AgenticScalesQuote,
+      narr:Obs_UseCase3Quote,
+      narr:Obs_UnifierQuote,
+      narr:StyleObs_GenusSpeciesAntithesis,
+      narr:StyleObs_BoldSectionHeaders,
+      narr:StyleObs_EmbeddedVerbatimQuotes,
+      narr:StyleMetrics_SteeringDecisionProcess .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260526T120000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────────
+    narr:Sample_SteeringDecisionProcess_May2026 a narr:Sample ;
+      dct:title "The central frame is 'steering a decision process' — three use cases under it" ;
+      dct:created "2026-05-01"^^xsd:date ;
+      dct:description "Pitch-reframe session notes from May 2026. Scarlet established 'steering a decision process' as the central organizing frame for aswritten's positioning, with three use cases: governing a human team, agentic steering, and steering shared process across engagements. Grounds the genus/species distinction between steering (genus) and governance (species)." ;
+      narr:inputLength 3842 .
+
+    # ── NARRATIVES ──────────────────────────────────────────────────────
+
+    narr:Narrative_SteeringDecisionProcess a narr:Narrative ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Steering a Decision Process: The Central Organizing Frame" ;
+      skos:note "What a recurring decision body does — an Architecture Review Board, an investment committee, a law firm's partners' meeting, a clinical case conference — is steering a process of decisions: a group, or a person, recurringly deciding how the work should go. This is the genus. Governance is one species of it (when the team is human and the venue is a formal meeting). Steering covers all three use cases; governance covers only the first. This frame was established by Scarlet across the May 2026 pitch-reframe sessions as the central organizing concept for aswritten's positioning." ;
+      narr:theme "Recurring decision bodies steer a process of decisions — governance is one species of this genus; aswritten is the memory the steering runs on across all three use cases" .
+
+    narr:Narrative_GovernanceAsSpeciesOfSteering a narr:Narrative ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:prefLabel "Governance Is One Species of Steering — Not the Category" ;
+      skos:note "'Governance' names the customer's world — their meetings, their venues. It must not become aswritten's product category: 'governance software' reads as GRC (compliance, approval workflows, audit), a graveyard category aswritten does not belong in. Steering is the genus; governance is one species. The distinction protects aswritten from being miscategorized as GRC software while still speaking the customer's language." ;
+      narr:theme "Governance names the customer's world but must not become aswritten's product category — GRC is a graveyard; steering is the genus that covers all three use cases" .
+
+    narr:Narrative_AswrittenIsMemorySubstrate a narr:Narrative ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "aswritten Is the Memory the Steering Runs On — Never the Loop" ;
+      skos:note "In every use case, aswritten is the memory the steering runs on — read at the start of the work, written at the end — never the tool that does the governing or orchestrating. The substrate is the same across all three use cases and is read by both humans and agents. This is the unifying positioning principle across the three use cases." ;
+      narr:theme "aswritten is always the substrate — read at the start of work, written at the end — never the loop that does the governing or orchestrating" .
+
+    narr:Narrative_UseCase1GoverningHumanTeam a narr:Narrative ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Use Case 1: Governing a Human Team" ;
+      skos:note "Organizational governance and process governance — the ARB is the engineering version; the act generalizes to any leadership or governance process. Faces both inward (internal architecture) and outward (what the organization can deliver to its clients). This is the use case already represented in aswritten's deck and fundraising brief." ;
+
+      narr:theme "Governing a human team — ARB, leadership processes, governance bodies — is Use Case 1; aswritten is the memory the governance runs on" .
+
+    narr:Narrative_UseCase2AgenticSteering a narr:Narrative ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Use Case 2: Agentic Steering (Currently Underrepresented)" ;
+      skos:note "Two nested scales: (1) steering one model — the founding thesis; (2) steering the entire agentic development process around it, which is functionally the same as ARB but often done by a smaller team or single person orchestrating agents instead of humans. Grounded in the a founder beta user / factoryfactory.ai briefing (PR #264): factoryfactory builds the Agent Expert Systems orchestration loop; aswritten is the memory the loop runs on. aswritten dogfoods this — its own product development is agentic steering. This use case is currently underrepresented in aswritten's materials; foregrounding it is the main thing this framing corrects." ;
+      narr:supports narr:Narrative_NamedPerspectiveArchitecture ;
+      narr:theme "Agentic steering at two scales — one model and the entire agentic ecosystem — is Use Case 2; currently underrepresented in aswritten's materials; grounded in factoryfactory.ai briefing" .
+
+    narr:Narrative_UseCase3SharedProcessSteering a narr:Narrative ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Use Case 3: Steering the Shared Process Across Engagements" ;
+      skos:note "Process governance and process steering for aligning the commonalities and shared process between different engagements, different clients, different processes — so that it can be consumed by both humans and agents. The methodology layer — the shared process underneath many engagements, extracted and aligned so one memory substrate serves every team, human or agent." ;
+      narr:theme "Steering the shared process across engagements — the methodology layer extracted and aligned so one memory substrate serves every team, human or agent — is Use Case 3" .
+
+    narr:Narrative_SteeringLoopPlusMemorySubstrate a narr:Narrative ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:prefLabel "Each Use Case Is a Steering Loop Plus a Memory Substrate" ;
+      skos:note "The unifier across all three use cases: each is a steering loop plus a memory substrate. aswritten is always the substrate — read at the start of the work, written at the end — never the loop. The team being steered is human (Use Case 1), agent (Use Case 2), or the shared process across engagements (Use Case 3); the substrate is the same, and it is read by both humans and agents." ;
+      narr:theme "Steering loop + memory substrate is the structural pattern across all three use cases; aswritten is always the substrate, never the loop" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────────────
+
+    narr:Claim_SteeringIsFoundingThesis a narr:Claim ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Steering is also aswritten's founding thesis — narrative as the steering vector for a language model. The genus (steering) connects the product's founding insight to all three use cases, making the frame internally coherent and not merely a marketing reframe." ;
+      narr:aboutNode narr:Narrative_SteeringDecisionProcess ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_SteeringDecisionProcess .
+
+    narr:Claim_GovernanceGraveyardCategory a narr:Claim ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "'Governance software' reads as GRC (compliance, approval workflows, audit) — a graveyard category aswritten does not belong in. 'Governance' names the customer's world and must be used to speak their language, but must never become aswritten's product category. This is a hard constraint on positioning language." ;
+      narr:aboutNode narr:Narrative_GovernanceAsSpeciesOfSteering ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_GovernanceAsSpeciesOfSteering .
+
+    narr:Claim_UseCase2Underrepresented a narr:Claim ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Use Case 2 (agentic steering) is currently underrepresented in aswritten's materials — the deck and fundraising brief carry Use Case 1 but not Use Case 2. Foregrounding Use Case 2 is the main thing the steering frame corrects. This is a gap in current positioning materials that must be addressed." ;
+      narr:aboutNode narr:Narrative_UseCase2AgenticSteering ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_UseCase2AgenticSteering .
+
+    narr:Claim_CedarCedarLoopAswrittenMemory a narr:Claim ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "The factoryfactory.ai briefing (PR #264) grounds Use Case 2: factoryfactory builds an 'Agent Expert Systems' orchestration loop; the reframe is 'factoryfactory builds the loop; aswritten is the memory the loop runs on.' The briefing was itself produced by a perspective-grounded agent, making it a dogfood proof point for Use Case 2." ;
+      narr:aboutNode narr:Narrative_UseCase2AgenticSteering ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_UseCase2AgenticSteering .
+
+    narr:Claim_UseCase3MethodologyLayer a narr:Claim ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Use Case 3 is the methodology layer — the shared process underneath many engagements, extracted and aligned so one memory substrate serves every team, human or agent. It addresses the commonalities across different engagements, different clients, different processes. This is distinct from Use Cases 1 and 2 in that the 'team being steered' is the shared process itself, not a specific human team or agent." ;
+      narr:aboutNode narr:Narrative_UseCase3SharedProcessSteering ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_UseCase3SharedProcessSteering .
+
+    narr:Claim_AswrittenNeverTheLoop a narr:Claim ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "In every use case, aswritten is the memory the steering runs on — never the tool that does the governing or orchestrating. This is a hard positioning constraint: aswritten is substrate, not loop. The loop may be a human governance process (Use Case 1), an agentic orchestration system (Use Case 2), or a methodology alignment process (Use Case 3)." ;
+      narr:aboutNode narr:Narrative_AswrittenIsMemorySubstrate ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenIsMemorySubstrate .
+
+    # ── OBSERVATIONS (grounded quotes) ──────────────────────────────────
+
+    narr:Obs_SteeringGenusQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Scarlet's canonical articulation of the genus/species distinction between steering and governance." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SteeringDecisionProcess_May2026 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 394 ;
+          oa:end 594
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Steering covers all three use cases; governance covers only the first." ;
+          oa:prefix "The genus is **steering**, which is also aswritten's founding thesis (narrative as the steering vector for a language model). " ;
+          oa:suffix " **Caveat on the word.**"
+        ]
+      ] .
+
+    narr:Obs_GovernanceGraveyardQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Scarlet's hard constraint on the word 'governance' as a product category." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SteeringDecisionProcess_May2026 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 596 ;
+          oa:end 780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "\"governance software\" reads as GRC (compliance, approval workflows, audit), a graveyard category aswritten does not belong in" ;
+          oa:prefix "It must not become aswritten's product category: " ;
+          oa:suffix ". In every use case, aswritten is the *memory the steering runs on*"
+        ]
+      ] .
+
+    narr:Obs_UseCase1Quote a narr:Observation ;
+      skos:broader narr:SolutionArchetypes ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Scarlet's verbatim articulation of Use Case 1 — governing a human team." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SteeringDecisionProcess_May2026 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 820 ;
+          oa:end 1010
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Organizational governance and process governance (i.e., what the ARB is), which is sort of a technical example, but they're also really talking about client capability." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\" The ARB is engineering's version"
+        ]
+      ] .
+
+    narr:Obs_UseCase2AgenticScalesQuote a narr:Observation ;
+      skos:broader narr:SolutionArchetypes ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Scarlet's verbatim articulation of Use Case 2 — agentic steering at two nested scales." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SteeringDecisionProcess_May2026 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1100 ;
+          oa:end 1380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "it's steering the entire ecosystem and process around technical development, which is functionally the same thing as ARB" ;
+          oa:prefix "more importantly, in a founder beta user's point, " ;
+          oa:suffix ". You're just often doing it in a smaller team"
+        ]
+      ] .
+
+    narr:Obs_UseCase3Quote a narr:Observation ;
+      skos:broader narr:SolutionArchetypes ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Scarlet's verbatim articulation of Use Case 3 — steering the shared process across engagements." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SteeringDecisionProcess_May2026 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 2020
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Process governance and process steering for aligning the commonalities and shared process between different engagements, different clients, different processes" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "... so that it can be consumed by both humans and agents."
+        ]
+      ] .
+
+    narr:Obs_UnifierQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "The unifier statement — each use case is a steering loop plus a memory substrate." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SteeringDecisionProcess_May2026 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2100 ;
+          oa:end 2280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Each use case is a steering loop plus a memory substrate. aswritten is always the substrate" ;
+          oa:prefix "**The unifier.** " ;
+          oa:suffix " — read at the start of the work, written at the end — never the loop."
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────────
+
+    narr:StyleObs_GenusSpeciesAntithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "genus-species antithesis: 'Steering covers all three use cases; governance covers only the first.' Tight parallel structure with asymmetric scope — the genus/species distinction is made in a single antithetical sentence." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SteeringDecisionProcess_May2026 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 370 ;
+          oa:end 440
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Steering covers all three use cases; governance covers only the first." ;
+          oa:prefix "The genus is **steering**, which is also aswritten's founding thesis. " ;
+          oa:suffix " **Caveat on the word.**"
+        ]
+      ] .
+
+    narr:StyleObs_BoldSectionHeaders a narr:StyleObservation ;
+      skos:broader narr:InformationArchitecture ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Bold inline section headers ('**The frame.**', '**Caveat on the word.**', '**Use case 1**', '**The unifier.**') function as scannable anchors within flowing prose — a memo-within-narrative hybrid format characteristic of Scarlet's session notes." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SteeringDecisionProcess_May2026 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 0 ;
+          oa:end 120
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**The frame.**" ;
+          oa:prefix "\n\n" ;
+          oa:suffix " What a recurring decision body does"
+        ]
+      ] .
+
+    narr:StyleObs_EmbeddedVerbatimQuotes a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Extended verbatim Scarlet quotes embedded in analytical prose — run-on, filler-heavy, first-person speech ('sort of a technical example, but they're also really talking about client capability') contrasts with the tighter editorial framing. Consistent with Scarlet session-memo idiolect across the perspective." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SteeringDecisionProcess_May2026 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 820 ;
+          oa:end 1010
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Organizational governance and process governance (i.e., what the ARB is), which is sort of a technical example, but they're also really talking about client capability." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\" The ARB is engineering's version"
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────────────
+
+    narr:StyleMetrics_SteeringDecisionProcess a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_SteeringDecisionProcess_May2026 ;
+      skos:note "Strategic pitch-reframe memo with embedded verbatim Scarlet quotes. Mixed register: tight analytical prose in editorial sections (bold headers, genus/species framing) vs. run-on first-person in blockquoted speech. Antithesis-heavy structure (steering vs. governance, genus vs. species, loop vs. substrate, human vs. agent). Active voice dominant in editorial prose. Jargon density moderate — product terms (ARB, MCP, agentic, perspective-grounded) and proper nouns (factoryfactory.ai, PR #264) used without definition, implying internal audience. Sentence length elevated by verbatim quotes; editorial sections are shorter and punchier. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.09"^^xsd:decimal .
+
+  }
+}

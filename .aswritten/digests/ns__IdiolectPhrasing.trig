@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__IdiolectPhrasing> {
+  <https://aswritten.ai/narrative#Digest_ns__IdiolectPhrasing> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#IdiolectPhrasing> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers idiolect and register observations across speakers. Tony's voice dominates the enthusiasm register: [milestone elevation](narr:StyleObs_Monumental) ('monumental', 'the cow') and [intensified appeal](narr:StyleObs_StupidExciting) ('stupid exciting', 'real contribution to the world'). Distinct from celebration is Tony's [argumentative reframing](narr:StyleObs_TonyPainFirst), where 'actually' recasts cost as a measure rather than a problem. Scarlet's idiolect runs to control metaphor in [the knob she wants to maintain](narr:StyleObs_TheKnob) around dilution timing. Process and org vocabulary surfaces separately in [colloquial product phrasing](narr:StyleObs_2) ('kick the tires', 'collective memory', 'onboarding'). A [voice-memo register note](narr:StyleObs_VoiceMemoQuotes) ('Oh shiny') contrasts celebrating a completed shift against chasing understanding. The children span enthusiasm markers, control/flexibility metaphors, reframing moves, and informal product idiom — recognizably about *how* these speakers phrase things, not the substance of what they decide.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_2> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Monumental> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_StupidExciting> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TheKnob> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TonyPainFirst> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_VoiceMemoQuotes> ;
+    narr:keyPhrase [ narr:text "kick the tires" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_2> ] ;
+    narr:keyPhrase [ narr:text "that's monumental, though, right?... That's the cow. Huge moment" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Monumental> ] ;
+    narr:keyPhrase [ narr:text "That's stupid exciting. That's a real contribution to the world stuff for me" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_StupidExciting> ] ;
+    narr:keyPhrase [ narr:text "the knob I'm wanting to maintain is not having to dilute before an actual round" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_TheKnob> ] ;
+    narr:keyPhrase [ narr:text "Cost isn't the problem, actually. It's a way to measure the problem." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_TonyPainFirst> ] ;
+    narr:keyPhrase [ narr:text "Oh shiny" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_VoiceMemoQuotes> ] ;
+    narr:variation [ narr:text "Two speaker registers diverge: Tony's enthusiasm intensifiers ('monumental', 'stupid exciting') vs Scarlet's control-metaphor idiom ('the knob')." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Monumental> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_StupidExciting> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TheKnob> ] ;
+    narr:variation [ narr:text "Tony's argumentative reframing register (cost-as-metric, 'actually' as emphasis) sits apart from his purely celebratory markers." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TonyPainFirst> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Monumental> ] ;
+    narr:variation [ narr:text "Structural outlier: voice-memo note is attached via skos:related, not broader like the rest — register evidence rather than idiolect proper." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_VoiceMemoQuotes> ] ;
+    narr:variation [ narr:text "Org/product process vocabulary ('kick the tires', 'onboarding') is distinct from the personal idiolect the other children capture." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_2> ] ;
+    narr:writer "claude (subscription)" .
+}

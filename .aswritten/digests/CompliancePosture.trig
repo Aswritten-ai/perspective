@@ -1,0 +1,32 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_CompliancePosture> {
+  <https://aswritten.ai/narrative#Digest_CompliancePosture> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#CompliancePosture> ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers how aswritten frames compliance — as both a revenue lever and an adoption gate. The mainline reads compliance as monetizable: a [regulatory-compliance EDO priced at [amount]/mo + [amount] setup](narr:Claim_EDO_RegulatoryCompliance), bumped from [amount]and named highest-value, anchoring the ~18-24 month self-sufficiency math. Architecturally, [on-prem is positioned as a requirements-driven add-on](narr:Narrative_OnPremAsRequirementsDriven) at the Professional tier — [triggered by HIPAA/GDPR, not org size](narr:Claim_OnPremNotDefiningFeature) — with [consultant-led extraction as the real differentiator](narr:Claim_OnPremNotDefiningFeature). The [enterprise expansion track](narr:ExpansionTrack_Enterprise) phases this from pilot to self-hosted, air-gapped, full audit-trail suite. Underpinning trust: [client data ownership with no vendor lock-in](narr:Narrative_DataOwnership), repo under client org from day one, and [local non-internet LLM processing for HIPAA/VIP privacy](narr:Claim_LocalLLMForHIPAA). But the framing of compliance's *weight* splits: some material calls [GDPR/ISO real blockers](narr:Narrative_EnterpriseComplianceGate), while the the enterprise customer trial treated [ISO 27001 as procedural, deferrable](narr:Narrative_ISO27001ProceduralNotSubstantive). A separate [DBA-for-TFV claim](narr:Claim_DBA_Structure_TFV) from May 2025 sits apart, on entity/telephony verification.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DBA_Structure_TFV> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_EDO_RegulatoryCompliance> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_LocalLLMForHIPAA> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OnPremNotDefiningFeature> ;
+    narr:covers <https://aswritten.ai/narrative#ExpansionTrack_Enterprise> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DataOwnership> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EnterpriseComplianceGate> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ISO27001ProceduralNotSubstantive> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_OnPremAsRequirementsDriven> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_OnPremHIPAAQuote> ;
+    narr:keyPhrase [ narr:text "Regulatory compliance EDO (HIPAA/GDPR/SOC2): [amount]/mo + [amount] setup (bumped from [amount]). Identified as highest-value EDO." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EDO_RegulatoryCompliance> ] ;
+    narr:keyPhrase [ narr:text "On-prem is triggered by compliance requirements (HIPAA, GDPR), not by org size." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OnPremNotDefiningFeature> ] ;
+    narr:keyPhrase [ narr:text "on-prem deployment is architecturally possible (all components containerizable) but not yet productized. First deployment would be built during the SOW engagement." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_OnPremAsRequirementsDriven> ] ;
+    narr:keyPhrase [ narr:text "the customer's chief architect concluded 'I don't think that would be an issue.'" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ISO27001ProceduralNotSubstantive> ] ;
+    narr:keyPhrase [ narr:text "GDPR, data sovereignty, and ISO compliance are real blockers." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_EnterpriseComplianceGate> ] ;
+    narr:keyPhrase [ narr:text "A DBA structure (Synthetic Identity Co. d/b/a aswritten.ai) is sufficient for TFV approval even if the DBA is not yet fully processed." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DBA_Structure_TFV> ] ;
+    narr:variation [ narr:text "Compliance's weight is framed two ways: a hard adoption gate / 'real blocker' vs. a procedural concern run informally first and formalized only if the trial validates." ; narr:over <https://aswritten.ai/narrative#Narrative_EnterpriseComplianceGate> ; narr:over <https://aswritten.ai/narrative#Narrative_ISO27001ProceduralNotSubstantive> ] ;
+    narr:variation [ narr:text "On-prem is sold as a selling point / expansion phase yet admitted as not-yet-productized — first deployment would be built during the engagement." ; narr:over <https://aswritten.ai/narrative#Narrative_EnterpriseComplianceGate> ; narr:over <https://aswritten.ai/narrative#Narrative_OnPremAsRequirementsDriven> ; narr:over <https://aswritten.ai/narrative#ExpansionTrack_Enterprise> ] ;
+    narr:variation [ narr:text "On-prem deliberately demoted from tier-defining feature to compliance-triggered add-on; consultant-led extraction is the real differentiator." ; narr:over <https://aswritten.ai/narrative#Claim_OnPremNotDefiningFeature> ; narr:over <https://aswritten.ai/narrative#Narrative_OnPremAsRequirementsDriven> ] ;
+    narr:variation [ narr:text "an early prospect's high-conviction local/non-internet LLM requirement pushes harder than the 'add-on, not yet productized' framing accommodates." ; narr:over <https://aswritten.ai/narrative#Claim_LocalLLMForHIPAA> ; narr:over <https://aswritten.ai/narrative#Narrative_OnPremAsRequirementsDriven> ] ;
+    narr:variation [ narr:text "Outlier in topic and time: the May 2025 DBA/TFV approval claim is entity/telephony verification, not data-handling compliance." ; narr:over <https://aswritten.ai/narrative#Claim_DBA_Structure_TFV> ] ;
+    narr:writer "claude (subscription)" .
+}

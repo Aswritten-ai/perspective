@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_PodcastInterviewSalesMotion> {
+  <https://aswritten.ai/narrative#Digest_Narrative_PodcastInterviewSalesMotion> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_PodcastInterviewSalesMotion> ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """Originating 20260323, this hub frames one interview as collapsing four jobs into a single event: the [three outputs from one conversation](narr:Claim_InterviewThreeOutputs) — installable perspective (product), podcast episode (marketing), and the interview-as-demo (proof). Scarlet's 20260401 reframing argues the motion [puts her brain into human mode](narr:Claim_InterviewPutsYouInHumanMode), making features reactionary to real people. [Outreach templates](narr:Claim_OutreachTemplates) operationalize the invite with explicit free-vs-paid terms. The arc gained validation by 20260416 when [a design collaborator returned for his own perspective](narr:Claim_DesignCollaboratorReturnedForOwnPerspective) as real product work, having earlier [shown interview interest](narr:Claim_DesignCollaboratorInterviewInterest) because it removes the 'finding time' barrier. But the same April date carries a pull-back: the interview is [recast as one onramp among several](narr:Claim_InterviewOneOfManyOnramps), no longer the default, and the [transcript-surprise signal](narr:Claim_TranscriptSurpriseSignal) reframes existing transcripts as an under-pitched asset. Trajectory: bold single-event thesis in March, firming with a design collaborator in April, simultaneously decentered as one path among many.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DesignCollaboratorInterviewInterest> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DesignCollaboratorReturnedForOwnPerspective> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_InterviewOneOfManyOnramps> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_InterviewPutsYouInHumanMode> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_InterviewThreeOutputs> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OutreachTemplates> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TranscriptSurpriseSignal> ;
+    narr:keyPhrase [ narr:text "One interview conversation produces three distinct outputs" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_InterviewThreeOutputs> ] ;
+    narr:keyPhrase [ narr:text "Without doing this soon, Scarlet risks losing the plot." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_InterviewPutsYouInHumanMode> ] ;
+    narr:keyPhrase [ narr:text "one onramp among several (transcripts, public content, spec demos), rather than the default or required mechanism" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_InterviewOneOfManyOnramps> ] ;
+    narr:keyPhrase [ narr:text "The pattern of surprise-to-them is the pitch gap." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_TranscriptSurpriseSignal> ] ;
+    narr:keyPhrase [ narr:text "No bait and switch." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OutreachTemplates> ] ;
+    narr:keyPhrase [ narr:text "not as a favor, but as real product work" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DesignCollaboratorReturnedForOwnPerspective> ] ;
+    narr:variation [ narr:text "Demotion of the central thesis: by 20260416 the interview is explicitly downgraded from the default/required seeding mechanism to merely one onramp among several." ; narr:over <https://aswritten.ai/narrative#Claim_InterviewOneOfManyOnramps> ; narr:over <https://aswritten.ai/narrative#Claim_InterviewThreeOutputs> ] ;
+    narr:variation [ narr:text "A rival onramp: historical transcripts as an asset that needs no live interview — and a critique that aswritten fails to pitch this as default." ; narr:over <https://aswritten.ai/narrative#Claim_TranscriptSurpriseSignal> ; narr:over <https://aswritten.ai/narrative#Claim_InterviewOneOfManyOnramps> ] ;
+    narr:variation [ narr:text "Prospect inertia undercuts the model: even a design collaborator showed the 'finding time' pattern other prospects display before committing." ; narr:over <https://aswritten.ai/narrative#Claim_DesignCollaboratorInterviewInterest> ] ;
+    narr:writer "claude (subscription)" .
+}

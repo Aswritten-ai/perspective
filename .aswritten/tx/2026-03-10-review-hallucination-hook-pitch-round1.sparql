@@ -1,0 +1,307 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260310T234025Z
+    a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-03-10T23:40:25.673Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-03-10-review-hallucination-hook-pitch-round1.md" ;
+    sb:originRef           "main" ;
+    prov:generated         
+                           narr:Actor_Poplar,
+                           narr:Narrative_HallucinationHook,
+                           narr:Narrative_ThinkLikeYourOrg,
+                           narr:Narrative_HybridSalesMotion,
+                           narr:Claim_TwoCallRigidity,
+                           narr:Claim_ProspectAsGenericActor,
+                           narr:Claim_AnnotateToolTrustMechanism,
+                           narr:Claim_AudienceDependentTagline,
+                           narr:StyleObs_ScarletAnnotateQuote,
+                           narr:StyleObs_RhetoricalHook,
+                           narr:StyleObs_TrustBinaryAntithesis,
+                           narr:StyleObs_ThinkLikeYourOrg,
+                           narr:StyleObs_CitedOrFlagged,
+                           narr:StyleObs_ScarletReaction,
+                           narr:StyleObs_ScarletHybridCall,
+                           narr:StyleObs_AudienceSegmentation,
+                           narr:StyleObs_ProcessEnumeration,
+                           narr:StyleMetrics_Sample1 .
+};
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added_triples)
+# =============================================================
+INSERT DATA {
+
+  # --- Actor_Poplar: new prefLabel and note ---
+  narr:Actor_Poplar
+    skos:prefLabel "Prospect (generic)" ;
+    skos:note      "Generic actor accepted as useful for modeling sales motion. Accepted at fact review." ;
+    dct:source     narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- Narrative_HallucinationHook ---
+  narr:Narrative_HallucinationHook
+
+    dct:source      narr:Sample_1 ;
+    narr:theme      "Trust is built by showing both what is grounded and what is ungrounded — the absence of citation is as important as its presence" ;
+    skos:broader    narr:NarrativeAnchor ;
+    skos:note       "The hallucination hook is not merely raising fear of hallucination; it promises a specific resolution: the annotate tool shows provenance AND flags ungrounded content. The hook that landed frames the trust binary as the differentiator." ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- Narrative_ThinkLikeYourOrg ---
+  narr:Narrative_ThinkLikeYourOrg
+
+    dct:source      narr:Sample_1 ;
+    narr:theme      "Tagline memorability vs. trust-mechanism clarity is audience-dependent: vision-oriented CEOs respond to 'think like your org'; ops leads and technical buyers respond to 'cited or flagged as ungrounded'" ;
+    skos:broader    narr:NarrativeAnchor ;
+    skos:note       "Open question: both versions should be retained for different audience contexts. The trust-mechanism version is clearer and more impactful in regulated or skeptical domains but is wordier." ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- Narrative_HybridSalesMotion ---
+  narr:Narrative_HybridSalesMotion
+
+    dct:source      narr:Sample_1 ;
+    narr:theme      "The two-call sales structure is evolving toward a fluid hybrid model where the write path runs in the background during Call One and delivers a payoff before the call ends" ;
+    skos:broader    narr:CoreNarratives ;
+    skos:note       "The an early prospect call demonstrated a hybrid: read demo → interview → background memory extraction → deliver relevant output on the same call. The rigid Call One / Call Two framing may be too prescriptive. A third option should be captured in the TX." ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- Claim_TwoCallRigidity ---
+  narr:Claim_TwoCallRigidity
+    a                       narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode          narr:Narrative_HybridSalesMotion ;
+    narr:challenges         narr:Narrative_HybridSalesMotion ;
+    dct:source              narr:Sample_1 ;
+    skos:note               "Two-call structure rigidity flagged at fact review. Hybrid model from an early prospect call not yet captured in TX. Conviction level treated as Stake (flagged, not yet resolved)." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234025Z .
+
+  # --- Claim_ProspectAsGenericActor ---
+  narr:Claim_ProspectAsGenericActor
+    a                       narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode          narr:Actor_Poplar ;
+    narr:supports           narr:Narrative_HybridSalesMotion ;
+    dct:source              narr:Sample_1 ;
+    skos:note               "Prospect as generic actor accepted as useful for modeling sales motion. Accepted as calibrated at fact review." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234025Z .
+
+  # --- Claim_AnnotateToolTrustMechanism ---
+  narr:Claim_AnnotateToolTrustMechanism
+    a                       narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode          narr:Narrative_HallucinationHook ;
+    narr:supports           narr:Narrative_HallucinationHook ;
+    dct:source              narr:Sample_1 ;
+    skos:note               "Grounded in repeated field observation: people respond to the annotate tool because it shows both what is known and what is ungrounded. Treated as Foundation-level conviction." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234025Z .
+
+  # --- Claim_AudienceDependentTagline ---
+  narr:Claim_AudienceDependentTagline
+    a                       narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode          narr:Narrative_ThinkLikeYourOrg ;
+    dct:source              narr:Sample_1 ;
+    skos:note               "Open question: which tagline version to use is audience-dependent. Both versions retained. Not yet resolved — Stake level." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234025Z .
+
+  # --- StyleObs_ScarletAnnotateQuote ---
+  narr:StyleObs_ScarletAnnotateQuote
+    a                   narr:StyleObservation ;
+    skos:broader        narr:SpeakerIdiolects ;
+    dct:source          narr:Sample_1 ;
+
+    skos:note           "Scarlet's unedited voice: lowercase, run-on clausal structure, emphatic repetition ('over and over again'), direct product reference. Idiolect marker." ;
+    rdf:value           true ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 558 ; oa:end 730 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "we've been seeing over and over again that people really respond to the annotate tool. it shows where knowledge came from and just as importantly it shows what is ungrounded, which allows you to trust the output." ;
+                          oa:prefix  "Scarlet's words: \"" ;
+                          oa:suffix  "\"" ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- StyleObs_RhetoricalHook ---
+  narr:StyleObs_RhetoricalHook
+    a                   narr:StyleObservation ;
+    skos:broader        narr:RhetoricalQuestion ;
+    dct:source          narr:Sample_1 ;
+    skos:related        narr:NarrativeAnchor ;
+    skos:note           "Opening rhetorical question positions the prospect's fear before delivering the trust binary. Classic problem-agitate-solve cadence opener." ;
+    rdf:value           true ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 782 ; oa:end 876 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "When you ask your team to use AI, how do you know what it tells them is actually true?" ;
+                          oa:prefix  "The shifted hook that landed: \"" ;
+                          oa:suffix  " Every AI tool" ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- StyleObs_TrustBinaryAntithesis ---
+  narr:StyleObs_TrustBinaryAntithesis
+    a                   narr:StyleObservation ;
+    skos:broader        narr:Antithesis ;
+    dct:source          narr:Sample_1 ;
+    skos:related        narr:NarrativeAnchor ;
+    skos:note           "'show you where it learned what it knows — or whether you just have to trust it' is a clean antithesis: demonstrated provenance vs. blind faith. Structural spine of the hook." ;
+    rdf:value           true ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 940 ; oa:end 1040 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "whether your AI can show you where it learned what it knows — or whether you just have to trust it." ;
+                          oa:prefix  "The difference is " ;
+                          oa:suffix  "\"" ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- StyleObs_ThinkLikeYourOrg ---
+  narr:StyleObs_ThinkLikeYourOrg
+    a                   narr:StyleObservation ;
+    skos:broader        narr:Tagline ;
+    dct:source          narr:Sample_1 ;
+    skos:related        narr:KeyPhrases ;
+    skos:note           "'think like your org' flagged as tagline-weight phrase with memorability value. Short, punchy, second-person implied. Competes with trust-mechanism clarity framing." ;
+    rdf:value           true ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 1098 ; oa:end 1118 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "think like your org" ;
+                          oa:prefix  "dropped \"comprehensive worldview\" and \"" ;
+                          oa:suffix  "\" in favor of" ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- StyleObs_CitedOrFlagged ---
+  narr:StyleObs_CitedOrFlagged
+    a                   narr:StyleObservation ;
+    skos:broader        narr:KeyPhrases ;
+    dct:source          narr:Sample_1 ;
+    skos:related        narr:TerminologyControl ;
+    skos:note           "'cited or flagged as ungrounded' is the technical-buyer-facing alternative to the tagline. Precise, binary, operationally legible. Trades memorability for clarity." ;
+    rdf:value           true ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 1480 ; oa:end 1510 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "cited or flagged as ungrounded" ;
+                          oa:prefix  "for ops leads and technical buyers. " ;
+                          oa:suffix  " for ops leads" ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- StyleObs_ScarletReaction ---
+  narr:StyleObs_ScarletReaction
+    a                   narr:StyleObservation ;
+    skos:broader        narr:SpeakerIdiolects ;
+    dct:source          narr:Sample_1 ;
+
+    skos:note           "Scarlet's evaluative voice: hedged positive ('clearer and more impactful'), domain qualifier ('especially in more regulated or skeptical domains'), self-aware caveat ('a little wordier'). Balanced, non-prescriptive judgment style." ;
+    rdf:value           true ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 1390 ; oa:end 1480 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "the shifted one is clearer and more impactful, especially in more regulated or skeptical domains, but it's also a little wordier. i like both." ;
+                          oa:prefix  "Scarlet's reaction: \"" ;
+                          oa:suffix  "\"" ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- StyleObs_ScarletHybridCall ---
+  narr:StyleObs_ScarletHybridCall
+    a                   narr:StyleObservation ;
+    skos:broader        narr:SpeakerIdiolects ;
+    dct:source          narr:Sample_1 ;
+
+    skos:note           "Scarlet describes the hybrid call in a sequential list cadence using em-dash-free plain prose. Lowercase, first-person, procedural. Captures the actual call flow as lived experience." ;
+    rdf:value           true ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 1960 ; oa:end 2100 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "the call i did with an engineering manager at the customer ended up having me do a hybrid of the two - show the read only demo, do the interview, save memories in the background, and then create something relevant to the business after extraction from new memories." ;
+                          oa:prefix  "Scarlet's words: \"" ;
+                          oa:suffix  "\"" ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- StyleObs_AudienceSegmentation ---
+  narr:StyleObs_AudienceSegmentation
+    a                   narr:StyleObservation ;
+    skos:broader        narr:TailoringAudienceFit ;
+    dct:source          narr:Sample_1 ;
+    skos:related        narr:AudienceFrames ;
+    skos:note           "Explicit audience bifurcation: 'vision-oriented CEOs' vs 'ops leads and technical buyers'. Signals audience-dependent messaging strategy. Structural segmentation marker." ;
+    rdf:value           true ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 1530 ; oa:end 1620 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "\"think like your org\" for vision-oriented CEOs; \"cited or flagged as ungrounded\" for ops leads and technical buyers" ;
+                          oa:prefix  "audience-dependent: " ;
+                          oa:suffix  ". Both versions" ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- StyleObs_ProcessEnumeration ---
+  narr:StyleObs_ProcessEnumeration
+    a                   narr:StyleObservation ;
+    skos:broader        narr:CadenceRhythm ;
+    dct:source          narr:Sample_1 ;
+    skos:related        narr:CoreWorkflows ;
+    skos:note           "The hybrid call is described as a four-step enumeration: 'show the read only demo, do the interview, save memories in the background, and then create something relevant.' Procedural list cadence; plain connectives ('and then')." ;
+    rdf:value           true ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 2010 ; oa:end 2100 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "show the read only demo, do the interview, save memories in the background, and then create something relevant to the business after extraction from new memories" ;
+                          oa:prefix  "do a hybrid of the two - " ;
+                          oa:suffix  ".\"" ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+  # --- StyleMetrics_Sample1: new note ---
+  narr:StyleMetrics_Sample1
+    skos:note           "Metrics estimated from document. Scarlet's quoted speech is lowercase, conversational, shorter sentences (~15 words avg). Editorial prose is longer and more structured (~28 words avg). Active voice dominant throughout. Jargon is product-specific ('annotate tool', 'read path', 'write path', 'TX') but low in density relative to total word count." ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+
+};
+
+# =============================================================
+# BLOCK 2 — UPDATE: narr:Sample_1 title, inputLength, note
+# =============================================================
+DELETE {
+  narr:Sample_1
+    dct:title         ?oldTitle ;
+    narr:inputLength  ?oldLen ;
+    skos:note         ?oldNote .
+}
+INSERT {
+  narr:Sample_1
+    dct:title         "Review Round 1: Elevator Pitch Hallucination Hook & Two-Call Sales Motion (PR #98)" ;
+    narr:inputLength  3041 ;
+    skos:note         "Review session dated March 10, 2026. Covers hook sharpening, trust mechanism framing, two-call vs hybrid sales motion, and fact review outcomes." ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+}
+WHERE {
+  narr:Sample_1
+    OPTIONAL { narr:Sample_1 dct:title         ?oldTitle . }
+    OPTIONAL { narr:Sample_1 narr:inputLength  ?oldLen . }
+    OPTIONAL { narr:Sample_1 skos:note         ?oldNote . }
+};
+
+# =============================================================
+# BLOCK 4 — UPDATE: narr:Claim_MemorySaveIsMostConfusing
+#           aboutNode, source, and note
+# =============================================================
+DELETE {
+  narr:Claim_MemorySaveIsMostConfusing
+    narr:aboutNode  ?oldAbout ;
+    dct:source      ?oldSource ;
+    skos:note       ?oldNote .
+}
+INSERT {
+  narr:Claim_MemorySaveIsMostConfusing
+    narr:aboutNode  narr:Actor_Poplar ;
+    dct:source      narr:Sample_1 ;
+    skos:note       "Claim that memory save is the most confusing step for prospects, observed at Boulder. Accepted as calibrated at fact review." ;
+    prov:wasGeneratedBy narr:Tx_20260310T234025Z .
+}
+WHERE {
+  narr:Claim_MemorySaveIsMostConfusing
+    OPTIONAL { narr:Claim_MemorySaveIsMostConfusing narr:aboutNode  ?oldAbout . }
+    OPTIONAL { narr:Claim_MemorySaveIsMostConfusing dct:source      ?oldSource . }
+    OPTIONAL { narr:Claim_MemorySaveIsMostConfusing skos:note       ?oldNote . }
+}

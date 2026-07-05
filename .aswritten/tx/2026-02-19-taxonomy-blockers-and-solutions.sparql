@@ -1,0 +1,398 @@
+PREFIX narr:     <http://example.org/narrative#>
+PREFIX narr_ont: <http://example.org/narrative-ont#>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:     <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:      <http://purl.org/dc/terms/>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:       <http://www.w3.org/ns/oa#>
+PREFIX prov:     <http://www.w3.org/ns/prov#>
+PREFIX sb:       <http://example.org/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# Tx ID updated to reflect corrected retry run timestamp
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260219T025911Z
+      a prov:Activity ;
+      prov:wasAssociatedWith  "aswritten.ai" ;
+      prov:wasAttributedTo    "n8n.aswritten.ai" ;
+      prov:generatedAtTime    "2026-02-19T02:59:11Z"^^xsd:dateTime ;
+      sb:originPath           ".aswritten/memories/2026-02-19-taxonomy-blockers-and-solutions.md" ;
+      sb:originRef            "main" ;
+      prov:generated narr:StyleObs_1 ;
+      prov:generated narr:StyleObs_2 ;
+      prov:generated narr:StyleObs_3 ;
+      prov:generated narr:StyleObs_4 ;
+      prov:generated narr:StyleObs_5 ;
+      prov:generated narr:StyleObs_6 ;
+      prov:generated narr:StyleObs_7 ;
+      prov:generated narr:StyleObs_8 ;
+      prov:generated narr:StyleObs_9 ;
+      prov:generated narr:StyleObs_10 ;
+
+
+
+
+
+
+      prov:generated narr:Sample_1 ;
+
+
+
+
+
+
+
+      prov:generated narr:Obs_CoreNarratives_DemoMapping ;
+
+
+
+      prov:generated narr:Assessment_Register_TaxonomyBlockers ;
+      prov:generated narr:Assessment_Phrasing_TaxonomyBlockers ;
+      prov:generated narr:Assessment_Cadence_TaxonomyBlockers ;
+      prov:generated narr:Assessment_StrategicAlignment_TaxonomyBlockers ;
+      prov:generated narr:Assessment_Tailoring_TaxonomyBlockers ;
+      prov:generated narr:Assessment_Resonance_TaxonomyBlockers ;
+      prov:generated narr:Assessment_Flow_TaxonomyBlockers ;
+      prov:generated narr:Assessment_Novelty_TaxonomyBlockers ;
+      prov:generated narr:Assessment_Accuracy_TaxonomyBlockers ;
+      prov:generated narr:StyleMetrics_TaxonomyBlockers .
+}
+;
+
+# =============================================================
+# ADDED TRIPLES — new StyleObservation and Observation nodes
+# (all new IRIs, no collision with existing graph)
+# =============================================================
+INSERT DATA {
+
+  # --- StyleObs_1 ---
+  narr:StyleObs_1 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:Analogy ;
+      dct:source   narr:Sample_1 ;
+      skos:related narr_ont:CoreNarratives ;
+      skos:note    "Extended git analogy maps review workflow to commit/squash/rebase mechanics — makes abstract coordination concrete." ;
+      oa:hasBody   narr_ont:Analogy ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 940 ;
+              oa:end   1060
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "Maps to git model: reviews are commits on the branch, extraction is a squash/rebase pass, conflicts get flagged for resolution."
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleObs_2 ---
+  narr:StyleObs_2 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:Metaphor ;
+      dct:source   narr:Sample_1 ;
+      skos:related narr_ont:Tagline ;
+      skos:note    "Parenthetical label 'the viral product' frames Salon's strategic priority with aspirational identity." ;
+      oa:hasBody   narr_ont:Metaphor ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 4700 ;
+              oa:end   4760
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "Salon (the viral product)"
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleObs_3 ---
+  narr:StyleObs_3 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:ShortPunchyCadence ;
+      dct:source   narr:Sample_1 ;
+      skos:related narr_ont:KeyPhrases ;
+      rdf:value    true ;
+      skos:note    "Section header 'Less May Be Better' is a 4-word punchy inversion that reframes the cost problem as a quality advantage." ;
+      oa:hasBody   narr_ont:ShortPunchyCadence ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 1440 ;
+              oa:end   1460
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "Less May Be Better"
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleObs_4 ---
+  narr:StyleObs_4 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:VoiceActive ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Imperative active voice throughout: 'Don't block waiting for the slow responder' — direct, action-oriented register." ;
+      oa:hasBody   narr_ont:VoiceActive ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 780 ;
+              oa:end   830
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "Don't block waiting for the slow responder."
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleObs_5 ---
+  narr:StyleObs_5 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:Antithesis ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Explicit contrast: RDF for machines vs. compact format for LLM — antithetical framing clarifies architectural decision." ;
+      oa:hasBody   narr_ont:Antithesis ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 3100 ;
+              oa:end   3320
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "RDF format is for the extraction/validation pipeline (machines). The LLM needs the graph structure in whatever format it can navigate most efficiently. These can be different serializations of the same graph."
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleObs_6 ---
+  narr:StyleObs_6 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:Parallelism ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Four parallel arrow-chain sentences in code block enforce structural symmetry and make the solution relationships scannable." ;
+      oa:hasBody   narr_ont:Parallelism ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 3590 ;
+              oa:end   3830
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "Cheaper extraction (Flash/Opus) \u2192 fewer tokens per triple \u2192 smaller graph \u2192 fits in context"
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleObs_7 ---
+  narr:StyleObs_7 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:IdiolectPhrasing ;
+      dct:source   narr:Sample_1 ;
+      skos:related narr_ont:KeyPhrases ;
+      skos:note    "Domain-specific term 'introspect call' used as a canonical verb phrase for the agent self-examination operation — idiolect of this product's vocabulary." ;
+      oa:hasBody   narr_ont:IdiolectPhrasing ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 1060 ;
+              oa:end   1100
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "an introspect call"
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleObs_8 ---
+  narr:StyleObs_8 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:RegisterFormality ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Colloquial 'the slow responder' embedded in technical context — signals insider register between founder and AI coworker." ;
+      oa:hasBody   narr_ont:RegisterFormality ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 770 ;
+              oa:end   810
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "the slow responder"
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleObs_9 ---
+  narr:StyleObs_9 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:ToneAuthoritative ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "'Quality floor unknown' is a candid epistemic marker — authoritative honesty about uncertainty rather than hedging with qualifiers." ;
+      oa:hasBody   narr_ont:ToneAuthoritative ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 2040 ;
+              oa:end   2090
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "Quality floor unknown. The target for consumer economics."
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleObs_10 ---
+  narr:StyleObs_10 a narr:StyleObservation , oa:Annotation ;
+      skos:broader narr_ont:SentenceLengthVariation ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Pattern: long explanatory sentence followed by short punchy conclusion — e.g., 'This is the core mechanic of the Salon consensus engine.'" ;
+      oa:hasBody   narr_ont:SentenceLengthVariation ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 1120 ;
+              oa:end   1175
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "This is the core mechanic of the Salon consensus engine."
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+}
+;
+
+# =============================================================
+# UPDATED TRIPLES — Sample_1 metadata update only
+# All formerly-duplicate IRIs are now new IRIs (INSERT DATA above)
+# Sample_1 is the only legitimate update target
+# =============================================================
+
+# --- narr:Sample_1 ---
+DELETE { narr:Sample_1 ?p ?o }
+INSERT {
+  narr:Sample_1 a narr:Sample ;
+      dct:title        "Taxonomy Blockers and Solutions" ;
+      narr:inputLength "5850"^^xsd:integer ;
+      dct:created      "2026-02-18"^^xsd:date ;
+      skos:note        "Meeting notes between Scarlet (founder) and Claude (AI coworker). Identifies three blockers preventing demos from working and proposes complementary solutions." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+}
+WHERE { narr:Sample_1 ?p ?o }
+;
+
+# =============================================================
+# NEW SESSION NARRATIVE NODES
+# Renamed from Narrative_1-4 to session-specific IRIs
+# to preserve existing foundational Narrative_1-4 nodes
+# =============================================================
+INSERT DATA {
+
+  # --- Obs_CoreNarratives_DemoMapping (was Obs_CoreNarratives_1 in previous attempt) ---
+  narr:Obs_CoreNarratives_DemoMapping a narr:Observation ;
+      skos:broader narr_ont:CoreNarratives ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Three product demos map to escalating solution complexity: Solo (After the Call), Salon (Text Your Topic), Teams (The War Room)." ;
+      oa:hasTarget [
+          a oa:SpecificResource ;
+          oa:hasSelector [
+              a oa:TextPositionSelector ;
+              oa:start 4200 ;
+              oa:end   4380
+          ] , [
+              a oa:TextQuoteSelector ;
+              oa:exact "\"After the Call\" (Solo) | Flash extraction (cost), lens compile or compact serialization (agent navigation)"
+          ]
+      ] ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # =============================================================
+  # ASSESSMENT NODES — renamed to TaxonomyBlockers suffix
+  # Type corrected to narr:RubricAssessment (warning TYPE_MISMATCH fix)
+  # =============================================================
+
+  # --- Assessment_Register_TaxonomyBlockers ---
+  narr:Assessment_Register_TaxonomyBlockers a narr:RubricAssessment ;
+      skos:broader narr_ont:Rubric_Register ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "Technical-colloquial blend is well-calibrated for founder-AI coworker context. Active voice dominates. Concise declaratives. Minor: some long compound sentences in solution sections." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- Assessment_Phrasing_TaxonomyBlockers ---
+  narr:Assessment_Phrasing_TaxonomyBlockers a narr:RubricAssessment ;
+      skos:broader narr_ont:Rubric_Phrasing ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.5"^^xsd:decimal ;
+      skos:note    "Strong idiolect: 'introspect call', 'worldview shift', 'layer0Plus1', 'squash/rebase pass' are domain-specific stock phrases that signal insider fluency. Highly distinctive." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- Assessment_Cadence_TaxonomyBlockers ---
+  narr:Assessment_Cadence_TaxonomyBlockers a narr:RubricAssessment ;
+      skos:broader narr_ont:Rubric_Cadence ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "Effective short-punchy pattern: section headers are crisp ('Less May Be Better', 'Four Complementary Solutions'). Arrow-chain code block creates visual rhythm. Some mid-document paragraphs run long." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- Assessment_StrategicAlignment_TaxonomyBlockers ---
+  narr:Assessment_StrategicAlignment_TaxonomyBlockers a narr:RubricAssessment ;
+      skos:broader narr_ont:Rubric_StrategicAlignment ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.5"^^xsd:decimal ;
+      skos:note    "Explicit mapping of blockers to demos to revenue paths (enterprise consulting vs. consumer). Ordering section directly ties solutions to strategic priorities. Strong alignment to Focus & Sequencing." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- Assessment_Tailoring_TaxonomyBlockers ---
+  narr:Assessment_Tailoring_TaxonomyBlockers a narr:RubricAssessment ;
+      skos:broader narr_ont:Rubric_Tailoring ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "Clearly written for a technical co-founder audience. Named participants (Scarlet, Claude). References specific tasks (task-070, task-072). Assumes deep product context — appropriate for the audience." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- Assessment_Resonance_TaxonomyBlockers ---
+  narr:Assessment_Resonance_TaxonomyBlockers a narr:RubricAssessment ;
+      skos:broader narr_ont:Rubric_Resonance ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "Git analogy is well-chosen and extended consistently. 'The viral product' framing adds aspirational resonance. Concrete numbers ([amount] tokens, [amount]+/day) ground abstract claims." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- Assessment_Flow_TaxonomyBlockers ---
+  narr:Assessment_Flow_TaxonomyBlockers a narr:RubricAssessment ;
+      skos:broader narr_ont:Rubric_Flow ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.5"^^xsd:decimal ;
+      skos:note    "Excellent structure: Problem \u2192 Solution \u2192 Related for each blocker. Summary table and ordering section provide strong closure. Arrow-chain diagram makes solution relationships explicit. Minimal formulaicness." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- Assessment_Novelty_TaxonomyBlockers ---
+  narr:Assessment_Novelty_TaxonomyBlockers a narr:RubricAssessment ;
+      skos:broader narr_ont:Rubric_Novelty ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "'Less May Be Better' inversion is genuinely novel framing. 'Semantic coordination problem' is precise and non-obvious. Some standard tech-doc scaffolding reduces novelty slightly." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- Assessment_Accuracy_TaxonomyBlockers ---
+  narr:Assessment_Accuracy_TaxonomyBlockers a narr:RubricAssessment ;
+      skos:broader narr_ont:Rubric_Accuracy ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "Specific metrics cited (243K tokens, [amount]+/day, 15-minute batch timer). Task references (task-070, task-072) are verifiable. No external citations but internal cross-references are present and specific." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+  # --- StyleMetrics_TaxonomyBlockers (was StyleMetrics_1 in previous attempt) ---
+  narr:StyleMetrics_TaxonomyBlockers a narr:StyleMetrics ;
+      skos:broader               narr_ont:StyleMetrics ;
+      dct:source                 narr:Sample_1 ;
+      narr:AverageSentenceLength "18"^^xsd:decimal ;
+      narr:ActiveVoiceRatio      "0.82"^^xsd:decimal ;
+      skos:note                  "Estimated from document body. Average sentence length ~18 words (mix of short punchy conclusions ~8w and longer explanatory sentences ~28w). Active voice ratio ~82%. Jargon density moderate-high (domain-specific terms: introspect, worldview, layer0Plus1, squash/rebase). Type-token ratio estimated high given specialized vocabulary." ;
+      prov:wasGeneratedBy narr:Tx_20260219T025911Z .
+
+}

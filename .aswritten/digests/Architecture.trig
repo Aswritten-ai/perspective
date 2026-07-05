@@ -1,0 +1,49 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Architecture> {
+  <https://aswritten.ai/narrative#Digest_Architecture> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Architecture> ;
+    narr:childCount "25"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers aswritten's architecture decisions. A foundational thesis: [RDF/propositions as the semantic layer](narr:Narrative_ContextArch_2) and [LLM associative retrieval over formal SPARQL](narr:Claim_ContextArch_1), because [brute-force compile-to-context is hitting limits](narr:Narrative_ContextArch_3) and a [structural index + LLM selection replaces it](narr:Claim_ContextArch_3). The retrieval shift drives a tool redesign: [scope as a new windowed-graph tool deprecating worldview:domain layers](narr:Claim_ScopeIsNewSeparateTool), [compile kept focus-free as whole-worldview bootstrap](narr:Claim_CompileNoFocusParam), and an [introspect that owns absence](narr:Claim_AbsenceIsIntrospect) without [returning subgraph](narr:Claim_IntrospectNoSubgraphReturn). A large lens cluster: [the lens tool generates rather than runs lenses](narr:Claim_LensToolIsGenerator), [lenses are compound not stacked](narr:Claim_LensIsCompoundNotStacked), [text and eye chart are the same operation](narr:Claim_TextAndEyeChartSameOperation), and [shifting the compressed worldview summary shifts lossy data, not knowledge](narr:Narrative_LossyCompressionProblem). Infrastructure and commercial lines: [Datomic single-writer forces per-environment Postgres](narr:Claim_DatomicPerEnvDB), a [paywall splitting deterministic-free from LLM-paid](narr:Arch_PaywallBoundary), [mixed extraction models](narr:Arch_GeminiForSMS), and the framing that [collective memory is an opinion machine](narr:Narrative_2) with [memory as durable source of truth](narr:Narrative_MemoryAsSourceOfTruth).""" ;
+    narr:covers <https://aswritten.ai/narrative#Arch_GeminiForSMS> ;
+    narr:covers <https://aswritten.ai/narrative#Arch_PaywallBoundary> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AbsenceIsIntrospect> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CompileNoFocusParam> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ContextArch_1> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ContextArch_2> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ContextArch_3> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ContextArch_6> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DatomicPerEnvDB> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_EyeChartIsDocumentBeingEvaluated> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_IntrospectNoSubgraphReturn> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_LensIsCompoundNotStacked> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_LensToolIsGenerator> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ScopeIsNewSeparateTool> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TextAndEyeChartSameOperation> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_WorldviewDomainLayersDeprecated> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_WorldviewSummaryIsAlreadyLens> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_task085CheckNotSerialize> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_2> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContextArch_2> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContextArch_3> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DatomicSingleWriter> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_LossyCompressionProblem> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_MemoryAsSourceOfTruth> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_TransactionSourceOfTruth> ;
+    narr:keyPhrase [ narr:text "LLM retrieval is superior to formal SPARQL query for organizational memory because it returns the broader relevant subgraph associatively" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ContextArch_1> ] ;
+    narr:keyPhrase [ narr:text "A real RDF query engine is not needed yet; extraction and generation are already LLM-driven, so compounding imprecision from an already-approximate baseline is acceptable" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ContextArch_6> ] ;
+    narr:keyPhrase [ narr:text "Remember (commit) and Compile (assemble graph) are free (deterministic)." ; narr:phraseSource <https://aswritten.ai/narrative#Arch_PaywallBoundary> ] ;
+    narr:keyPhrase [ narr:text "The lens tool does not run lenses — it generates them." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_LensToolIsGenerator> ] ;
+    narr:keyPhrase [ narr:text "Permanent constraint: every environment needing its own transactor requires its own Postgres database." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DatomicPerEnvDB> ] ;
+    narr:keyPhrase [ narr:text "Collective memory is an opinion machine, not neutral infrastructure" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_2> ] ;
+    narr:keyPhrase [ narr:text "the .aswritten directory is the only durable artifact; docs folder is generated and disposable." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_MemoryAsSourceOfTruth> ] ;
+    narr:keyPhrase [ narr:text "Conversational density over SMS is much lower than technical documentation — lower fidelity is acceptable and cost savings are significant." ; narr:phraseSource <https://aswritten.ai/narrative#Arch_GeminiForSMS> ] ;
+    narr:variation [ narr:text "Formal-rigor vs LLM-approximation: RDF-as-semantic-layer thesis sits against the explicit deferral that a real RDF query engine isn't needed yet and compounding imprecision is acceptable." ; narr:over <https://aswritten.ai/narrative#Narrative_ContextArch_2> ; narr:over <https://aswritten.ai/narrative#Claim_ContextArch_6> ; narr:over <https://aswritten.ai/narrative#Claim_ContextArch_1> ] ;
+    narr:variation [ narr:text "Focusing tension: compile deliberately refuses a focus param (always full worldview), while the new scope tool returns a windowed graph by arbitrary focus." ; narr:over <https://aswritten.ai/narrative#Claim_CompileNoFocusParam> ; narr:over <https://aswritten.ai/narrative#Claim_ScopeIsNewSeparateTool> ] ;
+    narr:variation [ narr:text "Mixed-model extraction splits quality by product — Gemini for low-fidelity SMS, Claude for high-fidelity technical — rather than a single extractor." ; narr:over <https://aswritten.ai/narrative#Arch_GeminiForSMS> ] ;
+    narr:variation [ narr:text "Superseded framings someone might still reach for: worldview:domain layers (now deprecated by scope) and the 2026-02-10 boolean TX fact-review design (superseded by review-as-evidence-accumulation)." ; narr:over <https://aswritten.ai/narrative#Claim_WorldviewDomainLayersDeprecated> ; narr:over <https://aswritten.ai/narrative#Narrative_2> ] ;
+    narr:variation [ narr:text "Lossy-compression objection: shifting the already-compressed worldview summary shifts lossy data not knowledge — the lens needs full-depth subgraph, qualifying any 'just reweight the summary' approach." ; narr:over <https://aswritten.ai/narrative#Narrative_LossyCompressionProblem> ; narr:over <https://aswritten.ai/narrative#Claim_WorldviewSummaryIsAlreadyLens> ] ;
+    narr:writer "claude (subscription)" .
+}

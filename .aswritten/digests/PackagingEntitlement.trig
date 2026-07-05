@@ -1,0 +1,53 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_PackagingEntitlement> {
+  <https://aswritten.ai/narrative#Digest_PackagingEntitlement> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#PackagingEntitlement> ;
+    narr:childCount "30"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub packages aswritten's capability tiers and how plans gate them. The mainline runs Free → Expert → Team → Org. [Free is read-only](narr:Claim_FreeTierReadOnly_DesignSession) — load perspectives, no saving — which is the deliberate gate driving the upgrade. [Expert is single-stream](narr:Claim_ExpertSingleStreamNoGitBranching): memories commit to main with [synchronous self-review](narr:Claim_ExpertTierSyncReview), no branches/PRs by default, and it functions as [a feeder / near paid-demo](narr:Claim_ExpertTierAsPaidDemo) rather than a standalone business. [Team adds multi-user contribution](narr:Claim_TeamTierGitHubBranch) to one worldview, where the [sales call is itself onboarding + first extraction](narr:Narrative_SalesCallIsOnboarding). [Org bundles three capabilities](narr:Claim_OrgTierThreeCapabilities) — sandboxed internal AI, external agent deployments, and EDOs — reached by [any of three triggers](narr:Claim_OrgTierThreeUpgradeTriggers) (100+ seats, agent deployment, or EDO). Mechanically, gating is [compile returning plan-level instruction sets](narr:Claim_PlanGatedInstructionsFromCompile), not separate tools. The [admin tier was eliminated](narr:Claim_AdminTierEliminated) (Mar 2026). A recurring reframe (Jul 2025, Apr 2026) holds that [GitHub × team size are the real axes](narr:Narrative_TierAxisGitHubTeamSize) and tiers are packaging on top.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AdminTierEliminated> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CompileReturnsPlanGatedInstructions> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ExpertSingleStreamNoGitBranching> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ExpertTierAsPaidDemo> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ExpertTierSyncReview> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FreeTierReadOnly_DesignSession> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OrgTierThreeCapabilities> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OrgTierThreeUpgradeTriggers> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PlanGatedInstructionsFromCompile> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SMSEnterpriseOnlyLeaning> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TeamPlanAtLaunch> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TeamTierGitHubBranch> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContractTiers> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_FFPlanStructure> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_GiftRoundReframe> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_OrgTierAgentDeploymentValue> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PlanGatedInstructions> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_RevenueModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SalesCallIsOnboarding> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SetupFeeQualityControl> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TierAxisGitHubTeamSize> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TierReframeInfrastructure> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_EnterpriseSSO> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_PlanGatedQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletExpertGitHubQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletTeamWithoutGitHubQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_TeamTierOnboardingQuote> ;
+    narr:covers <https://aswritten.ai/narrative#PricingStructure_ConsultantLed> ;
+    narr:covers <https://aswritten.ai/narrative#Question_PriceRanges> ;
+    narr:covers <https://aswritten.ai/narrative#Question_SubscriptionPricing> ;
+    narr:keyPhrase [ narr:text "Free tier: read-only." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FreeTierReadOnly_DesignSession> ] ;
+    narr:keyPhrase [ narr:text "The expert plan becomes not exactly a paid demo, but there's a lot of folks that do that." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ExpertTierAsPaidDemo> ] ;
+    narr:keyPhrase [ narr:text "In the Expert case, it actually makes most sense to always commit to main." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletExpertGitHubQuote> ] ;
+    narr:keyPhrase [ narr:text "pays the Org floor ([amount]/mo) + ST-managed EDO + HIPAA EDO = [amount]/mo, even with only 5 seats." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OrgTierThreeUpgradeTriggers> ] ;
+    narr:keyPhrase [ narr:text "Admin tier eliminated." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AdminTierEliminated> ] ;
+    narr:keyPhrase [ narr:text "Tiers don't directly determine flow." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TierAxisGitHubTeamSize> ] ;
+    narr:variation [ narr:text "Are tiers the real structure, or just packaging? A persistent reframe says GitHub-connected × single-user/team are the true capability axes and tiers sit on top." ; narr:over <https://aswritten.ai/narrative#Narrative_TierAxisGitHubTeamSize> ; narr:over <https://aswritten.ai/narrative#Claim_ExpertTierSyncReview> ] ;
+    narr:variation [ narr:text "Pricing is not one schema — consultant-led GTM ([amount]/domain, [amount]-[amount], [amount]-[amount]/mo) vs contract tiers ([amount]-50K / [amount]-250K / [amount]-1M+) vs Org floor [amount]/mo + per-EDO stacking coexist unreconciled." ; narr:over <https://aswritten.ai/narrative#PricingStructure_ConsultantLed> ; narr:over <https://aswritten.ai/narrative#Narrative_ContractTiers> ; narr:over <https://aswritten.ai/narrative#Claim_OrgTierThreeUpgradeTriggers> ] ;
+    narr:variation [ narr:text "Setup fee tension: [amount] setup framed as quality-control gate vs Team-tier leaning toward NO setup fee since the sales call already does the work." ; narr:over <https://aswritten.ai/narrative#Narrative_SetupFeeQualityControl> ; narr:over <https://aswritten.ai/narrative#Narrative_SalesCallIsOnboarding> ] ;
+    narr:variation [ narr:text "SMS-to-tier mapping is explicitly undecided (Apr 28 2026) — a recorded leaning toward Enterprise-only, not a decision; could stay a cross-tier opt-in upsell." ; narr:over <https://aswritten.ai/narrative#Claim_SMSEnterpriseOnlyLeaning> ] ;
+    narr:variation [ narr:text "Org tier value framing shifted from EDO-centric to agent-deployment-ROI-centric (May 2026), recasting Org as three capabilities not just enhanced deployment." ; narr:over <https://aswritten.ai/narrative#Narrative_OrgTierAgentDeploymentValue> ; narr:over <https://aswritten.ai/narrative#Narrative_TierReframeInfrastructure> ] ;
+    narr:variation [ narr:text "Subscription/price ranges remain open questions, not settled commitments." ; narr:over <https://aswritten.ai/narrative#Question_PriceRanges> ; narr:over <https://aswritten.ai/narrative#Question_SubscriptionPricing> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Mission> {
+  <https://aswritten.ai/narrative#Digest_ns__Mission> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Mission> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """The Mission hub centers on [building collective memory as infrastructure](narr:Mission_1) — explicitly \"infrastructure, not tool\" — that captures day one-through-exit institutional knowledge. The dominant articulation is the [collective-memory mission proper](narr:Narrative_collective_memory_mission): organizational worldview rendered as version-controlled, queryable, executable strategy that \"branches like code.\" A parallel thread extends [software-development rigor into strategy, content, and marketing](narr:Narrative_SIC_Mission_1) operations. Above the product layer sits a more ambitious framing: [narrative as the fundamental steering mechanism](narr:Narrative_AI_Steering) for AI behavior and alignment, paired with a [collaborative-future vision](narr:Concept_CollaborativeVision) of AI as \"envoys of human values.\" The register swings hard: [existential-crisis stakes](narr:Observation_ExistentialCrisis) and an [elevated spiritual register](narr:StyleObs_Register_Spiritual) sit alongside the engineering-rigor language, with a [first-person-plural active voice](narr:StyleObs_ActiveDecision) declaring what \"we are building.\"""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Concept_CollaborativeVision> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Mission_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_AI_Steering> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_Mission_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_collective_memory_mission> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_ExistentialCrisis> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_ActiveDecision> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Register_Spiritual> ;
+    narr:keyPhrase [ narr:text "Build collective memory for AI that creates day one-through-exit institutional knowledge." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Mission_1> ] ;
+    narr:keyPhrase [ narr:text "Create a living organizational worldview that evolves through intentional memory-saving and branches like code" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_collective_memory_mission> ] ;
+    narr:keyPhrase [ narr:text "This is the existential crisis of modern business" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_ExistentialCrisis> ] ;
+    narr:keyPhrase [ narr:text "We are building collective memory as a complete product - a collaborative worldview layer" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ActiveDecision> ] ;
+    narr:keyPhrase [ narr:text "we stand on the precipice of spirituality, right? Of spirituality, not as religion" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Register_Spiritual> ] ;
+    narr:variation [ narr:text "Register splits: engineering rigor / version-control language vs. spiritual-existential framing of the same mission." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_collective_memory_mission> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Register_Spiritual> ; narr:over <https://aswritten.ai/ns/narrative#Observation_ExistentialCrisis> ] ;
+    narr:variation [ narr:text "Scope tension: narrow org-memory product vs. the broader thesis of narrative as AI alignment/steering mechanism." ; narr:over <https://aswritten.ai/ns/narrative#Mission_1> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_AI_Steering> ] ;
+    narr:variation [ narr:text "Stance toward AI: partnership/'envoys of human values' framing vs. control/steering framing." ; narr:over <https://aswritten.ai/ns/narrative#Concept_CollaborativeVision> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_AI_Steering> ] ;
+    narr:variation [ narr:text "Operational scope outlier: extending software-dev rigor into strategy/content/marketing, distinct from the memory-architecture core." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_Mission_1> ] ;
+    narr:writer "claude (subscription)

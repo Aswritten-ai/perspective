@@ -1,0 +1,328 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology/storybook#>
+PREFIX storytwin: <http://storytwin.com/ontology#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260209T171554Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai/agent#v1> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-09T17:15:54.529Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-09-yc-revenue-tam-reframe.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:used <anthropic/claude-sonnet-4.5> ;
+    prov:generated 
+                   
+                   narr:Narrative_GitHubAnalogy,
+                   narr:Narrative_ScalingGap,
+                   narr:Narrative_MetricReframe,
+                   narr:Narrative_ExpansionPath,
+                   narr:StyleObs_GitHubMetaphor,
+                   narr:StyleObs_BrandName,
+                   narr:StyleObs_RemoveDollarSigns,
+                   narr:StyleObs_RatioValueProp,
+                   narr:StyleObs_NoCompanyAnaphora,
+                   narr:StyleObs_ActiveVoice,
+                   narr:StyleObs_CitationMarker,
+                   narr:StyleObs_CollectiveMemory,
+                   narr:Metrics_RevenueModelTAM,
+                   narr:Assess_Register_RevenueModelTAM,
+                   narr:Assess_Phrasing_RevenueModelTAM,
+                   narr:Assess_Cadence_RevenueModelTAM,
+                   narr:Assess_Strategy_RevenueModelTAM,
+                   narr:Assess_Tailoring_RevenueModelTAM,
+                   narr:Assess_Resonance_RevenueModelTAM,
+                   narr:Assess_Flow_RevenueModelTAM,
+                   narr:Assess_Novelty_RevenueModelTAM .
+
+  narr:Narrative_GitHubAnalogy a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+
+    skos:broader narr:PositioningThesis ;
+    narr:theme "Collective memory as infrastructure, not feature—category-creation move" ;
+    skos:note "No company would develop software without GitHub. No company should deploy AI agents without versioned organizational context." ;
+    skos:related narr:Differentiators, narr:MoatLeverage .
+
+  narr:Narrative_ScalingGap a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+
+    skos:broader narr:TimingThesis ;
+    narr:theme "Only 33% scaling AI across organization—rest stuck in silos" ;
+    skos:note "McKinsey 2025: 78% use AI, but only 33% scale it. Collective memory solves the silo problem." ;
+    skos:related narr:ProblemContext, narr:FrictionFailure .
+
+  narr:Narrative_MetricReframe a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+
+    skos:broader narr:PositioningThesis ;
+    narr:theme "Reframe value in ratios/time units so buyers apply own context" ;
+    skos:note "New hires 50% productive for 3-6mo; seniors lose 20% time on repeat questions; context leaves with departures; lock-in to first AI tool invested in. Payback = first hire or departure." ;
+    skos:related narr:ActorIncentiveAnalysis, narr:ValueExchange .
+
+  narr:Narrative_ExpansionPath a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+
+    skos:broader narr:ExpansionPathway ;
+    narr:theme "Seed/Series A → VC portfolio rollouts → mid-market (product-led) → enterprise (platform deals)" ;
+    skos:note "Direct + advisor network → channel via VC portfolios → developer adoption → implementation services." ;
+    skos:related narr:FocusSequencing, narr:NarrativeDrivenRoadmap .
+
+  narr:StyleObs_GitHubMetaphor a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Metaphor ;
+
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3421 ;
+            oa:end 3562
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "No company would develop software without GitHub. No company should deploy AI agents without versioned organizational context." ;
+            oa:prefix "The GitHub analogy remains central: \"" ;
+            oa:suffix "\" This frames collective memory as infrastructure"
+        ]
+    ] ;
+    skos:related narr:PositioningThesis ;
+    rdf:value true ;
+    skos:note "Category-creation analogy; parallel structure (No company…No company); positions collective memory as infrastructure." .
+
+  narr:StyleObs_BrandName a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:BrandNameStylization ;
+
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 84 ;
+            oa:end 97
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "aswritten.ai" ;
+            oa:prefix "section of " ;
+            oa:suffix "'s YC Spring 2026"
+        ]
+    ] ;
+    rdf:value true ;
+    skos:note "Lowercase, no spaces; .ai TLD signals AI category." .
+
+  narr:StyleObs_RemoveDollarSigns a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:StockPhrases ;
+
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1017 ;
+            oa:end 1038
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "remove dollar signs" ;
+            oa:prefix "Scarlet's directive: \"" ;
+            oa:suffix "\" so buyers apply metrics"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Directive phrasing; encodes design principle (context-agnostic metrics)." .
+
+  narr:StyleObs_RatioValueProp a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Conciseness ;
+
+    oa:hasBody narr:Conciseness ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1139 ;
+            oa:end 1197
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "New hires operate at ~50% productivity for 3-6 months" ;
+            oa:prefix "use ratios and time units instead of dollar amounts:\n- \"" ;
+            oa:suffix "\"\n- \"Senior employees lose"
+        ]
+    ] ;
+    skos:related narr:PlainLanguage ;
+    rdf:value true ;
+    skos:note "Quantified ratio (~50%) + time window (3-6 months); no dollar anchor." .
+
+  narr:StyleObs_NoCompanyAnaphora a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Anaphora ;
+
+    oa:hasBody narr:Anaphora ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3445 ;
+            oa:end 3562
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "No company would develop software without GitHub. No company should deploy AI agents without versioned organizational context." ;
+            oa:prefix "analogy remains central: \"" ;
+            oa:suffix "\" This frames collective memory"
+        ]
+    ] ;
+    skos:related narr:Parallelism ;
+    rdf:value true ;
+    skos:note "Repeated 'No company' opening; parallel syntax for emphasis and memorability." .
+
+  narr:StyleObs_ActiveVoice a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:VoiceActive ;
+
+    oa:hasBody narr:VoiceActive ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1017 ;
+            oa:end 1086
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "Scarlet's directive: \"remove dollar signs\" so buyers apply metrics" ;
+            oa:prefix "### Metric Reframing (Non-Dollar)\n" ;
+            oa:suffix " to their own context."
+        ]
+    ] ;
+    rdf:value true ;
+    skos:note "Subject (buyers) performs action (apply); direct, agent-focused." .
+
+  narr:StyleObs_CitationMarker a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:CaretBracketMarker ;
+
+    oa:hasBody narr:CaretBracketMarker ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1852 ;
+            oa:end 1856
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "2023" ;
+            oa:prefix "**US Census Bureau (" ;
+            oa:suffix "):** ~5.9M US employer"
+        ]
+    ] ;
+    rdf:value false ;
+    skos:note "Year in parentheses, not caret-bracket; inline citation style present but not ^[]^ convention." .
+
+  narr:StyleObs_CollectiveMemory a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:TerminologyControl ;
+
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 2384 ;
+            oa:end 2402
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "collective memory" ;
+            oa:prefix "the problem " ;
+            oa:suffix " solves\n\n### Contract"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Canonical product term; lowercase, two words; consistent usage." .
+
+  narr:Metrics_RevenueModelTAM a narr:StyleMetrics ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:StyleMetrics ;
+
+    narr:AverageSentenceLength 22 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    skos:note "High active-voice ratio; moderate sentence length; bullet-list structure reduces clause complexity." .
+
+  narr:Assess_Register_RevenueModelTAM a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Rubric_Register ;
+
+    rdf:value 4.5 ;
+    skos:note "Professional, data-driven register; second-person implied ('buyers apply'); active voice dominant; concise." .
+
+  narr:Assess_Phrasing_RevenueModelTAM a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Rubric_Phrasing ;
+
+    rdf:value 4.0 ;
+    skos:note "Stock phrase 'remove dollar signs' encodes design principle; 'collective memory' canonical; GitHub analogy is signature move." .
+
+  narr:Assess_Cadence_RevenueModelTAM a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Rubric_Cadence ;
+
+    rdf:value 4.0 ;
+    skos:note "Bullet lists create punchy rhythm; parallel 'No company' structure; avg sentence length 22 words (moderate, not short)." .
+
+  narr:Assess_Strategy_RevenueModelTAM a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+
+    rdf:value 5.0 ;
+    skos:note "Directly advances StrategyOverview (revenue model), PositioningThesis (GitHub analogy), TAM_SAM_SOM (expansion), and ExpansionPathway. Fully aligned." .
+
+  narr:Assess_Tailoring_RevenueModelTAM a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Rubric_Tailoring ;
+
+    rdf:value 4.5 ;
+    skos:note "YC application context explicit; ratio-based metrics designed for buyer self-application; TAM sourced for investor audience (Census, McKinsey)." .
+
+  narr:Assess_Resonance_RevenueModelTAM a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Rubric_Resonance ;
+
+    rdf:value 4.5 ;
+    skos:note "GitHub analogy is high-resonance for technical founders; 'context leaves with departures' is visceral pain point; McKinsey 33% stat validates urgency." .
+
+  narr:Assess_Flow_RevenueModelTAM a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Rubric_Flow ;
+
+    rdf:value 4.0 ;
+    skos:note "Logical progression: revenue model → metric reframe → TAM expansion → contract tiers → expansion path. Section headers guide; transitions implicit but clear." .
+
+  narr:Assess_Novelty_RevenueModelTAM a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260209T171554Z ;
+    skos:broader narr:Rubric_Novelty ;
+
+    rdf:value 4.0 ;
+    skos:note "'Remove dollar signs' reframe is fresh positioning move; GitHub analogy is established but well-executed; TAM expansion sourced (not boilerplate)." .
+}

@@ -1,0 +1,268 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260429T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-29T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-29-agent-simulation-research.md" ;
+    narr:originRef "research/agent-memory-architecture" ;
+    prov:generated
+      narr:Narrative_DecayVsDepreciationDistinction,
+      narr:Narrative_AgentSimResearchWhatDoesntTransfer,
+      narr:Claim_ParkArchitectureOnlyAdds,
+      narr:Claim_VectorSearchNotUsedInPapers,
+      narr:Claim_GatekeeperDesignQuestionsOpen,
+      narr:Claim_ReflectionLoopTwoMechanisms,
+      narr:StyleObs_AgentSim_Antithesis,
+      narr:StyleObs_AgentSim_BoldHeaders,
+      narr:StyleObs_AgentSim_VerbatimBlockquotes,
+      narr:StyleObs_AgentSim_ProvisionalFlag,
+      narr:Metrics_AgentSimulationResearch_Full .
+} ;
+
+# UPDATE narr:Narrative_AgentMemoryArchitectureParallel — thin in snapshot, enrich with note, broader, prefLabel
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_AgentMemoryArchitectureParallel skos:note ?oldNote ;
+      narr:theme ?oldTheme .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260429T120000Z {
+    narr:Narrative_AgentMemoryArchitectureParallel
+      skos:broader narr:TechnicalExplainers ;
+      skos:prefLabel "Agent-Simulation Research: Memory Architecture Parallels to aswritten Roadmap" ;
+      skos:note "Three roadmapped workstreams cluster tightly around Park et al.'s memory mechanism: (1) Recency-weighted retrieval ≈ narr:appliesAs temporality dimension — Park scores recency as exponential decay; aswritten uses structural property rather than procedural scoring. (2) Importance scoring ≈ conviction levels — Park's LLM-rated 1-10 at memory creation maps to notion/claim/decision/principle discrete bands; same operation (score-on-write to control attention-on-read) with aswritten carrying provenance and supersession relationships. (3) Reflection loop ≈ abstraction detection (task-176) — Park's threshold-triggered procedural reflection synthesizes raw observations into higher-level claims; empirically established (March 25 model comparison) that no tested LLM produces this behavior in the extraction pipeline. Park's mechanism is a concrete working reference, not necessarily the chosen strategy." ;
+      narr:theme "Park et al.'s recency/importance/reflection memory mechanism maps structurally onto aswritten's temporality dimension, conviction levels, and abstraction detection gap — three roadmap workstreams that cluster more tightly than any single one captures alone" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_AgentMemoryArchitectureParallel narr:theme ?oldTheme .
+  }
+} ;
+
+# UPDATE narr:StyleMetrics_AgentSimulationResearch — fix ActiveVoiceRatio 0 and add JargonDensity
+DELETE {
+  GRAPH ?g {
+    narr:StyleMetrics_AgentSimulationResearch narr:ActiveVoiceRatio ?oldRatio .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260429T120000Z {
+    narr:StyleMetrics_AgentSimulationResearch
+      narr:ActiveVoiceRatio "0.80"^^xsd:decimal ;
+      narr:JargonDensity "0.10"^^xsd:decimal ;
+      skos:note "Research memo register with embedded verbatim blockquotes from a collaborator's talk transcript. Mixed register: structured markdown with H2 section headers (memo genre) vs. colloquial first-person in blockquoted speech. Antithesis-heavy structure (what transfers vs. what doesn't, procedural vs. human-driven, decay vs. depreciation). Active voice dominant in editorial prose. Jargon density moderate — product terms (task-176, narr:appliesAs, conviction levels, MCP, compile) and research terms (Park et al., threshold-triggered, importance scoring) used without definition, implying internal audience. Provisional flag in frontmatter signals research-branch status." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:StyleMetrics_AgentSimulationResearch narr:ActiveVoiceRatio ?oldRatio .
+  }
+} ;
+
+# UPDATE narr:Observation_ParkMemoryMechanism — add proper selectors (was blank node)
+DELETE {
+  GRAPH ?g {
+    narr:Observation_ParkMemoryMechanism oa:hasSelector ?oldSel .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260429T120000Z {
+    narr:Observation_ParkMemoryMechanism
+      skos:broader narr:DataModelLifecycle ;
+      skos:note "Park et al.'s three-parameter memory retrieval mechanism: recency (exponential decay), importance (LLM-rated 1-10 at creation), and relevance to current context. a collaborator's verbatim: 'The creators of this paper, they suggested a mechanism based on three different parameters. Recency, importance, and relevance to the current context. As they influence which memories in a given point of time should be retrieved from that broad thing which agent has.'" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 2050
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The creators of this paper, they suggested a mechanism based on three different parameters. Recency, importance, and relevance to the current context." ;
+          oa:prefix "So, I'm not sure about you, but I never remember if I close the door." ;
+          oa:suffix " As they influence which memories in a given point of time should be retrieved"
+        ]
+      ] .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Observation_ParkMemoryMechanism dct:source narr:Sample_AgentSimulationResearch_20260429 .
+    OPTIONAL { narr:Observation_ParkMemoryMechanism oa:hasSelector ?oldSel . }
+  }
+} ;
+
+# INSERT new entities
+INSERT DATA {
+  GRAPH narr:Tx_20260429T120000Z {
+
+    # New Narrative: Decay vs Depreciation as distinct operations
+    narr:Narrative_DecayVsDepreciationDistinction
+
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:broader narr:TechnicalExplainers ;
+      skos:prefLabel "Decay and Depreciation Are Two Distinct Operations That May Need a Single Coherent Workflow" ;
+      skos:note "Park's architecture only adds — nothing decays out, no equivalent of Claim_ConvictionDecayFeatureRequest from a founder beta user. Their world ran a day; at longer horizons the memory store would grow unbounded — same shape as the canonical aswritten repo hitting the 256K token compile limit (motivating snapshot pruning pre-pass). Decay is 'this claim hasn't been touched in 6 months, downweight it' — automatic, temporal, structural. Depreciation is 'this claim was superseded by a newer decision, mark it' — human-driven, semantic, relational. The perspective treats them as separate items but doesn't yet relate them. They may need to be designed as a single coherent workflow rather than two separate features." ;
+      narr:theme "Decay (automatic temporal downweighting) and depreciation (human-driven semantic supersession) are two distinct operations that the perspective has not yet related — they may need a single coherent workflow design" .
+
+    # New Narrative: What doesn't transfer from agent-simulation research
+    narr:Narrative_AgentSimResearchWhatDoesntTransfer
+
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:broader narr:TechnicalExplainers ;
+      skos:prefLabel "Three Research Threads That Don't Transfer from Agent-Simulation Research" ;
+      skos:note "Three explicit non-transfers: (1) Streaming as substrate (Kafka/Flink/OpenSearch) is the talk's infrastructure layer, not its intellectual contribution — aswritten's coordination model (MCP synchronous + Git asynchronous review) solves a different problem at a different cadence. (2) Interview-based agent generation (Park et al. follow-up, 1,000-person simulation) has structural similarity to perspective-from-interview onramp but different goal: their agents simulate human responses for research; ours install expertise for delegation. (3) Values-alignment-as-trust paper is suggestive but small — finding that agents with aligned values trust each other more is the right direction but not strong enough evidence to ground a claim." ;
+      narr:theme "Streaming substrate, interview-based agent generation, and values-alignment-as-trust are research threads that don't transfer — each is either a different domain, a different goal, or insufficient evidence" .
+
+    # New Claim: Park's architecture only adds, nothing decays
+    narr:Claim_ParkArchitectureOnlyAdds
+      a narr:Claim ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "Park's 25-agent simulated town architecture only adds memories — nothing decays out. Their world ran a day. At longer horizons their memory store would grow unbounded, same shape as the canonical aswritten repo hitting the 256K token compile limit. The user-review-driven depreciation flow is what Park's architecture genuinely lacks: a human deciding when a claim has expired, not just decayed." ;
+      narr:aboutNode narr:Narrative_DecayVsDepreciationDistinction ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      .
+
+    # New Claim: Vector search not used in any of the papers
+    narr:Claim_VectorSearchNotUsedInPapers
+      a narr:Claim ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "a collaborator's own observation about the production gap: 'Vector search and its classic form was never really used um uh for any of the papers um which I covered. That's kind of was surprising to me.' None of the five agent-simulation papers surveyed used vector search in its classic form — a signal that the research community is working around it with procedural mechanisms rather than retrieval-based approaches." ;
+      narr:aboutNode narr:TechnicalExplainers ;
+      narr:hasConvictionLevel narr:Conviction_Stake .
+
+    # New Claim: Gatekeeper design questions remain open
+    narr:Claim_GatekeeperDesignQuestionsOpen
+      a narr:Claim ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "The Microsoft gatekeeper pattern raises specific open design questions for the org-tier coordination plane: Does the gatekeeper hold ground truth or just route information? Is it a separate perspective or a property of the org-tier coordination plane itself? Does it operate during deployment (resolve at run time) or during review (resolve at memory save)? These are unresolved — the memory raises them without taking a position." ;
+      narr:aboutNode narr:RoleTopology ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Claim_MultiRoleCoordinationGatekeeper .
+
+    # New Claim: Two candidate mechanisms for task-176 abstraction detection
+    narr:Claim_ReflectionLoopTwoMechanisms
+      a narr:Claim ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "Park's threshold-triggered procedural reflection is now the first documented candidate mechanism for task-176's abstraction detection: when sum of importance scores across recent memories crosses a threshold, run a reflection prompt, write synthesized claim back as a new memory at a higher abstraction. The aswritten alternative would be review-flow-driven: humans surface 'this cluster of observations probably means something at a higher level' during memory review rather than the system detecting it procedurally. Both are valid; the choice has implications for how task-176 ships." ;
+
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Claim_ReflectionLoopAsAbstractionMechanism .
+
+    # Style Observation 1: Antithesis structure (what transfers vs. what doesn't)
+    narr:StyleObs_AgentSim_Antithesis
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "Heavy antithesis structure throughout: 'What a collaborator said' vs. 'What doesn't transfer', 'procedural vs. human-driven', 'decay vs. depreciation', 'Park's flat importance vs. aswritten's provenance-carrying conviction'. The document is organized as a series of parallel/contrast pairs that map research findings onto product roadmap gaps." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4200 ;
+          oa:end 4400
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Decay is \"this claim hasn't been touched in 6 months, downweight it\" — automatic, temporal, structural. Depreciation is \"this claim was superseded" ;
+          oa:prefix "Decay and depreciation are two different operations" ;
+          oa:suffix " by a newer decision, mark it\" — human-driven, semantic, relational."
+        ]
+      ] .
+
+    # Style Observation 2: Bold section headers as decision-memo layer
+    narr:StyleObs_AgentSim_BoldHeaders
+      a narr:StyleObservation ;
+      skos:broader narr:InformationArchitecture ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "Bold numbered headers ('1. Recency-weighted retrieval ≈ temporality dimension', '2. Importance scoring ≈ conviction levels', '3. Reflection loop ≈ abstraction detection') create a scannable decision-memo layer above the analytical prose. The ≈ symbol is used consistently as a structural marker for the parallel-mapping argument." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2800 ;
+          oa:end 2900
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**1. Recency-weighted retrieval ≈ temporality dimension.**" ;
+          oa:prefix "The memory architecture parallel runs across three roadmapped\nworkstreams" ;
+          oa:suffix "\nPark scores recency at retrieval time as exponential decay."
+        ]
+      ] .
+
+    # Style Observation 3: Verbatim blockquotes from talk transcript
+    narr:StyleObs_AgentSim_VerbatimBlockquotes
+      a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "Extensive verbatim blockquotes from a collaborator's talk transcript, preserving her colloquial register ('um uh', 'kind of was surprising', 'stupid like I never missed closing the door'). The quoted speech is filler-heavy and conversational, contrasting sharply with the analytical editorial prose. This dual-register structure is characteristic of the research-branch memo format." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1580 ;
+          oa:end 1720
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Vector search and its classic form was never really used um uh for any of the papers um which I covered. That's kind of was surprising to me." ;
+          oa:prefix "a collaborator's own observation about the production gap:" ;
+          oa:suffix ""
+        ]
+      ] .
+
+    # Style Observation 4: Provisional flag as safety rail
+    narr:StyleObs_AgentSim_ProvisionalFlag
+      a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "The document opens with an explicit provisional flag in bold: 'Provisional — from research/agent-memory-architecture exploration branch, not yet promoted to main.' This is a deliberate safety rail (per Claim_ProvisionalFlagSafetyRail) that signals research-branch status to prevent canon-too-soon drift if the memory accidentally leaks into main's compile." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 220 ;
+          oa:end 340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**Provisional — from research/agent-memory-architecture exploration branch, not yet promoted to main.**" ;
+          oa:prefix "" ;
+          oa:suffix "\n\n## Context"
+        ]
+      ] .
+
+    # Full StyleMetrics node replacing the incomplete one
+    narr:Metrics_AgentSimulationResearch_Full
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Research memo register with embedded verbatim blockquotes from a collaborator's talk transcript. Mixed register: structured markdown with H2 section headers and bold numbered parallels (memo genre) vs. colloquial first-person in blockquoted speech. Antithesis-heavy structure (what transfers vs. what doesn't, procedural vs. human-driven, decay vs. depreciation). Active voice dominant in editorial prose; blockquoted speech is filler-heavy and conversational. Jargon density moderate — product terms (task-176, narr:appliesAs, conviction levels, MCP, compile limit) and research terms (Park et al., threshold-triggered, importance scoring, Kafka/Flink) used without definition, implying internal audience. Provisional flag in frontmatter signals research-branch status. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier." ;
+      narr:AverageSentenceLength "19"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.80"^^xsd:decimal ;
+      narr:JargonDensity "0.10"^^xsd:decimal .
+
+  }
+}

@@ -1,0 +1,42 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_CadenceRhythm> {
+  <https://aswritten.ai/narrative#Digest_CadenceRhythm> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#CadenceRhythm> ;
+    narr:childCount "20"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers prose-cadence observations on the founder's writing voice. The dominant register is **staccato compression**: short declarative punches ([snappy imperative repetition](narr:StyleObs_Cadence_1), [8-word subject-verb-object lines](narr:StyleObs_MicroTelltales), [un-hedged conviction anchors](narr:StyleObs_ShortPunchyDeclaratives) dated 2026-04-14), [verb-only/noun-only fragments](narr:StyleObs_1), and [deliberate long-then-short alternation](narr:StyleObs_SentenceLengthVariation) for rhythm. A second strong thread is **triadic structure** — rule-of-three lists for memorability ([what you know / how it's changed / IP](narr:StyleObs_RuleOfThree_1), [three scales/tools/outputs](narr:StyleObs_RuleOfThreeScales), [tricolons closing sections](narr:StyleObs_11), [scope-header three-beat](narr:StyleObs_ScopeHeaderStructure)). Punctuation cadence recurs: the [em-dash](narr:StyleObs_EmDashCadence) and the [→ arrow pipeline](narr:StyleObs_ArrowChaining). Brand stylization ([lowercase 'aswritten'](narr:StyleObs_3)), [analogy/simile](narr:StyleObs_Simile_1), [process enumeration](narr:StyleObs_ProcessEnumeration), and [iteration-velocity markers](narr:StyleObs_SkillEveryDay) round out the span. These are surface telltales, not a single thesis — each is one expand from its raw context.""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_11> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_3> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_4> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowChaining> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowRhetoric> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Cadence_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_EmDashCadence> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_EmDashCausal> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_MicroTelltales> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NotionCadence> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ProcessEnumeration> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ProgressiveNarrowing> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThreeScales> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThree_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ScopeHeaderStructure> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SentenceLengthVariation> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ShortPunchyDeclaratives> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Simile_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SkillEveryDay> ;
+    narr:keyPhrase [ narr:text "Snappy, snappy" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Cadence_1> ] ;
+    narr:keyPhrase [ narr:text "Review status is per-triple at the extraction level." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_MicroTelltales> ] ;
+    narr:keyPhrase [ narr:text "what you know, how it's changed, IP as quantifiable code" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RuleOfThree_1> ] ;
+    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:keyPhrase [ narr:text "Transform is for **permanent forks**. Actor/role/focus lenses are for **ephemeral views on the living graph**." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ShortPunchyDeclaratives> ] ;
+    narr:keyPhrase [ narr:text "It's like watching someone read the newspaper" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Simile_1> ] ;
+    narr:variation [ narr:text "Brand-stylization is internally inconsistent: one child records BOTH lowercase 'aswritten' and capital-A 'Aswritten.ai', while another asserts it stays lowercase even at sentence start — an unresolved rule conflict." ; narr:over <https://aswritten.ai/narrative#StyleObs_1> ; narr:over <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:variation [ narr:text "Em-dash is logged under three distinct functions — causal connector (replacing because/therefore), consequence-appender, and progressive-narrowing pivot — not one cadence device." ; narr:over <https://aswritten.ai/narrative#StyleObs_EmDashCausal> ; narr:over <https://aswritten.ai/narrative#StyleObs_EmDashCadence> ; narr:over <https://aswritten.ai/narrative#StyleObs_ProgressiveNarrowing> ] ;
+    narr:variation [ narr:text "Arrow notation is split into two overlapping observations — visual pipeline chaining vs rhetorical 'directional inevitability' — that could be read as redundant or as a real chaining/rhetoric distinction." ; narr:over <https://aswritten.ai/narrative#StyleObs_ArrowChaining> ; narr:over <https://aswritten.ai/narrative#StyleObs_ArrowRhetoric> ] ;
+    narr:variation [ narr:text "Analogy/metaphor children (Matrix kung-fu, Kahneman System 1/2, software-on-hardware) sit here as a different register from pure cadence — illustrative rather than rhythmic." ; narr:over <https://aswritten.ai/narrative#StyleObs_4> ; narr:over <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:variation [ narr:text "Only one child carries a witness date (20260414); the rest are undated, so any temporal trajectory across these observations is largely unrecoverable." ; narr:over <https://aswritten.ai/narrative#StyleObs_ShortPunchyDeclaratives> ] ;
+    narr:writer "claude (subscription)" .
+}

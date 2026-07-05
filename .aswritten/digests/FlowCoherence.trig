@@ -1,0 +1,30 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_FlowCoherence> {
+  <https://aswritten.ai/narrative#Digest_FlowCoherence> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#FlowCoherence> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers style observations of a single first-person analytical document, narrating its voice and architecture rather than ranking devices. The mainline reading is a [personal-narrative voice with active constructions](narr:https://aswritten.ai/narrative#StyleObs_9) that alternates long explanatory clauses with short punchy verdicts, lands antitheses, and names sections with progressive-revelation noun-phrase headers. Beneath the prose rhythm sits explicit structural scaffolding: [bold-labeled beat arcs](narr:https://aswritten.ai/narrative#StyleObs_BoldBeats), a [three-part scope cadence](narr:https://aswritten.ai/narrative#StyleObs_ScopeHeaderStructure), and a [Key Insight callout](narr:https://aswritten.ai/narrative#StyleObs_KeyInsightCallout) elevating one finding. Recurring micro-rhythm devices cluster: [em-dash progressive narrowing](narr:https://aswritten.ai/narrative#StyleObs_ProgressiveNarrowing), [short declarative pivots](narr:https://aswritten.ai/narrative#StyleObs_ShortPunchyTransitions), [tripartite parallelism](narr:https://aswritten.ai/narrative#StyleObs_Parallelism), and [arrow-chained pipeline cadence](narr:https://aswritten.ai/narrative#StyleObs_ArrowChaining). A distinct meta-layer notes the [Open Questions section](narr:https://aswritten.ai/narrative#StyleObs_OpenQuestionsSection) — the document practicing the gap-honesty it preaches. No dates witness these; they are static observations of one artifact.""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_9> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowChaining> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldBeats> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_KeyInsightCallout> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OpenQuestionsSection> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Parallelism> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ProgressiveNarrowing> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ScopeHeaderStructure> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ShortPunchyTransitions> ;
+    narr:keyPhrase [ narr:text "This is my life's work." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:keyPhrase [ narr:text "Cents, not dollars." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:keyPhrase [ narr:text "not just what the AI knows, but what it believes" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:keyPhrase [ narr:text "The fear, The process, The proof, The loop, The payoff" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BoldBeats> ] ;
+    narr:keyPhrase [ narr:text "In scope now / Next / Out of scope" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ScopeHeaderStructure> ] ;
+    narr:keyPhrase [ narr:text "the document practices what it preaches" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_OpenQuestionsSection> ] ;
+    narr:variation [ narr:text "Two children attach as broader (voice + epistemic-honesty meta-layer) while the rest are related device-observations — a structural split between framing and instances." ; narr:over <https://aswritten.ai/narrative#StyleObs_9> ; narr:over <https://aswritten.ai/narrative#StyleObs_OpenQuestionsSection> ] ;
+    narr:variation [ narr:text "Micro-prose rhythm (em-dash narrowing, short pivots, parallelism, arrow cadence) versus macro document scaffolding (bold beat arcs, scope cadence, Key Insight callout) — two different scales of the same style." ; narr:over <https://aswritten.ai/narrative#StyleObs_ProgressiveNarrowing> ; narr:over <https://aswritten.ai/narrative#StyleObs_ShortPunchyTransitions> ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldBeats> ; narr:over <https://aswritten.ai/narrative#StyleObs_ScopeHeaderStructure> ] ;
+    narr:variation [ narr:text "Emotional register ('This is my life's work') sits against the otherwise detached analytical voice — an outlier in tone." ; narr:over <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:variation [ narr:text "The Open Questions / gap-honesty observation is self-referential meta-commentary, distinct from the purely formal device notes around it." ; narr:over <https://aswritten.ai/narrative#StyleObs_OpenQuestionsSection> ; narr:over <https://aswritten.ai/narrative#StyleObs_KeyInsightCallout> ] ;
+    narr:writer "claude (subscription)" .
+}

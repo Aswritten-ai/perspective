@@ -1,0 +1,30 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_DirectVsInfluenceSales> {
+  <https://aswritten.ai/narrative#Digest_Narrative_DirectVsInfluenceSales> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_DirectVsInfluenceSales> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub holds two sales motions in parallel. The **direct** motion is a demo-call prospect's two-step ladder: [Step 1 Publisher tier](narr:Claim_DemoProspectStep1PublisherTier) targets experts/small businesses with a single asset (\"Publisher tier ([amount]/mo) + conversion fee + marketplace revenue share\"), then [Step 2 Organization tier](narr:Claim_DemoProspectStep2OrgTier) upsells orgs to \"Organization tier ([amount]/mo + [amount] setup)\" with compliance/on-prem hooks (both framed 19 Mar). The **influence** motion is [Tony's an enterprise prospect tactic](narr:Claim_EnterpriseProspectInfluenceTactic) (17 Mar): \"don't go for the hotel (direct ask) on first contact\" — hint, then follow up. Enablement spans a [pre-read deck](narr:Claim_PreReadDeckRequest), a [sales guide](narr:Claim_SalesGuideRequest), the [play-by-play playbook](narr:Claim_SalesPlaybookForDemoProspect) called the critical piece (15 Mar), and [tighter onboarding](narr:Claim_TighterOnboarding) separating docs from AI. Compensation stays open: [equity triggers](narr:Claim_DemoProspectEquityTriggers) (\"over [amount] in sales AND over [amount] raised\") and an [unresolved commission model](narr:Claim_DemoProspectCommissionOpenQuestion) with four options on the table (11–19 Mar).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DemoProspectCommissionOpenQuestion> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DemoProspectEquityTriggers> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DemoProspectStep1PublisherTier> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DemoProspectStep2OrgTier> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_EnterpriseProspectInfluenceTactic> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PreReadDeckRequest> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SalesGuideRequest> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SalesPlaybookForDemoProspect> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TighterOnboarding> ;
+    narr:keyPhrase [ narr:text "Publisher tier ([amount]/mo) + conversion fee + marketplace revenue share" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DemoProspectStep1PublisherTier> ] ;
+    narr:keyPhrase [ narr:text "Organization tier ([amount]/mo + [amount] setup)" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DemoProspectStep2OrgTier> ] ;
+    narr:keyPhrase [ narr:text "don't go for the hotel (direct ask) on first contact. Drop the hint first, then follow up with the next conversation" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EnterpriseProspectInfluenceTactic> ] ;
+    narr:keyPhrase [ narr:text "no equity until after defined triggers fire — e.g., over [amount] in sales AND over [amount] raised" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DemoProspectEquityTriggers> ] ;
+    narr:keyPhrase [ narr:text "It should be a play-by-play with GIF descriptions" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SalesPlaybookForDemoProspect> ] ;
+    narr:keyPhrase [ narr:text "Your book is a snapshot. We'll turn it into a living AI module." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DemoProspectStep1PublisherTier> ] ;
+    narr:variation [ narr:text "Two competing sales philosophies sit side by side: a demo-call prospect's direct close vs Tony's slow influence/advisory opening — different first moves, not yet reconciled." ; narr:over <https://aswritten.ai/narrative#Claim_DemoProspectStep2OrgTier> ; narr:over <https://aswritten.ai/narrative#Claim_EnterpriseProspectInfluenceTactic> ] ;
+    narr:variation [ narr:text "a demo-call prospect's commission model is openly unresolved — four models (A–D) with Scarlet leaning no setup fee for team, which itself creates a commission gap for a demo-call prospect." ; narr:over <https://aswritten.ai/narrative#Claim_DemoProspectCommissionOpenQuestion> ] ;
+    narr:variation [ narr:text "Setup-fee tension: Org tier carries a [amount] setup, yet Scarlet's lean is no setup fee for team — the pricing posture differs by tier." ; narr:over <https://aswritten.ai/narrative#Claim_DemoProspectStep2OrgTier> ; narr:over <https://aswritten.ai/narrative#Claim_DemoProspectCommissionOpenQuestion> ] ;
+    narr:variation [ narr:text "Open question on selling scope: does a demo-call prospect sell both tiers or only Professional/Publisher (model C), which changes his whole comp structure." ; narr:over <https://aswritten.ai/narrative#Claim_DemoProspectCommissionOpenQuestion> ] ;
+    narr:writer "claude (subscription)" .
+}

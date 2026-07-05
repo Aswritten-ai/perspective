@@ -1,0 +1,235 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260421T210000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-21T21:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - [email]\n---\n\n# Enterprise-Shape as Primary Focus (Tentative)" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_EnterpriseShapePrimaryFocus_20260421,
+      narr:Narrative_EnterpriseShapePrimaryFocus,
+      narr:Claim_EnterpriseShapeTentativePriority,
+      narr:Claim_EnterpriseShapeEngagementPattern,
+      narr:Claim_ExpertiseDistributorDeprioritized,
+      narr:Claim_EarlyProspectBothArchetypes,
+      narr:Claim_EnterpriseShapeValidationCriteria,
+      narr:Claim_SMBPivotReconciliationNeeded,
+      narr:Obs_ScarletUnsureArchetypes,
+      narr:Obs_EnterpriseShapeDefinition,
+      narr:Obs_EarlyProspectInboundBottleneck,
+      narr:StyleObs_EnterpriseShape_Antithesis,
+      narr:StyleObs_EnterpriseShape_TimestampCitation,
+      narr:StyleObs_EnterpriseShape_TentativeRegister,
+      narr:Metrics_EnterpriseShapePrimaryFocus_20260421 .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260421T210000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────
+    narr:Sample_EnterpriseShapePrimaryFocus_20260421 a narr:Sample ;
+      dct:title "Enterprise-Shape as Primary Focus (Tentative) — Tony Maley Check-in, April 21, 2026" ;
+      dct:created "2026-04-21"^^xsd:date ;
+      dct:description "Check-in call between Tony Maley and Scarlet Dame. Tony's additive vs. incremental diagnostic applied to Scarlet's current funnel points toward the enterprise customer-shape (enterprise or SMB with internal knowledge bottleneck + stakeholder access pattern) as primary sales focus. Expertise-distributor archetypes deprioritized as primary targets. an early prospect identified as straddling both archetypes. Decision is tentative — needs 2-3 more the enterprise customer-shape conversations to validate." ;
+      narr:inputLength 5200 .
+
+    # ── NARRATIVE ───────────────────────────────────────────────────
+    narr:Narrative_EnterpriseShapePrimaryFocus a narr:Narrative ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:broader narr:FocusSequencing ;
+      skos:prefLabel "Enterprise-Shape as Tentative Primary Sales Focus" ;
+      skos:note "Tony's additive vs. incremental test applied to Scarlet's funnel points toward the the enterprise customer-shape (internal expert as bottleneck + stakeholder access pattern) as the primary focus. Expertise-distributor archetypes (a beta user from outside tech, an engineering manager at the customer-as-course-creator, a founder beta user) are relatively incremental and should be deprioritized as primary sales targets. 'Enterprise shape' is the engagement pattern, not org size — an early prospect's 5-person acupuncture practice has the same shape as the enterprise customer's 150-person consultancy." ;
+      narr:theme "The additive diagnostic applied to the current funnel points to the enterprise customer-shape (internal bottleneck + stakeholder access) as the primary sales focus, with expertise-distributor archetypes moved to secondary track" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────────
+
+    narr:Claim_EnterpriseShapeTentativePriority a narr:Claim ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Tony's additive vs. incremental test applied to Scarlet's current funnel pointed toward the the enterprise customer-shape as primary focus. Conviction is tentative (Notion-level) — needs validation with 2-3 more the enterprise customer-shape prospects before moving to decision. Based on sample size of one (the enterprise customer) plus Tony's diagnostic framework. Honest framing: if the only evidence is one pilot with a lukewarm champion (the customer's chief architect is sponsor, not champion), this may be rationalization." ;
+      narr:aboutNode narr:Narrative_EnterpriseShapePrimaryFocus ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:FocusSequencing .
+
+    narr:Claim_EnterpriseShapeEngagementPattern a narr:Claim ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "'Enterprise shape' should be read as the engagement pattern — internal expert as bottleneck + stakeholder access — rather than as enterprise-only org size. an early prospect (5-person practice) and the enterprise customer (150-person consultancy) have the same engagement shape. The pattern is additive: the prospect cannot do this thing today without the product." ;
+      narr:aboutNode narr:Narrative_AdditiveVsIncremental ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_EnterpriseShapePrimaryFocus .
+
+    narr:Claim_ExpertiseDistributorDeprioritized a narr:Claim ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Expertise-distributor archetypes (a beta user from outside tech, a founder beta user, a collaborator, an engineering manager at the customer-as-course-creator) are relatively incremental for their users and should be deprioritized as primary sales targets. They move to secondary track: keep warm but don't invest primary sales effort until the primary track has 2-3 closed deals. Free tier / expertise-distributor product direction is not abandoned — it is deferred as a primary motion." ;
+      narr:aboutNode narr:Archetype_KnowledgePackager ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_EnterpriseShapePrimaryFocus .
+
+    narr:Claim_EarlyProspectBothArchetypes a narr:Claim ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "an early prospect's role is nuanced — he fits BOTH the Knowledge Packager archetype (expertise distribution for students/practitioners) AND the inbound-bottleneck pattern (fields inbound inquiries from clients and prescribing practitioners constantly). The engagement shape is the same as a B2B use case like the enterprise customer, even though the org is 5 vs. 150 people. This may require archetype refinement — an engineering manager at the customer may be more additive than the expertise-distribution framing suggested." ;
+
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Claim_EnterpriseShapeEngagementPattern .
+
+    narr:Claim_EnterpriseShapeValidationCriteria a narr:Claim ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Validation criteria before promoting to decision: (1) additive vs. incremental test predicts conversion reliably across 2-3 more the enterprise customer-shape conversations; (2) process sale closes without requiring case studies; (3) engagement shape replicates across different org sizes. Rejection criteria: 3+ the enterprise customer-shape prospects fail to convert via process sale within 90 days, OR 2+ expertise-distributor prospects convert at higher rates than the enterprise customer-shape." ;
+      narr:aboutNode narr:Narrative_EnterpriseShapePrimaryFocus ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_SellTheProcessPreCaseStudy .
+
+    narr:Claim_SMBPivotReconciliationNeeded a narr:Claim ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Open question: how to reconcile the enterprise-shape primary focus with the March 17 SMB/B2C pivot. The SMB/B2C pivot emphasized volume B2C; this refocus emphasizes enterprise-shape engagement pattern (which may or may not be SMB by org size). 'Enterprise shape' may be orthogonal to org size — the pattern applies to both 5-person and 150-person orgs. Needs explicit reconciliation." ;
+      narr:aboutNode narr:Narrative_B2CPivot ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:challenges narr:Narrative_SMBPivot .
+
+    # ── OBSERVATIONS ────────────────────────────────────────────────
+
+    narr:Obs_ScarletUnsureArchetypes a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Scarlet's verbatim articulation of uncertainty about continuing to push other user archetypes vs. focusing on enterprise-shape." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1050 ;
+          oa:end 1230
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm feeling a little unsure about, like, how much I want to continue pushing on some of the other user archetypes right now" ;
+          oa:prefix "Scarlet [31:50]: \"" ;
+          oa:suffix ", or if I should try to focus"
+        ]
+      ] .
+
+    narr:Obs_EnterpriseShapeDefinition a narr:Observation ;
+      skos:broader narr:Segmentation ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Scarlet's verbatim articulation that enterprise shape is the engagement pattern (inbound bottleneck + stakeholder access), not org size — the same shape applies to a 5-person practice and a 150-person consultancy." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1400 ;
+          oa:end 1700
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the engagement is actually the same shape, even though that's an organization of like 5 versus 150" ;
+          oa:prefix "which is a very similar thing to a sort of B2B use case like the enterprise customer has. And " ;
+          oa:suffix ".\""
+        ]
+      ] .
+
+    narr:Obs_EarlyProspectInboundBottleneck a narr:Observation ;
+      skos:broader narr:PrimaryActors ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Scarlet's verbatim observation that an early prospect fields inbound inquiries constantly from clients and prescribing practitioners — the same inbound-bottleneck pattern as the enterprise customer, despite being a 5-person org." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1240 ;
+          oa:end 1540
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The acupuncturist that I'm trying to work with actually does have the same pattern of being someone that fields inbound, you know, customer service and sort of inquiry constantly about his expertise" ;
+          oa:prefix "Scarlet [31:50]: \"" ;
+          oa:suffix "... which is a very similar thing"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────
+
+    narr:StyleObs_EnterpriseShape_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "additive vs. incremental; primary track vs. secondary track; sponsor vs. champion; tentative vs. decision — antithesis pairs structure the entire document" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 0 ;
+          oa:end 120
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Enterprise-Shape as Primary Focus (Tentative)" ;
+          oa:prefix "# " ;
+          oa:suffix "\n\n**Date:**"
+        ]
+      ] .
+
+    narr:StyleObs_EnterpriseShape_TimestampCitation a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Timestamp citation convention [31:50] used throughout to anchor verbatim quotes to call recording — same pattern as narr:Sample_TonyMaleyCheckin_20260421" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1040 ;
+          oa:end 1060
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Scarlet [31:50]:" ;
+          oa:prefix "> " ;
+          oa:suffix " \"I'm feeling"
+        ]
+      ] .
+
+    narr:StyleObs_EnterpriseShape_TentativeRegister a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Explicit epistemic hedging throughout: 'tentative', 'needs validation', 'working hypothesis', 'potentially rationalizing' — unusually self-critical register for a strategic memo; signals high intellectual honesty" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3200 ;
+          oa:end 3420
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "if the only evidence for \"enterprise shape\" being primary is one pilot with a lukewarm champion (the customer's chief architect is sponsor, not champion — see separate memory), you are potentially rationalizing" ;
+          oa:prefix "The honest framing: " ;
+          oa:suffix " based on the one deal"
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────────
+
+    narr:Metrics_EnterpriseShapePrimaryFocus_20260421 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_EnterpriseShapePrimaryFocus_20260421 ;
+      skos:note "Strategic memo register with embedded verbatim blockquotes. Antithesis-heavy structure (additive vs. incremental, primary vs. secondary, tentative vs. decision). Active voice dominant in editorial prose. Timestamp citation convention throughout. Unusually self-critical epistemic register — 'potentially rationalizing' signals intellectual honesty. Jargon density low-moderate: product terms (the enterprise customer-shape, additive, process sale, expertise-distributor) used without definition, implying internal audience. Numbered lists for operational consequences. Sentence length varies between short declaratives and longer analytical passages." ;
+      narr:AverageSentenceLength "17"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.07"^^xsd:decimal .
+
+  }
+}

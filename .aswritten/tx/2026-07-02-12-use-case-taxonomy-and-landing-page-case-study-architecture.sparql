@@ -1,0 +1,264 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260702T172237Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T17:22:37Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-07-02-12-use-case-taxonomy-and-landing-page-case-study-architecture.md" ;
+    narr:originRef "dev" ;
+    dct:title "Three Use Cases, One Lifecycle: Discovery / Onboarding / Governance — and the Case-Study Landing Page" ;
+    prov:generated
+      narr:Sample_ThreeUseCasesLifecycle_20260702,
+      narr:Narrative_ThreeUseCaseTaxonomy,
+      narr:Narrative_OnboardingUseCase,
+      narr:Narrative_OrgMemoryDemotedToGovernanceSub,
+      narr:Narrative_DiscoveryOnboardingGovernanceSalesArc,
+      narr:Narrative_CaseStudyArchitectureInAswritten,
+      narr:Claim_OnboardingHumansAndAIs,
+      narr:Claim_LandingPageBehaviorOperationsBased,
+      narr:Claim_LandingPageTagline_Jul2026,
+      narr:Claim_CaseStudyDissolvesMetaLoop,
+      narr:Claim_DiscoveryFocusSequencesOthers,
+      narr:Claim_OrgMemoryDemotedSubUseCase,
+      narr:Obs_ScarletThreeUseCasesVerbatim,
+      narr:Obs_ScarletLandingPageAnswerArchitecture,
+      narr:Obs_ScarletLandingPageFocusQuote,
+      narr:StyleObs_ThreeUseCases_DashList,
+      narr:StyleObs_ThreeUseCases_VerbatimBlock,
+      narr:StyleObs_ThreeUseCases_LifecycleVerbs,
+      narr:StyleMetrics_ThreeUseCasesLifecycle .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T172237Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_ThreeUseCasesLifecycle_20260702 a narr:Sample ;
+      dct:title "Three Use Cases, One Lifecycle: Discovery / Onboarding / Governance — and the Case-Study Landing Page" ;
+      dct:created "2026-07-02"^^xsd:date ;
+      narr:inputLength 5105 ;
+      skos:note "Jul 2 strategy thread synthesizing the a consultant who ran enterprise discovery engagements for fifteen years (Jun 30) and a design collaborator (Jun 29) calls. Conviction: claim-level taxonomy; landing-page direction is active work. Clarifies the enterprise pole of the open enterprise-vs-B2C question." .
+
+    # ── Narrative: Three-Use-Case Taxonomy ──────────────────────────────────
+    narr:Narrative_ThreeUseCaseTaxonomy a narr:Narrative ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      narr:theme "Discovery / Onboarding / Governance as the three enterprise use cases" ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:note "Scarlet's Jul 2 taxonomy distinguishing what had been blurring together as 'the enterprise framing': (1) Discovery — consultancy interviews → synthesized pitch plan, cited back to source, automatable with provenance; (2) Onboarding — enabling an org to onboard new staff and AIs into an existing knowledge base; (3) Governance — the the enterprise customer ARB use case, steering AI behavior and using AI connected to the perspective for QA and onboarding. 'Organizational memory' is explicitly demoted from the pitch to a governance sub-use-case. Conviction: claim-level." ;
+      skos:related narr:Narrative_DiscoveryToolGTMWedge, narr:Narrative_UseCase1GoverningHumanTeam, narr:Narrative_UseCase2AgenticSteering, narr:Narrative_SteeringDecisionProcess .
+
+    # ── Narrative: Onboarding Use Case ──────────────────────────────────────
+    narr:Narrative_OnboardingUseCase a narr:Narrative ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      narr:theme "Onboarding humans and AIs into an organizational perspective" ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:note "Onboarding as a named, distinct use case: enabling an organization to onboard new staff because there's already an existing knowledge base. The recipient shape is the same whether the recipient is a human or an AI — both are being onboarded into an organizational perspective. This is 'super powerful' per Scarlet. Sits between Discovery (creates the perspective) and Governance (maintains and steers with it) in the lifecycle sequence." ;
+      skos:related narr:Narrative_ThreeUseCaseTaxonomy, narr:Narrative_TranscriptBootstrappingUnderplayed .
+
+    # ── Narrative: Org Memory Demoted to Governance Sub-Use-Case ────────────
+    narr:Narrative_OrgMemoryDemotedToGovernanceSub a narr:Narrative ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      narr:theme "Organizational memory demoted from the pitch to a governance sub-use-case" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "The Jul 2 taxonomy explicitly demotes 'organizational memory' from being the pitch to being a sub-use-case of governance. Scarlet: 'I'd take that as a sort of sub-use case, engineering governance or just governance processes generally.' This continues the committed retirement of 'memory' as the lead word (the Mar 23 'installable expertise' turn) and finally gives the leftover mission-language ('collective memory') a home that is a use case rather than the identity." ;
+      skos:related narr:Narrative_GovernanceAsSpeciesOfSteering .
+
+    # ── Narrative: Discovery→Onboarding→Governance Sales Arc ────────────────
+    narr:Narrative_DiscoveryOnboardingGovernanceSalesArc a narr:Narrative ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      narr:theme "Discovery / Onboarding / Governance as a single-customer sales arc" ;
+      skos:broader narr:FocusSequencing ;
+      skos:note "Session synthesis (attributed to the session, not to Scarlet): the three use cases are one perspective under three verbs, in sequence. Discovery CREATES the perspective (batch, from an existing conversation corpus). Onboarding TRANSFERS it — new humans and new AIs being the same recipient shape. Governance MAINTAINS AND STEERS WITH it (the ARB motion). Read as a sales arc: discovery is the entry engagement, onboarding the expansion, governance the subscription — a single-customer sequence, not three segments. Picking discovery as the focus sequences the others rather than sacrificing them." ;
+      skos:related narr:Narrative_ThreeUseCaseTaxonomy, narr:Narrative_DiscoveryToolGTMWedge .
+
+    # ── Narrative: Case-Study Architecture in aswritten ─────────────────────
+    narr:Narrative_CaseStudyArchitectureInAswritten a narr:Narrative ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      narr:theme "Building each case study's narrative architecture in aswritten dissolves the meta-loop and produces org-shaped example material" ;
+      skos:broader narr:CaseStudies ;
+      skos:note "Scarlet's direction: the landing page needs case studies that map to real pilots (or plausible discussions). Building each case study's narrative architecture *in aswritten* produces the org-shaped example material a consultant who ran enterprise discovery engagements for fifteen years said was missing ('you want companies using it... case studies are really important'). Because the subject is consulting discovery rather than aswritten itself, it dissolves the meta-loop confusion a consultant who ran enterprise discovery engagements for fifteen years named in the current demo. The pain script for the discovery case study already exists: the five-question discovery framework ('whose hours are the constraint,' 'the most recent incident of context failing to transfer') is 'what is the pain' in interrogative form." ;
+      skos:related narr:Narrative_DiscoveryToolGTMWedge, narr:Narrative_FiveQuestionDiscoveryFramework .
+
+    # ── Claims ───────────────────────────────────────────────────────────────
+    narr:Claim_OnboardingHumansAndAIs a narr:Claim ;
+      narr:aboutNode narr:Narrative_OnboardingUseCase ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      skos:note "Onboarding both individuals and AIs into an organizational perspective is the same recipient shape. Scarlet verbatim: 'Both onboarding their individuals and also AIs into an organizational perspective is super powerful.' The use case is not limited to human staff onboarding." ;
+      narr:supports narr:Narrative_OnboardingUseCase .
+
+    narr:Claim_LandingPageBehaviorOperationsBased a narr:Claim ;
+      narr:aboutNode narr:LandingPages ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      skos:note "Scarlet's Jul 2 direction: 'the landing page is more behavior and operations-based.' The page's unanswered question is 'what is the pain, and what do I do with it? What does that actually look like?' The answer architecture is use-case-led with case studies, not capability-led." ;
+      narr:supports narr:LandingPages .
+
+    narr:Claim_LandingPageTagline_Jul2026 a narr:Claim ;
+      narr:aboutNode narr:Tagline ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      skos:note "First deck slide drafted Jul 2: 'Turn your conversations into a perspective that is cited by AI.' The conversations-Rolodex hero stays, but the weight moves into use cases. This is a candidate tagline for the landing page, not a finalized one." ;
+      narr:supports narr:Tagline .
+
+    narr:Claim_CaseStudyDissolvesMetaLoop a narr:Claim ;
+      narr:aboutNode narr:Narrative_CaseStudyArchitectureInAswritten ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      skos:note "Because the subject of the discovery case study is consulting discovery rather than aswritten itself, building it in aswritten dissolves the meta-loop confusion a consultant who ran enterprise discovery engagements for fifteen years named in the current demo. The case study is about the client's problem, not about aswritten's own architecture." ;
+      narr:supports narr:Narrative_CaseStudyArchitectureInAswritten .
+
+    narr:Claim_DiscoveryFocusSequencesOthers a narr:Claim ;
+      narr:aboutNode narr:Narrative_DiscoveryOnboardingGovernanceSalesArc ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      skos:note "Picking discovery as the near-term focus sequences the onboarding and governance use cases rather than sacrificing them. Discovery is the entry engagement; onboarding and governance follow as expansion and subscription in a single-customer arc. This is the key strategic logic for why the discovery wedge does not foreclose the other use cases." ;
+      narr:supports narr:Narrative_DiscoveryOnboardingGovernanceSalesArc .
+
+    narr:Claim_OrgMemoryDemotedSubUseCase a narr:Claim ;
+      narr:aboutNode narr:Narrative_OrgMemoryDemotedToGovernanceSub ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      skos:note "'Organizational memory' moves from the pitch to a governance sub-use-case. Scarlet: 'I'd take that as a sort of sub-use case, engineering governance or just governance processes generally, and that would be the the enterprise customer ARB use case.' The demotion is deliberate and continues the Mar 23 retirement of 'memory' as the lead word." ;
+      narr:supports narr:Narrative_OrgMemoryDemotedToGovernanceSub .
+
+    # ── Observations (verbatim quotes with selectors) ────────────────────────
+    narr:Obs_ScarletThreeUseCasesVerbatim a narr:Observation ;
+      skos:broader narr:SolutionArchetypes ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      skos:note "Scarlet's verbatim taxonomy of the three enterprise use cases, distinguishing Discovery, Onboarding, and Governance/Organizational Memory." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 659 ; oa:end 774
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Discovery: This is what a consultant who ran enterprise discovery engagements for fifteen years and I were talking about. What a consultancy does is go into an organization" ;
+          oa:prefix "> I was thinking about those as different use cases:\n> — " ;
+          oa:suffix " and do a bunch of interviews"
+        ]
+      ] .
+
+    narr:Obs_ScarletLandingPageAnswerArchitecture a narr:Observation ;
+      skos:broader narr:LandingPages ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      skos:note "Scarlet's verbatim answer architecture for the landing page: case studies that map to real pilots, showing current way, how aswritten does it, product behaviors, narrative architecture for each." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3923 ; oa:end 4073
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "We can build a narrative architecture for each and then write an article that traverses it in a clear way that shows the actors, incentives, and flows" ;
+          oa:prefix "Here are the product behaviors... " ;
+          oa:suffix ", and the narratives around it."
+        ]
+      ] .
+
+    narr:Obs_ScarletLandingPageFocusQuote a narr:Observation ;
+      skos:broader narr:LandingPages ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      skos:note "Scarlet's verbatim statement on picking consulting discovery as the clear landing page focus." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3455 ; oa:end 3564
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If I was to pick a clear focus, say consulting discovery, that's something that could be clearly articulated." ;
+          oa:prefix "> " ;
+          oa:suffix " Maybe that's just a carousel"
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_ThreeUseCases_DashList a narr:StyleObservation ;
+      skos:broader narr:Parallelism ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      rdf:value true ;
+      skos:note "Em-dash list structure for the three use cases: '— Discovery:', '— Onboarding:', '— Organizational memory:'. Parallel syntactic structure with a colon-introduced definition for each. Characteristic of Scarlet's spoken-word-to-text idiolect: list items introduced by a dash rather than a bullet, with the label in bold-equivalent position." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 657 ; oa:end 723
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "— Discovery: This is what a consultant who ran enterprise discovery engagements for fifteen years and I were talking about." ;
+          oa:prefix "> I was thinking about those as different use cases:\n> " ;
+          oa:suffix " What a consultancy does"
+        ]
+      ] .
+
+    narr:StyleObs_ThreeUseCases_VerbatimBlock a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      rdf:value true ;
+      skos:note "Extended verbatim blockquote (>-prefixed) for Scarlet's taxonomy, followed by editorial synthesis. The pattern: quote first, then the editorial gloss ('The demotion in the third bullet is deliberate'). Evidentiary weight carried by the verbatim; interpretation separated into the editorial layer. Consistent with the direct-block-quote style observed across the perspective." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 602 ; oa:end 654
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "> I was thinking about those as different use cases:" ;
+          oa:prefix "Scarlet, distinguishing what had been blurring together as \"the enterprise framing,\" verbatim:\n\n" ;
+          oa:suffix "\n> — Discovery:"
+        ]
+      ] .
+
+    narr:StyleObs_ThreeUseCases_LifecycleVerbs a narr:StyleObservation ;
+      skos:broader narr:VerbChoice ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      rdf:value true ;
+      skos:note "The lifecycle reading uses three capitalized action verbs to structure the use-case sequence: Discovery CREATES, Onboarding TRANSFERS, Governance MAINTAINS AND STEERS WITH. All-caps verbs in editorial prose for rhetorical emphasis — a device that marks the synthesis as the author's own framing rather than Scarlet's, consistent with the attribution note ('session synthesis, which Scarlet engaged with but did not originate — attribute accordingly')." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1700 ;
+          oa:end 1800
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Discovery CREATES the perspective (batch, from an existing conversation corpus). Onboarding TRANSFERS it" ;
+          oa:prefix "in sequence. " ;
+          oa:suffix " — new humans and new AIs"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+    narr:StyleMetrics_ThreeUseCasesLifecycle a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_ThreeUseCasesLifecycle_20260702 ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.12"^^xsd:decimal ;
+      skos:note "Mixed register: editorial synthesis prose (authoritative, structured) with embedded verbatim blockquotes from Scarlet (conversational, first-person). Active voice dominant in editorial sections. Jargon density low-moderate — product terms (perspective, ARB, GTM wedge, meta-loop) used without definition, implying internal audience. Sentence length varies: short declaratives at conviction peaks ('The demotion in the third bullet is deliberate.'), longer compound sentences in the lifecycle synthesis. Attribution discipline: session synthesis explicitly distinguished from Scarlet's own words." .
+
+  }
+}

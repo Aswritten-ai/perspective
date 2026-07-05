@@ -1,0 +1,212 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260702T172803Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T17:28:03Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-07-02-13-opinionated-promise-marketing-articulation.md" ;
+    narr:originRef "dev" ;
+    dct:title "Opinionated Promise: Missing Marketing Articulation (Jul 2 strategy thread)" ;
+    prov:generated
+      narr:Sample_OpinionatedPromise_20260702,
+      narr:Narrative_OpinionatedPromiseMissingArticulation,
+      narr:Claim_OpinionatedPromiseVerifiedGap,
+      narr:Claim_CitationsMakeOpinionSafe,
+      narr:Claim_FirstDivergenceIsFirstFeltOpinion,
+      narr:Claim_OpinionedPerspectiveWinsAllThreeMarkets,
+      narr:Obs_DeliEmailOpinionatedQuote,
+      narr:Obs_HaveAnOpinionPromiseQuote,
+      narr:Obs_TylerCowenScreeningQuote,
+      narr:StyleObs_HaveAnOpinionImperative,
+      narr:StyleObs_OneSelector3Markets,
+      narr:StyleObs_VerifiedGapAntithesis,
+      narr:StyleMetrics_OpinionatedPromise .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260702T172803Z {
+
+    # ── Sample ──────────────────────────────────────────────────
+    narr:Sample_OpinionatedPromise_20260702 a narr:Sample ;
+      dct:title "\"Have an Opinion, and Here's Why\": the Opinionated Promise as the Missing Marketing Articulation" ;
+      dct:created "2026-07-02"^^xsd:date ;
+      narr:inputLength 3347 ;
+      dct:description "Jul 1 strategy thread captured Jul 2. Scarlet drafts a piece arguing the deli email worked because it was opinionated. Identifies the customer-facing promise 'have an opinion and here's why' as absent from marketing docs. Verified gap: brand/index.md holds 'opinionated' as description; strategy.md has zero occurrences of 'opinion'. Two structural notes: citations make the promise safe; first divergence = first felt opinion." .
+
+    # ── Core Narrative ──────────────────────────────────────────
+    narr:Narrative_OpinionatedPromiseMissingArticulation a narr:Narrative ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      narr:theme "The customer-facing promise 'have an opinion and here's why' is the missing marketing articulation — present as description in brand docs but absent as a dare" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "Scarlet is drafting a piece whose argument is that the deli email worked because it was opinionated. The move from lore to marketing claim: aswritten enables AI to be highly opinionated in a particular direction, citing the conversations that opinion comes from, and getting more opinionated over time. Verified absent from strategy.md (zero occurrences of 'opinion'). 'Opinionated' exists in brand/index.md as description; the dare does not. Connects to perspective-vs-information, anti-sycophancy/graph-sourced-reactions, monoculture thesis, and the individuation curve. Feeds landing-page rewrite and deck." ;
+      skos:related narr:Narrative_PerspectiveVsInformation, narr:Narrative_AntiMonocultureAmplifier, narr:Narrative_DeliStoryReframe, narr:LandingPages .
+
+    # ── Claims ──────────────────────────────────────────────────
+    narr:Claim_OpinionatedPromiseVerifiedGap a narr:Claim ;
+      narr:aboutNode narr:Narrative_OpinionatedPromiseMissingArticulation ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      skos:note "Verified gap (Jul 1 search): brand/index.md holds 'opinionated' as definition — 'a perspective is a highly opinionated set of norms, processes, and narratives' and 'the opinionated middle of a category' — and the demo-GIF brief scripts 'a specific, opinionated answer with citations.' But strategy.md contains zero occurrences of 'opinion', and no document states the customer-facing promise. The word exists as description; the dare does not." ;
+      narr:supports narr:Narrative_OpinionatedPromiseMissingArticulation .
+
+    narr:Claim_CitationsMakeOpinionSafe a narr:Claim ;
+      narr:aboutNode narr:Narrative_OpinionatedPromiseMissingArticulation ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      skos:note "The citations are what make the promise safe and sellable. Every other vendor promises neutrality; 'have an opinion and here's why' is only sellable because the why is receipts, not confidence. The claim and the trust mechanism are one sentence. This connects to the graph-sourced-reactions / anti-sycophancy principle — the mechanism that makes opinion real rather than roleplay." ;
+      narr:supports narr:Narrative_OpinionatedPromiseMissingArticulation .
+
+    narr:Claim_FirstDivergenceIsFirstFeltOpinion a narr:Claim ;
+      narr:aboutNode narr:Narrative_OpinionatedPromiseMissingArticulation ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      skos:note "'Should get more opinionated over time' is the customer-facing name of the individuation curve the self-serve epic already instruments (generic → first divergence → accretion): first divergence IS the first felt opinion. The activation metric and the marketing promise are the same fact in two vocabularies." ;
+      narr:supports narr:Narrative_OpinionatedPromiseMissingArticulation .
+
+    narr:Claim_OpinionedPerspectiveWinsAllThreeMarkets a narr:Claim ;
+      narr:aboutNode narr:Narrative_OpinionatedPromiseMissingArticulation ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      skos:note "One selector, three markets: hiring (Tony), funding (Cowen's 'applications fail by being normal'), and buying. Opinionated perspective wins all three — and an application or landing page arguing this demonstrates itself. Tyler Cowen's screening principle: boring applications fail; they hire someone because they have a perspective that is incredibly unique and powerful." ;
+      narr:supports narr:Narrative_OpinionatedPromiseMissingArticulation .
+
+    # ── Observations (verbatim grounding) ───────────────────────
+    narr:Obs_DeliEmailOpinionatedQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      skos:note "Scarlet's articulation of why the deli email worked — opinionated perspective as the hiring signal" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OpinionatedPromise_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 701 ; oa:end 890
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the deli email got me the job because it was incredibly opinionated. Just like Tyler Cowen's [screening]: applications [that] are boring [fail]. No one hires someone because they're boring." ;
+          oa:prefix "the deli email — the cold-intro story that rebranded Vouch in a closing line — worked *because* it was opinionated:\n\n> The deli email was kind of a weird email, right? I like to tell this story about a fucking deli that rebranded the company and told this metaphor about being recognized... " ;
+          oa:suffix " They hire someone because they have a perspective that is incredibly unique and powerful."
+        ]
+      ] .
+
+    narr:Obs_HaveAnOpinionPromiseQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      skos:note "Scarlet's verbatim articulation of the customer-facing product promise — the missing marketing claim" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OpinionatedPromise_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1633 ; oa:end 1663
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "have an opinion and here's why" ;
+          oa:prefix "we're saying that, instead of these things being middle ground, not only can they cite it, but we're saying **" ;
+          oa:suffix ". Right here are the conversations that opinion comes [from], and [it] should get more opinionated over time."
+        ]
+      ] .
+
+    narr:Obs_TylerCowenScreeningQuote a narr:Observation ;
+      skos:broader narr:ActorIncentiveAnalysis ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      skos:note "Tyler Cowen's screening principle cited as structural parallel: boring applications fail across hiring, funding, and buying" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OpinionatedPromise_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 982 ; oa:end 1092
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "One selector, three markets: hiring (Tony), funding (Cowen's \"applications fail by being normal\"), and buying." ;
+          oa:prefix "They hire someone because they have a perspective that is incredibly unique and powerful.\n\n" ;
+          oa:suffix " Opinionated perspective wins all three — and an application or landing page arguing this demonstrates itself."
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────
+    narr:StyleObs_HaveAnOpinionImperative a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      rdf:value true ;
+      skos:note "Imperative construction 'have an opinion and here's why' — a two-clause command that collapses stance and evidence into one sentence. Characteristic Scarlet move: the product promise IS the rhetorical form it advocates." ;
+      skos:related narr:Tagline ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OpinionatedPromise_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1633 ; oa:end 1663
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "have an opinion and here's why" ;
+          oa:prefix "we're saying **" ;
+          oa:suffix ". Right here are the conversations"
+        ]
+      ] .
+
+    narr:StyleObs_OneSelector3Markets a narr:StyleObservation ;
+      skos:broader narr:RuleOfThree ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      rdf:value true ;
+      skos:note "'One selector, three markets' — a coined compression device that maps a single rhetorical principle (opinionated perspective) onto three distinct decision contexts (hiring, funding, buying). Characteristic of Scarlet's idiom: structural economy that does triple duty." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OpinionatedPromise_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 982 ; oa:end 1092
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "One selector, three markets: hiring (Tony), funding (Cowen's \"applications fail by being normal\"), and buying." ;
+          oa:prefix "They hire someone because they have a perspective that is incredibly unique and powerful.\n\n" ;
+          oa:suffix " Opinionated perspective wins all three"
+        ]
+      ] .
+
+    narr:StyleObs_VerifiedGapAntithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      rdf:value true ;
+      skos:note "'The word exists as description; the dare does not.' — antithetical construction that names the gap with maximum compression. Pairs a present-tense assertion with a negation to make the absence felt rather than merely stated." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OpinionatedPromise_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2245 ; oa:end 2295
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The word exists as description; the dare does not." ;
+          oa:prefix "strategy.md contains zero occurrences of \"opinion,\" and no document states the customer-facing *promise*. " ;
+          oa:suffix "\n\n**Two structural notes**"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────
+    narr:StyleMetrics_OpinionatedPromise a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_OpinionatedPromise_20260702 ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.12"^^xsd:decimal ;
+      skos:note "Strategic session memo register with embedded verbatim blockquotes. Mixed register: analytical editorial prose (authoritative, structured) with first-person conversational in blockquoted speech. Antithesis-heavy structure (description vs. dare, opinionated vs. middle-ground, receipts vs. confidence). Active voice dominant in editorial sections. Jargon density low — product terms ('individuation curve', 'first divergence', 'anti-sycophancy') used without definition, implying internal audience. Bold used for the key promise phrase. Short punchy declaratives at conviction peaks ('The word exists as description; the dare does not.'). Consistent with Scarlet session-memo idiolect." .
+
+  }
+}

@@ -1,0 +1,32 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Analogy> {
+  <https://aswritten.ai/narrative#Digest_ns__Analogy> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Analogy> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the **analogies and metaphors** the narrative reaches for to make AI-collective-memory legible, spanning several registers. A developer register anchors the new to the familiar: the [.aswritten/-as-.git dotfile](narr:StyleObs_analogy_1) pattern and narrative that [branches like code](narr:StyleObs_analogy_git). A physical/embodiment register evokes coherence: AI identity as a [resonant body with a shape](narr:StyleObs_Analogy_Resonant) and sailing [telltales as worldview-drift detectors](narr:StyleObs_4). An organizational/economic register reframes expectations: [Google runs search on ~10-15 people](narr:StyleObs_GoogleAnalogy), the [network-effect of shared memory](narr:StyleObs_NetworkEffect), and the [cross-functional sales↔eng cascade](narr:Observation_CrossFunctionalCascade). A humanizing register frames the tool as a [coworker that frees devs](narr:StyleObs_ScarletPMBurden), with the self-aware in-joke of [duplicating the customer's chief architect's brain](narr:StyleObs_Analogy_DuplicateBrain). Across all: analogy used to anchor an abstract product concept to something already held.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_CrossFunctionalCascade> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_4> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Analogy_DuplicateBrain> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Analogy_Resonant> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_GoogleAnalogy> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_NetworkEffect> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_ScarletPMBurden> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_analogy_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_analogy_git> ;
+    narr:keyPhrase [ narr:text "AI identity as this sort of resonant body that has a shape to it" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Analogy_Resonant> ] ;
+    narr:keyPhrase [ narr:text "They serve as telltales. That's the right word. They serve as telltales" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_4> ] ;
+    narr:keyPhrase [ narr:text "an organization like Google really only has like 10 or 15 people actually working on search" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_GoogleAnalogy> ] ;
+    narr:keyPhrase [ narr:text "`.aswritten/` - dotfile directory in any repo (like `.git/`)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_analogy_1> ] ;
+    narr:keyPhrase [ narr:text "the constant joke in the enterprise customer, literally—I'm not kidding—is 'if only we could get AI to duplicate the customer's chief architect's brain.'" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Analogy_DuplicateBrain> ] ;
+    narr:keyPhrase [ narr:text "collective memory creates a living organizational worldview that evolves through intentional memory-saving and branches like code" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_analogy_git> ] ;
+    narr:keyPhrase [ narr:text "ask their coworker (the AI) for context" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ScarletPMBurden> ] ;
+    narr:variation [ narr:text "Registers pull in different directions: embodiment/physical (resonant body, sailing telltales) vs. technical/developer (.git dotfile, branches like code) — distinct mental models, not one analogy." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Analogy_Resonant> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_4> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_analogy_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_analogy_git> ] ;
+    narr:variation [ narr:text "The Google analogy works to *lower/reframe* expectations (ICP, small teams), opposite to the value-amplifying intent of the network-effect and cross-functional analogies." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_GoogleAnalogy> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_NetworkEffect> ; narr:over <https://aswritten.ai/ns/narrative#Observation_CrossFunctionalCascade> ] ;
+    narr:variation [ narr:text "Outlier in tone: the 'duplicate the customer's chief architect's brain' in-joke is self-aware internal humor, not an audience-facing explanatory analogy like the rest." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Analogy_DuplicateBrain> ] ;
+    narr:variation [ narr:text "The 'coworker (the AI)' framing humanizes/personifies the tool — at odds with the impersonal-infrastructure analogies (dotfile, telltales, search team)." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ScarletPMBurden> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_analogy_1> ] ;
+    narr:variation [ narr:text "StyleObs_4 quietly widens scope from employees to multi-stakeholder ('new hires, clients, and investors'), a broader audience than the dev-team framing elsewhere." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_4> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ScarletPMBurden> ] ;
+    narr:writer "claude (subscription)" .
+}

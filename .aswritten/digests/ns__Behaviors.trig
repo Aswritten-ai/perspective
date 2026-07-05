@@ -1,0 +1,23 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Behaviors> {
+  <https://aswritten.ai/narrative#Digest_ns__Behaviors> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Behaviors> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the **system behaviors** of a git-native memory product — both the low-level operations and the user-facing workflow. The canonical operation set is enumerated as [Compile/Extract/Diff/TX/Commit/Evolve](narr:Narrative_SIC_Behaviors_1), the semantic-compilation primitives. At the workflow layer these sequence into a [create-memory → posit → remember chain](narr:Obs_WorkflowBehaviors), where posit previews and remember commits. The framing throughout is [intentional rather than automatic memory](narr:Observation_IntentionalMemory): an agent chooses what to remember, offers it to the user, then saves it to git — explicitly opposed to context autosummarization. This sits inside the broader [git-native collaborative worldview](narr:Narrative_GitNativeMemory) that differentiates the product from model-held built-in memory (intentional memory, multiplayer AI, progressive compilation). the customer's chief architect also flagged a gap the behavior set does not yet cover: an [onboarding mode](narr:Feature_OnboardingMode) to bootstrap collective memory from knowledge in people's heads rather than from ongoing AI work.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Feature_OnboardingMode> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_GitNativeMemory> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_Behaviors_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Obs_WorkflowBehaviors> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_IntentionalMemory> ;
+    narr:keyPhrase [ narr:text "Compile (replay transactions to snapshot), Extract (RDF from input), Diff (semantic comparison), TX (generate transaction), Commit (append to Git), Evolve (operation on snapshot)." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_SIC_Behaviors_1> ] ;
+    narr:keyPhrase [ narr:text "- `mcp/create-memory` → `mcp/posit` (preview) → `mcp/remember` (commit file)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Obs_WorkflowBehaviors> ] ;
+    narr:keyPhrase [ narr:text "we have an agent or context that chooses to remember stuff, offers that to the user, and then saves that to the git repo intentionally" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_IntentionalMemory> ] ;
+    narr:keyPhrase [ narr:text "Shift from model-held memory to git-native worldview; intentional memory; multiplayer AI; progressive compilation" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_GitNativeMemory> ] ;
+    narr:variation [ narr:text "Onboarding Mode is named an unbuilt gap — the behaviors detect novelty in ongoing work but cannot bootstrap memory from knowledge that only lives in people's heads." ; narr:over <https://aswritten.ai/ns/narrative#Feature_OnboardingMode> ] ;
+    narr:variation [ narr:text "Intentional, agent-chosen memory is positioned explicitly against automatic context autosummarization — a deliberate design stance, not a neutral default." ; narr:over <https://aswritten.ai/ns/narrative#Observation_IntentionalMemory> ] ;
+    narr:variation [ narr:text "Two altitudes coexist without being reconciled: low-level SIC operations (Compile/Extract/Diff/TX/Commit/Evolve) vs the user-facing mcp/ workflow verbs — same hub, different granularity." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_Behaviors_1> ; narr:over <https://aswritten.ai/ns/narrative#Obs_WorkflowBehaviors> ] ;
+    narr:writer "claude (subscription)" .
+}

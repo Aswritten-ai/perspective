@@ -1,0 +1,329 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260319T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-19T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-19-mvp-redefinition-expertise-on-demand.md" ;
+    narr:originRef "main" ;
+    dct:title "MVP Redefinition: Expertise on Demand, Not Ambient Worldview" ;
+    prov:generated
+      narr:Sample_MVPRedef_20260319,
+      narr:Narrative_ExpertiseOnDemandReframe,
+      narr:Narrative_CoreConflationProductVsTooling,
+      narr:Narrative_ProvenanceCitationMoment,
+      narr:Narrative_KnowledgePackagingMoment,
+      narr:Narrative_ActivationGap,
+      narr:Narrative_PrepackagedModuleConcept,
+      narr:Narrative_SearchVsAswritten,
+      narr:Narrative_NewTierStructure_20260319,
+      narr:Narrative_MVPScopeDecision,
+      narr:Narrative_NamingConstraints,
+      narr:Claim_CoreValuePropInstallExpertise,
+      narr:Claim_ActivationGapDiagnosis,
+      narr:Claim_AmbientVsOnDemandBehavior,
+      narr:Claim_RefractNotMVP,
+      narr:Claim_RegistryNotMVP,
+      narr:Claim_AnnotateRename,
+      narr:Claim_ModuleNameTBD,
+      narr:Actor_CustomerArchitect_TinkererRef,
+      narr:Archetype_KnowledgePackager,
+      narr:Archetype_TrustSeeker,
+      narr:Archetype_Tinkerer,
+      narr:Archetype_KnowledgeRichConsumer,
+      narr:StyleObs_MVPRedef_DirectPersonal,
+      narr:StyleObs_MVPRedef_Antithesis,
+      narr:StyleObs_MVPRedef_IdiolectPhrasing,
+      narr:StyleObs_MVPRedef_ShortPunchy .
+} ;
+
+# ── UPDATE: GitHub abstraction claim — open question → resolved direction ────
+DELETE {
+  GRAPH ?g {
+    narr:Claim_GitHubAbstractionHighPriority skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260319T120000Z {
+    narr:Claim_GitHubAbstractionHighPriority
+      skos:note "How to abstract GitHub from signup is high priority — SMB users won't have GitHub accounts. This is an open question flagged as high priority for the SMB market. As of 2026-03-19 MVP session: resolved direction — Individual tier uses org-managed repos (no GitHub account required); Publisher tier requires GitHub. Free tier is read-only with no GitHub account needed. The abstraction is now a tier design feature, not an open blocker." ;
+      narr:hasConvictionLevel narr:Conviction_Boulder .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_GitHubAbstractionHighPriority skos:note ?oldNote .
+  }
+} ;
+
+# ── INSERT: Sample + all new entities ───────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260319T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_MVPRedef_20260319 a narr:Sample ;
+      dct:title "MVP Redefinition: Expertise on Demand, Not Ambient Worldview (2026-03-19)" ;
+      dct:created "2026-03-19"^^xsd:date ;
+      dct:description "Strategic session between Scarlet Dame (founder) and Claude (AI coworker) examining what belongs in the user-facing product vs. internal tooling. Reframes core value proposition, user archetypes, tier structure, and product behavior from ambient worldview compilation to expertise-on-demand invocation." ;
+      narr:inputLength 9847 .
+
+    # ── Scale 1: Document-level narrative — the primary reframe ─────────────
+    narr:Narrative_ExpertiseOnDemandReframe a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Expertise on Demand, Not Ambient Worldview" ;
+      skos:note "The fundamental reframe of the session: the current product behavior is ambient — compile worldview at session start. The reframe positions expertise as invoked at the moment of need, mid-task. The organizational use case (compile at session start) becomes a specific configuration of this core behavior, not the default. Core value proposition crystallized: 'A way to install expertise into your AI and verify where it's coming from.' Scarlet confirmed: 'That's gold.'" ;
+      narr:theme "The product's core behavior is expertise invoked at the moment of need, not ambient worldview compilation at session start" .
+
+    # ── Section 1: The Core Conflation ──────────────────────────────────────
+    narr:Narrative_CoreConflationProductVsTooling a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:StrategyOverview ;
+      skos:prefLabel "Core Conflation: Product vs. Org-Development Tooling" ;
+      skos:note "The product has been both a market-facing product and a set of tools for developing that product and the organization around it. These are conflated because the marketable product is about developing organizations, but the organization developing the product is not a typical customer. The session aimed to strip away everything non-essential and find the true minimum viable product." ;
+      narr:theme "The tools for developing the org that develops the product are conflated with the product itself — they must be cleanly separated" .
+
+    # ── Section 2: Moment of Value — Provenance/Citation ────────────────────
+    narr:Narrative_ProvenanceCitationMoment a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:Differentiators ;
+      skos:prefLabel "Provenance/Citation as Primary Moment of Value" ;
+      skos:note "The moment of value is when someone sees AI-generated text with citations showing where it came from. Extends from the hallucination pitch: you can trust where an AI is coming from the first time. Observed at the moment of Annotate, where output is produced. Trust extends across relationships: you trust it, someone using it on your behalf trusts it, and anyone reviewing the work later can verify it." ;
+      narr:theme "The hallucination hook extends to provenance: trust is built by showing exactly where AI output came from, across all parties in a relationship" .
+
+    # ── Section 2: Moment of Value — Knowledge Packaging ────────────────────
+    narr:Narrative_KnowledgePackagingMoment a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:Differentiators ;
+      skos:prefLabel "Knowledge Packaging as Second Moment of Value (an early prospect Aha)" ;
+      skos:note "an early prospect's moment of excitement: 'So does this mean that I can record each of my classes, so a course series, and then bundle that knowledge and then provide it to either a student or a new practitioner that I'm onboarding into my practice?' He immediately extended it: could he create a bundle for a prescribing practitioner he's building a relationship with? Scarlet: 'Being able to package AI like that is really powerful.' The ability to clearly segment different bodies of knowledge and treat them as discrete, trustworthy packages — like sending someone a folder of documents, but the folder talks back and cites its sources." ;
+      narr:theme "Knowledge packaging — bundling expertise into discrete, trustworthy, citable modules — is the second primary moment of value" .
+
+    # ── Section 3: Activation Gap ────────────────────────────────────────────
+    narr:Narrative_ActivationGap a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:FrictionFailure ;
+      skos:prefLabel "The Activation Gap: Investment Model vs. Tool Model" ;
+      skos:note "People get excited about the concept but defer adoption. The product is currently positioned as an investment you make, not a tool you use. Build your knowledge base → eventually get value. That's the wrong side of the activation curve. The missing piece: 'We're missing the immediate hook of the thing I'm doing today is painful and could be made better.' The prepackaged module concept is the proposed solution." ;
+      narr:theme "The product is positioned as an investment (build first, get value later) when it needs to be a tool (immediate value from installed expertise)" .
+
+    narr:Claim_ActivationGapDiagnosis a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "People really get the concept; they like to see the value in abstract but for the tasks that they're doing today they don't see this as something that will immediately help. They see that as something that they want to get into in the future. They're like, 'I will build this out when I have time and then it will be awesome.' Diagnosis: the product is on the wrong side of the activation curve." ;
+      narr:aboutNode narr:Narrative_ActivationGap ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_PrepackagedModuleConcept .
+
+    # ── Section 4: User Archetypes ───────────────────────────────────────────
+    narr:Archetype_KnowledgePackager a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Archetype A: The Knowledge Packager. Has expertise they want to distribute. an early prospect with courses. Practice owners. Team leads who onboard. Pain: 'I keep repeating myself / my knowledge doesn't scale / I can't be in every room.' Purchase trigger is clearest but time-to-value is longest under the current 'build it yourself' model. Sales-as-Delivery (extracting knowledge in the demo call and handing them a pre-populated repo) is the proposed solution but hasn't been fully tested — an engineering manager at the customer never received his repo because a follow-up call with a practitioner beta user was planned and then deferred." ;
+      narr:aboutNode narr:PersonasJTBD ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ExpertiseOnDemandReframe .
+
+    narr:Archetype_TrustSeeker a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Archetype B: The Trust Seeker. Already using AI, can't verify output. Executives, ops leads. Pain: 'I don't know if this is right / my team is using AI and I can't tell what it's making up.' These are daily users, not just buyers. Maps to the provenance/citation moment of value." ;
+      narr:aboutNode narr:PersonasJTBD ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ProvenanceCitationMoment .
+
+    narr:Archetype_Tinkerer a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Archetype C1: The Tinkerer. Programmer or programmer-adjacent who has already hacked together context management (CLAUDE.md files, custom prompts). It works but is siloed, non-collaborative, not portable across repos. the customer's chief architect specifically needs cross-repo memory he owns at rest with compliance control. Existing solutions are actually a barrier to adoption — they have something shitty-but-working and aswritten is 'a pretty opinionated end-to-end solution that currently doesn't target a single behavior.' Scarlet: 'It's really like, Add this and then your entire AI process becomes better in these distinct noticeable ways and enables particular activities but it wraps the whole process not a specific flow.'" ;
+      narr:aboutNode narr:PersonasJTBD ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_TechnicalAdoptionFriction .
+
+    narr:Archetype_KnowledgeRichConsumer a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Archetype C2: The Knowledge-Rich Consumer. People like a beta user from outside tech who have deep domain knowledge but are consumers of AI technology, not tinkerers. Use Claude or ChatGPT. May be the first time they've used a tool that provides collaborative context outside regular projects. Main barrier is technical (MCP installation, GitHub abstraction), not behavioral. Maps to the Free and Individual tiers." ;
+      narr:aboutNode narr:PersonasJTBD ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_NewTierStructure_20260319 .
+
+    # ── Section 5: Prepackaged Module Concept ────────────────────────────────
+    narr:Narrative_PrepackagedModuleConcept a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:ProductOverview ;
+      skos:prefLabel "Prepackaged Expertise Modules as Answer to Activation Gap" ;
+      skos:note "Instead of 'build your worldview from scratch,' it's: browse available expertise, install what you need, your AI immediately knows about X, and you can verify where it's coming from. A repo IS a module — no new abstraction needed. Starter set ideas: (1) A writing voice module (clear trigger for 'I want my own' — demonstrates personalization); (2) Domain expertise as worldview — deep perspectives you'd hire a consultant for (tax strategy thinking, grant writing, IP strategy, negotiation methodology, brand positioning). Not narrow skill topics. Scarlet: 'We want expertise in a worldview.' (3) How to use aswritten / How to use AI (meta but literally useful, good content marketing funnel). Supply-side bootstrapping: partner with course creators and experts, create the AI version of their course/expertise for free in exchange for rights to use it and a revenue split." ;
+      narr:theme "Prepackaged expertise modules provide immediate value without requiring upfront knowledge-building — browse, install, verify" .
+
+    # ── Section 6: Disambiguation: Search vs. aswritten ─────────────────────
+    narr:Narrative_SearchVsAswritten a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:WhatItsNot ;
+      skos:prefLabel "Disambiguation: Search vs. aswritten" ;
+      skos:note "Critical distinction: an AI can already research foreign policy through web search. That's random, real-time search — no provenance, no expert backing, no curated perspective. aswritten provides cited, expert-backed research, process, and worldview. The difference is between 'what the internet says about X' and 'how an expert thinks about X, with citations to their actual body of work.' This disambiguation needs to be front and center in positioning. The product doesn't replace search — it replaces the expert in the room." ;
+      narr:theme "aswritten replaces the expert in the room, not search — the difference is provenance, expert backing, and curated perspective vs. random real-time retrieval" .
+
+    # ── Section 7: Core Value Proposition ───────────────────────────────────
+    narr:Claim_CoreValuePropInstallExpertise a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Core value proposition emerged from session: 'A way to install expertise into your AI and verify where it's coming from.' Scarlet confirmed: 'That's gold.' This is the crystallized positioning statement replacing prior framings." ;
+      narr:aboutNode narr:NarrativeAnchor ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ExpertiseOnDemandReframe .
+
+    # ── Section 8: Product Behavior — Expertise at Moment of Need ────────────
+    narr:Claim_AmbientVsOnDemandBehavior a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "The current product behavior is ambient — compile worldview at session start. The reframe: expertise is invoked at the moment of need, mid-task. Scarlet: 'I could see the core behavior as I'm working along... and I say I'm looking for expertise on foreign policy, aswritten. That's the trigger for searching for the appropriate module.' Flow: working → hit a knowledge gap → invoke aswritten → search for relevant expertise → install it → continue working with it → citations show where output came from. The organizational use case (compile at session start) becomes a specific configuration of this core behavior, not the default." ;
+      narr:aboutNode narr:Narrative_ExpertiseOnDemandReframe ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_PrepackagedModuleConcept .
+
+    # ── Section 9: Tier Structure ────────────────────────────────────────────
+    narr:Narrative_NewTierStructure_20260319 a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:PackagingPricing ;
+      skos:prefLabel "New Tier Structure: Free / Individual / Publisher / Enterprise (2026-03-19)" ;
+      skos:note "Four tiers with distinct GitHub requirements and upgrade triggers. Free (read-only): consume from global marketplace of expertise, install, compile, cite — no GitHub needed. Individual (read-write): personal org-managed repo, add own memories, review, build personal graph — no GitHub needed ideally. Publisher/Team: connect own GitHub account, fork modules, multiple repos, collaboration, publish to global marketplace — GitHub required. Enterprise: own internal marketplace of organizational expertise — GitHub required (own org). Key upgrade triggers: Free→Individual (want to add own knowledge, build personal graph); Individual→Publisher (want to fork, publish, or collaborate — requires GitHub); Publisher→Enterprise (want own marketplace, not publish to global). Enterprise gate: 'Moving from publishing to the global market to creating your own internal market.' Having your own marketplace IS the enterprise feature. Technical requirements: read-only repo access without GitHub account; org-managed repos for individual users; base module set always appended to user's available repos; forking capability (publisher tier, requires GitHub)." ;
+      narr:theme "Four-tier structure (Free/Individual/Publisher/Enterprise) separates read-only consumption from knowledge creation from publishing from internal marketplace ownership" .
+
+    # ── Section 10: MVP Scope ────────────────────────────────────────────────
+    narr:Narrative_MVPScopeDecision a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:FocusSequencing ;
+      skos:prefLabel "MVP Scope: Core vs. Future vs. Internal-Only" ;
+      skos:note "Core MVP (all tiers): Install expertise (connect a module/repo, possibly read-only), Compile (AI incorporates the module's knowledge), Cite/Provenance (verify where output comes from — current 'annotate' tool, needs rename), Remember (add own knowledge), Review (collaborative refinement — valuable at all tiers), Personal org-managed repo (individual+, no GitHub required), Account management, notifications. Not MVP — Publisher/Marketplace (future): Forking (requires GitHub), Refraction (quality tool for publishers), Content automation/stories, Marketplace distribution, GitHub account connection. Not MVP — Internal only (aswritten org tooling): Registry, Internal development tooling, Anything that serves the org-developing-the-product, not the product itself." ;
+      narr:theme "MVP is install-compile-cite-remember-review; Refraction, Registry, and marketplace features are post-MVP; internal tooling must be cleanly separated from the product" .
+
+    narr:Claim_RefractNotMVP a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Refraction is explicitly not MVP — it is a quality tool for publishers (Publisher tier, future). It requires GitHub and is part of the marketplace distribution layer, not the core install-compile-cite loop." ;
+      narr:aboutNode narr:Narrative_MVPScopeDecision ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:FocusSequencing .
+
+    narr:Claim_RegistryNotMVP a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Registry is explicitly not MVP — it is internal-only aswritten org tooling that serves the org-developing-the-product, not the product itself. Must be cleanly separated." ;
+      narr:aboutNode narr:Narrative_MVPScopeDecision ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:FocusSequencing .
+
+    # ── Section 11: Naming ───────────────────────────────────────────────────
+    narr:Narrative_NamingConstraints a narr:Narrative ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:NamingConventions ;
+      skos:prefLabel "Naming Constraints and Direction" ;
+      skos:note "Current tool names have mixed metaphors. A full naming pass is needed. Constraints: (1) Must live in the writing/language/knowledge space (consistent with 'aswritten'); (2) Must capture 'whole perspective' not 'data package' — what's packaged is a way of thinking, not just information; (3) Can't be overloaded in tech; (4) Must feel specific to aswritten, not generic; (5) Code metaphors (compile, module) may break consistency. 'Annotate' specifically: should change to something like cite, provenance, or source. Scarlet: 'I should really change the word of the tool to provenance or cite. Annotate is kind of obscure.' The thing you install: not decided. 'Module' is a working term only. The concept it needs to capture: a complete multifaceted perspective — a body of work, a way of thinking. Connected to the original 'synthetic identity' concept. Scarlet: 'This individuality or identity of a whole, multifaceted person and their perspective.' Direction: the word lives somewhere in the writing/language/knowledge space. Not 'writ' (too medieval and legal, too singular)." ;
+      narr:theme "A full naming pass is needed: tool names have mixed metaphors, 'annotate' should become 'cite' or 'provenance', and the installable unit needs a word that captures whole perspective, not data package" .
+
+    narr:Claim_AnnotateRename a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "'Annotate' should be renamed to something like 'cite', 'provenance', or 'source'. Scarlet: 'I should really change the word of the tool to provenance or cite. Annotate is kind of obscure.' This is a naming decision with conviction — the current name is a barrier to understanding the tool's value." ;
+      narr:aboutNode narr:NamingConventions ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_NamingConstraints .
+
+    narr:Claim_ModuleNameTBD a narr:Claim ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "The name for the installable unit of expertise is not decided. 'Module' is a working term only. The concept it needs to capture: a complete multifaceted perspective — a body of work, a way of thinking. Connected to the original 'synthetic identity' concept. Scarlet: 'This individuality or identity of a whole, multifaceted person and their perspective.' The word must live in the writing/language/knowledge space, not tech." ;
+      narr:aboutNode narr:NamingConventions ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_NamingConstraints .
+
+    narr:Actor_CustomerArchitect_TinkererRef a narr:Observation ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:broader narr:PrimaryActors ;
+      skos:note "the customer's chief architect referenced as the canonical Tinkerer archetype example (C1). Specifically needs cross-repo memory he owns at rest with compliance control. His existing CLAUDE.md-based solution is a barrier to adoption — something shitty-but-working that makes aswritten's opinionated end-to-end approach harder to sell." .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_MVPRedef_DirectPersonal a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Founder voice is direct and first-person throughout. Strategic reframes are delivered as declarative assertions, not hedged proposals." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPRedef_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 1920
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "That's gold." ;
+          oa:prefix "Scarlet confirmed: " ;
+          oa:suffix " ## The Product Behavior"
+        ]
+      ] .
+
+    narr:StyleObs_MVPRedef_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Heavy use of antithesis to define the reframe: 'ambient vs. on-demand', 'investment you make vs. tool you use', 'what the internet says about X vs. how an expert thinks about X'. Antithesis is the primary rhetorical device for communicating the strategic pivot." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPRedef_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3100 ;
+          oa:end 3220
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The product is currently positioned as an investment you make, not a tool you use." ;
+          oa:prefix "wrong side of the activation curve. " ;
+          oa:suffix " Build your knowledge base"
+        ]
+      ] .
+
+    narr:StyleObs_MVPRedef_IdiolectPhrasing a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Scarlet's idiolect includes 'something shitty-but-working', 'dirty env', and 'That's gold' — colloquial markers that signal high conviction and personal ownership of the insight. These phrases appear at moments of strategic crystallization." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPRedef_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4850 ;
+          oa:end 4960
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "they have something shitty-but-working and aswritten is 'a pretty opinionated end-to-end solution" ;
+          oa:prefix "existing solutions are actually a *barrier* to adoption — " ;
+          oa:suffix " that currently doesn't target a single behavior'"
+        ]
+      ] .
+
+    narr:StyleObs_MVPRedef_ShortPunchy a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_MVPRedef_20260319 ;
+      skos:note "Key strategic conclusions are delivered in short punchy sentences: 'A repo IS a module — no new abstraction needed.' 'That's gold.' 'The product doesn't replace search — it replaces the expert in the room.' These short declaratives anchor longer analytical passages." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPRedef_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5820 ;
+          oa:end 5870
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "A repo IS a module — no new abstraction needed." ;
+          oa:prefix "install what you need, your AI immediately knows about X. " ;
+          oa:suffix " **Starter set ideas:**"
+        ]
+      ] .
+
+  }
+}

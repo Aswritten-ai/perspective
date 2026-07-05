@@ -1,0 +1,226 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260501T200000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-01T20:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260501-temporality-validation-the customer's chief architect-demo-pollution" ;
+    narr:originRef "main" ;
+    dct:title "Temporality Validation: the customer's chief architect Demo Pollution as Concrete Failure Mode" ;
+    prov:generated
+      narr:Sample_TemporalityValidation_20260501,
+      narr:Claim_ConvictionAndTemporalityAreDistinctAxes,
+      narr:Claim_CustomerArchitectDemoPollutionProductEvidence,
+      narr:Claim_FullDeletionOnlyRemedy,
+      narr:Claim_ScarletTemporalityParallelObservation,
+      narr:Claim_TemporalMarkerDesignImplication,
+      narr:Obs_CustomerArchitectDemoPollutionQuote,
+      narr:Obs_ScarletTemporalityQuote,
+      narr:StyleObs_TemporalityValidation_BlockquoteVoice,
+      narr:StyleObs_TemporalityValidation_AntithesisStructure,
+      narr:StyleObs_TemporalityValidation_BulletedDesignImplications,
+      narr:Metrics_TemporalityValidation_20260501 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260501T200000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────
+    narr:Sample_TemporalityValidation_20260501
+      a narr:Sample ;
+      dct:title "Temporality Validation: the customer's chief architect's Demo Pollution as Concrete Failure Mode" ;
+      dct:created "2026-05-01"^^xsd:date ;
+      dct:description "Memory documenting the customer's chief architect's experience of speculation pollution during the enterprise customer demo prep as concrete product evidence for the conviction/temporality distinction. Includes Scarlet's parallel independent observation from the same 2026-05-01 call. Establishes the design priority for temporality modeling as a first-class data model property." ;
+      narr:inputLength 3842 ;
+      narr:styleProfile "<https://aswritten.ai/narrative#Antithesis> <https://aswritten.ai/narrative#SpeakerIdiolects> <https://aswritten.ai/narrative#ToneAuthoritative> <https://aswritten.ai/narrative#InformationArchitecture>" .
+
+    # ── CORE CLAIM: CONVICTION AND TEMPORALITY ARE DISTINCT AXES ──
+    narr:Claim_ConvictionAndTemporalityAreDistinctAxes
+      a narr:Claim ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:note "The extraction pipeline currently conflates conviction (how settled a claim is: notion/stake/boulder/foundation) with temporality (when a claim applies: now, soon, future, speculative). These are orthogonal axes. A claim can be high-conviction and speculative simultaneously — e.g., 'we should build X' stated with certainty during a brainstorm. Without separating these axes, speculative content gets encoded as current worldview. the customer's chief architect's demo pollution experience is the concrete production failure validating this design gap." ;
+      narr:aboutNode narr:Narrative_ConvictionStackTemporalityGap ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Claim_NarrAppliesAsOntologyExtension .
+
+    # ── the customer's chief architect DEMO POLLUTION: CONCRETE PRODUCT EVIDENCE ──────────
+    narr:Claim_CustomerArchitectDemoPollutionProductEvidence
+      a narr:Claim ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:note "the customer's chief architect used his early aswritten.ai Team trial access to build a sales demo for an the enterprise customer engagement. During prep, he held conversations with Claude mixing real product capabilities with speculative ones ('what should we build next' / 'what if the tool already had X') without marking which was which. The result: Claude became convinced the enterprise customer had capabilities that do not exist and never existed in the project. This is a documented production failure of the temporality/speculation-pollution problem. The failure mode is not hypothetical — it happened to the first paying enterprise customer during the first real use of the product." ;
+      narr:aboutNode narr:Narrative_DirectIngestionAntiPattern ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Claim_ConvictionAndTemporalityAreDistinctAxes ;
+      narr:evidencedBy narr:Obs_CustomerArchitectDemoPollutionQuote .
+
+    # ── FULL DELETION AS ONLY REMEDY ────────────────────────────
+    narr:Claim_FullDeletionOnlyRemedy
+      a narr:Claim ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:note "Without temporality modeling, the only available corrective action when speculation pollution occurs is full deletion of the affected memories and starting over. the customer's chief architect's plan for Phase 1 seeding was to delete all memories generated during demo prep and restart. He kept only the two foundational 'what is the enterprise customer' overview memories from earlier usage. This is a destructive, high-cost remedy that would not be necessary if memories carried explicit temporal/speculative markers at creation time." ;
+      narr:aboutNode narr:Narrative_DirectIngestionAntiPattern ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Claim_CustomerArchitectDemoPollutionProductEvidence ;
+      narr:evidencedBy narr:Obs_CustomerArchitectDemoPollutionQuote .
+
+    # ── SCARLET'S PARALLEL OBSERVATION ──────────────────────────
+    narr:Claim_ScarletTemporalityParallelObservation
+      a narr:Claim ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:note "Scarlet independently arrived at the same temporality modeling need on the 2026-05-01 call, before the customer's chief architect described his demo pollution experience. She had been thinking about how to model temporality in the tool — specifically the need to hold parallel facts (now, near-future, speculative) simultaneously without conflating them. the customer's chief architect's experience converts Scarlet's design intuition into a documented production failure with a real cost (full memory wipe). The convergence of independent observations from founder and first paying customer on the same session strengthens conviction." ;
+      narr:aboutNode narr:Narrative_ConvictionStackTemporalityGap ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Claim_ConvictionAndTemporalityAreDistinctAxes ;
+      narr:evidencedBy narr:Obs_ScarletTemporalityQuote .
+
+    # ── TEMPORAL MARKER DESIGN IMPLICATION ──────────────────────
+    narr:Claim_TemporalMarkerDesignImplication
+      a narr:Claim ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:note "Four concrete design implications from the customer's chief architect's demo pollution failure: (1) Memories need an explicit speculative/aspirational/now/historical marker that the extraction pipeline preserves. (2) The marker should be capturable at memory-creation time (e.g., a 'temporal-status: speculative' frontmatter field). (3) Compile-time should expose the marker so consuming agents can distinguish 'this is what we ship today' from 'this is what we discussed building.' (4) Temporality as a first-class data model property should be on the product roadmap with concrete acceptance criteria informed by this scenario. This extends narr:Claim_NarrAppliesAsOntologyExtension with a concrete customer-validated use case." ;
+      narr:aboutNode narr:Claim_NarrAppliesAsOntologyExtension ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Claim_NarrAppliesAsOntologyExtension .
+
+    # ── OBSERVATIONS WITH SELECTORS ─────────────────────────────
+    narr:Obs_CustomerArchitectDemoPollutionQuote
+      a narr:Observation ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:broader narr:FrictionFailure ;
+      skos:note "the customer's chief architect's verbatim account of the demo pollution failure — the founding evidence for Claim_CustomerArchitectDemoPollutionProductEvidence." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 571 ;
+        oa:end 900
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I was working on this sales demo. I did a bunch of speculation about what we maybe should do in the future and was very incautious about telling it. This was real versus fake." ;
+        oa:prefix "the customer's chief architect (2026-05-01): \"" ;
+        oa:suffix " Sure. So there's a certain amount"
+      ] .
+
+    narr:Obs_ScarletTemporalityQuote
+      a narr:Observation ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:broader narr:InflectionPoints ;
+      skos:note "Scarlet's verbatim articulation of the parallel temporality observation — the founding evidence for Claim_ScarletTemporalityParallelObservation." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1820 ;
+        oa:end 2100
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I've been thinking a lot about how to model this in the tool having, adding a sense of temporality because exactly this happens all the time" ;
+        oa:prefix "Scarlet: \"It's interesting this is on a side that is not relevant for next Thursday, but " ;
+        oa:suffix ", right? Like and this happens in casual conversation."
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────
+    narr:StyleObs_TemporalityValidation_BlockquoteVoice
+      a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:note "Heavy use of extended blockquoted speech from two speakers (the customer's chief architect and Scarlet). the customer's chief architect's quoted speech is run-on, self-interrupting, and filler-heavy ('Sure. So there's a certain amount of me talking to Claude being like...'). Scarlet's quoted speech is more analytical and structured. The dual-voice blockquote pattern is consistent with the Scarlet session-memo idiolect across the perspective." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TemporalityValidation_20260501 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 540 ;
+          oa:end 1100
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I was working on this sales demo. I did a bunch of speculation" ;
+          oa:prefix "> the customer's chief architect (2026-05-01): \"" ;
+          oa:suffix " about what we maybe should do in the future"
+        ]
+      ] .
+
+    narr:StyleObs_TemporalityValidation_AntithesisStructure
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:note "Antithesis-heavy structure throughout: real vs. fake, speculative vs. current, design intuition vs. documented production failure, corrective action (deletion) vs. structural fix (temporal marker). The 'real versus fake' phrase is the core antithesis that drives the entire memory's argument." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TemporalityValidation_20260501 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 700 ;
+          oa:end 730
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "This was real versus fake." ;
+          oa:prefix "was very incautious about telling it. " ;
+          oa:suffix " Sure. So there's a certain amount"
+        ]
+      ] .
+
+    narr:StyleObs_TemporalityValidation_BulletedDesignImplications
+      a narr:StyleObservation ;
+      skos:broader narr:InformationArchitecture ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:note "The 'Why this matters' section uses a four-item bulleted list of design implications, each beginning with a noun phrase ('Memories need...', 'The marker should be...', 'Compile-time should expose...'). This parallel imperative structure is a recurring pattern in Scarlet's design-decision memos — it signals that the content has crossed from observation to actionable requirement." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TemporalityValidation_20260501 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1350 ;
+          oa:end 1650
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Memories need an explicit speculative/aspirational/now/historical marker" ;
+          oa:prefix "- " ;
+          oa:suffix " that the extraction pipeline preserves"
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────
+    narr:Metrics_TemporalityValidation_20260501
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_TemporalityValidation_20260501 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo with extended verbatim blockquotes from two speakers. Mixed register: structured markdown with H2 section headers (memo genre) vs. colloquial first-person in blockquoted speech. the customer's chief architect's quoted speech is run-on and filler-heavy (~30 words avg per sentence); editorial prose is shorter and more declarative (~14 words avg). Active voice dominant in editorial sections. Jargon density low-moderate — product terms (aswritten.ai, Team trial, temporal-status, compile-time) used without definition, implying internal audience. Antithesis-heavy structure (real vs. fake, speculative vs. current, design intuition vs. production failure, deletion vs. structural fix). Consistent with Scarlet session-memo idiolect across the perspective." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal .
+
+  }
+} ;
+
+# ── UPDATE: narr:Claim_NarrAppliesAsOntologyExtension — add customer validation evidence ──
+DELETE {
+  GRAPH ?g {
+    narr:Claim_NarrAppliesAsOntologyExtension skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260501T200000Z {
+    narr:Claim_NarrAppliesAsOntologyExtension
+      skos:note "A new ontology property — narr:appliesAs — with values like current | nearFuture | exploration | speculative would solve the temporality gap structurally. Compile would filter by temporality as well as conviction: default worldview layer includes only current-applicability claims; worldview:roadmap pulls in near-future claims; worldview:all includes exploration-level claims. This is captured as a near-future notion — genuinely good idea, deliberately deferred. Introducing it mid-launch would break extraction tests, require tooling updates, propagate through compile layers, touch SHACL schemas, and steal a week from April 9 launch-critical work. NOW VALIDATED BY PRODUCTION FAILURE: the customer's chief architect's demo pollution experience (2026-05-01) is the first documented customer case where the absence of this property caused a destructive corrective action (full memory deletion). Scarlet independently arrived at the same need on the same call. This claim should be promoted from notion to stake-level and added to the product roadmap with concrete acceptance criteria." ;
+      narr:evidencedBy narr:Obs_CustomerArchitectDemoPollutionQuote .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_NarrAppliesAsOntologyExtension skos:note ?oldNote .
+  }
+}

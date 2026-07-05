@@ -1,0 +1,143 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260616T180000Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-16T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# The perspective read layer navigates — every consumer reasons over the digest, instead of embedding the snapshot\n\n**2026-06-16.** Decided by Scarlet over a long build session with Claude, converting the collapse/expand read layer (task-265) from design into the actual pipeline.\n\n## The decision\n\nEvery internal consumer of the perspective — extraction, validation, summarization, citation, introspection, and the customer-facing deployment proxy — now reads the graph by *navigating* its collapsed digest and expanding only what it needs, rather than receiving the whole compiled snapshot embedded in its prompt.\n\nThe reliability case and the architectural case turned out to be the same move. The compiled snapshot had grown to roughly half a million tokens; every extraction rode the long-context path, where the model's provider stream was dying at the prose-to-tool-call boundary about half the time — the intermittent EMPTY_SPARQL failures (task-269). Navigation drops per-call context by an order of magnitude, off the long-context path entirely. The fix for the flakiness and the direction of the architecture were one decision.\n\n## The principles Scarlet set along the way\n\n**Guidance lives in the surface, not the prompt.** Where the steering goes — when to expand, when something is genuinely *not here* — Scarlet put into the perspective's own returned surface rather than each caller's prompt:\n\n> tool descriptions and return from collapsed output does the guidance than prompts - way more reliable across the board\n\ncite and introspect navigated correctly with *zero* changes to their skills, purely off the tool descriptions and the collapsed return — the proof of the principle.\n\n**Extraction roams; don't pre-scope it.** On whether to hand extraction a single focus:\n\n> Extraction should probably be an agent connected to the tools - it may want to look at different parts of the graph (multiple different focuses) and we don't want to enforce focus/scope ahead of time\n\nOne memory touches pricing and positioning and a person at once; choosing the focus ahead of time would blind the agent to two of them. It decides its own navigation.\n\n**The customer deployment proxy reasons; it doesn't pre-fetch.** Converting the live Front Q&A agent, the fork was a one-shot \"navigate-to-context\" step feeding the existing call versus a full restructure into an agent that holds the tools. Scarlet chose the agent — it grounds answers as it forms them, reasoning after each step, rather than fetching a context blob up front. The cost is a larger change to a customer surface; the gain is the same after-each-step quality the internal tools now have.\n\n## What it retires\n\nThe Postgres snapshot cache becomes vestigial — Scarlet's own read:\n\n> we should be able to remove the Postgres snapshot cache now, right? That was done as a compile speed optimization because n8n compile was very slow on large graphs, assuming clj compile is much faster and now always with navigation that's always live regardless\n\nThe cache existed only to make the slow compile bearable for repeat reads. Navigation builds the graph live and holds it in process memory; the slow compile it was hiding is no longer on any hot path. The cache retires with the legacy compiler it served.\n\n## How the digests stay current\n\nRegenerate incrementally, not wholesale. A full rebuild is hours and should almost never run. After a memory is written and its extraction validated, only the *touched* umbrellas' digests go stale; those regenerate as a second pass and commit alongside the transaction — done in the pipeline itself, since each refresh is only a handful of hubs.\n\n## Lineage\n\nThis extends the recognition-surface decision (*the digest is a recognition aid, not a meaning account*, 2026-06-16): if the digest is the surface an agent recognizes the graph through, then every consumer should read *through* it, not around it. Because the read path operates on graph shape rather than any fixed schema, it ports unchanged to the v2 Expression-Graph migration — it pre-builds that fold." ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_ReadLayerNavigation_20260616,
+      narr:Narrative_NavigationReplacesEmbeddedSnapshot,
+      narr:Claim_NavigationDropsContextOrderOfMagnitude,
+      narr:StyleObs_ReadLayer_Antithesis,
+      narr:StyleObs_ReadLayer_IdiolectPhrasing,
+      narr:StyleObs_ReadLayer_ShortPunchyCadence,
+      narr:StyleMetrics_ReadLayerNavigation_20260616 .
+} ;
+
+# ── UPDATE: Narrative_DigestAsRecognitionAid — extend with navigation lineage ─
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_DigestAsRecognitionAid skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260616T180000Z {
+    narr:Narrative_DigestAsRecognitionAid skos:note "The digest accelerates the recognized path to raw material; it does not host meaning itself. Compression-is-the-only-projection applies: compress the handle, never destroy the material. The interpretive theme is acceptable only because the novel reading is always one expand away. Nothing is foreclosed; the recognized path is just faster. Extended 2026-06-16: every consumer now reads *through* the digest via navigation — the read path operates on graph shape rather than any fixed schema, and ports unchanged to the v2 Expression-Graph migration." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_DigestAsRecognitionAid skos:note ?oldNote .
+  }
+} ;
+
+# ── INSERT: Sample, Narratives, Claims, Style ─────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260616T180000Z {
+
+    # ── Sample ────────────────────────────────────────────────────────────────
+    narr:Sample_ReadLayerNavigation_20260616 a narr:Sample ;
+      dct:title "The perspective read layer navigates — every consumer reasons over the digest, instead of embedding the snapshot" ;
+      dct:created "2026-06-16"^^xsd:date ;
+      narr:inputLength 3847 .
+
+    # ── Narratives ────────────────────────────────────────────────────────────
+
+    narr:Narrative_NavigationReplacesEmbeddedSnapshot a narr:Narrative ;
+      dct:source narr:Sample_ReadLayerNavigation_20260616 ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:prefLabel "Navigation replaces embedded snapshot: every consumer reads through the digest" ;
+      skos:note "Every internal consumer of the perspective — extraction, validation, summarization, citation, introspection, and the customer-facing deployment proxy — now reads the graph by navigating its collapsed digest and expanding only what it needs, rather than receiving the whole compiled snapshot embedded in its prompt. The reliability case and the architectural case turned out to be the same move. Decided by Scarlet on 2026-06-16 during the task-265 build session." ;
+      narr:theme "Navigation through the collapsed digest replaces embedding the full compiled snapshot in every consumer's prompt — the architectural direction and the reliability fix were one decision" .
+
+    narr:Claim_NavigationDropsContextOrderOfMagnitude a narr:Claim ;
+      dct:source narr:Sample_ReadLayerNavigation_20260616 ;
+      skos:note "Navigation drops per-call context by an order of magnitude, off the long-context path entirely. The compiled snapshot had grown to roughly half a million tokens. The fix for the flakiness and the direction of the architecture were one decision." ;
+      narr:aboutNode narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:ScalabilityPerformance .
+
+    # ── Style Observations ────────────────────────────────────────────────────
+
+    narr:StyleObs_ReadLayer_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_ReadLayerNavigation_20260616 ;
+      skos:note "Antithesis used to frame the core architectural shift: navigating vs. embedding, reasoning vs. pre-fetching, live vs. cached" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ReadLayerNavigation_20260616 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 312 ;
+          oa:end 480
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "navigating its collapsed digest and expanding only what it needs, rather than receiving the whole compiled snapshot embedded in its prompt" ;
+          oa:prefix "reads the graph by " ;
+          oa:suffix "."
+        ]
+      ] .
+
+    narr:StyleObs_ReadLayer_IdiolectPhrasing a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_ReadLayerNavigation_20260616 ;
+      skos:note "Scarlet's idiolect: lowercase stream-of-consciousness in blockquoted speech contrasted with structured editorial prose; 'way more reliable across the board' is a characteristic colloquial intensifier" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ReadLayerNavigation_20260616 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1020 ;
+          oa:end 1110
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "tool descriptions and return from collapsed output does the guidance than prompts - way more reliable across the board" ;
+          oa:prefix "> " ;
+          oa:suffix "\n"
+        ]
+      ] .
+
+    narr:StyleObs_ReadLayer_ShortPunchyCadence a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_ReadLayerNavigation_20260616 ;
+      skos:note "Short declarative sentences used as rhetorical anchors at conviction peaks: 'The fix for the flakiness and the direction of the architecture were one decision.' — characteristic Scarlet session-memo cadence" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ReadLayerNavigation_20260616 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 840 ;
+          oa:end 920
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The fix for the flakiness and the direction of the architecture were one decision." ;
+          oa:prefix "the long-context path entirely. " ;
+          oa:suffix "\n"
+        ]
+      ] .
+
+    # ── Style Metrics ─────────────────────────────────────────────────────────
+
+    narr:StyleMetrics_ReadLayerNavigation_20260616 a narr:StyleMetrics ;
+      dct:source narr:Sample_ReadLayerNavigation_20260616 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic decision memo register with embedded verbatim blockquotes from Scarlet. Mixed register: structured markdown with bold principle headers (memo genre) vs. lowercase first-person in blockquoted speech. Antithesis-heavy structure (navigate vs. embed, reasoning vs. pre-fetch, live vs. cached, incremental vs. wholesale). Active voice dominant in editorial prose. Jargon density moderate — product terms (task-265, task-269, EMPTY_SPARQL, digest, umbrellas, long-context path, Clojure compile) used without definition, implying internal audience. Short punchy declaratives at conviction peaks. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "20"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.11"^^xsd:decimal .
+
+  }
+}

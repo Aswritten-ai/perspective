@@ -1,0 +1,37 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Rubric_Register> {
+  <https://aswritten.ai/narrative#Digest_Rubric_Register> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Rubric_Register> ;
+    narr:childCount "16"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers per-document **register assessments** from a writing rubric, scored across many founder/startup artifacts. The dominant reading is strikingly uniform: a [conversational, direct, second-person register with active voice](narr:Assess_Register_RevModel) recurs across the [YC founder-session sample](narr:Assessment_Register_YC), the [pilot/consulting-sales plan](narr:Rubric_Register_PilotPlan), the [GTM strategic memo](narr:RubricAssess_Register_GTM), the [weekly sales call](narr:RubricAssess_Register_WeeklyCall), and the [YC call](narr:Rubric_Register_YC_Call). Several quantify active-voice dominance, notably [82% in the founder-story and enterprise-B2B assessments](narr:RubricAssess_Register). Most justify the register by fit-to-genre — consultant-to-founder, founder-to-founder, strategic memo. The through-line: register is judged on directness, second-person address, and active voice appropriate to context. But the children are not all one voice — several documents pull register toward the analytical or the imperative, and one toward first-person narrative.""" ;
+    narr:covers <https://aswritten.ai/narrative#Assess_Register_RevModel> ;
+    narr:covers <https://aswritten.ai/narrative#Assess_Register_RevenueModelTAM> ;
+    narr:covers <https://aswritten.ai/narrative#Assessment_Register_YC> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Register> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Register_GTM> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Register_Sample1> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Register_TXReview> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Register_WeeklyCall> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssessment_Register> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Assess_Register> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Register_FounderBetaUser> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Register_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Register_PilotPlan> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Register_ScarletDame> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Register_YCDemoBeats> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Register_YC_Call> ;
+    narr:keyPhrase [ narr:text "Direct, conversational register; active voice; second-person implied ('you close pilots'). Fits consultant-to-founder tone." ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Register_RevModel> ] ;
+    narr:keyPhrase [ narr:text "active voice dominant (82%)" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Register> ] ;
+    narr:keyPhrase [ narr:text "Professional, data-driven register" ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Register_RevenueModelTAM> ] ;
+    narr:keyPhrase [ narr:text "Professional/analytical register appropriate for competitive analysis" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssessment_Register> ] ;
+    narr:keyPhrase [ narr:text "Mix of imperative ('Do NOT list') and declarative." ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Register_ScarletDame> ] ;
+    narr:keyPhrase [ narr:text "first-person narrative" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Register> ] ;
+    narr:variation [ narr:text "Several docs are scored professional/analytical or data-driven rather than conversational — competitive analysis, revenue-model/TAM, and enterprise B2B contexts." ; narr:over <https://aswritten.ai/narrative#RubricAssessment_Register> ; narr:over <https://aswritten.ai/narrative#Assess_Register_RevenueModelTAM> ; narr:over <https://aswritten.ai/narrative#Rubric_Register_CustomerArchitect> ] ;
+    narr:variation [ narr:text "First-person narrative (manifesto/founder-letter) breaks the second-person mainline." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Register> ] ;
+    narr:variation [ narr:text "Imperative mood ('Do NOT list') appears in an internal strategic memo, distinct from the declarative norm." ; narr:over <https://aswritten.ai/narrative#Rubric_Register_ScarletDame> ] ;
+    narr:variation [ narr:text "Some assessments foreground technical precision / 'without jargon overload' as the salient register trait rather than tone or voice." ; narr:over <https://aswritten.ai/narrative#Rubric_Register_FounderBetaUser> ; narr:over <https://aswritten.ai/narrative#Rubric_Register_CustomerArchitect> ] ;
+    narr:writer "claude (subscription)" .
+}

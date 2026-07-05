@@ -1,0 +1,130 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260416T143000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-16T14:30:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-16-interview-onramp-shift.md" ;
+    narr:originRef "main@abc1234" ;
+    prov:generated narr:Sample_InterviewOnrampShift_20260416, 
+                   narr:Claim_InterviewOneOfManyOnramps,
+                   narr:Claim_InterviewAsPremiumOnramp,
+                   narr:Claim_TranscriptBootstrapOnramp,
+                   narr:Claim_PublicContentBootstrapOnramp,
+                   narr:StyleObs_HeavyLiftMetaphor,
+                   narr:StyleObs_OnrampCategorization,
+                   narr:StyleObs_ContrastiveFraming,
+                   narr:Metrics_InterviewOnrampShift .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260416T143000Z {
+    narr:Sample_InterviewOnrampShift_20260416 a narr:Sample ;
+      dct:title "The Interview Is No Longer the Required Onramp" ;
+      dct:created "2026-04-16"^^xsd:date ;
+      narr:inputLength 3200 .
+
+    narr:Claim_InterviewOneOfManyOnramps a narr:Claim ;
+      narr:aboutNode narr:Narrative_PodcastInterviewSalesMotion ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_InterviewOnrampShift_20260416 ;
+      skos:note "The interview is now framed as one onramp among several (transcripts, public content, spec demos), rather than the default or required mechanism for seeding a perspective." .
+
+    narr:Claim_InterviewAsPremiumOnramp a narr:Claim ;
+      narr:aboutNode narr:PackagingPricing ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_InterviewOnrampShift_20260416 ;
+      skos:note "The interview sales motion becomes a premium/deep onramp for high-intent prospects or the Professional tier ([amount] SOW), while lighter onramps are the default for top-of-funnel." .
+
+    narr:Claim_TranscriptBootstrapOnramp a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_InterviewOnrampShift_20260416 ;
+      skos:note "Call transcript bootstrapping (Fireflies/Gemini/Zoom) is a lighter onramp that allows for an immediate working perspective without a live interview." .
+
+    narr:Claim_PublicContentBootstrapOnramp a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveOnSpec ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_InterviewOnrampShift_20260416 ;
+      skos:note "Public content (podcasts, blogs, YouTube) serves as the substrate for perspective-on-spec outbound, bypassing the need for prospect time investment." .
+
+    narr:StyleObs_HeavyLiftMetaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_InterviewOnrampShift_20260416 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewOnrampShift_20260416 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 550 ; oa:end 650 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "the interview may be sounding like a kind of heavy lift" ; oa:prefix "After the call I think " ; oa:suffix " instead of just saying" ]
+      ] .
+
+    narr:StyleObs_OnrampCategorization a narr:StyleObservation ;
+      skos:broader narr:TerminologyControl ;
+      dct:source narr:Sample_InterviewOnrampShift_20260416 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewOnrampShift_20260416 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1100 ; oa:end 1200 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Call transcript bootstrap" ; oa:prefix "1. **" ; oa:suffix "** — \"Send me your last 10" ]
+      ] .
+
+    narr:StyleObs_ContrastiveFraming a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_InterviewOnrampShift_20260416 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewOnrampShift_20260416 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 950 ; oa:end 1050 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "\"Let me interview you about your business\" is a favor ask. \"Let me show you this thing\" is an invitation." ]
+      ] .
+
+    narr:Metrics_InterviewOnrampShift a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_InterviewOnrampShift_20260416 ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.08 ;
+      skos:note "Analytical shift-log register. Uses contrastive pairs to define strategic movement. High active voice in the editorial framing." .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_PodcastInterviewSalesMotion skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260416T143000Z {
+    narr:Narrative_PodcastInterviewSalesMotion skos:note "The interview is simultaneously the sales call, the product demo, the onboarding, and the content piece. UPDATED 2026-04-16: Now framed as ONE of several onramps, specifically a premium/deep onramp, rather than the required default." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_PodcastInterviewSalesMotion skos:note ?oldNote .
+  }
+} ;
+
+DELETE {
+  GRAPH ?g {
+    narr:Claim_SalesIsDelivery skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260416T143000Z {
+    narr:Claim_SalesIsDelivery skos:note "The sales call produces the deliverable. UPDATED 2026-04-16: Extends to multiple input substrates (transcripts, public content) beyond just the interview." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_SalesIsDelivery skos:note ?oldNote .
+  }
+}

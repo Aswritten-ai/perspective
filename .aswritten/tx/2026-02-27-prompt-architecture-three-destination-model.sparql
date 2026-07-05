@@ -1,0 +1,388 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+
+INSERT DATA {
+  narr:Tx_20260227T214734Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-02-27T21:47:34.114Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-02-27-prompt-architecture-three-destination-model.md" ;
+    sb:originRef           "main" .
+} ;
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added triples)
+# =============================================================
+
+INSERT DATA {
+
+  # --- Provenance link on Sample_1 ---
+  narr:Sample_1 prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_1 ---
+  narr:StyleObs_1 a narr:StyleObservation ;
+    skos:broader        narr:POVPerson ;
+    skos:related        narr:ToneDirectPersonal ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "First-person voice of Scarlet embedded via blockquote attribution, creating a dialogue-within-document effect that personalizes architectural decisions." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 2060 ; oa:end 2108 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "Scarlet's framing: > \"the goal here isn't just to decide if it's in the tool descriptions" ;
+                          oa:prefix  "\n\n## The Three-Destination Model\n\n" ;
+                          oa:suffix  ", we are taking all of these statements" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_2 ---
+  narr:StyleObs_2 a narr:StyleObservation ;
+    skos:broader        narr:PunctuationTypography ;
+    skos:related        narr:TerminologyControl ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "Markdown bold used systematically for destination names, file names, and concept labels — functions as inline terminology control." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 2130 ; oa:end 2200 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "**CLAUDE.md (core protocol)**: System prompt. Highest attention weight. Survives compaction." ;
+                          oa:prefix  "1. " ;
+                          oa:suffix  "\n2. **Tool descriptions**" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_3 ---
+  narr:StyleObs_3 a narr:StyleObservation ;
+    skos:broader        narr:DictionWordChoice ;
+    skos:related        narr:ToneAuthoritative ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "Parenthetical numeric qualifiers (~2.4K words, ~6.[amount] words, ~8.[amount] tokens) used to ground abstract claims in measurable evidence without breaking prose flow." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 310 ; oa:end 430 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "CLAUDE.md went from 251 lines (~2.4K words) to 794 lines (~6.5K words) — nearly tripled" ;
+                          oa:prefix  "The test revealed the problem: " ;
+                          oa:suffix  ". The inlined prompt costs ~8.7K tokens" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_4 ---
+  narr:StyleObs_4 a narr:StyleObservation ;
+    skos:broader        narr:CadenceRhythm ;
+    skos:related        narr:ShortPunchyCadence ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "Em-dash used to deliver a short punchy verdict after a longer setup clause — a consistent cadence device throughout." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 390 ; oa:end 450 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "— nearly tripled" ;
+                          oa:prefix  "to 794 lines (~6.5K words) " ;
+                          oa:suffix  ". The inlined prompt costs" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_5 ---
+  narr:StyleObs_5 a narr:StyleObservation ;
+    skos:broader        narr:GrammarSyntax ;
+    skos:related        narr:Parallelism ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "Numbered lists used to enumerate mutually exclusive categories (3 content kinds, 3 destinations, 7 statement types), reinforcing the taxonomy-building rhetorical mode." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 700 ; oa:end 870 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "1. **Behavioral rules** the agent must follow every turn\n2. **Operational guidance** for specific tools\n3. **Reference material** for specific situations" ;
+                          oa:prefix  "three kinds of content mixed together:\n" ;
+                          oa:suffix  "\n\nThese were written as a single" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_6 ---
+  narr:StyleObs_6 a narr:StyleObservation ;
+    skos:broader        narr:RhetoricalDevices ;
+    skos:related        narr:Analogy ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "Parenthetical inline examples (e.g., 'memories are like PRs') used to demonstrate bloat and repetition without requiring a separate section." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 940 ; oa:end 1020 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "\"memories are like PRs\" appears in three places" ;
+                          oa:prefix  "(e.g., " ;
+                          oa:suffix  ").\n\n## The Discovery" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_7 ---
+  narr:StyleObs_7 a narr:StyleObservation ;
+    skos:broader        narr:NamingConventions ;
+    skos:related        narr:TerminologyControl ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "Human-readable dot-notation IDs (knowledge.never-fabricate, memory.save-to-current-branch) rendered in backtick code style — signals machine-readable intent within prose." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 2820 ; oa:end 2940 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "`knowledge.never-fabricate`, `memory.save-to-current-branch`, `citation.admit-missing-provenance`" ;
+                          oa:prefix  "human-readable ID that captures intent (e.g., " ;
+                          oa:suffix  "). Grouped by type:" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_8 ---
+  narr:StyleObs_8 a narr:StyleObservation ;
+    skos:broader        narr:AICompanyizationCase ;
+    skos:related        narr:Antithesis ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "All-caps ABOUT vs RELEVANT creates a visual antithesis that encodes the core placement principle as a memorable contrast pair." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 4012 ; oa:end 4090 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "A statement belongs where it's fundamentally ABOUT, not everywhere it's RELEVANT" ;
+                          oa:prefix  "- " ;
+                          oa:suffix  "\n- Cross-references by ID" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_9 ---
+  narr:StyleObs_9 a narr:StyleObservation ;
+    skos:broader        narr:FlowCoherence ;
+    skos:related        narr:InformationArchitecture ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "H2 section headers use noun phrases that name the discovery or decision (The Core Problem, The Discovery, The Three-Destination Model) — progressive revelation structure." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 230 ; oa:end 260 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "## The Core Problem" ;
+                          oa:prefix  "\n\n" ;
+                          oa:suffix  "\n\nThe collective memory prompt" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_10 ---
+  narr:StyleObs_10 a narr:StyleObservation ;
+    skos:broader        narr:GrammarSyntax ;
+    skos:related        narr:Parallelism ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "Bullet items with bold lead phrase followed by colon and elaboration — a consistent micro-pattern that separates label from detail for scannability." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 1100 ; oa:end 1220 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "**remember.md** covers: the full memory creation workflow (8 steps), good/bad memory criteria, save triggers, branch management rules" ;
+                          oa:prefix  "- " ;
+                          oa:suffix  " (all 5 core rules verbatim)" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_11 ---
+  narr:StyleObs_11 a narr:StyleObservation ;
+    skos:broader        narr:RhetoricalQuestion ;
+    skos:related        narr:ToneDirectPersonal ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "Implicit rhetorical question framed as a test objective — 'does the slimmed CLAUDE.md + tool descriptions produce the same agent behavior as the monolithic ASWRITTEN.md?' — closes the document with a falsifiable hypothesis." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 5760 ; oa:end 5870 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "does the slimmed CLAUDE.md + tool descriptions produce the same agent behavior as the monolithic ASWRITTEN.md?" ;
+                          oa:prefix  "5. Test: " ;
+                          oa:suffix  "" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+  # --- StyleObs_12 ---
+  narr:StyleObs_12 a narr:StyleObservation ;
+    skos:broader        narr:VoiceActive ;
+    skos:related        narr:ToneAuthoritative ;
+    dct:source          narr:Sample_1 ;
+    rdf:value           true ;
+    skos:note           "Consistent active voice with declarative subject-verb-object structure; passive constructions absent. Imperative mood in next-steps list reinforces action orientation." ;
+    oa:hasSelector      [ a oa:TextPositionSelector ; oa:start 5620 ; oa:end 5720 ] ;
+    oa:hasSelector      [ a oa:TextQuoteSelector ;
+                          oa:exact   "Complete remaining conceptual sections with target assignments" ;
+                          oa:prefix  "1. " ;
+                          oa:suffix  "\n2. Define the assembly protocol" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+
+} ;
+
+# =============================================================
+# BLOCK 2 — UPDATE: Tx_ASWRITTEN_Decomp label → dct:title
+# =============================================================
+
+DELETE {
+  narr:Tx_ASWRITTEN_Decomp rdfs:label ?oldLabel .
+}
+INSERT {
+  narr:Tx_ASWRITTEN_Decomp dct:title "Extraction: ASWRITTEN.md Decomposition into Three Destinations" .
+}
+WHERE {
+  OPTIONAL { narr:Tx_ASWRITTEN_Decomp rdfs:label ?oldLabel . }
+} ;
+
+# =============================================================
+# BLOCK 3 — UPDATE: Tx_ASWRITTEN_Decomp prov:startedAtTime → prov:endedAtTime
+# =============================================================
+
+DELETE {
+  narr:Tx_ASWRITTEN_Decomp prov:startedAtTime ?oldTime .
+}
+INSERT {
+  narr:Tx_ASWRITTEN_Decomp prov:endedAtTime "2026-02-27T00:00:00Z"^^xsd:dateTime .
+}
+WHERE {
+  OPTIONAL { narr:Tx_ASWRITTEN_Decomp prov:startedAtTime ?oldTime . }
+} ;
+
+# =============================================================
+# BLOCK 4 — UPDATE: Sample_1 dct:title
+# =============================================================
+
+DELETE {
+  narr:Sample_1 dct:title ?oldTitle .
+}
+INSERT {
+  narr:Sample_1 dct:title "Prompt Architecture: ASWRITTEN.md Decomposition into Three Destinations" .
+}
+WHERE {
+  OPTIONAL { narr:Sample_1 dct:title ?oldTitle . }
+} ;
+
+# =============================================================
+# BLOCK 5 — UPDATE: Sample_1 narr:inputLength
+# =============================================================
+
+DELETE {
+  narr:Sample_1 narr:inputLength ?oldLen .
+}
+INSERT {
+  narr:Sample_1 narr:inputLength 5821 .
+}
+WHERE {
+  OPTIONAL { narr:Sample_1 narr:inputLength ?oldLen . }
+} ;
+
+# =============================================================
+# BLOCK 7 — UPDATE: Narrative_1 theme, broader, note
+# =============================================================
+
+DELETE {
+  narr:Narrative_1 narr:theme   ?oldTheme .
+  narr:Narrative_1 skos:broader ?oldBroader .
+  narr:Narrative_1 skos:note    ?oldNote .
+}
+INSERT {
+  narr:Narrative_1 narr:theme   "Monolithic prompts dilute attention; decomposing instructions by destination profile restores reliable agent behavior." ;
+    skos:broader narr:Strategy ;
+    skos:note    "Core directional insight: inlining ASWRITTEN.md into CLAUDE.md tripled file size and caused attention dilution. The solution is a three-destination architecture (CLAUDE.md / tool descriptions / ASWRITTEN.md) matched to attention profiles." ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_1 narr:theme   ?oldTheme . }
+  OPTIONAL { narr:Narrative_1 skos:broader ?oldBroader . }
+  OPTIONAL { narr:Narrative_1 skos:note    ?oldNote . }
+} ;
+
+# =============================================================
+# BLOCK 8 — UPDATE: Narrative_2 theme, broader, note
+# =============================================================
+
+DELETE {
+  narr:Narrative_2 narr:theme   ?oldTheme .
+  narr:Narrative_2 skos:broader ?oldBroader .
+  narr:Narrative_2 skos:note    ?oldNote .
+}
+INSERT {
+  narr:Narrative_2 narr:theme   "Tool descriptions already carry most operational guidance; CLAUDE.md should own only cross-cutting behavioral rules." ;
+    skos:broader narr:Architecture ;
+    skos:note    "Statement-by-statement audit revealed that remember.md, introspect.md, compile.md, and stories.md collectively cover the majority of ASWRITTEN.md Part 2. Only 9 cross-cutting rules have no tool home." ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_2 narr:theme   ?oldTheme . }
+  OPTIONAL { narr:Narrative_2 skos:broader ?oldBroader . }
+  OPTIONAL { narr:Narrative_2 skos:note    ?oldNote . }
+} ;
+
+# =============================================================
+# BLOCK 9 — UPDATE: Narrative_3 theme, broader, note
+# =============================================================
+
+DELETE {
+  narr:Narrative_3 narr:theme   ?oldTheme .
+  narr:Narrative_3 skos:broader ?oldBroader .
+  narr:Narrative_3 skos:note    ?oldNote .
+}
+INSERT {
+  narr:Narrative_3 narr:theme   "A normalized statement index with human-readable IDs eliminates duplication and makes intent stable across wording iterations." ;
+    skos:broader narr:NarrativeDrivenRoadmap ;
+    skos:note    "Each statement gets one canonical home; cross-references by ID replace copy-paste duplication. Statement IDs encode intent; wording is iterable." ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_3 narr:theme   ?oldTheme . }
+  OPTIONAL { narr:Narrative_3 skos:broader ?oldBroader . }
+  OPTIONAL { narr:Narrative_3 skos:note    ?oldNote . }
+} ;
+
+# =============================================================
+# BLOCK 12 — UPDATE: Obs_ConceptualSections selectors + prov
+# =============================================================
+
+DELETE {
+  narr:Obs_ConceptualSections oa:hasSelector ?oldSel .
+}
+INSERT {
+  narr:Obs_ConceptualSections
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3540 ; oa:end 3780 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+                     oa:exact  "- **Knowledge Model** — epistemology, conviction, provenance, citation\n- **Memory Lifecycle** — creation, validation, quality, branches, async\n- **Interaction Pattern** — gap-aware, detect-and-offer, feedback loop" ;
+                     oa:prefix "Sections:\n" ;
+                     oa:suffix "\n- **Compilation**" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+}
+WHERE {
+  OPTIONAL { narr:Obs_ConceptualSections oa:hasSelector ?oldSel . }
+} ;
+
+# =============================================================
+# BLOCK 13 — UPDATE: Obs_CurrentState selectors + prov
+# =============================================================
+
+DELETE {
+  narr:Obs_CurrentState oa:hasSelector ?oldSel .
+}
+INSERT {
+  narr:Obs_CurrentState
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4680 ; oa:end 4900 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+                     oa:exact  "Full statement index drafted with ~70 human-readable IDs across 7 types" ;
+                     oa:prefix "- " ;
+                     oa:suffix "\n- Three sample conceptual sections completed" ] ;
+    prov:wasGeneratedBy narr:Tx_ASWRITTEN_Decomp .
+}
+WHERE {
+  OPTIONAL { narr:Obs_CurrentState oa:hasSelector ?oldSel . }
+} ;
+
+# =============================================================
+# BLOCK 14 — UPDATE: StyleMetrics_1 source, metrics, note, prov
+# =============================================================
+
+DELETE {
+  narr:StyleMetrics_1 dct:source                ?oldSrc .
+  narr:StyleMetrics_1 narr:AverageSentenceLength ?oldASL .
+  narr:StyleMetrics_1 narr:ActiveVoiceRatio      ?oldAVR .
+  narr:StyleMetrics_1 narr:JargonDensity         ?oldJD .
+  narr:StyleMetrics_1 skos:note                  ?oldNote .
+}
+INSERT {
+  narr:StyleMetrics_1
+    dct:source                narr:Sample_1 ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio     "0.92"^^xsd:decimal ;
+    narr:JargonDensity        "0.08"^^xsd:decimal ;
+    skos:note                 "Estimated metrics: avg sentence length ~18 words (mix of short punchy verdicts and longer enumerated clauses); active voice dominant (~92%); jargon density low (~8% — domain-specific terms like 'attention dilution', 'compaction', 'JTBD' are intentional and controlled)." ;
+    prov:wasGeneratedBy       narr:Tx_ASWRITTEN_Decomp .
+}
+WHERE {
+  OPTIONAL { narr:StyleMetrics_1 dct:source                ?oldSrc . }
+  OPTIONAL { narr:StyleMetrics_1 narr:AverageSentenceLength ?oldASL . }
+  OPTIONAL { narr:StyleMetrics_1 narr:ActiveVoiceRatio      ?oldAVR . }
+  OPTIONAL { narr:StyleMetrics_1 narr:JargonDensity         ?oldJD . }
+  OPTIONAL { narr:StyleMetrics_1 skos:note                  ?oldNote . }
+}

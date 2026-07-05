@@ -1,0 +1,28 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Product> {
+  <https://aswritten.ai/narrative#Digest_Product> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Product> ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers Scarlet's product lineage and the through-line connecting it: extracting narrative from data to steer outcomes. The arc runs from [Populous, the first venture-backed startup](narr:Narrative_Populous) — a medium-agnostic communication system that later pivoted to hourly-worker platform Clark — through [Capitol's automated insight extraction](narr:Narrative_Capitol), where Scarlet was first engineering hire. [The Outwork](narr:Narrative_TheOutwork) marks the first productization of narrative engineering, aimed at individuals. The decisive transition is [Vouch, the manual prototype](narr:Narrative_Vouch): a hand-built \"narrative source of truth\" seeding AI with sanctioned organizational steering vectors, then replicated across an org. [aswritten.ai automates that Vouch process](narr:Narrative_aswritten) into an ingestion pipeline, making a single data source context-agnostic. Two input-philosophy claims sit beneath: [richer input benefits extraction](narr:Claim_MoreMaterialNotAProblem) and [voice memo as validated format](narr:Narrative_VoiceMemoAsInput). The repeated pattern across all: create a vector that produces a larger outcome within a system.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MoreMaterialNotAProblem> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_Capitol> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_Populous> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TheOutwork> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_VoiceMemoAsInput> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_Vouch> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_aswritten> ;
+    narr:keyPhrase [ narr:text "narrative source of truth" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_Vouch> ] ;
+    narr:keyPhrase [ narr:text "instead of AI defaulting to training-set narratives, it defaulted to organizational narratives" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_Vouch> ] ;
+    narr:keyPhrase [ narr:text "key transition: from individual use to organizational replication" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_Vouch> ] ;
+    narr:keyPhrase [ narr:text "taking a single data source and making it context-agnostic" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_aswritten> ] ;
+    narr:keyPhrase [ narr:text "More material is not a problem." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MoreMaterialNotAProblem> ] ;
+    narr:keyPhrase [ narr:text "Long rambling voice memos are high-quality memory input for the extraction pipeline" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_VoiceMemoAsInput> ] ;
+    narr:variation [ narr:text "The Outwork serves individuals (artists, entrepreneurs, nonprofits) — the structural outlier against the org-scale thrust of Vouch and aswritten." ; narr:over <https://aswritten.ai/narrative#Narrative_TheOutwork> ; narr:over <https://aswritten.ai/narrative#Narrative_Vouch> ; narr:over <https://aswritten.ai/narrative#Narrative_aswritten> ] ;
+    narr:variation [ narr:text "Vouch was done manually; aswritten automates it — the individual-use→organizational-replication transition is the load-bearing pivot, not a smooth continuation." ; narr:over <https://aswritten.ai/narrative#Narrative_Vouch> ; narr:over <https://aswritten.ai/narrative#Narrative_aswritten> ] ;
+    narr:variation [ narr:text "Populous is the road that ended in departure — co-founder differences and getting clean and sober; it became Clark only after Scarlet left." ; narr:over <https://aswritten.ai/narrative#Narrative_Populous> ] ;
+    narr:variation [ narr:text "Input philosophy explicitly contradicts deck-making norms: 'unlike a deck where you want one clean statement,' the pipeline wants richer, messier material." ; narr:over <https://aswritten.ai/narrative#Claim_MoreMaterialNotAProblem> ; narr:over <https://aswritten.ai/narrative#Narrative_VoiceMemoAsInput> ] ;
+    narr:writer "claude (subscription)" .
+}

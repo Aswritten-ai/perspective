@@ -1,0 +1,30 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_1> {
+  <https://aswritten.ai/narrative#Digest_Narrative_1> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_1> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub holds the thesis that [identity follows narrative architecture](narr:Claim_1) — that steering a narrative shapes what an AI becomes, grounded in a founding origin story traced from 2012 flocking-particle systems to collective memory ([style read of that arc](narr:StyleObs_2), [strategic-alignment assessment](narr:RubricAssess_StrategicAlignment)). The product mechanics sit beneath it: a [two-stage refraction-and-edit pipeline](narr:Claim_2), a [brief→compile→write→annotate generation loop](narr:Claim_6), and a [document registry carrying audience, domains, and drift thresholds](narr:Claim_7). The related [collective-memory node reframes that store as an opinion machine, not neutral infrastructure](narr:Narrative_2), superseding earlier 2026-02-10 fact-review design. Threaded through is a market signal — buyers already said yes — and a normalization of [asking for money](narr:Claim_1). The narration reports these as a standing position, not a settled conclusion; the [chicken-and-egg framing](narr:Claim_ChickenEgg) and the belief-vs-action gap remain open beneath it.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_1> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_2> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_6> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_7> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ChickenEgg> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_2> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_2> ;
+    narr:keyPhrase [ narr:text "Narrative steering shapes AI identity" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_1> ] ;
+    narr:keyPhrase [ narr:text "Transparency as mitigation is necessary but insufficient" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_2> ] ;
+    narr:keyPhrase [ narr:text "The market already said yes: the customer's chief architect signaled [amount]-150K, a founder beta user asked to use the product, an infrastructure advisor validated the ICP" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_2> ] ;
+    narr:keyPhrase [ narr:text "Collective memory is an opinion machine, not neutral infrastructure" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_2> ] ;
+    narr:keyPhrase [ narr:text "Language models have velocity; narrative is the directional vector of meaning beneath statements." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_2> ] ;
+    narr:keyPhrase [ narr:text "narrative operates like a velocity or acceleration vector in these particle systems" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:keyPhrase [ narr:text "asking for money is normal, humble, honest, and direct" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_1> ] ;
+    narr:variation [ narr:text "Transparency, the obvious mitigation for narrative steering, is flagged as necessary but NOT sufficient — a built-in qualification against the mainline 'steering is fine' read." ; narr:over <https://aswritten.ai/narrative#Claim_2> ] ;
+    narr:variation [ narr:text "Belief-vs-action gap: the bootstrap reframe ('The assumption has been bootstrap. That's wrong.') exists at FOUNDATION level but the behavior has not yet followed." ; narr:over <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:variation [ narr:text "The collective-memory node recasts the store as an opinionated 'opinion machine' and explicitly supersedes the 2026-02-10 fact-review/boolean-state design — a road not taken still reachable." ; narr:over <https://aswritten.ai/narrative#Narrative_2> ] ;
+    narr:variation [ narr:text "An unresolved chicken-and-egg framing is attached (aboutNode) but carries no content — a structural open question beneath the confident thesis." ; narr:over <https://aswritten.ai/narrative#Claim_ChickenEgg> ] ;
+    narr:writer "claude (subscription)" .
+}

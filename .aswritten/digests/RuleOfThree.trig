@@ -1,0 +1,41 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_RuleOfThree> {
+  <https://aswritten.ai/narrative#Digest_RuleOfThree> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#RuleOfThree> ;
+    narr:childCount "20"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers Scarlet's pervasive **rule-of-three / tricolon** as a style primitive operating at several scales. At the phrase scale, triads recur as memorable scaffolding: [life/health/identity](narr:StyleObs_RuleOfThree), [what-you-know / how-it's-changed / IP-as-code](narr:StyleObs_RuleOfThree_1), [the direction differentiator](narr:StyleObs_RuleOfThree_Direction), and [propagation across roles/tools/contexts](narr:StyleObs_RuleOfThree_Propagation). At the taxonomy scale it structures content models — [Information/Perspective/Wisdom](narr:StyleObs_RuleOfThreeTaxonomy), the [three interview outputs](narr:StyleObs_RuleOfThreeOutputs), and [Creation/Architecture/Infrastructure layers](narr:StyleObs_RuleOfThree_Layers). At the sentence/section scale it appears as [three-sentence summaries](narr:StyleObs_ThreeLineSummary) and a [staccato tricolon](narr:StyleObs_ShortPunchyTricolon). The pattern is named meta-explicitly — [\"three altitudes of the same primitive\"](narr:StyleObs_AltitudeTaxonomy) and an [author-enforced three-sentence rule](narr:StyleObs_ThreeSentenceRule). Adjacent forms sit alongside: a [negative anaphoric triad](narr:StyleObs_NegativeParallelism) and a [numbered convergence-of-three](narr:StyleObs_NumberedConvergence) (both `related`, not `broader`). Recurrent idiolect markers — Rumsfeld framework, OS-bootloading metaphors — appear in the conviction and memory observations.""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_11> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_3> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_6> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_AltitudeTaxonomy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NegativeParallelism> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NumberedConvergence> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThree> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThreeOutputs> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThreeScales> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThreeTaxonomy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThree_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThree_Direction> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThree_Layers> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThree_Niches> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThree_Propagation> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThree_Tagline> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ShortPunchyTricolon> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ThreeLineSummary> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ThreeSentenceRule> ;
+    narr:keyPhrase [ narr:text "rebuilt life, health, identity, and energy" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RuleOfThree> ] ;
+    narr:keyPhrase [ narr:text "where you've been, what you've decided, and where you're headed" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RuleOfThree_Direction> ] ;
+    narr:keyPhrase [ narr:text "what you know, how it's changed, IP as quantifiable code" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RuleOfThree_1> ] ;
+    narr:keyPhrase [ narr:text "Three altitudes of the same primitive" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AltitudeTaxonomy> ] ;
+    narr:keyPhrase [ narr:text "across roles (co-founders), tools (Desktop → Code), and contexts (strategy → implementation)" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RuleOfThree_Propagation> ] ;
+    narr:keyPhrase [ narr:text "Not avoidance. Not paralysis. Gravitational pull." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ShortPunchyTricolon> ] ;
+    narr:variation [ narr:text "The 'rule' is repeatedly stretched to FOUR — triad-plus-emphatic-fourth — so the primitive isn't strictly three." ; narr:over <https://aswritten.ai/narrative#StyleObs_RuleOfThree> ; narr:over <https://aswritten.ai/narrative#StyleObs_RuleOfThree_Niches> ; narr:over <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:variation [ narr:text "Two children attach via `related`, not `broader`: negative/anaphoric ('no…no…no') and numbered-convergence forms are kin to the triad but structurally distinct from positive tricola." ; narr:over <https://aswritten.ai/narrative#StyleObs_NegativeParallelism> ; narr:over <https://aswritten.ai/narrative#StyleObs_NumberedConvergence> ] ;
+    narr:variation [ narr:text "Scale ambiguity: the primitive spans three-WORD sentences, three-ITEM lists, and three-SENTENCE/section units — 'rule of three' is doing different work at each altitude." ; narr:over <https://aswritten.ai/narrative#StyleObs_AltitudeTaxonomy> ; narr:over <https://aswritten.ai/narrative#StyleObs_ThreeLineSummary> ; narr:over <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:variation [ narr:text "Implicit usage vs explicitly named-and-enforced: one child is meta-commentary where the author consciously disciplines the cadence rather than deploying it unconsciously." ; narr:over <https://aswritten.ai/narrative#StyleObs_ThreeSentenceRule> ] ;
+    narr:writer "claude (subscription)" .
+}

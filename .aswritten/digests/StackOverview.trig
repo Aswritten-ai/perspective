@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_StackOverview> {
+  <https://aswritten.ai/narrative#Digest_StackOverview> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#StackOverview> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the As Written / Scarlet Dame technical-and-conceptual stack across two registers. The conceptual mainline: a [collective-memory thesis](narr:Narrative_CollectiveMemory) — RDF knowledge graphs over vector databases for traceable organizational truth — extended by the [prompts-as-ontology-targets idea](narr:Narrative_PromptsAsOntologyTargets), where prompts/skills are versioned objects compiled differently per worldview. The implementation register names concrete choices: [MCP as the integration layer](narr:Observation_MCPStack), [SortaRich on Cloudflare Workers](narr:Obs_TechStack) with an AI-generated codebase, and [per-repo bearer-token scoping](narr:Obs_BearerTokenScope). Beneath the optimistic graph-as-memory framing sits a sharper, more skeptical premise about the models themselves — [LLMs as continuation machines](narr:Observation_LLMContinuation) — attached as `related` rather than `broader`, signalling it qualifies rather than supports the mainline. The cluster reads as the foundational why (anti-hallucination, ontology-driven prompts) plus the how (serverless, MCP, scoped auth), with one philosophical undercurrent about what LLMs actually are.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CollectiveMemory> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PromptsAsOntologyTargets> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_BearerTokenScope> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_TechStack> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_LLMContinuation> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_MCPStack> ;
+    narr:keyPhrase [ narr:text "RDF knowledge graphs over vector databases maintain organizational truth" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_CollectiveMemory> ] ;
+    narr:keyPhrase [ narr:text "AI collective memory prevents hallucination and ensures consistency across teams" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_CollectiveMemory> ] ;
+    narr:keyPhrase [ narr:text "LLM prompts as ontology compilation targets: versioned, scoped, and recompiled when the worldview shifts" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_PromptsAsOntologyTargets> ] ;
+    narr:keyPhrase [ narr:text "LLMs are continuation machines, not thinking machines." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_LLMContinuation> ] ;
+    narr:keyPhrase [ narr:text "As Written uses MCP (Model Context Protocol) as the integration layer for organizational memory tools." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_MCPStack> ] ;
+    narr:keyPhrase [ narr:text "SortaRich built on Cloudflare Workers serverless architecture; entire codebase generated via AI prompts." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_TechStack> ] ;
+    narr:keyPhrase [ narr:text "Bearer API keys scoped to {owner}/{repo} in URL path" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_BearerTokenScope> ] ;
+    narr:variation [ narr:text "Skeptical undercurrent: LLMs framed as mere continuation machines following narrative vectors — qualifies the upbeat 'AI collective memory' thesis, and is attached as related, not broader." ; narr:over <https://aswritten.ai/narrative#Observation_LLMContinuation> ; narr:over <https://aswritten.ai/narrative#Narrative_CollectiveMemory> ] ;
+    narr:variation [ narr:text "Two registers coexist without merging: conceptual/strategic narratives (graphs, ontology-compiled prompts) vs. concrete infra observations (Cloudflare Workers, MCP, bearer-token auth)." ; narr:over <https://aswritten.ai/narrative#Narrative_CollectiveMemory> ; narr:over <https://aswritten.ai/narrative#Narrative_PromptsAsOntologyTargets> ; narr:over <https://aswritten.ai/narrative#Obs_TechStack> ; narr:over <https://aswritten.ai/narrative#Obs_BearerTokenScope> ] ;
+    narr:variation [ narr:text "Self-referential edge: the codebase is itself AI-prompt-generated, while the product's thesis is that prompts should be ontology-compiled and worldview-scoped — an unstated tension about whether the stack practices its own model." ; narr:over <https://aswritten.ai/narrative#Obs_TechStack> ; narr:over <https://aswritten.ai/narrative#Narrative_PromptsAsOntologyTargets> ] ;
+    narr:writer "claude (subscription)" .
+}

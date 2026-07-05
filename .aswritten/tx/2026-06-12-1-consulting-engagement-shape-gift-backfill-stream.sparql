@@ -1,0 +1,191 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250715T200000Z a prov:Activity ;
+    prov:generatedAtTime "2025-07-15T20:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# The engagement shape: gift, backfill diagnostic, ongoing stream, calibration" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_EngagementShape_20260610,
+      narr:Narrative_EngagementArcThreePhase,
+      narr:Narrative_CalibrationAsStaffWork,
+      narr:Narrative_PriceTheAccumulation,
+      narr:Claim_RepoPerClient,
+      narr:Claim_SourceSideScopeGate,
+      narr:Claim_48HourGiftConstraint,
+      narr:StyleObs_EngagementShape_Antithesis,
+      narr:StyleObs_EngagementShape_ShortPunchy,
+      narr:StyleObs_EngagementShape_JargonPolicy,
+      narr:Metrics_EngagementShape_20260610 .
+} ;
+
+# New Sample node
+INSERT DATA {
+  GRAPH narr:Tx_20250715T200000Z {
+    narr:Sample_EngagementShape_20260610 a narr:Sample ;
+      dct:title "The engagement shape: gift, backfill diagnostic, ongoing stream, calibration" ;
+      dct:created "2026-06-10"^^xsd:date ;
+      skos:note "Part 3 of the consulting-engagement session record (June 10-12, 2026). Scarlet Dame working session with Claude. Covers the three-phase engagement arc, ingestion mechanism redesign, cadence/calibration reframe, pricing principle, deliverables, and capacity reality." ;
+      narr:inputLength 3421 .
+  }
+} ;
+
+# New Narratives
+INSERT DATA {
+  GRAPH narr:Tx_20250715T200000Z {
+
+    narr:Narrative_EngagementArcThreePhase a narr:Narrative ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Three-Phase Consulting Engagement Arc: Gift → Backfill Diagnostic → Ongoing Stream" ;
+      skos:note "The consulting engagement arc collapses two earlier candidate containers (bounded report engagement and advisory retainer) into phases of one thing: (1) 48-hour gift — free, built only from calls Scarlet participated in; (2) backfill diagnostic — the client's recorded history, processed, bounded, priced, with a finish line; (3) ongoing stream — the webhook left on. Each phase is distinct in scope, pricing logic, and deliverable." ;
+      narr:theme "A consulting engagement is three sequential phases — gift, bounded diagnostic, and ongoing stream — not a single undifferentiated service" .
+
+    narr:Narrative_CalibrationAsStaffWork a narr:Narrative ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:broader narr:OperatingModelShifts ;
+      skos:prefLabel "Calibration Calls Are Staff-Work, Not Friendship" ;
+      skos:note "Required bi-weekly calls were dropped on June 10 because many executives expect ongoing conversations for free. They were restored as calibration: supervision of a now-central system plus reading the metrics together. Calibration is staff-work, not friendship; the call is the management meeting for the AI layer. This reframe resolves the free-conversation problem by repositioning the cadence as operational management rather than relationship maintenance." ;
+      narr:theme "Bi-weekly calibration calls are the management meeting for the AI layer — staff-work, not friendship, and therefore billable" .
+
+    narr:Narrative_PriceTheAccumulation a narr:Narrative ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:broader narr:PackagingPricing ;
+      skos:prefLabel "Price the Accumulation, Not the Conversation" ;
+      skos:note "The pricing answer to the free-conversation problem: price the accumulation, not the conversation. Executives are accustomed to ongoing conversations for free. The value is in the accumulated perspective graph, not in any individual call. This principle resolves the cadence pricing tension and aligns with the three-phase arc where the gift is free but the backfill diagnostic and ongoing stream are priced." ;
+      narr:theme "The billable unit is the accumulated perspective graph, not the individual conversation — price the accumulation" .
+
+  }
+} ;
+
+# New Claims
+INSERT DATA {
+  GRAPH narr:Tx_20250715T200000Z {
+
+    narr:Claim_RepoPerClient a narr:Claim ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:note "Repo per client. The consulting version of the participant loop is 'actually just me' — the salon-model idea with the participant loop deferred. Each client gets their own repo, isolating their perspective graph from other clients and from Scarlet's own repo." ;
+      narr:aboutNode narr:ArchitectureOverview ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_OwnFromDayOne .
+
+    narr:Claim_SourceSideScopeGate a narr:Claim ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:note "A source-side scope gate (internal calls only, exclusion rules) is what makes 'send me your transcripts' sayable to a client, given that client calls include their own customers, NDAs, and employees. Without the scope gate, the ask is ethically and legally untenable. The scope gate is a prerequisite for the backfill diagnostic phase." ;
+      narr:aboutNode narr:GovernanceSafetyTrust ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_EngagementArcThreePhase .
+
+    narr:Claim_48HourGiftConstraint a narr:Claim ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:note "The gift is built only from calls Scarlet participated in. Client bulk transcripts flow only post-contract, into the client's own repo. This constraint is both ethical (consent) and practical (quality — Scarlet's framing judgment is required for the gift to be representative). It is a standing constraint, not a temporary limitation." ;
+      narr:aboutNode narr:Narrative_GenerosityAsDemonstration ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_EngagementArcThreePhase .
+
+  }
+} ;
+
+# Style Observations
+INSERT DATA {
+  GRAPH narr:Tx_20250715T200000Z {
+
+    narr:StyleObs_EngagementShape_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:note "Heavy antithesis structure throughout: automation vs. conversation, gift vs. contract, staff-work vs. friendship, accumulation vs. conversation. Each section resolves a tension by naming both poles explicitly before stating the synthesis." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EngagementShape_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 892 ;
+          oa:end 942
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "automation for transport, conversation for framing" ;
+          oa:prefix "The synthesis: " ;
+          oa:suffix ". A webhook injects"
+        ]
+      ] .
+
+    narr:StyleObs_EngagementShape_ShortPunchy a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:note "Short punchy declaratives at conviction peaks: 'Calibration is staff-work, not friendship', 'price the accumulation, not the conversation', 'this consulting version is actually just me.' Each is a standalone sentence functioning as a thesis statement." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EngagementShape_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1421 ;
+          oa:end 1462
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Calibration is staff-work, not friendship" ;
+          oa:prefix "restored as calibration: supervision of a now-central system plus reading the metrics together. " ;
+          oa:suffix "; the call is the management meeting"
+        ]
+      ] .
+
+    narr:StyleObs_EngagementShape_JargonPolicy a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:note "Product-specific jargon (webhook, repo, branch routing, backfill diagnostic, SOW) used without definition, implying internal audience. General business terms (calibration, cadence, engagement) used in product-specific senses that differ from their common meanings — a controlled vocabulary pattern." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EngagementShape_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 296 ;
+          oa:end 393
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the 48-hour gift (free, built only from calls Scarlet participated in), then a backfill diagnostic" ;
+          oa:prefix "The engagement arc: " ;
+          oa:suffix " (the client's recorded history"
+        ]
+      ] .
+
+    narr:Metrics_EngagementShape_20260610 a narr:StyleMetrics ;
+      dct:source narr:Sample_EngagementShape_20260610 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo register. Mixed: analytical editorial prose (authoritative, structured) vs. first-person conversational in blockquoted speech (lowercase, run-on). Antithesis-heavy structure throughout. Active voice dominant in editorial sections. Jargon density moderate — product terms (webhook, repo, branch routing, SOW, backfill diagnostic) used without definition, implying internal audience. Short punchy declaratives at conviction peaks. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "19"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.09"^^xsd:decimal .
+
+  }
+} ;
+
+# Update narr:Narrative_ConsultingIsMeUsingProduct to add engagement arc detail
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_ConsultingIsMeUsingProduct skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250715T200000Z {
+    narr:Narrative_ConsultingIsMeUsingProduct skos:note "Resolves the personal-services vs. product-engagement vs. hybrid tension from the June 10 handoff. The client never learns a tool, changes behavior, or believes in software. The product is Scarlet's infrastructure, visible only as the continuity and quality of what she delivers. This removes the adoption burden entirely and reframes consulting as a product-powered service delivery model. The engagement arc has three phases: (1) 48-hour gift (free, built only from calls Scarlet participated in); (2) backfill diagnostic (client's recorded history, processed, bounded, priced, with a finish line); (3) ongoing stream (webhook left on). Two earlier candidate containers — bounded report engagement and advisory retainer — collapsed into phases of one thing." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_ConsultingIsMeUsingProduct skos:note ?oldNote .
+  }
+} 

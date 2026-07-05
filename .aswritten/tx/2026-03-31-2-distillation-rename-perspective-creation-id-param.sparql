@@ -1,0 +1,287 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260331T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-31T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260331" ;
+    narr:originRef "main" ;
+    dct:title "Distillation → Perspective Creation and ID Parameter Rename" ;
+    prov:generated
+      narr:Sample_DistillationPerspectiveCreation_20260331,
+      narr:Narrative_DistillationToPerspectiveCreation,
+      narr:Narrative_CognitionModelSimplification,
+      narr:Claim_PerspectiveCreationServiceRename,
+      narr:Claim_ConsultTermFreed,
+      narr:Claim_CuratedDroppedFromCategory,
+      narr:Claim_CognitionModelSimplified,
+      narr:Obs_DistillationQuote,
+      narr:Obs_IDParamRedundancyQuote,
+      narr:Obs_CuratedDroppedQuote,
+      narr:StyleObs_DirectPersonalRegister_Distillation,
+      narr:StyleObs_AntithesisBeforeAfter_Distillation,
+      narr:StyleObs_BulletedDecisionFormat_Distillation,
+      narr:StyleMetrics_DistillationPerspectiveCreation .
+} ;
+
+# ── UPDATE: narr:Claim_CategoryDefinitionCuratedExpertise ───────────────────
+# Memory explicitly contradicts: Scarlet dropped "curated" from the category name.
+# Old: "Curated expertise installation" → New: "expertise installation"
+DELETE {
+  GRAPH ?g {
+    narr:Claim_CategoryDefinitionCuratedExpertise skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260331T120000Z {
+    narr:Claim_CategoryDefinitionCuratedExpertise skos:note "Category defined as: 'expertise installation — the layer above context engineering that determines not just what AI knows, but how it thinks.' Scarlet dropped 'curated' from the category name: 'never thought the curated part was particularly necessary.' This supersedes the prior 'curated expertise installation' framing. The installation itself implies curation." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_CategoryDefinitionCuratedExpertise skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_CategoryCuratedExpertiseInstallation ─────────────
+# Memory contradicts the prefLabel and theme: "curated" is dropped from the category.
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_CategoryCuratedExpertiseInstallation skos:prefLabel ?oldLabel ;
+      narr:theme ?oldTheme ;
+      skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260331T120000Z {
+    narr:Narrative_CategoryCuratedExpertiseInstallation
+      skos:prefLabel "Expertise Installation as Category (formerly Curated Expertise Installation)" ;
+      narr:theme "Expertise installation is the layer above context engineering — it determines not just what AI knows but how it thinks; 'curated' was dropped as redundant" ;
+      skos:note "aswritten defines the category as 'expertise installation.' The word 'curated' was dropped by Scarlet: 'never thought the curated part was particularly necessary.' The installation itself implies curation. This supersedes the prior 'curated expertise installation' framing from Strategy Document V1." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_CategoryCuratedExpertiseInstallation skos:prefLabel ?oldLabel ;
+      narr:theme ?oldTheme ;
+      skos:note ?oldNote .
+  }
+} ;
+
+# ── INSERT: New entities ─────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260331T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_DistillationPerspectiveCreation_20260331
+      a narr:Sample ;
+      dct:created "2026-03-31"^^xsd:date ;
+      dct:title "Distillation → Perspective Creation, and the ID Parameter Rename" ;
+      dct:description "Follow-up decisions from the GitHub abstraction and tool naming design session (2026-03-30/31). Two additional naming changes: (1) distillation → perspective creation for the professional service and related terminology; (2) perspective parameter → id parameter to eliminate redundancy in perspective(perspective=ID)." ;
+      narr:inputLength 2041 .
+
+    # ── Actors (already in snapshot; referenced for completeness) ───────────
+    # narr:Actor_ScarletDame_StrategyV1, narr:Actor_Claude_AICoworker,
+    # narr:Actor_OutsideTechBetaUser_Fiance all exist — no new actor entities needed.
+
+    # ── Narrative 1: Distillation → Perspective Creation ────────────────────
+    narr:Narrative_DistillationToPerspectiveCreation
+
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:broader narr:NamingConventions ;
+      skos:prefLabel "Distillation → Perspective Creation: Professional Service Rename" ;
+      skos:note "The professional service formerly called 'distillation' is renamed to 'perspective creation.' Rationale: 'distillation' is a metaphor that needs explaining; 'perspective creation' is what it literally is — we create a perspective for you. It also parallels the self-service path naturally: you can create your own perspective (Expert, DIY) or we can create it for you (service). Cascading renames: distillation specialist → perspective creator; distillation fee → creation fee; individuation pipeline → perspective pipeline. Historical uses of 'distill' in memories and footnotes are citations, not active terminology. Internal pipeline code names can stay as-is." ;
+      narr:theme "'Distillation' replaced by 'perspective creation' as the name for the professional service — a literal description that parallels the self-service path and needs no metaphor explanation" .
+
+    # ── Narrative 3: Cognition Model Simplification ──────────────────────────
+    narr:Narrative_CognitionModelSimplification
+
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:broader narr:TerminologyControl ;
+      skos:prefLabel "Cognition Model Simplified: remember → process → perspective" ;
+      skos:note "The cognition model was simplified. Before: remember → internalize → individuate → consult. After: remember → process → perspective. 'Individuate' and 'internalize' were Jungian psychology terms borrowed as metaphors — accurate for what the pipeline does, but not worth naming as distinct steps when the user never sees them. 'Consult' was freed as a general word when it was no longer a tool name." ;
+      narr:theme "The cognition model drops Jungian metaphor steps (individuate, internalize) in favor of a plain three-step arc: remember → process → perspective" .
+
+    # ── Claims ───────────────────────────────────────────────────────────────
+    narr:Claim_PerspectiveCreationServiceRename
+      a narr:Claim ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:note "'Distillation' is renamed to 'perspective creation' for the professional service. Scarlet: 'I don't like the word distillation. Let's just call it perspective creation?' Rationale: 'Perspective creation' is what it literally is — we create a perspective for you. It parallels the self-service path naturally. Cascading renames: distillation specialist → perspective creator; distillation fee → creation fee; individuation pipeline → perspective pipeline." ;
+      narr:aboutNode narr:Narrative_DistillationToPerspectiveCreation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ToolNamesLeakImplementation .
+
+    narr:Claim_ConsultTermFreed
+      a narr:Claim ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:note "With 'consult' no longer a tool name, it was freed as a general word. The 'avoid: Consult' note was removed from the Leaders/executives audience guidance in the glossary. The word is no longer reserved terminology." ;
+      narr:aboutNode narr:NamingConventions ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_UserFacingVsInternalLanguageSplit .
+
+    narr:Claim_CuratedDroppedFromCategory
+      a narr:Claim ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:note "'Expertise installation' (without 'curated') is the category name. Scarlet identified that 'curated' wasn't adding meaning — the installation itself implies curation. This supersedes the 'curated expertise installation' framing from Strategy Document V1." ;
+      narr:aboutNode narr:Narrative_CategoryCuratedExpertiseInstallation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_CategoryCuratedExpertiseInstallation .
+
+    narr:Claim_CognitionModelSimplified
+      a narr:Claim ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:note "Cognition model simplified from four steps to three. Before: remember → internalize → individuate → consult. After: remember → process → perspective. 'Individuate' and 'internalize' were Jungian psychology terms — accurate for the pipeline but not worth naming as user-visible steps. 'Consult' dropped because it was a tool name that has since been freed." ;
+      narr:aboutNode narr:Narrative_CognitionModelSimplification ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_NamingConstraints .
+
+    # ── Observations (grounded quotes) ───────────────────────────────────────
+    narr:Obs_DistillationQuote
+      a narr:Observation ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:broader narr:NamingConventions ;
+      skos:note "Scarlet's verbatim rationale for the distillation → perspective creation rename." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DistillationPerspectiveCreation_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 312 ;
+          oa:end 500
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "\"Distillation\" is a metaphor that needs explaining. \"Perspective creation\" is what it literally is" ;
+          oa:prefix "Why: " ;
+          oa:suffix " — we create a perspective for you."
+        ]
+      ] .
+
+    narr:Obs_IDParamRedundancyQuote
+      a narr:Observation ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:broader narr:NamingConventions ;
+      skos:note "Scarlet's verbatim request to rename the perspective parameter to id, identifying the redundancy created by the compile→perspective rename." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DistillationPerspectiveCreation_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1050 ;
+          oa:end 1160
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Can you also rename the param for share by ID from perspective=ID to perspective(id=ID)?" ;
+          oa:prefix "Scarlet: " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:Obs_CuratedDroppedQuote
+      a narr:Observation ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:broader narr:NamingConventions ;
+      skos:note "Scarlet's verbatim rationale for dropping 'curated' from the category name." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DistillationPerspectiveCreation_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1580 ;
+          oa:end 1650
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "never thought the curated part was particularly necessary" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_DirectPersonalRegister_Distillation
+      a narr:StyleObservation ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:broader narr:ToneDirectPersonal ;
+      skos:note "Scarlet's voice is captured in direct first-person quotes embedded in a structured decision memo. The register is founder-internal: no hedging, declarative, immediate." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DistillationPerspectiveCreation_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 248 ;
+          oa:end 310
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I don't like the word distillation. Let's just call it perspective creation?" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:StyleObs_AntithesisBeforeAfter_Distillation
+      a narr:StyleObservation ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:broader narr:Antithesis ;
+      skos:note "The memory uses consistent before/after antithesis structure for every rename decision: old term → new term. This is the dominant rhetorical device throughout." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DistillationPerspectiveCreation_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 560 ;
+          oa:end 720
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "\"distillation\" → \"perspective creation\"" ;
+          oa:prefix "The professional service: " ;
+          oa:suffix "\nThe service role:"
+        ]
+      ] .
+
+    narr:StyleObs_BulletedDecisionFormat_Distillation
+      a narr:StyleObservation ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:broader narr:InformationArchitecture ;
+      skos:note "Decisions are structured as bulleted 'What changed' / 'What didn't change' lists under bold headers, a consistent pattern in aswritten design session memos. Parallelism is enforced within each list." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DistillationPerspectiveCreation_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 530 ;
+          oa:end 560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**What changed:**" ;
+          oa:prefix "" ;
+          oa:suffix "\n- The professional service:"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+    narr:StyleMetrics_DistillationPerspectiveCreation
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_DistillationPerspectiveCreation_20260331 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Design decision memo format. Mixed register: structured markdown with bold headers and bullet lists for decisions; embedded verbatim Scarlet quotes in first person. Antithesis-heavy (before → after pairs). Active voice dominant. Jargon density low-moderate — product terms (perspective, id param, proxy, mcp-generic, individuation pipeline) used without definition, implying internal audience. Short punchy sentences at decision moments; longer analytical sentences in rationale sections." ;
+      narr:AverageSentenceLength 15 ;
+      narr:ActiveVoiceRatio "0.86"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal .
+  }
+}

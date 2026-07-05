@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__RhetoricalDevices> {
+  <https://aswritten.ai/narrative#Digest_ns__RhetoricalDevices> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#RhetoricalDevices> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers observed rhetorical devices in the source document, spanning structure, contrast, metaphor, and repetition. Structurally, triadic lists recur for emphasis and memorability — both as plain enumeration ([explicit/reviewable/testable triad](narr:StyleObs_10)) and as escalating figurative sequence ([backdoor/steering-wheel/fault-lines triad](narr:StyleObs_Metaphor_Steering)). Contrast is carried by [antithesis between past and AI-native paradigms](narr:StyleObs_9), pairing past-vs-future framing with consistent parallel bullet syntax. Metaphor operates in two registers: a [physical embodiment analogy](narr:StyleObs_Analogy_Resonant) casting AI identity as a resonant body, and a [technical vector metaphor](narr:StyleObs_Metaphor_Vector) borrowing mathematical directionality. Repetition appears as [anaphora on 'every single'](narr:StyleObs_Anaphora), scaling emphasis across enumerated surfaces. Diction observations also note developer-audience signaling via 'at the cursor.' Together these handles let a reader recognize the document's persuasive texture — triad, antithesis, metaphor, anaphora — without yet expanding to the raw quotes.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_10> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_9> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Analogy_Resonant> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Anaphora> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Steering> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Vector> ;
+    narr:keyPhrase [ narr:text "explicit, reviewable, and testable" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_10> ] ;
+    narr:keyPhrase [ narr:text "narrative is not only the backdoor to the models, it's the steering wheel, it's the fault lines" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Steering> ] ;
+    narr:keyPhrase [ narr:text "AI identity as this sort of resonant body that has a shape to it" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Analogy_Resonant> ] ;
+    narr:keyPhrase [ narr:text "every single home, but every single venture, every single backend, every surface" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Anaphora> ] ;
+    narr:keyPhrase [ narr:text "The past 20-25 years optimized for human-readable documentation; AI-native paradigm optimizes for machine-queryable worldview" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_9> ] ;
+    narr:keyPhrase [ narr:text "steering vector" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Vector> ] ;
+    narr:variation [ narr:text "The same notion of directing AI is figured in two clashing registers — embodied/physical ('resonant body') versus abstract/mathematical ('steering vector')." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Analogy_Resonant> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Vector> ] ;
+    narr:variation [ narr:text "Triadic structure does double duty: as neutral enumeration for memorability and as charged, escalating metaphor for control/vulnerability — the same device serving opposite tones." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_10> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Steering> ] ;
+    narr:variation [ narr:text "Some entries are pure form/structure observations (parallel bullets, triads) while others are content-laden figurative claims; the hub mixes stylistic mechanics with substantive metaphor." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_9> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Steering> ] ;
+    narr:writer "claude (subscription)" .
+}

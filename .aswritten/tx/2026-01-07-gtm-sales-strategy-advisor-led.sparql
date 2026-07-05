@@ -1,0 +1,311 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology/storybook#>
+PREFIX storytwin: <http://storytwin.com/ontology/core#>
+
+# ============================================================================
+# Transaction Provenance
+# ============================================================================
+INSERT DATA {
+  narr:Tx_20260128T211459Z a prov:Activity ;
+    prov:wasAssociatedWith <http://storytwin.com/agent/aswritten.ai> ;
+    prov:wasAttributedTo <http://storytwin.com/actor/n8n.aswritten.ai> ;
+    prov:generatedAtTime "2026-01-28T21:14:59.574Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-07-gtm-sales-strategy-advisor-led.md"^^xsd:string ;
+    sb:originRef "refs/heads/main"^^xsd:string ;
+    prov:generated narr:Sample_GTM_20260107,
+                   narr:Observation_PositioningThesis_SeedSeriesA,
+                   narr:Observation_MoatLeverage_IPProtection,
+                   narr:Observation_FocusSequencing_PilotExpand,
+                   narr:Observation_Segmentation_HighIPTechnical,
+                   narr:Observation_TimingThesis_AIAdoption,
+                   narr:Observation_PrimaryActors_CEOStratCTO,
+                   narr:Observation_IncentivesConstraints_DecisionSpeed,
+                   narr:Observation_ValueExchange_MetricsROI,
+                   narr:Observation_ArchetypeTitle_AdvisorLedPilot,
+                   narr:Observation_ProblemContext_IPLeakageAlignment,
+                   narr:Observation_ApproachPattern_PilotNetworkEffect,
+                   narr:Observation_OutcomesProof_MetricsDelivered,
+                   narr:Observation_NorthStarMetrics_TimeToExecution,
+                   narr:Observation_LeadingIndicators_AdvisorResponse,
+                   narr:StyleObs_KeyPhrase_StateSec,
+                   narr:StyleObs_KeyPhrase_IPAsCode,
+                   narr:StyleObs_KeyPhrase_NetworkEffects,
+                   narr:StyleObs_Antithesis_WeeksToMinutes,
+                   narr:StyleObs_Cadence_BulletedCriteria,
+                   narr:StyleObs_Tone_DirectImperative,
+                   narr:StyleObs_VerbChoice_ActionVerbs,
+                   narr:StyleObs_BrandName_GitNative,
+                   narr:StyleMetrics_GTM,
+                   narr:RubricAssess_Register_GTM,
+                   narr:RubricAssess_Phrasing_GTM,
+                   narr:RubricAssess_Cadence_GTM,
+                   narr:RubricAssess_StrategicAlignment_GTM,
+                   narr:RubricAssess_Tailoring_GTM,
+                   narr:RubricAssess_Resonance_GTM,
+                   narr:RubricAssess_Flow_GTM,
+                   narr:RubricAssess_Novelty_GTM,
+                   narr:RubricAssess_Accuracy_GTM .
+
+  # ============================================================================
+  # Sample Node
+  # ============================================================================
+  narr:Sample_GTM_20260107 a narr:Sample ;
+    dct:title "GTM & Sales Strategy: Advisor-Led Seed/Series A Focus" ;
+    dct:created "2026-01-07"^^xsd:date ;
+    narr:inputLength 28450 ;
+    skos:note "Sales target, strategy, networking, and marketing plan developed from role-based value props and strategic narrative." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  # ============================================================================
+  # Strategy Observations
+  # ============================================================================
+  narr:Observation_PositioningThesis_SeedSeriesA a narr:Observation, oa:Annotation ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Primary target: Seed/Series A CEOs via advisor network; pain is acute, decision authority + budget, network effects kick in fastest." ;
+    oa:hasBody narr:PositioningThesis ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_MoatLeverage_IPProtection a narr:Observation, oa:Annotation ;
+    skos:broader narr:MoatLeverage ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Compounding advantage: git-native worldview protects IP while enabling AI; network effects multiply value across roles." ;
+    oa:hasBody narr:MoatLeverage ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_FocusSequencing_PilotExpand a narr:Observation, oa:Annotation ;
+    skos:broader narr:FocusSequencing ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Pilot with Strategy or CTO team (5-10 people) for 30 days; add second role mid-pilot to demonstrate network effects; expand org-wide within 60 days." ;
+    oa:hasBody narr:FocusSequencing ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  # ============================================================================
+  # Opportunity Observations
+  # ============================================================================
+  narr:Observation_Segmentation_HighIPTechnical a narr:Observation, oa:Annotation ;
+    skos:broader narr:Segmentation ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Target verticals: AI/ML companies, developer tools/infrastructure, SaaS with proprietary methodology, infrastructure/platform companies—where IP is the moat." ;
+    oa:hasBody narr:Segmentation ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_TimingThesis_AIAdoption a narr:Observation, oa:Annotation ;
+    skos:broader narr:TimingThesis ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Converging forces: heavy AI adoption creates acute IP leakage pain NOW; companies investing in AI are systematically transferring competitive moat." ;
+    oa:hasBody narr:TimingThesis ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_PrimaryActors_CEOStratCTO a narr:Observation, oa:Annotation ;
+    skos:broader narr:PrimaryActors ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Primary actors: Seed/Series A CEOs (decision authority, feel pain acutely), Heads of Strategy (consensus chase, alignment), CTOs (technical validation, git-native understanding)." ;
+    oa:hasBody narr:PrimaryActors ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_IncentivesConstraints_DecisionSpeed a narr:Observation, oa:Annotation ;
+    skos:broader narr:IncentivesConstraints ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Incentives: Seed/Series A CEOs can make purchase decision quickly (no lengthy procurement), can mandate org-wide adoption, have budget but care about ROI." ;
+    oa:hasBody narr:IncentivesConstraints ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_ValueExchange_MetricsROI a narr:Observation, oa:Annotation ;
+    skos:broader narr:ValueExchange ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Value exchange: CEO gives budget + org mandate; receives quantified IP protection, time from pivot to execution (weeks→days), consensus building without overhead." ;
+    oa:hasBody narr:ValueExchange ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  # ============================================================================
+  # Product Observations
+  # ============================================================================
+  narr:Observation_ArchetypeTitle_AdvisorLedPilot a narr:Observation, oa:Annotation ;
+    skos:broader narr:ArchetypeTitle ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Solution archetype: Advisor-led warm intro → CEO pitch → 30-day pilot (Strategy or CTO team) → org-wide expansion." ;
+    oa:hasBody narr:ArchetypeTitle ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_ProblemContext_IPLeakageAlignment a narr:Observation, oa:Annotation ;
+    skos:broader narr:ProblemContext ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Triggering conditions: Heavy AI adoption + IP leakage risk + strategy-execution misalignment + small team velocity needs." ;
+    oa:hasBody narr:ProblemContext ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_ApproachPattern_PilotNetworkEffect a narr:Observation, oa:Annotation ;
+    skos:broader narr:ApproachPattern ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Canonical flow: Start with one team (5-10 people), add second role mid-pilot to demonstrate network effects, expand org-wide after proof." ;
+    oa:hasBody narr:ApproachPattern ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_OutcomesProof_MetricsDelivered a narr:Observation, oa:Annotation ;
+    skos:broader narr:OutcomesProof ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Expected metrics: Time from idea to updated materials (days→15 min), time from vision shift to implementation (weeks/months→days), consensus building (ongoing chase→built into PR review)." ;
+    oa:hasBody narr:OutcomesProof ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  # ============================================================================
+  # Proof Observations
+  # ============================================================================
+  narr:Observation_NorthStarMetrics_TimeToExecution a narr:Observation, oa:Annotation ;
+    skos:broader narr:NorthStarMetrics ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "North-star metric: Time from strategic decision to implementation (weeks/months → days); correlates with durable value creation." ;
+    oa:hasBody narr:NorthStarMetrics ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:Observation_LeadingIndicators_AdvisorResponse a narr:Observation, oa:Annotation ;
+    skos:broader narr:LeadingIndicators ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Leading indicators: Advisor responses (10-15 outreach → 5-8 positive), CEO intro calls (5-10 scheduled), pilot commitments (2-3 companies)." ;
+    oa:hasBody narr:LeadingIndicators ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  # ============================================================================
+  # Style Observations
+  # ============================================================================
+  narr:StyleObs_KeyPhrase_StateSec a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Signature phrase: 'telling state secrets to AI'—vivid, memorable, frames IP leakage as espionage-level risk." ;
+    oa:hasBody narr:KeyPhrases ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:StyleObs_KeyPhrase_IPAsCode a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Core terminology: 'IP as code'—makes intangible IP tangible, versionable, reviewable; aligns with git-native worldview." ;
+    oa:hasBody narr:KeyPhrases ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:StyleObs_KeyPhrase_NetworkEffects a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Repeated framing: 'network effects: more people = more value to each person'—emphasizes collaborative multiplier, not individual tool." ;
+    oa:hasBody narr:KeyPhrases ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:StyleObs_Antithesis_WeeksToMinutes a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Antithesis for impact: 'days → 15 minutes', 'weeks/months → days'—sharp before/after contrast quantifies transformation." ;
+    oa:hasBody narr:Antithesis ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:StyleObs_Cadence_BulletedCriteria a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Short, punchy bullets with parenthetical clarifications—fast scan, high information density." ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:StyleObs_Tone_DirectImperative a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Direct, second-person address with imperative lean: 'Let's pilot', 'You'll see the metrics'—confident, action-oriented." ;
+    oa:hasBody narr:ToneDirectPersonal ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:StyleObs_VerbChoice_ActionVerbs a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Strong action verbs: 'investing', 'transferring', 'leaking', 'cutting', 'demonstrate'—concrete, not abstract." ;
+    oa:hasBody narr:VerbChoice ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:StyleObs_BrandName_GitNative a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_GTM_20260107 ;
+    skos:note "Consistent brand term: 'git-native' (hyphenated, lowercase)—technical credibility, aligns with developer worldview." ;
+    oa:hasBody narr:BrandNameStylization ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  # ============================================================================
+  # Style Metrics
+  # ============================================================================
+  narr:StyleMetrics_GTM a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_GTM_20260107 ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:JargonDensity 0.12 ;
+    skos:note "High active-voice ratio, moderate jargon density (technical terms defined in context), short-to-medium sentence length for clarity." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  # ============================================================================
+  # Rubric Assessments
+  # ============================================================================
+  narr:RubricAssess_Register_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_GTM_20260107 ;
+    rdf:value 4.5 ;
+    skos:note "Direct, authoritative, second-person address; active verbs; concise bullets; fits executive/strategic audience." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:RubricAssess_Phrasing_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_GTM_20260107 ;
+    rdf:value 5.0 ;
+    skos:note "Signature phrases ('state secrets to AI', 'IP as code', 'network effects') are memorable, repeatable, and aligned with strategic narrative." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:RubricAssess_Cadence_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_GTM_20260107 ;
+    rdf:value 4.5 ;
+    skos:note "Short, punchy bullets; varied sentence length; antithesis for impact ('weeks → days'); fast scan, high density." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:RubricAssess_StrategicAlignment_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_GTM_20260107 ;
+    rdf:value 5.0 ;
+    skos:note "Directly operationalizes strategic narrative (IP crisis, collaborative worldview, advisor-led GTM); every section ties back to positioning thesis." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:RubricAssess_Tailoring_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_GTM_20260107 ;
+    rdf:value 5.0 ;
+    skos:note "Highly tailored: specific criteria for advisors, distinct champion profiles (CEO/Strategy/CTO), vertical-specific pain points (AI/ML, dev tools, SaaS)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:RubricAssess_Resonance_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_GTM_20260107 ;
+    rdf:value 4.5 ;
+    skos:note "Strong analogies ('IP as code', 'state secrets'), quantified metrics (weeks→days), vivid problem framing; could add customer story for 5.0." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:RubricAssess_Flow_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_GTM_20260107 ;
+    rdf:value 4.5 ;
+    skos:note "Clear progression: target → vertical → champion → sales motion → pilot → expansion; transitions are logical; some sections could be tighter." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:RubricAssess_Novelty_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_GTM_20260107 ;
+    rdf:value 4.0 ;
+    skos:note "Fresh framing ('state secrets', 'IP as code'); some standard GTM structure (pilot→expand); avoids clichés; distinct voice." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+
+  narr:RubricAssess_Accuracy_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_GTM_20260107 ;
+    rdf:value 4.5 ;
+    skos:note "Specific metrics cited (days→15 min, weeks→days); references prior memories (ADR-002, role-based value props); no unsupported claims; could add external citations for 5.0." ;
+    prov:wasGeneratedBy narr:Tx_20260128T211459Z .
+}

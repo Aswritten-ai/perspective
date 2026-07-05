@@ -1,0 +1,457 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260317T180000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-17T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-17-tony-maley-weekly-call-b2c-pivot-yc-gif-sales.md" ;
+    narr:originRef "main" ;
+    dct:title "Tony Maley Weekly Call: B2C Pivot, YC Top 10%, GIF Sales Materials (March 17, 2026)" ;
+    prov:generated
+      
+      narr:Narrative_B2CPivot,
+      narr:Narrative_GIFBasedSalesMaterials,
+      narr:Narrative_TechnicalAdoptionFriction,
+      narr:Narrative_WhitePaperAIFilter,
+      narr:Claim_B2CPrimaryMarket,
+      narr:Claim_EveryIndividualIsTheirOwnTeam,
+      narr:Claim_GIFLooksReal,
+      narr:Claim_WhitePaperAIFiltered,
+      narr:Claim_TechnicalUserSeparationPrinciple,
+      narr:Claim_PrivacyConcernDrivesAvoidance,
+      narr:Claim_StickyProductWordOfMouth,
+      narr:Obs_B2CAngleQuote,
+      narr:Obs_NumbersWorkB2C,
+      narr:Obs_StructureContextMemory,
+      narr:Obs_GIFHookFeature,
+      narr:Obs_GIFLooksRealQuote,
+      narr:Obs_NarrativeArchLanded,
+      narr:Obs_WhitePaperAIFilter,
+      narr:Obs_TonyPipitAdoptionBarrier,
+      narr:Obs_TechnicalChaosQuote,
+      narr:Obs_SeparationSolutionQuote,
+      narr:Obs_PrivacyConcernQuote,
+      narr:Obs_StickyProductQuote,
+      narr:StyleObs_TonyIdiolect_Numbers,
+      narr:StyleObs_ScarletDistillation,
+      narr:StyleObs_ShortPunchyCadence .
+} ;
+
+# ── UPDATE: Narrative_SMBPrimaryMarket — B2C pivot extends the March 12 SMB pivot further ──
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_SMBPrimaryMarket narr:theme ?oldTheme ;
+                                    skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260317T180000Z {
+    narr:Narrative_SMBPrimaryMarket narr:theme "B2C individuals and small businesses replace enterprise as the primary market thesis for aswritten.ai; enterprise remains as the top tier only" ;
+      skos:note "As of March 17, 2026, the B2C pivot extends the March 12 SMB pivot further: SMB was already a shift from enterprise, but B2C goes beyond SMB to include individuals building companies alone. Both Scarlet and Tony converged independently on this framing. Enterprise remains as the top tier but the primary go-to-market is individuals and small businesses. Tony's core argument: AI has made every individual their own team. The volume play is B2C — solopreneurs, consultants, small business owners who need structure for context and memory." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_SMBPrimaryMarket narr:theme ?oldTheme ;
+                                    skos:note ?oldNote .
+  }
+} ;
+
+# ── New entities ─────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260317T180000Z {
+
+    # ── SECTION: The B2C Pivot ───────────────────────────────────────────────
+    narr:Narrative_B2CPivot a narr:Narrative ;
+
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "B2C as Primary Market: Every Individual Is Their Own Team" ;
+      skos:note "The most significant outcome of the March 17 call. Both Scarlet and Tony converged independently on the idea that aswritten is fundamentally more B2C than B2B. Enterprise remains as the top tier, but the primary go-to-market is individuals and small businesses. Tony's argument: AI has made every individual their own team. The people who need structure for context and memory are solopreneurs, consultants, small business owners. The volume play is B2C. This extends the March 12 SMB pivot further — SMB was already a shift from enterprise, but B2C goes beyond SMB to include individuals building companies alone." ;
+      narr:theme "AI has made every individual their own team; the volume play is B2C — solopreneurs and small business owners who need structure for context and memory" .
+
+    narr:Claim_B2CPrimaryMarket a narr:Claim ;
+
+      skos:note "Both Scarlet and Tony independently converged on aswritten being fundamentally more B2C than B2B. Enterprise remains as the top tier but the primary go-to-market is individuals and small businesses. This extends the March 12 SMB pivot further to include individuals building companies alone." ;
+      narr:aboutNode narr:Narrative_B2CPivot ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PositioningThesis .
+
+    narr:Claim_EveryIndividualIsTheirOwnTeam a narr:Claim ;
+
+      skos:note "Tony's core argument: AI has made every individual their own team. The people who need structure for context and memory aren't just enterprises — they're solopreneurs, consultants, small business owners. 90% of what Tony sees people chasing is structure for context and memory." ;
+      narr:aboutNode narr:Narrative_B2CPivot ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_B2CPivot .
+
+    narr:Obs_B2CAngleQuote a narr:Observation ;
+
+      skos:broader narr:PositioningThesis ;
+      skos:note "Tony's articulation of the B2C angle — the single people building whole companies on their own as the primary target." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 531 ;
+          oa:end 627
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "From a B2C perspective, to the single people who are building whole companies on their own. I think that's the angle." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_NumbersWorkB2C a narr:Observation ;
+
+      skos:broader narr:Segmentation ;
+      skos:note "Tony's volume argument for B2C — the numbers work because every single person is now their own team." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 640 ;
+          oa:end 730
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Think about the numbers though, right? The numbers really work. B2C. Because if we take theory that every single person is now their own team." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_StructureContextMemory a narr:Observation ;
+
+      skos:broader narr:PersonasJTBD ;
+      skos:note "Tony's observation that 90% of what people are chasing is structure for context and memory — the core JTBD for aswritten's B2C market." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 745 ;
+          oa:end 815
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "90% of what I see people chasing though is structure for context and memory." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── SECTION: GIF-Based Sales Materials ──────────────────────────────────
+    narr:Narrative_GIFBasedSalesMaterials a narr:Narrative ;
+
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "GIF-Based Sales Materials: Hook GIF, Story Page, McDonald Picture Menu Deck" ;
+      skos:note "Scarlet demonstrated automated end-to-end testing that records terminal sessions and generates GIFs. Tony was immediately excited about using these for sales. Agreed deliverables: (1) Hook GIF — one attention-grabbing product moment; (2) Story page: GIFs + interstitial copy; (3) McDonald picture menu deck: 5-10 slides, single statement per slide, 10-second GIF each. Tony needs these before his an enterprise prospect meeting (likely next week). Tony's key insight: 'Just looks real' — it's not a concept, not engineering skunk works, it looks like a real thing." ;
+      narr:theme "GIF-based sales materials that look real are more effective than decks or white papers for initial executive engagement" .
+
+    narr:Claim_GIFLooksReal a narr:Claim ;
+
+      skos:note "Tony's core insight about the GIF-based demo approach: it just looks real. Not a concept, not engineering skunk works — it looks like a real thing. That's the trick. This is the sales advantage of GIF-based materials over decks or white papers." ;
+      narr:aboutNode narr:Narrative_GIFBasedSalesMaterials ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ValueDemonstrationGap .
+
+    narr:Obs_GIFHookFeature a narr:Observation ;
+
+      skos:broader narr:SalesDecks ;
+      skos:note "Tony's articulation of the GIF sales strategy: one hook GIF to grab attention, then feature GIFs. Hook first, features after." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3180 ;
+          oa:end 3280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "You want one to grab attention. And then you could have other ones... you want a hook gif. And then after that, you could have feature gifts." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_GIFLooksRealQuote a narr:Observation ;
+
+      skos:broader narr:Differentiators ;
+      skos:note "Tony's articulation of why GIFs work as sales materials — they look real, not like a concept or engineering skunk works." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3300 ;
+          oa:end 3420
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Just looks real, Right... Just looks like it's a real thing. It's not, you know, it's not a concept. It's not engineering. Skunk works. It looks real is the trick." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── SECTION: Fundraising Materials Feedback ──────────────────────────────
+    narr:Narrative_WhitePaperAIFilter a narr:Narrative ;
+
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "White Paper AI Filter: Busy Executives Won't Read, They'll Summarize" ;
+      skos:note "Tony raised a critical insight about the 'white paper' label: busy executives won't read a white paper — they'll put it into Claude and ask for a summary. The Narrative Architecture white paper landed best with Tony, but the format itself may be the wrong vehicle for initial engagement. The GIF-based approach may be more effective for initial engagement, with the white paper as follow-up for people who want depth." ;
+      narr:theme "Busy executives will AI-summarize a white paper rather than read it; GIF-based materials are more effective for initial engagement" .
+
+    narr:Claim_WhitePaperAIFiltered a narr:Claim ;
+
+      skos:note "Tony's insight: if someone sends him a white paper, he'll put it into Claude and ask for a summary rather than read it. The implication: the white paper format is wrong for initial executive engagement. GIF-based approach first, white paper as depth follow-up." ;
+      narr:aboutNode narr:Narrative_WhitePaperAIFilter ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_GIFBasedSalesMaterials .
+
+    narr:Obs_NarrativeArchLanded a narr:Observation ;
+
+      skos:broader narr:ProofOutcomesSales ;
+      skos:note "Tony's reaction to the fundraising materials — the Narrative Architecture white paper landed best, with no notes on any of the drafts." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3680 ;
+          oa:end 3780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The last one in particular... Narrative Architecture... that one in particular really landed with me." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_WhitePaperAIFilter a narr:Observation ;
+
+      skos:broader narr:AudienceFrames ;
+      skos:note "Tony's articulation of the white paper AI filter problem — executives will summarize with AI rather than read." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3850 ;
+          oa:end 3990
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If someone sends me a white paper, am I going to do that now? I'm probably not. I'm literally going to put it into Claude and say give me a summary of that, tell me if I should read that or not." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── SECTION: Technical User Adoption Friction ────────────────────────────
+    narr:Narrative_TechnicalAdoptionFriction a narr:Narrative ;
+
+      skos:broader narr:FrictionFailure ;
+      skos:prefLabel "Technical User Adoption Friction: Contamination Fear, Not Product Difficulty" ;
+      skos:note "Tony shared a critical insight about why technically sophisticated users (like himself) struggle to adopt aswritten. The reason a collaborator doesn't work for Tony is he's not all in on a collaborator. People like Tony have 10 repos on the go with Claude and all this tooling — they're worried about what's going to break or cross over. The solution: start a completely new project with aswritten, don't touch existing repos. Tony also revealed a privacy concern that drove avoidance: he didn't want experimental work visible to others. The insight: technical users with existing AI workflows have high adoption friction not because the product is hard, but because they fear contamination — their existing setup breaking, or their experimental work being visible." ;
+      narr:theme "Technical users resist adoption not because the product is hard but because they fear contaminating their existing AI workflows; the solution is clear onboarding guidance to start fresh" .
+
+    narr:Claim_TechnicalUserSeparationPrinciple a narr:Claim ;
+
+      skos:note "Tony's insight: the best thing for technical users with existing AI workflows is to have a completely new project that hasn't started any repos, and then don't let it touch anything else. Keep them separate. The more involved people are, the more they need separation from their own chaos. This is the onboarding guidance aswritten needs to provide." ;
+      narr:aboutNode narr:Narrative_TechnicalAdoptionFriction ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:EnablementTraining .
+
+    narr:Claim_PrivacyConcernDrivesAvoidance a narr:Claim ;
+
+      skos:note "Tony revealed a privacy concern that drove his avoidance of aswritten: he didn't want experimental or sensitive work visible to others in the system. This is a distinct adoption barrier from technical complexity — it's about visibility and control of what gets recorded." ;
+      narr:aboutNode narr:Narrative_TechnicalAdoptionFriction ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_TechnicalAdoptionFriction .
+
+    narr:Obs_TonyPipitAdoptionBarrier a narr:Observation ;
+
+      skos:broader narr:FrictionFailure ;
+      skos:note "Tony's self-diagnosis of why he hasn't adopted aswritten via a collaborator — not being all-in on a collaborator means the product can't get full traction." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4350 ;
+          oa:end 4420
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The reason why a collaborator doesn't work is I'm not all in on a collaborator." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_TechnicalChaosQuote a narr:Observation ;
+
+      skos:broader narr:FrictionFailure ;
+      skos:note "Tony's articulation of the technical user's adoption barrier — 10 repos on the go, worried about what breaks or crosses over." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4430 ;
+          oa:end 4545
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "People like me have 10 repos on the go with Claude right now and... all this tooling and different skills... I'm worried what's going to break or cross over." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_SeparationSolutionQuote a narr:Observation ;
+
+      skos:broader narr:EnablementTraining ;
+      skos:note "Tony's prescribed solution for technical user adoption — start completely fresh, keep aswritten separate from existing repos." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4560 ;
+          oa:end 4680
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The best thing is to have a completely new thing that haven't started any repos for or anything and then don't let it touch anything else. Keep them separate." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_PrivacyConcernQuote a narr:Observation ;
+
+      skos:broader narr:FrictionFailure ;
+      skos:note "Tony's privacy concern that drove avoidance — not wanting experimental or sensitive work visible to others in the system." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4720 ;
+          oa:end 4810
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Oh, but if that gets recorded there, Scarlett's going to wonder what the hell is going on... I don't want that stuff in there." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Claim_StickyProductWordOfMouth a narr:Claim ;
+
+      skos:note "Tony's assessment: aswritten has a sticky product. If Scarlet can get it into the hands of 20-50 people, the word of mouth will catapult it. The product is ready; the bottleneck is distribution." ;
+
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_SMBPrimaryMarket .
+
+    narr:Obs_StickyProductQuote a narr:Observation ;
+
+      skos:broader narr:Proof ;
+      skos:note "Tony's assessment of the product's stickiness and the word-of-mouth potential once it reaches 20-50 users." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5900 ;
+          oa:end 6010
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I think you've got a sticky product. If you can get it into the hands of 20, 50 people... The word of mouth of that will just... that's really catapult." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── Style Observations (minimum 3) ───────────────────────────────────────
+    narr:StyleObs_TonyIdiolect_Numbers a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+
+      skos:note "Tony's characteristic rhetorical pattern: leading with 'Think about the numbers though, right?' to ground strategic arguments in volume logic. Idiolect marker — numbers-first persuasion style." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 640 ;
+          oa:end 700
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Think about the numbers though, right? The numbers really work." ;
+          oa:prefix "Tony: \"" ;
+          oa:suffix " B2C."
+        ]
+      ] .
+
+    narr:StyleObs_ScarletDistillation a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+
+      skos:note "Scarlet's characteristic pattern of distilling a complex strategic shift into a single precise sentence — 'the more direct distillation of the shift I'm having.' Self-aware meta-commentary on her own thinking process, used to crystallize the B2C pivot." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 830 ;
+          oa:end 1010
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Maybe that is the more direct distillation of the shift I'm having is just realizing that it's actually more of a B2C product than a B2B product." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " And there's still"
+        ]
+      ] .
+
+    narr:StyleObs_ShortPunchyCadence a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+
+      skos:note "The memory uses short punchy declaratives at key insight moments — 'It looks real is the trick.' and 'The product is a phone number.' style compression. Tony's quoted speech consistently uses this pattern to land strategic points." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3400 ;
+          oa:end 3430
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It looks real is the trick." ;
+          oa:prefix "engineering. Skunk works. " ;
+          oa:suffix "\""
+        ]
+      ] .
+  }
+}

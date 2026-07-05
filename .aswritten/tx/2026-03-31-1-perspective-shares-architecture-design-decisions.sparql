@@ -1,0 +1,124 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Transaction provenance
+INSERT DATA {
+  narr:Tx_20250522T143000Z a prov:Activity ;
+    prov:generatedAtTime "2025-05-22T14:30:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-30-perspective-shares.md" ;
+    narr:originRef "main" ;
+    dct:title "Extraction: Perspective Shares Architecture" ;
+    prov:generated 
+      narr:Sample_PerspectiveShares_20260330,
+      narr:Actor_Scarlet_Dame,
+      narr:Actor_Claude_AI,
+      narr:Narrative_PerspectiveShares_Distribution,
+      narr:Claim_TXOnlyBundles,
+      narr:Claim_ContentAddressableIDs,
+      narr:Claim_MCP_SchemaAsPrompt,
+      narr:Observation_HumanReadableIDs,
+      narr:StyleObs_Metaphor_Breadcrumb,
+      narr:StyleObs_Metaphor_PromptAsSchema,
+      narr:StyleMetrics_PerspectiveShares .
+} ;
+
+# Extracted entities
+INSERT DATA {
+  GRAPH narr:Tx_20250522T143000Z {
+    narr:Sample_PerspectiveShares_20260330 a narr:Sample ;
+      dct:title "Perspective Shares: Architecture and Design Decisions" ;
+      narr:inputLength 3850 .
+
+    narr:Actor_Scarlet_Dame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Founder" .
+
+    narr:Actor_Claude_AI a narr:Actor ;
+      skos:prefLabel "Claude" ;
+      skos:note "AI coworker" .
+
+    narr:Narrative_PerspectiveShares_Distribution a narr:Narrative ;
+      dct:source narr:Sample_PerspectiveShares_20260330 ;
+      narr:theme "Perspective shares as self-contained worldview bundles" ;
+      skos:broader narr:TechnologiesSocialSystems ;
+      skos:note "Solves the distribution problem for organizational worldviews without requiring repo access." .
+
+    narr:Claim_TXOnlyBundles a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveShares_Distribution ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_PerspectiveShares_20260330 ;
+      skos:note "Perspective shares bundle only .aswritten/tx/*.sparql files, excluding memories and manifest." .
+
+    narr:Claim_ContentAddressableIDs a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveShares_Distribution ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_PerspectiveShares_20260330 ;
+      skos:note "IDs are human-readable slugs generated from word frequency of TX stems plus a 4-char hash." .
+
+    narr:Claim_MCP_SchemaAsPrompt a narr:Claim ;
+      narr:aboutNode narr:TechnicalExplainers ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_PerspectiveShares_20260330 ;
+      skos:note "For MCP tools, schema properties act as prompts; a parameter in the schema is more effective than prose descriptions." .
+
+    narr:Observation_HumanReadableIDs a narr:Observation ;
+      skos:broader narr:NamingConventions ;
+      dct:source narr:Sample_PerspectiveShares_20260330 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1150 ;
+        oa:end 1225
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the id should be human readable and generated from the tx set." ;
+        oa:prefix "Scarlet's requirement: \"" ;
+        oa:suffix "\" The readable slug tells you"
+      ] .
+
+    narr:StyleObs_Metaphor_Breadcrumb a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_PerspectiveShares_20260330 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveShares_20260330 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3450 ; oa:end 3530 ] ;
+        oa:hasSelector [ 
+          a oa:TextQuoteSelector ; 
+          oa:exact "The import tool's \"Use perspective=...\" error message is the most effective breadcrumb." ;
+          oa:prefix "gets there in 1-2 turns. " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:StyleObs_Metaphor_PromptAsSchema a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_PerspectiveShares_20260330 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveShares_20260330 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3750 ; oa:end 3800 ] ;
+        oa:hasSelector [ 
+          a oa:TextQuoteSelector ; 
+          oa:exact "schema properties are prompts" ;
+          oa:prefix "Key insight: for MCP tools, **" ;
+          oa:suffix "**."
+        ]
+      ] .
+
+    narr:StyleMetrics_PerspectiveShares a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_PerspectiveShares_20260330 ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.25 ;
+      skos:note "Technical architectural documentation style with high active voice and specific system jargon." .
+  }
+}

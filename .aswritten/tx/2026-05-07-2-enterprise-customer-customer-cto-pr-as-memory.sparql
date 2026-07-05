@@ -1,0 +1,194 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260507T120100Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-07T12:01:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# the customer's CTO Reframes Memory Ingestion as Code Review — May 7, 2026" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_CustomerCTOCodeReview_20260507,
+      narr:Claim_CustomerCTOPRMetaphorCTOValidation,
+      narr:Obs_CustomerCTOPRMetaphorQuote,
+      narr:Obs_ScarletCantAutomateQuote,
+      narr:Obs_CustomerArchitectNotComfortableQuote,
+      narr:StyleObs_CustomerCTOPRMetaphor_Analogy,
+      narr:StyleObs_ScarletCantAutomate_Antithesis,
+      narr:StyleObs_CustomerCTOGuardPullRequests_Imperative,
+      narr:Metrics_CustomerCTOCodeReview_20260507 .
+} ;
+
+# Update narr:Narrative_MemoryIngestionAsCodeReview with richer note
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_MemoryIngestionAsCodeReview skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260507T120100Z {
+    narr:Narrative_MemoryIngestionAsCodeReview skos:note "the customer's CTO pushed back on an engineering manager at the customer's request to automate transcript ingestion by reframing the AI's collective memory as code requiring PR review and unit tests. Full exchange: an engineering manager at the customer asked about automating transcript upload to reduce a 24-hour lag on ARB-to-stories conversion. the customer's chief architect's instinct was that automated upload is fine but human review of the resulting perspective shift is still required. Scarlet framed it as: 'What you can't automate is reviewing the memory that comes out for factual consistency and narrative and perceptual alignment. That's a human process.' the customer's CTO then deployed the engineering metaphor: 'I would think of the compendium that we're giving the AI... we should treat that like code. We should treat that like a pull request with unit tests.' He doubled down directly to an engineering manager at the customer: 'I appreciate you're kind of on a critical time thing, an engineering manager at the customer, but I do think we should guard these pull requests a little bit.' the customer's chief architect closed: 'I'm just not super comfortable saying we should just dump every transcript unreviewed straight into the perspective.' Three things make this load-bearing: (1) the PR-with-unit-tests metaphor is sticky for engineering audiences and the customer's CTO reached for it without prompting; (2) it came from the skeptic seat — the customer's CTO is CTO of a 150-person enterprise consultancy with a default skeptical posture toward vendor pitches; (3) it validates the conviction-tracking thesis independently — the customer's CTO's worry about bad knowledge going 'off the rails' is exactly the failure mode narr:Conviction levels are designed to prevent, arrived at without being told. Quotable for: public-facing positioning, fundraising deck, enterprise sales calls with engineering-led buyers, blog/changelog drafts about the review/PR model. Attribution note: the customer's CTO gave an off-hand 'we should let aswritten be part of our marketing department' line but that was a joke — public attribution needs his explicit ok." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_MemoryIngestionAsCodeReview skos:note ?oldNote .
+  }
+} ;
+
+# New entities
+INSERT DATA {
+  GRAPH narr:Tx_20260507T120100Z {
+
+    narr:Sample_CustomerCTOCodeReview_20260507 a narr:Sample ;
+      dct:title "the customer's CTO Reframes Memory Ingestion as Code Review — May 7, 2026" ;
+      dct:created "2026-05-07"^^xsd:date ;
+      dct:description "Standalone capture of the customer's CTO's PR-with-unit-tests metaphor for curated memory ingestion, delivered during the the enterprise customer ARB AI pilot kickoff. Includes full exchange between an engineering manager at the customer, the customer's chief architect, Scarlet, and the customer's CTO, plus significance analysis and usage guidance." ;
+      narr:inputLength 4821 .
+
+    narr:Claim_CustomerCTOPRMetaphorCTOValidation a narr:Claim ;
+      dct:source narr:Sample_CustomerCTOCodeReview_20260507 ;
+      skos:note "the customer's CTO (CTO, the enterprise customer) independently articulated the curated-expertise thesis using an engineering metaphor — 'treat that like a pull request with unit tests' — without being prompted by Scarlet. This is the strongest CTO-level public validation of the curated-memory positioning aswritten has received. Three factors make it load-bearing: (1) the metaphor is sticky for senior engineering audiences; (2) it came from the skeptic seat — the customer's CTO's default posture toward vendor pitches is skeptical; (3) it validates the conviction-tracking thesis without being told — the customer's CTO's worry that bad knowledge would 'let it go off the rails' is exactly the failure mode narr:Conviction levels are designed to prevent. Quotable for fundraising deck, public positioning, and enterprise sales calls with engineering-led buyers." ;
+      narr:aboutNode narr:Narrative_MemoryIngestionAsCodeReview ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_CustomerArchitectCuratedExpertisePitch .
+
+    narr:Obs_CustomerCTOPRMetaphorQuote a narr:Observation ;
+      dct:source narr:Sample_CustomerCTOCodeReview_20260507 ;
+      skos:broader narr:Quotes ;
+      skos:note "the customer's CTO's verbatim articulation of the PR-with-unit-tests metaphor for memory ingestion — the founding evidence for Claim_CustomerCTOPRMetaphorCTOValidation." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerCTOCodeReview_20260507 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1623 ;
+          oa:end 1872
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "we should treat that like code. We should treat that like a pull request with unit tests. It actually creates this because it's, it's, it's better for us to be a little slow" ;
+          oa:prefix "I would think of the compendium that we're giving the AI that should, " ;
+          oa:suffix " I think in expanding the knowledge and making sure the knowledge is correct"
+        ]
+      ] .
+
+    narr:Obs_ScarletCantAutomateQuote a narr:Observation ;
+      dct:source narr:Sample_CustomerCTOCodeReview_20260507 ;
+      skos:broader narr:Quotes ;
+      skos:note "Scarlet's verbatim framing of the human review requirement — the product-language version of the same argument the customer's CTO then made in engineering language." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerCTOCodeReview_20260507 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1330 ;
+          oa:end 1530
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "What you can't automate is what the customer's chief architect's talking about, which is reviewing the memory that comes out for one factual consistency. And for me, more importantly, for narrative and perceptual alignment. And that's a human process." ;
+          oa:prefix "Scarlet then made the same point in the language of the product:\n\n> " ;
+          oa:suffix " — Scarlet"
+        ]
+      ] .
+
+    narr:Obs_CustomerArchitectNotComfortableQuote a narr:Observation ;
+      dct:source narr:Sample_CustomerCTOCodeReview_20260507 ;
+      skos:broader narr:Quotes ;
+      skos:note "the customer's chief architect's closing statement reinforcing the curated-not-dumped principle — the champion's own words validating the same thesis as the CTO." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerCTOCodeReview_20260507 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm just not super comfortable saying we should just dump every transcript unreviewed straight into the perspective." ;
+          oa:prefix "the customer's chief architect landed the close:\n\n> I do think we can find a way to be a little bit faster about uploading\n> transcripts. " ;
+          oa:suffix " — the customer's chief architect"
+        ]
+      ] .
+
+    narr:StyleObs_CustomerCTOPRMetaphor_Analogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_CustomerCTOCodeReview_20260507 ;
+      skos:note "the customer's CTO reaches for a software engineering analogy (PR with unit tests) to explain a knowledge governance principle to a developer audience. The analogy is unprompted, indicating internalization rather than adoption of vendor framing. Characteristic of engineering-idiolect persuasion: abstract principle made concrete through familiar workflow." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerCTOCodeReview_20260507 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1623 ;
+          oa:end 1720
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "we should treat that like code. We should treat that like a pull request with unit tests." ;
+          oa:prefix "I would think of the compendium that we're giving the AI that should, " ;
+          oa:suffix " It actually creates this"
+        ]
+      ] .
+
+    narr:StyleObs_ScarletCantAutomate_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_CustomerCTOCodeReview_20260507 ;
+      skos:note "Scarlet's statement uses antithesis to separate the automatable (transcript upload) from the non-automatable (human review for factual consistency and narrative alignment). The structure 'what you can't automate is...' foregrounds the constraint rather than the capability — a rhetorical move that makes the human-process requirement feel principled rather than limiting." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerCTOCodeReview_20260507 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1330 ;
+          oa:end 1430
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "What you can't automate is what the customer's chief architect's talking about, which is reviewing the memory that comes out" ;
+          oa:prefix "> " ;
+          oa:suffix " for one factual consistency."
+        ]
+      ] .
+
+    narr:StyleObs_CustomerCTOGuardPullRequests_Imperative a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_CustomerCTOCodeReview_20260507 ;
+      skos:note "the customer's CTO's follow-up uses direct imperative address ('I do think we should guard these pull requests a little bit') combined with personal acknowledgment ('I appreciate you're kind of on a critical time thing, an engineering manager at the customer'). The combination of empathy-then-redirect is a CTO-register persuasion pattern: validate the concern, then hold the line. The word 'guard' is notably strong — it frames the memory as something requiring active protection, not just passive review." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerCTOCodeReview_20260507 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1900 ;
+          oa:end 2050
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I appreciate you're kind of on a critical time thing, an engineering manager at the customer, but I do think we should guard these pull requests a little bit." ;
+          oa:prefix "> " ;
+          oa:suffix " Like we got\n> our code"
+        ]
+      ] .
+
+    narr:Metrics_CustomerCTOCodeReview_20260507 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_CustomerCTOCodeReview_20260507 ;
+      skos:note "Strategic memo with embedded verbatim blockquotes from four speakers. Mixed register: analytical editorial prose (authoritative, structured) vs. conversational first-person in quoted speech (run-on, filler-heavy). the customer's CTO's quoted speech is expansive and self-interrupting (~30 words avg per sentence); the customer's chief architect's is shorter and more declarative (~15 words avg). Active voice dominant in editorial sections. Jargon density low — engineering terms (PR, unit tests, pull request) used as analogy, not technical specification. Significance analysis section uses numbered bold headers as rhetorical anchors. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "19"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.06"^^xsd:decimal .
+  }
+}

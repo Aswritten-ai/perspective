@@ -1,0 +1,24 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Mission> {
+  <https://aswritten.ai/narrative#Digest_Mission> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Mission> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the mission around a single through-line: narrative as the steering layer for AI. The [organizational-context mission](narr:Obs_Mission) frames the operational goal — feed every AI on the team organizational context via an MCP server built from conversations — while the [steering-vector mechanism](narr:Narrative_SteeringVector) supplies the theory: local actor incentives produce emergent network behavior, and language/meaning act like velocity in particle systems. The [career-spanning thesis](narr:Claim_SteeringVectorThesis) positions this as foundational, not incidental, to aswritten.ai. The [founding story](narr:Narrative_FoundingStory) grounds all of it personally: a cold-email connection at Vouch, co-running it under 'enterprise shackles,' then Scarlet leaving to solve the upstream dependency — organizational worldview for AI — and building solo over four months before bringing Tony back. A separate [review-purpose observation](narr:StyleObs_ConvergenceQuote) sits at the edge, capturing working style rather than mission. Note the attachment grades: the mission statement and founding story support directly; the steering-vector framing and the convergence quote are only related — tangential, not load-bearing.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SteeringVectorThesis> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_FoundingStory> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SteeringVector> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_Mission> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ConvergenceQuote> ;
+    narr:keyPhrase [ narr:text "give every AI on the team organizational context via MCP server built from conversations." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_Mission> ] ;
+    narr:keyPhrase [ narr:text "extract undocumented knowledge, architect it to steer, make it infrastructure" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_Mission> ] ;
+    narr:keyPhrase [ narr:text "Language, narrative, and meaning operate as steering vectors analogous to velocity/acceleration in particle systems." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SteeringVector> ] ;
+    narr:keyPhrase [ narr:text "left to solve upstream dependency (organizational worldview for AI)" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_FoundingStory> ] ;
+    narr:keyPhrase [ narr:text "sharp on the thing the branch is trying to do" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ConvergenceQuote> ] ;
+    narr:variation [ narr:text "Abstract thesis vs. personal origin: the same mission is told once as career-spanning theory and once as a co-founder relationship narrative grounded in Vouch and 'enterprise shackles.'" ; narr:over <https://aswritten.ai/narrative#Claim_SteeringVectorThesis> ; narr:over <https://aswritten.ai/narrative#Narrative_FoundingStory> ] ;
+    narr:variation [ narr:text "Attachment-strength split: mission statement and founding story attach as narr:supports, but the steering-vector framing and convergence quote attach only as skos:related — related-but-tangential, not direct support." ; narr:over <https://aswritten.ai/narrative#Narrative_SteeringVector> ; narr:over <https://aswritten.ai/narrative#StyleObs_ConvergenceQuote> ; narr:over <https://aswritten.ai/narrative#Obs_Mission> ] ;
+    narr:variation [ narr:text "Structural outlier: the review-purpose binary ('sharp on the thing the branch is trying to do' vs. 'answer all questions') is a working-style observation, not a mission claim — reachable here but off-axis." ; narr:over <https://aswritten.ai/narrative#StyleObs_ConvergenceQuote> ] ;
+    narr:writer "claude (subscription)" .
+}

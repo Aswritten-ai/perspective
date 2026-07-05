@@ -1,0 +1,39 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__StyleMetrics> {
+  <https://aswritten.ai/narrative#Digest_ns__StyleMetrics> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#StyleMetrics> ;
+    narr:childCount "17"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers per-document style and readability metrics across the org's corpus, computed on the same axes: active-voice ratio, jargon density, lexical diversity (TTR), sentence-length variance, and — where given — Flesch-Kincaid grade. The dominant profile is consistent: high active voice, domain-appropriate-but-explained jargon, varied sentence length, strong lexical diversity. FK grades cluster college-level, spanning the conversational [the customer's chief architect transcript at 10.2](narr:Metrics_CustomerArchitect) and [deck-editing notes near 10](narr:StyleMetrics_DeckEditing) up through the [B2B pitch at 11.2](narr:Metrics_1) and the denser [ADR](narr:Metrics_ADR001) / [IP-crisis strategy docs at 12.4](narr:Metrics_IPCrisis). Register splits by document type: technical architecture pieces ([collective-memory addendum](narr:Metrics_cm_addendum), [arch](narr:Metrics_collective_memory_arch), [SIC](narr:StyleMetrics_SIC_1)) run high jargon density; pitch, GTM, CVP, and rebrand material lean concise and accessible. Many entries are qualitative-only; only a subset carry numeric FK. The corpus is not uniform on cadence or sentence length — see the variation below.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Metrics_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Metrics_ADR001> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Metrics_ADR002> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Metrics_IPCrisis> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Metrics_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Metrics_cm_addendum> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Metrics_collective_memory_arch> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Metrics_rebrand> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleMetrics_20260107> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleMetrics_AIOrg> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleMetrics_InfraAdvisor> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleMetrics_DeckEditing> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleMetrics_GTM> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleMetrics_SIC_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleMetrics_Sample> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleMetrics_collective_memory_cvp> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleMetrics_founder_reflection> ;
+    narr:keyPhrase [ narr:text "Flesch-Kincaid Grade Level: 11.2 (college-level, appropriate for B2B pitch)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Metrics_1> ] ;
+    narr:keyPhrase [ narr:text "Flesch-Kincaid Grade Level: 10.2" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Metrics_CustomerArchitect> ] ;
+    narr:keyPhrase [ narr:text "Flesch-Kincaid Grade: 12.4" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Metrics_ADR001> ] ;
+    narr:keyPhrase [ narr:text "80 sentences, avg 42.8 words/sentence; 78% active voice; high lexical diversity (TTR 0.62)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleMetrics_founder_reflection> ] ;
+    narr:keyPhrase [ narr:text "High active voice ratio; short sentences; concise phrasing; punchy cadence" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleMetrics_collective_memory_cvp> ] ;
+    narr:keyPhrase [ narr:text "High jargon density appropriate for technical architecture document; active voice dominant; varied vocabulary" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Metrics_cm_addendum> ] ;
+    narr:variation [ narr:text "Sentence length is a real outlier: the founder reflection runs avg 42.8 words/sentence against the corpus norm of short-to-medium phrasing." ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_founder_reflection> ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_GTM> ] ;
+    narr:variation [ narr:text "Cadence splits sharply — punchy short sentences (CVP) versus long explanatory clauses (founder reflection, deck editing's analytical sentences)." ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_collective_memory_cvp> ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_founder_reflection> ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_DeckEditing> ] ;
+    narr:variation [ narr:text "Jargon density is contested by document type: high in technical-architecture docs, deliberately low (8% terms) in the founder reflection." ; narr:over <https://aswritten.ai/ns/narrative#Metrics_collective_memory_arch> ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_SIC_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_founder_reflection> ] ;
+    narr:variation [ narr:text "Conversational/transcript-derived registers carry caveats (estimated metrics, conversational fillers reducing conciseness) that the polished documents don't." ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_InfraAdvisor> ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_SIC_1> ; narr:over <https://aswritten.ai/ns/narrative#Metrics_CustomerArchitect> ] ;
+    narr:variation [ narr:text "Comparability gap: roughly half the entries report a numeric Flesch-Kincaid grade, half are qualitative-only, so cross-document FK ranking is incomplete." ; narr:over <https://aswritten.ai/ns/narrative#Metrics_cm_addendum> ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_Sample> ; narr:over <https://aswritten.ai/ns/narrative#StyleMetrics_AIOrg> ] ;
+    narr:writer "claude (subscription)" .
+}

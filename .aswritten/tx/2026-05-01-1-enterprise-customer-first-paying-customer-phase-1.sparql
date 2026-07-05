@@ -1,0 +1,39 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260501T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-01T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-04-30-the enterprise customer-first-paying-customer.md" ;
+    narr:originRef "main" ;
+    dct:title "the enterprise customer Phase 1 Commenced — First Paying Customer 2026-04-30" ;
+    prov:generated
+      
+      narr:Actor_Scarlet_AW,
+      narr:Claim_FreeIsTrial .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260501T120000Z {
+
+    narr:Actor_Scarlet_AW a narr:Actor ;
+      skos:prefLabel "Scarlet" ;
+      skos:note "aswritten.ai team member engineering the the enterprise customer pilot since the demo cycle in February–April 2026; driving deal forward unilaterally." .
+
+    narr:Claim_FreeIsTrial a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+
+      skos:note "Stub: credit card at point of conversion as forcing function. Validated by the enterprise customer's payment on 2026-04-30 — the Tony Maley playbook used Team tier credit card as the mechanism to force conversion." .
+
+  }
+}

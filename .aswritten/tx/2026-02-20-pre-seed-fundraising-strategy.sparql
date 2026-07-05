@@ -1,0 +1,212 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+} ;
+
+# =============================================================
+# ADDS — New Actors
+# =============================================================
+INSERT DATA {
+  narr:Actor_Hazel a narr:Actor ;
+    skos:prefLabel "a collaborator" ;
+    skos:note "Co-founder on Populace pre-seed raise (2015); participated in angel and VC meeting circuit." ;
+    .
+} ;
+
+# =============================================================
+# ADDS — New Claims
+# =============================================================
+INSERT DATA {
+  narr:Claim_1 a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_1 ;
+    narr:supports narr:PositioningThesis ;
+    skos:note "Asking for money is the normal, humble, honest, and direct path. Conviction: Settled (founder's own words)." ;
+    .
+
+  narr:Claim_4 a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Actor_ScarletDame ;
+    narr:supports narr:Narrative_1 ;
+    skos:note "Founder has prior fundraising experience: Populace pre-seed and seed raise (2015) with a collaborator, raised from Human Ventures. Rejection and grind are known quantities." ;
+    .
+
+  narr:Claim_5 a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Narrative_3 ;
+    skos:note "GTM fit is an unknown unknown — the infrastructure enables many products; the right GTM is the discovery work. Founder is not worried about losing medium-term opportunities." ;
+    .
+} ;
+
+# =============================================================
+# ADDS — New Observations
+# =============================================================
+INSERT DATA {
+
+  narr:Obs_PriorRaise a narr:Observation ;
+    skos:broader narr:FrictionFailure ;
+    dct:source narr:Sample_1 ;
+    skos:note "Founder's prior fundraising experience (Populace, 2015) grounds the mechanics as known quantities." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 700 ; oa:end 900 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "in 2015 a collaborator and I did a pre-seed raise for Populace after BRL and took a ton of angel and VC meetings and raised seed from Human Ventures." ;
+      oa:prefix "> \"" ;
+      oa:suffix " so i do understand" ] ;
+    .
+
+  narr:Obs_GTMFlexibility a narr:Observation ;
+    skos:broader narr:TimingThesis ;
+    dct:source narr:Sample_1 ;
+    skos:note "Founder rejects timing-window risk; infrastructure flexibility makes medium-term outlook strong." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4200 ; oa:end 4430 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "the current framing is organizational memory, but i've built infrastructure that enables a wide variety of products and use cases and the GTM is finding the right one" ;
+      oa:prefix "> \"i'm not sure i agree about the timing window thesis. " ;
+      oa:suffix ", but i'm really not worried" ] ;
+    .
+} ;
+
+# =============================================================
+# ADDS — New Style Observations
+# =============================================================
+INSERT DATA {
+  narr:StyleObs_1 a narr:StyleObservation ;
+    skos:broader narr:FirstPerson ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ToneDirectPersonal ;
+    skos:note "Quoted passages use lowercase first-person 'i' throughout, signaling informal, unedited founder voice — brain dump register." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 540 ; oa:end 640 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "i can ask for money, both from friends & family and from Angels/VCs." ;
+      oa:prefix "> \"" ;
+      oa:suffix " it's the normal" ] ;
+    .
+
+  narr:StyleObs_2 a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:NarrativeAnchor ;
+    skos:note "Sharp antithesis: 'The assumption has been bootstrap. That's wrong.' Two-sentence reversal pattern used to reframe the strategic position." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 230 ; oa:end 270 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "The assumption has been bootstrap. That's wrong." ;
+      oa:prefix "## The Strategic Shift\n\n" ;
+      oa:suffix " Asking for money" ] ;
+    .
+
+  narr:StyleObs_3 a narr:StyleObservation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:Tagline ;
+    skos:note "'normal, humble, honest, and direct' — four-beat list with moral weight; functions as a mini-tagline for the fundraising reframe." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 310 ; oa:end 360 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "the normal, humble, honest, and direct path" ;
+      oa:prefix "is " ;
+      oa:suffix " that also frees" ] ;
+    .
+
+  narr:StyleObs_4 a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ToneAuthoritative ;
+    skos:note "Declarative short sentences used for emphasis: 'That's wrong.' 'The mechanics of fundraising … are known quantities, not unknowns.' Signals confident, authoritative register." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 850 ; oa:end 960 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "The mechanics of fundraising — the volume of meetings, the rejection rate, the work involved — are known quantities, not unknowns." ;
+      oa:prefix "are " ;
+      oa:suffix "\n\n>" ] ;
+    .
+
+  narr:StyleObs_5 a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:GrammarSyntax ;
+    skos:note "Em-dashes used consistently for mid-sentence elaboration and list unpacking. Signals editorial, essayistic style." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 855 ; oa:end 920 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "— the volume of meetings, the rejection rate, the work involved —" ;
+      oa:prefix "fundraising " ;
+      oa:suffix " are known quantities" ] ;
+    .
+
+  narr:StyleObs_6 a narr:StyleObservation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:RhetoricalDevices ;
+    skos:note "Explicit invocation of 'Rumsfeld Framework' (Known Knowns / Known Unknowns / Unknown Unknowns) as a rhetorical scaffold for risk analysis." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3500 ; oa:end 3540 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "Risk Analysis (Rumsfeld Framework)" ;
+      oa:prefix "## " ;
+      oa:suffix "\n\n### Known Knowns" ] ;
+    .
+
+  narr:StyleObs_7 a narr:StyleObservation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    skos:note "'Dream Roster' as a section header for consulting hires — informal, aspirational idiom that humanizes the staffing plan." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2900 ; oa:end 2930 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "Dream Roster (Consulting Hires)" ;
+      oa:prefix "## " ;
+      oa:suffix "\n\n- **the planned engineering/architecture hire:**" ] ;
+    .
+
+  narr:StyleObs_8 a narr:StyleObservation ;
+    skos:broader narr:RegisterFormality ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:StyleProfiles ;
+    skos:note "Document alternates between formal structured sections (tables, headers, bullet lists) and informal quoted brain-dump voice (lowercase 'i', colloquial phrasing). Deliberate hybrid register." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 540 ; oa:end 600 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "i can ask for money" ;
+      oa:prefix "> \"" ;
+      oa:suffix ", both from friends" ] ;
+    .
+
+  narr:StyleObs_9 a narr:StyleObservation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ToneAuthoritative ;
+    skos:note "Active constructions dominate: 'Scarlet Dame and a collaborator did a pre-seed raise', 'The product works', 'The founder reframes'. Passive voice is rare." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3760 ; oa:end 3790 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "The product works (demos prove it)" ;
+      oa:prefix "- " ;
+      oa:suffix "\n- Spring-summer" ] ;
+    .
+
+  narr:StyleObs_10 a narr:StyleObservation ;
+    skos:broader narr:ToneAuthoritative ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:NarrativeAnchor ;
+    skos:note "Explicit conviction and confidence labels ('Conviction: Settled', 'Confidence: High / medium') used as document-level framing — unusual meta-transparency device that signals epistemic honesty." ;
+    rdf:value true ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 100 ; oa:end 200 ] ;
+    oa:hasSelector [ a oa:TextQuoteSelector ;
+      oa:exact  "Conviction: Settled (decision made)" ;
+      oa:prefix "**" ;
+      oa:suffix "\n**Confidence:**" ] ;
+    .
+} 

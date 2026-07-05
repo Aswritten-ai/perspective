@@ -1,0 +1,38 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_RiskGuardrails> {
+  <https://aswritten.ai/narrative#Digest_RiskGuardrails> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#RiskGuardrails> ;
+    narr:childCount "16"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the risks and guardrails threaded through Aswritten's company narrative — product, sales, hiring, capital, and onboarding. On the product-trust side, the [80/20 misrepresentation danger](narr:Claim_MisrepresentationRisk) (Apr 16) names the failure mode where prospects fixate on what the AI gets wrong, mitigated by transparency and escalation-as-humility. Operationally, [SMS cost](narr:Claim_SMSOperationalCost) (Apr 28) is framed as a permanent enterprise-only burden, not setup overhead. On shape, the [team counter-thesis](narr:Claim_TeamThesisCounterThesis) (May 18) honestly stress-tests the 7-8-person-at-[amount]-ARR bet against the 50-80-person norm, and the [capacity constraint](narr:Narrative_CapacityConstraint) caps the solo founder at ~1.5 engagements. Guardrails on belief and method recur: [canon-too-soon drift](narr:Narrative_CanonTooSoonDrift) (Apr 8) warns premature conviction leaks into sales copy; the [political alignment filter](narr:Narrative_PoliticalAlignmentFilter) (May 18) runs first and non-negotiably. Capital is hedged via the [SAFE+side-letter hybrid](narr:Narrative_SAFE_SideLetter_Hybrid) (Mar 31), and onboarding via the [direct-ingestion question](narr:Narrative_DirectIngestionAntiPattern).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ChickenEgg> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CrossCuttingRules> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MisrepresentationRisk> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SMSOperationalCost> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ScopeFragility> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TeamThesisCounterThesis> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_BuilderTrap> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CanonTooSoonDrift> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CapacityConstraint> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DirectIngestionAntiPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PoliticalAlignmentFilter> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SAFE_SideLetter_Hybrid> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_DirectIngestionDriftQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_OpenQuestions> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_FiveYearWait> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_FragilityHedge> ;
+    narr:keyPhrase [ narr:text "prospects remember the 20% the AI gets wrong" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MisrepresentationRisk> ] ;
+    narr:keyPhrase [ narr:text "This cost is a permanent feature of running SMS at scale, not a one-time setup cost." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SMSOperationalCost> ] ;
+    narr:keyPhrase [ narr:text "If wrong (customers need more handholding), cap at [amount]-8M ARR." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_TeamThesisCounterThesis> ] ;
+    narr:keyPhrase [ narr:text "Solo founder maxes out at ~1.5 concurrent engagements." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_CapacityConstraint> ] ;
+    narr:keyPhrase [ narr:text "Political alignment filter is non-negotiable for trans founder context" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_PoliticalAlignmentFilter> ] ;
+    narr:keyPhrase [ narr:text "the concern is unreviewed direct ingestion without summarization or topic analysis, not bulk ingestion per se." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_DirectIngestionAntiPattern> ] ;
+    narr:variation [ narr:text "Direct ingestion flipped: first an explicit anti-pattern with a verbatim drift quote as founding evidence, then corrected (May 21) to a valid summarization-mediated path — the quote still lives under the now-overplayed framing." ; narr:over <https://aswritten.ai/narrative#Narrative_DirectIngestionAntiPattern> ; narr:over <https://aswritten.ai/narrative#Obs_DirectIngestionDriftQuote> ] ;
+    narr:variation [ narr:text "The team-size bet is openly contested against itself: lean-at-[amount] requires being product-led AND enterprise AND high-revenue-per-customer at once; if wrong it caps at [amount]-8M, churn/Fortune-500/onboarding each named as break points." ; narr:over <https://aswritten.ai/narrative#Claim_TeamThesisCounterThesis> ] ;
+    narr:variation [ narr:text "A meta-risk in how risks are handled: the concession pattern acknowledges a risk then immediately bounds it as acceptable — guardrails may be reflexively softened rather than left open." ; narr:over <https://aswritten.ai/narrative#StyleObs_FragilityHedge> ] ;
+    narr:variation [ narr:text "Conviction-vs-timing tension: decision-level beliefs (e.g. 'the whole product is a phone number') reached canon before being roadmap-applicable and leaked into customer-facing materials, requiring active steering away." ; narr:over <https://aswritten.ai/narrative#Narrative_CanonTooSoonDrift> ] ;
+    narr:variation [ narr:text "Several gathered children carry no content here (chicken-egg, cross-cutting rules, scope fragility, open questions) — guardrail placeholders whose substance lives only on expansion." ; narr:over <https://aswritten.ai/narrative#Claim_ChickenEgg> ; narr:over <https://aswritten.ai/narrative#Claim_CrossCuttingRules> ; narr:over <https://aswritten.ai/narrative#Claim_ScopeFragility> ; narr:over <https://aswritten.ai/narrative#Obs_OpenQuestions> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,244 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260414T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-14T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-14-perspective-vs-implementation.md" ;
+    narr:originRef "main" ;
+    dct:title "Perspective vs. Implementation Detail: Where the Line Falls in Memory Drafting" ;
+    prov:generated
+      narr:Sample_PerspectiveVsImplementation_20260414,
+      narr:Narrative_PerspectiveVsImplementationLine,
+      narr:Actor_ScarletDame,
+      narr:Claim_PerspectiveHoldsIntent,
+      narr:Claim_ImplementationDetailExclusion,
+      narr:Claim_ThreeTestQuestions,
+      narr:Claim_StalenessFail,
+      narr:Claim_AuthorityConfusionFail,
+      narr:Claim_ProductFilesUpdated,
+      narr:Claim_DurabilityPrinciple,
+      narr:Obs_ScarletQuote_TensionHere,
+      narr:Obs_ScarletQuote_RealDifference,
+      narr:Obs_ScarletQuote_TextHierarchy,
+      narr:StyleObs_AntithesisStructure,
+      narr:StyleObs_TableClassification,
+      narr:StyleObs_Cargoculting,
+      narr:StyleMetrics_PerspectiveVsImpl .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260414T120000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────
+    narr:Sample_PerspectiveVsImplementation_20260414 a narr:Sample ;
+      dct:title "Perspective vs. Implementation Detail: Where the Line Falls in Memory Drafting" ;
+      dct:created "2026-04-14"^^xsd:date ;
+      narr:inputLength 7842 ;
+      dct:description "Session-derived principle establishing the boundary between perspective (decisions, reasoning, felt intent) and implementation detail (hex codes, config values, specific measurements) in memory drafting for aswritten.ai. Emerged from Scarlet Dame's review of a Claude-drafted memory during brand v0 token system build." .
+
+    # ── ACTORS ──────────────────────────────────────────────────
+    narr:Actor_ScarletDame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Founder of aswritten.ai. Established the perspective vs. implementation principle during a brand v0 token system session. Reviewer of this memory." .
+
+    # ── DOCUMENT-LEVEL NARRATIVE ─────────────────────────────────
+    narr:Narrative_PerspectiveVsImplementationLine a narr:Narrative ;
+      narr:theme "Perspective holds decisions and reasoning; implementation holds literal detail; both are knowledge but belong in different places" ;
+      skos:broader narr:ProcessPolicyUpdates ;
+      skos:note "The core architectural principle governing what belongs in a memory vs. what belongs in a committed artifact. The perspective is the source of truth for why; the repo is the source of truth for what. Emerged from Scarlet Dame's pushback on a Claude draft that included hex codes and font names alongside brand reasoning." ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 .
+
+    # ── CLAIMS: S1 — The Principle ───────────────────────────────
+    narr:Claim_PerspectiveHoldsIntent a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveVsImplementationLine ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:ProcessPolicyUpdates ;
+      skos:note "The perspective holds decisions, reasoning, felt intent, and the conceptual how. The implementation holds the literal detail. The line runs inside 'how': directional and relational how belongs in the perspective; specific values, identifiers, and config belong in the implementation." ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 .
+
+    narr:Claim_ImplementationDetailExclusion a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveVsImplementationLine ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      skos:note "Specific code functions, color values, layout specifics, type scale multipliers, hex codes, SCSS assignments, and config values are implementation details. They live in files (tokens.json, CSS, SCSS) and change without discussion. They must not appear in the perspective." ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 .
+
+    # ── CLAIMS: S3 — The Test ────────────────────────────────────
+    narr:Claim_ThreeTestQuestions a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveVsImplementationLine ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      skos:note "Three diagnostic questions: (1) Could this be restated as an intent, decision, or relationship with a person behind it? → Perspective. (2) Is this a numerical value, code identifier, or config that means nothing outside its file? → Implementation detail. (3) Is it a decision about an implementation detail, not the detail itself? → Still perspective. Capture the decision and reasoning; the literal value lives in the file." ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 .
+
+    # ── CLAIMS: S5 — Two Failure Modes ──────────────────────────
+    narr:Claim_StalenessFail a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveVsImplementationLine ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      skos:note "Staleness failure mode: a memory asserting a specific value (e.g., 'the gold is #CDA349') becomes incorrect the moment the source file is edited, causing the perspective to lie without anyone noticing. The file is the source of truth for the value; the perspective is the source of truth for why the value was chosen." ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 .
+
+    narr:Claim_AuthorityConfusionFail a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveVsImplementationLine ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      skos:note "Authority confusion failure mode: if both the repo and the perspective assert the same hex code, downstream agents cannot determine which is canonical. The repo owns the value because code runs. The perspective's job is to tell the agent why the code says what it says, enabling reasoning from intent rather than cargo-culting the last value." ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 .
+
+    # ── CLAIMS: S6 — What Changed in the Product ────────────────
+    narr:Claim_ProductFilesUpdated a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveVsImplementationLine ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      skos:note "The perspective vs. implementation principle is now encoded in memory-creation prompts across four files: CLAUDE.md (what makes a good/bad memory), ASWRITTEN.md (same plus Memories intro), resources/tool-descriptions/remember.md (tool description agents see without loading perspective), skills/memory-draft/SKILL.md (anti-patterns and new guidance block). Also generated the brand/ repo structure: reasoning in a memory, values in brand/tokens.json, QA via unlisted pattern page at docs.aswritten.ai/brand/." ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 .
+
+    # ── CLAIMS: S7 — Durability ──────────────────────────────────
+    narr:Claim_DurabilityPrinciple a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveVsImplementationLine ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      skos:note "This is a principle about how the product works, not a tactical decision. It should be superseded only if the perspective/implementation line is explicitly redrawn by a future session. It is durable by design." ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 .
+
+    # ── OBSERVATIONS: S2 — Scarlet's Framing (verbatim quotes) ──
+    narr:Obs_ScarletQuote_TensionHere a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 ;
+      skos:note "Scarlet's initial framing: the perspective is the source of truth for reasoning, not for values. Specific values in the perspective risk confusing canonical sources as they drift." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveVsImplementation_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1022 ;
+          oa:end 1243
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "There's a tension here between what should be in the memory and what should be in a committed artifact in the repo. The source of truth for color values isn't the perspective" ;
+          oa:prefix "On the initial draft:\n\n> " ;
+          oa:suffix ", the perspective is a design collaborator's thinking about color."
+        ]
+      ] .
+
+    narr:Obs_ScarletQuote_RealDifference a narr:Observation ;
+      skos:broader narr:DesignTradeoffs ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 ;
+      skos:note "Scarlet's refined distinction: the how that belongs in a memory is directional and relational (we did it this way, I asked this person, here is the why). Specifics of code, color values, layout are implementation details." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveVsImplementation_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1310 ;
+          oa:end 1650
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The specifics of code, like there have been memories that an agent has tried to write in the past about specific functions in code or specific pieces of how the thing is done, or you put in values of colors or specifics about layout, are all implementation details." ;
+          oa:prefix "Some of the how is appropriate for the memory, like we're going to do it this way; it was done this way; I asked this person to do it, and here is also the why, and there was a perspective around it. " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:Obs_ScarletQuote_TextHierarchy a narr:Observation ;
+      skos:broader narr:DesignTradeoffs ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 ;
+      skos:note "Scarlet's positive example of what IS appropriate: the nature of a text hierarchy, ratio between elements, emotional impact, feeling — these are perspective. Specific pixel values or direct multiples are not." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveVsImplementation_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1720 ;
+          oa:end 1940
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "What is appropriate to have a memory about is, say, the nature of the text hierarchy and how we want to have the ratio between them or different emotional impacts of those and the sort of feeling of it." ;
+          oa:prefix "On what IS appropriate:\n\n> " ;
+          oa:suffix " That's different than 60 pixels of padding around a particular thing or even a direct multiple."
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ───────────────────────────────────────
+    narr:StyleObs_AntithesisStructure a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 ;
+      skos:note "Consistent antithetical pairing throughout: 'perspective / implementation', 'why / what', 'intent / value', 'reasoning / code'. The document's rhetorical structure is built on binary opposition that clarifies the principle by contrast." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveVsImplementation_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 430 ;
+          oa:end 560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The perspective holds decisions, reasoning, felt intent, and the conceptual \"how.\" The implementation holds the literal detail." ;
+          oa:prefix "## The Principle\n\n" ;
+          oa:suffix " Both are knowledge; they belong in different places."
+        ]
+      ] .
+
+    narr:StyleObs_TableClassification a narr:StyleObservation ;
+      skos:broader narr:GrammarSyntax ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 ;
+      skos:note "The Examples Applied section uses a three-column markdown table (Content | Classification | Why) to operationalize the principle. This is a deliberate pedagogical device: the table forces the reader to apply the test to concrete cases, not just absorb the abstract rule." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveVsImplementation_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2600 ;
+          oa:end 2680
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "| Content | Classification | Why |" ;
+          oa:prefix "## Examples Applied\n\n" ;
+          oa:suffix "\n|---------|---------------|-----|\n"
+        ]
+      ] .
+
+    narr:StyleObs_Cargoculting a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 ;
+      skos:note "'Cargo-culting' used as a single compound verb to describe the failure mode of copying a value without understanding its intent. This is idiomatic engineering jargon deployed precisely — it signals the author's technical fluency and frames the failure mode memorably." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveVsImplementation_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4680 ;
+          oa:end 4780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "so when the agent is making a new decision in that space, it can reason from the intent rather than cargo-culting the last value" ;
+          oa:prefix "The perspective's job is to tell the agent why the code says what it says — " ;
+          oa:suffix "."
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────
+    narr:StyleMetrics_PerspectiveVsImpl a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_PerspectiveVsImplementation_20260414 ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.12"^^xsd:decimal ;
+      skos:note "Register: instructional-authoritative. Voice: primarily active, direct. Mix of short declarative sentences (principle statements) and longer explanatory sentences (failure mode analysis). Technical jargon (hex codes, SCSS, tokens.json, cargo-culting) used precisely and sparingly. Blockquote formatting for direct speech preserves speaker voice distinctly from editorial framing." .
+
+  }
+}

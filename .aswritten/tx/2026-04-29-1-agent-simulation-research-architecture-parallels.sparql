@@ -1,0 +1,127 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250515T100000Z a prov:Activity ;
+    prov:generatedAtTime "2025-05-15T10:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "scarlet" ;
+    narr:originPath ".aswritten/memories/2026-04-29-agent-simulation-research.md" ;
+    narr:originRef "research/agent-memory-architecture" ;
+    prov:generated narr:Sample_AgentSimulationResearch_20260429, 
+                   narr:Actor_Willow, 
+                   narr:Actor_Heron,
+                   narr:Narrative_AgentMemoryArchitectureParallel,
+                   narr:Claim_ReflectionLoopAsAbstractionMechanism,
+                   narr:Claim_MultiRoleCoordinationGatekeeper,
+                   narr:Observation_ParkMemoryMechanism,
+                   narr:StyleObservation_TechnicalAnalogy,
+                   narr:StyleObservation_MetaphoricalLabeling,
+                   narr:StyleObservation_ContrastiveFraming,
+                   narr:StyleMetrics_AgentSimulationResearch .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20250515T100000Z {
+    narr:Sample_AgentSimulationResearch_20260429 a narr:Sample ;
+      dct:title "Lifting from agent-simulation research: memory architecture, multi-role coordination, and what doesn't transfer" ;
+      dct:created "2026-04-29"^^xsd:date ;
+      narr:inputLength 6850 .
+
+    narr:Actor_Willow a narr:Actor ;
+      skos:prefLabel "a collaborator (a collaborator)" ;
+      skos:note "Speaker at 'Generative Agents + Data Streaming' talk." .
+
+    narr:Actor_Heron a narr:Actor ;
+      skos:prefLabel "a collaborator" ;
+      skos:note "Developer contact who shared the research material." .
+
+    narr:Narrative_AgentMemoryArchitectureParallel a narr:Narrative ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      narr:theme "Agent Memory Architecture Parallels" ;
+      skos:broader narr:TechnicalExplainers ;
+      skos:note "Clusters temporality, conviction trajectory, and abstraction detection as a coherent memory architecture." .
+
+    narr:Claim_ReflectionLoopAsAbstractionMechanism a narr:Claim ;
+      narr:aboutNode narr:TechnicalExplainers ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "Park's threshold-triggered procedural reflection is a documented candidate for task-176's abstraction detection." .
+
+    narr:Claim_MultiRoleCoordinationGatekeeper a narr:Claim ;
+      narr:aboutNode narr:RoleTopology ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:challenges narr:Narrative_NamedPerspectiveArchitecture ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "The Microsoft gatekeeper pattern suggests a centralized ground-truth holding mechanism missing from current named-perspective architecture." .
+
+    narr:Observation_ParkMemoryMechanism a narr:Observation ;
+      skos:broader narr:DataModelLifecycle ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1160 ;
+        oa:end 1340
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The creators of this paper, they suggested a mechanism based on three different parameters. Recency, importance, and relevance to the current context." ;
+        oa:prefix "closing the door. " ;
+        oa:suffix " As they influence"
+      ] .
+
+    narr:StyleObservation_TechnicalAnalogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5130 ; oa:end 5185 ] ;
+        oa:hasSelector [ 
+          a oa:TextQuoteSelector ; 
+          oa:exact "Microsoft diagnostic orchestrator is Claim_NamedPerspectiveAsSubAgent in another costume" 
+        ]
+      ] .
+
+    narr:StyleObservation_MetaphoricalLabeling a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3140 ; oa:end 3175 ] ;
+        oa:hasSelector [ 
+          a oa:TextQuoteSelector ; 
+          oa:exact "score-on-write to control attention-on-read" 
+        ]
+      ] .
+
+    narr:StyleObservation_ContrastiveFraming a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4180 ; oa:end 4280 ] ;
+        oa:hasSelector [ 
+          a oa:TextQuoteSelector ; 
+          oa:exact "automatic, recency-based, structural vs human-driven, supersession-relationship, review-flow" 
+        ]
+      ] .
+
+    narr:StyleMetrics_AgentSimulationResearch a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.75 ;
+      narr:JargonDensity 0.15 ;
+      skos:note "Analytical research register with high density of cross-references and technical parallels." .
+  }
+}

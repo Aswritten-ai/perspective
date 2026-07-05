@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_AudienceFrames> {
+  <https://aswritten.ai/narrative#Digest_AudienceFrames> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#AudienceFrames> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers how the pitch and fundraising materials get reframed per audience. The structural spine is that [every sentence reads from the prospect's experience](narr:Narrative_ProspectPerspective), stripping git/MCP/RDF/architecture so one pitch works across elevator, deck, and demo. From there the children fan into concrete audience maps: a [four-frame resonance map](narr:Obs_AudienceMapping) (enterprise governance, Series A CEO autonomy, ops-lead trust, technical-leader accountability), and a dated [two-document fundraising split](narr:Narrative_TwoAudienceDocumentStrategy) (Mar 13) separating plain-language F&F from technically-fluent VC/angel, with a collaborator as the F&F readability test. A distribution-channel wrinkle arrives Mar 17: [Tony's white-paper AI-filter observation](narr:Obs_WhitePaperAIFilter) — executives now triage long documents through Claude rather than reading them. Two further entries sit at the style layer rather than the narrative layer: an [explicit vision-CEO vs ops/technical bifurcation](narr:StyleObs_AudienceSegmentation) and a [three-camp reviewer taxonomy](narr:StyleObs_CampStructure). Together they describe audience-dependent messaging across prospects, funders, and reviewers — not a single resolved frame.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ProspectPerspective> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TwoAudienceDocumentStrategy> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_AudienceMapping> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_WhitePaperAIFilter> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_AudienceSegmentation> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CampStructure> ;
+    narr:keyPhrase [ narr:text "Every sentence is written from the prospect's experience, not the product's architecture" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ProspectPerspective> ] ;
+    narr:keyPhrase [ narr:text "If he can't understand it, it's not direct enough." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TwoAudienceDocumentStrategy> ] ;
+    narr:keyPhrase [ narr:text "Enterprise buyer (governance), Series A CEO (contractor autonomy), Ops lead (trust), Technical leader (accountability via citations and review)." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_AudienceMapping> ] ;
+    narr:keyPhrase [ narr:text "I'm literally going to put it into Claude and say give me a summary of that, tell me if I should read that or not." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_WhitePaperAIFilter> ] ;
+    narr:keyPhrase [ narr:text "Three-camp taxonomy (Ship product / Execute carefully / Operationally viable)" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_CampStructure> ] ;
+    narr:variation [ narr:text "Strip-all-jargon principle vs. the VC/angel doc that deliberately 'keeps industry language' — the prospect-perspective rule reverses by audience." ; narr:over <https://aswritten.ai/narrative#Narrative_ProspectPerspective> ; narr:over <https://aswritten.ai/narrative#Narrative_TwoAudienceDocumentStrategy> ] ;
+    narr:variation [ narr:text "The white-paper AI-filter cuts against crafting prose for a human reader at all — the real audience may be the executive's summarizer, not the executive." ; narr:over <https://aswritten.ai/narrative#Obs_WhitePaperAIFilter> ] ;
+    narr:variation [ narr:text "Two children (attached as 'related', not 'broader') are reviewer/decision framing, not prospect framing — the camp taxonomy is about structuring disagreement, an outlier to the audience-resonance mainline." ; narr:over <https://aswritten.ai/narrative#StyleObs_CampStructure> ; narr:over <https://aswritten.ai/narrative#StyleObs_AudienceSegmentation> ] ;
+    narr:variation [ narr:text "Audience cuts differ across children: four-frame buyer map vs. a binary vision-CEO/ops split vs. F&F-vs-VC — no single canonical segmentation." ; narr:over <https://aswritten.ai/narrative#Obs_AudienceMapping> ; narr:over <https://aswritten.ai/narrative#StyleObs_AudienceSegmentation> ; narr:over <https://aswritten.ai/narrative#Narrative_TwoAudienceDocumentStrategy> ] ;
+    narr:writer "claude (subscription)" .
+}

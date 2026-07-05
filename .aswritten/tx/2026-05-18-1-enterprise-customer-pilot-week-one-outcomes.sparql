@@ -1,0 +1,91 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250715T120000Z a prov:Activity ;
+    prov:generatedAtTime "2025-07-15T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# the enterprise customer Pilot — Week One Outcomes" ;
+    narr:originRef "main" ;
+    dct:title "the enterprise customer Pilot Week One Outcomes" ;
+    prov:generated
+      
+      narr:Narrative_EnterpriseCustomerWeekOneConvergence      ,
+      narr:Claim_EnterpriseCustomerARBConvergenceSpeed ,
+      narr:StyleObs_EnterpriseCustomerWeekOne_DataDrivenRegister   ,
+      narr:Metrics_EnterpriseCustomerWeekOneOutcomes .
+} ;
+
+# New entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20250715T120000Z {
+
+    narr:Narrative_EnterpriseCustomerWeekOneConvergence a narr:Narrative ;
+
+      skos:broader narr:CaseStudies ;
+      skos:prefLabel "the enterprise customer ARB Job-to-be-Done Converged in Week One" ;
+      skos:note "The the enterprise customer team converged on a single clear use case within the first nine days: turning Architecture Review Board conversations into durable, queryable organizational memory. Memory IDs cluster around ARB sessions across multiple time zones. This is faster convergence than typical enterprise pilots where the first month is usually exploration before a specific job emerges. If subsequent customer engagements show similar fast convergence on a specific job, that is evidence that aswritten's value lands quickly in the right organizational context (engineering governance, architecture review processes)." ;
+      narr:theme "Enterprise pilots in engineering governance contexts converge on a specific job-to-be-done faster than typical — ARB-to-memory was the emergent use case within nine days, not weeks" .
+
+    narr:Claim_EnterpriseCustomerARBConvergenceSpeed a narr:Claim ;
+
+      skos:note "The convergence-in-one-week observation is the most novel finding from the the enterprise customer pilot and worth tracking: if subsequent customer engagements show similar fast convergence on a specific job, that is evidence that aswritten's value lands quickly in the right organizational context (engineering governance, architecture review processes). One customer is a sample of one — treat as claim-level conviction, not decision-level, until validated against a second engagement." ;
+      narr:aboutNode narr:Narrative_EnterpriseCustomerWeekOneConvergence ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_EnterpriseShapePrimaryFocus .
+
+    narr:StyleObs_EnterpriseCustomerWeekOne_DataDrivenRegister a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+
+      skos:note "data-driven authoritative register" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 0 ;
+          oa:end 200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Nine days later, the picture from prod proxy logs and n8n executions tells a clear story." ;
+          oa:prefix "the customer's CTO asked for usage visibility in the 2026-05-07 kickoff. " ;
+          oa:suffix " ## Volume and reach"
+        ]
+      ] .
+
+    narr:Metrics_EnterpriseCustomerWeekOneOutcomes a narr:StyleMetrics ;
+
+      skos:broader narr:StyleMetrics ;
+      skos:note "Analytical metrics report register. Structured markdown with H2 section headers and bold-number bullet lists. Active voice dominant in editorial prose. Jargon density moderate — product terms (MCP sessions, introspect, cite, perspective loads, remembers, n8n executions, proxy logs) used without definition, implying internal audience. Sentence length varies between short punchy declaratives at key findings and longer analytical sentences in conviction section. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.12"^^xsd:decimal .
+
+  }
+} ;
+
+# Update Narrative_CiteIntrospectAnalyticsGoldmine with concrete week-one numbers
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_CiteIntrospectAnalyticsGoldmine skos:note "Introspect responses surface explicit named gaps (what the customer is asking about); cite responses surface uncommitted claims (gaps in the perspective exposed by writing). Together they reveal both what the perspective is used for and where it falls short — a richer signal than authoring metrics alone." .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250715T120000Z {
+    narr:Narrative_CiteIntrospectAnalyticsGoldmine skos:note "Introspect responses surface explicit named gaps (what the customer is asking about); cite responses surface uncommitted claims (gaps in the perspective exposed by writing). Together they reveal both what the perspective is used for and where it falls short — a richer signal than authoring metrics alone. Week-one the enterprise customer data: 73% cite grounding (90/124 claims), 62 named gaps across 29 introspect calls, 6 of 8 active team members asked at least one introspect question." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_CiteIntrospectAnalyticsGoldmine skos:note "Introspect responses surface explicit named gaps (what the customer is asking about); cite responses surface uncommitted claims (gaps in the perspective exposed by writing). Together they reveal both what the perspective is used for and where it falls short — a richer signal than authoring metrics alone." .
+  }
+} 

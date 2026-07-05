@@ -1,0 +1,37 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Rubric_Novelty> {
+  <https://aswritten.ai/narrative#Digest_Rubric_Novelty> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Rubric_Novelty> ;
+    narr:childCount "15"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub collects per-document **novelty assessments** for a rubric dimension scoring originality of framing and language. The mainline finding is consistent across artifacts: fresh, distinctive framing that avoids startup cliché. Recurring praise lands on coined metaphors — [continuation-machines / substrate framing](narr:RubricAssess_Novelty), [code-as-compilation-output](narr:Rubric_Assess_Novelty) and its [worldview-vs-skills echo](narr:Rubric_Novelty_YC_Call), [Gods of Olympus / ambient adoption](narr:Rubric_Novelty_FounderBetaUser), the [conviction taxonomy in the YC assessment](narr:Assessment_Novelty_YC), and [AI-to-AI provenance insight](narr:Rubric_Novelty_CustomerArchitect). Several note quantified lexical diversity (type-token ~0.67-0.68). Assessments span pitch/bio material ([Scarlet bio](narr:Rubric_Novelty_ScarletDame)), GTM and revenue docs ([revenue/TAM](narr:Assess_Novelty_RevenueModelTAM), [GTM](narr:RubricAssess_Novelty_GTM)), call notes ([weekly call](narr:RubricAssess_Novelty_WeeklyCall)), and pilot/demo plans ([pilot plan](narr:Rubric_Novelty_PilotPlan), [YC demo beats](narr:Rubric_Novelty_YCDemoBeats)). The grades cluster high-originality, but the children are not uniform — most flag a freshness-vs-boilerplate seam, and one carries no assessment at all.""" ;
+    narr:covers <https://aswritten.ai/narrative#Assess_Novelty_RevModel> ;
+    narr:covers <https://aswritten.ai/narrative#Assess_Novelty_RevenueModelTAM> ;
+    narr:covers <https://aswritten.ai/narrative#Assessment_Novelty_YC> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Novelty> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Novelty_GTM> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Novelty_Sample1> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Novelty_TXReview> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Novelty_WeeklyCall> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Assess_Novelty> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Novelty_FounderBetaUser> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Novelty_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Novelty_PilotPlan> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Novelty_ScarletDame> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Novelty_YCDemoBeats> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Novelty_YC_Call> ;
+    narr:keyPhrase [ narr:text "continuation machines" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Novelty> ] ;
+    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Novelty> ] ;
+    narr:keyPhrase [ narr:text "The product is a phone number." ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Novelty> ] ;
+    narr:keyPhrase [ narr:text "code as compilation output of worldview" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Assess_Novelty> ] ;
+    narr:keyPhrase [ narr:text "Gods of Olympus" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Novelty_FounderBetaUser> ] ;
+    narr:keyPhrase [ narr:text "notion/stake/boulder/grave" ; narr:phraseSource <https://aswritten.ai/narrative#Assessment_Novelty_YC> ] ;
+    narr:keyPhrase [ narr:text "AI-to-AI provenance pattern" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Novelty_CustomerArchitect> ] ;
+    narr:variation [ narr:text "Freshness-vs-boilerplate seam: most assessments dock standard domain language (pilot/retainer, beta onboarding, MCP connection, V1/V1.1/V2, beachhead) even while grading high." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Novelty_GTM> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Novelty_Sample1> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Novelty_WeeklyCall> ; narr:over <https://aswritten.ai/narrative#Rubric_Novelty_PilotPlan> ] ;
+    narr:variation [ narr:text "Template overlap excused by genre — boilerplate ruled acceptable when justified by founding-story or decision-doc format, rather than penalized." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Novelty> ; narr:over <https://aswritten.ai/narrative#Rubric_Novelty_YCDemoBeats> ] ;
+    narr:variation [ narr:text "Outlier: established analogy / standard modeling judged adequate, not novel — GitHub analogy and scenario tables called functional rather than fresh." ; narr:over <https://aswritten.ai/narrative#Assess_Novelty_RevenueModelTAM> ; narr:over <https://aswritten.ai/narrative#Assess_Novelty_RevModel> ] ;
+    narr:variation [ narr:text "Empty assessment: the TX review child carries no novelty content at all — absence, not a low score." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Novelty_TXReview> ] ;
+    narr:writer "claude (subscription)" .
+}

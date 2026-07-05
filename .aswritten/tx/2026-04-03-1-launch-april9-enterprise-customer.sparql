@@ -1,0 +1,101 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance
+INSERT DATA {
+  narr:Tx_20260331T160000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-31T16:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260331-tony-scarlet-the enterprise customer-launch" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_TonyScarletCall_20260331, narr:StyleObs_ProfanityDecisiveness, narr:StyleObs_TimestampGrounding, narr:StyleObs_ColloquialDirectness, narr:Metrics_TonyScarletCall_20260331 .
+} ;
+
+# Extracted entities
+INSERT DATA {
+  GRAPH narr:Tx_20260331T160000Z {
+    narr:Sample_TonyScarletCall_20260331 a narr:Sample ;
+      dct:title "Tony-Scarlet Call: Launch Date and the enterprise customer Onboarding" ;
+      dct:created "2026-03-31"^^xsd:date ;
+      narr:inputLength 1021 .
+
+    narr:StyleObs_ProfanityDecisiveness a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 330 ; oa:end 410 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "I just need to pick a fucking date and call it launch, whatever the fuck that means." ]
+      ] ;
+      skos:note "Use of profanity as a marker of founder decisiveness and frustration." .
+
+    narr:StyleObs_TimestampGrounding a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 310 ; oa:end 317 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "[12:38]" ]
+      ] ;
+      skos:note "Use of timestamps to ground verbatim quotes in the source recording." .
+
+    narr:StyleObs_ColloquialDirectness a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 810 ; oa:end 860 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "seat-of-the-pants founder moment" ]
+      ] ;
+      skos:note "Colloquial phrasing used to describe high-pressure startup situations." .
+
+    narr:Metrics_TonyScarletCall_20260331 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      narr:AverageSentenceLength 17 ;
+      narr:ActiveVoiceRatio 0.84 ;
+      narr:JargonDensity 0.04 .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_LaunchDateApril9 skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260331T160000Z {
+    narr:Narrative_LaunchDateApril9 skos:note "Launch confirmed for April 9, 2026. April 1 is now outreach/scheduling day. Decision made with advisor input to 'pick a fucking date'." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_LaunchDateApril9 skos:note ?oldNote .
+  }
+} ;
+
+DELETE {
+  GRAPH ?g {
+    narr:Actor_CustomerArchitect_TinkererRef skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260331T160000Z {
+    narr:Actor_CustomerArchitect_TinkererRef skos:note "Chief Architect at the enterprise customer and Scarlet's cousin. Provided the intro for the first paying customer onboarding." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Actor_CustomerArchitect_TinkererRef skos:note ?oldNote .
+  }
+}

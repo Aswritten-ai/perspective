@@ -1,0 +1,39 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Rubric_StrategicAlignment> {
+  <https://aswritten.ai/narrative#Digest_Rubric_StrategicAlignment> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Rubric_StrategicAlignment> ;
+    narr:childCount "16"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers per-conversation and per-artifact scorings on one rubric dimension — does the material advance the strategy? Across [YC application alignment](narr:Assessment_StrategicAlignment_YC), the [narrative-architecture through-line](narr:RubricAssess_StrategicAlignment), the [founder career-arc artifact](narr:Rubric_StrategicAlignment_ScarletDame), and the [pilot plan](narr:Rubric_StrategicAlignment_PilotPlan), the recurring anchor is collective memory / 'narrative as steering vector' as both story and product thesis. GTM threads run through [consultant-led pricing and tiers](narr:RubricAssess_Strategy_GTM), the [side-door demo motion](narr:RubricAssess_StrategicAlignment_Sample1), and [revenue/TAM with the GitHub analogy](narr:Assess_Strategy_RevenueModelTAM). Segmentation and ICP appear in the [architecture-teams beachhead](narr:RubricAssess_StrategicAlignment_WeeklyCall) and the [a founder beta user call](narr:Rubric_StrategicAlignment_FounderBetaUser), which surfaces a new operations persona and a VC channel. Enterprise dimensions — on-prem, cross-platform, AI-to-AI provenance — enter via the [the customer's chief architect call](narr:Rubric_StrategicAlignment_CustomerArchitect). YC-specific framing recurs in [demo beats](narr:Rubric_StrategicAlignment_YCDemoBeats) and the [YC call](narr:Rubric_StrategicAlignment_YC_Call). Every child here scores high alignment; the rubric records no misalignment instance, so divergence lives in *what* each aligns toward, not whether it aligns.""" ;
+    narr:covers <https://aswritten.ai/narrative#Assess_Strategy_RevModel> ;
+    narr:covers <https://aswritten.ai/narrative#Assess_Strategy_RevenueModelTAM> ;
+    narr:covers <https://aswritten.ai/narrative#Assessment_StrategicAlignment_YC> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment_Sample1> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment_WeeklyCall> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Strategy_GTM> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Strategy_TXReview> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssessment_StrategicAlignment> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Assess_StrategicAlignment> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_StrategicAlignment_FounderBetaUser> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_StrategicAlignment_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_StrategicAlignment_PilotPlan> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_StrategicAlignment_ScarletDame> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_StrategicAlignment_YCDemoBeats> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_StrategicAlignment_YC_Call> ;
+    narr:keyPhrase [ narr:text "collective memory as foundation for AI-native teams" ; narr:phraseSource <https://aswritten.ai/narrative#Assessment_StrategicAlignment_YC> ] ;
+    narr:keyPhrase [ narr:text "'narrative as vector' is both the story and the product thesis" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment> ] ;
+    narr:keyPhrase [ narr:text "side-door GTM, strategic capability as moat, high-touch delivery model" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment_Sample1> ] ;
+    narr:keyPhrase [ narr:text "knowledge extraction beachhead" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment_WeeklyCall> ] ;
+    narr:keyPhrase [ narr:text "surfaces new ICP (operations persona)" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_StrategicAlignment_FounderBetaUser> ] ;
+    narr:keyPhrase [ narr:text "AI-to-AI provenance (moat)" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_StrategicAlignment_CustomerArchitect> ] ;
+    narr:keyPhrase [ narr:text "narrative as steering vector" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_StrategicAlignment_ScarletDame> ] ;
+    narr:variation [ narr:text "ICP is not settled: architecture-teams beachhead vs. a newly surfaced operations persona — different buyers under the same thesis." ; narr:over <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment_WeeklyCall> ; narr:over <https://aswritten.ai/narrative#Rubric_StrategicAlignment_FounderBetaUser> ] ;
+    narr:variation [ narr:text "GTM motion diverges: high-touch consultant-led/side-door delivery vs. a VC channel opportunity flagged in the a founder beta user call." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Strategy_GTM> ; narr:over <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment_Sample1> ; narr:over <https://aswritten.ai/narrative#Rubric_StrategicAlignment_FounderBetaUser> ] ;
+    narr:variation [ narr:text "Enterprise/on-prem, compliance, and AI-to-AI provenance frame the moat narrowly, against the broader org-level 'collective memory' framing elsewhere." ; narr:over <https://aswritten.ai/narrative#Rubric_StrategicAlignment_CustomerArchitect> ; narr:over <https://aswritten.ai/narrative#Rubric_StrategicAlignment_PilotPlan> ] ;
+    narr:variation [ narr:text "Revenue framing splits between consultant/licensing tiers and a TAM-expansion GitHub-analogy growth story." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Strategy_GTM> ; narr:over <https://aswritten.ai/narrative#Assess_Strategy_RevenueModelTAM> ] ;
+    narr:variation [ narr:text "Uniformity is itself a signal: every assessment scores 'perfect/full/tight' alignment — no misalignment case is recorded, so the rubric currently discriminates poorly between strong and merely-adequate fit." ; narr:over <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment> ; narr:over <https://aswritten.ai/narrative#Rubric_StrategicAlignment_CustomerArchitect> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Strategy_GTM> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,31 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_SystemTopology> {
+  <https://aswritten.ai/narrative#Digest_SystemTopology> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#SystemTopology> ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers how aswritten's system is structured across infrastructure, tooling, and perspective. The mainline is a layered infrastructure account: the [canonical architectural model](narr:Obs_ArchitecturalModel) names Identity, Auth, Sources, Storage, Credentials, and Transport, with [every user backed by a managed repo](narr:Narrative_ManagedRepoPerUser) as invisible infrastructure. Workflow and folder structure map onto this — a [folder taxonomy](narr:Obs_FolderTaxonomy) of Entrypoints/Flows/LLM/Repo/Comms and a [six-workflow taxonomy](narr:Obs_WorkflowTaxonomy) separating side-effecting Flows from pure functions. The agent-facing surface is the [three-tool architecture](narr:Obs_ThreeToolArchitecture): compile, introspect, scope. Forward-looking, a [triple-store convergence thesis](narr:Narrative_TripleStoreConvergence) argues OOM, compile reliability, and production-scale context are one problem solvable by Jena/Fuseki or DreamDB-inspired storage. Distinct from all the plumbing, the [named-perspective-as-sub-agent claim](narr:Claim_NamedPerspectiveAsSubAgent) (dated 2025-07-14) holds that an advisor's curated take operates as its own sub-agent. Two style observations debate where the architecture's canonical statement actually lives — code block versus markdown table.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_NamedPerspectiveAsSubAgent> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TripleStoreConvergesThreeProblems> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ManagedRepoPerUser> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TripleStoreConvergence> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ArchitecturalModel> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_FolderTaxonomy> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ThreeToolArchitecture> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_WorkflowTaxonomy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CodeBlockArchDiagram> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TableDrivenArchitecture> ;
+    narr:keyPhrase [ narr:text "Identity (Outseta), Auth (JWT), Sources (integrations), Storage (one repo per memory), Credentials (Datomic internal API), Transport (single /mcp adaptive)." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ArchitecturalModel> ] ;
+    narr:keyPhrase [ narr:text "compile (session bootstrap, full org context, compressed snapshot), introspect (analytical, gaps/tensions/questions), scope (content retrieval, full-depth subgraph for arbitrary focus)." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ThreeToolArchitecture> ] ;
+    narr:keyPhrase [ narr:text "Every user gets an owner/repo managed entirely by aswritten — the repo is invisible infrastructure" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ManagedRepoPerUser> ] ;
+    narr:keyPhrase [ narr:text "A triple store architecture converges three distinct problems into one solution" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TripleStoreConvergence> ] ;
+    narr:keyPhrase [ narr:text "it is a curated sub-perspective that represents the advisor's particular take, distinct from the root organizational perspective" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_NamedPerspectiveAsSubAgent> ] ;
+    narr:keyPhrase [ narr:text "Folder taxonomy maps to architectural roles: Entrypoints, Flows, LLM workflows, Repo, Comms." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_FolderTaxonomy> ] ;
+    narr:variation [ narr:text "Storage substrate is unsettled: the canonical model commits to GitHub repos plus a Datomic internal API, while the convergence thesis proposes a Jena/Fuseki or DreamDB-inspired triple store — different foundations coexisting." ; narr:over <https://aswritten.ai/narrative#Obs_ArchitecturalModel> ; narr:over <https://aswritten.ai/narrative#Narrative_TripleStoreConvergence> ; narr:over <https://aswritten.ai/narrative#Claim_TripleStoreConvergesThreeProblems> ] ;
+    narr:variation [ narr:text "The named-perspective-as-sub-agent claim is a structural outlier — it concerns perspective/agent semantics, not the infrastructure layering that dominates the rest of the hub." ; narr:over <https://aswritten.ai/narrative#Claim_NamedPerspectiveAsSubAgent> ] ;
+    narr:variation [ narr:text "Two competing claims about where the architecture's definitive statement lives — a fenced code block versus a markdown table, each asserted as 'not the prose.'" ; narr:over <https://aswritten.ai/narrative#StyleObs_CodeBlockArchDiagram> ; narr:over <https://aswritten.ai/narrative#StyleObs_TableDrivenArchitecture> ] ;
+    narr:variation [ narr:text "The model is labeled 'five-layer' but enumerates six roles (Identity, Auth, Sources, Storage, Credentials, Transport) — an unreconciled count discrepancy." ; narr:over <https://aswritten.ai/narrative#Obs_ArchitecturalModel> ] ;
+    narr:writer "claude (subscription)" .
+}

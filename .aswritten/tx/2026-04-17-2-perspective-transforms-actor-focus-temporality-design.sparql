@@ -1,0 +1,308 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260414T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-14T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260414-perspective-transforms" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_PerspectiveTransforms_20260414,
+      narr:Narrative_TransformOverQuery,
+      narr:Narrative_ActorVsRoleAbstraction,
+      narr:Narrative_ConvictionVsTemporality,
+      narr:Narrative_HardVsSoftSegmentation,
+      narr:Narrative_CompileTimeActorLens,
+      narr:Claim_DirectoriesWrongForActorPerspectives,
+      narr:Claim_DomainFocusedCompilesUnused,
+      narr:Claim_TransformIsBetterVerbThanQuery,
+      narr:Claim_ConvictionAndTemporalityAreDistinctAxes,
+      narr:Claim_ActorAttributionAlreadyInGraph,
+      narr:Claim_MissingCompileTimeLayerParameter,
+      narr:Obs_TransformVerbQuote,
+      narr:Obs_DomainsNotRealQuote,
+      narr:Obs_ConvictionTemporalityQuote,
+      narr:Obs_ActorTransformTemporalityQuote,
+      narr:StyleObs_AntithesisTransformQuery,
+      narr:StyleObs_TechnicalJargonNarrPrefix,
+      narr:StyleObs_ShortPunchyDeclaratives,
+      narr:Metrics_PerspectiveTransforms_20260414 .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260414T120000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────
+    narr:Sample_PerspectiveTransforms_20260414
+      a narr:Sample ;
+      dct:title "Perspective Transforms: Actor-Focused Compiles, Role Abstraction, and Temporality" ;
+      dct:created "2026-04-14"^^xsd:date ;
+      dct:description "Design conversation with Scarlet Dame (April 14, 2026) on how perspective compiles should work. Three conclusions: directories are wrong for actor perspectives; domain-focused compiles are unused in practice; 'transform' is a better verb than 'query'. Also distinguishes conviction from temporality as separate axes, and hard vs. soft segmentation." ;
+      narr:inputLength 3842 .
+
+    # ── NARRATIVES ──────────────────────────────────────────────────
+
+    narr:Narrative_TransformOverQuery
+
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:prefLabel "Transform > Query > Directory: The Perspective Compile Hierarchy" ;
+      skos:note "Three conclusions from the Tony perspective demo session: (1) Directories force multiple compiles for multiple views — wrong model; (2) Domain-focused compiles (worldview:Strategy) are unused because real humans don't live in single domains; (3) 'Transform' is a better verb than 'query' because perspective shifts aren't exclusive filters. Scarlet: 'We're really taking the existing perspective and shifting the focus... In some cases, that is removing triples. In other cases, it might be changing the weighting of things.'" ;
+      narr:theme "Perspective shifts are transforms on an existing graph — not queries that filter it — because they change weighting and focus without exclusive exclusion" .
+
+    narr:Narrative_ActorVsRoleAbstraction
+
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:RoleTopology ;
+      skos:prefLabel "Actor Is Specific, Role Is Abstract: First-Class Distinction" ;
+      skos:note "Actor is specific (Tony Maley). Role is abstract (sales advisor). Multiple actors can contribute to one role over time (Tony → a demo-call prospect as sales-adjacent). One actor can occupy multiple roles. Role assignment should emerge from conversation content, not static tags. Scarlet: 'At one point, Tony might be in that role, and then someone else might come into that role. I don't necessarily want to just compile Tony's role; sometimes I just want Tony as an actor, but sometimes I want the blank advisor, and multiple people may contribute to that role.'" ;
+      narr:theme "Actor and Role are distinct first-class concepts: actors are specific people, roles are abstract positions that multiple actors can fill over time" .
+
+    narr:Narrative_ConvictionVsTemporality
+
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:Conviction ;
+      skos:prefLabel "Conviction ≠ Temporality: Two Distinct Axes in the Extraction Pipeline" ;
+      skos:note "The extraction pipeline conflates two distinct axes. Conviction: how settled, built over time through agreement and action. Temporality: when something applies — now, soon, future, speculative. Scarlet: 'Conviction is something that is supposed to be built over time, i.e., do people act? Do multiple people actually agree on it? I can be very sure about something that might need to happen in the future.' Actor transforms should surface temporality: 'If I'm looking at an actor transformation, I want to see more about what Tony thinks might need to happen in the different temporalities than the things that I want to have seen happening.'" ;
+      narr:theme "Conviction (how settled) and temporality (when it applies) are orthogonal axes that the extraction pipeline currently conflates" .
+
+    narr:Narrative_HardVsSoftSegmentation
+
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      skos:prefLabel "Hard Segmentation vs. Soft Focus: Directories vs. Compile-Time Transforms" ;
+      skos:note "Directories / separate repos = hard segmentation (different clients with proprietary information). Compile-time transforms = soft focus (multiple advisors, different roles, different temporal horizons — one graph, many lenses). Scarlet: 'Multiple advisors contributing to the organization's perspective are not [hard segmented]; they're contributing to one central perspective. Two different clients that have proprietary information are hard segmented.'" ;
+      narr:theme "Hard segmentation (separate repos) is for proprietary client isolation; soft focus (compile-time transforms) is for multiple advisors and roles on one shared graph" .
+
+    narr:Narrative_CompileTimeActorLens
+
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:prefLabel "Compile-Time Actor Lens: Missing Feature for Actor-Focused Perspectives" ;
+      skos:note "narr:Actor is a first-class class. narr:Actor_TonyMaley exists with role history and TX references. Claims reference actors directly in TX prov:generated lists. Attribution for 'who said what' is already in the graph. What is missing: a compile-time layer parameter for actor focus. The architecture table: 'What does Tony think about X' → compile-time actor lens (new feature); the customer's chief architect vs the customer's CTO at the enterprise customer → two actor lenses on the the enterprise customer repo; Public PII-stripped version → /transform → permanent branch; 'Launch' focus → compile-time focus with weighting. Transform is for permanent forks. Actor/role/focus lenses are for ephemeral views on the living graph." ;
+      narr:theme "Actor attribution already exists in the graph; what is missing is a compile-time layer parameter that uses narr:Actor_* URIs as a lens to produce actor-focused perspective views" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────────
+
+    narr:Claim_DirectoriesWrongForActorPerspectives
+      a narr:Claim ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:note "Subdirectories force multiple compiles for multiple views. Actor attribution already exists in the graph via narr:Actor_* URIs. A Tony perspective is a compile-time lens, not a filesystem partition." ;
+      narr:aboutNode narr:Narrative_CompileTimeActorLens ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_TransformOverQuery .
+
+    narr:Claim_DomainFocusedCompilesUnused
+      a narr:Claim ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:note "Domain-focused compiles (worldview:Strategy) aren't used in practice because real humans don't live in single domains. A strategist does product, sales, architecture — everything. Domains are an organizational taxonomy, not an access pattern. Scarlet: 'These segmented domains don't really exist in practice. You may have a strategist in the company, but they do product and they do sales, and they touch all this other stuff.'" ;
+      narr:aboutNode narr:Narrative_TransformOverQuery ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_TransformOverQuery .
+
+    narr:Claim_TransformIsBetterVerbThanQuery
+      a narr:Claim ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:note "'Transform' is a better verb than 'query' because perspective shifts aren't exclusive filters. They change weighting and focus — in some cases removing triples, in others changing their weighting. A query implies exclusion; a transform implies reweighting." ;
+      narr:aboutNode narr:Narrative_TransformOverQuery ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:ArchitectureOverview .
+
+    narr:Claim_ConvictionAndTemporalityAreDistinctAxes
+      a narr:Claim ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:note "Conviction (how settled, built through agreement and action over time) and temporality (when something applies: now, soon, future, speculative) are orthogonal axes. The extraction pipeline currently conflates them. Actor transforms should surface temporality separately from conviction." ;
+      narr:aboutNode narr:Narrative_ConvictionVsTemporality ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Conviction .
+
+    narr:Claim_ActorAttributionAlreadyInGraph
+      a narr:Claim ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:note "narr:Actor is a first-class class. narr:Actor_TonyMaley exists with role history and TX references. Claims reference actors directly in TX prov:generated lists. Attribution for 'who said what' is already in the graph via narr:Actor_* URIs." ;
+      narr:aboutNode narr:Narrative_CompileTimeActorLens ;
+      narr:hasConvictionLevel narr:Conviction_Foundation .
+
+    narr:Claim_MissingCompileTimeLayerParameter
+      a narr:Claim ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:note "The missing piece is a compile-time layer parameter for actor focus. This is a new feature. Transform is for permanent forks (e.g., /transform → permanent branch for PII-stripped public version). Actor/role/focus lenses are for ephemeral views on the living graph." ;
+      narr:aboutNode narr:Narrative_CompileTimeActorLens ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:NarrativeDrivenRoadmap .
+
+    # ── OBSERVATIONS ────────────────────────────────────────────────
+
+    narr:Obs_TransformVerbQuote
+      a narr:Observation ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:DesignTradeoffs ;
+      skos:note "Scarlet's canonical statement of the transform-over-query distinction." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveTransforms_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 648 ;
+          oa:end 790
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "We're really taking the existing perspective and shifting the focus... In some cases, that is removing triples. In other cases, it might be changing the weighting of things." ;
+          oa:prefix "**Scarlet**: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_DomainsNotRealQuote
+      a narr:Observation ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:Segmentation ;
+      skos:note "Scarlet's articulation of why domain-focused compiles fail in practice — humans don't live in single domains." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveTransforms_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 830 ;
+          oa:end 975
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "These segmented domains don't really exist in practice. You may have a strategist in the company, but they do product and they do sales, and they touch all this other stuff." ;
+          oa:prefix "**Scarlet**: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_ConvictionTemporalityQuote
+      a narr:Observation ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:Conviction ;
+      skos:note "Scarlet's canonical statement distinguishing conviction from temporality as orthogonal axes." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveTransforms_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Conviction is something that is supposed to be built over time, i.e., do people act? Do multiple people actually agree on it? I can be very sure about something that might need to happen in the future." ;
+          oa:prefix "**Scarlet**: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_ActorTransformTemporalityQuote
+      a narr:Observation ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:ActorIncentiveAnalysis ;
+      skos:note "Scarlet's statement on what actor transforms should surface — temporality over conviction-settled items." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveTransforms_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2360 ;
+          oa:end 2510
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If I'm looking at an actor transformation, I want to see more about what Tony thinks might need to happen in the different temporalities than the things that I want to have seen happening." ;
+          oa:prefix "**Scarlet**: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────
+
+    narr:StyleObs_AntithesisTransformQuery
+      a narr:StyleObservation ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:Antithesis ;
+      skos:note "antithesis-heavy structure: Transform > Query > Directory; hard segmentation vs. soft focus; actor vs. role; conviction vs. temporality. Each section is structured as a binary opposition that resolves into a design decision." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveTransforms_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 0 ;
+          oa:end 120
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Transform > Query > Directory" ;
+          oa:prefix "#### The Core Insight: " ;
+          oa:suffix "\n\nThe conversation started"
+        ]
+      ] .
+
+    narr:StyleObs_TechnicalJargonNarrPrefix
+      a narr:StyleObservation ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:JargonPolicy ;
+      skos:note "Technical jargon uses narr: prefix notation inline (narr:Actor_*, narr:Actor_TonyMaley, prov:generated) as if writing code documentation. This is a distinctive idiolect — mixing RDF namespace notation into prose design notes." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveTransforms_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2560 ;
+          oa:end 2680
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "narr:Actor is a first-class class. narr:Actor_TonyMaley exists with role history and TX references." ;
+          oa:prefix "- " ;
+          oa:suffix "\n- Claims reference actors"
+        ]
+      ] .
+
+    narr:StyleObs_ShortPunchyDeclaratives
+      a narr:StyleObservation ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:ShortPunchyCadence ;
+      skos:note "Short punchy declaratives at key design conclusions: 'Directories are wrong for actor perspectives.' 'Transform is for permanent forks. Actor/role/focus lenses are for ephemeral views on the living graph.' These function as conviction anchors — short, final, not hedged." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveTransforms_20260414 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3680 ;
+          oa:end 3780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Transform is for **permanent forks**. Actor/role/focus lenses are for **ephemeral views on the living graph**." ;
+          oa:prefix "\n\n" ;
+          oa:suffix ""
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────────
+
+    narr:Metrics_PerspectiveTransforms_20260414
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_PerspectiveTransforms_20260414 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Design session notes format. Mixed register: structured markdown with H4 section headers and bold numbered conclusions; embedded Scarlet blockquotes in first person. Antithesis-heavy structure throughout (transform vs. query, actor vs. role, conviction vs. temporality, hard vs. soft). Active voice dominant. Jargon density moderate-high — narr: prefix notation, RDF/SPARQL terms (prov:generated, narr:Actor_*), product terms (compile, TX, layer parameter) used without definition, implying internal audience. Markdown table for architecture summary compresses multi-dimensional information. Average sentence length elevated by quoted speech; prose sections are shorter and punchier." ;
+      narr:AverageSentenceLength "16"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.84"^^xsd:decimal ;
+      narr:JargonDensity "0.16"^^xsd:decimal .
+
+  }
+}

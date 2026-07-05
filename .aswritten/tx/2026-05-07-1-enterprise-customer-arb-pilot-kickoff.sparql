@@ -1,0 +1,226 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────
+INSERT DATA {
+  narr:Tx_20260507T120000Z a prov:Activity ;
+    dct:title "the enterprise customer ARB Pilot Kickoff — May 7 2026" ;
+    prov:generatedAtTime "2026-05-07T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-05-07-the enterprise customer-arb-pilot-kickoff.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      
+      
+      
+      
+      
+      narr:Narrative_CustomerArchitectCuratedExpertisePitch,
+      narr:Narrative_MemoryIngestionAsCodeReview,
+      narr:Claim_CustomerArchitectDailyCadenceOperational,
+      narr:Claim_ShiftTrackingProductMoment,
+      narr:Obs_CustomerArchitectCuratedMemory,
+      narr:Obs_CustomerArchitectDailyTranscript,
+      narr:Obs_CustomerEngManagerNotepadValue,
+      narr:Obs_CustomerEngManagerLag24h,
+      narr:Obs_CustomerCTOClosingMarketing,
+      narr:StyleObs_DirectQuoteStyle,
+      narr:StyleObs_EngineeringMetaphor,
+      narr:StyleObs_SectionedNarrativeVoice,
+      narr:StyleMetrics_EnterpriseCustomerKickoff .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260507T120000Z {
+
+    narr:Narrative_CustomerArchitectCuratedExpertisePitch a narr:Narrative ;
+
+      narr:theme "Sponsor independently reproduced the curated-expertise GTM framing" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "the customer's chief architect — speaking as customer to his own team — reproduced Scarlet's curated-expertise framing without prompting, including the wedge argument that code-grounded AI doesn't scale to non-engineers and doesn't capture architectural intent." .
+
+    narr:Narrative_MemoryIngestionAsCodeReview a narr:Narrative ;
+
+      narr:theme "the customer's CTO reframed AI memory ingestion as code review with PRs and unit tests" ;
+      skos:broader narr:Analogy ;
+      skos:note "the customer's CTO pushed back on fast-tracking transcript ingestion by treating the AI's collective memory as code, with PRs and unit tests. Adopted the 'curated, not dumped' line and deployed an engineering metaphor intuitive to his developer team. Full exchange in companion memory the enterprise customer-the customer's CTO-pr-as-memory.md." .
+
+    narr:Claim_CustomerArchitectDailyCadenceOperational a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_CustomerArchitectCuratedExpertisePitch ;
+
+      skos:note "the customer's chief architect's daily cadence is operational: every evening he downloads ARB transcripts and ingests them into aswritten, asking the system to update the perspective from decisions made that day." .
+
+    narr:Claim_ShiftTrackingProductMoment a narr:Claim ;
+      narr:aboutNode narr:Narrative_CustomerArchitectCuratedExpertisePitch ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_CustomerArchitectCuratedExpertisePitch ;
+
+      skos:note "the customer's chief architect surfaced a real product moment: the system shows him how a perspective is moving across transcripts (first upload: no idea; second: shifted; third: agreed, with named agreers cited). This is the conviction-evolution behavior designed for, showing up as felt value." .
+
+    narr:Obs_CustomerArchitectCuratedMemory a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "the customer's chief architect articulates the curated-memory wedge argument against code-grounded AI" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4650 ;
+        oa:end 4850
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The idea is we want some more curated memory, some better way of understanding between all of our AIs" ;
+        oa:prefix "> " ;
+        oa:suffix ", not just me or just you."
+      ] .
+
+    narr:Obs_CustomerArchitectDailyTranscript a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "the customer's chief architect describes his daily ARB transcript ingestion cadence" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5250 ;
+        oa:end 5460
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Every day now, after every evening, I download the transcripts from ARB's meetings that day" ;
+        oa:prefix "> " ;
+        oa:suffix ", that morning meeting, and I put it."
+      ] .
+
+    narr:Obs_CustomerEngManagerNotepadValue a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "an engineering manager at the customer volunteers demo value unprompted" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6450 ;
+        oa:end 6580
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I noted down two things in my notepad that you just demoed that I forgot from ARB yesterday" ;
+        oa:prefix "> " ;
+        oa:suffix " and I was creating core stories."
+      ] .
+
+    narr:Obs_CustomerEngManagerLag24h a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "an engineering manager at the customer pushes hardest on the 24-hour transcript lag operational pain" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6700 ;
+        oa:end 6890
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "we might by 5pm sort of think, okay, I'm happy with what I discussed in ARB. I want to create the stories but like at the moment I have a 24 hour lag." ;
+        oa:prefix "> ARB, Irish time is one to two and that's to add pressure to your. But " ;
+        oa:suffix " Right."
+      ] .
+
+    narr:Obs_CustomerCTOClosingMarketing a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "the customer's CTO's closing reaction to the the enterprise customer description demo — 'marketing department' line" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 11200 ;
+        oa:end 11340
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I also love your description of the enterprise customer. I think it was perfect. I love as Written's description about the enterprise customer." ;
+        oa:prefix "> " ;
+        oa:suffix " We should let as Written be part of our marketing department."
+      ] .
+
+    # ── Style Observations ──────────────────────────────────────
+    narr:StyleObs_DirectQuoteStyle a narr:StyleObservation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Heavy use of direct block-quoted speech from named speakers. Verbatim quotes carry the evidentiary weight of the document; analysis is kept separate from the quoted material." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1050 ;
+          oa:end 1160
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Ultimately, we want to get from pilot to Enterprise, but I want to have kind of this proof point." ;
+          oa:prefix "> " ;
+          oa:suffix " — the customer's CTO"
+        ]
+      ] .
+
+    narr:StyleObs_EngineeringMetaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+
+      skos:note "Recurring engineering metaphors used to make knowledge management intuitive to a developer audience: memory-as-code, PRs, unit tests, git branches. the customer's CTO adopts and deploys these metaphors natively." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 9200 ;
+          oa:end 9340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I would think of the compendium that we're giving the AI that should, we should treat that like code." ;
+          oa:prefix "> " ;
+          oa:suffix " — the customer's CTO"
+        ]
+      ] .
+
+    narr:StyleObs_SectionedNarrativeVoice a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+
+      skos:note "Document uses H2-sectioned analytical narrative voice: each section opens with a declarative summary claim, then supports it with verbatim quotes and interpretive commentary. Authoritative, first-person-plural editorial stance ('This is a different posture than vendor relationship')." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2050 ;
+          oa:end 2180
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "This is a different posture than vendor relationship — it's \"you sit inside our design conversation" ;
+          oa:prefix "" ;
+          oa:suffix " about how we structure organizational knowledge.\""
+        ]
+      ] .
+
+    # ── Style Metrics ───────────────────────────────────────────
+    narr:StyleMetrics_EnterpriseCustomerKickoff a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.78"^^xsd:decimal ;
+      narr:JargonDensity "0.14"^^xsd:decimal ;
+      skos:note "Mixed register: analytical prose sections use authoritative active voice; verbatim quotes from speakers are conversational and fragmented (run-ons, false starts, hedging). Overall active voice ratio elevated by the editorial framing. Jargon density high due to ARB, ADO, MCP, MSA, DOAS, ontology, Claude Desktop, GitHub Copilot CLI terminology." .
+
+  }
+}

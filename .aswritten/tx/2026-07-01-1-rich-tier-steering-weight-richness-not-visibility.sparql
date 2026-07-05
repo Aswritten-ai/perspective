@@ -1,0 +1,205 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260701T222001Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-01T22:20:01Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-01-1-rich-tier-steering-weight-richness-not-visibility" ;
+    narr:originRef "feat/share-digest-migration" ;
+    dct:title "Rich-tier selection by steering weight and complete area index" ;
+    prov:generated
+      narr:Sample_RichTierSteeringWeight_20260701,
+      narr:Narrative_RichTierBySteeringWeight,
+      narr:Narrative_VisibilityInvariantAreaIndex,
+      narr:Narrative_RichnessVsVisibilitySeparation,
+      narr:Claim_InDegreeSelectionFlawed,
+      narr:Claim_SteeringWeightDiscriminator,
+      narr:Claim_VisibilityIsInvariantNotBudget,
+      narr:Obs_ScarletMetaLayerQuote,
+      narr:Obs_RichTierCompositionResult,
+      narr:StyleObs_RichTierToneAuthoritative,
+      narr:StyleObs_RichTierAntithesis,
+      narr:StyleObs_RichTierBoldDecisionMarker,
+      narr:StyleMetrics_RichTierSteeringWeight .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260701T222001Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_RichTierSteeringWeight_20260701 a narr:Sample ;
+      dct:title "Rich-tier selection by steering weight and complete area index" ;
+      dct:created "2026-07-01"^^xsd:date ;
+      dct:description "Design review session (Scarlet Dame + Claude, Fable session, 2026-07-01) deciding how the perspective map's rich-tier slots are allocated — by steering weight (conviction-carrying children) rather than raw in-degree — and establishing the complete area index as a visibility invariant." ;
+      narr:inputLength 3303 .
+
+    # ── Narratives ───────────────────────────────────────────────────────────
+
+    narr:Narrative_RichTierBySteeringWeight a narr:Narrative ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      narr:theme "Rich-tier slot allocation by steering weight: conviction-carrying children ranked over style-taxonomy record types" ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:note "The full-digest slots in the perspective map go to hubs ranked by how many conviction-carrying children they gather — claims, narratives, observations, evidence — with style-taxonomy record types ordered later. The discriminator is the ontology's own types, not name-matching or hand-curation. On the real graph this put the positioning thesis, friction/failure region, narrative spine, strategy overview, and core workflows in the rich tier. Decided 2026-07-01, same session as the response-ordering decision." ;
+      skos:related narr:Narrative_PerspectiveResponseOrderedByVolatility .
+
+    narr:Narrative_VisibilityInvariantAreaIndex a narr:Narrative ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      narr:theme "Complete area index: every hub named in every response, one-line entry with child count, one expand away" ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:note "Every hub in the graph is named in every response — the richest areas render their full digest, and every other area gets a one-line entry with its name and child count, one expand away. The index is the meta layer Scarlet asked for, and it restores the nothing-is-hidden guarantee structurally rather than aspirationally. Decided 2026-07-01." ;
+      skos:related narr:Narrative_PerspectiveResponseOrderedByVolatility, narr:Narrative_DigestAsRecognitionAid .
+
+    narr:Narrative_RichnessVsVisibilitySeparation a narr:Narrative ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      narr:theme "Richness is a budget decision; visibility is an invariant — the principled separation that makes tier weighting compatible with compression-only" ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:note "Selection decides richness only — visibility is guaranteed for every area by the index. A style hub that loses its rich slot is still named, counted, and one expand away in every single response. That separation — richness is a budget decision, visibility is an invariant — is what lets the map have an opinion about steering value without becoming a demotion engine. This is the principled line that makes rich-tier weighting compatible with the compression-only projection principle." ;
+      skos:related narr:Narrative_DigestAsRecognitionAid, narr:Claim_IndexNeverGatesStore .
+
+    # ── Claims ───────────────────────────────────────────────────────────────
+
+    narr:Claim_InDegreeSelectionFlawed a narr:Claim ;
+      narr:aboutNode narr:ArchitectureOverview ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      skos:note "The v1 map selected its umbrellas by raw in-degree — whichever hubs had the most children. Measured against the real graph, that gave style-taxonomy hubs (StyleMetrics, KeyPhrases, Antithesis, tone records) the majority of the map's slots, because extraction funnels every style observation into a small set of taxonomy hubs. Meanwhile the strategy and architecture overviews — the regions an agent actually steers from — sat below the cutoff." ;
+      narr:supports narr:Narrative_RichTierBySteeringWeight ;
+      narr:challenges narr:ArchitectureOverview .
+
+    narr:Claim_SteeringWeightDiscriminator a narr:Claim ;
+      narr:aboutNode narr:Narrative_RichTierBySteeringWeight ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      skos:note "The discriminator for rich-tier selection is the ontology's own types — claims, narratives, observations, evidence count as conviction-carrying; style-taxonomy record types are ordered later. This is not name-matching or hand-curation. The ontology's type system is the ranking criterion." ;
+      narr:supports narr:Narrative_RichTierBySteeringWeight .
+
+    narr:Claim_VisibilityIsInvariantNotBudget a narr:Claim ;
+      narr:aboutNode narr:Narrative_RichnessVsVisibilitySeparation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      skos:note "Visibility is guaranteed for every area by the index — it is not a budget decision. Richness (full-digest rendering) is the budget decision. A hub that loses its rich slot is still named, counted, and one expand away. This is the invariant that prevents the map from becoming a demotion engine." ;
+      narr:supports narr:Narrative_RichnessVsVisibilitySeparation .
+
+    # ── Observations ─────────────────────────────────────────────────────────
+
+    narr:Obs_ScarletMetaLayerQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      skos:note "Scarlet's reaction when shown the v1 map composition — the genesis of the complete area index requirement." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_RichTierSteeringWeight_20260701 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1157 ; oa:end 1311
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "oh i hate that. yes we definitely need a better way to select the rich tier. yes sounds like we might need a meta layer that is an index of the umbrellas?" ;
+          oa:prefix "Scarlet's reaction when shown the composition:\n\n> " ;
+          oa:suffix "\n\n## The decision"
+        ]
+      ] .
+
+    narr:Obs_RichTierCompositionResult a narr:Observation ;
+      skos:broader narr:ArchitectureOverview ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      skos:note "The real-graph result of applying steering-weight selection: positioning thesis, friction/failure region, narrative spine, strategy overview, and core workflows entered the rich tier." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_RichTierSteeringWeight_20260701 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2021 ; oa:end 2168
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "On the real graph this put the positioning thesis, friction/failure region, narrative spine, strategy overview, and core workflows in the rich tier" ;
+          oa:prefix "the ontology's own types, not name-matching or hand-curation. " ;
+          oa:suffix " — the steering map an organizational agent actually needs."
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+
+    narr:StyleObs_RichTierToneAuthoritative a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      skos:note "Design-decision memo register: declarative present tense, no hedging. Architectural conclusions stated as settled facts." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_RichTierSteeringWeight_20260701 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2442 ; oa:end 2528
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "selection decides richness only — visibility is guaranteed for every area by the index" ;
+          oa:prefix "The line that keeps this honest: **" ;
+          oa:suffix ". A style hub that loses its rich slot"
+        ]
+      ] .
+
+    narr:StyleObs_RichTierAntithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      skos:note "Antithetical pairing used to define the principled separation: richness vs. visibility, budget decision vs. invariant. Characteristic of Scarlet session-memo idiom." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_RichTierSteeringWeight_20260701 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2658 ; oa:end 2715
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "richness is a budget decision, visibility is an invariant" ;
+          oa:prefix "That separation — " ;
+          oa:suffix " — is what lets the map have an opinion"
+        ]
+      ] .
+
+    narr:StyleObs_RichTierBoldDecisionMarker a narr:StyleObservation ;
+      skos:broader narr:PunctuationTypography ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      skos:note "Bold markdown used to mark the decisive architectural principle inline within prose — a typographic convention for surfacing the load-bearing sentence in a decision memo." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_RichTierSteeringWeight_20260701 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2440 ; oa:end 2531
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**selection decides richness only — visibility is guaranteed for every area by the index.**" ;
+          oa:prefix "The line that keeps this honest: " ;
+          oa:suffix " A style hub that loses its rich slot"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+
+    narr:StyleMetrics_RichTierSteeringWeight a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_RichTierSteeringWeight_20260701 ;
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.14"^^xsd:decimal ;
+      skos:note "Design-decision memo register. Active voice dominant in editorial sections. Jargon density moderate — product-internal terms (rich tier, steering weight, in-degree, area index, conviction-carrying) used without definition, implying internal audience. Antithesis-heavy structure (richness vs. visibility, budget vs. invariant, in-degree vs. steering weight). Bold inline markers at architectural decision peaks. Blockquote for verbatim speaker voice. Consistent with Scarlet session-memo idiolect from prior sessions." .
+
+  }
+}

@@ -1,0 +1,306 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260625T162442Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-25T16:24:42Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-06-25-1-individually-owned-agi-reclaim-and-sii" ;
+    narr:originRef "recovery/collapse-expand-reland" ;
+    dct:title "SII AGI Reclaim — June 24 2026 walk memo and scanner essay" ;
+    prov:generated
+      narr:Actor_ScarletDame,
+      narr:Narrative_FableWakeUpCall,
+      narr:Claim_HumanExpertiseIrreplaceable,
+      narr:Claim_SIINamingRejectedCandidates,
+      narr:Obs_ModelAsOSMetaphor,
+      narr:Obs_FableAntiLockInPolitics,
+      narr:Obs_ExportableDataBlade,
+      narr:Obs_SyntheticIdentityForkFull,
+      narr:Obs_NatureOfExpertiseQuote,
+      narr:Obs_SynthesizerNamingRationale,
+      narr:StyleObs_SII_ThreeAxisAntithesis,
+      narr:StyleObs_SII_EmDashBlade,
+      narr:StyleMetrics_SII_AGIReclaim_Updated .
+} ;
+
+# ── UPDATE: Obs_ScannerAnomaly_Quote stub → grounded with selectors ──────────
+DELETE {
+  GRAPH ?g {
+    narr:Obs_ScannerAnomaly_Quote ?p ?o .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260625T162442Z {
+    narr:Obs_ScannerAnomaly_Quote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The scanner essay's load-bearing question: against what measure does the scanner decide an anomaly? Collapses the problem to upstream data, erasing the individual." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1598 ; oa:end 1742
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "When a scanner encounters my trans body, will it decide that my atrophied testicles after 6.5 years of HRT are an anomaly? Against what measure?" ;
+          oa:prefix "> " ;
+          oa:suffix "... collapsing the problem to a problem with upstream data"
+        ]
+      ] .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Obs_ScannerAnomaly_Quote ?p ?o .
+  }
+} ;
+
+# ── UPDATE: Obs_SyntheticIdentityFork_Quote stub → grounded with selectors ───
+DELETE {
+  GRAPH ?g {
+    narr:Obs_SyntheticIdentityFork_Quote ?p ?o .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260625T162442Z {
+    narr:Obs_SyntheticIdentityFork_Quote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The positioning fork in miniature: individually owned synthetic identity vs. fragmented corporate patchwork. The whole SII positioning compressed into a single binary." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2294 ; oa:end 2494
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Either my synthetic identity will be owned by me, and I will carry it with my physical and digital self as I encounter systems, or it will be another patchwork across fragmented corporate networks, fo" ;
+          oa:prefix "— and closes on the fork that is the whole positioning in miniature:\n\n> " ;
+          oa:suffix "rever asking me to prove access"
+        ]
+      ] .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Obs_SyntheticIdentityFork_Quote ?p ?o .
+  }
+} ;
+
+# ── INSERT: New entities ─────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260625T162442Z {
+
+    # Actor
+    narr:Actor_ScarletDame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Founder of aswritten.ai / Synthetic Identity Co. Primary voice across all positioning, naming, and strategy sessions." .
+
+    # Narrative: Fable wake-up call
+    narr:Narrative_FableWakeUpCall a narr:Narrative ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      narr:theme "Fable 5 takedown radicalizes anti-lock-in moat from feature into means-of-production politics" ;
+      skos:broader narr:MoatLeverage ;
+      skos:note "Scarlet treats the Fable 5 takedown — pulled through government pressure over Anthropic's refusal to cooperate with the national-security apparatus — as proof of who holds the bag when centralized power is withdrawn: the user. This radicalizes the anti-lock-in moat from a product feature into a political argument: in a world where AI is the primary worker, ownership of the expertise that allows it to execute its task is the means of production. The manifesto banner that sits above, not in place of, the pain-led context-server pitch." .
+
+    # Claim: Human expertise is irreplaceable
+    narr:Claim_HumanExpertiseIrreplaceable a narr:Claim ;
+      narr:aboutNode narr:Narrative_FableWakeUpCall ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Insight_AntiLockInMoat ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The nature of expertise is the selection of what to do and when, based on prior experience — exactly what humans are needed for. Nowhere in this future do humans get replaced or supplanted; perspective becomes more important, not less." .
+
+    # Claim: SII naming rejected candidates
+    narr:Claim_SIINamingRejectedCandidates a narr:Claim ;
+      narr:aboutNode narr:Claim_SIINameConvergedFull ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "Rejected candidates with reasons: 'Conversationally / Individuated Intelligence' (too modified); 'Sovereign Individual Intelligence' (web3 / security-tech connotation); 'Artificial Individual / Personal / Perspective Intelligence' (keeps the labs' word, API collision); 'IRI' (collides with perspective graph IRIs); 'ISI' (Pakistan's intelligence agency). Each rejection sharpens why SII works: one axis in the name, rest in tagline." .
+
+    # Observation: Model-as-OS metaphor
+    narr:Obs_ModelAsOSMetaphor a narr:Observation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The supporting metaphor for the AGI reclaim: expecting the general-purpose model to handle every case is like expecting your OS to ship with all programs preinstalled. The task-adapted perspective is the program." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1191 ; oa:end 1335
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "your operating system should come with all programs preinstalled instead of shipping with a programming language and having an open marketplace." ;
+          oa:prefix "the mistake is expecting the general-purpose model to handle every case — \"" ;
+          oa:suffix "\" The task-adapted perspective is the program."
+        ]
+      ] .
+
+    # Observation: Fable anti-lock-in politics quote
+    narr:Obs_FableAntiLockInPolitics a narr:Observation ;
+      skos:broader narr:MoatLeverage ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The rhetorical question that radicalizes the anti-lock-in moat into a political claim about means of production." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3236 ; oa:end 3294
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "who owns the expertise that allows it to execute its task?" ;
+          oa:prefix "in a world where AI is the primary worker, \"" ;
+          oa:suffix "\" Right now, you do"
+        ]
+      ] .
+
+    # Observation: Exportable data blade
+    narr:Obs_ExportableDataBlade a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The aphoristic compression of the ownership argument: exportable data ≠ ownership; right to be forgotten ≠ freedom. Two parallel antitheses that sharpen the scanner essay to a blade." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2111 ; oa:end 2216
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Exportable data is not the same as ownership. The right to be forgotten is not the same thing as freedom." ;
+          oa:prefix "It sharpens to a blade —\n\n> " ;
+          oa:suffix "\n\n— and closes on the fork"
+        ]
+      ] .
+
+    # Observation: Synthetic identity fork (full grounded version)
+    narr:Obs_SyntheticIdentityForkFull a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "Full verbatim of the ownership fork — the whole SII positioning in miniature. Individually owned and carried vs. patchwork corporate networks forever asking to prove access." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2294 ; oa:end 2494
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Either my synthetic identity will be owned by me, and I will carry it with my physical and digital self as I encounter systems, or it will be another patchwork across fragmented corporate networks, fo" ;
+          oa:prefix "> " ;
+          oa:suffix "rever asking me to prove access, to link accounts together"
+        ]
+      ] .
+
+    # Observation: Nature of expertise quote
+    narr:Obs_NatureOfExpertiseQuote a narr:Observation ;
+      skos:broader narr:MoatLeverage ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "Scarlet's argument for permanent human irreplaceability: expertise is the selection of what to do and when, based on prior experience — exactly what humans provide and AI cannot substitute." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3360 ; oa:end 3558
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the nature of expertise is the selection of what to do and when, based on prior experience. And that is exactly what we are needed for... nowhere in this future do humans get replaced or supplanted." ;
+          oa:prefix "> " ;
+          oa:suffix " In fact, our perspective just becomes more important."
+        ]
+      ] .
+
+    # Observation: Synthesizer naming rationale
+    narr:Obs_SynthesizerNamingRationale a narr:Observation ;
+      skos:broader narr:NamingConventions ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The naming rationale for SII over AGI: synthesizer connotes human-guided music-making; artificial connotes lab food flavoring. The word choice encodes the relational, human-guided nature of SII." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3916 ; oa:end 4018
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "a synthesizer makes music with a human guiding it. artificial sounds like a food flavoring from a lab." ;
+          oa:prefix "> " ;
+          oa:suffix "\n\nThe tagline carries the rest"
+        ]
+      ] .
+
+    # Style Observation 1: Three-axis antithesis as signature device
+    narr:StyleObs_SII_ThreeAxisAntithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:related narr:Tagline ;
+      rdf:value true ;
+      skos:note "Three-axis antithesis applied to the category name itself: not general/individual, not lab owned/individually owned, not artificial sentience/relational evolution. Scarlet's signature device at maximum compression — each axis is a direct counter to AGI's implicit claims." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4108 ; oa:end 4259
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "not general, individual. not lab owned. individually owned. not artificial sentience, something that evolves relationally via your conversations/input." ;
+          oa:prefix "The tagline carries the rest, as a three-axis antithesis (her signature device):\n\n> " ;
+          oa:suffix "\n\nRejected, with reasons:"
+        ]
+      ] .
+
+    # Style Observation 2: Em-dash blade construction
+    narr:StyleObs_SII_EmDashBlade a narr:StyleObservation ;
+      skos:broader narr:CadenceRhythm ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:related narr:ShortPunchyCadence ;
+      rdf:value true ;
+      skos:note "Em-dash pivot used to build to a short declarative blade: long subordinate clause setup, em-dash, then the aphoristic compression. 'It sharpens to a blade —' followed by the two-sentence antithesis. Characteristic cadence device in Scarlet's scanner/manifesto register." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2111 ; oa:end 2216
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Exportable data is not the same as ownership. The right to be forgotten is not the same thing as freedom." ;
+          oa:prefix "It sharpens to a blade —\n\n> " ;
+          oa:suffix "\n\n— and closes on the fork"
+        ]
+      ] .
+
+    # Style Metrics (updated/new node for this extraction pass)
+    narr:StyleMetrics_SII_AGIReclaim_Updated a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      narr:AverageSentenceLength "28"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.72"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal ;
+      skos:note "Mixed register: analytical editorial prose framing a personal essay. Long complex sentences in scanner section (subordinate clauses, em-dash pivots) alternate with short declarative blades. Active voice dominant in editorial sections; passive in scanner body-description. Jargon density moderate — SII, AGI, HRT, frontier model used without definition, implying internal/aligned audience. Antithesis-heavy throughout. First-person singular dominant in scanner essay; third-person analytical in editorial framing. Average sentence length elevated by scanner section's subordinate clause chains." .
+  }
+}

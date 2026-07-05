@@ -1,0 +1,399 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260208T211414Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-08T21:14:14.610Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-08-founding-story-through-line.md" ;
+    sb:originRef "refs/heads/main" .
+
+  # Extracted entities
+  narr:Sample_FoundingStory_2026_02_08 a narr:Sample ;
+    dct:title "Founding Story: The Through-Line from Generative Systems to Collective Memory" ;
+    narr:inputLength 6847 ;
+    dct:created "2026-02-08"^^xsd:date ;
+    prov:wasAttributedTo "Scarlet" ;
+    dct:description "Founder origin narrative, personal history, intellectual through-line" ;
+    skos:note "YC application founding story material; voice memos February 8, 2026" ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_GenerativeSystems a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "Generative systems as conceptual foundation" ;
+    skos:broader narr:TechnologiesSocialSystems ;
+    skos:note "Simulated flocking behavior (birds, fish) with simple local rules producing emergent complexity; primed understanding of physics, movement of companies in ecosystems, and movement of concepts within frameworks creating emergent steering patterns in organizations." ;
+    skos:related narr:Narrative_NarrativeAsVector ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_NarrativeAsVector a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "Narrative as velocity/acceleration vector in embedding space" ;
+    skos:broader narr:NarrativeAnchor ;
+    skos:note "For any concept in embedding space, there is a strength or movement vector toward related concepts; those vectors produce emergent behavior that looks and feels like thought; narrative is the strong steering vector within that emergence; you can create a physics around that." ;
+    skos:related narr:Narrative_LLMsContinuation ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_Aspen a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "Language as code: a collaborator analytics platform" ;
+    skos:broader narr:TechnologiesSocialSystems ;
+    skos:note "Analytics platform for sentiment analysis of email data and social listening into U.S. congressional offices; tracked correlations between news events and sentiment spikes; analyzed what people wanted and whether official communications achieved intended effects; primed understanding of language as code—analyzable actors within a system." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_Populous a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "Populous: medium-agnostic communication system" ;
+    skos:broader narr:Product ;
+    skos:note "First startup, raised venture money through Human Ventures; started as communication across channels (text/email translation, scheduling, payment); later pivoted to platform for hourly workers and became Clark (acquired after Scarlet's departure); Scarlet left due to co-founder differences and personal life challenges (getting clean and sober)." ;
+
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_ElephantCollective a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "Elephant Collective: narrative as founder's weapon" ;
+    skos:broader narr:NarrativeAnchor ;
+    skos:note "Bootstrapped in-person events venue in New Orleans; scaled from zero to [amount]per event within six months; recruited ~20 full-time artists-in-residence with micro art grants; built 1,000-2,000 person events with 3-10 individual artists curating spaces; per-event volunteer crews of 100-200 people recruited via mass SMS; slogan: 'dream bigger'; closed due to insurmountable conflict with permitting; taught hard lessons about legal authority and doing things right the first time; critical lesson: power of narrative as a founder—sold a dream that we could build something bigger together than we could have separately." ;
+    skos:related narr:Tagline ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_LLMsContinuation a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "LLMs as continuation machines (2019 Clojure talk)" ;
+    skos:broader narr:TechnologiesSocialSystems ;
+    skos:note "Core claim: LLMs are not thinking machines—they're continuation machines; they continue what was given to them, picking up on word choice, ideas, and the fundamental unit of narrative; there is a resulting vector that LLMs follow, and that vector is best described as narrative; you don't just get continuation based on logic—you get continuation based on narrative; how you phrase something makes a massive difference in the outcome; sparked reciprocal collaboration with the planned engineering/architecture hire." ;
+    skos:related narr:Narrative_NarrativeAsVector ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_HarmonyLabs a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "Harmony Labs: narrative analysis at scale" ;
+    skos:broader narr:TechnologiesSocialSystems ;
+    skos:note "Connected with Michael Slaby (ex-CTO Obama campaign, chief strategist at Harmony Labs); helped architect initial infrastructure of Narrative Observatory: massive ingestion pipeline and narrative classification project for Gates Foundation, focused on narratives around poverty; significance: seeing what narrative analysis looked like at scale; bridge between theoretical understanding of narrative-as-vector and industrial-scale implementation." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_TheOutwork a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "The Outwork: personal narrative engine" ;
+    skos:broader narr:Product ;
+    skos:note "Online course and process for creating personal narrative, serving artists, entrepreneurs, and nonprofits; first productization of narrative engineering, focused on individuals rather than organizations; combined understanding of narrative from Harmony Labs with personal narrative arc of being a notional founder and then a cofounder." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_Capitol a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "Capitol: automated insight extraction" ;
+    skos:broader narr:Product ;
+    skos:note "Run by original CTO of a collaborator; YC Fellow (summer 2024); Scarlet was first engineering hire; mission: automated extraction of insight from datasets, where an insight becomes a narrative about a dataset that assembles into a story suggesting actions and outcomes; same pattern: creation of vector that creates an outcome, a larger outcome within a system." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_Vouch a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "Vouch: the manual prototype" ;
+    skos:broader narr:Product ;
+    skos:note "Scarlet joined as strategist to reposition company from OEM automotive supplier into larger enterprise-facing sales organization; created what was called a narrative source of truth for the organization out of a process done manually at the time: seeding AI conversations with not only past constructions, but the context required organizationally—narrative statements that were intended and sanctioned as steering vectors; instead of AI defaulting to training-set narratives, it defaulted to organizational narratives; created a single source of truth that allowed others to replicate this AI context for content generation across the organization; key transition: from individual use to organizational replication." ;
+    skos:related narr:Narrative_aswritten ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_aswritten a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "aswritten.ai: automating the manual process" ;
+    skos:broader narr:Product ;
+    skos:note "Created as the automation of the Vouch process—an ingestion pipeline for arbitrary content that extracts narrative information, creates a narrative architecture, and serves as the seed for agentic work across different contexts; taking a single data source and making it context-agnostic." ;
+    skos:related narr:Narrative_Vouch ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Narrative_ThroughLine a narr:Narrative ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:theme "The through-line: physics never changed, substrate did" ;
+    skos:broader narr:StrategyOverview ;
+    skos:note "Each phase follows the same pattern—the physics never changed, the substrate did: generative systems → local actors, simple rules, emergent behavior; a collaborator → language as analyzable actors within systems; Populous → cross-channel communication as medium-agnostic translation; Elephant Collective → narrative as mass steering force for human groups; 2019 Clojure talk → LLMs as continuation machines steered by narrative vectors; Harmony Labs → narrative analysis at industrial scale (Gates Foundation); The Outwork → personal narrative engine (first productization); Capitol → automated insight extraction as narrative (YC Fellow, summer 2024); Vouch → manual narrative source of truth for organizational AI; aswritten → automated collective memory for AI-native teams." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Actor_PlannedEngHire a narr:PrimaryActors ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    skos:prefLabel "the planned engineering/architecture hire" ;
+    skos:note "Inspired by Scarlet's 2019 Clojure talk to enter LLMs; his 2024 talk gave Scarlet RDF as the missing data model; contracted for ideation and architecture on aswritten (September 2025); reciprocal collaboration: Scarlet inspired the planned engineering/architecture hire into the field; the planned engineering/architecture hire gave back the data model that made the product possible." ;
+    skos:related narr:Narrative_LLMsContinuation ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Actor_MichaelSlaby a narr:PrimaryActors ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    skos:prefLabel "Michael Slaby" ;
+    skos:note "Ex-CTO Obama campaign, chief strategist at Harmony Labs; gave Scarlet access to narrative analysis at scale via the Narrative Observatory." ;
+    skos:related narr:Narrative_HarmonyLabs ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Actor_HumanVentures a narr:PrimaryActors ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    skos:prefLabel "Human Ventures" ;
+    skos:note "Startup studio that backed Populous." ;
+    skos:related narr:Narrative_Populous ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Actor_Aspen a narr:PrimaryActors ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    skos:prefLabel "a collaborator CTO" ;
+    skos:note "Later ran Capitol, where Scarlet was first engineering hire." ;
+    skos:related narr:Narrative_Capitol ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:StyleObs_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FoundingStory_2026_02_08 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 6489 ;
+            oa:end 6500
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "aswritten.ai" ;
+            oa:prefix "## " ;
+            oa:suffix ": Automating the Manual Process"
+        ]
+    ] ;
+    skos:note "Brand name stylization: lowercase 'aswritten' with '.ai' TLD suffix." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:StyleObs_2 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Simile ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    oa:hasBody narr:Simile ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FoundingStory_2026_02_08 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1067 ;
+            oa:end 1145
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "narrative operates like a velocity or acceleration vector in these particle systems" ;
+            oa:prefix "The key insight: " ;
+            oa:suffix ". For any concept"
+        ]
+    ] ;
+    skos:note "Simile: narrative as physics vector; establishes core conceptual metaphor." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:StyleObs_3 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FoundingStory_2026_02_08 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 6134 ;
+            oa:end 6180
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "The physics never changed. The substrate did" ;
+            oa:prefix "Each phase follows the same pattern — " ;
+            oa:suffix ":\n\n- **Generative systems**"
+        ]
+    ] ;
+    skos:related narr:Tagline ;
+    skos:note "Stock phrase: repeated twice in document; serves as thematic anchor for through-line narrative." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:StyleObs_4 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Tagline ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    oa:hasBody narr:Tagline ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FoundingStory_2026_02_08 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3214 ;
+            oa:end 3226
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "dream bigger" ;
+            oa:prefix "The slogan was \"" ;
+            oa:suffix ".\" This was the same emergent-systems pattern"
+        ]
+    ] ;
+    skos:related narr:Narrative_ElephantCollective ;
+    skos:note "Tagline for Elephant Collective; exemplifies narrative as founder's weapon." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:StyleObs_5 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FoundingStory_2026_02_08 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3098 ;
+            oa:end 3112
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "I sold a dream" ;
+            oa:prefix "founder:\n\n> \"" ;
+            oa:suffix ", right. That we could dream bigger"
+        ]
+    ] ;
+    skos:note "Active, direct verb choice: 'sold a dream'; first-person declarative; exemplifies direct & personal tone." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:StyleObs_6 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FoundingStory_2026_02_08 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 6134 ;
+            oa:end 6180
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "The physics never changed. The substrate did" ;
+            oa:prefix "Each phase follows the same pattern — " ;
+            oa:suffix ":\n\n- **Generative systems**"
+        ]
+    ] ;
+    skos:note "Two short declarative sentences; parallel structure; punchy rhythm; serves as section anchor." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:StyleObs_7 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FoundingStory_2026_02_08 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1919 ;
+            oa:end 2012
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "doing scheduling and payment across mediums, creating \"a communication system that was medium agnostic\"" ;
+            oa:prefix "translating directly between text messages and email, " ;
+            oa:suffix ". The company later pivoted"
+        ]
+    ] ;
+    skos:note "Triadic list: translating, scheduling/payment, creating; builds momentum." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:StyleObs_8 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:CaretBracketMarker ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    oa:hasBody narr:CaretBracketMarker ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FoundingStory_2026_02_08 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 0 ;
+            oa:end 0
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "" ;
+            oa:prefix "" ;
+            oa:suffix ""
+        ]
+    ] ;
+    rdf:value false ;
+    skos:note "No caret-bracket citation markers present in this document; narrative style is direct attribution via context headers." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:Metrics_FoundingStory a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    narr:AverageSentenceLength 28.5 ;
+    narr:ActiveVoiceRatio 0.82 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: 12.3" ;
+    narr:JargonDensity 0.15 ;
+    narr:TypeTokenRatio 0.68 ;
+    skos:note "Metrics computed from full document; high active voice ratio; moderate jargon density (technical terms: embedding space, vector, LLM, NLP, etc.); high lexical diversity." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:RubricAssess_Register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    rdf:value 4.5 ;
+    skos:note "Register: conversational-authoritative blend; first-person narrative with technical precision; direct address ('you can create a physics'); fits founder-story genre; active voice dominant (82%); concise where needed, expansive where context required." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:RubricAssess_Phrasing a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    rdf:value 4.0 ;
+    skos:note "Phrasing: strong idiolect ('The physics never changed. The substrate did'); domain-specific verbs (onboards, steered, primed); stock phrases used strategically for thematic anchoring; 'dream bigger' as emblematic tagline; 'continuation machines' as conceptual handle." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:RubricAssess_Cadence a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    rdf:value 4.0 ;
+    skos:note "Cadence: varied sentence length (avg 28.5 words); short punchy declarations ('The physics never changed. The substrate did') balanced with longer explanatory passages; effective use of blockquotes for emphasis; triadic lists for rhythm; section headers create clear beats." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:RubricAssess_StrategicAlignment a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    rdf:value 5.0 ;
+    skos:note "Strategic alignment: perfect alignment with narrative architecture ontology; founding story explicitly traces intellectual through-line from generative systems to collective memory; each phase maps to product/strategy/architecture concepts; 'narrative as vector' is both the story and the product thesis; YC application context makes strategic intent explicit." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:RubricAssess_Tailoring a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    rdf:value 4.5 ;
+    skos:note "Tailoring: explicitly framed for YC application audience; balances technical depth (LLMs, embedding space, NLP) with narrative accessibility; personal vulnerability ('my life was frankly a mess') humanizes founder; collaborator attributions (the planned engineering/architecture hire, Michael Slaby) signal network and credibility; progression from physics → language → organizations matches investor mental model for platform plays." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:RubricAssess_Resonance a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    rdf:value 4.5 ;
+    skos:note "Resonance: strong use of analogies (flocking behavior, particle physics, continuation machines); 'dream bigger' slogan as emblematic story; Elephant Collective as proof of narrative power at scale; reciprocal collaboration with the planned engineering/architecture hire as resonant exchange; five-year wait as redemption arc; each company/project serves as case study reinforcing core thesis." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:RubricAssess_Flow a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    rdf:value 4.5 ;
+    skos:note "Flow: chronological progression with thematic coherence; each section builds on prior insights; transitions are natural ('This was the start of...', 'Based on the LLM-as-continuation-machine ideas...'); 'The Through-Line' section explicitly synthesizes; parallel structure in bullet list reinforces pattern recognition; minimal formulaicness—each section has distinct voice while maintaining coherence." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:RubricAssess_Novelty a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    rdf:value 4.0 ;
+    skos:note "Novelty: 'continuation machines' as fresh framing for LLMs; 'The physics never changed. The substrate did' as original synthesis; high type-token ratio (0.68) indicates lexical diversity; avoids startup clichés (no 'disruption', 'paradigm shift', '10x'); domain terms used precisely rather than as buzzwords; personal narrative arc (getting sober, five-year wait) adds authenticity; some template overlap in company descriptions but justified by genre (founding story)." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+
+  narr:RubricAssess_Accuracy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_FoundingStory_2026_02_08 ;
+    rdf:value 4.0 ;
+    skos:note "Accuracy: named entities (the planned engineering/architecture hire, Michael Slaby, Human Ventures, Harmony Labs, Gates Foundation, Obama campaign, YC Fellow summer 2024) are specific and verifiable; dates provided (2019 Clojure talk, September 2025 contract, February 8 2026 voice memos); company outcomes stated (Clark acquisition, Elephant Collective closure); no citations present but context headers provide attribution; technical claims (LLMs as continuation machines, embedding space vectors) are conceptually sound; personal claims (getting sober, co-founder conflict) are self-attributable; one point deducted for lack of formal citations where external claims are made (Gates Foundation project, Obama campaign role)." ;
+    prov:wasGeneratedBy narr:Tx_20260208T211414Z .
+}

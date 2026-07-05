@@ -1,0 +1,158 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260701T221214Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-01T22:12:14Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-01-1-perspective-response-cache-shaped-stable-skeleton" ;
+    narr:originRef "feat/share-digest-migration" ;
+    dct:title "Perspective Response Ordering by Volatility — Design Decision 2026-07-01" ;
+    prov:generated
+      
+      narr:Narrative_PerspectiveResponseOrderedByVolatility,
+      narr:Claim_FocusAppendedNeverReordered,
+      narr:Claim_SortVsRankTensionResolved,
+      narr:Claim_FocusAtEndClosestToGeneration,
+      narr:Obs_PerspectiveOrderFourSections,
+      narr:StyleObs_PerspectiveOrdering_Antithesis,
+      narr:StyleObs_PerspectiveOrdering_TechnicalRegister,
+      narr:StyleObs_PerspectiveOrdering_VerbatimBlockquote,
+      narr:StyleMetrics_PerspectiveResponseOrdering .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260701T221214Z {
+
+    # ── Actors ──────────────────────────────────────────────────
+    # Actor_Scarlet already exists — no new entity needed.
+    # Claude (Fable session) is a session participant, not a persistent actor node.
+
+    # ── Narratives ──────────────────────────────────────────────
+    narr:Narrative_PerspectiveResponseOrderedByVolatility a narr:Narrative ;
+      skos:broader narr:ArchitectureOverview ;
+
+      narr:theme "Perspective response ordered by volatility: stable skeleton leads, per-call focus appended last" ;
+      skos:note "The perspective response is now structured in four fixed sections ordered by volatility: (1) the map — richest areas at steering grain, canonical order that never changes with the caller's focus; (2) the area index — every other area, named, one line each; (3) the active surface — recent and load-bearing witnesses, moves only when knowledge lands or recency window rolls; (4) the focus section, last — the only per-call material. The map is never reordered per call. Focus selects what to append, never what to move. A no-focus orientation call is byte-stable for a given graph state. Decided 2026-07-01 by Scarlet Dame during the collapse/expand recovery arc design review." ;
+      skos:related narr:Narrative_NavigationReplacesEmbeddedSnapshot, narr:Narrative_DigestAsRecognitionAid .
+
+    # ── Claims ──────────────────────────────────────────────────
+    narr:Claim_FocusAppendedNeverReordered a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveResponseOrderedByVolatility ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+
+      narr:supports narr:Narrative_PerspectiveResponseOrderedByVolatility ;
+      skos:note "Focus selects what to append to the perspective response, never what to move or reorder. The map section is invariant across calls for a given graph state. This is a settled design decision from the 2026-07-01 review." .
+
+    narr:Claim_SortVsRankTensionResolved a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveResponseOrderedByVolatility ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+
+      narr:supports narr:Narrative_PerspectiveResponseOrderedByVolatility ;
+      skos:note "The ordering decision dissolved the long-standing sort-vs-rank tension in the compression-only projection principle. Order is unavoidable — hubs emit in some sequence — but under this decision the order is a fixed property of the graph state, not a per-call judgment. The projection still never suppresses, promotes, or hides availability; focus adaptivity lives entirely in an appended section. The perspective's own introspection had flagged map ordering stability, prompt-caching optimization, sort-vs-rank policy, and umbrella selection as high-severity missing specifications; this decision closes all four." .
+
+    narr:Claim_FocusAtEndClosestToGeneration a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveResponseOrderedByVolatility ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+
+      narr:supports narr:Narrative_PerspectiveResponseOrderedByVolatility ;
+      skos:note "A second consequence noted approvingly by Scarlet: focus-relevant material now sits at the end of the tool result, closest to generation — the steering content is the last thing the model reads before it writes." .
+
+    narr:Obs_PerspectiveOrderFourSections a narr:Observation ;
+      skos:broader narr:ArchitectureOverview ;
+
+      skos:note "The four-section canonical ordering of the perspective response, as decided 2026-07-01." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 656 ; oa:end 776
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "1. **The map** — the richest areas at steering grain, in one canonical order that never changes with the caller's focus." ;
+          oa:prefix "The perspective response is now ordered by volatility — the stable part leads, the per-call part trails:\n\n" ;
+          oa:suffix "\n2. **The area index** — every other area, named, one line each."
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────
+    narr:StyleObs_PerspectiveOrdering_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      rdf:value true ;
+      skos:note "Antithesis structures the core design argument throughout: stable vs. per-call, append vs. reorder, precondition vs. benefit, sort vs. rank. The antithetic framing is the primary rhetorical device for articulating the ordering decision." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1143 ; oa:end 1194
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Focus selects what to *append*, never what to move." ;
+          oa:prefix "The map is never reordered per call. " ;
+          oa:suffix " A no-focus orientation call is byte-stable for a given graph state."
+        ]
+      ] .
+
+    narr:StyleObs_PerspectiveOrdering_TechnicalRegister a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+
+      rdf:value true ;
+      skos:note "High technical register throughout: 'byte-stable', 'cache_control', 'cache-hostile', 'per-call material', 'volatility ordering'. Engineering vocabulary applied to describe a product design decision. Consistent with Scarlet's idiom of borrowing infrastructure terminology to make architectural choices legible." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1195 ; oa:end 1262
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "A no-focus orientation call is byte-stable for a given graph state." ;
+          oa:prefix "Focus selects what to *append*, never what to move. " ;
+          oa:suffix "\n\n## Why: prompt caching argued for stability"
+        ]
+      ] .
+
+    narr:StyleObs_PerspectiveOrdering_VerbatimBlockquote a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+
+      rdf:value true ;
+      skos:note "Verbatim blockquote from Scarlet used to anchor the prompt-caching rationale — the document distinguishes between editorial summary and Scarlet's own voice ('Her reasoning, verbatim:'). This is a recurring pattern in Scarlet session memos: the decision rationale is attributed in the speaker's own words, not paraphrased." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1436 ; oa:end 1460
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Her reasoning, verbatim:" ;
+          oa:prefix "Scarlet connected this to the prompt-caching work (the local proxy that injects Anthropic cache_control on n8n LLM calls). " ;
+          oa:suffix "\n\n> \"In prompt caching, we want to have"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────
+    narr:StyleMetrics_PerspectiveResponseOrdering a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.18"^^xsd:decimal ;
+      skos:note "Technical-architectural register. Active voice dominant in editorial sections; passive used sparingly for design decisions ('was retired', 'is now ordered'). Jargon density moderate — engineering terms (byte-stable, cache_control, cache-hostile, per-call) used without definition, implying internal/technical audience. Numbered lists for the four-section structure. Blockquote for verbatim speaker attribution. Sentence length varies: short declaratives at decision peaks ('Focus selects what to append, never what to move.') vs. longer analytical sentences for the honesty bound." .
+
+  }
+}

@@ -1,0 +1,234 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260519T180000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-19T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-05-19-1-customer-eng-manager-arb-process-engagement-deployment-vision.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Narrative_ForgettingBottleneckIsRole,
+      narr:Claim_CustomerEngManagerSelfIDBottleneck,
+      narr:Claim_ConvergenceBuyerIsPlural,
+      narr:Claim_SelfIDAsQualifyingSignal,
+      narr:Claim_OptionsVsDecisionsVerbatim,
+      narr:Obs_CustomerEngManagerForgetQuote1,
+      narr:Obs_CustomerEngManagerForgetQuote2,
+      narr:Obs_OptionsVsDecisionsQuote,
+      narr:Obs_CitationGroundingError,
+      narr:StyleObs_ForgettingBottleneck_Antithesis,
+      narr:StyleObs_ForgettingBottleneck_DirectQuote,
+      narr:StyleObs_ForgettingBottleneck_BoldEmphasis,
+      narr:StyleMetrics_ForgettingBottleneck .
+} ;
+
+# New entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260519T180000Z {
+
+    # Document-level narrative: the convergence pattern
+    narr:Narrative_ForgettingBottleneckIsRole a narr:Narrative ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:broader narr:FrictionFailure ;
+      skos:prefLabel "The Forgetting Bottleneck Is a Role, Not a Person" ;
+      skos:note "Two senior the enterprise customer people — the customer's chief architect (chief architect) and an engineering manager at the customer (development manager, ARB facilitator) — independently described themselves the same way: as candidates for aswritten precisely because they forget as much as they remember. The bottleneck is not scarce expertise; it is scarce memory at the decision junction. Anyone who sits where many decisions and many threads cross will say what an engineering manager at the customer and the customer's chief architect said, because the role asks a human to hold more than a human holds. The convergence was surfaced by the citation tool reaching for the customer's chief architect when processing a draft that quoted an engineering manager at the customer — because the perspective held the customer's chief architect's version of the sentiment and not an engineering manager at the customer's." ;
+      narr:theme "The forgetting bottleneck is structural to the decision-junction role, not personal to any individual — two independent self-diagnoses from different roles confirm the pattern" .
+
+    # Claim: an engineering manager at the customer's self-identification
+    narr:Claim_CustomerEngManagerSelfIDBottleneck a narr:Claim ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "an engineering manager at the customer — development manager at the enterprise customer, eight direct reports across two teams, ARB facilitator — said unprompted: 'I'm a key candidate for this because I forget as much as I remember.' The detail that matters is the role: this is the facilitator talking, not a junior developer losing the thread, but the person whose job is to hold the thread. He extended it: 'It's impossible for me to remember, oh, we do or don't support this odd case. If a customer comes with a specific use case, it's difficult for me to remember.'" ;
+      narr:aboutNode narr:Narrative_ForgettingBottleneckIsRole ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    # Claim: buyer is plural
+    narr:Claim_ConvergenceBuyerIsPlural a narr:Claim ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "The ARB use case has been framed around the expert as bottleneck — the senior person the rest of the team waits on. an engineering manager at the customer and the customer's chief architect together sharpen it: the bottleneck is not scarce expertise but scarce memory at the decision junction. Consequence: the buyer is plural. Not a single irreplaceable expert, but every senior person at a decision junction — and an engineering organization has several. The 'expert as bottleneck' story is really a 'decision junction' story, and decision junctions repeat." ;
+      narr:aboutNode narr:Narrative_ForgettingBottleneckIsRole ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_EnterpriseShapePrimaryFocus .
+
+    # Claim: self-identification as qualifying signal
+    narr:Claim_SelfIDAsQualifyingSignal a narr:Claim ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "When a customer contact says some version of 'I forget as much as I remember,' they have already diagnosed their own need. an engineering manager at the customer said it unprompted; so did the customer's chief architect. This is the cleanest buying signal the ARB use case produces — worth listening for by name in discovery calls. The self-identification is the qualifying signal." ;
+      narr:aboutNode narr:Narrative_ForgettingBottleneckIsRole ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_EnterpriseShapePrimaryFocus .
+
+    # Claim: options vs decisions verbatim — sharpest customer-language version
+    narr:Claim_OptionsVsDecisionsVerbatim a narr:Claim ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "an engineering manager at the customer's verbatim account of the options-versus-decisions distinction that drives the day-to-day re-litigation problem: 'We gave you pros and cons and you were to go away and figure out which one suits and come back with a proposal. We didn't give you a full solution, we just gave you options.' Re-litigation happens when a recipient collapses that open set into a single remembered decision. The distinction — offered versus agreed, options versus solution — is what the perspective must preserve and a static record cannot. This is the sharpest customer-language version aswritten has of this problem." ;
+      narr:aboutNode narr:Narrative_DayToDayRelitigation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Claim_InterpretationPreservation .
+
+    # Observation: an engineering manager at the customer's first forget quote
+    narr:Obs_CustomerEngManagerForgetQuote1 a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "an engineering manager at the customer's verbatim self-identification as bottleneck candidate — the founding evidence for Claim_CustomerEngManagerSelfIDBottleneck." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1280 ;
+          oa:end 1355
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm a key candidate for this because I forget as much as I remember." ;
+          oa:prefix "He said this, plainly, about himself:\n\n> " ;
+          oa:suffix "\n\nThe detail that matters"
+        ]
+      ] .
+
+    # Observation: an engineering manager at the customer's second forget quote (impossible to remember)
+    narr:Obs_CustomerEngManagerForgetQuote2 a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "an engineering manager at the customer's extension of his self-diagnosis — the volume and specificity of what the ARB facilitator must hold." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1560 ;
+          oa:end 1680
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's impossible for me to remember, oh, we do or don't support this odd case." ;
+          oa:prefix "> " ;
+          oa:suffix " If a customer comes"
+        ]
+      ] .
+
+    # Observation: options vs decisions verbatim quote
+    narr:Obs_OptionsVsDecisionsQuote a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "an engineering manager at the customer's verbatim articulation of the options-vs-decisions distinction — the sharpest customer-language version of the re-litigation problem aswritten has captured." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3420 ;
+          oa:end 3620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "We gave you pros and cons and you were to go away and figure out which one suits and come back with a proposal. We didn't give you a full solution, we just gave you options." ;
+          oa:prefix "> " ;
+          oa:suffix "\n\nThat is the ARB's real output"
+        ]
+      ] .
+
+    # Observation: citation tool grounding error — product evidence
+    narr:Obs_CitationGroundingError a narr:Observation ;
+      skos:broader narr:FactualAccuracy ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "The citation tool, when processing a draft that quoted an engineering manager at the customer's self-description ('I forget as much as I remember'), grounded the quote to the customer's chief architect — because the perspective held the customer's chief architect's version of the sentiment and not an engineering manager at the customer's. The tool reaching for the customer's chief architect is what made the convergence pattern visible. This is a concrete instance of the perspective's coverage gap surfacing through tool behavior: the cite tool correctly found the closest match in the graph, but the closest match was the wrong person. The fix is not a tool fix but a knowledge fix — adding an engineering manager at the customer's self-identification to the perspective." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 545 ;
+          oa:end 945
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The tool reaching for the customer's chief architect is what made the pattern visible: this is not one person's quirk." ;
+          oa:prefix "it grounded the quote to the customer's chief architect — because the perspective held the customer's chief architect's version of the sentiment and not an engineering manager at the customer's. " ;
+          oa:suffix "\n\n## an engineering manager at the customer names himself"
+        ]
+      ] .
+
+    # Style observations (minimum 3)
+    narr:StyleObs_ForgettingBottleneck_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "Antithesis structure: 'not scarce expertise / scarce memory'; 'not one person's quirk / structural to the role'; 'offered versus agreed, options versus solution'. Antithesis is the dominant rhetorical device throughout, used to sharpen the convergence argument." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2100 ;
+          oa:end 2300
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The bottleneck is not scarce expertise. It is scarce *memory* at the decision junction." ;
+          oa:prefix "an engineering manager at the customer and the customer's chief architect together sharpen it. " ;
+          oa:suffix " Anyone who sits where many decisions"
+        ]
+      ] .
+
+    narr:StyleObs_ForgettingBottleneck_DirectQuote a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "Heavy use of verbatim blockquoted speech from an engineering manager at the customer — three distinct quotes, each introduced with attribution and framing. The document explicitly flags these as verbatim ('in an engineering manager at the customer's words', 'Recorded here in an engineering manager at the customer's words') and explains why: 'it is the sharpest customer-language version aswritten has.' Idiolect preservation is a stated editorial policy in this memory." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3380 ;
+          oa:end 3450
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Recorded here in an engineering manager at the customer's words, because it is the sharpest customer-language version aswritten has:" ;
+          oa:prefix "The same call produced an engineering manager at the customer's verbatim account of the options-versus-decisions distinction that drives the day-to-day re-litigation problem. " ;
+          oa:suffix "\n\n> We gave you pros"
+        ]
+      ] .
+
+    narr:StyleObs_ForgettingBottleneck_BoldEmphasis a narr:StyleObservation ;
+      skos:broader narr:PunctuationTypography ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "Bold used for two bullet-point conclusions ('The buyer is plural.' and 'The self-identification is the qualifying signal.') — a formatting pattern that signals these are the extractable strategic takeaways from the convergence observation. Italics used for emphasis within prose ('*facilitator*', '*memory*') to mark the conceptual pivot points." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerEngManagerVision_20260519 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2700 ;
+          oa:end 2800
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**The buyer is plural.**" ;
+          oa:prefix "Two consequences:\n\n- " ;
+          oa:suffix " Not a single irreplaceable expert"
+        ]
+      ] .
+
+    # Style metrics
+    narr:StyleMetrics_ForgettingBottleneck a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_CustomerEngManagerVision_20260519 ;
+      skos:note "Strategic memo register with three embedded verbatim blockquotes from an engineering manager at the customer. Mixed register: analytical editorial prose (authoritative, structured H2 sections) vs. colloquial first-person in blockquoted speech. Antithesis-heavy structure throughout. Active voice dominant in editorial prose. Jargon density low — product terms (ARB, aswritten, perspective, cite tool) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier. Consistent with Scarlet session-memo idiolect across the perspective." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.07"^^xsd:decimal .
+  }
+}

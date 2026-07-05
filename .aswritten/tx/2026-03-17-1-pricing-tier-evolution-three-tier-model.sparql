@@ -1,0 +1,376 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260317T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-17T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-17-pricing-tier-evolution-three-tier-model.md" ;
+    narr:originRef "main" ;
+    dct:title "Pricing Tier Evolution — Three-Tier Model with Upgrade Paths" ;
+    prov:generated
+      narr:Sample_PricingTierEvolution_20260317,
+      narr:Narrative_ThreeTierPricingModel,
+      narr:Narrative_ProfessionalOverEnterprise,
+      narr:Narrative_TwoUpgradeDrivers,
+      narr:Narrative_OnPremAsRequirementsDriven,
+      narr:Narrative_10xGapIsFeature,
+      narr:Narrative_BYOKOpenRouterLimit,
+      narr:Narrative_ExtractionScopeOrgWorldview,
+      narr:Narrative_SalesCallIsOnboarding,
+      narr:Claim_ThreeTierSupersedes,
+      narr:Claim_TeamTierSalesCallIsOnboarding,
+      narr:Claim_ProfessionalTierDifferentiator,
+      narr:Claim_OnPremNotDefiningFeature,
+      narr:Claim_10xGapIntentional,
+      narr:Claim_BYOKAzureGap,
+      narr:Claim_ExtractionScopeOrgWorldview,
+      narr:Claim_EnterpriseCustomerRavenValidation,
+      narr:Obs_UpgradePathQuote,
+      narr:Obs_TeamTierOnboardingQuote,
+      narr:Obs_ProfessionalNamingQuote,
+      narr:Obs_OnPremHIPAAQuote,
+      narr:Obs_ExtractionScopeQuote,
+      narr:Obs_DemoProspectCommissionGapQuote,
+      narr:StyleObs_ValueRequirementsAntithesis,
+      narr:StyleObs_SalesCallIsOnboardingCadence,
+      narr:StyleObs_TierNamingJargonPolicy .
+} ;
+
+# ── UPDATE: narr:Decision_SimplifyPricing superseded by new three-tier model ─
+DELETE {
+  GRAPH ?g {
+    narr:Decision_SimplifyPricing skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260317T120000Z {
+    narr:Decision_SimplifyPricing
+      skos:note "SUPERSEDED 2026-03-17 by narr:Narrative_ThreeTierPricingModel. Original: [amount]/mo per repo, 10 seats included, [amount]/additional seat. Replaced by three-tier model: Individual (free trial → low monthly TBD), Team ([amount]/month), Professional ([amount]/month + [amount] minimum SOW setup)." ;
+      dct:isReplacedBy narr:Narrative_ThreeTierPricingModel ;
+      prov:wasInvalidatedBy narr:Tx_20260317T120000Z .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Decision_SimplifyPricing skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_SalesAsDelivery — Team tier sales call insight ────
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_SalesAsDelivery skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260317T120000Z {
+    narr:Narrative_SalesAsDelivery
+      skos:note "Every sales call builds collective memory for the prospect's repo. By the time the prospect is ready to buy, the system is already partially populated with their organizational knowledge. The free trial is experiencing the product during the sales process itself. Extended 2026-03-17: in the Team tier specifically, the sales call IS the onboarding IS the first knowledge extraction — no separate setup deliverable needed. The call produces the first memory, seeds the worldview, and demonstrates value." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_SalesAsDelivery skos:note ?oldNote .
+  }
+} ;
+
+# ── INSERT DATA: new entities ────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260317T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_PricingTierEvolution_20260317 a narr:Sample ;
+      dct:title "Pricing Tier Evolution — Three-Tier Model with Upgrade Paths" ;
+      dct:created "2026-03-17"^^xsd:date ;
+      dct:description "Design session between Scarlet Dame and Claude (AI coworker) preparing for the enterprise customer call and a demo-call prospect sales partnership discussion. Resolves pricing structure for both enterprise (the enterprise customer, 150 people) and SMB (a collaborator, 2 people). Supersedes Feb 2026 simplified pricing ([amount]/mo per repo)." ;
+      narr:inputLength 5842 .
+
+    # ── Narratives ──────────────────────────────────────────────────────────
+
+    narr:Narrative_ThreeTierPricingModel a narr:Narrative ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:broader narr:PackagingPricing ;
+      skos:prefLabel "Three-Tier Pricing Model: Individual / Team / Professional" ;
+      skos:note "Three tiers with two distinct upgrade drivers. Individual: 1 seat, trial token budget, self-serve onboarding, all core tools, price TBD. Team: [amount]/month, multiple seats, shared worldview, higher token budget, sales call = onboarding = first knowledge extraction. Professional: [amount]/month + [amount] minimum SOW setup, consultant-led knowledge extraction, unlimited seats, on-prem available, dedicated support, custom ontology, ongoing extraction sessions. Supersedes Feb 2026 simplified pricing ([amount]/mo per repo, 10 seats included, [amount]/additional seat)." ;
+      narr:theme "Three-tier pricing with value-driven and requirements-driven upgrade paths replaces flat per-repo pricing" .
+
+    narr:Narrative_ProfessionalOverEnterprise a narr:Narrative ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:broader narr:NamingConventions ;
+      skos:prefLabel "'Professional' Tier Name Over 'Enterprise'" ;
+      skos:note "'Professional' chosen because the tier is defined by what you get, not who you are. an early prospect (2-person acupuncture practice needing HIPAA compliance) and the enterprise customer (150-person enterprise needing GDPR) both arrive at the same tier for different reasons. 'Enterprise' implies large company; 'Professional' implies a level of service. The tier is for people who need consultant-led knowledge extraction, regardless of org size." ;
+      narr:theme "Tier names should describe the service level received, not the buyer's org size" .
+
+    narr:Narrative_TwoUpgradeDrivers a narr:Narrative ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:broader narr:ExpansionPathway ;
+      skos:prefLabel "Two Upgrade Drivers: Value-Driven and Requirements-Driven" ;
+      skos:note "Value-driven (I want more): Individual → Team for collaboration; Team → Professional for consultant-led extraction. Requirements-driven (I need this): Individual → Team for token limits or second seat; Team → Professional for compliance (on-prem, ZDR, MSA/SOW). Both drivers baked into the tier architecture. A 2-person healthcare practice may need Professional for HIPAA; a 50-person tech company may not." ;
+      narr:theme "Upgrade paths have two distinct drivers — value-driven (I want more) and requirements-driven (I need compliance) — both must be present in the tier architecture" .
+
+    narr:Narrative_OnPremAsRequirementsDriven a narr:Narrative ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:broader narr:CompliancePosture ;
+      skos:prefLabel "On-Prem as Requirements-Driven Add-On, Not Tier Differentiator" ;
+      skos:note "On-prem deployment is NOT what defines the Professional tier. It is a requirements-driven add-on available at that tier. The primary differentiator is consultant-led knowledge extraction. On-prem is triggered by compliance requirements (HIPAA, GDPR), not by org size. Technical reality: on-prem deployment is architecturally possible (all components containerizable) but not yet productized. First deployment would be built during the SOW engagement." ;
+      narr:theme "On-prem is a compliance-triggered add-on at the Professional tier, not the defining feature of that tier" .
+
+    narr:Narrative_10xGapIsFeature a narr:Narrative ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:broader narr:PackagingPricing ;
+      skos:prefLabel "The 10x Price Gap Between Team and Professional Is Intentional" ;
+      skos:note "[amount]/month (Team) to [amount]/month (Professional) is a 10x jump. This is intentional — it communicates clearly that Professional is a different thing, not just 'more team.' The gap says: 'Professional includes a human doing work for you.' The price signal is part of the product positioning." ;
+      narr:theme "A 10x price gap between Team and Professional communicates that Professional is categorically different — it includes a human doing work for you" .
+
+    narr:Narrative_BYOKOpenRouterLimit a narr:Narrative ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:broader narr:SecurityPrivacyModel ;
+      skos:prefLabel "BYOK Limitation: OpenRouter Only, Azure/Copilot Gap" ;
+      skos:note "Current BYOK (bring your own key) only accepts OpenRouter API keys. Enterprise customers with Azure/Copilot enterprise agreements cannot plug their keys into the BYOK slot. For compliance-driven customers who need all LLM processing under their enterprise data agreement, on-prem is the answer — not BYOK. This is a known gap that routes compliance buyers to the Professional tier." ;
+      narr:theme "BYOK only accepts OpenRouter keys; enterprise customers on Azure/Copilot agreements must use on-prem for compliance, not BYOK" .
+
+    narr:Narrative_ExtractionScopeOrgWorldview a narr:Narrative ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Extraction Scope: Organizational Worldview, Not Domain Index" ;
+      skos:note "The SOW scopes a bounded engagement, but what you're building is the organizational worldview, not a domain index. Better framing: 'We start with the people closest to the pain — 2-3 senior folks and what they're working on right now. The worldview builds out from there. Each engagement adds depth.' Domain implies siloing; worldview implies integration across roles and concerns." ;
+      narr:theme "Professional tier engagements build organizational worldview starting from 2-3 senior people, not a siloed domain index" .
+
+    narr:Narrative_SalesCallIsOnboarding a narr:Narrative ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:broader narr:PackagingEntitlement ;
+      skos:prefLabel "Team Tier: Sales Call = Onboarding = First Knowledge Extraction" ;
+      skos:note "In the Team tier, the consulting or knowledge extraction is just the single sales call where the knowledge extraction happens in the sales call, and that's onboarding, and that makes the sale, and that's it. The sales call IS real work — it produces the first memory, seeds the worldview, and demonstrates value. No separate setup deliverable needed. No setup fee for Team tier (leaning toward no setup fee)." ;
+      narr:theme "For the Team tier, the sales call is simultaneously the onboarding and the first knowledge extraction — no separate setup deliverable" .
+
+    # ── Claims ──────────────────────────────────────────────────────────────
+
+    narr:Claim_ThreeTierSupersedes a narr:Claim ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "The Feb 2026 simplified pricing ([amount]/mo per repo, 10 seats included, [amount]/additional seat) was too high for SMB and didn't differentiate between self-serve and consultant-led engagement. The new three-tier model (Individual / Team [amount]/mo / Professional [amount]/mo + [amount] SOW) supersedes it." ;
+      narr:aboutNode narr:Narrative_ThreeTierPricingModel ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:PackagingPricing .
+
+    narr:Claim_TeamTierSalesCallIsOnboarding a narr:Claim ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "The sales call for the Team tier IS the onboarding IS the first knowledge extraction. No separate setup deliverable needed. The call produces the first memory, seeds the worldview, and demonstrates value. Setup fee for Team tier: leaning toward no setup fee." ;
+      narr:aboutNode narr:Narrative_SalesCallIsOnboarding ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_SalesAsDelivery .
+
+    narr:Claim_ProfessionalTierDifferentiator a narr:Claim ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "The primary differentiator of the Professional tier is consultant-led knowledge extraction — Scarlet doing the extraction for the client instead of the client doing it themselves. On-prem, unlimited seats, dedicated support, and custom ontology are secondary features. SOW covers: interviews with 2-3 senior people, doc ingestion, worldview build, team training." ;
+      narr:aboutNode narr:Narrative_ThreeTierPricingModel ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:PositioningThesis .
+
+    narr:Claim_OnPremNotDefiningFeature a narr:Claim ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "On-prem deployment is NOT what defines the Professional tier. It is a requirements-driven add-on available at that tier. The primary differentiator is consultant-led knowledge extraction. On-prem is triggered by compliance requirements (HIPAA, GDPR), not by org size." ;
+      narr:aboutNode narr:Narrative_OnPremAsRequirementsDriven ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:CompliancePosture .
+
+    narr:Claim_10xGapIntentional a narr:Claim ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "The 10x price gap between Team ([amount]/mo) and Professional ([amount]/mo) is intentional. It communicates that Professional is categorically different — not just 'more team.' The gap signals that Professional includes a human doing work for you." ;
+      narr:aboutNode narr:Narrative_10xGapIsFeature ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PackagingPricing .
+
+    narr:Claim_BYOKAzureGap a narr:Claim ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Current BYOK only accepts OpenRouter API keys. Enterprise customers with Azure/Copilot enterprise agreements cannot use BYOK. For compliance-driven customers who need all LLM processing under their enterprise data agreement, on-prem is the answer — not BYOK. This gap routes compliance buyers to the Professional tier." ;
+      narr:aboutNode narr:Narrative_BYOKOpenRouterLimit ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_OnPremAsRequirementsDriven .
+
+    narr:Claim_ExtractionScopeOrgWorldview a narr:Claim ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Professional tier SOW engagements build organizational worldview, not a domain index. Domain implies siloing; worldview implies integration. Scope: 2-3 senior people and what they're working on right now. The worldview builds out from there. Each engagement adds depth." ;
+      narr:aboutNode narr:Narrative_ExtractionScopeOrgWorldview ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:SolutionArchetypes .
+
+    narr:Claim_EnterpriseCustomerRavenValidation a narr:Claim ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "the enterprise customer (the customer's chief architect, 150-person enterprise consultancy) and a collaborator (an early prospect, 2-person practice) both arrive at the Professional tier — the enterprise customer for value (full extraction of the customer's chief architect's brain for QA/interns/CEO) AND requirements (GDPR, European employees, enterprise data agreements); a collaborator for value (train new staff, communicate value to referring physicians) AND requirements (HIPAA, patient-adjacent data). Same tier, same price, completely different org sizes. This validates the tier definition as service-level, not org-size." ;
+      narr:aboutNode narr:Narrative_ProfessionalOverEnterprise ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PositioningThesis .
+
+    # ── Observations with selectors ─────────────────────────────────────────
+
+    narr:Obs_UpgradePathQuote a narr:Observation ;
+      skos:broader narr:PackagingPricing ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Scarlet's framing of the two upgrade path types — value-driven and requirements-driven — as the architectural principle baked into the tier design." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 418 ;
+        oa:end 614
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I guess I've seen or I think about an upgrade path as either a value-driven upgrade path or a requirements-driven upgrade path and I want to have both baked into these." ;
+        oa:prefix "**Scarlet:** \"" ;
+        oa:suffix "\""
+      ] .
+
+    narr:Obs_TeamTierOnboardingQuote a narr:Observation ;
+      skos:broader narr:PackagingEntitlement ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Scarlet's canonical statement that the Team tier sales call is simultaneously the onboarding and the first knowledge extraction — no separate setup deliverable." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1312 ;
+        oa:end 1502
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The consulting or knowledge extraction in team is just the single sales call where you do the knowledge extraction in the sales call and that's onboarding and that makes the sale and that's it." ;
+        oa:prefix "**Scarlet:** \"" ;
+        oa:suffix "\""
+      ] .
+
+    narr:Obs_ProfessionalNamingQuote a narr:Observation ;
+      skos:broader narr:NamingConventions ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Scarlet's rationale for choosing 'Professional' over 'Enterprise' — the tier is defined by what you get, not who you are." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2148 ;
+        oa:end 2320
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I want to disambiguate that because it's not necessarily just for enterprise; it's for people that need this category of service and so we're trying to define what this category is." ;
+        oa:prefix "**Scarlet:** \"" ;
+        oa:suffix "\""
+      ] .
+
+    narr:Obs_OnPremHIPAAQuote a narr:Observation ;
+      skos:broader narr:CompliancePosture ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Scarlet's framing of the on-prem upgrade path from Team to Professional via HIPAA compliance — the canonical requirements-driven upgrade example." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3218 ;
+        oa:end 3420
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "How is this analogous to say an engineering manager at the customer, Karen, and a collaborator, where the upgrade path from team to the [amount]/month plan with setup happens because of needing HIPAA compliance and thus on-prem deployment?" ;
+        oa:prefix "**Scarlet:** \"" ;
+        oa:suffix "\""
+      ] .
+
+    narr:Obs_ExtractionScopeQuote a narr:Observation ;
+      skos:broader narr:SolutionArchetypes ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Scarlet's correction of 'domain' framing — the Professional tier builds organizational worldview, not a siloed domain index." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4012 ;
+        oa:end 4188
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I don't think it's quite right that we do it for one domain. I think we're doing it for — it needs to be bounded but domain implies sort of siloing and this is like a whole organizational worldview." ;
+        oa:prefix "**Scarlet:** \"" ;
+        oa:suffix "\""
+      ] .
+
+    narr:Obs_DemoProspectCommissionGapQuote a narr:Observation ;
+      skos:broader narr:PackagingPricing ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Scarlet's framing of the value-driven upgrade from Team to Professional — consultant-led extraction as the pull factor." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2780 ;
+        oa:end 2980
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Either you upgrade from individual to team because there's features you need and are excited about... from the team to upgrade, it would be the full knowledge extraction and me making it super valuable for you without you having to do it yourself." ;
+        oa:prefix "**Scarlet:** \"" ;
+        oa:suffix "\""
+      ] .
+
+    # ── Style Observations ──────────────────────────────────────────────────
+
+    narr:StyleObs_ValueRequirementsAntithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Consistent antithesis pattern: 'value-driven' vs 'requirements-driven', 'I want more' vs 'I need compliance', 'who you are' vs 'what you get'. Scarlet uses paired opposites to define tier architecture and naming rationale throughout." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PricingTierEvolution_20260317 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 418 ;
+          oa:end 614
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "a value-driven upgrade path or a requirements-driven upgrade path" ;
+          oa:prefix "I think about an upgrade path as either " ;
+          oa:suffix " and I want to have both baked into these"
+        ]
+      ] .
+
+    narr:StyleObs_SalesCallIsOnboardingCadence a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Scarlet uses a staccato equational cadence — 'X = Y = Z' — to collapse three concepts into one: 'the sales call IS real work — it produces the first memory, seeds the worldview, and demonstrates value.' Short declarative sentences with IS as the rhetorical hinge." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PricingTierEvolution_20260317 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1520 ;
+          oa:end 1680
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the sales call IS real work — it produces the first memory, seeds the worldview, and demonstrates value" ;
+          oa:prefix "The insight: " ;
+          oa:suffix ". That's the onboarding."
+        ]
+      ] .
+
+    narr:StyleObs_TierNamingJargonPolicy a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_PricingTierEvolution_20260317 ;
+      skos:note "Deliberate jargon policy: 'Professional' chosen over 'Enterprise' to avoid org-size connotations. 'SOW' (Statement of Work) used without definition, implying internal audience. 'BYOK', 'ZDR', 'MSA' used as known acronyms. Tier names are plain English nouns (Individual, Team, Professional) — self-explanatory without a key." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PricingTierEvolution_20260317 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2148 ;
+          oa:end 2320
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "'Enterprise' implies large company; 'Professional' implies a level of service." ;
+          oa:prefix "\"Professional\" was chosen because the tier is defined by what you get, not who you are. " ;
+          oa:suffix ""
+        ]
+      ] .
+
+  }
+}

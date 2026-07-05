@@ -1,0 +1,35 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Metaphor> {
+  <https://aswritten.ai/narrative#Digest_ns__Metaphor> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Metaphor> ;
+    narr:childCount "13"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the document's figurative language across two registers. Empowerment/control metaphors dominate: narrative as [the deepest lever from CEO to dev and back](narr:Observation_DeepestLever), as [backdoor, steering wheel, and fault lines](narr:StyleObs_Metaphor_Steering), as [steering vector](narr:StyleObs_Metaphor_Vector), and as [competitive moat](narr:StyleObs_MoatMetaphor). A biological strand runs parallel — [organization as AI organism with worldview as DNA, artifacts as phenotype](narr:StyleObs_1) and the [living organizational worldview](narr:StyleObs_metaphor_living). Against these sit threat/failure metaphors naming what goes wrong: [context squishing](narr:Observation_ContextSquishing) for black-box summarization, the [cultivation trap](narr:Observation_CultivationTrap) for lock-in, and [the existential crisis of modern business](narr:Observation_ExistentialCrisis). Structural and engineering figures round it out: [Three Pillars](narr:StyleObs_Metaphor_Pillars) framing use cases and [organizational change as code](narr:StyleObs_OrgChangeAsCode). Several children here are stylistic observations — [triadic lists and 'at the cursor'](narr:StyleObs_10) and [colloquial 'hand waving' for vagueness](narr:StyleObs_HandWaving) — riding under the Metaphor label without being metaphors proper.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_ContextSquishing> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_CultivationTrap> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_DeepestLever> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_ExistentialCrisis> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_10> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_HandWaving> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Pillars> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Steering> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Vector> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_MoatMetaphor> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_OrgChangeAsCode> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_metaphor_living> ;
+    narr:keyPhrase [ narr:text "the deepest lever we've ever had that reaches from CEO strategist every single, you know, strategic sales customer service role all the way into the core of the development process and back" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_DeepestLever> ] ;
+    narr:keyPhrase [ narr:text "narrative is not only the backdoor to the models, it's the steering wheel, it's the fault lines" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Steering> ] ;
+    narr:keyPhrase [ narr:text "the treatment of an organization as an AI organism, right? Whose DNA, if you will, is expressed" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_1> ] ;
+    narr:keyPhrase [ narr:text "This is the existential crisis of modern business" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_ExistentialCrisis> ] ;
+    narr:keyPhrase [ narr:text "cultivation trap" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_CultivationTrap> ] ;
+    narr:keyPhrase [ narr:text "context squishing" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_ContextSquishing> ] ;
+    narr:keyPhrase [ narr:text "approach are our core competitive moat" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_MoatMetaphor> ] ;
+    narr:variation [ narr:text "Two opposed framings coexist: control/empowerment (lever, steering wheel, moat, vector) vs threat/failure (cultivation trap, context squishing, existential crisis, fault lines)." ; narr:over <https://aswritten.ai/ns/narrative#Observation_DeepestLever> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_MoatMetaphor> ; narr:over <https://aswritten.ai/ns/narrative#Observation_CultivationTrap> ; narr:over <https://aswritten.ai/ns/narrative#Observation_ExistentialCrisis> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Steering> ] ;
+    narr:variation [ narr:text "Several children are not metaphors at all but orthography/rhetoric observations (lowercase brand, triadic lists, 'at the cursor', 'hand waving') filed under the Metaphor hub." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_10> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_HandWaving> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_1> ] ;
+    narr:variation [ narr:text "The biological/organism strand (organism, DNA, phenotype, living worldview) is a distinct sustained conceit, separable from the one-off business and engineering figures." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_metaphor_living> ] ;
+    narr:variation [ narr:text "'Three Pillars' and 'organizational change as code' import architectural/engineering framings rather than the agentive 'narrative steers' framings elsewhere." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Metaphor_Pillars> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_OrgChangeAsCode> ] ;
+    narr:writer "claude (subscription)" .
+}

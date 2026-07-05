@@ -1,0 +1,137 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260416T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-16T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-16-perspective-on-spec.md" ;
+    narr:originRef "main@abc1234" ;
+    prov:generated narr:Sample_PerspectiveOnSpec_20260416, narr:Narrative_PerspectiveOnSpec, narr:Claim_DemoIsTheSale, narr:Claim_ExistingContentScales, narr:Claim_MediumIsTheMessage, narr:Claim_MisrepresentationRisk, narr:Actor_TonySon, narr:StyleMetrics_PerspectiveOnSpec .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260416T120000Z {
+    # Sample
+    narr:Sample_PerspectiveOnSpec_20260416 a narr:Sample ;
+      dct:title "Perspective-on-Spec as AI-Mediated Ad Spend" ;
+      dct:created "2026-04-16"^^xsd:date ;
+      narr:inputLength 6850 .
+
+    # Narratives
+    narr:Narrative_PerspectiveOnSpec a narr:Narrative ;
+      dct:source narr:Sample_PerspectiveOnSpec_20260416 ;
+      skos:broader narr:StrategyOverview ;
+      narr:theme "Perspective-on-spec as AI-mediated ad spend" ;
+      skos:note "Instead of placing ads, aswritten invests production cost to create a perspective of the prospect's own organization from public content, delivering it via their own advertised channels." .
+
+    # Claims
+    narr:Claim_DemoIsTheSale a narr:Claim ;
+      dct:source narr:Sample_PerspectiveOnSpec_20260416 ;
+      narr:aboutNode narr:Narrative_PerspectiveOnSpec ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      skos:note "The demo IS the sale: the prospect receives a perspective-grounded agent that proves it understands their business by navigating their own funnel and hitting their contact channel." .
+
+    narr:Claim_ExistingContentScales a narr:Claim ;
+      dct:source narr:Sample_PerspectiveOnSpec_20260416 ;
+      narr:aboutNode narr:Narrative_PerspectiveOnSpec ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      skos:note "Interviews don't scale, but existing public content (podcasts, blogs, YouTube) does. Perspectives can be seeded from this content to create compelling demos without prospect time investment." .
+
+    narr:Claim_MediumIsTheMessage a narr:Claim ;
+      dct:source narr:Sample_PerspectiveOnSpec_20260416 ;
+      narr:aboutNode narr:Narrative_PerspectiveOnSpec ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      skos:note "The compelling part of the product is the MEDIUM (the transparent agent that can go back and forth), not necessarily the perspective's absolute fidelity." .
+
+    narr:Claim_MisrepresentationRisk a narr:Claim ;
+      dct:source narr:Sample_PerspectiveOnSpec_20260416 ;
+      narr:aboutNode narr:RiskGuardrails ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      skos:note "The '80/20' danger: prospects remember the 20% the AI gets wrong. Mitigation: transparency from moment one and using escalation as a humility signal." .
+
+    # Actors
+    narr:Actor_TonySon a narr:Actor ;
+      skos:prefLabel "Tony's Son" ;
+      skos:note "Seed for the spec idea; built websites on spec for local businesses." .
+
+    # Style Observations
+    narr:StyleObs_Spec_1 a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_PerspectiveOnSpec_20260416 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveOnSpec_20260416 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 340 ; oa:end 510 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Instead of placing ads it's paying to develop perspectives, paying to develop a valuable asset, and then reaching out to someone to demonstrate the asset" ]
+      ] .
+
+    narr:StyleObs_Spec_2 a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_PerspectiveOnSpec_20260416 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveOnSpec_20260416 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4100 ; oa:end 4150 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "creating a much wider net by defining this profile" ]
+      ] .
+
+    narr:StyleObs_Spec_3 a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_PerspectiveOnSpec_20260416 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PerspectiveOnSpec_20260416 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3300 ; oa:end 3450 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "They are able to prove that they've known all this stuff about the organization, that they're able to navigate a goal" ]
+      ] .
+
+    # Style Metrics
+    narr:StyleMetrics_PerspectiveOnSpec a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_PerspectiveOnSpec_20260416 ;
+      narr:AverageSentenceLength 19 ;
+      narr:ActiveVoiceRatio 0.82 ;
+      narr:JargonDensity 0.09 ;
+      skos:note "Reflective strategic memo with heavy use of blockquotes. High active voice in editorial framing." .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_PodcastInterviewSalesMotion skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260416T120000Z {
+    narr:Narrative_PodcastInterviewSalesMotion skos:note "The interview-as-sales-motion was the prior framing; perspective-on-spec offers an alternative where the prospect does not need to do the interview because public content substitutes for it." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_PodcastInterviewSalesMotion skos:note ?oldNote .
+  }
+} ;
+
+DELETE {
+  GRAPH ?g {
+    narr:Claim_SalesIsDelivery skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260416T120000Z {
+    narr:Claim_SalesIsDelivery skos:note "The demo-is-delivery pattern holds, but origination shifts from warm intro to cold outbound with a pre-built perspective asset." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_SalesIsDelivery skos:note ?oldNote .
+  }
+} 

@@ -1,0 +1,96 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260705T125829Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-05T12:58:29Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-07-05-1-battery-gated-cutover.md" ;
+    narr:originRef "memory/scarlet-aswritten-ai" ;
+    dct:title "Battery-gated cutover: July 4 2026 release narrative" ;
+    prov:generated
+      
+      
+      narr:Narrative_VerifyAtUserSeam,
+      narr:Narrative_PipelineSelfDocumentation_20260704,
+      narr:Claim_ThreeFixVerifyMergeCycles,
+      narr:StyleObs_CutoverOperatingModelSentence,
+      narr:StyleObs_SelfDocumentingRelease .
+} ;
+
+# ── New entities ─────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260705T125829Z {
+
+    # Verify at the user seam — new narrative extending VerifyContentNotShape
+    narr:Narrative_VerifyAtUserSeam a narr:Narrative ;
+      skos:broader narr:QualityReviewGates ;
+
+      narr:theme "Verify at the seam the user touches, not one layer above it" ;
+      skos:note "Four separate 'verified' claims on the July 4 2026 release day proved one hop short of the user-visible artifact: the response fields, the committed bytes, the empty-input branch, the rendered page. The discipline that already governed assertions — verify content, not shape — extends to the verification target: verify at the seam the user touches. This is a codified lesson now in the engineering guide. Extends Narrative_VerifyContentNotShape." ;
+      .
+
+    # Pipeline self-documentation narrative
+    narr:Narrative_PipelineSelfDocumentation_20260704 a narr:Narrative ;
+      skos:broader narr:Proof ;
+
+      narr:theme "The product documents itself: cutover decision saved through new production pipeline, citation offsets slice-exact on first try" ;
+      skos:note "The July 4 2026 release closed with the product demonstrating itself: the cutover decision was saved as a memory through the new production pipeline, its citation offsets landing slice-exact on the first try, and its digest regeneration narrating the release into the perspective's own map. This is the strongest form of product proof — the product's own release is the case study, processed by the product itself." .
+
+    # Claim: three fix-verify-merge cycles ran post-cutover
+    narr:Claim_ThreeFixVerifyMergeCycles a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+      skos:note "Three fix-verify-merge cycles ran on the night of July 4 2026, each about thirty minutes. Bugs caught: (1) response-surface clobber, (2) corrupted digest commits (both caught by heartbeat between morning green and evening merge), (3) crash locking out budget-exhausted accounts (exposed by production's first budget-limit event). All three fixed under Scarlet's post-cutover protocol." .
+
+    # Style observation 2: the operating-model sentence as a standalone declarative
+    narr:StyleObs_CutoverOperatingModelSentence a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+
+      rdf:value true ;
+      skos:note "The post-cutover operating model is delivered as a single dense sentence followed by a three-part enumeration ('dev-first, isolated-but-thorough verification over full-suite waits, small follow-up merges'). The sentence is the policy; the enumeration is the implementation. Characteristic of the document's register: compress the principle, enumerate the mechanics." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2449 ; oa:end 2540
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "dev-first, isolated-but-thorough verification over full-suite waits, small follow-up merges" ;
+          oa:prefix "g model for post-release fixes: " ;
+          oa:suffix ". Three fix-verify-merge cycles "
+        ]
+      ] .
+
+    # Style observation 3: self-documentation as rhetorical close
+    narr:StyleObs_SelfDocumentingRelease a narr:StyleObservation ;
+      skos:broader narr:RhetoricalDevices ;
+
+      rdf:value true ;
+      skos:note "The document closes with the product narrating its own release into the perspective's map — a recursive rhetorical move where the artifact being described is also the instrument of description. 'The release closed with the product documenting itself' is both a factual claim and a structural demonstration of the product thesis. Mirrors the 'This is incredible. I literally could not have written this better myself — and that's the product working!' pattern from Obs_ScarletIncredibleQuote." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3076 ; oa:end 3213
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the cutover decision was saved as a memory through the new production pipeline, its citation offsets landing slice-exact on the first try" ;
+          oa:prefix "the product documenting itself: " ;
+          oa:suffix ", and its digest regeneration na"
+        ]
+      ] .
+  }
+}

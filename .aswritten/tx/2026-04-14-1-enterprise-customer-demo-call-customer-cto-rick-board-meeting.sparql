@@ -1,0 +1,85 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260414T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-14T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260413-the enterprise customer-demo-call-the customer's CTO-rick" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      narr:Obs_CustomerCTOInformationCommodity,
+      narr:Obs_CustomerCTOAISlopQuote .
+} ;
+
+# ── INSERT: new entities ─────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260414T120000Z {
+
+    narr:Obs_CustomerCTOInformationCommodity a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "the customer's CTO's articulation of the core value of perspective and collaboration over information and code — independently arriving at aswritten's central thesis." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1430 ;
+          oa:end 1520
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Information is a commodity. Code is free. But the power of perspective and collaboration — that's always where the value was." ;
+          oa:prefix "> \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_CustomerCTOAISlopQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "the customer's CTO's verbatim articulation of the AI slop problem — the economic buyer independently naming the exact problem aswritten solves." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4820 ;
+          oa:end 4960
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "People who don't have a well grounded perspective on their own... the tools are just going to create AI slop. I'm just making it easier for someone to do a shitty job." ;
+          oa:prefix "> \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+  }
+}

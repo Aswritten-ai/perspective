@@ -1,0 +1,470 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260702T145920Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T14:59:20Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-02-1-discovery-consultant-agent-interface-and-steering" ;
+    narr:originRef "dev" ;
+    dct:title "a consultant who ran enterprise discovery engagements for fifteen years Second Call Companion — Agent/Human Boundary, Per-Task Permissions, Cold Sub-Agent Test, Perspective-as-Steering" ;
+    prov:generated
+      narr:Sample_DiscoveryConsultantCompanion_20260630,
+      narr:Narrative_AgentComputerInterface,
+      narr:Narrative_PerTaskScopedPermissions,
+      narr:Narrative_ColdSubAgentTest,
+      narr:Narrative_AgentBoundsAndEscalation,
+      narr:Narrative_PerspectiveAsAgentSteering,
+      narr:Narrative_FortuitousTimingPair,
+      narr:Narrative_HallucinationReframe,
+      narr:Claim_AgentHumanBoundaryGray,
+      narr:Claim_PerTaskOAuthToken,
+      narr:Claim_ColdSubAgentFalsifiableTest,
+      narr:Claim_BreadcrumbsAsTestCriteria,
+      narr:Claim_AgentSelfKnowledgeRDFStructural,
+      narr:Claim_PerspectiveInstallsBehaviorNotJustFacts,
+      narr:Claim_ConversationalSteeringAlternativeToRAG,
+      narr:Claim_TranscriptNowKnownConstant,
+      narr:Obs_DiscoveryConsultantAgentBoundaryQuote,
+      narr:Obs_ScarletVouchPermissionsQuote,
+      narr:Obs_DiscoveryConsultantOAuthScopeQuote,
+      narr:Obs_DiscoveryConsultantOnlyTestQuote,
+      narr:Obs_DiscoveryConsultantBreadcrumbsQuote,
+      narr:Obs_DiscoveryConsultantFalsifiableQuote,
+      narr:Obs_ScarletAgentBoundsQuote,
+      narr:Obs_ScarletPerspectiveSteeringQuote1,
+      narr:Obs_ScarletPerspectiveSteeringQuote2,
+      narr:Obs_ScarletRAGCritiqueQuote,
+      narr:Obs_ScarletHallucinationReframeQuote,
+      narr:Obs_DiscoveryConsultantFortuitousTimingQuote,
+      narr:StyleObs_DiscoveryConsultantBooleanCadence,
+      narr:StyleObs_ScarletConversationalWhy,
+      narr:StyleObs_CompanionAnalogy,
+      narr:StyleMetrics_DiscoveryConsultantCompanion .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260702T145920Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────
+    narr:Sample_DiscoveryConsultantCompanion_20260630 a narr:Sample ;
+      dct:title "a consultant who ran enterprise discovery engagements for fifteen years Second Call Companion — Agent/Human Boundary, Per-Task Permissions, Cold Sub-Agent Test, Perspective-as-Steering" ;
+      dct:created "2026-06-30"^^xsd:date ;
+      narr:inputLength 9768 ;
+      dct:description "Companion memory to Sample_DiscoveryConsultant_20260630. Covers the first ~20 minutes of the 2026-06-30 call: a consultant who ran enterprise discovery engagements for fifteen years's agent-computer-interface framing, the agent/human boundary problem, per-task OAuth-scope permissions, the cold sub-agent test as the only test that counts, Scarlet's extension into agent self-knowledge and escalation, perspective-as-agent-steering (behavior and values installed through conversation rather than RAG), the hallucination reframe, and a consultant who ran enterprise discovery engagements for fifteen years's fortuitous-timing analogy." ;
+      skos:related narr:Sample_DiscoveryConsultant_20260630 .
+
+    # ── NARRATIVES ───────────────────────────────────────────────────
+
+    narr:Narrative_AgentComputerInterface a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:theme "Agent Computer Interface: the agent-facing analog of human-computer interface" ;
+      skos:broader narr:TechnologiesSocialSystems ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years introduced the 'agent computer interface' as the agent-facing analog of human-computer interface. His live project — contract lifecycle management rebuilt in RDF as 'a sea of clauses' where agents compose clauses and human solicitors review finished contracts — instantiates the ACI problem: where exactly is the boundary between what agents should be allowed to do and what humans should do? That boundary is gray. This framing runs through the entire call as the organizing problem." .
+
+    narr:Narrative_PerTaskScopedPermissions a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:theme "Per-task scoped permissions: OAuth scope narrowed to single-use grants for agentic operations" ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      skos:note "Scarlet connected the agent/human boundary problem to years of prior work at Vouch: delegatable, provable, granular permissions built for humans transacting in physical/technical systems, now extendable to agents. a consultant who ran enterprise discovery engagements for fifteen years mapped this onto OAuth2 scope, with the agentic shift toward single-use grants rather than broad keys — 'it might be to read a contract, or to increment a salary — but it's for one task and one task only kind of token.' This extends the Vouch identity-for-agents thread (Narrative_VouchIdentityForAgents) with a concrete OAuth-scope mechanism." ;
+      skos:related narr:Narrative_VouchIdentityForAgents .
+
+    narr:Narrative_ColdSubAgentTest a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:theme "Cold sub-agent test: spawn a zero-knowledge sub-agent with only a goal and URL; the only test that counts" ;
+      skos:broader narr:Calibration ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's central excitement: a testing method grounded in his agent-ready-website work. Spawn a brand-new, zero-knowledge sub-agent, give it only a goal and a URL, and see whether it can discover everything from first principles to complete the task. 'Is it possible for an agent, given a goal and given a website, to discover everything it needs from first principles to do that thing? Which is really — if you think of what a test is — is it possible for a user to achieve this goal with our software? That's the only test that counts.' The test is falsifiable (Boolean: the agent can either open the car or it can't), re-runnable, and zero-state. It is a candidate eval for aswritten's own digest navigability." .
+
+    narr:Narrative_AgentBoundsAndEscalation a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:theme "Agent self-knowledge: defining the bounds of task, intent, and world limits so an agent knows when it cannot finish and must escalate" ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      skos:note "Scarlet pushed a consultant who ran enterprise discovery engagements for fifteen years's cold-sub-agent test past execution into self-knowledge and escalation: 'can we define not only the knowledge but the bounds of task, and also understanding and intent and goal and interaction, the world limits of an agent? So that it can execute the task — but also so it can know when it cannot finish the task, and when it needs to escalate.' She demonstrated this live by asking the system what was missing from its own understanding — gap-awareness ('is this contained within the graph? the answer is binary') as the structural mechanism for an agent that knows the bounds of its own worldview. This directly answers a consultant who ran enterprise discovery engagements for fifteen years's opening interest in the agent/human boundary: the graph is where you draw it." ;
+      skos:related narr:Observation_TrustContractPrincipledEscalation .
+
+    narr:Narrative_PerspectiveAsAgentSteering a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:theme "Perspective as agent steering: install behavior, values, and self-understanding through accumulated human-agent conversation rather than RAG" ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      skos:note "The most important product insight in this half of the call. Scarlet articulated using perspectives not just to supply knowledge but to steer an agent's behavior, values, and self-understanding — assembled from accumulated human-agent conversation. 'If you create a perspective from a bunch of conversations about the way agents should approach search, then extract all of those and deploy an agent that reads from that perspective — it will now do that.' The critique of the status quo: 'we're either constantly re-explaining ourselves, or we're creating these really highly bastardized, summarized, never-current product or engineering architecture documents and saying please read this — which is really just RAG, and you're missing the conversational why behind it.' This is a distinct product claim from Narrative_UseCase2AgenticSteering: not just memory for an agentic loop, but perspective as the mechanism for installing behavioral norms through conversation." ;
+      skos:related narr:Narrative_UseCase2AgenticSteering, narr:Narrative_AswrittenIsMemorySubstrate, narr:Narrative_SteeringDecisionProcess .
+
+    narr:Narrative_FortuitousTimingPair a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:theme "Fortuitous timing: meetings shifted to calls (accelerated by lockdown), making the transcript a known constant — the precondition for aswritten" ;
+      skos:broader narr:TimingThesis ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's frame for why aswritten's moment is now: 'Just as they discovered the internal combustion engine, they also discovered a whole bunch of black stuff under the ground called oil — a coincidental, fortuitous, contemporaneous pair of events.' Applied to aswritten: meetings shifted from rooms to calls (accelerated by lockdown), so the transcript is now a known constant. a consultant who ran enterprise discovery engagements for fifteen years: 'Exactly. How lucky for you.' Scarlet: 'Well — intentional. But yes.' a consultant who ran enterprise discovery engagements for fifteen years's point: once every conversation can be recorded, 'you can put it through aswritten and create a graph and find where people are sharing ideas.' This is a new timing-thesis articulation distinct from the two-year-window and scaling-gap framings already in the graph." .
+
+    narr:Narrative_HallucinationReframe a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:theme "Hallucination reframe: long-term aswritten use makes hallucination a foreign concept — the LLM becomes a language tool to navigate a graph of provenance, not a generator" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "Scarlet on how long-term use of aswritten changes the relationship to the LLM: 'I've been using LLMs inside this tool for so long now that I feel a little out of touch — you mean it hallucinates? I don't know what you're talking about. It's no longer generation; it's using an LLM as a language tool to navigate the graph of provenance.' The reframe: instead of asking for generation, you use Claude to ask about the difference between what Bob and Anna think and how it's changed over time. This is a new articulation of the anti-hallucination value proposition, distinct from the existing Claim_HallucinationProblem framing." ;
+      skos:related narr:Claim_HallucinationProblem .
+
+    # ── CLAIMS ───────────────────────────────────────────────────────
+
+    narr:Claim_AgentHumanBoundaryGray a narr:Claim ;
+      narr:aboutNode narr:Narrative_AgentComputerInterface ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years: the boundary between what agents should be allowed to do and what humans should do is not a clean line — it is gray. This is the organizing problem of the agent computer interface. Affirmed by Scarlet as the thread that ran through the whole call." .
+
+    narr:Claim_PerTaskOAuthToken a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerTaskScopedPermissions ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:supports narr:Narrative_VouchIdentityForAgents ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's formulation: in agentic discussions, the shift is from broad-key OAuth grants to single-task tokens — 'it might be to read a contract, or to increment a salary — but it's for one task and one task only kind of token.' This is the concrete OAuth-scope mechanism that operationalizes the Vouch granular-permissions thesis for agents." .
+
+    narr:Claim_ColdSubAgentFalsifiableTest a narr:Claim ;
+      narr:aboutNode narr:Narrative_ColdSubAgentTest ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "The cold sub-agent test is falsifiable and Boolean: the agent can either complete the goal from first principles or it cannot. 'It's like in Vouch — can the user open their car? That's the system. That's the only test that counts.' All unit tests, system tests, and integration tests are subordinate to this single criterion. The test is re-runnable and zero-state — you tear down the entire thing and see if you left enough breadcrumbs." .
+
+    narr:Claim_BreadcrumbsAsTestCriteria a narr:Claim ;
+      narr:aboutNode narr:Narrative_ColdSubAgentTest ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "The cold sub-agent test operationalizes a specific design criterion: 'Have I left enough breadcrumbs in the system for it to achieve this goal?' If the agent fails, you go create more breadcrumbs. This is a candidate eval criterion for aswritten's own digest navigability — does a cold agent, given only a goal and the perspective URL, find what it needs?" .
+
+    narr:Claim_AgentSelfKnowledgeRDFStructural a narr:Claim ;
+      narr:aboutNode narr:Narrative_AgentBoundsAndEscalation ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "Scarlet's claim: gap-awareness — knowing what is NOT in the graph — is structurally achievable with RDF graphs in a way that is extremely hard to do otherwise. 'Is this contained within the graph? The answer is binary.' This structural property is what enables an agent to know the bounds of its own worldview and escalate appropriately. It directly answers a consultant who ran enterprise discovery engagements for fifteen years's opening interest in the agent/human boundary: the graph is where you draw it." .
+
+    narr:Claim_PerspectiveInstallsBehaviorNotJustFacts a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveAsAgentSteering ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:supports narr:Narrative_UseCase2AgenticSteering ;
+      skos:note "Perspectives install behavior, values, and self-understanding into agents — not just factual knowledge. An agent that reads from a perspective built from conversations about how to approach search will approach search that way. This is a distinct and stronger claim than 'perspectives provide context': they constitute the agent's behavioral norms." .
+
+    narr:Claim_ConversationalSteeringAlternativeToRAG a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerspectiveAsAgentSteering ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:challenges narr:Narrative_PerspectiveVsInformation ;
+      skos:note "Conversational steering through accumulated human-agent conversation is an alternative model to RAG for installing agent behavior. The critique: RAG-based architecture documents are 'really highly bastardized, summarized, never-current' and miss 'the conversational why behind it.' A statement that an LLM should navigate via link relations doesn't mean anything in isolation; a conversation about why that's valuable gives an agent the source material to actually do and think that way." .
+
+    narr:Claim_TranscriptNowKnownConstant a narr:Claim ;
+      narr:aboutNode narr:Narrative_FortuitousTimingPair ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:supports narr:TimingThesis ;
+      skos:note "Meetings shifted from rooms to calls (accelerated by lockdown), making the transcript a known constant — the precondition for aswritten's model. Scarlet: 'the transcript is now a known constant.' a consultant who ran enterprise discovery engagements for fifteen years: 'Exactly. How lucky for you.' Scarlet: 'Well — intentional. But yes.' This is the fortuitous precondition that makes aswritten's timing thesis concrete." .
+
+    # ── OBSERVATIONS ─────────────────────────────────────────────────
+
+    narr:Obs_DiscoveryConsultantAgentBoundaryQuote a narr:Observation ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's articulation of the agent/human boundary problem — the organizing thread of the call." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1470 ; oa:end 1665
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's this kind of perfect example of where you're not quite sure where the boundary exists between what agents should be allowed to do and what humans should really do. And that boundary is gray." ;
+          oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_ScarletVouchPermissionsQuote a narr:Observation ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "Scarlet connecting the agent/human boundary to Vouch's granular permissions work — the founding evidence for Narrative_PerTaskScopedPermissions." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1962 ; oa:end 2139
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "That's something Tony and I talked about for years — the next phase of Vouch was granular permissions for agents, the same way we had delegatable granular permissions for humans" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " to access, use, transact"
+        ]
+      ] .
+
+    narr:Obs_DiscoveryConsultantOAuthScopeQuote a narr:Observation ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's OAuth-scope formulation of per-task agentic permissions." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2678 ; oa:end 2728
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "it's for one task and one task only kind of token." ;
+          oa:prefix "but it might be to read a contract, or to increment a salary — " ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_DiscoveryConsultantOnlyTestQuote a narr:Observation ;
+      skos:broader narr:Calibration ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's canonical articulation of the cold sub-agent test as the only test that counts." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3503 ; oa:end 3687
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "That's the only test that counts. You can have all the unit tests, all the system tests, all the integration tests, but if the user can't do the thing they want to do, then you failed." ;
+          oa:prefix "is it possible for a user to achieve this goal with our software? " ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_DiscoveryConsultantBreadcrumbsQuote a narr:Observation ;
+      skos:broader narr:Calibration ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's articulation of the breadcrumbs criterion — the re-runnable, zero-state property of the cold sub-agent test." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4190 ; oa:end 4299
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Have I left enough breadcrumbs in the system for it to achieve this goal? You can run the test over and over." ;
+          oa:prefix "you've torn down the entire thing. " ;
+          oa:suffix " And if you don't provide enough clues"
+        ]
+      ] .
+
+    narr:Obs_DiscoveryConsultantFalsifiableQuote a narr:Observation ;
+      skos:broader narr:Calibration ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's falsifiability framing — the Boolean property of the cold sub-agent test." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3894 ; oa:end 3977
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's falsifiable. The agent can either open the car or it can't. It's very Boolean." ;
+          oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_ScarletAgentBoundsQuote a narr:Observation ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "Scarlet's articulation of agent self-knowledge and escalation — the extension of a consultant who ran enterprise discovery engagements for fifteen years's cold sub-agent test into bounds-awareness." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4874 ; oa:end 5024
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "can we define not only the knowledge but the bounds of task, and also understanding and intent and goal and interaction, the world limits of an agent?" ;
+          oa:prefix "Scarlet: \"This concept is really important to me — " ;
+          oa:suffix " So that it can execute the task"
+        ]
+      ] .
+
+    narr:Obs_ScarletPerspectiveSteeringQuote1 a narr:Observation ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "Scarlet's first articulation of perspective-as-agent-steering — the mechanism by which accumulated conversation installs behavioral norms." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6202 ; oa:end 6406
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If you create a perspective from a bunch of conversations about the way agents should approach search, then extract all of those and deploy an agent that reads from that perspective — it will now do that." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " Its understanding of itself"
+        ]
+      ] .
+
+    narr:Obs_ScarletPerspectiveSteeringQuote2 a narr:Observation ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "Scarlet's second articulation — the alternative model framing, steering through human and human-agent conversation." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6574 ; oa:end 6725
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's a really interesting alternative model of how to steer agentic behavior — and to steer it through human conversation and human-agent conversation." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " Our already-existing Claude sessions"
+        ]
+      ] .
+
+    narr:Obs_ScarletRAGCritiqueQuote a narr:Observation ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "Scarlet's critique of the status quo — RAG-based architecture documents miss the conversational why. The founding evidence for Claim_ConversationalSteeringAlternativeToRAG." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 7257 ; oa:end 7335
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "which is really just RAG, and you're missing the conversational why behind it." ;
+          oa:prefix "never-current product or engineering architecture documents and saying 'please read this' — " ;
+          oa:suffix " A statement that an LLM"
+        ]
+      ] .
+
+    narr:Obs_ScarletHallucinationReframeQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "Scarlet's hallucination reframe — the founding evidence for Narrative_HallucinationReframe." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 7877 ; oa:end 7977
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's no longer generation; it's using an LLM as a language tool to navigate the graph of provenance." ;
+          oa:prefix "I don't know what you're talking about. " ;
+          oa:suffix " You can use Claude to ask"
+        ]
+      ] .
+
+    narr:Obs_DiscoveryConsultantFortuitousTimingQuote a narr:Observation ;
+      skos:broader narr:TimingThesis ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's combustion-engine/oil analogy for fortuitous timing — the founding evidence for Narrative_FortuitousTimingPair." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 8250 ; oa:end 8445
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Just as they discovered the internal combustion engine, they also discovered a whole bunch of black stuff under the ground called oil — a coincidental, fortuitous, contemporaneous pair of events." ;
+          oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years: \"" ;
+          oa:suffix " Another one: 20 years before"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ───────────────────────────────────────────
+
+    narr:StyleObs_DiscoveryConsultantBooleanCadence a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      rdf:value true ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's rhetorical pattern: short declarative sentences that land on a Boolean or binary verdict. 'It's falsifiable. The agent can either open the car or it can't. It's very Boolean.' Three sentences, each shorter than the last, ending on a single-word technical verdict. Characteristic of his engineering-precision idiolect." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3894 ; oa:end 3977
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's falsifiable. The agent can either open the car or it can't. It's very Boolean." ;
+          oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:StyleObs_ScarletConversationalWhy a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      rdf:value true ;
+      skos:note "Scarlet's idiolect: technical terms ('RAG', 'LLM', 'link relations') used without definition but immediately followed by a plain-language 'why' clause. The jargon names the mechanism; the conversational clause explains why it matters. Pattern: '[technical term] — [consequence in plain language].' Visible in the RAG critique and the hallucination reframe." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 7257 ; oa:end 7335
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "which is really just RAG, and you're missing the conversational why behind it." ;
+          oa:prefix "never-current product or engineering architecture documents and saying 'please read this' — " ;
+          oa:suffix " A statement that an LLM"
+        ]
+      ] .
+
+    narr:StyleObs_CompanionAnalogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      rdf:value true ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's analogical reasoning style: pairs of historically co-emergent technologies used to argue for fortuitous timing. Internal combustion engine + oil; LLMs + World Wide Web as pre-training dataset. The analogy structure is: [technology A] + [precondition B] = [emergent possibility]. Applied to aswritten: [LLMs] + [transcript as known constant] = [graph of shared ideas]. Characteristic of a consultant who ran enterprise discovery engagements for fifteen years's long-arc historical framing." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 8250 ; oa:end 8445
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Just as they discovered the internal combustion engine, they also discovered a whole bunch of black stuff under the ground called oil — a coincidental, fortuitous, contemporaneous pair of events." ;
+          oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years: \"" ;
+          oa:suffix " Another one: 20 years before"
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────────
+
+    narr:StyleMetrics_DiscoveryConsultantCompanion a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_DiscoveryConsultantCompanion_20260630 ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.12"^^xsd:decimal ;
+      skos:note "Mixed register: editorial memo prose (authoritative, structured) framing verbatim blockquoted dialogue. a consultant who ran enterprise discovery engagements for fifteen years's voice: short declarative sentences with Boolean verdicts, engineering vocabulary (OAuth, HATEOAS, ACI), historical analogy. Scarlet's voice: longer analytical sentences with embedded technical terms followed by plain-language consequence clauses. Active voice dominant in both speakers. Jargon density low-moderate — OAuth, RAG, RDF, HATEOAS used without definition, implying technical peer audience. Blockquote-heavy structure with editorial framing between quotes." .
+
+  }
+}

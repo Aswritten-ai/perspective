@@ -1,0 +1,32 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__MoatLeverage> {
+  <https://aswritten.ai/narrative#Digest_ns__MoatLeverage> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#MoatLeverage> ;
+    narr:childCount "11"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the claim that AsWritten's defensibility and its reach are the same asset: a [Git-native narrative architecture](narr:Narrative_moat) — RDF, SHACL validation, semantic diff, [\"Git as the version control system for organizational narrative itself\"](narr:Narrative_moat) — functioning simultaneously as [competitive moat](narr:Narrative_IPProtection) and [deepest organizational lever](narr:Observation_DeepestLever). The leverage thesis runs two ways: [small interventions yield outsized effects](narr:Concept_Leverage), and a single collective-memory snapshot [backs all three use cases](narr:MoatLeverage_ADR002) — sales, product, marketing — eliminating strategy-execution disconnect. Positioning is narrated as a shift [from \"better AI memory tool\" to infrastructure for organizational transparency](narr:Narrative_PositioningShift), contrasted against incumbents who [\"solve memory for individuals\"](narr:PositioningThesis_OrgMemory). The [moat metaphor](narr:StyleObs_MoatMetaphor) and [compounding/network-effect framing](narr:Observation_MoatLeverage_IPProtection) recur. A distinct capability — a [marketplace of reusable perspective snapshots](narr:Narrative_SIC_MoatLeverage_1) — and a [strategy-rubric assessment](narr:RubricAssess_Strategy_ADR001) sit alongside as structurally separate notes.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Concept_Leverage> ;
+    narr:covers <https://aswritten.ai/ns/narrative#MoatLeverage_ADR002> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_IPProtection> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_PositioningShift> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_MoatLeverage_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_moat> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_DeepestLever> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_MoatLeverage_IPProtection> ;
+    narr:covers <https://aswritten.ai/ns/narrative#PositioningThesis_OrgMemory> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Strategy_ADR001> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_MoatMetaphor> ;
+    narr:keyPhrase [ narr:text "the deepest lever we've ever had that reaches from CEO strategist every single, you know, strategic sales customer service role all the way into the core of the development process and back" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_DeepestLever> ] ;
+    narr:keyPhrase [ narr:text "They solve memory for individuals. We solve memory for organizations. They create lock-in. We create freedom. They make onboarding take 3-6 months. We make it take 5 minutes." ; narr:phraseSource <https://aswritten.ai/ns/narrative#PositioningThesis_OrgMemory> ] ;
+    narr:keyPhrase [ narr:text "Git as the version control system for organizational narrative itself" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_moat> ] ;
+    narr:keyPhrase [ narr:text "From 'better AI memory tool' to 'infrastructure for organizational transparency with four capabilities'" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_PositioningShift> ] ;
+    narr:keyPhrase [ narr:text "Small narrative interventions create outsized effects in AI system behavior and outcomes." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Concept_Leverage> ] ;
+    narr:keyPhrase [ narr:text "approach are our core competitive moat" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_MoatMetaphor> ] ;
+    narr:variation [ narr:text "The moat is framed as defensible competitive advantage and lock-in — yet positioning simultaneously sells freedom: customer-owned, tool-agnostic, \"We create freedom\" vs incumbent lock-in. Defensibility-without-lock-in is an unresolved tension." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_MoatMetaphor> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_IPProtection> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_PositioningShift> ; narr:over <https://aswritten.ai/ns/narrative#PositioningThesis_OrgMemory> ] ;
+    narr:variation [ narr:text "Two distinct leverage models coexist: small interventions producing outsized effects vs a single deep lever reaching across every role CEO-to-dev. Different mechanisms of advantage, not obviously the same claim." ; narr:over <https://aswritten.ai/ns/narrative#Concept_Leverage> ; narr:over <https://aswritten.ai/ns/narrative#Observation_DeepestLever> ] ;
+    narr:variation [ narr:text "The reusable perspective-snapshot marketplace is a structurally distinct capability appearing once, not echoed by the moat/leverage mainline." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_MoatLeverage_1> ] ;
+    narr:variation [ narr:text "RubricAssess is a meta-evaluation of strategic alignment, not a substantive moat claim — an outlier in kind among the children." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Strategy_ADR001> ] ;
+    narr:writer "claude (subscription)" .
+}

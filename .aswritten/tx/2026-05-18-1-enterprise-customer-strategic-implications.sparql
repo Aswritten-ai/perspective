@@ -1,0 +1,129 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260525T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-25T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-05-25-the enterprise customer-pattern-repeatable-shape.md" ;
+    narr:originRef "main@abc1234" ;
+    prov:generated 
+      narr:Sample_EnterpriseCustomerPattern_20260525,
+      narr:Narrative_EnterpriseCustomerPatternRepeatable,
+      narr:Narrative_ReportAsDeliverablePattern,
+      narr:Narrative_DataHandlingSubstantiated,
+      narr:Narrative_RelationshipCadenceAsset,
+      narr:Claim_ARBUseCaseSellable,
+      narr:Claim_ReportAsSalesMotion,
+      narr:Claim_DataPostureInCode,
+      narr:Claim_CadenceDemonstratesCare,
+      narr:Observation_ReportAesthetic,
+      narr:Observation_Task240Phase1Real,
+      narr:StyleMetrics_EnterpriseCustomerPattern_20260525,
+      narr:StyleObs_EnterpriseCustomerPattern_Antithesis,
+      narr:StyleObs_EnterpriseCustomerPattern_Jargon,
+      narr:StyleObs_EnterpriseCustomerPattern_Tone .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260525T120000Z {
+    narr:Sample_EnterpriseCustomerPattern_20260525 a narr:Sample ;
+      dct:title "Strategic Implications — The the enterprise customer Pattern as Repeatable Shape" ;
+      dct:created "2026-05-25"^^xsd:date ;
+      narr:inputLength 4200 .
+
+    narr:Narrative_EnterpriseCustomerPatternRepeatable a narr:Narrative ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      skos:broader narr:StrategyOverview ;
+      narr:theme "The the enterprise customer pilot validates a repeatable go-to-market shape worth codifying" ;
+      skos:note "The 'aswritten for ARBs' framing generalizes to any engineering-led organization with governance processes." .
+
+    narr:Narrative_ReportAsDeliverablePattern a narr:Narrative ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      skos:broader narr:SalesDecks ;
+      narr:theme "The monthly curated usage report as a core sales motion pattern" ;
+      skos:note "Renewal conversations are anchored in the customer's own usage evidence rather than marketing claims." .
+
+    narr:Narrative_DataHandlingSubstantiated a narr:Narrative ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      skos:broader narr:ArchitectureOverview ;
+      narr:theme "Data-handling posture is now substantiated by working code (Task-240 Phase 1)" ;
+      skos:note "The posture exists in code, not just slides, providing a differentiator for enterprise legal reviews." .
+
+    narr:Narrative_RelationshipCadenceAsset a narr:Narrative ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      skos:broader narr:OperatingCadence ;
+      narr:theme "The relationship cadence is a strategic asset for renewal" ;
+      skos:note "A cadence of ask -> report -> evidence-based renewal conversation demonstrates taste and care." .
+
+    narr:Claim_ARBUseCaseSellable a narr:Claim ;
+      narr:aboutNode narr:Narrative_EnterpriseCustomerPatternRepeatable ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      skos:note "The ARB knowledge capture use case is real, concrete, and sellable beyond the enterprise customer." .
+
+    narr:Claim_ReportAsSalesMotion a narr:Claim ;
+      narr:aboutNode narr:Narrative_ReportAsDeliverablePattern ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      skos:note "Every paying customer should get a monthly report framed in the brand aesthetic to anchor renewals." .
+
+    narr:Claim_DataPostureInCode a narr:Claim ;
+      narr:aboutNode narr:Narrative_DataHandlingSubstantiated ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      skos:note "Phase 1 of task-240 makes the aspirational data-handling language real in code." .
+
+    narr:Claim_CadenceDemonstratesCare a narr:Claim ;
+      narr:aboutNode narr:Narrative_RelationshipCadenceAsset ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      skos:note "The quality of the response (designed report, not CSV) signals taste and care to the customer." .
+
+    narr:Observation_ReportAesthetic a narr:Observation ;
+      skos:broader narr:StyleProfiles ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1300 ; oa:end 1450 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "cream paper background, Source Serif headlines, Source Sans labels, the brand palette accents per tool" ] .
+
+    narr:Observation_Task240Phase1Real a narr:Observation ;
+      skos:broader narr:TechnicalDocumentation ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1900 ; oa:end 2000 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Audit table writes are anonymized at the proxy boundary" ] .
+
+    narr:StyleMetrics_EnterpriseCustomerPattern_20260525 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.12 ;
+      skos:note "Strategic memo register; authoritative and pattern-seeking." .
+
+    narr:StyleObs_EnterpriseCustomerPattern_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_EnterpriseCustomerPattern_20260525 ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "anchored in the customer's own usage evidence rather than in aswritten's marketing claims" ] ] .
+
+    narr:StyleObs_EnterpriseCustomerPattern_Jargon a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_EnterpriseCustomerPattern_20260525 ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Feltron-style PDF", "task-240", "MSA/SOW" ] ] .
+
+    narr:StyleObs_EnterpriseCustomerPattern_Tone a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_EnterpriseCustomerPattern_20260525 ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_EnterpriseCustomerPattern_20260525 ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The the enterprise customer pilot is informally validating a specific go-to-market shape worth naming and codifying" ] ] .
+  }
+} 

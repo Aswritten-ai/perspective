@@ -1,0 +1,30 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_SecurityPrivacyModel> {
+  <https://aswritten.ai/narrative#Digest_SecurityPrivacyModel> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#SecurityPrivacyModel> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """The hub gathers how secrets, identity, and compliance are handled. The spine is credential hygiene: the [target credential-vault design](narr:Narrative_CredentialVault) removes rewrite.clj injection so [credentials never ride the MCP body](narr:Claim_CredentialsNeverInMCPBody) and are fetched from an internal-only Datomic-backed API, with the [internal endpoint reachable only on the Docker network](narr:Obs_InternalCredentialEndpoint), not exposed through Caddy. Operationally this was exercised by the [stale-credential cleanup in dev n8n](narr:Claim_CredentialCleanup) on 26 Mar. Compliance is the commercial frame: [GDPR/sovereignty/ISO act as adoption gates](narr:Narrative_EnterpriseComplianceGate), [local non-internet AI satisfies HIPAA and VIP privacy](narr:Narrative_LocalAI), and [client data-ownership](narr:Narrative_DataOwnership) (licensed base ontology, work-for-hire deliverables, repo under client org) removes lock-in. Two strands remain unsettled: the [BYOK OpenRouter-only limit](narr:Narrative_BYOKOpenRouterLimit) (Mar 17) and the [Vouch.io agent-identity bet](narr:Narrative_VouchIdentityForAgents).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CredentialCleanup> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CredentialsNeverInMCPBody> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_BYOKOpenRouterLimit> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CredentialVault> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DataOwnership> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EnterpriseComplianceGate> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_LocalAI> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_VouchIdentityForAgents> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_InternalCredentialEndpoint> ;
+    narr:keyPhrase [ narr:text "Credentials must never travel through the MCP message body; they are fetched by n8n from an internal-only Datomic-backed API." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CredentialsNeverInMCPBody> ] ;
+    narr:keyPhrase [ narr:text "Internal credential endpoint only reachable on Docker network, not exposed through Caddy — key security boundary." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_InternalCredentialEndpoint> ] ;
+    narr:keyPhrase [ narr:text "Target design removes rewrite.clj credential injection; n8n calls back to an internal-only endpoint for secrets, enabling instant rotation and true multi-tenancy." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_CredentialVault> ] ;
+    narr:keyPhrase [ narr:text "Current BYOK (bring your own key) only accepts OpenRouter API keys." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_BYOKOpenRouterLimit> ] ;
+    narr:keyPhrase [ narr:text "Local, non-internet-connected AI infrastructure is required for HIPAA compliance and VIP client privacy" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_LocalAI> ] ;
+    narr:keyPhrase [ narr:text "Base ontology framework is licensed, not sold." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_DataOwnership> ] ;
+    narr:variation [ narr:text "BYOK accepts only OpenRouter keys; Azure/Copilot enterprise customers can't plug in, routing compliance buyers to on-prem/Professional rather than BYOK — a known unresolved gap." ; narr:over <https://aswritten.ai/narrative#Narrative_BYOKOpenRouterLimit> ] ;
+    narr:variation [ narr:text "Vouch.io agent-identity infrastructure is validated tech but strategically undecided: open-source it as a standard, or sell as an enterprise product." ; narr:over <https://aswritten.ai/narrative#Narrative_VouchIdentityForAgents> ] ;
+    narr:variation [ narr:text "Ownership is split, not clean: deliverables and custom ontology are client-owned work-for-hire, but the base ontology framework is licensed (not sold) — a retained-vendor-IP boundary inside a no-lock-in pitch." ; narr:over <https://aswritten.ai/narrative#Narrative_DataOwnership> ] ;
+    narr:variation [ narr:text "Credential security is partly aspirational vs shipped: the vault design (remove rewrite.clj injection, instant rotation, true multi-tenancy) is a target, while the dev cleanup is the realized state." ; narr:over <https://aswritten.ai/narrative#Narrative_CredentialVault> ; narr:over <https://aswritten.ai/narrative#Claim_CredentialCleanup> ] ;
+    narr:writer "claude (subscription)" .
+}

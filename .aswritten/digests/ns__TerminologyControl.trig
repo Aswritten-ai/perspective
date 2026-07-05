@@ -1,0 +1,40 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__TerminologyControl> {
+  <https://aswritten.ai/narrative#Digest_ns__TerminologyControl> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#TerminologyControl> ;
+    narr:childCount "18"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the project's controlled vocabulary — the terms AsWritten/a collaborator insists on and the stylizations it holds canonical. The brand spine is [IP-as-code](narr:StyleObs_IPAsCode) (repeated 15+ times), [narrative architecture](narr:StyleObs_KeyPhrase_NarrArch), and [collective memory](narr:StyleObs_CollectiveMemoryTerm), with an explicit [terminology-control rule](narr:StyleObs_TerminologyControl) favoring 'worldview' over 'context' and 'collective memory' over 'semantic memory'. A coined-metaphor layer carries the argument: [context squishing](narr:Observation_ContextSquishing) names the black-box auto-summary problem, [cultivation trap](narr:Observation_CultivationTrap) names lock-in, and the [git-native triad](narr:Observation_GitNativeTriad) compresses versionable/branchable/reviewable. A defined-term layer fixes domain abstractions — [Memory](narr:Obs_MemoryDefinition), [Transaction](narr:Obs_TransactionDefinition), [compiled target](narr:Observation_CompiledTarget) — alongside startup-exit framing like [package to fundable state](narr:StyleObs_PackageFundable) and [intentional memory](narr:Observation_IntentionalMemory). The span is recognition-vocabulary: brand terms, coined metaphors, technical definitions, and stage/positioning shorthand (PMF, SSoT).""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_terminology> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Obs_MemoryDefinition> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Obs_TransactionDefinition> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_CompiledTarget> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_ContextSquishing> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_CultivationTrap> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_IPAsCode> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_IntentionalMemory> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_7> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_CollectiveMemoryTerm> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_IPAsCode> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_NarrArch> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_PMF> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_PackageFundable> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TechTerms> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TerminologyControl> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TerminologyControl_IPasCode> ;
+    narr:keyPhrase [ narr:text "IP-as-code" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_IPAsCode> ] ;
+    narr:keyPhrase [ narr:text "narrative architecture" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_NarrArch> ] ;
+    narr:keyPhrase [ narr:text "context squishing" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_ContextSquishing> ] ;
+    narr:keyPhrase [ narr:text "cultivation trap" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_CultivationTrap> ] ;
+    narr:keyPhrase [ narr:text "git native, i.e. versionable, branchable, reviewable" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ] ;
+    narr:keyPhrase [ narr:text "**Memory**: Ephemeral user content (chat message, Discourse post, uploaded doc)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Obs_MemoryDefinition> ] ;
+    narr:keyPhrase [ narr:text "package a collaborator to fundable/viable state so others can execute without him" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_PackageFundable> ] ;
+    narr:variation [ narr:text "Canonical stylization is contested: 'intellectual property as code' (lowercase, spelled out) vs the hyphenated 'IP-as-code' canonical form." ; narr:over <https://aswritten.ai/ns/narrative#Observation_IPAsCode> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_IPAsCode> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TerminologyControl_IPasCode> ] ;
+    narr:variation [ narr:text "Two registers of term-making coexist: coined visceral metaphors (context squishing, cultivation trap) vs dry defined abstractions (Memory, Transaction, compiled target)." ; narr:over <https://aswritten.ai/ns/narrative#Observation_ContextSquishing> ; narr:over <https://aswritten.ai/ns/narrative#Observation_CultivationTrap> ; narr:over <https://aswritten.ai/ns/narrative#Obs_TransactionDefinition> ; narr:over <https://aswritten.ai/ns/narrative#Observation_CompiledTarget> ] ;
+    narr:variation [ narr:text "Terminology-control rule asserts substitutions ('worldview' not 'context', 'collective memory' not 'semantic memory') but offers no quote — a stated norm, not a witnessed usage." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TerminologyControl> ] ;
+    narr:variation [ narr:text "Some terms are proprietary coinages, others are borrowed startup boilerplate (product market fit, SSoT, fundable/viable state) — different provenance under one 'control' banner." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_PMF> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_7> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_PackageFundable> ] ;
+    narr:writer "claude (subscription)" .
+}

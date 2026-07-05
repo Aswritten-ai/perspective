@@ -1,0 +1,271 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260129T000924Z a prov:Activity ;
+    prov:wasAssociatedWith <urn:agent:aswritten.ai> ;
+    prov:wasAttributedTo <urn:actor:n8n.aswritten.ai> ;
+    prov:generatedAtTime "2026-01-29T00:09:24.486Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-28-customer-architect-advisor-feedback-call.md" ;
+    sb:originRef "main" ;
+    prov:used <urn:model:anthropic/claude-sonnet-4.5> .
+
+  # Sample entity
+  narr:Sample_CustomerArchitect_2026-01-27 a narr:Sample ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    dct:title "the customer's chief architect Advisor Feedback Call (Jan 27, 2026)" ;
+    narr:inputLength 7842 ;
+    dct:created "2026-01-27T00:00:00Z"^^xsd:dateTime ;
+    skos:note "Enterprise buyer feedback on aswritten.ai pitch deck; shifted from advisory to product interest." .
+
+  # Narrative entities
+  narr:Narrative_CustomerArchitectPitch a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    skos:broader narr:PositioningThesis ;
+    narr:theme "Enterprise buyer value articulation" ;
+    skos:prefLabel "the customer's chief architect's 30-Second Pitch" ;
+    rdf:value "An AI tool that extracts undocumented knowledge from senior members of staff in a conversational way, stores that as memories, and then everybody else can query it. So it's like being able to talk to those people without actually bothering them." ;
+    skos:note "How an enterprise buyer describes the value: not product category but what it does—extract senior knowledge so juniors can query it without interrupting experts." .
+
+  narr:Insight_PremiseMismatch a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    skos:broader narr:ActorIncentiveAnalysis ;
+    narr:theme "Enterprise AI adoption reality" ;
+    skos:prefLabel "Premise Mismatch for Enterprise" ;
+    rdf:value "The premise that knowledge is locked in individual AI instances doesn't match enterprise reality. Knowledge is locked in people's heads, not AI conversations." ;
+    skos:note "Enterprise AI adoption is uneven; the 'AI memory lock-in' framing doesn't resonate because knowledge hasn't been externalized to AI yet." .
+
+  narr:Feature_OnboardingMode a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    skos:broader narr:Behaviors ;
+    skos:prefLabel "Onboarding Mode: The Missing Feature" ;
+    rdf:value "AI-led knowledge extraction sessions that populate collective memory from scratch, rather than detecting novelty in ongoing work." ;
+    skos:note "the customer's chief architect identified a gap: how do you bootstrap collective memory when knowledge exists in people's heads, not AI conversations?" .
+
+  narr:Feature_JIRAIntegration a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    skos:broader narr:Flows ;
+    skos:prefLabel "JIRA Integration Concept" ;
+    rdf:value "AI monitors closed tickets/epics and prompts for undocumented knowledge: 'Hey, this epic—why did you implement it?'" ;
+    skos:note "Proactive knowledge capture workflow tied to existing development process." .
+
+  narr:Feature_KnowledgeGapWorkflow a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    skos:broader narr:Flows ;
+    skos:prefLabel "Knowledge Gap Workflow" ;
+    rdf:value "When sales asks a question and collective memory doesn't know, ping the expert: 'Hey the customer's chief architect, you forgot to talk to AI about thing.' Then you do that and ping back: 'It's in there now, you're good.'" ;
+    skos:note "Closes the loop between query failure and knowledge capture." .
+
+  # Style observations
+  narr:StyleObs_CustomerArchitectPitch_DirectSpeech a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    oa:hasBody narr:ToneDirectPersonal ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerArchitect_2026-01-27 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 450 ;
+            oa:end 650
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "an AI tool that extracts undocumented knowledge from senior members of staff in a conversational way, stores that as memories, and then everybody else can query it. So it's like being able to talk to those people without actually bothering them." ;
+            oa:prefix "would be something like: " ;
+            oa:suffix "This is how an enterprise"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Direct, second-person framing; outcome-first description; conversational register." .
+
+  narr:StyleObs_BrandStylization a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerArchitect_2026-01-27 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 120 ;
+            oa:end 134
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "aswritten.ai" ;
+            oa:prefix "feedback on the " ;
+            oa:suffix " pitch deck but"
+        ]
+    ] ;
+    rdf:value true ;
+    skos:note "Lowercase brand stylization with .ai TLD." .
+
+  narr:StyleObs_Analogy_DuplicateBrain a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerArchitect_2026-01-27 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3200 ;
+            oa:end 3280
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "the constant joke in the enterprise customer, literally—I'm not kidding—is 'if only we could get AI to duplicate the customer's chief architect's brain.'" ;
+            oa:prefix "Because if that worked, like " ;
+            oa:suffix " The pricing engine is"
+        ]
+    ] ;
+    skos:related narr:ResonanceUse ;
+    rdf:value true ;
+    skos:note "Organizational in-joke as analogy for knowledge extraction value; self-aware humor." .
+
+  narr:StyleObs_StockPhrase_SignsChecks a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerArchitect_2026-01-27 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 520 ;
+            oa:end 560
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "who's really the guy who signs the checks" ;
+            oa:prefix "to our CFO—" ;
+            oa:suffix "—or our CEO"
+        ]
+    ] ;
+    rdf:value true ;
+    skos:note "Idiomatic shorthand for economic buyer authority." .
+
+  narr:StyleObs_ShortPunchy a narr:StyleObservation, oa:Annotation ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_CustomerArchitect_2026-01-27 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1100 ;
+            oa:end 1180
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "We have a lot of knowledge locked in people's heads." ;
+            oa:prefix "The reality is that we don't. " ;
+            oa:suffix " Enterprise AI adoption"
+        ]
+    ] ;
+    rdf:value true ;
+    skos:note "Short declarative sentence; strong verb 'locked'; punchy contrast structure." .
+
+  # Style metrics
+  narr:Metrics_CustomerArchitect a narr:StyleMetrics ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    narr:AverageSentenceLength 22 ;
+    narr:ActiveVoiceRatio 0.78 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: 10.2" ;
+    narr:Conciseness "High; direct phrasing, minimal hedging" ;
+    skos:note "Conversational register with technical precision; mix of short punchy sentences and longer explanatory clauses." .
+
+  # Rubric assessments
+  narr:Assessment_Register_CustomerArchitect a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    rdf:value 4.5 ;
+    skos:note "Conversational, direct, second-person ('you'); active voice dominant; enterprise-appropriate formality with accessible analogies." .
+
+  narr:Assessment_Phrasing_CustomerArchitect a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    rdf:value 4.0 ;
+    skos:note "Domain-specific verbs ('extracts', 'query', 'bootstrap'); stock phrases ('signs the checks'); idiomatic turns ('locked in people's heads')." .
+
+  narr:Assessment_Cadence_CustomerArchitect a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    rdf:value 4.0 ;
+    skos:note "Mix of short punchy sentences and longer explanatory clauses; natural speech rhythm; effective use of em-dashes and parentheticals." .
+
+  narr:Assessment_StrategicAlignment_CustomerArchitect a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    rdf:value 5.0 ;
+    skos:note "Directly surfaces positioning thesis, value exchange model, actor incentives, and product-market fit insights; aligns with Strategy > Positioning Thesis and Opportunity > Actor Incentive Analysis." .
+
+  narr:Assessment_Tailoring_CustomerArchitect a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    rdf:value 5.0 ;
+    skos:note "Explicitly tailored to enterprise buyer (CFO, CTO, CEO); addresses the enterprise customer-specific context (RFPs, pricing engine, JIRA workflow); the customer's chief architect's 30-second pitch is a model of audience fit." .
+
+  narr:Assessment_Resonance_CustomerArchitect a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    rdf:value 4.5 ;
+    skos:note "Strong use of organizational in-joke ('duplicate the customer's chief architect's brain'), concrete analogies (pricing engine as test case), and relatable pain points (senior expert bottleneck)." .
+
+  narr:Assessment_Flow_CustomerArchitect a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    rdf:value 4.0 ;
+    skos:note "Natural conversational flow; effective transitions between sections (Context → Pitch → Objection → Reframe → Demo Criteria); minimal formulaic scaffolding." .
+
+  narr:Assessment_Novelty_CustomerArchitect a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    rdf:value 3.5 ;
+    skos:note "Fresh framing ('senior expert bottleneck' vs. 'AI memory lock-in'); some domain-standard phrasing ('signs the checks', 'locked in heads'); overall avoids cliché." .
+
+  narr:Assessment_Accuracy_CustomerArchitect a narr:RubricAssessment ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    rdf:value 5.0 ;
+    skos:note "Factually accurate named entities (the enterprise customer, USPS, Österreichische Post, Poland Post); precise pricing signal ([amount]-150K); concrete timeline (late Feb beta); no unsupported claims." .
+
+  narr:Insight_FramingTable a narr:Narrative ;
+    prov:wasGeneratedBy narr:Tx_20260129T000924Z ;
+    dct:source narr:Sample_CustomerArchitect_2026-01-27 ;
+    skos:broader narr:PositioningThesis ;
+    skos:prefLabel "Strategic Framing Alternatives" ;
+    rdf:value "Deck Framing → Enterprise-Resonant Alternative: 'AI memory lock-in' → 'Senior expert bottleneck'; 'Your AI's context' → 'Your team's undocumented knowledge'; 'Organizational narrative' → 'Institutional knowledge / methodology'; 'Detects novelty in work' → 'Interviews experts to extract knowledge'; 'SaaS/startup examples' → 'RFP response, client customization, technical onboarding'." ;
+    skos:note "Table format preserved as structured value; suggests parallel positioning tracks for startups vs. enterprise." .
+}

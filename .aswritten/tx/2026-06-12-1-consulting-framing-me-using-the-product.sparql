@@ -1,0 +1,213 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250715T190000Z a prov:Activity ;
+    prov:generatedAtTime "2025-07-15T19:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# The framing decision: consulting is me using the product" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_ConsultingFramingDecision_20260610,
+      narr:Narrative_ConsultingIsMeUsingProduct,
+      narr:Narrative_KeepingBeatsStarting,
+      narr:Narrative_OwnFromDayOne,
+      narr:Claim_ConsultingAdoptionBurdenRemoved,
+      narr:Obs_ConsultingFramingQuote,
+      narr:Obs_KeepingBeatsStartingQuote,
+      narr:Obs_OwnFromDayOneStructure,
+      narr:StyleObs_ConsultingFramingAntithesis,
+      narr:StyleObs_ConsultingFramingFirstPerson,
+      narr:StyleObs_ConsultingFramingShortPunchy,
+      narr:Metrics_ConsultingFramingDecision_20260610 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20250715T190000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────────────
+    narr:Sample_ConsultingFramingDecision_20260610 a narr:Sample ;
+      dct:title "The framing decision: consulting is me using the product" ;
+      dct:created "2026-06-10"^^xsd:date ;
+      dct:description "Part 2 of the consulting-engagement session record (June 10-12, 2026). Scarlet Dame and Claude working session. Resolves the central tension from the June 10 consulting-engagement-framing handoff: consulting is Scarlet using the product to do something useful for the client, not getting the client to use the product. Covers adoption burden removal, conversion model flip (keeping beats starting), own-from-day-one ownership structure, and entity/traction consequences." ;
+      narr:inputLength 1821 .
+
+    # ── NARRATIVES ──────────────────────────────────────────────────────────
+
+    narr:Narrative_ConsultingIsMeUsingProduct a narr:Narrative ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Consulting Is Me Using the Product, Not Getting Them to Use It" ;
+      skos:note "Resolves the personal-services vs. product-engagement vs. hybrid tension from the June 10 handoff. The client never learns a tool, changes behavior, or believes in software. The product is Scarlet's infrastructure, visible only as the continuity and quality of what she delivers. This removes the adoption burden entirely and reframes consulting as a product-powered service delivery model." ;
+      narr:theme "Consulting is the founder using the product as infrastructure to deliver value — the client never touches the tool, never adopts it, never believes in it" .
+
+    narr:Narrative_KeepingBeatsStarting a narr:Narrative ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "Keeping Beats Starting: The Conversion Model Flip" ;
+      skos:note "The install-the-tool model ends an engagement by asking the client to start something ('adopt this'). The consulting-is-me-using-the-product model ends by asking them to keep something that already works — the agent their team has been using. Keeping beats starting as a conversion ask." ;
+      narr:theme "The conversion ask flips from 'start adopting this tool' to 'keep the agent your team has already been using' — keeping beats starting" .
+
+    narr:Narrative_OwnFromDayOne a narr:Narrative ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:broader narr:PackagingPricing ;
+      skos:prefLabel "Own-From-Day-One: Client Owns Repo via Team Plan" ;
+      skos:note "Ownership simplified during the June 10 discussion: the client can own their repo from day one by paying for the product (Team plan) and adding Scarlet as a team member. Consulting then continues or stops independently of repo ownership — the consulting relationship and the product subscription are separate decisions. This makes the product subscription company revenue from day one, making the consulting wedge visible to the fundraising traction story." ;
+      narr:theme "Client owns their repo from day one via Team plan; consulting relationship and product subscription are separate, independent decisions" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────────────────
+
+    narr:Claim_ConsultingAdoptionBurdenRemoved a narr:Claim ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:note "The framing 'consulting is me using the product' removes the adoption burden entirely. The client never learns a tool, changes behavior, or believes in software. The product is Scarlet's infrastructure, visible only as the continuity and quality of what she delivers. This resolves the central tension the June 10 consulting-engagement-framing handoff left open." ;
+      narr:aboutNode narr:Narrative_ConsultingIsMeUsingProduct ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_SalesAsDelivery .
+
+    # ── OBSERVATIONS ────────────────────────────────────────────────────────
+
+    narr:Obs_ConsultingFramingQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:note "Scarlet's verbatim articulation of the core framing decision — the founding evidence for Narrative_ConsultingIsMeUsingProduct." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ConsultingFramingDecision_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 290 ;
+          oa:end 490
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "consulting is ME using the product to do something useful for them" ;
+          oa:prefix "i think the difference is that " ;
+          oa:suffix ".\n\nThis resolves the central tension"
+        ]
+      ] .
+
+    narr:Obs_KeepingBeatsStartingQuote a narr:Observation ;
+      skos:broader narr:SalesDecks ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:note "The conversion model flip: keeping beats starting as a close. The install-the-tool model ends by asking the client to start something; this model ends by asking them to keep something that already works." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ConsultingFramingDecision_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 820 ;
+          oa:end 980
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Keeping beats starting." ;
+          oa:prefix "the agent their team has been using. " ;
+          oa:suffix "\n\nOwnership was simplified"
+        ]
+      ] .
+
+    narr:Obs_OwnFromDayOneStructure a narr:Observation ;
+      skos:broader narr:PackagingPricing ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:note "Own-from-day-one structure: client pays for Team plan, adds Scarlet as team member. Consulting continues or stops independently of repo ownership. The consulting relationship and the product subscription are separate decisions." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ConsultingFramingDecision_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 985 ;
+          oa:end 1180
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the client can own their repo from day one by paying for the product (Team plan) and adding Scarlet as a team member" ;
+          oa:prefix "Ownership was simplified during the June 10 discussion: " ;
+          oa:suffix ". Consulting then continues"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────────────
+
+    narr:StyleObs_ConsultingFramingAntithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:note "Antithesis-heavy structure throughout: 'get THEM to use the product' vs. 'ME using the product'; 'install-the-tool model' vs. 'this model'; 'start something' vs. 'keep something'; 'consulting revenue' vs. 'product subscription'. Consistent with Scarlet session-memo idiolect." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ConsultingFramingDecision_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 220 ;
+          oa:end 490
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "if i'm always trying to get THEM to use the product, i have to sell them on their ability to make it useful for them" ;
+          oa:prefix "Scarlet, June 10:\n\n> " ;
+          oa:suffix " - i think the difference"
+        ]
+      ] .
+
+    narr:StyleObs_ConsultingFramingFirstPerson a narr:StyleObservation ;
+      skos:broader narr:FirstPerson ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:note "First-person singular dominant in the quoted speech ('i'm always trying', 'ME using the product', 'what she delivers'). The framing decision is stated as a personal operational principle, not an abstract product claim. Lowercase 'i' in the blockquote is characteristic of Scarlet's idiolect." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ConsultingFramingDecision_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 220 ;
+          oa:end 350
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "if i'm always trying to get THEM to use the product" ;
+          oa:prefix "> " ;
+          oa:suffix ", i have to sell them"
+        ]
+      ] .
+
+    narr:StyleObs_ConsultingFramingShortPunchy a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:note "Short punchy declaratives used as rhetorical anchors at key conviction moments: 'Keeping beats starting.' (3 words), 'The product is her infrastructure' (5 words). These function as aphoristic closers after longer analytical sentences, consistent with Scarlet session-memo idiolect across the perspective." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ConsultingFramingDecision_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 820 ;
+          oa:end 843
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Keeping beats starting." ;
+          oa:prefix "the agent their team has been using. " ;
+          oa:suffix "\n\nOwnership was simplified"
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────────────────
+
+    narr:Metrics_ConsultingFramingDecision_20260610 a narr:StyleMetrics ;
+      dct:source narr:Sample_ConsultingFramingDecision_20260610 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic decision memo register with embedded verbatim blockquote from Scarlet. Mixed register: analytical editorial prose (authoritative, structured) vs. first-person conversational in blockquoted speech (lowercase, run-on). Antithesis-heavy structure (get them vs. me using; start vs. keep; consulting revenue vs. product subscription). Active voice dominant in editorial sections. Jargon density low-moderate — product terms (Team plan, repo, traction narrative, entity routing) used without definition, implying internal audience. Short punchy declaratives at conviction peaks ('Keeping beats starting.'). Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "19"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.07"^^xsd:decimal .
+
+  }
+}

@@ -1,0 +1,290 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260702T022947Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T02:29:47Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-02-1-amplification-moonshot-voice-diversity" ;
+    narr:originRef "dev" ;
+    dct:title "Moonshot Reframe: AI More Different Not Less — Scarlet/a design collaborator Call June 29 2026" ;
+    prov:generated
+      narr:Sample_DesignCollaboratorCall_20260629,
+      narr:Actor_DesignCollaborator,
+      narr:Narrative_AgentificationHomogenization,
+      narr:Narrative_AltitudeSwitchingCognitiveCost,
+      narr:Claim_EVConsensusPromptUnlock,
+      narr:Claim_DeliStoryAsMonocultureEmblem,
+      narr:Claim_DesignCollaboratorAmplificationFraming,
+      narr:Claim_AltitudeSwitchingCostlierThanContextSwitch,
+      narr:Claim_MorningNarrativeAfternoonDevStructure,
+      narr:Obs_MonocultureFiveVoicesQuote,
+      narr:Obs_AgentificationMDashQuote,
+      narr:Obs_MoonshotPlainStatementQuote,
+      narr:Obs_DesignCollaboratorAmplificationQuote,
+      narr:Obs_AltitudeSwitchingQuote,
+      narr:Obs_WhoCaresIfAIEmailQuote,
+      narr:StyleObs_DesignCollaboratorCall_ProfanityIntensifier,
+      narr:StyleObs_DesignCollaboratorCall_RhetoricalQuestion,
+      narr:StyleObs_DesignCollaboratorCall_Antithesis,
+      narr:StyleMetrics_DesignCollaboratorCall_20260629 .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T022947Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_DesignCollaboratorCall_20260629 a narr:Sample ;
+      dct:title "The Moonshot Reframe: 'AI More Different, Not Less' — Scarlet Dame / a design collaborator Call, June 29 2026" ;
+      dct:created "2026-06-29"^^xsd:date ;
+      narr:inputLength "7180"^^xsd:integer ;
+      dct:description "Call between Scarlet Dame and a design collaborator (designer, Vouch-era collaborator). Scarlet articulates the anti-monoculture moonshot pitch for Emergent Ventures, the amplification framing (a design collaborator's word), the deli story as emblem, and the altitude-switching cognitive limit." .
+
+    # ── Actor: a design collaborator ───────────────────────────────────────────────
+    narr:Actor_DesignCollaborator a narr:Actor ;
+      skos:prefLabel "a design collaborator" ;
+      skos:note "Designer and long-time collaborator from the Vouch era. Recipient of Scarlet's original introductory email, which he still cites as the best he has ever read. Contributed the 'amplification' framing on the June 29 2026 call." .
+
+    # ── Narrative: Agentification Homogenization ─────────────────────────────
+    narr:Narrative_AgentificationHomogenization a narr:Narrative ;
+      skos:broader narr:TrendForecasting ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      narr:theme "AI systems converge on a single register as they get agentified — M-dash, 'load-bearing,' uniform voice — making monoculture the default trajectory" ;
+      skos:note "The homogenization mechanism: as AI systems get 'agentified' they converge on one register (M-dash, quoting, 'load-bearing'). This is not a problem if it is one voice among many — the problem is that it becomes THE voice. This is the specific mechanism that makes the monoculture risk concrete and observable today, not merely a future risk. Sourced from the June 29 2026 Scarlet/a design collaborator call." .
+
+    # ── Narrative: Altitude-Switching Cognitive Cost ─────────────────────────
+    narr:Narrative_AltitudeSwitchingCognitiveCost a narr:Narrative ;
+      skos:broader narr:OperatingModelShifts ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      narr:theme "Switching altitude (building vs. vision-pitch) is more cognitively expensive than switching projects — explains why a year in the mechanics left the vision pitch undeveloped" ;
+      skos:note "Scarlet identifies a specific cognitive limit: she can context-switch across multiple projects at one time but cannot context-switch across altitude. Doing software and then high-level narrative pitching back-to-back is qualitatively harder than switching between two software projects. This explains why a year in the mechanics of the product left the vision pitch undeveloped — the altitude switch is the expensive one. Connects to the morning-narrative / afternoon-dev working structure." .
+
+    # ── Claims ───────────────────────────────────────────────────────────────
+    narr:Claim_EVConsensusPromptUnlock a narr:Claim ;
+      narr:aboutNode narr:Narrative_HowManyVoicesInSuperintelligence ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_HowManyVoicesInSuperintelligence ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "The Emergent Ventures prompt asking applicants to start from a consensus they actually agree with (rather than opening with a contrarian stance) was the specific cognitive unlock that pushed Scarlet from the mechanics of the product up to the 'why does society care' altitude. Without that prompt structure, the vision-pitch altitude would not have been reached on this call." .
+
+    narr:Claim_DeliStoryAsMonocultureEmblem a narr:Claim ;
+      narr:aboutNode narr:Narrative_AntiMonocultureAmplifier ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_AntiMonocultureAmplifier ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "The deli/recognition synthesis from Scarlet's original introduction to Tony reappears here — not as an origin anecdote but as the emblem of the particular, opinionated voice a monoculture cannot produce. The 'weird crackpot that tells you a story about a deli' is precisely the thing worth protecting. This is the deli story's second deployment: first as origin, now as the positive case for voice diversity." .
+
+    narr:Claim_DesignCollaboratorAmplificationFraming a narr:Claim ;
+      narr:aboutNode narr:Narrative_AntiMonocultureAmplifier ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_AntiMonocultureAmplifier ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "a design collaborator (designer) framed AI as an amplification tool — a way to amplify a person's craft and what is distinct about them, the opposite of the 'consistent design' homogenization he finds abhorrent. Scarlet adopted 'amplification' directly into the product thesis. a design collaborator's framing: AI amplifies capabilities and absorbs everything else to amplify the whole craft. This is the origin of the 'amplifier' vocabulary now central to the anti-monoculture narrative." .
+
+    narr:Claim_AltitudeSwitchingCostlierThanContextSwitch a narr:Claim ;
+      narr:aboutNode narr:Narrative_AltitudeSwitchingCognitiveCost ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "Scarlet explicitly distinguishes altitude-switching from context-switching: 'I find it's not context. Like I can context switch across multiple different projects, but I can't context switch across altitude.' Doing software for multiple people at one time is fine. Doing software and then high-level narrative pitching back-to-back is really hard. The altitude switch — from building-mode to vision-pitch mode — is the expensive cognitive transition." .
+
+    narr:Claim_MorningNarrativeAfternoonDevStructure a narr:Claim ;
+      narr:aboutNode narr:Narrative_AltitudeSwitchingCognitiveCost ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "Scarlet's established morning-narrative / afternoon-dev working structure exists precisely because switching between altitudes mid-stream is costly. The altitudes are kept on separate sides of the day. This is a structural solution to the altitude-switching cognitive cost identified on the June 29 call." .
+
+    # ── Observations (verbatim quotes) ───────────────────────────────────────
+    narr:Obs_MonocultureFiveVoicesQuote a narr:Observation ;
+      skos:broader narr:Narrative_HowManyVoicesInSuperintelligence ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "Scarlet's articulation of the monoculture risk: five frontier-lab voices vs. the weird crackpot with a deli story." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorCall_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2191 ; oa:end 2393
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Are we going to end up in a monoculture of five voices of Claude, Gemini, ChatGPT, [Grok] and like a couple Chinese nobodies? Or do we end up with some weird crackpot that tells you a story about a deli" ;
+          oa:prefix "it's how many voices are behind those agents. " ;
+          oa:suffix " and like gives you a highly opinionated answer?"
+        ]
+      ] .
+
+    narr:Obs_AgentificationMDashQuote a narr:Observation ;
+      skos:broader narr:Narrative_AgentificationHomogenization ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "The specific observable symptom of agentification homogenization: M-dash, quoting, 'load-bearing' as the converging register." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorCall_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2554 ; oa:end 2723
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "we're right now having this shift where things get agentified and like they go the M Dash, they like start quoting and they start talking about things being load bearing" ;
+          oa:prefix "She points at the homogenization already visible as systems get agentified and converge on one register: \"" ;
+          oa:suffix " and whatever else... that's not a problem if it's one voice out of many."
+        ]
+      ] .
+
+    narr:Obs_MoonshotPlainStatementQuote a narr:Observation ;
+      skos:broader narr:Narrative_HowManyVoicesInSuperintelligence ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "Scarlet's plainest statement of the moonshot: not an AI agent for everything, but as many distinct voices as there are humans." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorCall_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3245 ; oa:end 3425
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the moonshot idea is not, are we going to have an AI agent for everything? It's when we do have an AI agent for everything, can we have as many distinct voices as there are humans?" ;
+          oa:prefix "the question for me and I think, like, " ;
+          oa:suffix " Can we have more diversity of voice?"
+        ]
+      ] .
+
+    narr:Obs_DesignCollaboratorAmplificationQuote a narr:Observation ;
+      skos:broader narr:Narrative_AntiMonocultureAmplifier ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "a design collaborator's verbatim articulation of the amplification framing — AI amplifies craft, not uniformity." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorCall_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4450 ; oa:end 4639
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I really like the word amplification that you used... rather than everything is becoming uniform. Amplifying things rather than making things consistent... AI to me is an amplification tool" ;
+          oa:prefix "a design collaborator frames AI as an amplification tool: \"" ;
+          oa:suffix " to enable me to do things I couldn't do before... it amplifies my capabilities"
+        ]
+      ] .
+
+    narr:Obs_AltitudeSwitchingQuote a narr:Observation ;
+      skos:broader narr:Narrative_AltitudeSwitchingCognitiveCost ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "Scarlet's verbatim identification of altitude-switching as the specific cognitive limit — distinct from context-switching." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorCall_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6434 ; oa:end 6576
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I find it's not context [switching]. Like I can context switch across multiple different projects, but I can't context switch across altitude." ;
+          oa:prefix "Scarlet identifies why this pitch had been so hard to reach: \"" ;
+          oa:suffix " Right... software for a couple different people at one time [is fine]."
+        ]
+      ] .
+
+    narr:Obs_WhoCaresIfAIEmailQuote a narr:Observation ;
+      skos:broader narr:Narrative_AntiMonocultureAmplifier ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      skos:note "Scarlet's restatement of the product thesis through the amplification lens: the question is not whether AI can produce an email but whether it produces a meaningful, unique one." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorCall_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4838 ; oa:end 5008
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "who cares if AI can produce an email? Like who cares if it can give you a website? ... the question is, is it going to give you a meaningful website, a unique perspective" ;
+          oa:prefix "Scarlet folds amplification into the product thesis: \"" ;
+          oa:suffix " that people come back to and are like, oh wow, that's really different"
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_DesignCollaboratorCall_ProfanityIntensifier a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      rdf:value true ;
+      skos:note "Profanity used as rhetorical intensifier at conviction peaks — 'every single business around the fucking world' — consistent with Scarlet's voice-memo idiolect. Signals authentic, unfiltered founder voice rather than polished pitch register." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorCall_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3875 ; oa:end 3999
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "do I get the same perspective from every single customer service agent, from every single business around the fucking world?" ;
+          oa:prefix "Applied to the company/agent layer: \"" ;
+          oa:suffix " Or do I get as many perspectives as there are companies"
+        ]
+      ] .
+
+    narr:StyleObs_DesignCollaboratorCall_RhetoricalQuestion a narr:StyleObservation ;
+      skos:broader narr:RhetoricalQuestion ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      rdf:value true ;
+      skos:note "Rhetorical questions used to stage the binary choice at the heart of the moonshot: 'Are we going to end up in a monoculture... Or do we end up with some weird crackpot?' and 'can we have as many distinct voices as there are humans?' The question form enacts the choice rather than asserting it." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorCall_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1938 ; oa:end 2079
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the question for me becomes not... is there going to be an AI agent that's positioned to produce every single kind of output you can imagine?" ;
+          oa:prefix "The reframe — where the moonshot actually lives: \"" ;
+          oa:suffix " And not... is there going to be a super intelligence behind it"
+        ]
+      ] .
+
+    narr:StyleObs_DesignCollaboratorCall_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      rdf:value true ;
+      skos:note "Antithesis structures the entire moonshot argument: monoculture vs. diversity, uniformity vs. amplification, 'AI more different, not less', 'amplifier not uniformity machine'. The 'X, not Y' negation pattern is Scarlet's dominant rhetorical device for sharpening a position by naming its opposite." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorCall_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4112 ; oa:end 4197
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "that's the risk. Like, that's what I want. I want AI that's more different, not less." ;
+          oa:prefix "Or do I get as many perspectives as there are companies that are uniquely shaped by the people within them? ... " ;
+          oa:suffix " **\"Amplification\" — a design collaborator's word"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+    narr:StyleMetrics_DesignCollaboratorCall_20260629 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_DesignCollaboratorCall_20260629 ;
+      narr:AverageSentenceLength "28"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal ;
+      skos:note "Mixed register: raw first-person stream-of-consciousness in blockquoted speech (run-on, filler-heavy, ~35 words avg per sentence in quoted sections) vs. editorial framing prose (structured, shorter, ~18 words avg). Active voice dominant throughout. Jargon density low — product terms (perspective, agentified, monoculture) used without definition, implying internal/collaborator audience. Antithesis-heavy structure. Profanity as rhetorical intensifier at conviction peaks. Consistent with Scarlet voice-memo / live-call idiolect." .
+
+  }
+}

@@ -1,0 +1,124 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+
+  narr:Tx_20260305T184415Z a prov:Activity ;
+    rdfs:label "Extraction: a founder beta user Klepsch / Scarlet Dame Discovery Call" ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-03-05T18:44:15Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-03-05-a founder beta user-klepsch-scarlet-dame-discovery-call.md" ;
+    sb:originRef "main" .
+
+  narr:Narrative_OrgKnowledgeAsCode a narr:Narrative ;
+
+    narr:theme "Organizational worldview should be versioned, collaborative, and graph-structured like software—enabling cascading updates across all AI-generated content" ;
+    skos:broader narr:CoreNarratives ;
+    skos:note "Scarlet's 'As Written': git-native approach to organizational memory, compiled into a worldview graph, exposed via MCP tools." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:Narrative_AgenticCoherence a narr:Narrative ;
+
+    narr:theme "Coherence across agentic outputs—preventing conflicting information across documents and agents—is the next critical bottleneck in AI workflows" ;
+    skos:broader narr:CoreNarratives ;
+    skos:note "a founder beta user identifies 'agentic back pressure' and self-verification as necessary skills; Scarlet's worldview graph addresses this structurally." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:Claim_WorldviewBottleneck a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Narrative_OrgKnowledgeAsCode ;
+    narr:supports narr:CoreNarratives ;
+    skos:note "The next bottleneck in AI productivity is not LLM capability but the absence of a versioned, coherent organizational context." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:Claim_AgenticBackPressure a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Notion ;
+    narr:aboutNode narr:Narrative_AgenticCoherence ;
+    narr:supports narr:CoreNarratives ;
+    skos:note "Agentic workflows require self-verification skills to prevent conflicting outputs (e.g., different pricing across documents)." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:Observation_ClientMindset a narr:Observation ;
+    skos:broader narr:FrictionFailure ;
+
+    skos:note "Traditional clients often want a 'tool to fix all problems'; consultants must redirect toward understanding AI workflow integration." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:Observation_MCPStack a narr:Observation ;
+    skos:broader narr:StackOverview ;
+
+    skos:note "As Written uses MCP (Model Context Protocol) as the integration layer for organizational memory tools." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:Observation_AsWrittenProduct a narr:Observation ;
+    skos:broader narr:WhatDoesItDo ;
+
+    skos:note "As Written: git-native organizational memory tool that compiles a worldview graph and exposes MCP tools for content introspection and generation." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:Observation_CascadingEffects a narr:Observation ;
+    skos:broader narr:Behaviors ;
+
+    skos:note "Strategic changes in As Written should cascade automatically to all downstream AI-generated content, analogous to code propagation." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:StyleObs_GitNative a narr:StyleObservation ;
+    skos:broader narr:NamingConventions ;
+
+    skos:related narr:KeyPhrases ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "'git native' is a coined technical descriptor positioning As Written within developer-familiar infrastructure paradigms." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:StyleObs_WorldviewGraph a narr:StyleObservation ;
+    skos:broader narr:NamingConventions ;
+
+    skos:related narr:Tagline ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "'worldview graph' is Scarlet's coined term for the compiled organizational knowledge structure; a key brand concept for As Written." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+  narr:StyleObs_VibeCoding a narr:StyleObservation ;
+    skos:broader narr:JargonPolicy ;
+
+    skos:related narr:KeyPhrases ;
+    rdf:value "true"^^xsd:boolean ;
+    skos:note "'vibe coding' is an emergent AI-era idiom for intuition-driven, LLM-assisted development; signals in-group technical fluency." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+}
+
+# =============================================================
+# UPDATE: narr:Actor_ScarletDame — add new skos:note and
+# prov:wasGeneratedBy link (additive; existing triples retained)
+# =============================================================
+INSERT DATA {
+
+  narr:Actor_ScarletDame
+    skos:note "Founder of 'As Written', a tool for organizational memory and worldview alignment using MCP (Model Context Protocol)." ;
+
+    prov:wasGeneratedBy narr:Tx_20260305T184415Z .
+
+}

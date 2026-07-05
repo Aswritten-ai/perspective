@@ -1,0 +1,301 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+PREFIX storytwin: <https://aswritten.ai/narrative#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260128T185231Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai/agent#v1.0> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-01-28T18:52:31.325Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2025-12-14-capitol-ai-rejection.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:used <anthropic/claude-sonnet-4.5> .
+
+  # Generated entities
+  narr:Sample_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:Narrative_ProductVision prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:Narrative_IPProtection prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:Narrative_RevenueTradeoff prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:StyleObs_BrandName prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:StyleObs_ActiveDecision prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:StyleObs_EmphaticNegation prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:StyleObs_MoatMetaphor prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:StyleObs_PlatformVsInfra prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:StyleObs_CollectiveMemoryTerm prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:StyleObs_ADRStructure prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:StyleObs_QuantifiedRevenue prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:Metrics_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:RubricAssess_Register_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:RubricAssess_Phrasing_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:RubricAssess_Cadence_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:RubricAssess_Strategy_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:RubricAssess_Tailoring_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:RubricAssess_Resonance_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:RubricAssess_Flow_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:RubricAssess_Novelty_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+  narr:RubricAssess_Accuracy_ADR001 prov:wasGeneratedBy narr:Tx_20260128T185231Z .
+
+  # Content triples
+  narr:Sample_ADR001 a narr:Sample ;
+    dct:title "ADR-001: aswritten.ai as Complete Product, Not Infrastructure Layer" ;
+    narr:inputLength 2247 ;
+    dct:created "2024-12-23"^^xsd:date ;
+    skos:note "Architecture Decision Record documenting strategic product positioning" .
+
+  narr:Narrative_ProductVision a narr:Narrative ;
+    dct:source narr:Sample_ADR001 ;
+    narr:theme "Product as Platform, Not Infrastructure" ;
+    narr:direction "Defensive" ;
+    skos:broader narr:PositioningThesis ;
+    skos:note "Core strategic decision to build complete product rather than license underlying technology" .
+
+  narr:Narrative_IPProtection a narr:Narrative ;
+    dct:source narr:Sample_ADR001 ;
+    narr:theme "Moat Protection Through Integration" ;
+    skos:broader narr:MoatLeverage ;
+    skos:note "Narrative architecture ontology and Git-native worldview as competitive moat" .
+
+  narr:Narrative_RevenueTradeoff a narr:Narrative ;
+    dct:source narr:Sample_ADR001 ;
+    narr:theme "Strategic Focus Over Near-Term Revenue" ;
+    skos:broader narr:FocusSequencing ;
+    skos:note "Forgoing [amount]-80K to maintain product vision integrity" .
+
+  narr:StyleObs_BrandName a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_ADR001 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR001 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 212 ;
+        oa:end 225
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten.ai" ;
+        oa:prefix "Context:\nCapitol.ai approached us to license " ;
+        oa:suffix " collective memory's semantic memory layer"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Lowercase brand stylization with .ai TLD" .
+
+  narr:StyleObs_ActiveDecision a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_ADR001 ;
+    oa:hasBody narr:VoiceActive ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR001 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 625 ;
+        oa:end 724
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "We are building collective memory as a complete product - a collaborative worldview layer" ;
+        oa:prefix "Decision:\n" ;
+        oa:suffix " for AI agents across coding"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:related narr:Mission ;
+    skos:note "Strong active voice with first-person plural subject" .
+
+  narr:StyleObs_EmphaticNegation a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:AICompanyizationCase ;
+    dct:source narr:Sample_ADR001 ;
+    oa:hasBody narr:AICompanyizationCase ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR001 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 813 ;
+        oa:end 893
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "We will NOT license the semantic memory layer as infrastructure for others to build" ;
+        oa:prefix "and content generation. " ;
+        oa:suffix " on top of."
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "ALL CAPS 'NOT' for emphasis in critical boundary statement" .
+
+  narr:StyleObs_MoatMetaphor a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_ADR001 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR001 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1006 ;
+        oa:end 1053
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "approach are our core competitive moat" ;
+        oa:prefix "ontology and Git-native worldview " ;
+        oa:suffix ". Licensing this to Capitol"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:related narr:MoatLeverage ;
+    skos:note "Business strategy metaphor: moat = defensible competitive advantage" .
+
+  narr:StyleObs_PlatformVsInfra a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_ADR001 ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR001 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1313 ;
+        oa:end 1443
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "We want to be a platform (complete product users adopt), not infrastructure (low-margin vendor others build on)" ;
+        oa:prefix "Market Position: " ;
+        oa:suffix ". Infrastructure providers"
+      ]
+    ] ;
+    oa:hasBody narr:Antithesis ;
+    rdf:value true ;
+    skos:related narr:PositioningThesis ;
+    skos:note "Parallel structure contrasting two strategic positions with parenthetical definitions" .
+
+  narr:StyleObs_CollectiveMemoryTerm a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_ADR001 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR001 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 625 ;
+        oa:end 660
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "building collective memory as a" ;
+        oa:prefix "Decision:\nWe are " ;
+        oa:suffix " complete product - a collaborative"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Product name used consistently without capitalization, establishing canonical term" .
+
+  narr:StyleObs_ADRStructure a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:EditorialRules ;
+    dct:source narr:Sample_ADR001 ;
+    oa:hasBody narr:EditorialRules ;
+    skos:note "Standard ADR format: Context → Decision → Rationale → Consequences → Status" ;
+    rdf:value true ;
+    skos:related narr:RFCsADRs .
+
+  narr:StyleObs_QuantifiedRevenue a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:PlainLanguage ;
+    dct:source narr:Sample_ADR001 ;
+    oa:hasBody narr:PlainLanguage ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ADR001 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1838 ;
+        oa:end 1891
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Revenue impact: Forgoing [amount]-[amount] near-term revenue" ;
+        oa:prefix "Consequences:\n\n" ;
+        oa:suffix " opportunity\nRelationship:"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:related narr:KPIsSuccess ;
+    skos:note "Concrete dollar figures make tradeoff tangible" .
+
+  narr:Metrics_ADR001 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_ADR001 ;
+    narr:AverageSentenceLength 22.3 ;
+    narr:ActiveVoiceRatio 0.78 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade: 12.4" ;
+    narr:JargonDensity 0.15 ;
+    skos:note "Metrics computed from full ADR text; professional register with technical domain terms" .
+
+  narr:RubricAssess_Register_ADR001 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_ADR001 ;
+    rdf:value 4.5 ;
+    skos:note "Formal business register appropriate for ADR; first-person plural establishes ownership; technical precision without jargon overload" .
+
+  narr:RubricAssess_Phrasing_ADR001 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_ADR001 ;
+    rdf:value 4.0 ;
+    skos:note "Clear domain terminology ('collective memory', 'semantic memory layer', 'moat'); consistent product naming; business idioms ('thin margins', 'design partner')" .
+
+  narr:RubricAssess_Cadence_ADR001 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_ADR001 ;
+    rdf:value 3.5 ;
+    skos:note "Mix of short declarative statements and longer explanatory sentences; bulleted lists provide rhythm breaks; some complex clauses in rationale section" .
+
+  narr:RubricAssess_Strategy_ADR001 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_ADR001 ;
+    rdf:value 5.0 ;
+    skos:note "Exemplary strategic alignment: directly addresses positioning thesis, moat/leverage, focus/sequencing, and risk/guardrails; decision rationale maps to strategy framework" ;
+    skos:related narr:PositioningThesis, narr:MoatLeverage, narr:FocusSequencing .
+
+  narr:RubricAssess_Tailoring_ADR001 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_ADR001 ;
+    rdf:value 4.5 ;
+    skos:note "Tailored for internal technical/business audience; assumes context familiarity; appropriate detail level for decision record; would need translation for external stakeholders" .
+
+  narr:RubricAssess_Resonance_ADR001 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_ADR001 ;
+    rdf:value 3.5 ;
+    skos:note "Platform vs. infrastructure antithesis resonates; moat metaphor familiar to business audience; lacks narrative story/case study but appropriate for ADR format" .
+
+  narr:RubricAssess_Flow_ADR001 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_ADR001 ;
+    rdf:value 4.5 ;
+    skos:note "Strong structural flow via ADR template; logical progression from context → decision → rationale → consequences; numbered lists aid coherence; minimal formulaic transitions" .
+
+  narr:RubricAssess_Novelty_ADR001 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_ADR001 ;
+    rdf:value 3.0 ;
+    skos:note "Standard ADR format (expected); business language conventional; 'collaborative worldview layer' phrase somewhat novel; overall appropriate level of originality for decision record" .
+
+  narr:RubricAssess_Accuracy_ADR001 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_ADR001 ;
+    rdf:value 4.5 ;
+    skos:note "Specific dates, dollar figures, and entity names (Capitol.ai, VCSA); decision status clearly stated; no citations needed for internal decision record; factual claims verifiable" .
+}

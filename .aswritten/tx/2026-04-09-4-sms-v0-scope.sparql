@@ -1,0 +1,143 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260408T160000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-08T16:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-08-v0-scope-sms-deep-link.md" ;
+    narr:originRef "research/goal-directed-agents" ;
+    prov:generated narr:Sample_V0Scope_20260408, narr:Narrative_V0_SMS_DeepLink, narr:Narrative_PublicPerspectiveModule, narr:Narrative_ForwardShareableGifting, narr:Claim_LandingPageIsHeroAction, narr:Claim_PublicPerspectiveSiblingRepo, narr:Claim_VoiceDroppedFromRoadmap, narr:Claim_ShareCodeAsKey, narr:StyleObs_Antithesis_V0, narr:StyleObs_Metaphor_TwoDoors, narr:StyleObs_Terminology_V0, narr:Metrics_V0Scope .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260408T160000Z {
+    narr:Sample_V0Scope_20260408 a narr:Sample ;
+      dct:title "V0 scope: SMS deep link, public perspective, the two doors, forward-shareable gifting" ;
+      dct:created "2026-04-08"^^xsd:date ;
+      narr:inputLength 12500 .
+
+    narr:Narrative_V0_SMS_DeepLink a narr:Narrative ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      narr:theme "V0 Scope: SMS Deep Link Demo" ;
+      skos:broader narr:Milestones ;
+      skos:note "V0 enables sending an SMS deep link that texts a number and loads an existing perspective share by ID. It uses a constrained read-only system prompt behind an auth boundary." .
+
+    narr:Narrative_PublicPerspectiveModule a narr:Narrative ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      narr:theme "Public Perspective as First Module" ;
+      skos:broader narr:ModulesCapabilities ;
+      skos:note "The public perspective is a separate sibling repo (aswritten-public), hand-written in external voice, with a hard size cap of ~40 memories and no content above decision-level conviction." .
+
+    narr:Narrative_ForwardShareableGifting a narr:Narrative ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      narr:theme "Forward-Shareable Gifting Loop (V0.5)" ;
+      skos:broader narr:ExpansionPathway ;
+      skos:note "V0.5 adds sender-side creation and forward-shareable sms: deep links where the share code is the key, enabling infinite forward chains." .
+
+    narr:Claim_LandingPageIsHeroAction a narr:Claim ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      narr:aboutNode narr:LandingPages ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_V0_SMS_DeepLink ;
+      skos:note "The landing page becomes a deep link. The product IS the hero action; visitors touch the product immediately rather than watching a demo." .
+
+    narr:Claim_PublicPerspectiveSiblingRepo a narr:Claim ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      narr:aboutNode narr:ArchitectureOverview ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_PublicPerspectiveModule ;
+      skos:note "Conceptually distinct perspectives live in sibling repos, not subdirectories. Subdirectories are for entity isolation within the same perspective." .
+
+    narr:Claim_VoiceDroppedFromRoadmap a narr:Claim ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      narr:aboutNode narr:NarrativeDrivenRoadmap ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:challenges narr:Narrative_BoundedDomainFidelityArgument ;
+      skos:note "Voice interviews are explicitly dropped from the roadmap. Native voice-to-text on phones eliminates the need for Retell/Vapi integration complexity." .
+
+    narr:Claim_ShareCodeAsKey a narr:Claim ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      narr:aboutNode narr:Narrative_ForwardShareableGifting ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      skos:note "Share code is the key, not sender identity. This structural property makes the gifting loop unbounded and forward-shareable by default." .
+
+    narr:StyleObs_Antithesis_V0 a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_V0Scope_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2250 ; oa:end 2350 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The visitor doesn't watch a demo; they touch the product immediately." ]
+      ] .
+
+    narr:StyleObs_Metaphor_TwoDoors a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_V0Scope_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 6500 ; oa:end 6600 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Two doors into the same house." ; oa:suffix "The product is one; the surfaces are many." ]
+      ] .
+
+    narr:StyleObs_Terminology_V0 a narr:StyleObservation ;
+      skos:broader narr:TerminologyControl ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_V0Scope_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5000 ; oa:end 5100 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "external-voiced body of work" ; oa:prefix "first concrete instance of an installable, citable, " ]
+      ] .
+
+    narr:Metrics_V0Scope a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_V0Scope_20260408 ;
+      narr:AverageSentenceLength 19 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.12 ;
+      skos:note "Strategic scoping register. High active voice in decision statements. Jargon includes technical (n8n, Twilio, webhook) and product-specific (share primitive, mode switch, sibling repo) terms." .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Claim_AboveTheLine_April1 skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260408T160000Z {
+    narr:Claim_AboveTheLine_April1 skos:note "Must ship by April 1: landing page redo (superseded by deep link move), dev branch merged to main, language pass, MVP slimming, initial modules/perspectives shipped, GitHub abstraction, aswritten perspective set, doc site updated, sales assets." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_AboveTheLine_April1 skos:note ?oldNote .
+  }
+} ;
+
+DELETE {
+  GRAPH ?g {
+    narr:Claim_SMSIsProduct skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260408T160000Z {
+    narr:Claim_SMSIsProduct skos:note "The SMS framing is actually a product. V0 scope: SMS deep link loading perspective by ID. SMS is the product surface, n8n/MCP/git is the infrastructure underneath." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_SMSIsProduct skos:note ?oldNote .
+  }
+}

@@ -1,0 +1,37 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_FeedbackLoops> {
+  <https://aswritten.ai/narrative#Digest_FeedbackLoops> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#FeedbackLoops> ;
+    narr:childCount "15"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the mechanics of how feedback enters and reshapes the product and its knowledge. Two loops sit at the center: the [review/memory cycle](narr:Claim_ReviewMemorySemantics) where save-memory ends a round and a corrected review always takes at least two, and the [five-step annotate→document→save→re-annotate loop](narr:Observation_FeedbackLoop). [Convergence is framed as asymptotic](narr:Obs_ConvergenceAsymptotic) accumulation of evidence, not a binary threshold. On process, the [real-time per-section loop](narr:Narrative_RealTimeFeedbackLoop) (Mar 19) is held as superior to batch review — errors caught before they compound. Beta is reframed: the [friction-lab thesis](narr:Narrative_BetaAsFrictionLab) (Mar 13) insists testers exist to surface blockers to value, not to convert. A dense run of Scarlet corrections (Mar 19) sharpens product framing: [expertise at moment of need not ambient](narr:Obs_AmbientBehaviorCorrection), [perspective vs local RAG](narr:Obs_CustomGPTCorrection), [expanding experts not replacing](narr:Obs_ExpertReachCorrection), and [the Tinkerer barrier](narr:Obs_TinkererBarrierCorrection). Later: [a beta user from outside tech as most prolific tester](narr:Obs_ScarletBetaTesterQuote) (Apr 23), the [text-for-topic precedent](narr:Obs_ScarletTextForTopicQuote) (Apr 8), and the [feedback/help tool as churn prevention](narr:Obs_FeedbackHelpQuote) (Mar 26).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ReviewMemorySemantics> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_BetaAsFrictionLab> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_OptometristModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_RealTimeFeedbackLoop> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SynchronousExtraction> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_AmbientBehaviorCorrection> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ConvergenceAsymptotic> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomGPTCorrection> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ExpertReachCorrection> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_FeedbackHelpQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletBetaTesterQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletTextForTopicQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_TinkererBarrierCorrection> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_FeedbackLoop> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OpenQuestions> ;
+    narr:keyPhrase [ narr:text "The product behavior is expertise at the moment of need, not ambient" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_AmbientBehaviorCorrection> ] ;
+    narr:keyPhrase [ narr:text "Custom GPTs don't provide perspective — they're just local RAG" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomGPTCorrection> ] ;
+    narr:keyPhrase [ narr:text "We're not replacing experts — we're expanding their reach" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ExpertReachCorrection> ] ;
+    narr:keyPhrase [ narr:text "The Tinkerer doesn't activate fastest — their existing solution is a barrier" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_TinkererBarrierCorrection> ] ;
+    narr:keyPhrase [ narr:text "The vast majority of her feedback is verbal and I just implement. She's the single most prolific beta tester and has had more feedback than anyone." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletBetaTesterQuote> ] ;
+    narr:keyPhrase [ narr:text "This feels like a similar moment to the text for topic moment" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletTextForTopicQuote> ] ;
+    narr:variation [ narr:text "Beta is explicitly NOT a sales funnel — 7 testers but only 2 daily power users; the digest's own honesty about the gap pushes against any conversion narrative." ; narr:over <https://aswritten.ai/narrative#Narrative_BetaAsFrictionLab> ] ;
+    narr:variation [ narr:text "Convergence as asymptotic accumulation directly rejects a binary done/not-done threshold for organizational knowledge." ; narr:over <https://aswritten.ai/narrative#Obs_ConvergenceAsymptotic> ; narr:over <https://aswritten.ai/narrative#Claim_ReviewMemorySemantics> ] ;
+    narr:variation [ narr:text "The Tinkerer correction overturns the AI's hypothesis: an existing solution is a barrier, not an accelerant — an outlier on adoption speed." ; narr:over <https://aswritten.ai/narrative#Obs_TinkererBarrierCorrection> ] ;
+    narr:variation [ narr:text "Real-time per-section feedback is asserted over batch review — a process road-not-taken, justified by error non-compounding rather than convention." ; narr:over <https://aswritten.ai/narrative#Narrative_RealTimeFeedbackLoop> ] ;
+    narr:variation [ narr:text "The text-for-topic precedent flags a 'canon-too-soon' drift risk — feedback captured prematurely becomes wrongly authoritative." ; narr:over <https://aswritten.ai/narrative#Obs_ScarletTextForTopicQuote> ] ;
+    narr:writer "claude (subscription)" .
+}

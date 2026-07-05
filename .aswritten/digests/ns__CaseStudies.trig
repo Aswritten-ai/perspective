@@ -1,0 +1,24 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__CaseStudies> {
+  <https://aswritten.ai/narrative#Digest_ns__CaseStudies> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#CaseStudies> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers case studies meant to demonstrate worldview compilation in action. Three are framed as direct comparisons: the [before/after ChatGPT comparison](narr:CaseStudy_BeforeAfterChatGPT) shows the same content generated with and without context injection; the [feedback-loop demo](narr:CaseStudy_FeedbackLoop) illustrates telltales detecting worldview drift and triggering a recompilation cascade; and the [one-shot application](narr:CaseStudy_OneShotApplication) contrasts worldview-driven output against generic AI output for the same prompt. Sitting alongside as a thesis (attached as *related*, not *broader*) is the [cascading-value narrative](narr:Narrative_CascadingValue), arguing a single worldview commit auto-regenerates decks, roadmaps, briefs and specs, with \"no network problem, only network value.\" Distinct from the demonstration set is a real-world, forward-looking [Crooked Media / Pod Save America demo](narr:Narrative_SIC_CaseStudies_1) — auto-ingesting transcripts to enable perspectival operations on podcast narrative. The region covers proof-of-concept comparisons, the value thesis behind them, and one named client application.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#CaseStudy_BeforeAfterChatGPT> ;
+    narr:covers <https://aswritten.ai/ns/narrative#CaseStudy_FeedbackLoop> ;
+    narr:covers <https://aswritten.ai/ns/narrative#CaseStudy_OneShotApplication> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_CascadingValue> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_CaseStudies_1> ;
+    narr:keyPhrase [ narr:text "Demonstrates worldview compilation by showing same content generated before and after ChatGPT context injection." ; narr:phraseSource <https://aswritten.ai/ns/narrative#CaseStudy_BeforeAfterChatGPT> ] ;
+    narr:keyPhrase [ narr:text "Illustrates telltales detecting worldview drift and triggering recompilation cascade." ; narr:phraseSource <https://aswritten.ai/ns/narrative#CaseStudy_FeedbackLoop> ] ;
+    narr:keyPhrase [ narr:text "Shows worldview-driven output vs. generic AI output for same prompt, demonstrating strategic context propagation." ; narr:phraseSource <https://aswritten.ai/ns/narrative#CaseStudy_OneShotApplication> ] ;
+    narr:keyPhrase [ narr:text "No network problem, only network value; any role's contribution immediately benefits all others; real-time worldview compilation" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_CascadingValue> ] ;
+    narr:keyPhrase [ narr:text "Planned demo for Crooked Media (Pod Save America): auto-ingest transcripts/show notes, generate updating stories, enable perspectival operations on podcast narrative." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_SIC_CaseStudies_1> ] ;
+    narr:variation [ narr:text "Three children are demonstrated comparisons, but the Crooked Media case is a *planned* future demo for a named external client — aspiration vs. proof." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_CaseStudies_1> ; narr:over <https://aswritten.ai/ns/narrative#CaseStudy_BeforeAfterChatGPT> ] ;
+    narr:variation [ narr:text "CascadingValue attaches as 'related', not 'broader' — it is the value thesis the case studies argue for, not itself a case study, and could be read as the abstract claim the others try to evidence." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_CascadingValue> ] ;
+    narr:variation [ narr:text "The case studies split on what they prove: compilation fidelity (before/after), drift-detection/recompilation (feedback loop), and propagation quality (one-shot) — different mechanisms, not one uniform claim." ; narr:over <https://aswritten.ai/ns/narrative#CaseStudy_BeforeAfterChatGPT> ; narr:over <https://aswritten.ai/ns/narrative#CaseStudy_FeedbackLoop> ; narr:over <https://aswritten.ai/ns/narrative#CaseStudy_OneShotApplication> ] ;
+    narr:writer "claude (subscription)" .
+}
