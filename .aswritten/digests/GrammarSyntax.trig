@@ -1,0 +1,35 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_GrammarSyntax> {
+  <https://aswritten.ai/narrative#Digest_GrammarSyntax> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#GrammarSyntax> ;
+    narr:childCount "13"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """Grammar and syntax observations of Scarlet's writing converge on a few load-bearing habits. Voice is overwhelmingly [active and agent-first](narr:StyleObs_10), first-person declarative, with [active constructions dominating and passive voice rare](narr:StyleObs_9). Rhythm runs on [deliberate alternation](narr:StyleObs_9) — long explanatory sentence then short punchy verdict — and on [parallel/tricolon structures](narr:StyleObs_6) and [punchy section-anchor declaratives](narr:StyleObs_6). At the micro level a recurring pattern dominates: [bold lead-phrase + colon + elaboration](narr:StyleObs_10), extended into [bold-labeled data-source bullets](narr:StyleObs_BoldBulletStructure), [bulleted failure-mode incident reports](narr:StyleObs_BulletedFailureModeStructure), and [imperative-mood numbered lists](narr:StyleObs_ImperativeNumberedList). A distinct technical register surfaces in [arrow notation for sequential flows](narr:StyleObs_ArrowFlowNotation), [arrow-linked parallel verb phrases](narr:StyleObs_ArrowParallelism), and a [three-column pedagogical classification table](narr:StyleObs_TableClassification). Idiolect markers — coined compound nouns and OS/mechanical metaphors — recur as a signature ([compression anxiety, one-shot](narr:StyleObs_10); [bootload a worldview, opinion machine](narr:StyleObs_6); [escape valve, arrow/archery](narr:StyleObs_5)).""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_10> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_5> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_6> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_9> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowFlowNotation> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowParallelism> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldBulletStructure> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldHeadingStructure> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BulletParallelism> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BulletedConsequences> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BulletedFailureModeStructure> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ImperativeNumberedList> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TableClassification> ;
+    narr:keyPhrase [ narr:text "I sold a dream" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_5> ] ;
+    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_6> ] ;
+    narr:keyPhrase [ narr:text "extract → lens → micro-telltale → human feedback → modify triples → re-lens → repeat" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ArrowParallelism> ] ;
+    narr:keyPhrase [ narr:text "**n8n executions API**" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BoldBulletStructure> ] ;
+    narr:keyPhrase [ narr:text "**SQLite single-writer lock**" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BulletedFailureModeStructure> ] ;
+    narr:keyPhrase [ narr:text "Cents, not dollars." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:keyPhrase [ narr:text "| Content | Classification | Why |" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TableClassification> ] ;
+    narr:variation [ narr:text "Register split: personal/essayistic voice (em-dash elaboration, first-person declarative) coexists with a technical/engineering register (arrow notation, inline code backticks, classification tables) — the same author switches modes by document." ; narr:over <https://aswritten.ai/narrative#StyleObs_5> ; narr:over <https://aswritten.ai/narrative#StyleObs_ArrowFlowNotation> ; narr:over <https://aswritten.ai/narrative#StyleObs_TableClassification> ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldBulletStructure> ] ;
+    narr:variation [ narr:text "Hybrid heading structures push against clean hierarchy: bold numbered/labeled phrases used inline as section headers instead of full H3s — parallel structure signaled without the heading machinery." ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldHeadingStructure> ; narr:over <https://aswritten.ai/narrative#StyleObs_BulletParallelism> ] ;
+    narr:variation [ narr:text "Coined idiolect metaphors ('compression anxiety', 'bootload a new worldview', 'opinion machine') are an outlier layer over the otherwise plain structural patterns — signature, not template." ; narr:over <https://aswritten.ai/narrative#StyleObs_10> ; narr:over <https://aswritten.ai/narrative#StyleObs_6> ; narr:over <https://aswritten.ai/narrative#StyleObs_5> ] ;
+    narr:variation [ narr:text "Explicit meta-transparency devices — document-level conviction/confidence labels and self-aware commentary on document placement — are an unusual framing move not reducible to ordinary grammar/syntax." ; narr:over <https://aswritten.ai/narrative#StyleObs_10> ; narr:over <https://aswritten.ai/narrative#StyleObs_9> ] ;
+    narr:writer "claude (subscription)" .
+}

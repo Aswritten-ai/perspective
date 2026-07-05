@@ -1,0 +1,613 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+
+INSERT DATA {
+  narr:Tx_20260310T160829Z
+    a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-03-10T16:08:29Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-03-10-elevator-pitch-hallucination-hook.md" ;
+    sb:originRef           "main" .
+} ;
+
+# =============================================================
+# BLOCK 1 — INSERT: New Narratives
+# =============================================================
+
+INSERT DATA {
+
+  narr:Narrative_HallucinationFear
+
+    dct:source narr:Sample_1 ;
+    narr:theme "Universal fear of AI hallucination as the primary hook for enterprise AI adoption" ;
+    skos:note "The pitch opens with the hallucination question because it describes pain directly in language anyone who has asked someone to use AI immediately recognizes, replacing the mechanism-focused enterprise/org-knowledge-retention framing." ;
+    skos:broader narr:ProblemStakes ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Narrative_OrgWorldview
+
+    dct:source narr:Sample_1 ;
+    narr:theme "AI that thinks like your org by building a comprehensive worldview from existing docs and interviews" ;
+    skos:note "Differentiates from RAG by going underneath the text — capturing where you've been, what you've decided, and where you're headed — rather than indexing documents." ;
+    skos:broader narr:SolutionDifferentiation ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Narrative_CitationAsProof
+
+    dct:source narr:Sample_1 ;
+    narr:theme "Citations in every chat like a research paper directly answer the hallucination fear" ;
+    skos:note "Beat 3 of the five-beat arc: proof that directly resolves the hook. Annotated at boulder-level conviction against Citation Quality Standard (Mar 6, 2026)." ;
+    skos:broader narr:ProofOutcomesSales ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Narrative_CollaborativeMemory
+
+    dct:source narr:Sample_1 ;
+    narr:theme "Collaborative memory capture and team review creates governed institutional knowledge" ;
+    skos:note "Write-path paragraph: aswritten captures decisions as you work; team reviews before it's believed. Describes extraction pipeline and PR review workflow in two sentences with zero jargon." ;
+    skos:broader narr:CoreWorkflows ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Narrative_CompoundingValue
+
+    dct:source narr:Sample_1 ;
+    narr:theme "The system teaches itself and explains the org to new hires, implying compounding value over time" ;
+    skos:note "Closing beat of the five-beat arc. Warm, concrete, implies the system becomes more valuable as it grows. Annotated at foundation-level against Onboarding Elimination Archetype (Jan 7, 2026)." ;
+    skos:broader narr:ExpansionPathway ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Narrative_ProspectPerspective
+
+    dct:source narr:Sample_1 ;
+    narr:theme "Every sentence is written from the prospect's experience, not the product's architecture" ;
+    skos:note "Structural principle: no git, no MCP, no RDF, no GitHub Actions, no narrative architecture. Enables the pitch to work across elevator, deck intro, and demo intro formats simultaneously." ;
+    skos:broader narr:AudienceFrames ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+} ;
+
+# =============================================================
+# BLOCK 2 — INSERT: New Claims
+# =============================================================
+
+INSERT DATA {
+
+  narr:Claim_WorldviewBuilding
+    a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_OrgWorldview ;
+    narr:supports narr:Narrative_OrgWorldview ;
+    skos:note "Works with you to understand your org... comprehensive worldview. Foundation-level from competitive analysis session (Feb 5, 2026)." ;
+    dct:source narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Claim_CitationQuality
+    a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Narrative_CitationAsProof ;
+    narr:supports narr:Narrative_CitationAsProof ;
+    skos:note "Cite it in every chat like a research paper. Boulder-level, Citation Quality Standard (Mar 6, 2026)." ;
+    dct:source narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Claim_MemoryCapture
+    a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Narrative_CollaborativeMemory ;
+    narr:supports narr:Narrative_CollaborativeMemory ;
+    skos:note "Captures new information and key decisions and drafts memories. Boulder-level, Canonical Memory Creation Workflow." ;
+    dct:source narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Claim_CollaborativeReview
+    a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Narrative_CollaborativeMemory ;
+    narr:supports narr:Narrative_CollaborativeMemory ;
+    skos:note "Collaboratively reviewed by your team. Boulder-level, Review Creates Knowledge (Mar 6, 2026)." ;
+    dct:source narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Claim_OnboardingElimination
+    a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_CompoundingValue ;
+    narr:supports narr:Narrative_CompoundingValue ;
+    skos:note "Teach new people... explain your org to new hires. Foundation-level, Onboarding Elimination Archetype (Jan 7, 2026)." ;
+    dct:source narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Claim_ExtractionMethodology
+    a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_OrgWorldview ;
+    narr:supports narr:Narrative_OrgWorldview ;
+    skos:note "Interviews you to understand what's underneath the text. Foundation-level, extraction methodology." ;
+    dct:source narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+} ;
+
+# =============================================================
+# BLOCK 3 — INSERT: New Observations (Positioning / Strategy)
+# =============================================================
+
+INSERT DATA {
+
+  narr:Obs_PositioningShift
+    a narr:Observation ;
+    skos:broader narr:PositioningThesis ;
+    dct:source narr:Sample_1 ;
+    skos:note "Pivot from enterprise/org-knowledge-retention framing (mechanism) to hallucination hook (pain). Scarlet's insight: current pitch describes the mechanism rather than the pain." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 278 ;
+      oa:end 430
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "the current enterprise/org-knowledge-retention framing — while correct — describes the mechanism rather than the pain" ;
+      oa:prefix "realized " ;
+      oa:suffix ". The hallucination"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Obs_DifferentiatorFolded
+    a narr:Observation ;
+    skos:broader narr:Differentiators ;
+    dct:source narr:Sample_1 ;
+    skos:note "Differentiator folded into the 'what we do' paragraph rather than isolated as a separate section. 'Narrative architecture' replaced with what it actually means in human terms." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3820 ;
+      oa:end 3980
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "interviews you to understand what's underneath the text — where you've been, what you've decided, and where you're headed" ;
+      oa:prefix "the differentiator was folded into the \"what we do\" paragraph: \"" ;
+      oa:suffix ".\""
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Obs_PlainLanguageDifferentiator
+    a narr:Observation ;
+    skos:broader narr:WhatItsNot ;
+    dct:source narr:Sample_1 ;
+    skos:note "Plain-language differentiator retained for the 'how is this different from uploading docs to ChatGPT?' objection." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3990 ;
+      oa:end 4110
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "Most AI tools search your documents. Aswritten understands your thinking — where you've been, what you've decided, and where you're headed." ;
+      oa:prefix "asks \"how is this different from uploading docs to ChatGPT?\": \"" ;
+      oa:suffix "\""
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Obs_AudienceMapping
+    a narr:Observation ;
+    skos:broader narr:AudienceFrames ;
+    dct:source narr:Sample_1 ;
+    skos:note "Four distinct audience resonance frames: Enterprise buyer (governance), Series A CEO (contractor autonomy), Ops lead (trust), Technical leader (accountability via citations and review)." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 5450 ;
+      oa:end 5700
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "Enterprise buyer hears: institutional knowledge retention with governance" ;
+      oa:prefix "- **" ;
+      oa:suffix "\n- **Series A CEO"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Obs_TwoCallStructure
+    a narr:Observation ;
+    skos:broader narr:CoreNarratives ;
+    dct:source narr:Sample_1 ;
+    skos:note "Pitch is spoken on Call One before the read-path demo. Enterprise framing (senior expert bottleneck, knowledge retention, compliance) becomes Call Two language." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 4800 ;
+      oa:end 4960
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "The enterprise framing (senior expert bottleneck, knowledge retention, compliance) is still real but becomes Call Two language" ;
+      oa:prefix "once you know their specific pain.\n\n" ;
+      oa:suffix " — what you get into"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+} ;
+
+# =============================================================
+# BLOCK 4 — INSERT: New Key Phrase Observations
+# =============================================================
+
+INSERT DATA {
+
+  narr:Obs_KeyPhrase_Hallucinating
+    a narr:Observation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_1 ;
+    skos:note "The hallucination question as the universal hook — replaces enterprise framing as the opening." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1055 ;
+      oa:end 1130
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "how can you tell if it's hallucinating?" ;
+      oa:prefix "to use AI, " ;
+      oa:suffix "\n>"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Obs_KeyPhrase_UnderneathTheText
+    a narr:Observation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_1 ;
+    skos:note "'Underneath the text' is the core differentiator phrase — signals depth beyond document indexing without using technical jargon." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1175 ;
+      oa:end 1200
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "what's underneath the text" ;
+      oa:prefix "to understand " ;
+      oa:suffix " - where you've been"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Obs_KeyPhrase_ThinkLikeYourOrg
+    a narr:Observation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_1 ;
+    skos:note "'Think like your org' — the outcome promise of the worldview-building process. Positions Aswritten as an org-level intelligence layer." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1280 ;
+      oa:end 1330
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "allows any AI to think like your org" ;
+      oa:prefix "comprehensive worldview that " ;
+      oa:suffix ".\n>"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+} ;
+
+# =============================================================
+# BLOCK 5 — INSERT: New Style Observations
+# =============================================================
+
+INSERT DATA {
+
+  narr:StyleObs_RhetoricalQuestion
+    a narr:StyleObservation ;
+    skos:broader narr:RhetoricalQuestion ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Opening hook: rhetorical question that universalizes the hallucination fear. Annotated as the only 'unsupported' factual item — it is a rhetorical device, not a claim." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1055 ;
+      oa:end 1130
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "When you ask your employee, assistant, interns, etc to use AI, how can you tell if it's hallucinating?" ;
+      oa:prefix "> " ;
+      oa:suffix "\n>"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:StyleObs_BrandNameLowercase
+    a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:NamingConventions ;
+    rdf:value true ;
+    skos:note "Brand name 'aswritten' rendered in lowercase throughout the pitch body, including at sentence-start positions. Consistent stylization choice." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1131 ;
+      oa:end 1160
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "Aswritten starts with your existing docs" ;
+      oa:prefix "> " ;
+      oa:suffix " and interviews"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:StyleObs_RuleOfThree_Direction
+    a narr:StyleObservation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Tricolon 'where you've been, what you've decided, and where you're headed' used as the core differentiator phrase. Appears in pitch body, differentiator section, and plain-language version — functions as a stock phrase." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1195 ;
+      oa:end 1265
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "where you've been, what you've decided, and where you're headed" ;
+      oa:prefix "underneath the text - " ;
+      oa:suffix " - and turns it"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:StyleObs_Analogy_ResearchPaper
+    a narr:StyleObservation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ProofOutcomesSales ;
+    rdf:value true ;
+    skos:note "Citation analogy: 'like a research paper' makes the citation behavior concrete and familiar. Directly answers the hallucination hook by invoking academic accountability." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1330 ;
+      oa:end 1390
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "cite it in every chat like a research paper" ;
+      oa:prefix "knowledge and " ;
+      oa:suffix ".\n>"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:StyleObs_PlainLanguagePolicy
+    a narr:StyleObservation ;
+    skos:broader narr:PlainLanguage ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:JargonPolicy ;
+    rdf:value true ;
+    skos:note "Explicit jargon exclusion: no git, no MCP, no RDF, no GitHub Actions, no narrative architecture. The extraction pipeline and PR review workflow described in two sentences with zero infrastructure jargon." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 2580 ;
+      oa:end 2650
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "No git, no MCP, no RDF, no GitHub Actions, no narrative architecture." ;
+      oa:prefix "what the product is built on. " ;
+      oa:suffix "\n\n## The Differentiator"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:StyleObs_SecondPerson
+    a narr:StyleObservation ;
+    skos:broader narr:SecondPerson ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ToneDirectPersonal ;
+    rdf:value true ;
+    skos:note "Pitch body uses second-person 'you/your' throughout, keeping every sentence in the prospect's frame of reference. Structural principle explicitly stated in the analysis." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1055 ;
+      oa:end 1080
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "When you ask your employee" ;
+      oa:prefix "> " ;
+      oa:suffix ", assistant, interns"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:StyleObs_ShortPunchyClose
+    a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Closing sentence is the shortest in the pitch — warm, concrete, implies compounding value without stating it. Cadence shift from longer process sentences to a brief payoff." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1600 ;
+      oa:end 1660
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "Aswritten knows how to teach new people how to use it, and can explain your org to new hires." ;
+      oa:prefix "> " ;
+      oa:suffix "\n\n## Structure"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:StyleObs_Antithesis_MechanismVsPain
+    a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:PositioningThesis ;
+    rdf:value true ;
+    skos:note "Explicit antithesis in the meta-analysis: mechanism (knowledge retention) vs. pain (hallucination). Structural contrast drives the pitch redesign decision." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3680 ;
+      oa:end 3820
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "Aswritten doesn't work from summaries or lists of documents, it understands the way your org thinks" ;
+      oa:prefix "section was drafted: \"" ;
+      oa:suffix " by creating"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:StyleObs_BoldBeats
+    a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:FlowCoherence ;
+    rdf:value true ;
+    skos:note "Five-beat arc labeled with bold typographic markers (The fear, The process, The proof, The loop, The payoff) — structural scaffolding that makes the pitch architecture explicit in the analysis section." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1720 ;
+      oa:end 1760
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "**The fear** (hook)" ;
+      oa:prefix "1. " ;
+      oa:suffix " — \"How can you tell"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+} ;
+
+# =============================================================
+# BLOCK 6 — INSERT: New Product / Solution Archetype Observations
+# =============================================================
+
+INSERT DATA {
+
+  narr:Obs_FiveBeatArc
+    a narr:Observation ;
+    skos:broader narr:Storyboards ;
+    dct:source narr:Sample_1 ;
+    skos:note "Five-beat arc: (1) Fear/hook, (2) Process/differentiator, (3) Proof/citation, (4) Loop/write-path+governance, (5) Payoff/compounding value. Each beat maps to a demo segment on Call One." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1700 ;
+      oa:end 1730
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "The pitch is a five-beat arc" ;
+      oa:prefix "## Structure and Why It Works\n\n" ;
+      oa:suffix ":\n\n1."
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+  narr:Obs_MultiFormatApplicability
+    a narr:Observation ;
+    skos:broader narr:FormatsChannels ;
+    dct:source narr:Sample_1 ;
+    skos:note "Pitch simultaneously serves: elevator pitch, McDonald's picture memo/sales deck intro, and demo intro on Call One. Works at every format because every sentence is about prospect experience." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 2380 ;
+      oa:end 2530
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "Elevator pitch — what you say when someone asks \"what do you do?\"" ;
+      oa:prefix "- **" ;
+      oa:suffix "\n- **McDonald's"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+
+} ;
+
+# =============================================================
+# BLOCK 7 — UPDATE: narr:Sample_1 (title, inputLength, skos:note)
+# =============================================================
+
+DELETE {
+  narr:Sample_1 dct:title ?oldTitle .
+}
+INSERT {
+  narr:Sample_1
+    dct:title "Elevator Pitch: The Hallucination Hook" ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+}
+WHERE {
+  OPTIONAL { narr:Sample_1 dct:title ?oldTitle . }
+} ;
+
+DELETE {
+  narr:Sample_1 narr:inputLength ?oldLen .
+}
+INSERT {
+  narr:Sample_1 narr:inputLength 5823 .
+}
+WHERE {
+  OPTIONAL { narr:Sample_1 narr:inputLength ?oldLen . }
+} ;
+
+DELETE {
+  narr:Sample_1 skos:note ?oldNote .
+}
+INSERT {
+  narr:Sample_1 skos:note "Sales pitch document for Aswritten; emerged from session redesigning the sales call structure. Includes final pitch, structural analysis, differentiator decisions, annotation results, demo mapping, and audience mapping." .
+}
+WHERE {
+  OPTIONAL { narr:Sample_1 skos:note ?oldNote . }
+} ;
+
+# =============================================================
+# BLOCK 9 — UPDATE: narr:Claim_DirectionNotContext (aboutNode, supports)
+# =============================================================
+
+DELETE {
+  narr:Claim_DirectionNotContext narr:aboutNode ?oldAbout .
+  narr:Claim_DirectionNotContext narr:supports   ?oldSupports .
+}
+INSERT {
+  narr:Claim_DirectionNotContext
+    narr:aboutNode narr:Narrative_OrgWorldview ;
+    narr:supports  narr:Narrative_OrgWorldview ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+}
+WHERE {
+  OPTIONAL { narr:Claim_DirectionNotContext narr:aboutNode ?oldAbout . }
+  OPTIONAL { narr:Claim_DirectionNotContext narr:supports   ?oldSupports . }
+} ;
+
+# =============================================================
+# BLOCK 10 — UPDATE: narr:StyleMetrics_Sample1
+# =============================================================
+
+DELETE {
+  narr:StyleMetrics_Sample1 narr:AverageSentenceLength ?oldAsl .
+  narr:StyleMetrics_Sample1 narr:ActiveVoiceRatio       ?oldAvr .
+  narr:StyleMetrics_Sample1 narr:JargonDensity          ?oldJd  .
+  narr:StyleMetrics_Sample1 skos:note                   ?oldNote .
+}
+INSERT {
+  narr:StyleMetrics_Sample1
+    narr:AverageSentenceLength 22 ;
+    narr:ActiveVoiceRatio      "0.92"^^xsd:decimal ;
+    narr:JargonDensity         "0.00"^^xsd:decimal ;
+    skos:note "Pitch body: ~5 sentences, avg ~22 words each. Active voice dominant throughout. Zero infrastructure jargon in pitch body (explicitly enforced). Plain language score high. Tricolon stock phrase repeated 3x across document for emphasis." ;
+    prov:wasGeneratedBy narr:Tx_20260310T160829Z .
+}
+WHERE {
+  OPTIONAL { narr:StyleMetrics_Sample1 narr:AverageSentenceLength ?oldAsl . }
+  OPTIONAL { narr:StyleMetrics_Sample1 narr:ActiveVoiceRatio       ?oldAvr . }
+  OPTIONAL { narr:StyleMetrics_Sample1 narr:JargonDensity          ?oldJd  . }
+  OPTIONAL { narr:StyleMetrics_Sample1 skos:note                   ?oldNote . }
+}

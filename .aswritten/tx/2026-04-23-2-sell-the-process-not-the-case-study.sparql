@@ -1,0 +1,235 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260421T180000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-21T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-04-21-sell-the-process-not-the-case-study.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_TonyMaleyCheckin_20260421,
+      narr:Narrative_SellTheProcessPreCaseStudy,
+      narr:Claim_ProcessSaleNoMaterialNeeded,
+      narr:Claim_ReferralOnlyGrowthRisk,
+      narr:Claim_ReachabilityPhraseOrigin,
+      narr:Claim_OutboundVariantSoftening,
+      narr:Metrics_TonyMaleyCheckin_20260421,
+      narr:StyleObs_ReachabilityPhrase,
+      narr:StyleObs_SellTheProcessCadence,
+      narr:StyleObs_ConversationalTimestamps .
+} ;
+
+# ── New entities (named graph) ───────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260421T180000Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_TonyMaleyCheckin_20260421
+      a narr:Sample ;
+      dct:title "Sell the Process, Not the Case Study — Tony Maley Check-in (April 21, 2026)" ;
+      dct:created "2026-04-21"^^xsd:date ;
+      dct:description "Check-in call between Tony Maley and Scarlet Dame. Tony proposes a structural unlock: sell the the enterprise customer-shape engagement process RIGHT NOW before having a case study, by selling the procedural commitment to getting a prospect to additive value. Introduces the reachability-without-interruptability narrative anchor and softens the perspective-on-spec cold outreach framing." ;
+      narr:inputLength 5800 ;
+      narr:styleProfile "<https://aswritten.ai/narrative#SpeakerIdiolects> <https://aswritten.ai/narrative#Antithesis> <https://aswritten.ai/narrative#ShortPunchyCadence>" .
+
+    # ── Core new narrative ───────────────────────────────────────────────────
+    narr:Narrative_SellTheProcessPreCaseStudy
+
+      dct:source narr:Sample_TonyMaleyCheckin_20260421 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "Sell the Process Before You Have a Case Study" ;
+      skos:note "Tony's structural unlock: you can sell the the enterprise customer-shape engagement RIGHT NOW — before you have a case study — by selling the PROCESS that gets prospects to additive value. The procedural product: (1) set up in their existing channel (Teams, Slack, whatever they use), (2) mirror someone's voice (the internal expert / bottleneck), (3) they verify they see the value, (4) roll to MSA / production. This extends the Sales-as-Delivery pattern by giving Scarlet a procedural product to pitch when she does not yet have case studies. Mitigates the referral-only growth risk flagged by Scarlet as 'painting myself into a corner.'" ;
+      narr:theme "You can sell the engagement process itself — before any case study exists — because the process IS the product: set up channel, mirror voice, verify value, roll to MSA" .
+
+    # ── Claims ──────────────────────────────────────────────────────────────
+    narr:Claim_ProcessSaleNoMaterialNeeded
+      a narr:Claim ;
+      dct:source narr:Sample_TonyMaleyCheckin_20260421 ;
+      skos:note "Tony [28:21]: 'So you can take exactly what you're doing now as a process and start selling that already without showing them any material. Right. So you can show them that this process is how you get to good.' The process itself — channel setup, voice mirroring, value verification, MSA rollout — is the sellable unit before any case study or material exists." ;
+      narr:aboutNode narr:Narrative_SellTheProcessPreCaseStudy ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_SalesAsDelivery .
+
+    narr:Claim_ReferralOnlyGrowthRisk
+      a narr:Claim ;
+      dct:source narr:Sample_TonyMaleyCheckin_20260421 ;
+      skos:note "Scarlet [39:19]: 'I don't want to paint myself in a corner where like the only expansion pathway over the next however many years is like progressive referral based, you know, person to person, like high touch sales.' Tony [39:44]: 'No, also that's your biggest risk as well, right? Is that area where someone else can come in with another offering that's similar to yours with a better sales process and kind of undercut all the work you're doing. Right. If you're, if you're only doing referral by referral. So you do need some way to kind of get a pipeline moving.' The process-sale is the answer to this risk." ;
+      narr:aboutNode narr:Narrative_SellTheProcessPreCaseStudy ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:ExpansionPathway .
+
+    narr:Claim_ReachabilityPhraseOrigin
+      a narr:Claim ;
+      dct:source narr:Sample_TonyMaleyCheckin_20260421 ;
+      skos:note "Scarlet [30:26]: 'Narrative I've been playing with is reachability without interruptability.' Tony [30:31]: 'Yeah, I like that. I like that a lot. That's perfect. That is perfect, actually. I really like that.' Scarlet [30:38]: 'It came out of sort of a conversation I was having with you once about wanting to invert this shit flow that we're all stuck in with AI, where, you know, basically I'm AI's bitch, waiting for it to come back within, you know, 60 to five minutes and constantly getting interrupted.' The phrase originated from Scarlet's desire to invert the AI interruption pattern — agent acts on her behalf, only interrupts when it genuinely needs her." ;
+      narr:aboutNode narr:Narrative_ReachabilityWithoutInterruptibility ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ReachabilityWithoutInterruptibility .
+
+    narr:Claim_OutboundVariantSoftening
+      a narr:Claim ;
+      dct:source narr:Sample_TonyMaleyCheckin_20260421 ;
+      skos:note "Scarlet floated aggressive cold outreach: create a perspective on spec, deploy an agent that contacts the prospect as them. Tony softened [37:40]: 'Yeah, I wouldn't make it so scary, but idea it's like, hey, I am the virtual. I've cloned you. Right. I've cloned your voice. So for PR and questions about products and services, I speak as you try me.' And [38:04]: 'You know, and kind of less is more there. You don't want it to be so scary that they're freaked out by it and worried about it.' Scarlet's own guardrail [38:13]: a perspective trained on a singular artifact is lower fidelity than one built with self-directing interactive feedback — so don't overpromise. The bounded claim ('I've cloned your voice for PR questions, try me') is the correct cold outreach script." ;
+      narr:aboutNode narr:Narrative_PerspectiveOnSpec ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_PerspectiveOnSpec .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+    narr:Metrics_TonyMaleyCheckin_20260421
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_TonyMaleyCheckin_20260421 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Call transcript register with heavy embedded verbatim quotes from two speakers. Tony's quoted speech is short, declarative, numbers-first, filler-heavy ('Right. Right. Yeah, yeah, 100, 100%'). Scarlet's quoted speech is longer and more analytical (~25 words avg), with profanity as rhetorical intensifier at conviction peaks. Antithesis-heavy structure (process vs. case study, reachable vs. interruptable, scary vs. approachable). Active voice dominant. Jargon density low — product terms (MSA, Teams, Slack, MCP) used without definition, implying internal audience. Timestamp citation convention throughout." ;
+      narr:AverageSentenceLength "16"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.81"^^xsd:decimal ;
+      narr:JargonDensity "0.06"^^xsd:decimal .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_ReachabilityPhrase
+      a narr:StyleObservation ;
+      skos:broader narr:Tagline ;
+      dct:source narr:Sample_TonyMaleyCheckin_20260421 ;
+      skos:note "Coined phrase: 'reachability without interruptability' — antithetical compound noun pair, six syllables, internally rhyming cadence. Functions as a tagline candidate for the sales motion." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyMaleyCheckin_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 1862
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "reachability without interruptability" ;
+          oa:prefix "Narrative I've been playing with is " ;
+          oa:suffix ".\"\n\n> Tony [30:31]"
+        ]
+      ] .
+
+    narr:StyleObs_SellTheProcessCadence
+      a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_TonyMaleyCheckin_20260421 ;
+      skos:note "Tony's speech pattern: short declarative bursts with filler affirmations ('Right. Right.', 'Yeah, yeah, 100, 100%') as rhetorical punctuation. Creates a staccato conviction rhythm distinct from Scarlet's longer analytical sentences." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyMaleyCheckin_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Yeah, yeah, 100, 100% without actually having to show them anything." ;
+          oa:prefix "Tony [28:56]: \"" ;
+          oa:suffix " Right now you're selling"
+        ]
+      ] .
+
+    narr:StyleObs_ConversationalTimestamps
+      a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_TonyMaleyCheckin_20260421 ;
+      skos:note "Timestamp citation convention [MM:SS] used throughout to anchor verbatim quotes to call recording positions. Functions as a CaretBracketMarker variant for audio sources rather than text documents." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyMaleyCheckin_20260421 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 680 ;
+          oa:end 780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Tony [28:21]: \"So you can take exactly what you're doing now as a process" ;
+          oa:prefix "> " ;
+          oa:suffix " and start selling that already"
+        ]
+      ] .
+  }
+} ;
+
+# ── UPDATE: Narrative_PodcastInterviewSalesMotion — extends with process-sale ─
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_PodcastInterviewSalesMotion skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260421T180000Z {
+    narr:Narrative_PodcastInterviewSalesMotion skos:note "The breakthrough insight from the a design collaborator session: the demo call, the marketing content, and the product onboarding are the same event. You interview an expert about their expertise. That conversation becomes: (1) their installable perspective — the product, they get a free account with it already in it; (2) a podcast episode / content piece — marketing, published with permission; (3) a live demo of the product — proof, the interview itself shows the product working. Three outputs from one conversation. This is a content flywheel that also builds the marketplace supply side. a design collaborator's reaction to the demo walkthrough confirmed this: the human moment sells better than any screen recording. EXTENDED (2026-04-21): Tony Maley adds a pre-case-study outbound motion — the interview-as-sales-motion remains correct; 'sell the process' adds a procedural product that can be pitched to new the enterprise customer-shape prospects even before the enterprise customer completes and before any case study exists." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_PodcastInterviewSalesMotion skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: Claim_SalesIsDelivery — extends with replicable procedural commitment ─
+DELETE {
+  GRAPH ?g {
+    narr:Claim_SalesIsDelivery skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260421T180000Z {
+    narr:Claim_SalesIsDelivery skos:note "The demo IS the sale: the prospect receives a perspective-grounded agent that proves it understands their business by navigating their own funnel and hitting their contact channel. EXTENDED (2026-04-21, Tony Maley check-in): Sales-as-Delivery is now supported by a replicable procedural commitment that can be pitched before the first delivery — the four-step process (channel setup → voice mirror → value verification → MSA rollout) is itself the sellable unit, enabling outbound to new the enterprise customer-shape prospects before any case study exists." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_SalesIsDelivery skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: Narrative_PerspectiveOnSpec — refines with Tony's softening ────────
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_PerspectiveOnSpec skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260421T180000Z {
+    narr:Narrative_PerspectiveOnSpec skos:note "Instead of placing ads, aswritten invests production cost to create a perspective of the prospect's own organization from public content, delivering it via their own advertised channels. REFINED (2026-04-21, Tony Maley): The cold outreach script should be less aggressive and bounded — not 'I'm an agent that's created to replace you in your own conversations' but 'I've cloned your voice for PR and questions about products and services, I speak as you — try me.' Less is more: don't frighten the prospect. Invite them to test. Scarlet's own guardrail: a perspective trained on a singular public artifact will be lower fidelity than one built with self-directing interactive feedback — do not overpromise. The bounded claim is the correct opener." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_PerspectiveOnSpec skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: Claim_ReachabilityAsKeystonePromise — promote conviction Stake→Boulder ─
+DELETE {
+  GRAPH ?g {
+    narr:Claim_ReachabilityAsKeystonePromise narr:hasConvictionLevel ?oldLevel .
+  }
+  GRAPH ?g {
+    narr:Claim_ReachabilityAsKeystonePromise skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260421T180000Z {
+    narr:Claim_ReachabilityAsKeystonePromise narr:hasConvictionLevel narr:Conviction_Boulder .
+    narr:Claim_ReachabilityAsKeystonePromise skos:note "This framing is a principle candidate that would partially supersede existing category definitions (Curated Expertise, Delegation) by adding a 'promise' layer above the 'mechanism' layer. PROMOTED (2026-04-21): Tony Maley's strong reaction ('Yeah, I like that. I like that a lot. That's perfect. That is perfect, actually. I really like that.') confirms this as the narrative anchor for the sales motion. Conviction promoted from Stake to Boulder. The phrase originated from Scarlet's desire to invert the AI interruption pattern — agent acts on her behalf, receives all messages, only interrupts when it genuinely needs her contribution." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_ReachabilityAsKeystonePromise narr:hasConvictionLevel ?oldLevel .
+    narr:Claim_ReachabilityAsKeystonePromise skos:note ?oldNote .
+  }
+}

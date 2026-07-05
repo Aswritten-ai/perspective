@@ -1,0 +1,369 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260212T042435Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agent#storytwin-v1> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-12T04:24:35.016Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-12-honest-pitch-manifesto-draft.md" ;
+    sb:originRef "main" ;
+    prov:used <anthropic/claude-sonnet-4.5> .
+
+  # Extracted entities with provenance links
+  narr:Sample_1 a narr:Sample ;
+    dct:title "The Honest Pitch — Manifesto Draft" ;
+    narr:inputLength 3847 ;
+    dct:created "2026-02-11"^^xsd:date ;
+    dct:creator "Scarlet (founder)" ;
+    skos:note "Written on the train. Started as a direct email pitch, evolved into manifesto/blog post. Raw draft." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:Narrative_1 a narr:Narrative ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Origin Story" ;
+    skos:prefLabel "Flocking Origin (2012)" ;
+    skos:definition "Simple rules followed by each bird produce emergent behavior impossible to predict top-down." ;
+    skos:note "Foundational metaphor linking distributed systems to narrative steering." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:Narrative_2 a narr:Narrative ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Core Technology Insight" ;
+    skos:prefLabel "Steering Vectors (2019, GPT-2)" ;
+    skos:definition "Language models have velocity; narrative is the directional vector of meaning beneath statements." ;
+    skos:related narr:Narrative_1 ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:Narrative_3 a narr:Narrative ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Product Concept" ;
+    skos:prefLabel "Narrative Architecture" ;
+    skos:definition "Interconnected web of narratives that define a way of thinking—a program installed onto model hardware." ;
+    skos:note "Analogous to 'I know kung fu' skill downloads in the Matrix." ;
+    skos:related narr:Narrative_2 ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:Narrative_4 a narr:Narrative ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Positioning Thesis" ;
+    skos:prefLabel "Narrative as Code" ;
+    skos:definition "Version, collaborate, manipulate, review, deploy perspective—treating narrative like software." ;
+    skos:related narr:Narrative_3 ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:Narrative_5 a narr:Narrative ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Value Proposition" ;
+    skos:prefLabel "Arrow Metaphor" ;
+    skos:definition "Feather arrows so first attempt goes further in the right direction; adjust heading, don't chase missed shots." ;
+    skos:note "Contrasts with LLMs moving starting line from blank page to complete-and-misguided draft." ;
+    skos:related narr:Narrative_4 ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:Mission_1 a narr:Mission ;
+    dct:source narr:Sample_1 ;
+    skos:broader narr:NarrativeAnchor ;
+    rdf:value "Create collective narrative memory for AI so organizations and individuals can install their way of thinking onto language models." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:Vision_1 a narr:Vision ;
+    dct:source narr:Sample_1 ;
+    skos:broader narr:NarrativeAnchor ;
+    rdf:value "We are the future, as written." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:Tagline_1 a narr:Tagline ;
+    dct:source narr:Sample_1 ;
+    skos:broader narr:NarrativeAnchor ;
+    rdf:value "Feather your arrows." ;
+    skos:note "Implied from arrow metaphor; candidate tagline." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleObs_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1542 ;
+        oa:end 1554
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Aswritten.ai" ;
+        oa:prefix "Sept 2025 to automate the process and built " ;
+        oa:suffix ". I created collective narrative memory"
+      ]
+    ] ;
+    skos:note "Brand name stylized with capital A, lowercase 'swritten', .ai TLD." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleObs_2 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 0 ;
+        oa:end 247
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "This is my life's work. It started in 2012 programming the flocking of birds where I saw that simples rules followed by each birds - to not collide with their fellow, to not stray too far, and to align with those near them" ;
+        oa:prefix "" ;
+        oa:suffix " - produced incredibly complex and beautiful emergent behavior"
+      ]
+    ] ;
+    skos:related narr:Narrative_1 ;
+    skos:note "Flocking metaphor establishes origin story and emergent-behavior thesis." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleObs_3 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 820 ;
+        oa:end 1020
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I treated the models themselves like a computer, and a narrative architecture - an interconnected web of narratives that define a way of thinking - like a program that can be installed onto their hardware." ;
+        oa:prefix "Instead of trying to train new models, " ;
+        oa:suffix " A bit like the"
+      ]
+    ] ;
+    skos:related narr:Narrative_3 ;
+    skos:note "Software/hardware metaphor for narrative architecture." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleObs_4 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1020 ;
+        oa:end 1085
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "A bit like the \"I know kung fu\" skill downloads in the Matrix" ;
+        oa:prefix "installed onto their hardware. " ;
+        oa:suffix ", except here we download how an organization"
+      ]
+    ] ;
+    skos:related narr:Narrative_3 ;
+    skos:note "Pop-culture analogy (The Matrix) for instant skill transfer." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleObs_5 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2990 ;
+        oa:end 3200
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I built aswritten to feather our arrows, that our first attempt may always take us further in the direction we're headed. That our work is to adjust our heading so that all arrows find target, not spend our time moving the ones that already missed." ;
+        oa:prefix "LLMs have given us. But they have turned out starting line from the blank page to the complete and misguided draft. " ;
+        oa:suffix " We are the future, as written."
+      ]
+    ] ;
+    skos:related narr:Narrative_5 ;
+    skos:note "Arrow/archery metaphor for precision and direction; core value proposition." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleObs_6 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3200 ;
+        oa:end 3235
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "We are the future, as written." ;
+        oa:prefix "all arrows find target, not spend our time moving the ones that already missed. " ;
+        oa:suffix ""
+      ]
+    ] ;
+    skos:related narr:Vision_1 ;
+    skos:note "Short, declarative closing sentence; strong cadence." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleObs_7 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 0 ;
+        oa:end 25
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "This is my life's work." ;
+        oa:prefix "" ;
+        oa:suffix " It started in 2012"
+      ]
+    ] ;
+    skos:note "Opening declaration; personal, high-stakes framing." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleObs_8 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2990 ;
+        oa:end 3020
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I built aswritten to feather our arrows" ;
+        oa:prefix "the complete and misguided draft. " ;
+        oa:suffix ", that our first attempt may always"
+      ]
+    ] ;
+    skos:note "Active verb 'built'; metaphorical verb 'feather' (archery)." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleObs_9 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:FirstPerson ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:FirstPerson ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 0 ;
+        oa:end 25
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "This is my life's work." ;
+        oa:prefix "" ;
+        oa:suffix " It started in 2012"
+      ]
+    ] ;
+    skos:note "First-person singular throughout; personal narrative voice." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:RubricAssess_Register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.0 ;
+    skos:note "Personal, direct, conversational; first-person narrative; active voice dominates. Appropriate for manifesto/founder letter." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:RubricAssess_Phrasing a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.5 ;
+    skos:note "Strong idiolect: 'feather our arrows,' 'narrative as code,' 'complete and misguided draft.' Distinctive phrasing tied to brand identity." ;
+    skos:related narr:StyleObs_5, narr:StyleObs_7 ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:RubricAssess_Cadence a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.0 ;
+    skos:note "Mix of short declarative sentences and longer explanatory clauses. Strong closing cadence. Some run-on sentences reduce score slightly." ;
+    skos:related narr:StyleObs_6 ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:RubricAssess_StrategicAlignment a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_1 ;
+    rdf:value 5.0 ;
+    skos:note "Directly articulates mission, vision, origin story, and positioning thesis. Fully aligned with narrative anchor and core narratives." ;
+    skos:related narr:Mission_1, narr:Vision_1, narr:Narrative_1, narr:Narrative_2, narr:Narrative_3, narr:Narrative_4, narr:Narrative_5 ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:RubricAssess_Tailoring a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_1 ;
+    rdf:value 3.5 ;
+    skos:note "Written for general audience (blog/LinkedIn). Assumes familiarity with LLMs, GPT-2, and startup context. Could be tailored further for specific buyer personas (technical vs. economic)." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:RubricAssess_Resonance a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.5 ;
+    skos:note "Strong use of metaphors (flocking, steering vectors, arrows) and analogies (Matrix). Origin story creates emotional connection. Resonates with technical and strategic audiences." ;
+    skos:related narr:StyleObs_2, narr:StyleObs_3, narr:StyleObs_4, narr:StyleObs_5 ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:RubricAssess_Flow a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_1 ;
+    rdf:value 3.5 ;
+    skos:note "Chronological progression (2012 → 2019 → Vouch → aswritten) provides natural flow. Some transitions abrupt; could benefit from smoother connective tissue. Noted as 'raw draft' by author." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:RubricAssess_Novelty a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.5 ;
+    skos:note "Distinctive metaphors ('feather our arrows,' 'narrative as code,' 'steering vectors') avoid cliché. Fresh framing of LLM problem ('complete and misguided draft'). High originality." ;
+    skos:related narr:StyleObs_5, narr:StyleObs_8 ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:RubricAssess_Accuracy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.0 ;
+    skos:note "Factual claims (2012 flocking, 2019 GPT-2, Vouch.io role, Sept 2025 departure) appear accurate. No citations provided; manifesto genre permits this. Minor typo ('simples rules')." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+
+  narr:StyleMetrics_1 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_1 ;
+    narr:AverageSentenceLength 32.5 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: ~12 (college); conversational but technical." ;
+    skos:note "Metrics estimated from full text. High active-voice ratio; moderate sentence length with variation." ;
+    prov:wasGeneratedBy narr:Tx_20260212T042435Z .
+}

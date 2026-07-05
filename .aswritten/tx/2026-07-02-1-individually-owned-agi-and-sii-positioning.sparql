@@ -1,0 +1,277 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260702T022934Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T02:29:34Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-02-1-individually-owned-agi-and-sii-positioning" ;
+    narr:originRef "dev" ;
+    dct:title "SII / Individually Owned AGI Reclaim — June 24 2026" ;
+    prov:generated
+      narr:Sample_SII_AGIReclaim_20260624,
+      narr:Narrative_SII_SynthesizedIndividualIntelligence,
+      narr:Narrative_ModelAsOSNotApplication,
+      narr:Narrative_ProxyInversionHumanInsulation,
+      narr:Narrative_IndividuallyOwnedAGIReclaim,
+      narr:Narrative_FounderFitB2CTurn,
+      narr:Claim_SIIFillsProductTermSlot,
+      narr:Claim_ExportableDataNotOwnership,
+      narr:Claim_FounderFitNarrativeEdge,
+      narr:Claim_IndividuateVerbReopened,
+      narr:Claim_SynthesizedOverArtificial,
+      narr:Claim_B2CEnterpriseAsContinuum_FounderFit,
+      narr:Obs_TSABodyFlagQuote,
+      narr:Obs_ExportableDataOwnershipQuote,
+      narr:Obs_SyntheticIdentityDefinitionQuote,
+      narr:Obs_MoonshotSIIQuote,
+      narr:Obs_FounderFitB2CQuote,
+      narr:StyleObs_SII_SynthesizerAnalogy,
+      narr:StyleObs_SII_RhetoricalQuestionOwnership,
+      narr:StyleMetrics_SII_AGIReclaim_Numeric .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T022934Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_SII_AGIReclaim_20260624 a narr:Sample ;
+      dct:title "\"Individually owned AGI\" / Synthesized Individual Intelligence — the reclaim and the founder-fit B2C turn" ;
+      dct:created "2026-06-24"^^xsd:date ;
+      narr:inputLength 16407 .
+
+    # ── Narrative 1: SII as named category ──────────────────────────────────
+    narr:Narrative_SII_SynthesizedIndividualIntelligence a narr:Narrative ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      narr:theme "Synthesized Individual Intelligence (SII) as the owned, portable, relational alternative to lab-owned AGI" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "SII is the working coinage replacing the [product term — TBD] slot in the v2 product doc. The fight is won on one word: individual vs. general. The public hook is 'individually owned AGI'; the named thing underneath is SII. Rejected names: Conversationally/Individuated Intelligence (too modified), Sovereign (web3/crypto), AII/API collision, IRI (graph node-ID collision), ISI (spy agency). Naming not locked as of session date." .
+
+    # ── Narrative 2: Model as OS, not application ────────────────────────────
+    narr:Narrative_ModelAsOSNotApplication a narr:Narrative ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      narr:theme "Model as operating system, not model as application — the program (perspective) is what matters, not the hardware (model)" ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:note "Fable 5 being pulled underscores the unreliability of centralized model dependence. The model is hardware; the perspective installed on it is the program. A downgrade in model hardware chokes the task size. The intelligence is in the program, not the hardware — reframing 'AGI' as a misnomer: the term should be 'individual' not 'general'." .
+
+    # ── Narrative 3: Proxy / inversion ──────────────────────────────────────
+    narr:Narrative_ProxyInversionHumanInsulation a narr:Narrative ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      narr:theme "Proxy inversion: SII acts on the human's behalf so humans are insulated from AI's constant interruptions and oversight demands" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "When humans give vague tasks to AI, they become the intern/delegate — the thing AI comes back to. The promise of individually owned AGI inverts this: a proxy (the SII) drives AI tools on the human's behalf. The human is no longer on the hook for constant oversight. Expertise = selection of what to do and when, based on prior experience — that is what humans supply and why they are not replaced." .
+
+    # ── Narrative 4: The reclaim thesis ─────────────────────────────────────
+    narr:Narrative_IndividuallyOwnedAGIReclaim a narr:Narrative ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      narr:theme "The reclaim: labs build the general (commodity substrate); what you own is the particular — the perspective installed on the model that makes it think as a distinct individual" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "The physics never changed, the substrate did. The meta-goal is not artificial general intelligence but synthesized, individual, and owned intelligence. The moonshot: AGI is certain; the question is whether it is yours. Every AI system is only as good as the perspective that drives it — and that perspective is ours." .
+
+    # ── Narrative 5: Founder-fit B2C turn ───────────────────────────────────
+    narr:Narrative_FounderFitB2CTurn a narr:Narrative ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      narr:theme "Founder-fit B2C turn: B2C is not just the larger market but the channel that plays to the founder's actual edge — narrative, writing, content" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "Enterprise was a 15-year familiarity default, not a fit default. The founder's skill and interest are in narrative development, writing, and content. A narrative-led consumer-growth motion (paid social, influencer) plays to that edge. A working consumer funnel is arguably a stronger venture story than enterprise pilots. Held in tension with still-validated enterprise signal (the enterprise customer). B2C-vs-enterprise is best held as a continuum, not a binary — the founder-fit turn is about where the lead/emphasis sits." .
+
+    # ── Claims ───────────────────────────────────────────────────────────────
+    narr:Claim_SIIFillsProductTermSlot a narr:Claim ;
+      narr:aboutNode narr:Narrative_SII_SynthesizedIndividualIntelligence ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:NarrativeAnchor ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "SII fills the '[product term — TBD]' slot the v2 product doc held open for the synthetic-identity meta-goal. Working coinage, not a final lock as of 2026-06-24." .
+
+    narr:Claim_ExportableDataNotOwnership a narr:Claim ;
+      narr:aboutNode narr:Narrative_IndividuallyOwnedAGIReclaim ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_IndividuallyOwnedAGIReclaim ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "Exportable data is not the same as ownership. The right to be forgotten is not the same thing as freedom. Ownership means carrying the synthetic identity with your physical and digital self as you encounter systems." .
+
+    narr:Claim_FounderFitNarrativeEdge a narr:Claim ;
+      narr:aboutNode narr:Narrative_FounderFitB2CTurn ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_B2CPivot ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The founder's skill and interest are in narrative development, writing, and content — not enterprise sales. Enterprise was a 15-year familiarity default she'd be selling against her grain. B2C narrative-led motion plays to the actual edge." .
+
+    narr:Claim_IndividuateVerbReopened a narr:Claim ;
+      narr:aboutNode narr:Narrative_SII_SynthesizedIndividualIntelligence ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "'Individuate' as the hero customer verb is unresolved — it was retired internally Apr 9 in favor of 'perspective pipeline'; resurrected here for positioning, which is a different concern than pipeline naming. Pipeline naming vs. positioning are two different concerns and the conversation is appropriately open again." .
+
+    narr:Claim_SynthesizedOverArtificial a narr:Claim ;
+      narr:aboutNode narr:Narrative_SII_SynthesizedIndividualIntelligence ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_SII_SynthesizedIndividualIntelligence ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "'Synthesized' chosen over 'synthetic'/'artificial' because a synthesizer is an instrument a human plays (agency, participation) and foregrounds the act of synthesis — putting pieces together into a functional representation of what makes an individual unique. Steps off the fraud-tainted noun 'synthetic identity'. 'Artificial' sounds like a food flavoring from a lab." .
+
+    narr:Claim_B2CEnterpriseAsContinuum_FounderFit a narr:Claim ;
+      narr:aboutNode narr:Narrative_FounderFitB2CTurn ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_TierContinuumNotDistinctMarkets ;
+      narr:challenges narr:Claim_B2CPrimaryMarket ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "B2C-vs-enterprise is best held as a continuum (Expert↔Team↔Org, one use case), not a binary. The founder-fit turn is about where the lead/emphasis sits, not an abandonment of enterprise. A working consumer funnel is arguably a stronger venture story than enterprise pilots." .
+
+    # ── Observations with quote selectors ───────────────────────────────────
+    narr:Obs_TSABodyFlagQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The TSA scanner as the concrete instantiation of the AI individuality problem — a centralized norm flagging the divergent body." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1596 ; oa:end 1677
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "collapsing the problem to a problem with upstream data is to erase the individual" ;
+          oa:prefix "but " ;
+          oa:suffix "."
+        ]
+      ] .
+
+    narr:Obs_ExportableDataOwnershipQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The ownership spine in two sentences — the sharpest distillation of the SII political argument." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5771 ; oa:end 5876
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Exportable data is not the same as ownership. The right to be forgotton is not the same thing as freedom." ;
+          oa:prefix "" ;
+          oa:suffix "\n"
+        ]
+      ] .
+
+    narr:Obs_SyntheticIdentityDefinitionQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "Scarlet's definition of synthetic identity / SII from the walk voice-memo — the most complete technical definition in the session." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 8448 ; oa:end 8533
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "a perspective made up of experiences that are extracted based on this discourse graph" ;
+          oa:prefix "> [Synthetic identity, defined:] " ;
+          oa:suffix " based on a understanding of opinion about information"
+        ]
+      ] .
+
+    narr:Obs_MoonshotSIIQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "The moonshot statement — the clearest articulation of the SII vision and the ownership thesis." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 10218 ; oa:end 10305
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "AGI can be ours, that every AI system is only as good as the perspective that drives it" ;
+          oa:prefix "" ;
+          oa:suffix "... and that this vision of AGI is not of the corporation"
+        ]
+      ] .
+
+    narr:Obs_FounderFitB2CQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      skos:note "Scarlet's verbatim founder-fit rationale — the clearest statement of why B2C is fit, not just market size." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 12635 ; oa:end 12786
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "my skill and interest are a lot more in narrative development. I like to write, and I like to hire and talk to people about that kind of content stuff." ;
+          oa:prefix "" ;
+          oa:suffix "\n"
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_SII_SynthesizerAnalogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      rdf:value true ;
+      skos:note "Synthesizer-as-instrument analogy: human plays the synthesizer, making music with agency and participation. Contrasted with 'artificial' (lab food flavoring) and 'synthetic' (computer-created parallel domain). The analogy encodes the relational, human-guided nature of SII in the name itself." ;
+      skos:related narr:NamingConventions ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 10677 ; oa:end 10779
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "a synthesizer makes music with a human guiding it. artificial sounds like a food flavoring from a lab." ;
+          oa:prefix "> i do like Synthesized vs artificial in that it implies agency and partifipcation to me - " ;
+          oa:suffix " synthetic sounds like a computer"
+        ]
+      ] .
+
+    narr:StyleObs_SII_RhetoricalQuestionOwnership a narr:StyleObservation ;
+      skos:broader narr:RhetoricalQuestion ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      rdf:value true ;
+      skos:note "Cascading rhetorical questions used to build the ownership dilemma: 'What is invasive in the world of AI?... is my identity... mediated by a system external to myself?' Each question escalates the stakes from physical (TSA pat-down) to digital (AI profile) to existential (identity ownership). Characteristic Scarlet device: rhetorical questions that simulate the reader's inner voice before delivering the thesis." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SII_AGIReclaim_20260624 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3934 ; oa:end 4038
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "What is invasive in the world of AI? What is necessary, both for oour own health, freedom, and happiness" ;
+          oa:prefix "" ;
+          oa:suffix " as well as that of our communities"
+        ]
+      ] .
+
+    # ── Style Metrics (numeric, replacing the note-only prior node) ──────────
+    narr:StyleMetrics_SII_AGIReclaim_Numeric a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_SII_AGIReclaim_20260624 ;
+      narr:AverageSentenceLength 28 ;
+      narr:ActiveVoiceRatio "0.72"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal ;
+      skos:note "Mixed register: personal essay (scanner section) with long subordinate-clause chains elevates average sentence length. Editorial framing sections are shorter and more declarative. Active voice dominant in editorial; passive in scanner body-description. Jargon density moderate — SII, AGI, HRT, frontier model, discourse graph used without definition, implying internal/aligned audience." .
+
+  }
+}

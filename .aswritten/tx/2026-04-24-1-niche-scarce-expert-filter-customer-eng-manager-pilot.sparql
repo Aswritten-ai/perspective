@@ -1,0 +1,329 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260424T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-24T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-24-niche-emerges-scarce-expert-filter.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_NicheEmerges_20260424,
+      narr:Narrative_MatchingSearchReframe,
+      narr:Narrative_TwoSidedLegibilityProblem,
+      narr:Narrative_ScarceExpertFilterGoalGated,
+      narr:Narrative_CPCOnGoalURL,
+      narr:Claim_MatchingSearchExtendsCVP,
+      narr:Claim_CPCDissolvesSaleGap,
+      narr:Claim_UnifiedInstrumentPattern,
+      narr:Claim_TwoSidedLegibilityInverse,
+      narr:Claim_NotTreatmentProxy,
+      narr:Claim_CategoryExtensionMatchingSearch,
+      narr:Obs_PsychologyTodayNegativeExample,
+      narr:Obs_CustomerEngManagerUseCasesQuote,
+      narr:Obs_CustomerArchitectEnterpriseCustomerFitsPattern,
+      narr:Obs_CPCPricingQuote,
+      narr:Obs_CustomerEngManagerPilotDemoQuote,
+      narr:StyleObs_NicheAntithesisStructure,
+      narr:StyleObs_NicheBlockquoteVerbatim,
+      narr:Metrics_NicheEmerges_20260424 .
+} ;
+
+# ── Sample node ──────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260424T120000Z {
+    narr:Sample_NicheEmerges_20260424 a narr:Sample ;
+      dct:title "Niche Emerges: Scarce-Expert Filter with Goal-Gated Escalation (April 24, 2026)" ;
+      dct:created "2026-04-24"^^xsd:date ;
+      dct:description "~45-minute session between Scarlet Dame and Claude. Scarlet moved from scattered/confused about ICP to a concrete first pilot (an early prospect), a unified product pattern (Scarce-Expert Filter with Goal-Gated Escalation), and a refined pricing architecture (CPC-on-goal-URL for external, subscription for internal). Session also produced the first values-level personal why: alternative healthcare navigation and the two-sided legibility problem." ;
+      narr:inputLength 7200 ;
+      narr:styleProfile "<https://aswritten.ai/narrative#SpeakerIdiolects> <https://aswritten.ai/narrative#Antithesis> <https://aswritten.ai/narrative#ToneDirectPersonal> <https://aswritten.ai/narrative#IdiolectPhrasing>" .
+  }
+} ;
+
+# ── NEW Narratives ───────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260424T120000Z {
+
+    narr:Narrative_MatchingSearchReframe a narr:Narrative ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Perspectives as Matching-Search: The Category Reframe" ;
+      skos:note "Scarlet reframed the product category: perspectives are an incredibly powerful search tool for a matching problem currently done very poorly — matching individuals to appropriate healthcare providers. Psychology Today is the negative example: property-based matching (specialties, modalities) that says nothing about how a practitioner actually thinks or what integrative care means to them. The reframe extends past alternative healthcare to therapists, psychiatrists, and traditional medicine. This does not replace the 'install expertise' mechanism — matching-search is what makes installation valuable when deployed externally." ;
+      narr:theme "Perspectives are a matching-search instrument for a problem currently done very poorly — matching individuals to practitioners whose approach actually fits them" .
+
+    narr:Narrative_TwoSidedLegibilityProblem a narr:Narrative ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:broader narr:FrictionFailure ;
+      skos:prefLabel "Two-Sided Legibility Problem: Patient Illegibility and Practitioner Flattening" ;
+      skos:note "an early prospect's advertising problem (positioning around pain, two pieces of expertise, but a perspective behind that) is the inverse of Scarlet's patient problem (can't parse the medical system, can't tell which credentials are meaningful, can't find referrals). Patient-side illegibility and practitioner-side flattening are the same problem from opposite ends. aswritten makes the practitioner's perspective legible without forcing them to flatten." ;
+      narr:theme "The patient's inability to evaluate practitioners and the practitioner's inability to communicate their actual approach are the same problem from opposite ends — aswritten resolves both simultaneously" .
+
+    narr:Narrative_ScarceExpertFilterGoalGated a narr:Narrative ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:broader narr:ProductOverview ;
+      skos:prefLabel "Unified Instrument: Scarce-Expert Filter with Goal-Gated Escalation" ;
+      skos:note "Unified pattern across all use cases: an expert with scarce time currently serves as the answer-of-last-resort for repeated questions. Their perspective, installed via aswritten, absorbs the repeatable questions and gates escalation to the expert on a forward to a goal URL — booking form, referral form, office hours, DM, meeting. an early prospect use cases (patient vets fit before booking, referring practitioner decides if case is appropriate, student filters questions answerable by class content) and the customer's chief architect/the enterprise customer use case (coworkers only ask the customer's chief architect if they make it to the end of the funnel) all fit the same structural pattern. One instrument, variable escalation targets by deployment context. This dissolves the earlier 60-day ICP drift (enterprise → SMB → B2C → transcripts) — it was not different customers but different deployments of the same instrument." ;
+      narr:theme "One instrument — scarce-expert filter with goal-gated escalation — unifies all deployment contexts; the escalation target (booking form, DM, office hours) varies but the pattern is identical" .
+
+    narr:Narrative_CPCOnGoalURL a narr:Narrative ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:broader narr:PackagingPricing ;
+      skos:prefLabel "CPC-on-Goal-URL for External, Subscription for Internal" ;
+      skos:note "Instead of taking a cut of practitioner fees, pricing is outcome-based: every perspective carries a goal which is a forward to a link — essentially a click like ads, but a very high-value click with explicit end-of-funnel intent. Qualification happens before the click: the user self-qualifies through engagement with the perspective before the forward fires. Two pricing models map to deployment context, not competing homepages: External funnel (patient→practitioner, student→teacher, prospect→professional) = CPC-on-goal-URL. Internal organization (coworker→ARB expert, employee→specialist) = subscription. Ethical framing: aswritten only wins when the practitioner wins when the patient is well-matched. Also dissolves Claim_UnderstandingNotEqualSale — CPC removes the upfront purchase decision; perspective-on-spec is the sales pitch itself; first payment arrives with first forward." ;
+      narr:theme "CPC-on-goal-URL for external deployments and subscription for internal deployments — two pricing models mapped to deployment context, not customer type" .
+  }
+} ;
+
+# ── NEW Claims ───────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260424T120000Z {
+
+    narr:Claim_MatchingSearchExtendsCVP a narr:Claim ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "'Install expertise' is the mechanism; 'matching-search' is what makes installation valuable when deployed externally. The two framings are complementary: the category reframe does not replace Claim_CoreValuePropInstallExpertise but extends it with the external deployment value proposition." ;
+      narr:aboutNode narr:Narrative_MatchingSearchReframe ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Claim_CoreValuePropInstallExpertise .
+
+    narr:Claim_CPCDissolvesSaleGap a narr:Claim ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "CPC-on-goal-URL removes the upfront purchase decision that caused an engineering manager at the customer, the customer's chief architect, a collaborator, and a founder beta user to see value but not pay. Perspective-on-spec is the sales pitch itself; first payment arrives with first forward. This directly resolves the activation gap identified in Claim_UnderstandingNotEqualSale." ;
+      narr:aboutNode narr:Narrative_CPCOnGoalURL ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_CPCOnGoalURL .
+
+    narr:Claim_UnifiedInstrumentPattern a narr:Claim ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "The 60-day ICP drift (enterprise → SMB → B2C → transcripts) was not about different customers — it was about different deployments of the same instrument. The Scarce-Expert Filter with Goal-Gated Escalation unifies an engineering manager at the customer's three use cases and the the enterprise customer/the customer's chief architect use case under one structural pattern. One instrument, variable escalation targets by deployment context." ;
+      narr:aboutNode narr:Narrative_ScarceExpertFilterGoalGated ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ScarceExpertFilterGoalGated .
+
+    narr:Claim_TwoSidedLegibilityInverse a narr:Claim ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "an early prospect's advertising problem (practitioner-side flattening) is the inverse of Scarlet's patient problem (patient-side illegibility). They are the same problem from opposite ends. aswritten makes the practitioner's perspective legible without forcing them to flatten — resolving both sides simultaneously." ;
+      narr:aboutNode narr:Narrative_TwoSidedLegibilityProblem ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_TwoSidedLegibilityProblem .
+
+    narr:Claim_NotTreatmentProxy a narr:Claim ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "This is not necessarily a good tool to be a treatment proxy or to be giving advice. What is interesting is it as a matching solution or a sort of vetting for potential patients into the funnel. Valid questions the perspective answers: 'How is your practice different? How do you approach X issue? How do you think about that in relationship to these other issues?' Even lossy answers beat Psychology Today's 'lists bipolar as specialty.'" ;
+      narr:aboutNode narr:Narrative_ScarceExpertFilterGoalGated ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_MatchingSearchReframe .
+
+    narr:Claim_CategoryExtensionMatchingSearch a narr:Claim ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "The category evolves: 'expertise installation' (mechanism) + 'matching-search' (external deployment value) = 'goal-directed delegation with citable escalation' (product). This extends Claim_CategoryExtensionDelegation with the matching-search framing from the healthcare context." ;
+      narr:aboutNode narr:Narrative_CategoryCuratedExpertiseInstallation ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Claim_CategoryExtensionDelegation .
+  }
+} ;
+
+# ── NEW Observations (grounded quotes) ──────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260424T120000Z {
+
+    narr:Obs_PsychologyTodayNegativeExample a narr:Observation ;
+      skos:broader narr:CompetitiveLandscape ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "Scarlet's verbatim critique of Psychology Today as the canonical negative example of property-based matching — the founding evidence for the matching-search reframe." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_NicheEmerges_20260424 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1600 ;
+          oa:end 1900
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The matching is really property-based, right?... There's your list of specialties or issues covered and modalities, but again, none of that says anything about how you approach it" ;
+          oa:prefix "Examining Psychology Today as a negative example: " ;
+          oa:suffix "... I try to find a practitioner that does integrative care, but it doesn't say anything about what they actually think integrative care means"
+        ]
+      ] .
+
+    narr:Obs_CustomerEngManagerUseCasesQuote a narr:Observation ;
+      skos:broader narr:SolutionArchetypes ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "The three an early prospect use cases that establish the unified instrument pattern: patient vets fit, referring practitioner decides appropriateness, student filters questions." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_NicheEmerges_20260424 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3200 ;
+          oa:end 3500
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Patient vets fit before booking → booking form" ;
+          oa:prefix "an engineering manager at the customer use cases (from his conversation with Scarlet): 1. " ;
+          oa:suffix "\n2. Referring practitioner decides if a case is appropriate → referral/contact"
+        ]
+      ] .
+
+    narr:Obs_CustomerArchitectEnterpriseCustomerFitsPattern a narr:Observation ;
+      skos:broader narr:CaseStudies ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "Scarlet's verbatim observation that the the customer's chief architect/the enterprise customer use case fits the same structural pattern as an engineering manager at the customer's — the founding evidence for the unified instrument claim." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_NicheEmerges_20260424 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3550 ;
+          oa:end 3850
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the customer's chief architect wants to give the ARB perspective to coworkers so they only ask him if they make it to the end of the funnel" ;
+          oa:prefix "Scarlet then observed the the customer's chief architect / the enterprise customer use case fits the same structural pattern: " ;
+          oa:suffix ", in this case where the perspective doesn't know something and needs to escalate to a direct message/meeting to him."
+        ]
+      ] .
+
+    narr:Obs_CPCPricingQuote a narr:Observation ;
+      skos:broader narr:PackagingPricing ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "Scarlet's verbatim articulation of the CPC-on-goal-URL pricing model — the founding evidence for the new pricing narrative." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_NicheEmerges_20260424 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4200 ;
+          oa:end 4500
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Instead of taking a cut of practitioner fee, it could be outcome based. I.e., every perspective carries a goal which is a forward to a link. Essentially a click like ads." ;
+          oa:prefix "Scarlet refined: " ;
+          oa:suffix " But a very high value click with explicit end-of-funnel intent."
+        ]
+      ] .
+
+    narr:Obs_CustomerEngManagerPilotDemoQuote a narr:Observation ;
+      skos:broader narr:CaseStudies ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "Scarlet's verbatim statement on the an engineering manager at the customer pilot — establishing that it is not really a demo but a real deployment." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_NicheEmerges_20260424 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5100 ;
+          oa:end 5350
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I absolutely want to build the demo for an engineering manager at the customer, and like we're saying, it's actually not really a demo, right? I mean, I guess it's a demo in that we may need to build the actual public-facing perspective for this intake piece." ;
+          oa:prefix "" ;
+          oa:suffix ""
+        ]
+      ] .
+  }
+} ;
+
+# ── Style Observations ───────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260424T120000Z {
+
+    narr:StyleObs_NicheAntithesisStructure a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "Heavy antithesis structure throughout: 'install expertise' vs. 'matching-search', 'treatment proxy' vs. 'matching/vetting instrument', 'external funnel' vs. 'internal organization', 'CPC' vs. 'subscription'. Each section is structured as a contrast pair. Consistent with the broader aswritten voice pattern." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_NicheEmerges_20260424 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4600 ;
+          oa:end 4900
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "External funnel (patient→practitioner, student→teacher, prospect→professional): CPC-on-goal-URL." ;
+          oa:prefix "The two pricing models map to deployment context, not competing homepages:\n- " ;
+          oa:suffix "\n- Internal organization (coworker→ARB expert, employee→specialist): subscription."
+        ]
+      ] .
+
+    narr:StyleObs_NicheBlockquoteVerbatim a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:note "Document uses blockquote (>) for verbatim Scarlet speech, consistent with the broader aswritten memo convention. Blockquotes are run-on and conversational; editorial prose is structured and declarative. The contrast creates a two-register document: analytical frame + verbatim evidence." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_NicheEmerges_20260424 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2050 ;
+          oa:end 2350
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Perspectives themselves are an incredibly powerful search tool for a matching problem that's currently done very, very poorly" ;
+          oa:prefix "And the category-level insight: " ;
+          oa:suffix ", which is matching individuals to appropriate health care providers."
+        ]
+      ] .
+
+    narr:Metrics_NicheEmerges_20260424 a narr:StyleMetrics ;
+      dct:source narr:Sample_NicheEmerges_20260424 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo with embedded verbatim blockquotes. Mixed register: structured markdown with H2 section headers (memo genre) vs. conversational first-person in blockquoted speech. Active voice dominant in editorial prose; blockquoted speech is run-on and filler-heavy. Antithesis-heavy structure (install expertise vs. matching-search, treatment proxy vs. vetting instrument, CPC vs. subscription, external vs. internal). Jargon density moderate — product terms (CPC, goal URL, perspective, Front, ARB) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.09"^^xsd:decimal .
+  }
+} ;
+
+# ── UPDATE 1: Extend Narrative_CategoryCuratedExpertiseInstallation ──────────
+# Memory asserts matching-search framing extends the category definition.
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_CategoryCuratedExpertiseInstallation skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260424T120000Z {
+    narr:Narrative_CategoryCuratedExpertiseInstallation skos:note "aswritten defines a new category: curated expertise installation. It sits above context engineering — context engineering determines what AI knows; curated expertise installation determines how AI thinks. This is the category-creation framing for Strategy Document V1. Extended 2026-04-24: when deployed externally, the category is also a matching-search instrument — perspectives are an incredibly powerful search tool for a matching problem currently done very poorly (matching individuals to appropriate practitioners). 'Install expertise' is the mechanism; 'matching-search' is what makes installation valuable in external deployment contexts." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_CategoryCuratedExpertiseInstallation skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE 4: Extend Narrative_GoalDirectedPrimitive with unified instrument ─
+# Memory asserts the goal-directed primitive IS the scarce-expert filter pattern.
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_GoalDirectedPrimitive skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260424T120000Z {
+    narr:Narrative_GoalDirectedPrimitive skos:note "perspective + goal + termination criteria + escalation criteria = a bounded autonomous agent. This unifies coding-agent back-pressure and interpersonal delegation. Extended 2026-04-24 as the Scarce-Expert Filter with Goal-Gated Escalation: an expert with scarce time currently serves as the answer-of-last-resort for repeated questions. Their perspective absorbs repeatable questions and gates escalation to the expert on a forward to a goal URL (booking form, referral form, office hours, DM, meeting). an early prospect's three use cases and the the customer's chief architect/the enterprise customer ARB use case all fit this same structural pattern. One instrument, variable escalation targets by deployment context." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_GoalDirectedPrimitive skos:note ?oldNote .
+  }
+}

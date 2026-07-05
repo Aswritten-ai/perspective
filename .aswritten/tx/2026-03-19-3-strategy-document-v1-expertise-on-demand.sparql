@@ -1,0 +1,386 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260319T200000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-19T20:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-19-strategy-document-v1-expertise-on-demand.md" ;
+    narr:originRef "main" ;
+    dct:title "Strategy Document V1: Expertise on Demand — Key Decisions" ;
+    prov:generated
+      narr:Sample_StrategyDocV1_20260319,
+      narr:Actor_ScarletDame_StrategyV1,
+      narr:Claim_TaglineFinalized,
+      narr:Claim_CategoryDefinitionCuratedExpertise,
+      narr:Claim_ExpertRelationshipReframed,
+      narr:Claim_ArchetypeExpertDistributes,
+      narr:Claim_ArchetypeLeaderDelegates,
+      narr:Claim_ArchetypeProfessionalDailyAI,
+      narr:Claim_OrgRolesFirstClass,
+      narr:Claim_ConsultingDeliveryAsModule,
+      narr:Claim_MoatCreatorOwnsData,
+      narr:Claim_TierStructureNamed,
+      narr:Claim_NetworkProblemStrategies,
+      narr:Claim_AnnotationResults80Claims,
+      narr:Narrative_CategoryCuratedExpertiseInstallation,
+      narr:Narrative_ExpertReachExpansion,
+      narr:Narrative_ArchetypeTaxonomyRestructured,
+      narr:Narrative_OrgRolesAbstraction,
+      narr:Narrative_ConsultingModuleDeliverable,
+      narr:Narrative_MoatExtractionProcess,
+      narr:Narrative_NetworkBootstrapStrategies,
+      narr:Obs_TaglineIterationProcess,
+      narr:Obs_DeckIsArtifact,
+      narr:Obs_AnnotationCoverage,
+      narr:StyleObs_TwoBeatTaglineStructure,
+      narr:StyleObs_FounderAffirmationPattern,
+      narr:StyleObs_AntithesisReplaces .
+} ;
+
+# ── UPDATE: Narrative_NewTierStructure_20260319 — rename Enterprise → Organization ──
+# Memory explicitly states: "renamed from 'Enterprise'" to "Organization ([amount]/month + [amount]setup)"
+# Snapshot has: narr:Narrative_NewTierStructure_20260319 with skos:note mentioning Enterprise as top tier
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_NewTierStructure_20260319 skos:note ?oldNote ;
+      skos:prefLabel ?oldLabel .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260319T200000Z {
+    narr:Narrative_NewTierStructure_20260319
+      skos:note "Four tiers with distinct GitHub requirements and upgrade triggers. Free (read-only): consume from global marketplace of expertise, install, compile, cite — no GitHub needed. Individual (read-write): personal org-managed repo, add own memories, review, build personal graph — no GitHub needed ideally. Publisher/Team: connect own GitHub account, fork modules, multiple repos, collaboration, publish to global marketplace — GitHub required. Organization (formerly Enterprise, [amount]/month + [amount]setup): own internal marketplace of organizational expertise — GitHub required (own org). Renamed from 'Enterprise' to 'Organization' in Strategy Document V1 (2026-03-19). Key upgrade triggers: Free→Individual (want to add own knowledge); Individual→Publisher (want to fork, publish, or collaborate); Publisher→Organization (want own marketplace, not publish to global)." ;
+      skos:prefLabel "New Tier Structure: Free / Individual / Publisher / Organization (2026-03-19, updated)" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_NewTierStructure_20260319 skos:note ?oldNote .
+    OPTIONAL { narr:Narrative_NewTierStructure_20260319 skos:prefLabel ?oldLabel . }
+  }
+} ;
+
+# ── INSERT: Sample node for the strategy document session ───────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260319T200000Z {
+
+    narr:Sample_StrategyDocV1_20260319
+      a narr:Sample ;
+      dct:title "Strategy Document V1: Expertise on Demand — Key Decisions (2026-03-19)" ;
+      dct:created "2026-03-19"^^xsd:date ;
+      dct:description "Full-day strategic session between Scarlet Dame (founder) and Claude (AI coworker). Began as MVP/archetype interview, evolved into fundamental reframe of core value proposition, culminated in comprehensive strategy document. This memory captures key decisions made during document creation. Document lives at docs/strategy/strategy.md (8,500 words, 17 sections)." ;
+      narr:inputLength 4200 .
+
+    # Actor — Scarlet as session participant (strategy session context)
+    narr:Actor_ScarletDame_StrategyV1
+      a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Founder of aswritten.ai. Led full-day strategic session on 2026-03-19 producing Strategy Document V1. Iterated through six tagline variations, confirmed core value proposition, defined category, restructured archetypes, and named tier structure." .
+
+    # ── SECTION 1: Tagline Finalized ─────────────────────────────────────────
+    narr:Claim_TaglineFinalized
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Tagline finalized after six iterations: 'Expertise from humans you trust. Cited by AI, aswritten.' Two-beat structure: trust (human source) then proof (AI citation). Scarlet iterated through six variations before landing on this form." ;
+      narr:aboutNode narr:Tagline ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:NarrativeAnchor .
+
+    narr:Obs_TaglineIterationProcess
+      a narr:Observation ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:Tagline ;
+      skos:note "Scarlet iterated through six tagline variations before landing on the two-beat structure. The final form encodes the product's dual promise: human provenance (trust) and AI citation (proof)." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_StrategyDocV1_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 196 ;
+          oa:end 340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Expertise from humans you trust. Cited by AI, aswritten." ;
+          oa:prefix "Scarlet iterated through six variations and landed on this two-beat structure: trust (human source), then proof (AI citation). " ;
+          oa:suffix " — Scarlet iterated through six variations"
+        ]
+      ] .
+
+    # ── SECTION 2: Core Value Proposition (already in graph as Claim_CoreValuePropInstallExpertise — skip) ──
+
+    # ── SECTION 3: Category Definition ───────────────────────────────────────
+    narr:Claim_CategoryDefinitionCuratedExpertise
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Category defined as: 'Curated expertise installation — the layer above context engineering that determines not just what AI knows, but how it thinks.' Scarlet confirmed: 'Yeah, bam, spot on.' This is a category-creation move positioning aswritten above context engineering." ;
+      narr:aboutNode narr:PositioningThesis ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_CategoryCuratedExpertiseInstallation .
+
+    narr:Narrative_CategoryCuratedExpertiseInstallation
+
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Curated Expertise Installation as Category" ;
+      skos:note "aswritten defines a new category: curated expertise installation. It sits above context engineering — context engineering determines what AI knows; curated expertise installation determines how AI thinks. This is the category-creation framing for Strategy Document V1." ;
+      narr:theme "Curated expertise installation is the layer above context engineering — it determines not just what AI knows but how it thinks" .
+
+    # ── SECTION 4: Three Eras Framing (already captured in Claim_ThreeErasKnowledgeDistribution — skip) ──
+
+    # ── SECTION 5: Expert Relationship Reframed ──────────────────────────────
+    narr:Claim_ExpertRelationshipReframed
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Expert relationship reframed: the product does NOT replace experts — it expands their reach. Scarlet pushed back on 'What it replaces' framing. Corrected to 'What it changes': experts are sources, not bottlenecks. Their perspective scales exponentially while remaining traceable to them. The need for experts becomes the engine of the platform." ;
+      narr:aboutNode narr:Narrative_ExpertReachExpansion ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:PositioningThesis .
+
+    narr:Narrative_ExpertReachExpansion
+
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Experts as Sources, Not Bottlenecks: Reach Expansion" ;
+      skos:note "The product does not replace experts — it expands their reach exponentially while keeping their perspective traceable to them. The need for experts becomes the engine of the platform, not a problem to be solved. This reframes the 'What it replaces' section to 'What it changes.'" ;
+      narr:theme "Experts are sources whose perspective scales exponentially through the platform — the need for experts is the engine, not the bottleneck" .
+
+    # ── SECTION 6: Archetypes Restructured ───────────────────────────────────
+    narr:Narrative_ArchetypeTaxonomyRestructured
+
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:PersonasJTBD ;
+      skos:prefLabel "Archetype Taxonomy: Whose Expertise × In What Context × Who Consumes" ;
+      skos:note "Moved from four separate archetypes to a taxonomy structured by: whose expertise × in what context × who consumes it. Three archetypes: (1) The expert who distributes, (2) The leader who delegates, (3) The professional who works with AI daily. This supersedes the prior four-archetype model." ;
+      narr:theme "Archetype taxonomy restructured from four separate types to a three-archetype matrix: whose expertise × context × consumer" .
+
+    narr:Claim_ArchetypeExpertDistributes
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Archetype 1: The expert who distributes. Own expertise → professional domain → students/clients/practitioners. Maps to the Knowledge Packager pattern but reframed as distribution, not packaging." ;
+      narr:aboutNode narr:PersonasJTBD ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ArchetypeTaxonomyRestructured .
+
+    narr:Claim_ArchetypeLeaderDelegates
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Archetype 2: The leader who delegates. Org expertise → roles/domains → team members/new hires/contractors. The organizational use case — installing the org's collective knowledge into AI for team consumption." ;
+      narr:aboutNode narr:PersonasJTBD ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ArchetypeTaxonomyRestructured .
+
+    narr:Claim_ArchetypeProfessionalDailyAI
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Archetype 3: The professional who works with AI daily. Own + org expertise → daily work → themselves. The individual power user who installs expertise at the moment of need, mid-task." ;
+      narr:aboutNode narr:PersonasJTBD ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ArchetypeTaxonomyRestructured .
+
+    # ── SECTION 7: Organizational Roles as First-Class Concept ───────────────
+    narr:Claim_OrgRolesFirstClass
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "From PR 91 work on synthetic representatives: a role (head of marketing, clinical supervisor) is an abstraction that exists independently of the person filling it. The role has a module. It evolves. When someone new steps in, they install it. Roles are first-class concepts in the product model." ;
+      narr:aboutNode narr:Narrative_OrgRolesAbstraction ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:RoleTopology .
+
+    narr:Narrative_OrgRolesAbstraction
+
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:RoleTopology ;
+      skos:prefLabel "Organizational Roles as First-Class Concepts with Modules" ;
+      skos:note "A role (head of marketing, clinical supervisor) is an abstraction that exists independently of the person filling it. The role has a module. It evolves over time. When someone new steps in, they install the role's module. This makes roles first-class product concepts, not just user categories." ;
+      narr:theme "Organizational roles are abstractions with modules that persist independently of the person filling them — new occupants install the role" .
+
+    # ── SECTION 8: Consulting Delivery as Module ─────────────────────────────
+    narr:Claim_ConsultingDeliveryAsModule
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Three distinct use cases for consultants identified: (1) Free modules as lead generation; (2) Paid modules as content product (substitute for course/book); (3) Module as consulting DELIVERABLE — instead of a deck, deliver a perspective the whole org can install. Scarlet: 'The deck is a derived artifact; the real value is the perspective shift.' Major expansion of the consulting use case." ;
+      narr:aboutNode narr:Narrative_ConsultingModuleDeliverable ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:SolutionArchetypes .
+
+    narr:Narrative_ConsultingModuleDeliverable
+
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Module as Consulting Deliverable: Perspective Over Deck" ;
+      skos:note "Three consultant use cases: (1) free modules as lead gen, (2) paid modules as content product (course/book substitute), (3) module as the consulting deliverable itself — instead of a deck, deliver a perspective the whole org can install. The deck is a derived artifact; the real value is the perspective shift. This is a major expansion of the consulting archetype." ;
+      narr:theme "The consulting deliverable of the AI age is not a deck but an installable perspective module — the deck is a derived artifact" .
+
+    narr:Obs_DeckIsArtifact
+      a narr:Observation ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:note "Scarlet's articulation that the deck is a derived artifact and the real consulting value is the perspective shift — the module the org can install." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_StrategyDocV1_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The deck is a derived artifact; the real value is the perspective shift." ;
+          oa:prefix "instead of a deck, deliver a perspective the whole org can install. Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── SECTION 9: Moat Clarification ────────────────────────────────────────
+    narr:Claim_MoatCreatorOwnsData
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Moat clarification: Creator owns data, not consumer. Consumer receives compiled perspective, not source documents. Even with the raw repo, the extraction process (source → transactions → compilable graph) is the real defensibility. Scarlet: 'They could not reconstruct the original content from what we serve.'" ;
+      narr:aboutNode narr:Narrative_MoatExtractionProcess ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:MoatLeverage .
+
+    narr:Narrative_MoatExtractionProcess
+
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:MoatLeverage ;
+      skos:prefLabel "Extraction Process as Real Moat: Creator Owns Data" ;
+      skos:note "Creator owns data, not consumer. Consumer receives compiled perspective, not source documents. Even with the raw repo, the extraction process (source → transactions → compilable graph) is the real defensibility. The consumer cannot reconstruct the original content from what is served. This is the moat." ;
+      narr:theme "The extraction pipeline (source → transactions → compilable graph) is the real moat — consumers receive compiled perspective, not source documents" .
+
+    # ── SECTION 10: Tier Structure Named ─────────────────────────────────────
+    narr:Claim_TierStructureNamed
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Tier structure named in Strategy Document V1: Free (read-only), Individual ([amount]/month), Publisher ([amount]/month, 10 teammates), Organization ([amount]/month + [amount]setup) — renamed from 'Enterprise'. This supersedes the three-tier model from March 17 and the 'Enterprise' tier name." ;
+      narr:aboutNode narr:PackagingPricing ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_NewTierStructure_20260319 .
+
+    # ── SECTION 11: Network Problem Addressed ────────────────────────────────
+    narr:Claim_NetworkProblemStrategies
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Three strategies to address the network/cold-start problem: (1) curate from public expertise, (2) partner with willing experts ('your book is a snapshot, your module is alive'), (3) build task-specific modules that demonstrate obvious value. These bootstrap the marketplace supply side." ;
+      narr:aboutNode narr:Narrative_NetworkBootstrapStrategies ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:ExpansionPathway .
+
+    narr:Narrative_NetworkBootstrapStrategies
+
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:ExpansionPathway ;
+      skos:prefLabel "Three Strategies to Bootstrap the Expert Network" ;
+      skos:note "Three strategies to address the cold-start/network problem: (1) curate from public expertise, (2) partner with willing experts using the 'your book is a snapshot, your module is alive' pitch, (3) build task-specific modules that demonstrate obvious value. These bootstrap the marketplace supply side without requiring a large existing expert network." ;
+      narr:theme "The network problem is solved by three parallel strategies: public curation, expert partnership, and task-specific module demonstration" .
+
+    # ── SECTION 13: Annotation Results ───────────────────────────────────────
+    narr:Claim_AnnotationResults80Claims
+      a narr:Claim ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Strategy document annotated against collective memory: 80 claims analyzed, 64 supported. 80% aggregate coverage across 14 source memories spanning Jan 2025–Mar 2026. The 20% uncommitted claims are either general market framing or new strategic assertions from this session." ;
+      narr:aboutNode narr:Proof ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Proof .
+
+    narr:Obs_AnnotationCoverage
+      a narr:Observation ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:broader narr:MetricsMonitoring ;
+      skos:note "80 claims analyzed in strategy document, 64 supported by collective memory. 80% aggregate coverage across 14 source memories spanning Jan 2025–Mar 2026. 20% uncommitted = general market framing or new strategic assertions." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_StrategyDocV1_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3420 ;
+          oa:end 3580
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "80 claims analyzed, 64 supported. 80% aggregate coverage across 14 source memories spanning Jan 2025–Mar 2026." ;
+          oa:prefix "The completed strategy document was annotated against collective memory: " ;
+          oa:suffix " The 20% uncommitted claims"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ────────────────────────────────────────────────────
+
+    narr:StyleObs_TwoBeatTaglineStructure
+      a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Two-beat tagline structure: trust beat (human source) then proof beat (AI citation). Deliberate cadence design — the tagline encodes the product's value sequence in its rhythm." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_StrategyDocV1_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 196 ;
+          oa:end 260
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Expertise from humans you trust. Cited by AI, aswritten." ;
+          oa:prefix "\"" ;
+          oa:suffix " — Scarlet iterated"
+        ]
+      ] .
+
+    narr:StyleObs_FounderAffirmationPattern
+      a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Scarlet uses short, emphatic affirmations to mark crystallization moments: 'That's gold.' and 'Yeah, bam, spot on.' These idiolect markers signal when a formulation has landed — they function as conviction signals embedded in the transcript." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_StrategyDocV1_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 530 ;
+          oa:end 620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "That's gold." ;
+          oa:prefix "Scarlet confirmed: \"" ;
+          oa:suffix "\" This replaces all prior framings"
+        ]
+      ] .
+
+    narr:StyleObs_AntithesisReplaces
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_StrategyDocV1_20260319 ;
+      skos:note "Repeated antithesis pattern: 'What it replaces' → corrected to 'What it changes'; 'experts are bottlenecks' → corrected to 'experts are sources'. The document uses antithesis to mark strategic reframes — the old framing is named before the new one replaces it." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_StrategyDocV1_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1520 ;
+          oa:end 1640
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Scarlet pushed back on the original \"What it replaces\" framing. Corrected to \"What it changes\": experts are sources, not bottlenecks." ;
+          oa:prefix "" ;
+          oa:suffix " Their perspective scales"
+        ]
+      ] .
+
+  }
+}

@@ -1,0 +1,311 @@
+PREFIX narr: <http://example.org/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <http://example.org/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260219T203355Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-02-19T20:33:55Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-02-19-graph-serialization-spike-findings.md" ;
+    sb:originRef           "main" .
+} ;
+
+# =============================================================
+# BLOCK 1 — ADD: New Narrative nodes (Narrative_6, Narrative_7)
+# =============================================================
+INSERT DATA {
+  narr:Narrative_6 a narr:Narrative ;
+    dct:source narr:Sample_1 ;
+    narr:theme     "Layer Design Principle" ;
+    narr:direction "Prescriptive" ;
+    skos:broader   <http://example.org/narrative#FocusSequencing> ;
+    skos:note      "Layers should control how many entities and how much detail per entity — not exclude categories of knowledge (style, provenance, evidence). Style belongs in Layer 0 as core identity. Word choice per node (skos:note text) IS the value and must never be stripped." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+} ;
+
+# =============================================================
+# BLOCK 2 — ADD: Style Observation nodes (StyleObs_1 – StyleObs_10)
+# =============================================================
+INSERT DATA {
+  narr:StyleObs_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#ToneAuthoritative> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#ToneAuthoritative> ;
+    skos:related  <http://example.org/narrative#RegisterFormality> ;
+    skos:note     "Technical, evidence-led register throughout. Quantified claims anchor authority (e.g., '898 of 1,062 subjects', '4,157 of 5,186 triples')." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:StyleObs_2 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#VoiceActive> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#VoiceActive> ;
+    skos:note     "Active voice dominates: 'Topological importance cannot identify important concepts', 'extraction should MERGE them', 'Layers should control'." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:StyleObs_3 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#ShortPunchyCadence> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#ShortPunchyCadence> ;
+    skos:note     "Section headers and diagnostic labels are short and declarative: 'The bug', 'Implication', 'Key Finding'. Bullet lists enforce brevity." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:StyleObs_4 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#Antithesis> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#Antithesis> ;
+    skos:note     "Repeated antithetical framing: 'not a connected concept mesh', 'not on subject importance', 'not exclude categories'. Contrast is the primary rhetorical engine." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:StyleObs_5 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#Parallelism> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#Parallelism> ;
+    skos:note     "Execution plan uses parallel imperative structure: 'Remove RubricAssessment', 'Simplify OA annotation pattern', 'Named graphs (TriG)', 'Concept reconciliation', 'Layer redesign'. Table rows maintain consistent column structure throughout." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:StyleObs_6 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#RhetoricalDevices> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#RhetoricalDevices> ;
+    skos:note     "'a lost opportunity' is an evaluative rhetorical flourish that frames the diagnostic with emotional weight, unusual in a technical spike document." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:StyleObs_7 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#IdiolectPhrasing> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#IdiolectPhrasing> ;
+    skos:note     "'conviction' is used as a domain-specific term of art with a precise technical meaning (source count as signal of concept settledness), consistent with the ontology's Conviction concept." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:StyleObs_8 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#AICompanyizationCase> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#AICompanyizationCase> ;
+    skos:note     "ALL CAPS used for emphasis on key prescriptive verbs: 'MERGE'. Signals urgency and intentionality within a technical document." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:StyleObs_9 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#ToneAuthoritative> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#ToneAuthoritative> ;
+    skos:related  <http://example.org/narrative#StackOverview> ;
+    skos:note     "Inline code blocks (ASCII diagram, Turtle snippet) used to ground abstract architectural claims in concrete syntax. Bridges technical and strategic registers." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:StyleObs_10 a narr:StyleObservation, oa:Annotation ;
+    skos:broader  <http://example.org/narrative#PunctuationTypography> ;
+    dct:source    narr:Sample_1 ;
+    oa:hasBody    <http://example.org/narrative#PunctuationTypography> ;
+    skos:note     "Em dash used consistently for appositive elaboration and contrast: '— a lost opportunity', '— the extraction creates independent observations', '— saves ~1,782 triples'. Signals confident, editorial voice." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+} ;
+
+# =============================================================
+# BLOCK 3 — ADD: RubricAssessment nodes
+# =============================================================
+INSERT DATA {
+  narr:RubricAssessment_Register a narr:RubricAssessment ;
+    skos:broader  <http://example.org/narrative#Rubric_Register> ;
+    dct:source    narr:Sample_1 ;
+    rdf:value     "4.5"^^xsd:decimal ;
+    skos:note     "Consistently technical and authoritative. Second-person used sparingly ('we'). Active voice dominant. Concise, no padding. Minor: occasional hedging ('est.', '~') appropriate for spike work. Supporting: narr:StyleObs_1." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:RubricAssessment_Phrasing a narr:RubricAssessment ;
+    skos:broader  <http://example.org/narrative#Rubric_Phrasing> ;
+    dct:source    narr:Sample_1 ;
+    rdf:value     "4.0"^^xsd:decimal ;
+    skos:note     "Domain-specific idiolect ('conviction', 'individuation', 'leaf nodes', 'star topology') used precisely and consistently. 'a lost opportunity' is a distinctive evaluative phrase. Stock phrases from the ontology vocabulary are correctly applied. Supporting: narr:StyleObs_7." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:RubricAssessment_Cadence a narr:RubricAssessment ;
+    skos:broader  <http://example.org/narrative#Rubric_Cadence> ;
+    dct:source    narr:Sample_1 ;
+    rdf:value     "4.0"^^xsd:decimal ;
+    skos:note     "Short punchy section labels ('The bug', 'Implication', 'Key Finding') alternate with longer analytical paragraphs. Bullet lists enforce brevity. Tables create visual rhythm. Markdown structure substitutes for spoken cadence cues. Supporting: narr:StyleObs_3." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:RubricAssessment_StrategicAlignment a narr:RubricAssessment ;
+    skos:broader  <http://example.org/narrative#Rubric_StrategicAlignment> ;
+    dct:source    narr:Sample_1 ;
+    rdf:value     "5.0"^^xsd:decimal ;
+    skos:note     "Directly advances the narrative architecture's core concepts: TriG provenance, concept reconciliation, conviction scoring, layer design. Every finding maps to an ontology concept. Execution plan is sequenced and prioritized. Fully aligned to Strategy > NarrativeDrivenRoadmap and Architecture > ArchitectureOverview." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:RubricAssessment_Tailoring a narr:RubricAssessment ;
+    skos:broader  <http://example.org/narrative#Rubric_Tailoring> ;
+    dct:source    narr:Sample_1 ;
+    rdf:value     "3.5"^^xsd:decimal ;
+    skos:note     "Clearly written for a technical audience familiar with RDF, SKOS, and graph concepts. No audience bridging for non-technical stakeholders. Attribution ('Scarlet Dame and Claude') signals internal document. Would benefit from an executive summary for broader tailoring." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:RubricAssessment_Resonance a narr:RubricAssessment ;
+    skos:broader  <http://example.org/narrative#Rubric_Resonance> ;
+    dct:source    narr:Sample_1 ;
+    rdf:value     "3.5"^^xsd:decimal ;
+    skos:note     "The 'lost opportunity' framing and the house-building phase metaphor (implicit in the ontology's Phase_* concepts) add resonance. The TriG Turtle code block grounds the abstract in concrete syntax. Lacks narrative story arc or customer-facing analogy. Supporting: narr:StyleObs_6." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:RubricAssessment_Flow a narr:RubricAssessment ;
+    skos:broader  <http://example.org/narrative#Rubric_Flow> ;
+    dct:source    narr:Sample_1 ;
+    rdf:value     "4.5"^^xsd:decimal ;
+    skos:note     "Logical progression: Context → Key Finding → Current Broken State → Anatomy → Bloat → Architecture Decisions → TriG Architecture → Immediate Win → Execution Plan → Attribution. Each section builds on the prior. Tables and code blocks are well-placed. Transitions are implicit via section headers rather than explicit connective tissue." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+
+  narr:RubricAssessment_Novelty a narr:RubricAssessment ;
+    skos:broader  <http://example.org/narrative#Rubric_Novelty> ;
+    dct:source    narr:Sample_1 ;
+    rdf:value     "4.0"^^xsd:decimal ;
+    skos:note     "'Conviction as source count signal', 'individuation', 'star topology' framing, and the TriG transactional model are fresh framings of known RDF patterns. Low cliché density. The 'lost opportunity' phrase is distinctive. Some standard technical vocabulary ('leaf nodes', 'PageRank') is expected in context." ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+} ;
+
+# =============================================================
+# BLOCK 4 — UPDATE: narr:Sample_1 (temporal supersession)
+# =============================================================
+DELETE {
+  narr:Sample_1 dct:title          ?title .
+  narr:Sample_1 narr:inputLength   ?inputLength .
+  narr:Sample_1 dct:description    ?description .
+  narr:Sample_1 dct:created        ?created .
+  narr:Sample_1 prov:wasAttributedTo ?attr .
+}
+INSERT {
+  narr:Sample_1 a narr:Sample ;
+    dct:title           "Graph Serialization Spike — Findings and Architecture Decisions" ;
+    narr:inputLength    5872 ;
+    dct:description     "Task-087 spike analyzing LLM-navigable graph serialization. Covers graph topology findings, layer architecture critique, structural bloat analysis, and architecture decisions including TriG named graphs and concept reconciliation." ;
+    dct:created         "2026-02-19"^^xsd:date ;
+    prov:wasAttributedTo narr:Actor_ScarletDame ;
+    prov:wasGeneratedBy narr:Tx_20260219T203355Z .
+}
+WHERE {
+  narr:Sample_1 a narr:Sample .
+  OPTIONAL { narr:Sample_1 dct:title          ?title . }
+  OPTIONAL { narr:Sample_1 narr:inputLength   ?inputLength . }
+  OPTIONAL { narr:Sample_1 dct:description    ?description . }
+  OPTIONAL { narr:Sample_1 dct:created        ?created . }
+  OPTIONAL { narr:Sample_1 prov:wasAttributedTo ?attr . }
+} ;
+
+# =============================================================
+# BLOCK 10 — UPDATE: narr:Claim_1
+# =============================================================
+DELETE {
+  narr:Claim_1 narr:aboutNode           ?about .
+  narr:Claim_1 narr:hasConvictionLevel  ?conv .
+  narr:Claim_1 skos:note                ?note .
+  narr:Claim_1 narr:supports            ?supports .
+  narr:Claim_1 dct:source               ?src .
+}
+INSERT {
+  narr:Claim_1 a narr:Claim ;
+    narr:aboutNode          <http://example.org/narrative#SystemTopology> ;
+    narr:hasConvictionLevel <http://example.org/narrative#Conviction_Boulder> ;
+    skos:note               "The knowledge graph has a star topology: 898 of 1,062 subjects have zero in-degree." ;
+    narr:supports           narr:Narrative_1 ;
+    dct:source              narr:Sample_1 ;
+    prov:wasGeneratedBy     narr:Tx_20260219T203355Z .
+}
+WHERE {
+  narr:Claim_1 a narr:Claim .
+  OPTIONAL { narr:Claim_1 narr:aboutNode          ?about . }
+  OPTIONAL { narr:Claim_1 narr:hasConvictionLevel ?conv . }
+  OPTIONAL { narr:Claim_1 skos:note               ?note . }
+  OPTIONAL { narr:Claim_1 narr:supports           ?supports . }
+  OPTIONAL { narr:Claim_1 dct:source              ?src . }
+} ;
+
+# =============================================================
+# BLOCK 13 — UPDATE: narr:Claim_4
+# =============================================================
+DELETE {
+  narr:Claim_4 narr:aboutNode           ?about .
+  narr:Claim_4 narr:hasConvictionLevel  ?conv .
+  narr:Claim_4 skos:note                ?note .
+  narr:Claim_4 narr:supports            ?supports .
+  narr:Claim_4 dct:source               ?src .
+}
+INSERT {
+  narr:Claim_4 a narr:Claim ;
+    narr:aboutNode          <http://example.org/narrative#GovernanceSafetyTrust> ;
+    narr:hasConvictionLevel <http://example.org/narrative#Conviction_Stake> ;
+    skos:note               "TriG named graphs save ~1,782 triples by moving provenance from per-triple to structural graph envelopes." ;
+    narr:supports           narr:Narrative_4 ;
+    dct:source              narr:Sample_1 ;
+    prov:wasGeneratedBy     narr:Tx_20260219T203355Z .
+}
+WHERE {
+  narr:Claim_4 a narr:Claim .
+  OPTIONAL { narr:Claim_4 narr:aboutNode          ?about . }
+  OPTIONAL { narr:Claim_4 narr:hasConvictionLevel ?conv . }
+  OPTIONAL { narr:Claim_4 skos:note               ?note . }
+  OPTIONAL { narr:Claim_4 narr:supports           ?supports . }
+  OPTIONAL { narr:Claim_4 dct:source              ?src . }
+} ;
+
+# =============================================================
+# BLOCK 14 — UPDATE: narr:Claim_5
+# =============================================================
+DELETE {
+  narr:Claim_5 narr:aboutNode           ?about .
+  narr:Claim_5 narr:hasConvictionLevel  ?conv .
+  narr:Claim_5 skos:note                ?note .
+  narr:Claim_5 narr:supports            ?supports .
+  narr:Claim_5 dct:source               ?src .
+}
+INSERT {
+  narr:Claim_5 a narr:Claim ;
+    narr:aboutNode          <http://example.org/narrative#Conviction> ;
+    narr:hasConvictionLevel <http://example.org/narrative#Conviction_Stake> ;
+    skos:note               "Concept reconciliation — merging same-insight nodes from different memories — builds conviction via source count and creates connection edges." ;
+    narr:supports           narr:Narrative_5 ;
+    dct:source              narr:Sample_1 ;
+    prov:wasGeneratedBy     narr:Tx_20260219T203355Z .
+}
+WHERE {
+  narr:Claim_5 a narr:Claim .
+  OPTIONAL { narr:Claim_5 narr:aboutNode          ?about . }
+  OPTIONAL { narr:Claim_5 narr:hasConvictionLevel ?conv . }
+  OPTIONAL { narr:Claim_5 skos:note               ?note . }
+  OPTIONAL { narr:Claim_5 narr:supports           ?supports . }
+  OPTIONAL { narr:Claim_5 dct:source              ?src . }
+} ;
+
+# =============================================================
+# BLOCK 15 — UPDATE: narr:StyleMetrics_1
+# =============================================================
+DELETE {
+  narr:StyleMetrics_1 skos:broader              ?broader .
+  narr:StyleMetrics_1 dct:source                ?src .
+  narr:StyleMetrics_1 narr:AverageSentenceLength ?asl .
+  narr:StyleMetrics_1 narr:ActiveVoiceRatio      ?avr .
+  narr:StyleMetrics_1 skos:note                  ?note .
+}
+INSERT {
+  narr:StyleMetrics_1 a narr:StyleMetrics ;
+    skos:broader               <http://example.org/narrative#StyleMetrics> ;
+    dct:source                 narr:Sample_1 ;
+    narr:AverageSentenceLength "18"^^xsd:decimal ;
+    narr:ActiveVoiceRatio      "0.82"^^xsd:decimal ;
+    skos:note                  "Estimated from artifact. Sentence length varies: short diagnostic labels (~5 words) mixed with longer analytical sentences (~30 words). Active voice strongly dominant. Technical register with low cliché density. Markdown structure (headers, tables, bullets, code blocks) organizes a high-density information artifact." ;
+    prov:wasGeneratedBy        narr:Tx_20260219T203355Z .
+}
+WHERE {
+  narr:StyleMetrics_1 a narr:StyleMetrics .
+  OPTIONAL { narr:StyleMetrics_1 skos:broader              ?broader . }
+  OPTIONAL { narr:StyleMetrics_1 dct:source                ?src . }
+  OPTIONAL { narr:StyleMetrics_1 narr:AverageSentenceLength ?asl . }
+  OPTIONAL { narr:StyleMetrics_1 narr:ActiveVoiceRatio      ?avr . }
+  OPTIONAL { narr:StyleMetrics_1 skos:note                  ?note . }
+}

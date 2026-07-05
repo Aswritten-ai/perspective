@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_AdvisoryStaffingAlternativeToHiring> {
+  <https://aswritten.ai/narrative#Digest_Narrative_AdvisoryStaffingAlternativeToHiring> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_AdvisoryStaffingAlternativeToHiring> ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """Originating 2025-07-14, this hub holds Scarlet's structural proposal to substitute advisory cadence for hiring: [instead of hiring, set up regular cadence meetings](narr:Claim_AdvisoryStaffingReplacesHiring) with people representing the roles she needs, then build [internal AI agents that represent those roles](narr:Claim_AdvisoryStaffingReplacesHiring) in her automations — the advisor cadence keeping that representation current and audited. The advisor's [commitment is light](narr:Claim_AdvisorReviewsAgentOutput) — regular calls, decision review, audit of the agent's output, 'an hour or two,' not 50% of their time — [priced at [amount]–[amount]/month](narr:Claim_AdvisoryStaffingEconomics). Tony validated the supply side: [senior or insightful people would not say no](narr:Claim_SeniorPeopleWouldSayYes), 'probably much more senior people than you could get otherwise,' and ran a [10x calculation](narr:Claim_Tony10xCalculation) framing it as mutually beneficial — income and involvement breadth for the advisor, senior expertise without full-time cost for the company. Later (2026-04-05) the model was [clarified as additive](narr:Claim_AdvisorDualRole_BothNotEither): advisor-as-perspective and lead-generator coexist, both not either/or.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AdvisorDualRole_BothNotEither> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AdvisorReviewsAgentOutput> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AdvisoryStaffingEconomics> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AdvisoryStaffingReplacesHiring> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FundraisingBriefStale_UseOfFunds> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SeniorPeopleWouldSayYes> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_Tony10xCalculation> ;
+    narr:keyPhrase [ narr:text "Instead of hiring, can I set up regular cadence meetings with all of the people that represent roles and perspectives that I need" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AdvisoryStaffingReplacesHiring> ] ;
+    narr:keyPhrase [ narr:text "Monthly fee range: [amount]–[amount]/month." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AdvisoryStaffingEconomics> ] ;
+    narr:keyPhrase [ narr:text "it is an hour or two of answering questions, giving opinions, and reacting to what's happening." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AdvisorReviewsAgentOutput> ] ;
+    narr:keyPhrase [ narr:text "And probably much more senior people than you could get otherwise." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SeniorPeopleWouldSayYes> ] ;
+    narr:keyPhrase [ narr:text "That would free me up to do anything I wanted... And I would have the enjoyment of being involved in 10 things without actually having to commit serious time." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_Tony10xCalculation> ] ;
+    narr:variation [ narr:text "Model later corrected from either/or to additive: advisor-as-perspective and lead-generator coexist (2026-04-05), not mutually exclusive." ; narr:over <https://aswritten.ai/narrative#Claim_AdvisorDualRole_BothNotEither> ] ;
+    narr:variation [ narr:text "Tension with the light-touch ideal: the fundraising brief's full-time-engineer line was SUPERSEDED (2026-05-17) by a named team — the planned engineering/architecture hire actually contracted as senior dev Sept 2025, plus delivery/marketing hires — suggesting real roles still resolve to contracted people, not only advisory cadence." ; narr:over <https://aswritten.ai/narrative#Claim_FundraisingBriefStale_UseOfFunds> ] ;
+    narr:variation [ narr:text "The audit-of-AI-agent-output duty is the structurally distinct piece — it ties the staffing model to keeping named-perspective agents current, a function beyond ordinary advising." ; narr:over <https://aswritten.ai/narrative#Claim_AdvisorReviewsAgentOutput> ; narr:over <https://aswritten.ai/narrative#Claim_AdvisoryStaffingReplacesHiring> ] ;
+    narr:writer "claude (subscription)" .
+}

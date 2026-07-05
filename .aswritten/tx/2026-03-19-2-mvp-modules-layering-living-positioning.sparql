@@ -1,0 +1,415 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260319T180000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-19T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-19-expertise-modules-layering-liveness-market-positioning.md" ;
+    narr:originRef "main" ;
+    dct:title "Expertise Modules: Layering, Living Updates, and Market Positioning" ;
+    prov:generated
+      narr:Sample_ModulesLayeringLiveness_20260319,
+      narr:Narrative_ModuleLayeringComposability,
+      narr:Narrative_LivingEvolvingModules,
+      narr:Narrative_PerspectiveVsInformation,
+      narr:Narrative_TrustedInformationEra,
+      narr:Narrative_ContentDistributionAIAge,
+      narr:Narrative_OntologyDomainAgnostic,
+      narr:Claim_LayeringCoreFeatureDifferentiator,
+      narr:Claim_BookIsSnapshotModuleIsAlive,
+      narr:Claim_PerspectiveNotInformation,
+      narr:Claim_AIHasSingularOpinion,
+      narr:Claim_WorldviewEncodesAIBehavior,
+      narr:Claim_ThreeErasKnowledgeDistribution,
+      narr:Claim_DEIModulesHighImpact,
+      narr:Claim_OntologyPrimitivesAreAgnostic,
+      narr:Obs_MultiRepoCompilationQuote,
+      narr:Obs_ChineseHerbalismLayeringExample,
+      narr:Obs_EarlyProspectLivingModuleQuote,
+      narr:Obs_AutoUpdateQuote,
+      narr:Obs_PerspectiveVsInfoQuote,
+      narr:Obs_AIOpinionQuote,
+      narr:Obs_WorldviewEncodingCriticismsQuote,
+      narr:Obs_TrustedInformationQuote,
+      narr:Obs_ContentCreatorPublishingQuestion,
+      narr:Obs_OntologyGeneralizationQuote,
+      narr:StyleObs_AnalogyBookVsModule,
+      narr:StyleObs_RuleOfThreeTaxonomy .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260319T180000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────
+    narr:Sample_ModulesLayeringLiveness_20260319 a narr:Sample ;
+      dct:title "Expertise Modules: Layering, Living Updates, and Market Positioning (2026-03-19 Continuation)" ;
+      dct:created "2026-03-19"^^xsd:date ;
+      dct:description "Continuation of the MVP redefinition session. Adds three significant dimensions to the module concept: composability/layering, liveness/auto-update, and the broader market thesis (trusted information era). Participants: Scarlet Dame (founder), Claude (AI coworker)." ;
+      narr:inputLength 4821 ;
+      narr:styleProfile "narr:Antithesis narr:RuleOfThree narr:Analogy narr:ToneDirectPersonal narr:IdiolectPhrasing narr:ShortPunchyCadence" .
+
+    # ── NARRATIVES ───────────────────────────────────────────────
+
+    # Section 1: Layering / Composability
+    narr:Narrative_ModuleLayeringComposability a narr:Narrative ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:broader narr:Differentiators ;
+      skos:prefLabel "Module Layering: Compounding Perspectives in a Single Chat" ;
+      skos:note "Modules can be layered — multiple perspectives compiled in a single chat compound together. This already works via multi-repo compilation on the same ontology. Example: Chinese herbalism perspective + disability awareness perspective + organizational voice all compile together. LLMs excel at extrapolating between datasets within the same system. Whether content supersedes or meshes is handled naturally by the model. No other product lets you stack curated worldviews." ;
+      narr:theme "Layering multiple expertise modules in a single compilation compounds perspectives — a core differentiator no other product provides" .
+
+    # Section 2: Living / Evolving Modules
+    narr:Narrative_LivingEvolvingModules a narr:Narrative ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:broader narr:Differentiators ;
+      skos:prefLabel "Living Modules: Auto-Updating Expertise vs. Static Books" ;
+      skos:note "Unlike a book (static snapshot), a module can be updated over time by its publisher. Consumers get updates automatically. an early prospect example: his book is already written but could become an expertise package he adds to and shifts over time. Pitch to content creators: your book is a snapshot; your module is alive. The publishing process allows someone to publish a module and also add to it over time — it automatically updates for the person consuming it." ;
+      narr:theme "A module is alive — publishers update it over time and consumers receive updates automatically, unlike a static book" .
+
+    # Section 3: Perspective vs. Information
+    narr:Narrative_PerspectiveVsInformation a narr:Narrative ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Perspective vs. Information: The Core Distinction Between Modules and RAG" ;
+      skos:note "Modules provide not just information but the way to interpret information — approaches, processes, opinions, narratives about how that information is used, framed, what it means, and what it shifts in different contexts. This is the exact difference between a human expert and an AI. Taxonomy: Information (facts, data — what search and RAG provide); Perspective (how to interpret, frame, and apply — what modules provide); Wisdom (when and how to apply perspective in context — what layering and compilation enable). Common AI criticisms (tone-deaf, collaborative flatness, 'good catch') are the kind of behavior worldview encoding can address." ;
+      narr:theme "Modules install perspective — how to interpret information — not just information itself; this is the difference between a human expert and an AI" .
+
+    # Section 4: Market Positioning — Trusted Information Era
+    narr:Narrative_TrustedInformationEra a narr:Narrative ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "The Future of Trusted Information: Three Eras of Knowledge Distribution" ;
+      skos:note "Three eras: Books (static knowledge distribution); Search (algorithmic knowledge discovery); Curated expertise installation (a third thing — human-curated perspective, installed at the point of need, cited and verifiable). Scarlet: 'I really see this as the future of trusted information in the AI age. Search is your AI trying to decide what's important and finding it for you. This is a human with a lifetime of expertise curating what is... an entire perspective about their expertise, and then giving that to your AI at the point of need in a way that it can work from.' The publishing question of the AI age: not how do I create content, but how do my readers' AIs access my perspective?" ;
+      narr:theme "Curated expertise installation is a third era of knowledge distribution — after books and search — where human perspective is installed at the point of need, cited and verifiable" .
+
+    # Section 6: Content Distribution as Business Development
+    narr:Narrative_ContentDistributionAIAge a narr:Narrative ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:broader narr:ExpansionPathway ;
+      skos:prefLabel "Content Distribution in the AI Age: Modules as the Publishing Answer" ;
+      skos:note "For content creators who traditionally publish mailing lists, blogs, courses, or content: the question becomes how do people using AI access this? The answer: a curated expertise package installed to AI. Pitch to content creators and course builders: 'Your book is a snapshot. Your course is a fixed curriculum. Your module is alive, citable, installable, and evolves with your thinking. How do your readers' AIs access your expertise?' Applies to anyone thinking about content distribution in the age of AI." ;
+      narr:theme "The publishing question of the AI age is not how to create content but how readers' AIs access your perspective — modules are the answer" .
+
+    # Section 7: Ontology Scope / Domain Agnosticism
+    narr:Narrative_OntologyDomainAgnostic a narr:Narrative ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:prefLabel "Ontology Scope: Core Primitives Are Domain-Agnostic" ;
+      skos:note "The ontology was originally written for organizations (people building orgs that deliver services). Open question: if expanding to expertise writ large, does the ontology still work? Core primitives (narratives, actors, claims, decisions, convictions) are domain-agnostic. A Chinese herbalism perspective has narratives, makes claims with varying conviction, involves actors, supersedes prior thinking — same structure as organizational strategy. Open question: are there concept types that non-org expertise domains need? Pedagogical structures, procedural sequences, diagnostic frameworks? The ontology hasn't bottomed out yet but worth validating by trying with a non-org domain." ;
+      narr:theme "Core ontology primitives (narratives, actors, claims, convictions) generalize to any expertise domain — the org-specific framing was a starting point, not a constraint" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────
+
+    narr:Claim_LayeringCoreFeatureDifferentiator a narr:Claim ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Layering is a core feature and differentiator — no other product lets you stack curated worldviews. Already works in the current product via multi-repo compilation on the same ontology." ;
+      narr:aboutNode narr:Narrative_ModuleLayeringComposability ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Differentiators .
+
+    narr:Claim_BookIsSnapshotModuleIsAlive a narr:Claim ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "The pitch to content creators: your book is a snapshot; your module is alive. This is the core value proposition for the publisher/creator market segment." ;
+      narr:aboutNode narr:Narrative_LivingEvolvingModules ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ContentDistributionAIAge .
+
+    narr:Claim_PerspectiveNotInformation a narr:Claim ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Modules load a set of perspectives, narratives, approaches, processes, and opinions about how information is used, framed, what it means, and what it shifts in different contexts. This is the exact difference between a human expert and an AI. Not just loading a set of information." ;
+      narr:aboutNode narr:Narrative_PerspectiveVsInformation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ExpertiseOnDemandReframe .
+
+    narr:Claim_AIHasSingularOpinion a narr:Claim ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "AIs do have an opinion but they have a singular opinion in the middle of their training set and a number of narratives that we don't understand. Modules replace this with curated, attributed perspective." ;
+      narr:aboutNode narr:Narrative_PerspectiveVsInformation ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_SearchVsAswritten .
+
+    narr:Claim_WorldviewEncodesAIBehavior a narr:Claim ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Common AI criticisms — 'good catch', 'you're right', collaborative flatness — are the kind of behavior that worldview encoding can address. This is the concrete behavioral case for modules beyond information delivery." ;
+      narr:aboutNode narr:Narrative_PerspectiveVsInformation ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Differentiators .
+
+    narr:Claim_ThreeErasKnowledgeDistribution a narr:Claim ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Three eras of knowledge distribution: Books (static), Search (algorithmic), Curated expertise installation (human-curated perspective at point of need, cited and verifiable). aswritten is the third era." ;
+      narr:aboutNode narr:Narrative_TrustedInformationEra ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PositioningThesis .
+
+    narr:Claim_DEIModulesHighImpact a narr:Claim ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "DEI/perspective modules (gender and sexuality, disability awareness, racial awareness) are powerful starter examples because they are precisely what search handles badly. You don't want AI googling 'how to be aware of disability' in real time — you want an expert perspective already installed, shaping how the AI approaches the work. Created by ingesting content from seminal authors and writers." ;
+      narr:aboutNode narr:Narrative_PrepackagedModuleConcept ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_TrustedInformationEra .
+
+    narr:Claim_OntologyPrimitivesAreAgnostic a narr:Claim ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Core ontology primitives (narratives, actors, claims, decisions, convictions) are domain-agnostic. A Chinese herbalism perspective has narratives, makes claims with varying conviction, involves actors, supersedes prior thinking — same structure as organizational strategy. Open question: are there concept types non-org domains need (pedagogical structures, procedural sequences, diagnostic frameworks)?" ;
+      narr:aboutNode narr:Narrative_OntologyDomainAgnostic ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_OntologyDomainAgnostic .
+
+    # ── OBSERVATIONS (grounded quotes) ──────────────────────────
+
+    narr:Obs_MultiRepoCompilationQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Scarlet's verbatim articulation of multi-repo compilation as the technical basis for layering." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 342 ;
+          oa:end 448
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "You can compile multiple repos in a single chat and since it's all the same ontology, it all fits together." ;
+          oa:prefix "Scarlet: " ;
+          oa:suffix " Example:"
+        ]
+      ] .
+
+    narr:Obs_ChineseHerbalismLayeringExample a narr:Observation ;
+      skos:broader narr:ModulesCapabilities ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Concrete example of layering: three distinct expertise perspectives compiled together in a single chat session." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 460 ;
+          oa:end 590
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm working on this project and I want a Chinese herbalism perspective AND a disability awareness perspective AND my organizational voice." ;
+          oa:prefix "Example: \"" ;
+          oa:suffix "\" All three"
+        ]
+      ] .
+
+    narr:Obs_EarlyProspectLivingModuleQuote a narr:Observation ;
+      skos:broader narr:CaseStudies ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "an early prospect as the canonical example of the living module pitch — book already written, could become an evolving expertise package." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 870 ;
+          oa:end 1000
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I could turn that into this expertise package that he can then also add to and shift the perspective of over time." ;
+          oa:prefix "Scarlet's example: an early prospect has a book coming out that's already written. \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_AutoUpdateQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Scarlet's verbatim articulation of the auto-update mechanism as a core module property." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1060 ;
+          oa:end 1240
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "they, by nature, are auto. They can be updated, right? The publishing process allows someone to publish a module but also to add to it over time and it'll automatically update for the person consuming it." ;
+          oa:prefix "Scarlet: \"One of the things that's cool about these that we didn't talk about either is that " ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_PerspectiveVsInfoQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Scarlet's canonical statement of the perspective vs. information distinction — the core differentiator from search and RAG." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1480 ;
+          oa:end 1660
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "We're not just loading a set of information; we're loading a set of perspectives, narratives, approaches, processes, and opinions about how that information is used, framed, what it means" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix ", and what it shifts"
+        ]
+      ] .
+
+    narr:Obs_AIOpinionQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Scarlet's articulation of AI's inherent but singular opinion — the problem modules solve." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1720 ;
+          oa:end 1820
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "AIs do have an opinion but they have a singular opinion in the middle of their training set and a number of narratives that we don't understand." ;
+          oa:prefix "On AI's inherent opinion: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_WorldviewEncodingCriticismsQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Scarlet's claim that worldview encoding addresses the common AI behavior criticisms — tone-deaf responses, collaborative flatness." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1870 ;
+          oa:end 1980
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "All the criticisms that people have about AI responding... that's the kind of stuff that we're able to encode in worldview." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_TrustedInformationQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Scarlet's canonical market positioning statement — the future of trusted information in the AI age." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2200 ;
+          oa:end 2420
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I really see this as the future of trusted information in the AI age. Search is your AI trying to decide what's important and finding it for you." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " This is a human"
+        ]
+      ] .
+
+    narr:Obs_ContentCreatorPublishingQuestion a narr:Observation ;
+      skos:broader narr:ExpansionPathway ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "The reframing of the publishing question for the AI age — from content creation to AI access." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2680 ;
+          oa:end 2800
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "how do people using AI access this?" ;
+          oa:prefix "the question becomes: okay well " ;
+          oa:suffix " The answer:"
+        ]
+      ] .
+
+    narr:Obs_OntologyGeneralizationQuote a narr:Observation ;
+      skos:broader narr:ArchitectureOverview ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Scarlet's articulation of the ontology generalization question — org-ready origins vs. expertise-writ-large scope." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3480 ;
+          oa:end 3660
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The ontology was originally written to cover a pretty extensive domain. It was organizations ready, people building organizations that do something, that deliver a service, so on and so forth. If we're expanding to expertise writ large, does that ontology still work?" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " Granted the ontology"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────
+
+    narr:StyleObs_AnalogyBookVsModule a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Extended analogy: book (static snapshot) vs. module (alive, auto-updating). Rhetorical device used to crystallize the living module pitch for content creators." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1020 ;
+          oa:end 1060
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "your book is a snapshot; your module is alive." ;
+          oa:prefix "This is the pitch to content creators: " ;
+          oa:suffix " Scarlet:"
+        ]
+      ] .
+
+    narr:StyleObs_RuleOfThreeTaxonomy a narr:StyleObservation ;
+      skos:broader narr:RuleOfThree ;
+      dct:source narr:Sample_ModulesLayeringLiveness_20260319 ;
+      skos:note "Rule of three used to structure the Information/Perspective/Wisdom taxonomy and the Books/Search/Curated expertise eras taxonomy. Parallel noun structure creates memorable scaffolding." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ModulesLayeringLiveness_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1990 ;
+          oa:end 2120
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Information: Facts, data, knowledge. (What search and RAG provide.) Perspective: How to interpret, frame, and apply information. Opinions. Processes. Approaches. (What modules provide.) Wisdom:" ;
+          oa:prefix "The taxonomy:\n- **" ;
+          oa:suffix " When and how"
+        ]
+      ] .
+
+  }
+}

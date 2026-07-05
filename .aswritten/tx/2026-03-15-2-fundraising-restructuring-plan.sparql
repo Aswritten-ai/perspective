@@ -1,0 +1,48 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260315T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-15T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-15-fundraising-restructuring-plan-voice-memo.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      
+      
+      
+      
+      narr:Narrative_BusinessPlanAsSource,
+      narr:Narrative_HowToTryItSection .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260315T120000Z {
+
+    narr:Narrative_BusinessPlanAsSource a narr:Narrative ;
+
+      skos:broader narr:NarrativeAnchor ;
+      skos:prefLabel "Full Business Plan as Source of Truth" ;
+      skos:note "Scarlet wants to get the full business plan draft done — which includes all fundraising pieces strung together. The fundraising briefs are audience-specific proxies; the business plan is the whole picture so that work happens on the actual plan, not through document proxies. Scarlet: 'Which is, you know, the whole aswritten philosophy.'" ;
+      narr:theme "Work on the actual business plan, not audience-specific proxies — the briefs are compiled from the plan, not the other way around" .
+
+    narr:Narrative_HowToTryItSection a narr:Narrative ;
+
+      skos:broader narr:CallToAction ;
+      skos:prefLabel "How to Try It Section" ;
+      skos:note "Add to the brief: a demo, Calendly link, possibly an intro demo embedded in the plan itself. The new GIF generation for agent-driven flows is relevant here." ;
+      narr:theme "The fundraising brief needs a concrete call-to-action with a demo and scheduling link" .
+
+  }
+} 

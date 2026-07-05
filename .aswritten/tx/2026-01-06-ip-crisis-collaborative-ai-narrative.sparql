@@ -1,0 +1,506 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+
+# ============================================================
+# Transaction Provenance
+# ============================================================
+
+INSERT DATA {
+  narr:Tx_20260128T210402Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-01-28T21:04:02.015Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-01-06-ip-crisis-collaborative-ai-narrative.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:generated narr:Sample_IPCrisis2025, narr:Narrative_IPCrisis, narr:Observation_StateSecrets, narr:Observation_ExistentialCrisis, narr:Narrative_GitNativeMemory, narr:Observation_MultiplayerShift, narr:Observation_IntentionalMemory, narr:Narrative_CascadingValue, narr:Observation_NoNetworkProblem, narr:Observation_CrossFunctionalCascade, narr:Narrative_CompilationTargets, narr:Observation_CompiledTarget, narr:Metrics_IPCrisis, narr:Assessment_Register_IPCrisis, narr:Assessment_Phrasing_IPCrisis, narr:Assessment_Cadence_IPCrisis, narr:Assessment_StrategicAlignment_IPCrisis, narr:Assessment_Tailoring_IPCrisis, narr:Assessment_Resonance_IPCrisis, narr:Assessment_Flow_IPCrisis, narr:Assessment_Novelty_IPCrisis, narr:Assessment_Accuracy_IPCrisis, narr:Observation_AswrittenBrand, narr:Observation_GitNativeTriad, narr:Observation_ContextSquishing, narr:Observation_CultivationTrap, narr:Claim_IPCrisisExistential, narr:Claim_WorldviewAsPrimaryProduct, narr:Claim_GitNativeDifferentiation, narr:Claim_CascadingValueNetworkEffect, narr:Question_AudienceStrategy, narr:Question_ProblemQuantification, narr:Question_ProductNaming, narr:Observation_IPAsCode, narr:Observation_DeepestLever .
+} ;
+
+# ============================================================
+# Added Triples
+# ============================================================
+
+INSERT DATA {
+  narr:Sample_IPCrisis2025 a narr:Sample ;
+    dct:title "Draft Memory: The IP Crisis & Collaborative AI Worldview (2025 Strategic Narrative)" ;
+    narr:inputLength 24891 ;
+    dct:created "2025-01-06"^^xsd:date ;
+    skos:note "Strategic narrative exploration: shift from developer-first PLG to existential IP protection framing" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Narrative_IPCrisis a narr:Narrative ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    narr:theme "Existential IP Crisis" ;
+    skos:broader narr:Opportunity ;
+    skos:related narr:MarketContext, narr:ActorIncentiveAnalysis, narr:TimingThesis ;
+    skos:definition "Every employee tells state secrets to AI; models lift IP into training data; existential business risk" ;
+    skos:note "Paradigm shift from developer convenience to threat-level business problem" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_StateSecrets a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:KeyPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 356 ;
+        oa:end 434
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "every single employee in your company, CEO included, is telling state secrets to AI" ;
+        oa:prefix "articulates a fundamental tension in modern AI adoption that goes beyond developer convenience or productivity gains: > \"The irony in modern business is that " ;
+        oa:suffix ". [...] The AI labs want to not only create more intelligence, but if it was up to them"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Threat-level framing; inclusive scope (CEO included); state secrets metaphor" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_ExistentialCrisis a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 738 ;
+        oa:end 783
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "This is the existential crisis of modern business" ;
+        oa:prefix "why do you need your business anymore, right? " ;
+        oa:suffix ".\" This represents a **paradigm shift**"
+      ]
+    ] ;
+    skos:related narr:Mission, narr:TimingThesis ;
+    skos:note "Existential framing elevates urgency; crisis metaphor" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Narrative_GitNativeMemory a narr:Narrative ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    narr:theme "Git-Native Collaborative Worldview" ;
+    skos:broader narr:Product, narr:ProductLadder ;
+    skos:related narr:Primitives, narr:Interfaces, narr:Behaviors ;
+    skos:definition "Shift from model-held memory to git-native worldview; intentional memory; multiplayer AI; progressive compilation" ;
+    skos:note "Core product differentiation vs built-in memory features" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_MultiplayerShift a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis, narr:KeyPhrases ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:Antithesis ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 7234 ;
+        oa:end 7345
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The movement is from instead of individuals talking to an AI where each individual is going to get a different answer for a request to execute a process that should be understood within the company domain [...] to a multiplayer collaborative experience" ;
+        oa:prefix "This enables the transition from **single-player** to **multiplayer** AI: > \"" ;
+        oa:suffix ".\" **Key differentiation**: > \""
+      ]
+    ] ;
+    skos:related narr:PersonaVoiceVariants, narr:TailoringAudienceFit ;
+    skos:note "Single-player vs multiplayer antithesis; collaborative framing" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_IntentionalMemory a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl, narr:KeyPhrases ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6543 ;
+        oa:end 6789
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "One is to make memory intentional. So instead of this context squishing autosummarization, we have an agent or context that chooses to remember stuff, offers that to the user, and then saves that to the git repo intentionally" ;
+        oa:prefix "**Intentional memory** replaces automatic summarization: > \"" ;
+        oa:suffix ". That memory is then extracted into the knowledge graph"
+      ]
+    ] ;
+    skos:related narr:Behaviors, narr:Flows ;
+    rdf:value true ;
+    skos:note "Intentional vs automatic; agent-user collaboration; git-native" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Narrative_CascadingValue a narr:Narrative ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    narr:theme "Cascading Collaborative Value" ;
+    skos:broader narr:Proof, narr:Outcomes ;
+    skos:related narr:CaseStudies, narr:MetricsMonitoring ;
+    skos:definition "No network problem, only network value; any role's contribution immediately benefits all others; real-time worldview compilation" ;
+    skos:note "Network effect differentiation: immediate bidirectional value flow" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_NoNetworkProblem a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis, narr:KeyPhrases ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:Antithesis ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 8765 ;
+        oa:end 8912
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "There is actually no network problem here. This is just as useful for one person, but it is even more useful for two people" ;
+        oa:prefix "Scarlet identifies a critical insight about value accumulation: > \"" ;
+        oa:suffix " in that any time another person contributes additional intellectual property"
+      ]
+    ] ;
+    skos:related narr:ValueExchange, narr:ActorIncentiveAnalysis ;
+    skos:note "Problem/value antithesis; incremental utility framing" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_CrossFunctionalCascade a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 9123 ;
+        oa:end 9456
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "As soon as a salesperson, you know, gains additional context about a client, the engineer immediately benefits in the actual hands-on coding and vice versa. When they make an architectural decision or implement the feature that now becomes available, that becomes immediately available in the AI that the salesperson is using" ;
+        oa:prefix "The system creates **immediate bidirectional value flow** across roles: > \"" ;
+        oa:suffix " when they're asking about whether a client is able to do X, Y, Z"
+      ]
+    ] ;
+    skos:related narr:PersonasJTBD, narr:RoleTopology ;
+    skos:note "Concrete role example (sales/eng); bidirectional flow; immediacy emphasis" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Narrative_CompilationTargets a narr:Narrative ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    narr:theme "Compilation Targets" ;
+    skos:broader narr:Architecture, narr:ArchitectureOverview ;
+    skos:related narr:SystemTopology, narr:DataModelLifecycle ;
+    skos:definition "Content, apps, code as renders from worldview; functional transformation from worldview state to outputs" ;
+    skos:note "Everything becomes a compiled target; worldview is source of truth" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_CompiledTarget a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl, narr:Anaphora ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 11678 ;
+        oa:end 11789
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "content is a compiled target. The application is a compiled target" ;
+        oa:prefix "I care less about the shape of the current website, except that it is in this system a direct functional transformation that moves from the current state of worldview to those compiled targets, right? So " ;
+        oa:suffix ", even if it can't be compiled through one step"
+      ]
+    ] ;
+    skos:related narr:NamingConventions, narr:Parallelism ;
+    rdf:value true ;
+    skos:note "Anaphora (compiled target repeated); parallel structure; technical term" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Metrics_IPCrisis a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    narr:AverageSentenceLength 22.3 ;
+    narr:ActiveVoiceRatio 0.78 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade: 12.4" ;
+    narr:JargonDensity 0.15 ;
+    narr:TypeTokenRatio 0.62 ;
+    skos:note "Strategic document; technical but accessible; high lexical diversity" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Assessment_Register_IPCrisis a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    rdf:value 4.5 ;
+    skos:note "Authoritative strategic register; second-person address to reader; active voice dominant; technical precision without jargon overload" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Assessment_Phrasing_IPCrisis a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    rdf:value 5.0 ;
+    skos:note "Strong idiolect: 'IP as code', 'deepest lever', 'cascading value', 'compilation targets'; consistent terminology; memorable phrases" ;
+    skos:related narr:Observation_IPAsCode, narr:Observation_DeepestLever ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Assessment_Cadence_IPCrisis a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    rdf:value 4.0 ;
+    skos:note "Varied sentence length; strategic use of short punchy sentences for key claims; longer analytical passages; good rhythm variation" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Assessment_StrategicAlignment_IPCrisis a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    rdf:value 5.0 ;
+    skos:note "Directly addresses core strategy shift; explicit connection to ADR-002; worldview-as-product aligns with platform positioning; IP protection moat" ;
+    skos:related narr:Narrative_WorldviewProduct ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Assessment_Tailoring_IPCrisis a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    rdf:value 4.5 ;
+    skos:note "Explicitly addresses CEO/strategist/exec audience shift; acknowledges developer-first tension; tailored to strategic decision-makers" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Assessment_Resonance_IPCrisis a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    rdf:value 4.5 ;
+    skos:note "Strong metaphors (existential crisis, deepest lever, state secrets); concrete examples (sales/eng value flow); git-native analogy resonates with technical audience" ;
+    skos:related narr:Observation_ExistentialCrisis, narr:Observation_DeepestLever ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Assessment_Flow_IPCrisis a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    rdf:value 4.5 ;
+    skos:note "Clear section structure; logical progression (problem → solution → implications); effective use of headers; transitions explicit; 'Open Questions' section acknowledges uncommitted areas" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Assessment_Novelty_IPCrisis a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    rdf:value 4.5 ;
+    skos:note "Fresh framing (IP crisis vs developer convenience); novel terminology (compilation targets, cultivation trap, context squishing); avoids generic AI hype language" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Assessment_Accuracy_IPCrisis a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    rdf:value 4.0 ;
+    skos:note "Accurate references to ADR-002; explicit 'uncommitted' status for exploratory claims; preserved verbatim quotes; acknowledges open questions; no false precision" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_AswrittenBrand a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 15234 ;
+        oa:end 15247
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten.ai" ;
+        oa:prefix "I'm happy with the shift of the company name to " ;
+        oa:suffix ". I don't not sold on that as the product name"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Lowercase brand stylization; .ai TLD; consistent with 'IP as code' technical positioning" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_GitNativeTriad a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree, narr:Parallelism ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 16789 ;
+        oa:end 16845
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "git native, i.e. versionable, branchable, reviewable" ;
+        oa:prefix "We can actually turn memory off when we depend on this organization managed, collaborative, " ;
+        oa:suffix ", all the things.\" --- ## The Document-to-Ideas"
+      ]
+    ] ;
+    skos:related narr:TerminologyControl, narr:CadenceRhythm ;
+    skos:note "Rule of three (versionable/branchable/reviewable); parallel -able suffix; git metaphor" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_ContextSquishing a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl, narr:Metaphor ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4567 ;
+        oa:end 4585
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "context squishing" ;
+        oa:prefix "you are going to get behind the scenes, " ;
+        oa:suffix ", summarization that attempts to pull the relevant details"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Coined term; visceral metaphor; captures black-box summarization problem" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_CultivationTrap a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl, narr:Metaphor ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5123 ;
+        oa:end 5140
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "cultivation trap" ;
+        oa:prefix "### The " ;
+        oa:suffix " Current state incentivizes **cultivating long-running personal AI instances**"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Coined term; trap metaphor; captures lock-in problem" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Claim_IPCrisisExistential a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Opportunity ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    narr:supports narr:TimingThesis ;
+    skos:note "Proposed framing: IP leakage as existential threat; requires validation and quantification" ;
+    prov:wasAttributedTo "Scarlet" ;
+    dct:created "2025-01-06"^^xsd:date ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Claim_WorldviewAsPrimaryProduct a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Strategy ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    narr:supports narr:PositioningThesis, narr:MoatLeverage ;
+    skos:note "Central to platform positioning; hard to move; requires multi-party consensus" ;
+    prov:wasAttributedTo "Scarlet" ;
+    dct:created "2025-01-06"^^xsd:date ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Claim_GitNativeDifferentiation a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Product ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    narr:supports narr:Differentiators ;
+    narr:challenges "Built-in memory features (ChatGPT Teams, Claude Projects)" ;
+    skos:note "Core product differentiation: git-native vs model-held; org-managed vs individual; transparent vs black-box" ;
+    prov:wasAttributedTo "Scarlet" ;
+    dct:created "2025-01-06"^^xsd:date ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Claim_CascadingValueNetworkEffect a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Proof ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    narr:supports narr:ValueExchange ;
+    skos:note "Proposed: no network problem, only network value; requires case study validation" ;
+    prov:wasAttributedTo "Scarlet" ;
+    dct:created "2025-01-06"^^xsd:date ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Question_AudienceStrategy a skos:Concept ;
+    skos:broader narr:Segmentation ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    skos:prefLabel "Audience Strategy Tension" ;
+    skos:definition "Developer-first PLG vs exec-first threat narrative — same motion or parallel entry points?" ;
+    skos:note "Requires clarity: ADR-002 developer pain vs IP crisis exec framing" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Question_ProblemQuantification a skos:Concept ;
+    skos:broader narr:TimingThesis ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    skos:prefLabel "IP Leakage Quantification" ;
+    skos:definition "What's the '[amount]' equivalent for IP leakage risk? How to measure erosion of competitive moat?" ;
+    skos:note "Needed: concrete cost/risk quantification for exec narrative" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Question_ProductNaming a skos:Concept ;
+    skos:broader narr:NamingConventions ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    skos:prefLabel "Product Naming Beyond Collective Memory" ;
+    skos:definition "Dissatisfaction with 'collective memory'; 'collaborative AI' surfaces repeatedly; direction TBD" ;
+    skos:note "Uncommitted: product name evolution" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_IPAsCode a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:KeyPhrases, narr:BrandNameStylization ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:KeyPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 11234 ;
+        oa:end 11289
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "intellectual property as code" ;
+        oa:prefix "building AI worldview as the primary product of an organization, right? So intellectual property now becomes tangible. It's " ;
+        oa:suffix ".\" **Implication**: The company's value shifts"
+      ]
+    ] ;
+    skos:related narr:TerminologyControl, narr:NamingConventions ;
+    rdf:value true ;
+    skos:note "Core positioning phrase; lowercase stylization; code metaphor" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+
+  narr:Observation_DeepestLever a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor, narr:KeyPhrases ;
+    dct:source narr:Sample_IPCrisis2025 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 9876 ;
+        oa:end 10054
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the deepest lever we've ever had that reaches from CEO strategist every single, you know, strategic sales customer service role all the way into the core of the development process and back" ;
+        oa:prefix "The system provides unprecedented organizational alignment: > \"What we have here is the opportunity to have " ;
+        oa:suffix ", right?\" The lever mechanism: **worldview changes"
+      ]
+    ] ;
+    skos:related narr:StrategicAlignment, narr:MoatLeverage ;
+    skos:note "Lever metaphor; scope enumeration (CEO to dev); bidirectional (and back)" ;
+    prov:wasGeneratedBy narr:Tx_20260128T210402Z .
+} ;
+
+# ============================================================
+# End of Transaction
+# ============================================================

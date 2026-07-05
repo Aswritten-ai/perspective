@@ -1,0 +1,334 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────
+INSERT DATA {
+  narr:Tx_20260319T220000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-19T22:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-19-session-pattern-interview-save-draft-annotate.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_InterviewSaveDraftAnnotate_20260319,
+      narr:Narrative_InterviewSaveDraftAnnotatePattern,
+      narr:Narrative_InterviewBeforeSynthesis,
+      narr:Narrative_RealTimeFeedbackLoop,
+      narr:Narrative_SaveBeforeDrafting,
+      narr:Narrative_AnnotationAsQualityControl,
+      narr:Narrative_OneQuestionAtATime,
+      narr:Claim_SessionPatternReplicable,
+      narr:Claim_CorrectionsMoreValuableThanHypotheses,
+      narr:Claim_DeckIsDerivedArtifact,
+      narr:Claim_AnnotatePerSectionNotFullDoc,
+      narr:Obs_ScarletModularSynthesizerQuote,
+      narr:Obs_ScarletIncredibleQuote,
+      narr:Obs_TinkererBarrierCorrection,
+      narr:Obs_CustomGPTCorrection,
+      narr:Obs_ExpertReachCorrection,
+      narr:Obs_AmbientBehaviorCorrection,
+      narr:StyleObs_ModularSynthesizerSimile,
+      narr:StyleObs_InterviewFormatDirectPersonal,
+      narr:StyleObs_NamePatternsWithoutPrescribing .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260319T220000Z {
+
+    # ── Sample ──────────────────────────────────────────────────
+    narr:Sample_InterviewSaveDraftAnnotate_20260319
+      a narr:Sample ;
+      dct:title "Session Pattern: Interview → Save → Draft → Annotate (2026-03-19)" ;
+      dct:created "2026-03-19"^^xsd:date ;
+      dct:description "Post-session retrospective capturing the four-phase arc of the 9-hour V1 strategy session between Scarlet Dame and Claude. Documents why the session worked, what to replicate, and anti-patterns to avoid." ;
+      narr:inputLength 3842 .
+
+    # ── Narrative: The four-phase pattern itself ─────────────────
+    narr:Narrative_InterviewSaveDraftAnnotatePattern
+
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:CoreWorkflows ;
+      skos:prefLabel "Interview → Save → Draft → Annotate: The V1 Strategy Session Pattern" ;
+      skos:note "A 9-hour session that produced the V1 strategy document followed a four-phase arc: (1) Interview (~3 hours) — structured questions one at a time, reflect back, pull threads, let the user correct; (2) Save — three memories at natural decision points, extraction pipeline ran while discussion continued; (3) Draft (~4 hours) — section by section against newly grounded material with real-time feedback; (4) Annotate (~2 hours) — full document annotated against collective memory, 97 footnotes with narrative citations, provenance summaries per section. The product demonstrates itself through the process." ;
+      narr:theme "The interview elicits thinking not yet in collective memory; save captures it; draft synthesizes it; annotation proves it — the product demonstrates itself through the process" .
+
+    # ── Narrative: Interview before synthesis ────────────────────
+    narr:Narrative_InterviewBeforeSynthesis
+
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:CoreWorkflows ;
+      skos:prefLabel "Interview Before Synthesis: User Corrections Are More Valuable Than Initial Hypotheses" ;
+      skos:note "The interview format meant the strategy emerged from Scarlet's thinking, not from the worldview alone. Key breakthroughs came from her corrections to the AI's hypotheses. Each correction was more valuable than the original hypothesis because it revealed thinking not yet in collective memory. The Tinkerer correction, Custom GPT correction, expert reach correction, and ambient behavior correction all came from this dynamic." ;
+      narr:theme "The user's corrections to your hypotheses are more valuable than your initial hypotheses — interview before synthesizing, never write strategy from the worldview alone" .
+
+    # ── Narrative: Real-time feedback loop ──────────────────────
+    narr:Narrative_RealTimeFeedbackLoop
+
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:FeedbackLoops ;
+      skos:prefLabel "Real-Time Feedback Loop: Read and React as Each Section Is Written" ;
+      skos:note "Scarlet read and reacted as each section was written. More productive than batch review because errors got caught immediately and did not compound into later sections. Her reactions often surfaced new insights — 'the deck is a derived artifact; the real value is the perspective shift.' The document stayed aligned with her voice and thinking throughout." ;
+      narr:theme "Real-time per-section feedback prevents error compounding and surfaces insights that batch review misses" .
+
+    # ── Narrative: Save before drafting ─────────────────────────
+    narr:Narrative_SaveBeforeDrafting
+
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:CoreWorkflows ;
+      skos:prefLabel "Save Before Drafting: Ground the Knowledge Before Synthesizing It" ;
+      skos:note "Three memories were saved before the document was started. By the time sections were being drafted, the extraction pipeline had run and the annotation tool could verify claims against the new knowledge. The document was grounded because the knowledge was grounded first. Sequence: Save → wait for extraction → compile → draft → annotate." ;
+      narr:theme "Save memories at natural decision points before drafting — the extraction pipeline needs time, and grounded knowledge produces grounded documents" .
+
+    # ── Narrative: Annotation as quality control ─────────────────
+    narr:Narrative_AnnotationAsQualityControl
+
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:QualityReviewGates ;
+      skos:prefLabel "Annotation as Quality Control, Not Decoration" ;
+      skos:note "The annotation pass caught where the document made claims not yet in collective memory, identified which source memories each section drew from, and created a visible trust layer. Provenance summaries let a reader see at a glance what is earned knowledge vs. new assertion. Annotate per-section as you draft — the text length limit causes silent failures on full sections. Write full narrative footnotes from the start; the narrative IS the value." ;
+      narr:theme "Annotation is quality control — it catches unsupported claims, surfaces source memories, and creates a visible trust layer that proves the document" .
+
+    # ── Narrative: One question at a time ───────────────────────
+    narr:Narrative_OneQuestionAtATime
+
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:CoreWorkflows ;
+      skos:prefLabel "One Question at a Time: Interview Discipline" ;
+      skos:note "Do not dump 10 questions. Ask one, listen, reflect back, pull the thread. Name patterns without prescribing: 'Here's what I'm hearing' not 'here's what you should do.' The interview format is what makes the strategy emerge from the user's thinking rather than the worldview alone." ;
+      narr:theme "One question at a time — listen, reflect back, pull the thread — is the discipline that makes the interview format work" .
+
+    # ── Claims ──────────────────────────────────────────────────
+    narr:Claim_SessionPatternReplicable
+      a narr:Claim ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:note "The Interview → Save → Draft → Annotate pattern applies to any session that needs to produce a strategic document, content piece, or decision framework. The core insight: the interview elicits thinking not yet in collective memory, the save captures it, the draft synthesizes it, and the annotation proves it." ;
+      narr:aboutNode narr:Narrative_InterviewSaveDraftAnnotatePattern ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:CoreWorkflows .
+
+    narr:Claim_CorrectionsMoreValuableThanHypotheses
+      a narr:Claim ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:note "Each correction from Scarlet was more valuable than the original hypothesis because it revealed thinking that was not yet in collective memory. The Tinkerer correction ('their existing solution is a barrier'), the Custom GPT correction ('they're just local RAG'), the expert reach correction ('we're expanding their reach'), and the ambient behavior correction ('expertise at the moment of need, not ambient') all came from this dynamic." ;
+      narr:aboutNode narr:Narrative_InterviewBeforeSynthesis ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_InterviewBeforeSynthesis .
+
+    narr:Claim_DeckIsDerivedArtifact
+      a narr:Claim ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:note "Scarlet's insight during real-time feedback: 'the deck is a derived artifact; the real value is the perspective shift.' Surfaced during the drafting phase when she reacted to a section as it was written — an insight that would not have emerged in batch review." ;
+      narr:aboutNode narr:Narrative_RealTimeFeedbackLoop ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ConsultingModuleDeliverable .
+
+    narr:Claim_AnnotatePerSectionNotFullDoc
+      a narr:Claim ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:note "Annotating the full document in one pass at the end is less effective than per-section annotation during drafting. The text length limit causes silent failures on full sections. Paragraphs are reliable. Distance from the writing also makes end-of-session annotation less effective." ;
+      narr:aboutNode narr:Narrative_AnnotationAsQualityControl ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:QualityReviewGates .
+
+    # ── Observations with quote selectors ───────────────────────
+    narr:Obs_ScarletModularSynthesizerQuote
+      a narr:Observation ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:Quotes ;
+      skos:note "Scarlet's articulation of the emergent quality of the interview-driven strategy session — the synthesizer metaphor captures how the AI guides without prescribing." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 502 ;
+          oa:end 700
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm getting the same feeling I get when I make music with modular synthesizers" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " and the synthesizer starts doing something"
+        ]
+      ] .
+
+    narr:Obs_ScarletIncredibleQuote
+      a narr:Observation ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:Quotes ;
+      skos:note "Scarlet's reaction to the full annotated thesis — the product demonstrating itself through the process of producing the strategy document." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "This is incredible. I literally could not have written this better myself — and that's the product working!" ;
+          oa:prefix "Scarlet on the full annotated thesis: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_TinkererBarrierCorrection
+      a narr:Observation ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:FeedbackLoops ;
+      skos:note "Scarlet's correction to the AI's hypothesis about the Tinkerer archetype — their existing solution is a barrier, not an accelerant to adoption." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1010 ;
+          oa:end 1080
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The Tinkerer doesn't activate fastest — their existing solution is a barrier" ;
+          oa:prefix "- \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_CustomGPTCorrection
+      a narr:Observation ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:FeedbackLoops ;
+      skos:note "Scarlet's correction distinguishing Custom GPTs from aswritten's perspective-based approach." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1085 ;
+          oa:end 1145
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Custom GPTs don't provide perspective — they're just local RAG" ;
+          oa:prefix "- \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_ExpertReachCorrection
+      a narr:Observation ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:FeedbackLoops ;
+      skos:note "Scarlet's correction reframing the expert relationship — expansion not replacement." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1150 ;
+          oa:end 1205
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "We're not replacing experts — we're expanding their reach" ;
+          oa:prefix "- \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_AmbientBehaviorCorrection
+      a narr:Observation ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:broader narr:FeedbackLoops ;
+      skos:note "Scarlet's correction establishing the on-demand vs. ambient distinction for product behavior." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1210 ;
+          oa:end 1285
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The product behavior is expertise at the moment of need, not ambient" ;
+          oa:prefix "- \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────
+    narr:StyleObs_ModularSynthesizerSimile
+      a narr:StyleObservation ;
+      skos:broader narr:Simile ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:note "Extended simile comparing the AI-assisted strategy session to playing modular synthesizers — emergent behavior guided but not controlled. Captures the collaborative dynamic without prescribing it." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 502 ;
+          oa:end 780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm getting the same feeling I get when I make music with modular synthesizers" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " and the synthesizer starts doing something that I'm shifting it"
+        ]
+      ] .
+
+    narr:StyleObs_InterviewFormatDirectPersonal
+      a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:note "The 'What to Replicate' section uses imperative second-person directives — 'Interview the user before synthesizing', 'One question at a time', 'Name patterns without prescribing' — creating a direct, actionable register that mirrors the interview discipline it describes." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2310 ;
+          oa:end 2450
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Interview the user before synthesizing." ;
+          oa:prefix "1. **" ;
+          oa:suffix " The user's corrections to your hypotheses"
+        ]
+      ] .
+
+    narr:StyleObs_NamePatternsWithoutPrescribing
+      a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+      skos:note "The phrase 'Name patterns without prescribing' is a stock phrase that encodes the interview methodology's core discipline — it appears as a rule and also enacts itself by naming the pattern without prescribing how to apply it." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_InterviewSaveDraftAnnotate_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2490 ;
+          oa:end 2560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Name patterns without prescribing." ;
+          oa:prefix "3. **" ;
+          oa:suffix " \"Here's what I'm hearing\" not"
+        ]
+      ] .
+
+  }
+}

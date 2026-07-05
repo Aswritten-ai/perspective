@@ -1,0 +1,128 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260408T150000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-08T15:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-08-design-session-1.md" ;
+    narr:originRef "research/goal-directed-agents" ;
+    prov:generated narr:Sample_GoalDirectedAgents_20260408, 
+                   narr:Narrative_GoalDirectedPrimitive, 
+                   narr:Narrative_TrustContractWedge,
+                   narr:Narrative_ShareDataModel,
+                   narr:Claim_GoalDirectedThirdMode,
+                   narr:Claim_EscalationTypes,
+                   narr:Claim_CategoryExtensionDelegation,
+                   narr:Obs_ScarletGoalDefinition,
+                   narr:Obs_ShareStructure,
+                   narr:Obs_EscalationVocabulary,
+                   narr:StyleObs_CodeBlockPrimitive,
+                   narr:StyleObs_AltitudeTaxonomy,
+                   narr:StyleObs_VerbatimVocabulary,
+                   narr:Metrics_GoalDirectedAgents .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260408T150000Z {
+    narr:Sample_GoalDirectedAgents_20260408 a narr:Sample ;
+      dct:title "The primitive, the data model, the wedge, and the category extension" ;
+      dct:created "2026-04-08"^^xsd:date ;
+      narr:inputLength 12500 .
+
+    narr:Narrative_GoalDirectedPrimitive a narr:Narrative ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      narr:theme "The Goal-Directed Agent Primitive" ;
+      skos:broader narr:ProductLadder ;
+      skos:note "perspective + goal + termination criteria + escalation criteria = a bounded autonomous agent. This unifies coding-agent back-pressure and interpersonal delegation." .
+
+    narr:Narrative_TrustContractWedge a narr:Narrative ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      narr:theme "The Trust Contract as Competitive Wedge" ;
+      skos:broader narr:MoatLeverage ;
+      skos:note "aswritten is building the trust contract that makes agents delegatable, differentiated by perspective-grounded escalation and citable provenance." .
+
+    narr:Narrative_ShareDataModel a narr:Narrative ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      narr:theme "The Share Data Model" ;
+      skos:broader narr:DataModelLifecycle ;
+      skos:note "Goals are properties of a share, not the perspective. This prevents instance-specific goals from contaminating the reusable perspective." .
+
+    narr:Claim_GoalDirectedThirdMode a narr:Claim ;
+      narr:aboutNode narr:Narrative_GoalDirectedPrimitive ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      skos:note "Goal-directed mode is a third mode layering above Ambient and On-demand behaviors. It is proactive rather than reactive." ;
+      narr:supports narr:Claim_AmbientVsOnDemandBehavior .
+
+    narr:Claim_EscalationTypes a narr:Claim ;
+      narr:aboutNode narr:Narrative_TrustContractWedge ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      skos:note "Perspective-grounded agents escalate on four types: situation not covered, principle contradiction, claim tension, and ungrounded recipient input." .
+
+    narr:Claim_CategoryExtensionDelegation a narr:Claim ;
+      narr:aboutNode narr:Narrative_CategoryCuratedExpertiseInstallation ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      skos:note "The category evolves from 'expertise installation' (mechanism) to 'goal-directed delegation with citable escalation' (product)." ;
+      narr:supports narr:Claim_CategoryDefinitionCuratedExpertise .
+
+    narr:Obs_ScarletGoalDefinition a narr:Observation ;
+      skos:broader narr:Primitives ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1020 ; oa:end 1250 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; 
+        oa:exact "Is part of what we're missing here is the agent + perspective having a goal?" ;
+        oa:prefix "named the primitive directly: " ] .
+
+    narr:Obs_ShareStructure a narr:Observation ;
+      skos:broader narr:SchemasContracts ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4500 ; oa:end 4700 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; 
+        oa:exact "share = perspective_ref + goal + recipient_binding + termination_criteria + escalation_criteria + outbound_channel + observability_surface" ] .
+
+    narr:Obs_EscalationVocabulary a narr:Observation ;
+      skos:broader narr:KeyPhrases ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 6800 ; oa:end 7200 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; 
+        oa:exact "Four perspective-grounded escalation types" ;
+        oa:suffix "1. This situation isn't covered. 2. My next move contradicts a principle. 3. Two claims are in tension. 4. The recipient said something ungrounded." ] .
+
+    narr:StyleObs_CodeBlockPrimitive a narr:StyleObservation ;
+      skos:broader narr:BrandNameStylization ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_GoalDirectedAgents_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1650 ; oa:end 1750 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "perspective + goal + termination criteria + escalation criteria = a bounded autonomous agent" ] ] .
+
+    narr:StyleObs_AltitudeTaxonomy a narr:StyleObservation ;
+      skos:broader narr:RuleOfThree ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_GoalDirectedAgents_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2800 ; oa:end 3000 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Three altitudes of the same primitive" ;
+        oa:suffix "Low altitude — coding tasks; Mid altitude — interpersonal; High altitude — strategic" ] ] .
+
+    narr:StyleObs_VerbatimVocabulary a narr:StyleObservation ;
+      skos:broader narr:TerminologyControl ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_GoalDirectedAgents_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 6800 ; oa:end 6900 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "New vocabulary, preserved verbatim because paraphrasing will blunt it" ] ] .
+
+    narr:Metrics_GoalDirectedAgents a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_GoalDirectedAgents_20260408 ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.12 ;
+      skos:note "Strategic design session register. High use of structural metaphors (altitudes, wedges). Mixes formal data modeling with colloquial design breakthroughs." .
+  }
+}

@@ -1,0 +1,35 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Rubric_Flow> {
+  <https://aswritten.ai/narrative#Digest_Rubric_Flow> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Rubric_Flow> ;
+    narr:childCount "15"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers per-document **flow assessments** — each rubric judges logical progression, transitions, and structure across the corpus. The dominant verdict is positive: natural progression with clear section structure. Revenue docs trace [pricing→levers→projections→open questions](narr:Assess_Flow_RevModel) and [revenue model→TAM→contract tiers](narr:Assess_Flow_RevenueModelTAM); the [YC application](narr:Assessment_Flow_YC) and [YC call](narr:Rubric_Flow_YC_Call) run founding story→vision→demo storyboard; the [origin/founder narrative](narr:RubricAssess_Flow) uses chronological arc with explicit connectives and a 'Through-Line' synthesis. Call notes ([the customer's chief architect](narr:Rubric_Flow_CustomerArchitect), [a founder beta user](narr:Rubric_Flow_FounderBetaUser), [weekly call](narr:RubricAssess_Flow_WeeklyCall)) move context→validation→next steps. Planning docs ([pilot plan](narr:Rubric_Flow_PilotPlan), [GTM](narr:RubricAssess_Flow_GTM), [demo beats](narr:Rubric_Flow_YCDemoBeats)) favor parallel structure and clear headers. The recurring axis of judgment: do transitions read as natural connective tissue or as formulaic scaffolding, and is incompleteness signaled honestly.""" ;
+    narr:covers <https://aswritten.ai/narrative#Assess_Flow_RevModel> ;
+    narr:covers <https://aswritten.ai/narrative#Assess_Flow_RevenueModelTAM> ;
+    narr:covers <https://aswritten.ai/narrative#Assessment_Flow_YC> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Flow> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Flow_GTM> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Flow_Sample1> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Flow_TXReview> ;
+    narr:covers <https://aswritten.ai/narrative#RubricAssess_Flow_WeeklyCall> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Assess_Flow> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Flow_FounderBetaUser> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Flow_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Flow_PilotPlan> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Flow_ScarletDame> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Flow_YCDemoBeats> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Flow_YC_Call> ;
+    narr:keyPhrase [ narr:text "Logical progression: pricing rationale → levers → projections → constraints → key metric → open questions. Transitions are natural; tables support coherence." ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Flow_RevModel> ] ;
+    narr:keyPhrase [ narr:text "Some transitions abrupt; could benefit from smoother connective tissue. Noted as 'raw draft' by author." ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Flow> ] ;
+    narr:keyPhrase [ narr:text "Transitions are implicit (topic headers) rather than explicit connectives." ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Flow_WeeklyCall> ] ;
+    narr:keyPhrase [ narr:text "'Pending Questions' section signals incompleteness transparently. Minimal formulaicness." ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Flow_ScarletDame> ] ;
+    narr:keyPhrase [ narr:text "Minor formulaic structure in case study sections, but overall coherent." ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Flow_CustomerArchitect> ] ;
+    narr:variation [ narr:text "Not all flow is smooth — one assessment flags abrupt transitions and weak connective tissue, excused as a 'raw draft'." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Flow> ] ;
+    narr:variation [ narr:text "Implicit transitions (topic/section headers) vs explicit connectives is a live distinction — several docs rely on headers alone rather than narrative bridges." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Flow_WeeklyCall> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Flow_Sample1> ; narr:over <https://aswritten.ai/narrative#Assess_Flow_RevenueModelTAM> ] ;
+    narr:variation [ narr:text "Formulaicness is the recurring deduction — flagged in case-study and heading structure even where content is judged organic." ; narr:over <https://aswritten.ai/narrative#Rubric_Flow_CustomerArchitect> ; narr:over <https://aswritten.ai/narrative#Rubric_Assess_Flow> ] ;
+    narr:variation [ narr:text "Outlier: the TXReview flow assessment has no content recorded — an empty/unscored node, not a positive verdict." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Flow_TXReview> ] ;
+    narr:writer "claude (subscription)" .
+}

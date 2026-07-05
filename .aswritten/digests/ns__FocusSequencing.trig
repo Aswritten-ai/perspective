@@ -1,0 +1,23 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__FocusSequencing> {
+  <https://aswritten.ai/narrative#Digest_ns__FocusSequencing> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#FocusSequencing> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers competing **go-to-market sequencing** theses — how to enter, what to prove first, and when to expand. One mainline argues bottom-up: [developer-first PLG](narr:FocusSequencing_ADR002) starts with solo developers and small teams on Claude Code/Cursor/Windsurf, then expands to executive and content use cases once value lands. A second route runs top-down: a [Strategy/CTO team pilot](narr:Observation_FocusSequencing_PilotExpand) of 5-10 people over 30 days, adding a second role mid-pilot to show network effects, then org-wide within 60. A third frames the beta as [content → people → process](narr:Narrative_ThreePhaseBeta) — prove with content, then add people, then show partners. Underwriting all of it, a [revenue tradeoff](narr:Narrative_RevenueTradeoff) commits to forgoing [amount]-80K to protect product-vision integrity. The [strategy rubric](narr:RubricAssess_Strategy_ADR001) names focus/sequencing as a scored alignment axis. No human reconciliation crowns a single entry path; the three sequences sit side by side, each with a different first wedge.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#FocusSequencing_ADR002> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_RevenueTradeoff> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_ThreePhaseBeta> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_FocusSequencing_PilotExpand> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Strategy_ADR001> ;
+    narr:keyPhrase [ narr:text "Add collective memory to your repo, never write README again" ; narr:phraseSource <https://aswritten.ai/ns/narrative#FocusSequencing_ADR002> ] ;
+    narr:keyPhrase [ narr:text "Forgoing [amount]-80K to maintain product vision integrity" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_RevenueTradeoff> ] ;
+    narr:keyPhrase [ narr:text "Phase 1: Run content as proof. Phase 2: Add people to process. Phase 3: Show the process to organizational partners." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_ThreePhaseBeta> ] ;
+    narr:keyPhrase [ narr:text "Pilot with Strategy or CTO team (5-10 people) for 30 days; add second role mid-pilot to demonstrate network effects; expand org-wide within 60 days." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_FocusSequencing_PilotExpand> ] ;
+    narr:variation [ narr:text "Bottom-up vs top-down entry: developer-first PLG (solo devs, small teams) versus a Strategy/CTO team pilot — opposite first wedges into the org." ; narr:over <https://aswritten.ai/ns/narrative#FocusSequencing_ADR002> ; narr:over <https://aswritten.ai/ns/narrative#Observation_FocusSequencing_PilotExpand> ] ;
+    narr:variation [ narr:text "Three distinct 'prove-it-first' sequences coexist — content-first, developer-first, and team-pilot — with no single agreed starting proof." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_ThreePhaseBeta> ; narr:over <https://aswritten.ai/ns/narrative#FocusSequencing_ADR002> ; narr:over <https://aswritten.ai/ns/narrative#Observation_FocusSequencing_PilotExpand> ] ;
+    narr:variation [ narr:text "Sequencing discipline is costly: willingness to forgo [amount]-[amount] in revenue to keep the chosen focus rather than chase near-term demand." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_RevenueTradeoff> ] ;
+    narr:writer "claude (subscription)" .
+}

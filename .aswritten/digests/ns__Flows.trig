@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Flows> {
+  <https://aswritten.ai/narrative#Digest_ns__Flows> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Flows> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the **process flows** of the system — how knowledge gets in, how it gets out, and how the loop closes. On capture, the [JIRA integration concept](narr:Feature_JIRAIntegration) ties proactive knowledge capture to the existing dev process, with AI monitoring closed tickets and epics to prompt for undocumented rationale; the [knowledge-gap workflow](narr:Feature_KnowledgeGapWorkflow) closes the loop the other way — when a query fails, an expert is pinged to fill the hole and confirm it's filled. On the pipeline side, the [individuation and story-generation pipelines](narr:Narrative_SIC_Flows_1) lay out the stages: extract → diff → TX → user review → commit, with story generation as compile → template → model → output. The [end-to-end story flow](narr:Obs_StoryFlow) makes the runtime concrete — `mcp/draft-story` runs a `.story` file against a snapshot and returns Markdown synchronously. Sitting alongside (related, not core) is the [intentional-memory stance](narr:Observation_IntentionalMemory): memory chosen and committed deliberately rather than auto-summarized.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Feature_JIRAIntegration> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Feature_KnowledgeGapWorkflow> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_Flows_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Obs_StoryFlow> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_IntentionalMemory> ;
+    narr:keyPhrase [ narr:text "AI monitors closed tickets/epics and prompts for undocumented knowledge: 'Hey, this epic—why did you implement it?'" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Feature_JIRAIntegration> ] ;
+    narr:keyPhrase [ narr:text "When sales asks a question and collective memory doesn't know, ping the expert: 'Hey the customer's chief architect, you forgot to talk to AI about thing.' Then you do that and ping back: 'It's in there now, you're good.'" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Feature_KnowledgeGapWorkflow> ] ;
+    narr:keyPhrase [ narr:text "Individuation pipeline: extract → diff → TX → user review → commit. Evolved variant: snapshot + message → transaction. Story generation: compile → template → model → output." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_SIC_Flows_1> ] ;
+    narr:keyPhrase [ narr:text "- **Synchronous**: Returns rendered Markdown immediately" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Obs_StoryFlow> ] ;
+    narr:keyPhrase [ narr:text "One is to make memory intentional. So instead of this context squishing autosummarization, we have an agent or context that chooses to remember stuff, offers that to the user, and then saves that to the git repo intentionally" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_IntentionalMemory> ] ;
+    narr:variation [ narr:text "Intentional, user-offered memory vs automatic context auto-summarization — an explicit stance against the squishing default." ; narr:over <https://aswritten.ai/ns/narrative#Observation_IntentionalMemory> ] ;
+    narr:variation [ narr:text "The individuation pipeline carries a superseded framing: original extract→diff→TX→user-review→commit vs an evolved 'snapshot + message → transaction' variant someone might still reach for." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_Flows_1> ] ;
+    narr:variation [ narr:text "Two opposite capture triggers — proactive monitoring of closed JIRA work vs reactive backfill on a failed query — same loop approached from opposite ends." ; narr:over <https://aswritten.ai/ns/narrative#Feature_JIRAIntegration> ; narr:over <https://aswritten.ai/ns/narrative#Feature_KnowledgeGapWorkflow> ] ;
+    narr:variation [ narr:text "Story generation is synchronous (immediate Markdown return), which sits in tension with the multi-stage, review-gated individuation pipeline." ; narr:over <https://aswritten.ai/ns/narrative#Obs_StoryFlow> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_Flows_1> ] ;
+    narr:writer "claude (subscription)" .
+}

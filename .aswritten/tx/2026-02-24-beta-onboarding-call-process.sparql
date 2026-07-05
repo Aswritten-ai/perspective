@@ -1,0 +1,260 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+
+INSERT DATA {
+
+  narr:Tx_20260224T033407Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agents/aswritten.ai> ;
+    prov:wasAttributedTo   <https://aswritten.ai/agents/n8n.aswritten.ai> ;
+    prov:generatedAtTime   "2026-02-24T03:34:07.435Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-02-24-beta-onboarding-call-process.md" ;
+    sb:originRef           "call/beta-onboarding" .
+
+} ;
+
+# =============================================================
+# BLOCK 1 — ADD: Transaction node from source memory
+# =============================================================
+
+INSERT DATA {
+
+} ;
+
+# =============================================================
+# BLOCK 2 — ADD: Sample
+# =============================================================
+
+INSERT DATA {
+
+  narr:Sample_BetaOnboarding a narr:Sample ;
+    dct:title              "Beta Onboarding Call Process" ;
+    narr:inputLength       4823 ;
+
+    prov:wasGeneratedBy    narr:Tx_20260224T033407Z .
+
+} ;
+
+# =============================================================
+# BLOCK 3 — ADD: New Actor (Claude)
+# =============================================================
+
+INSERT DATA {
+
+  narr:Actor_Claude a narr:Actor ;
+    skos:prefLabel      "Claude" ;
+    skos:note           "AI coworker; participant in designing the onboarding call process" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+} ;
+
+# =============================================================
+# BLOCK 4 — ADD: Narratives
+# =============================================================
+
+INSERT DATA {
+
+  narr:Narrative_ConsultingAsOnboarding a narr:Narrative ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    narr:theme          "Consulting engagement disguised as onboarding" ;
+    skos:note           "The onboarding call is reframed as a [amount] consulting engagement; the product demo emerges from the consulting conversation rather than being presented upfront" ;
+    narr:direction      "Positive" ;
+    narr:supports       narr:PositioningThesis ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:Narrative_MemoryAsWitness a narr:Narrative ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    narr:theme          "User watches their own words become structured memory in real time" ;
+    skos:note           "The demo moment is not a product walkthrough but the user querying their own worldview, grounded in what they just said" ;
+    narr:direction      "Positive" ;
+    narr:supports       narr:WhatDoesItDo ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:Narrative_ShowDontExplain a narr:Narrative ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    narr:theme          "Let the output speak; resist the over-explain trap" ;
+    skos:note           "Explicit checkpoints in the call script prevent Scarlet from explaining the pipeline, RDF, conviction levels, or onboarding mode phases before the user has experienced them" ;
+    narr:direction      "Positive" ;
+    narr:supports       narr:NarrativeAnchor ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+} ;
+
+# =============================================================
+# BLOCK 5 — ADD: Observations
+# =============================================================
+
+INSERT DATA {
+
+  narr:Obs_CorePrinciple a narr:Observation ;
+    skos:broader        narr:PositioningThesis ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "The call is explicitly not a product demo but a consulting engagement session" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:Obs_NinePhaseStructure a narr:Observation ;
+    skos:broader        narr:CoreWorkflows ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "Nine-phase call structure maps consulting conversation onto product onboarding mode; target 60-75 minutes" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:Obs_InterviewMapsToOnboarding a narr:Observation ;
+    skos:broader        narr:IntakePrioritization ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "Interview question order intentionally mirrors CLAUDE.md onboarding mode priority: vision/mission → architecture/decisions → current priorities → team → recent decisions" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+} ;
+
+# =============================================================
+# BLOCK 6 — ADD: Claims
+# =============================================================
+
+INSERT DATA {
+
+  narr:Claim_CallIsFirstMemory a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode          narr:Narrative_ConsultingAsOnboarding ;
+    narr:supports           narr:PositioningThesis ;
+    skos:note               "The call IS the first memory — stated as a foundational design principle, not a hypothesis" ;
+
+    prov:wasGeneratedBy     narr:Tx_20260224T033407Z .
+
+  narr:Claim_FullUtilityTesting a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode          narr:Narrative_ConsultingAsOnboarding ;
+    narr:supports           narr:KPIsSuccess ;
+    skos:note               "Every beta user gets the full [amount] consulting engagement to fully test someone using it with full utility" ;
+
+    prov:wasGeneratedBy     narr:Tx_20260224T033407Z .
+
+  narr:Claim_ScarletDrivesUserTalks a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode          narr:Obs_NinePhaseStructure ;
+    narr:supports           narr:CoreWorkflows ;
+    skos:note               "First session is consultant-led; subsequent sessions the user can drive" ;
+
+    prov:wasGeneratedBy     narr:Tx_20260224T033407Z .
+
+  narr:Claim_RelationshipOverDemo a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode          narr:Obs_NinePhaseStructure ;
+    narr:supports           narr:NarrativeAnchor ;
+    skos:note               "Relationship trumps demo; minimum viable call is compile + interview + save one memory" ;
+
+    prov:wasGeneratedBy     narr:Tx_20260224T033407Z .
+
+} ;
+
+# =============================================================
+# BLOCK 7 — ADD: Style Observations
+# =============================================================
+
+INSERT DATA {
+
+  narr:StyleObs_CallIsFirstMemory a narr:StyleObservation ;
+    skos:broader        narr:ShortPunchyCadence ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "Declarative sentence fragment used as a thesis-level assertion; capitalized IS for emphasis" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:StyleObs_NotOnboarding a narr:StyleObservation ;
+    skos:broader        narr:Antithesis ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "Antithesis structure: 'not X, it's Y' — reframes the product category by explicit negation" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:StyleObs_ThisIsTheDemo a narr:StyleObservation ;
+    skos:broader        narr:ShortPunchyCadence ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "All-caps THIS with sentence fragment 'THIS is the demo' — emphatic cadence marker signaling the climactic product moment" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:StyleObs_RelationshipGtDemo a narr:StyleObservation ;
+    skos:broader        narr:ShortPunchyCadence ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "Mathematical operator '>' used as rhetorical shorthand for value hierarchy; terse, aphoristic register" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:StyleObs_OverExplainTrap a narr:StyleObservation ;
+    skos:broader        narr:Metaphor ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "'Over-explain trap' is a coined metaphor for a named anti-pattern; used twice to reinforce the concept" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:StyleObs_WhatIfYouShow a narr:StyleObservation ;
+    skos:broader        narr:RhetoricalQuestion ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "Rhetorical question attributed to Scarlet; models the 'show don't explain' principle within the document itself" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:StyleObs_SeeItKnows a narr:StyleObservation ;
+    skos:broader        narr:ToneDirectPersonal ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "Direct second-person scripted dialogue embedded in process documentation; collapses instruction and demo script into one" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:StyleObs_DoNotBullets a narr:StyleObservation ;
+    skos:broader        narr:Anaphora ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "Anaphoric 'Do NOT' repeated four times in rapid succession; imperative mood creates a checklist-as-manifesto effect" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:StyleObs_BrandNameClaudeCode a narr:StyleObservation ;
+    skos:broader        narr:BrandNameStylization ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "'Claude Code' used consistently as a proper noun / product name throughout; never abbreviated or varied" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+  narr:StyleObs_AskItSomething a narr:StyleObservation ;
+    skos:broader        narr:ToneDirectPersonal ;
+    dct:source          narr:Sample_BetaOnboarding ;
+    skos:note           "Imperative micro-script embedded in process doc; two-word call to action that doubles as the product's value proof" ;
+
+    prov:wasGeneratedBy narr:Tx_20260224T033407Z .
+
+} ;
+
+# =============================================================
+# BLOCK 8 — ADD: Style Metrics
+# =============================================================
+
+INSERT DATA {
+
+  narr:StyleMetrics_BetaOnboarding a narr:StyleMetrics ;
+    skos:broader            narr:StyleMetrics ;
+    dct:source              narr:Sample_BetaOnboarding ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio   "0.88"^^xsd:decimal ;
+    narr:JargonDensity      "0.06"^^xsd:decimal ;
+    skos:note               "High active voice ratio; moderate sentence length with deliberate short-sentence punctuation for emphasis; jargon (RDF, MCP, n8n, CLAUDE.md) is domain-specific and intentional" ;
+
+    prov:wasGeneratedBy     narr:Tx_20260224T033407Z .
+
+} 

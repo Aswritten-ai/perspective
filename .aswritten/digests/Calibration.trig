@@ -1,0 +1,31 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Calibration> {
+  <https://aswritten.ai/narrative#Digest_Calibration> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Calibration> ;
+    narr:childCount "11"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """Calibration gathers how aswritten validates its own quality — the recurring frame is optometric. The [optometrist model](narr:Narrative_OptometristModel) and [lens-based review](narr:Narrative_LensBasedReview) cast testing as swapping lenses over a constant target: an [eye chart](narr:Claim_8) is a fixed-format document where \"lens changes, eye chart stays constant,\" and convergence is judged by the idiom [\"Better through A or B?\"](narr:StyleObs_BetterThroughAOrB). A second strand insists quality is earned over time, not asserted: [soak testing](narr:Narrative_SoakTestQuality) holds that validation \"requires sustained real-world use, not unit tests,\" and the [single-node extract](narr:Claim_SoakTestRequired) needs days/weeks of living-with-it. A third strand is about *where* you test: Scarlet flagged (Mar 19) a [clean-sandbox need](narr:Claim_CleanSandboxNeeded) against a \"dirty env,\" and (Mar 16) argued a [beta user's repo](narr:Claim_BetaRepoAsCleanTestEnv) is the clean environment since the org's tool density conflates behaviors. Distinct in timescale, the [Thursday 5/7 demo](narr:Narrative_ThursdayDemoAsDiagnostic) reframes a chatbot showing as a low-cost diagnostic of stakeholder appetite (May 1). Style observations sit alongside as related craft notes.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_8> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_BetaRepoAsCleanTestEnv> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CleanSandboxNeeded> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SoakTestRequired> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_LensBasedReview> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_OptometristModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SoakTestQuality> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ThursdayDemoAsDiagnostic> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_2> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BetterThroughAOrB> ;
+    narr:keyPhrase [ narr:text "lens changes, eye chart stays constant" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_8> ] ;
+    narr:keyPhrase [ narr:text "I'm constantly testing inside a dirty env." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CleanSandboxNeeded> ] ;
+    narr:keyPhrase [ narr:text "task-041 single-node extract needs days/weeks of living-with-it testing, not a feature sprint." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SoakTestRequired> ] ;
+    narr:keyPhrase [ narr:text "if four people say man I really want that chat bot, maybe we change direction." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ThursdayDemoAsDiagnostic> ] ;
+    narr:keyPhrase [ narr:text "Quality validation requires sustained real-world use, not unit tests" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SoakTestQuality> ] ;
+    narr:variation [ narr:text "Two validation timescales coexist: slow soak (days/weeks of real use) vs. the fast low-cost diagnostic of a single kickoff demo." ; narr:over <https://aswritten.ai/narrative#Claim_SoakTestRequired> ; narr:over <https://aswritten.ai/narrative#Narrative_SoakTestQuality> ; narr:over <https://aswritten.ai/narrative#Narrative_ThursdayDemoAsDiagnostic> ] ;
+    narr:variation [ narr:text "The demo-as-diagnostic carries a pivot signal — strong chatbot appetite could 'change direction', a road not taken that the soak-test product line presumes settled." ; narr:over <https://aswritten.ai/narrative#Narrative_ThursdayDemoAsDiagnostic> ] ;
+    narr:variation [ narr:text "Where to test is itself contested: build a clean sandbox vs. adopt an external beta user's repo as the clean environment, both reacting to the same 'dirty env' problem." ; narr:over <https://aswritten.ai/narrative#Claim_CleanSandboxNeeded> ; narr:over <https://aswritten.ai/narrative#Claim_BetaRepoAsCleanTestEnv> ] ;
+    narr:variation [ narr:text "Optometric metaphor (lens/eye-chart/A-or-B) is the dominant frame but is structurally distinct from the empirical soak/sandbox claims — metaphor vs. test-protocol." ; narr:over <https://aswritten.ai/narrative#Claim_8> ; narr:over <https://aswritten.ai/narrative#StyleObs_BetterThroughAOrB> ; narr:over <https://aswritten.ai/narrative#Narrative_OptometristModel> ] ;
+    narr:writer "claude (subscription)" .
+}

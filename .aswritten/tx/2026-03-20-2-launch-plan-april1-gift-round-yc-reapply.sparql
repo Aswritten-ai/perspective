@@ -1,0 +1,83 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260320T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-20T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-20-launch-plan-april1-gift-round-yc-reapply.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      narr:Narrative_April1SoftLaunch,
+      narr:Claim_April1ForcingFunction,
+      narr:Claim_AboveTheLine_April1,
+      narr:Claim_BelowTheLine_April1,
+      narr:StyleObs_BulletedLaunchList .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260320T120000Z {
+
+    # ── Narrative: April 1 Soft Launch ──────────────────────────────────────
+    narr:Narrative_April1SoftLaunch a narr:Narrative ;
+
+      skos:broader narr:Milestones ;
+      skos:prefLabel "April 1 Soft Launch: Beta Done, Public Marketing Begins" ;
+      skos:note "After April 1, beta testing is done. Public-facing marketing, outreach, push with tiers (free trial → paid). Above the line (must ship by April 1): landing page redo with clear funnel, e2e demo GIFs, dev branch merged to main, language pass, MVP slimming, initial modules/perspectives shipped, GitHub abstraction for initial users (provisioned personal repo, no GitHub account needed), aswritten perspective set defined and available to all users, doc site updated, sales assets (playbook, commission structure, one-sheet, onboarding materials), intro deck. Below the line (important but not launch-blocking): content site, full naming decision on 'module', marketplace browse/search UX, module forking, revenue share infrastructure." ;
+      narr:theme "April 1 is the forcing function: beta ends, public marketing begins, above-the-line items must ship" .
+
+    narr:Claim_April1ForcingFunction a narr:Claim ;
+
+      skos:note "April 1 is set as a forcing function for launch readiness. After April 1, beta testing is done. Public-facing marketing, outreach, and push with tiers (free trial → paid) begins. Advisors confirmed setting April 1 as the forcing function." ;
+      narr:aboutNode narr:Narrative_April1SoftLaunch ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:FocusSequencing .
+
+    narr:Claim_AboveTheLine_April1 a narr:Claim ;
+
+      skos:note "Must ship by April 1: landing page redo (clear funnel into product, docs, content; heavy on e2e demo GIFs), dev branch merged to main, language pass (product glossary as source of truth), MVP slimming (disambiguate org tools from user-facing product), initial modules/perspectives shipped (starter set), GitHub abstraction for initial users (provisioned personal repo, no GitHub account needed), aswritten perspective set defined and available to all users, doc site updated, sales assets (playbook, commission structure, one-sheet, onboarding materials), intro deck." ;
+      narr:aboutNode narr:Narrative_April1SoftLaunch ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:NarrativeDrivenRoadmap .
+
+    narr:Claim_BelowTheLine_April1 a narr:Claim ;
+
+      skos:note "Important but not launch-blocking: content site built out with articles, full naming decision on 'module', marketplace browse/search UX, module forking, revenue share infrastructure." ;
+      narr:aboutNode narr:Narrative_April1SoftLaunch ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:FocusSequencing .
+
+    narr:StyleObs_BulletedLaunchList a narr:StyleObservation ;
+      skos:broader narr:InformationArchitecture ;
+
+      skos:note "Above/below-the-line structure uses dense bulleted lists for launch items — a checklist register distinct from the prose-heavy gift round section. The document shifts register by section: strategic prose for funding paths, checklist for launch items, table for timeline." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 1920
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Above the line (must ship by April 1):" ;
+          oa:prefix "### " ;
+          oa:suffix "\n- Landing page redo"
+        ]
+      ] .
+
+  }
+} 

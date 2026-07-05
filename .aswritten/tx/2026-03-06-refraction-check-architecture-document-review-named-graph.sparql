@@ -1,0 +1,365 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+
+INSERT DATA {
+  narr:Tx_20260308T212946Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agents/aswritten-ai> ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-03-08T21:29:46.327Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-03-06-refraction-check-architecture-document-review-named-graph.md" ;
+    sb:originRef           "main" .
+} ;
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added triples)
+# =============================================================
+
+INSERT DATA {
+
+  # Prov links on existing nodes
+  narr:Sample_1          prov:wasGeneratedBy narr:TX_20260306_RefractionCheck .
+  narr:Actor_ScarletDame prov:wasGeneratedBy narr:TX_20260306_RefractionCheck .
+  narr:Narrative_1       prov:wasGeneratedBy narr:TX_20260306_RefractionCheck .
+  narr:Narrative_2       prov:wasGeneratedBy narr:TX_20260306_RefractionCheck .
+  narr:Narrative_3       prov:wasGeneratedBy narr:TX_20260306_RefractionCheck .
+  narr:Claim_1           prov:wasGeneratedBy narr:TX_20260306_RefractionCheck .
+  narr:Claim_4           prov:wasGeneratedBy narr:TX_20260306_RefractionCheck .
+  narr:Claim_5           prov:wasGeneratedBy narr:TX_20260306_RefractionCheck .
+
+  # Claim_7
+  narr:Claim_7 a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Templates ;
+    narr:supports narr:Narrative_1 ;
+    skos:note "Document registry tracks which documents should be refraction-checked; analogous to Claude local settings; carries audience, domains, drift threshold, evaluation criteria" ;
+    dct:source narr:Sample_1 ;
+    .
+
+  # Claim_8
+  narr:Claim_8 a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Calibration ;
+    narr:supports narr:Narrative_3 ;
+    skos:note "Eye chart = fixed-format document exercising key claims and relationships; lens changes, eye chart stays constant; may vary per top-level ontology domain" ;
+    dct:source narr:Sample_1 ;
+    .
+
+  # Claim_9
+  narr:Claim_9 a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:NorthStarMetrics ;
+    narr:supports narr:Narrative_2 ;
+    skos:note "Compile weights by: review count, recency, reviewer diversity, lens coverage — continuous-valued, not binary" ;
+    dct:source narr:Sample_1 ;
+    .
+
+  # Deprecated claim node
+  narr:Claim_BooleanReviewStatus a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Notion ;
+    narr:aboutNode narr:MetricsMonitoring ;
+    skos:note "Deprecated claim: review status is a boolean (provisional/reviewed) — from 2026-02-10 TX fact review design" ;
+    dct:source narr:Sample_1 ;
+    .
+
+  # Claim_4 challenges link
+  narr:Claim_4 narr:challenges narr:Claim_BooleanReviewStatus .
+
+  # Observations
+  narr:Obs_RefractionPattern a narr:Observation ;
+    skos:broader narr:ArchitectureOverview ;
+    dct:source narr:Sample_1 ;
+    skos:note "Two-stage PR pipeline: (1) refraction — agent introspects existing docs, surfaces coverage delta, re-annotates; (2) proposed edits — agent drafts actual changes as suggested edits against real documents" ;
+    .
+
+  narr:Obs_VocabularyConsolidation a narr:Observation ;
+    skos:broader narr:NarrativeAnchor ;
+    dct:source narr:Sample_1 ;
+    skos:note "Vocabulary consolidation: telltales retired (mixed metaphor); lenses, eye chart, refraction check, optometrist model established as canonical terms" ;
+    .
+
+  narr:Obs_ReviewNamedGraphModel a narr:Observation ;
+    skos:broader narr:DataModelLifecycle ;
+    dct:source narr:Sample_1 ;
+    skos:note "Reviews as RDF named graphs: each review carries reviewer identity, timestamp, lens used, feedback, and triples in scope. Enables accumulation, not state transition." ;
+    .
+
+  narr:Obs_ConvergenceAsymptotic a narr:Observation ;
+    skos:broader narr:FeedbackLoops ;
+    dct:source narr:Sample_1 ;
+    skos:note "Convergence is asymptotic accumulation of review evidence, not a binary threshold. More honest to how organizational knowledge actually works." ;
+    .
+
+  narr:Obs_OpenQuestions a narr:Observation ;
+    skos:broader narr:RisksMitigations ;
+    dct:source narr:Sample_1 ;
+    skos:note "Four open design questions: document registry schema, eye charts per ontology domain, refraction-annotate skill interaction, compile weight thresholds" ;
+    .
+
+  # Style observations
+  narr:StyleObs_1 a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:NarrativeAnchor ;
+    skos:note "Extended optometrist metaphor: lens, refraction, eye chart, prescription, sharper/blurrier — sustained throughout the document as the organizing rhetorical frame" ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_2 a narr:StyleObservation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:Calibration ;
+    skos:note "Eye chart as fixed reference artifact — rows at different granularity levels, read through different prescriptions. Analogy grounds abstract review concept in familiar clinical object." ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_3 a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Strikethrough (~~text~~) used to visually enact deprecation inline — rhetorical and typographic simultaneously" ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_4 a narr:StyleObservation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:NarrativeAnchor ;
+    skos:note "Block-quoted founder voice: conversational, first-person, thinking-aloud register. Contrasts with surrounding analytical prose." ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_5 a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:MetricsMonitoring ;
+    skos:note "'Asymptotic approach' applied to knowledge convergence — mathematical metaphor conveying progressive trust without discrete endpoint" ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_6 a narr:StyleObservation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:Tagline ;
+    skos:note "Parallel bullet structure contrasting triple-level and document-level review — same syntactic frame reinforces conceptual symmetry" ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_7 a narr:StyleObservation ;
+    skos:broader narr:RhetoricalQuestion ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ClarityChecks ;
+    skos:note "Three rhetorical questions simulate the reviewer's inner voice — enacts the refraction check experience rather than describing it" ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_8 a narr:StyleObservation ;
+    skos:broader narr:AICompanyizationCase ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Bold used consistently to introduce canonical vocabulary terms on first definition — functions as a controlled terminology register" ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_9 a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:WhatItsNot ;
+    skos:note "Repeated 'not X but Y' antithesis used to sharpen architectural distinctions — e.g., 'not a shift in prose' / 'not state transition'" ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_10 a narr:StyleObservation ;
+    skos:broader narr:IdiolectPhrasing ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    skos:note "'One-shot' used as a technical-idiomatic term for single-pass generation — recurs as a negative marker throughout the document" ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_11 a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ProblemStakes ;
+    skos:note "Two-item numbered list opens the problem section — economical, direct, sets up the solution pivot cleanly" ;
+    rdf:value true ;
+    .
+
+  narr:StyleObs_12 a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:WhatIsIt ;
+    skos:note "'Collective memory' used as a product metaphor for the knowledge graph / compile output — humanizes the technical system" ;
+    rdf:value true ;
+    .
+
+} ;
+
+# =============================================================
+# BLOCK 3 — UPDATE: narr:Narrative_1
+# =============================================================
+
+DELETE {
+  narr:Narrative_1 dct:source ?oldSource .
+  narr:Narrative_1 narr:theme  ?oldTheme .
+  narr:Narrative_1 skos:broader ?oldBroader .
+  narr:Narrative_1 skos:note   ?oldNote .
+}
+INSERT {
+  narr:Narrative_1
+    dct:source narr:Sample_1 ;
+    narr:theme "Generated artifacts as quality signals are insufficient; refraction checks against registered documents replace story regeneration on PR" ;
+    skos:broader narr:Strategy ;
+    skos:note "Core architectural shift: from one-shot generation to iterative refraction-based maintenance" ;
+    prov:wasGeneratedBy narr:Tx_20260308T212946Z .
+}
+WHERE {
+  narr:Narrative_1 dct:source ?oldSource .
+  OPTIONAL { narr:Narrative_1 narr:theme  ?oldTheme . }
+  OPTIONAL { narr:Narrative_1 skos:broader ?oldBroader . }
+  OPTIONAL { narr:Narrative_1 skos:note   ?oldNote . }
+} ;
+
+# =============================================================
+# BLOCK 4 — UPDATE: narr:Narrative_2
+# =============================================================
+
+DELETE {
+  narr:Narrative_2 dct:source ?oldSource .
+  narr:Narrative_2 narr:theme  ?oldTheme .
+  narr:Narrative_2 skos:broader ?oldBroader .
+  narr:Narrative_2 skos:note   ?oldNote .
+}
+INSERT {
+  narr:Narrative_2
+    dct:source narr:Sample_1 ;
+    narr:theme "Review is evidence accumulation via RDF named graphs, not a boolean state transition" ;
+    skos:broader narr:Architecture ;
+    skos:note "Supersedes 2026-02-10 TX fact review design decisions; enables nuanced compile weighting" ;
+    prov:wasGeneratedBy narr:Tx_20260308T212946Z .
+}
+WHERE {
+  narr:Narrative_2 dct:source ?oldSource .
+  OPTIONAL { narr:Narrative_2 narr:theme  ?oldTheme . }
+  OPTIONAL { narr:Narrative_2 skos:broader ?oldBroader . }
+  OPTIONAL { narr:Narrative_2 skos:note   ?oldNote . }
+} ;
+
+# =============================================================
+# BLOCK 5 — UPDATE: narr:Narrative_3
+# =============================================================
+
+DELETE {
+  narr:Narrative_3 dct:source ?oldSource .
+  narr:Narrative_3 narr:theme  ?oldTheme .
+  narr:Narrative_3 skos:broader ?oldBroader .
+  narr:Narrative_3 skos:note   ?oldNote .
+}
+INSERT {
+  narr:Narrative_3
+    dct:source narr:Sample_1 ;
+    narr:theme "The optometrist metaphor unifies triple-level and document-level review under a single refraction pattern" ;
+    skos:broader narr:NarrativeAnchor ;
+    skos:note "Vocabulary consolidation: telltales deprecated, refraction check / eye chart / lens established" ;
+    prov:wasGeneratedBy narr:Tx_20260308T212946Z .
+}
+WHERE {
+  narr:Narrative_3 dct:source ?oldSource .
+  OPTIONAL { narr:Narrative_3 narr:theme  ?oldTheme . }
+  OPTIONAL { narr:Narrative_3 skos:broader ?oldBroader . }
+  OPTIONAL { narr:Narrative_3 skos:note   ?oldNote . }
+} ;
+
+# =============================================================
+# BLOCK 6 — UPDATE: narr:Claim_1
+# =============================================================
+
+DELETE {
+  narr:Claim_1 narr:hasConvictionLevel ?oldConv .
+  narr:Claim_1 narr:aboutNode ?oldAbout .
+  narr:Claim_1 narr:supports  ?oldSupports .
+  narr:Claim_1 skos:note      ?oldNote .
+  narr:Claim_1 dct:source     ?oldSource .
+}
+INSERT {
+  narr:Claim_1
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:CoreNarratives ;
+    narr:supports narr:Narrative_1 ;
+    skos:note "Story generation is expensive (full compile + LLM per template per PR) and one-shot quality is insufficient for real documents" ;
+    dct:source narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260308T212946Z .
+}
+WHERE {
+  narr:Claim_1 narr:hasConvictionLevel ?oldConv .
+  OPTIONAL { narr:Claim_1 narr:aboutNode ?oldAbout . }
+  OPTIONAL { narr:Claim_1 narr:supports  ?oldSupports . }
+  OPTIONAL { narr:Claim_1 skos:note      ?oldNote . }
+  OPTIONAL { narr:Claim_1 dct:source     ?oldSource . }
+} ;
+
+# =============================================================
+# BLOCK 9 — UPDATE: narr:Claim_4
+# =============================================================
+
+DELETE {
+  narr:Claim_4 narr:hasConvictionLevel ?oldConv .
+  narr:Claim_4 narr:aboutNode ?oldAbout .
+  narr:Claim_4 narr:supports  ?oldSupports .
+  narr:Claim_4 skos:note      ?oldNote .
+  narr:Claim_4 dct:source     ?oldSource .
+}
+INSERT {
+  narr:Claim_4
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:MetricsMonitoring ;
+    narr:supports narr:Narrative_2 ;
+    skos:note "Supersedes 2026-02-10 design: review is accumulation of named graphs (who, when, lens, feedback, triples in scope)" ;
+    dct:source narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260308T212946Z .
+}
+WHERE {
+  narr:Claim_4 narr:hasConvictionLevel ?oldConv .
+  OPTIONAL { narr:Claim_4 narr:aboutNode ?oldAbout . }
+  OPTIONAL { narr:Claim_4 narr:supports  ?oldSupports . }
+  OPTIONAL { narr:Claim_4 skos:note      ?oldNote . }
+  OPTIONAL { narr:Claim_4 dct:source     ?oldSource . }
+} ;
+
+# =============================================================
+# BLOCK 10 — UPDATE: narr:Claim_5
+# =============================================================
+
+DELETE {
+  narr:Claim_5 narr:hasConvictionLevel ?oldConv .
+  narr:Claim_5 narr:aboutNode ?oldAbout .
+  narr:Claim_5 narr:supports  ?oldSupports .
+  narr:Claim_5 skos:note      ?oldNote .
+  narr:Claim_5 dct:source     ?oldSource .
+}
+INSERT {
+  narr:Claim_5
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Conviction ;
+    narr:supports narr:Narrative_2 ;
+    skos:note "Conviction = epistemological settledness of knowledge itself; review evidence = thoroughness of extraction validation. Both inform compile behavior independently." ;
+    dct:source narr:Sample_1 ;
+    prov:wasGeneratedBy narr:Tx_20260308T212946Z .
+}
+WHERE {
+  narr:Claim_5 narr:hasConvictionLevel ?oldConv .
+  OPTIONAL { narr:Claim_5 narr:aboutNode ?oldAbout . }
+  OPTIONAL { narr:Claim_5 narr:supports  ?oldSupports . }
+  OPTIONAL { narr:Claim_5 skos:note      ?oldNote . }
+  OPTIONAL { narr:Claim_5 dct:source     ?oldSource . }
+} 

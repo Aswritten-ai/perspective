@@ -1,0 +1,42 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Process> {
+  <https://aswritten.ai/narrative#Digest_Process> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Process> ;
+    narr:childCount "19"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """A June 12 process-redesign session whose stated aim was [\"I would like to improve the mess\"](narr:Obs_ClosingIntentQuote), structured as [correcting five March-8 misunderstandings before any building](narr:Narrative_CorrectBeforeBuilding). The spine: [the repo is canonical](narr:Obs_RepoSourceOfTruthQuote), [inverting the prior Notion-canonical / Backlog-journal rule](narr:Narrative_RepoAsSourceOfTruth_PM), with [Backlog kept as the work-state registry](narr:Claim_RepoCanonicalWorkState) for its [repo integration and commit-carrying context dumps](narr:Obs_BacklogRationaleQuote). Consequences cascade: [the CRM migrates into the repo](narr:Claim_CRMMigratesIntoRepo) as the last Notion dependency, and [the North Star is revived as tactical hub](narr:Claim_NorthStarRevived) under a 7-day staleness cadence. Hard engineering invariants are restated — [rebasing is never appropriate](narr:Narrative_NeverRebase) and [only dev branch hits dev infrastructure](narr:Claim_DevBranchOnly). A parallel thread designs the [iterative review process](narr:Narrative_ReviewProcess): [handoffs are never documents](narr:Claim_HandoffsNeverDocuments), [review is strongly offered, not mandatory](narr:Claim_ReviewInstructionsNotBlocking), and [transparency is necessary but insufficient](narr:Claim_2).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_2> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CRMMigratesIntoRepo> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DevBranchOnly> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_HandoffsNeverDocuments> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_NeverRebaseSettled> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_NorthStarRevived> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_NotificationTransactionSideEffect> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RepoCanonicalWorkState> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ReviewInstructionsNotBlocking> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StaleTasksParkedNotCancelled> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CorrectBeforeBuilding> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_NeverRebase> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_RepoAsSourceOfTruth_PM> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ReviewProcess> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SynchronousExtraction> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_BacklogRationaleQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ClosingIntentQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_RepoSourceOfTruthQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_VibeCodingExperiment> ;
+    narr:keyPhrase [ narr:text "I think the source of truth is the documents committed to the repo." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_RepoSourceOfTruthQuote> ] ;
+    narr:keyPhrase [ narr:text "backlog is great for integration into the repo and the fact that it carries commits and can be just dumped into context without having to do individual MCP calls — I really liked that." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_BacklogRationaleQuote> ] ;
+    narr:keyPhrase [ narr:text "I would like to improve the mess." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ClosingIntentQuote> ] ;
+    narr:keyPhrase [ narr:text "Transparency as mitigation is necessary but insufficient" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_2> ] ;
+    narr:keyPhrase [ narr:text "Review is strongly offered, not mandatory." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ReviewInstructionsNotBlocking> ] ;
+    narr:keyPhrase [ narr:text "Rebasing is never appropriate: rewrites history, requires force push, breaks droplet clone, n8n git, deploy actions, and session tracking." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_NeverRebaseSettled> ] ;
+    narr:variation [ narr:text "North Star revived, but the Notion Milestone→Project→Sprint hierarchy was deliberately NOT rebuilt and /sprint is retired — a road explicitly not taken." ; narr:over <https://aswritten.ai/narrative#Claim_NorthStarRevived> ] ;
+    narr:variation [ narr:text "~165 stale n8n-era tasks are parked, not cancelled — explicitly framed as NOT a migration decision, leaving the Clojure migration deferred and open." ; narr:over <https://aswritten.ai/narrative#Claim_StaleTasksParkedNotCancelled> ] ;
+    narr:variation [ narr:text "Notification is a transaction side effect, not a review mechanism — teammates get notified regardless of whether the author reviewed; pushes against treating review as a gate." ; narr:over <https://aswritten.ai/narrative#Claim_NotificationTransactionSideEffect> ] ;
+    narr:variation [ narr:text "Review is offered but non-blocking — declining does not block future work, qualifying any reading of review as mandatory process." ; narr:over <https://aswritten.ai/narrative#Claim_ReviewInstructionsNotBlocking> ] ;
+    narr:variation [ narr:text "Transparency-as-mitigation is marked necessary but insufficient — an internal qualifier against over-trusting the two-stage refraction pipeline." ; narr:over <https://aswritten.ai/narrative#Claim_2> ] ;
+    narr:variation [ narr:text "Outlier: the customer's chief architect's vibe-coding experiment (46 of 112 bugs auto-fixed, hallucinated behavior when tickets lacked clear expected behavior) sits as related context, not part of the process spine." ; narr:over <https://aswritten.ai/narrative#Observation_VibeCodingExperiment> ] ;
+    narr:writer "claude (subscription)" .
+}

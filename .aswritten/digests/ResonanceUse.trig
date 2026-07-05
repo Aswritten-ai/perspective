@@ -1,0 +1,33 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ResonanceUse> {
+  <https://aswritten.ai/narrative#Digest_ResonanceUse> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#ResonanceUse> ;
+    narr:childCount "13"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers how *resonant framing* gets used — the rhetorical and structural devices that make dense thinking land. The load-bearing structural claims sit under `broader`: [density inversion at scale](narr:Narrative_DensityInversionAtScale) reframes dense thinkers' communication liability as an asset, and [verbatim-quote integration](narr:StyleObs_VerbatimQuoteIntegration) tracks a register where founder voice interrupts analytical prose (witnessed Mar→Jun 2026). Around these cluster a dense field of metaphor observations attached `related`: validation-as-vision-test ([eye-chart micro-telltales](narr:StyleObs_BetterAorB), [phoropter eye exam](narr:StyleObs_Optometrist)); reframing metaphors ([gold mines for AI](narr:StyleObs_GoldMineMetaphor), [repo-as-gift](narr:StyleObs_GiftMetaphor)); opacity and stakes ([gods of Olympus](narr:StyleObs_GodsMetaphor), [burning away](narr:StyleObs_BurningAwayMetaphor)); and grounding analogies ([consultant interview](narr:StyleObs_ConsultantInterviewAnalogy), [a design collaborator's brand consulting](narr:StyleObs_StructurallyIdentical), [religion-as-living-system](narr:StyleObs_ReligionAnalogy), [brain personification](narr:StyleObs_BrainPersonification)). One child breaks the rhetorical-device pattern entirely: [armor coming off](narr:Obs_ArmorComingOff) — a raw moment of mutual vulnerability, not a framing technique.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DensityInversionAtScale> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ArmorComingOff> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BetterAorB> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BrainPersonification> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BurningAwayMetaphor> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ConsultantInterviewAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_GiftMetaphor> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_GodsMetaphor> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_GoldMineMetaphor> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Optometrist> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ReligionAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_StructurallyIdentical> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_VerbatimQuoteIntegration> ;
+    narr:keyPhrase [ narr:text "The system needs an equivalent to the eye chart with progressively smaller lines — micro-telltales at decreasing granularity" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BetterAorB> ] ;
+    narr:keyPhrase [ narr:text "It's almost like the gods of Olympus. If Zeus decides to strike you with lightning, one, there's nothing you can do about it." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_GodsMetaphor> ] ;
+    narr:keyPhrase [ narr:text "Review is iterative and convergent, like an eye exam with a phoropter." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Optometrist> ] ;
+    narr:keyPhrase [ narr:text "I would like to improve the mess." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VerbatimQuoteIntegration> ] ;
+    narr:keyPhrase [ narr:text "updates and abstracting information from the current memory across the existing snapshot is really important and hard" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VerbatimQuoteIntegration> ] ;
+    narr:variation [ narr:text "Structural outlier: an emotional-vulnerability observation (mutual crying) sits among otherwise rhetorical-device children — not a framing technique at all." ; narr:over <https://aswritten.ai/narrative#Obs_ArmorComingOff> ] ;
+    narr:variation [ narr:text "Opposing metaphor valences: positive reframing (gift, gold mine) vs. destruction/opacity/urgency (burning away, Zeus's lightning) — resonance cuts both directions." ; narr:over <https://aswritten.ai/narrative#StyleObs_GiftMetaphor> ; narr:over <https://aswritten.ai/narrative#StyleObs_GoldMineMetaphor> ; narr:over <https://aswritten.ai/narrative#StyleObs_BurningAwayMetaphor> ; narr:over <https://aswritten.ai/narrative#StyleObs_GodsMetaphor> ] ;
+    narr:variation [ narr:text "Two attachment registers: broader = load-bearing structural theses (density inversion, quote integration); related = ornamental/illustrative metaphors — different epistemic weight under one hub." ; narr:over <https://aswritten.ai/narrative#Narrative_DensityInversionAtScale> ; narr:over <https://aswritten.ai/narrative#StyleObs_VerbatimQuoteIntegration> ; narr:over <https://aswritten.ai/narrative#StyleObs_ReligionAnalogy> ] ;
+    narr:variation [ narr:text "Only the quote-integration child carries dates (Mar→Jun 2026); the metaphor observations are undated, so any trajectory claim rests on a single child." ; narr:over <https://aswritten.ai/narrative#StyleObs_VerbatimQuoteIntegration> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,160 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260527T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-27T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260527-calibrated-growth-tranche1" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      narr:Narrative_CalibratedGrowthDiscipline,
+      narr:Obs_ScarletStaircaseQuote,
+      narr:Obs_ScarletProfitableByDefaultQuote,
+      narr:StyleMetrics_CalibratedGrowth_20260527,
+      narr:StyleObs_CalibratedGrowth_Antithesis,
+      narr:StyleObs_CalibratedGrowth_Anaphora,
+      narr:StyleObs_CalibratedGrowth_ToneAuthoritative .
+} ;
+
+# ── INSERT DATA: New entities ────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260527T120000Z {
+
+    # ── Narratives ───────────────────────────────────────────────────────────
+    narr:Narrative_CalibratedGrowthDiscipline
+
+
+      skos:broader narr:StrategyOverview ;
+      skos:prefLabel "Calibrated Growth: Team Sizing and Pricing Tied to Validated Demand, Not Venture Timelines" ;
+      skos:note "The core discipline articulated May 27, 2026: team sizing and pricing are calibrated to validated demand, not venture timelines. The company does not bloat ahead of application. It does not build abstract product without delivery. It does not grow team before customer pipeline justifies it. It does not pursue long-term Hail-Mary bets disconnected from current success. Growth is drawn from current paying customers, real pricing signals, immediate pipeline — iteratively validated through actual purchase, not venture approval. The product is applied and present-tense. This is the structural discipline that the two-tranche raise structure expresses." ;
+      narr:theme "Team sizing and pricing calibrated to validated demand, not venture timelines — the company grows from current success, not from venture approval" .
+
+    narr:Obs_ScarletStaircaseQuote
+      a narr:Observation ;
+
+      skos:broader narr:StrategyOverview ;
+      skos:note "Scarlet's verbatim articulation of what the staircase actually is — the founding evidence for Narrative_ProfitabilityAsMathCheck." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2200 ;
+          oa:end 2580
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's not actually required to hit profitability at each stair step, or is that even necessarily the goal" ;
+          oa:prefix "sharpening what the staircase actually is:\n\n> \"" ;
+          oa:suffix " — it's the trajectory and the way the team sizing"
+        ]
+      ] .
+
+    narr:Obs_ScarletProfitableByDefaultQuote
+      a narr:Observation ;
+
+      skos:broader narr:StrategyOverview ;
+      skos:note "Scarlet's verbatim statement that the business is built on a model that expects repeatability and profitability early — the founding evidence for the 'profitable by default' reframe." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2650 ;
+          oa:end 2730
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "this business is built on a business model that expects repeatability and profitability early." ;
+          oa:prefix "> \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+    narr:StyleMetrics_CalibratedGrowth_20260527
+      a narr:StyleMetrics ;
+
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic decision memo with embedded verbatim blockquotes from Scarlet. Mixed register: structured markdown with H2 section headers and bold numbered commitments (memo genre) vs. conversational first-person in blockquoted speech. Antithesis-heavy structure (destination vs. check, strategic vs. existential, venture approval vs. actual purchase). Anaphora in the three structural commitments ('The company does not...'). Active voice dominant in editorial prose. Jargon density moderate — financial terms (SAFE, SEL, 1099, EDO) and product terms (Org-tier, bridge team, deployment options) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "19"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.10"^^xsd:decimal .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_CalibratedGrowth_Antithesis
+      a narr:StyleObservation ;
+
+      skos:broader narr:Antithesis ;
+      skos:note "Antithesis used throughout to distinguish the calibration discipline from venture-scale behavior: 'not venture approval' vs. 'actual purchase'; 'not the destination' vs. 'the math check'; 'strategic reasons' vs. 'existential reasons'." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3100 ;
+          oa:end 3310
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "iteratively validated through actual pricing signals and purchase, not venture approval" ;
+          oa:prefix "drawing from current success to create immediate pipeline rather than long-term Hail Mary, that our product is applied and present tense and " ;
+          oa:suffix ". But that we may well raise"
+        ]
+      ] .
+
+    narr:StyleObs_CalibratedGrowth_Anaphora
+      a narr:StyleObservation ;
+
+      skos:broader narr:Anaphora ;
+      skos:note "Anaphora in the three structural commitments section: 'The company does not bloat... It does not build... It does not grow... It does not pursue...' — a rhetorical list that enumerates the discipline through negation." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3380 ;
+          oa:end 3560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The company does not bloat ahead of application. It does not build abstract product without delivery. It does not grow team before customer pipeline justifies it." ;
+          oa:prefix "**The discipline: team sizing and pricing are calibrated to validated demand, not venture timelines.** " ;
+          oa:suffix " It does not pursue long-term Hail-Mary bets"
+        ]
+      ] .
+
+    narr:StyleObs_CalibratedGrowth_ToneAuthoritative
+      a narr:StyleObservation ;
+
+      skos:broader narr:ToneAuthoritative ;
+      skos:note "Authoritative declarative tone in the 'Why this works for each audience' section — each audience framing is stated as settled fact, not hypothesis. 'A business that doesn't need venture money is the best kind to give venture money to.' Short punchy declaratives at conviction peaks." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5200 ;
+          oa:end 5330
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "A business that doesn't need venture money is the best kind to give venture money to." ;
+          oa:prefix "- **VCs at the [amount]-4M raise:** " ;
+          oa:suffix " The bridge team's structural profitability path"
+        ]
+      ] .
+  }
+}

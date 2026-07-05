@@ -1,0 +1,262 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260308T214552Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai/anthropic/claude-sonnet-4.6" ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-03-08T21:45:52Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-03-08-lens-drafting-behavior-discovery.md" ;
+    sb:originRef           "main" .
+} ;
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added triples)
+# =============================================================
+INSERT DATA {
+
+  # --- Actor_ScarletDame: new note and provenance ---
+  narr:Actor_ScarletDame
+    skos:note "Founder of aswritten.ai; primary knowledge holder; session participant driving strategic plan development." ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  # --- Narrative_ProgressionPrinciple: entirely new ---
+  narr:Narrative_ProgressionPrinciple a narr:Narrative ;
+
+    narr:theme "Give the human more and more concrete material to react to until they are only correcting, not generating" ;
+    skos:note "Maps the five-attempt progression: open questions → organized questions → draft + lens question → fragments through lenses → full drafts + delta table. Each step reduced generative burden and increased reactive surface area." ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  # --- Claim_LensDraftingWorks: entirely new ---
+  narr:Claim_LensDraftingWorks a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+
+    skos:note "Full section drafts through explicit perspective lenses, combined with a delta table, successfully extracted strategic knowledge from Scarlet that four prior approaches failed to extract." ;
+
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  # --- Claim_NoNewToolsRequired: entirely new ---
+  narr:Claim_NoNewToolsRequired a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+    skos:note "No new tools required today. The process uses compile, introspect, and remember. The lens is a prompt pattern. Future: formalized aswritten/lens tool with saveable configurations, but prompt-based version works now." ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  # --- Observation_LensDraftingProcess: new ---
+  narr:Observation_LensDraftingProcess a narr:Observation ;
+    skos:broader narr:NarrativeDrivenRoadmap ;
+
+    skos:note "10-step Lens Drafting process: (1) compile worldview, (2) introspect for competing perspectives, (3) draft centrist version, (4) identify 2-3 lens shifts, (5) draft full section through each lens, (6) show delta table, (7) present and ask which is sharpest, (8) capture reaction as organizational knowledge, (9) draft converged version, (10) offer to save reaction and converged draft as memory." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5180 ; oa:end 5780 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  # --- Observation_ScarletLensDefinition: entirely new ---
+  narr:Observation_ScarletLensDefinition a narr:Observation ;
+    skos:broader narr:WhatIsIt ;
+
+    skos:note "Scarlet's canonical definition of the lens tool: competing priorities + alternative perspective weights in the graph → different drafts → delta. Humans read drafts but need help identifying where shifts occurred." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2980 ; oa:end 3420 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  # --- Observation_FutureLensTool: new ---
+  narr:Observation_FutureLensTool a narr:Observation ;
+    skos:broader narr:NarrativeDrivenRoadmap ;
+
+    skos:note "Future: formalized aswritten/lens tool taking focus, perspective_weights, and target; returns re-weighted compilation. Lens configurations become saveable and reusable named configurations. Prompt-based version to be validated first." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5820 ; oa:end 6100 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  # --- Style Observations: all new ---
+  narr:StyleObs_CentristDraft a narr:StyleObservation ;
+    skos:broader narr:NamingConventions ;
+
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Coined compound noun. 'Centrist draft' names the baseline document produced when all perspectives are weighted equally. Precise, neutral, reusable as a technical term." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2988 ; oa:end 3002 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_DeltaTable a narr:StyleObservation ;
+    skos:broader narr:NamingConventions ;
+
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Coined compound noun. 'Delta table' names the instrument readout showing exactly what moved between lens drafts. Borrows 'delta' from mathematics/engineering to signal difference/change." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2870 ; oa:end 2881 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_OptometristMetaphor a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+
+    skos:related narr:NarrativeAnchor ;
+    rdf:value true ;
+    skos:note "Extended metaphor mapping product model onto optometry: eye chart = document, refraction = commentary/distortion, lens = perspective weight. Sustained across multiple sections; functions as the product's explanatory anchor." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3580 ; oa:end 3720 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_DistortionIsInstrument a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Four-word declarative sentence functioning as an aphorism. Subject-verb-complement with zero hedging. Delivers the core mechanism insight in minimal words. Characteristic of the author's style for key insights." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4940 ; oa:end 4968 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_BoldCoreInsight a narr:StyleObservation ;
+    skos:broader narr:AICompanyizationCase ;
+
+    skos:related narr:ToneAuthoritative ;
+    rdf:value true ;
+    skos:note "Bold markdown used to foreground the single most important claim in the document. Signals to reader: this is the thesis. Used sparingly — only once for the core insight." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4870 ; oa:end 4940 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_TestingVsSelling a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Antithetical pair surfaced by the uncertainty lens: 'what we're testing' vs. 'what we sell'. Identified by Scarlet as a genuine strategic question worth resolving. The antithesis is both a rhetorical device and a substantive tension." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2920 ; oa:end 2970 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_AllCapsIS a narr:StyleObservation ;
+    skos:broader narr:AICompanyizationCase ;
+
+    skos:related narr:ToneAuthoritative ;
+    rdf:value true ;
+    skos:note "ALL-CAPS 'IS' used for emphatic assertion. Signals maximum conviction. Rhetorical device: typographic stress replacing spoken emphasis. Characteristic of the author's voice for high-conviction claims." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 6490 ; oa:end 6545 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_FailureProgression a narr:StyleObservation ;
+    skos:broader narr:Parallelism ;
+
+    skos:related narr:NarrativePillars ;
+    rdf:value true ;
+    skos:note "Parallel numbered list structure (1-5) maps the failure progression. Each item follows the same pattern: approach description → arrow → outcome. Creates rhetorical momentum toward the breakthrough." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 6820 ; oa:end 7100 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_LensDraftingTerm a narr:StyleObservation ;
+    skos:broader narr:NamingConventions ;
+
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Coined compound gerund naming the new product behavior. 'Lens drafting' combines the optical metaphor with the writing action. Appears in the document title and throughout as the canonical term." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2 ; oa:end 15 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_RhetoricalQuestion a narr:StyleObservation ;
+    skos:broader narr:RhetoricalQuestion ;
+
+    skos:related narr:ProblemStakes ;
+    rdf:value true ;
+    skos:note "Direct rhetorical question 'how do you extract that thinking?' posed after establishing the problem context. Invites the reader into the problem before presenting the solution." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 820 ; oa:end 860 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_ConsultantInterviewAnalogy a narr:StyleObservation ;
+    skos:broader narr:Analogy ;
+
+    skos:related narr:ResonanceUse ;
+    rdf:value true ;
+    skos:note "Analogy connecting lens drafting to the established consultant interview model. 'The expert is reacting to questions, not writing docs.' Grounds the new behavior in a familiar, validated pattern." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 7480 ; oa:end 7620 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  narr:StyleObs_ProgressiveNarrowing a narr:StyleObservation ;
+    skos:broader narr:CadenceRhythm ;
+
+    skos:related narr:FlowCoherence ;
+    rdf:value true ;
+    skos:note "Em-dash used to deliver a sharp pivot or clarification at sentence end. Pattern: broad claim — precise qualifier. Creates a punchy landing after a longer setup clause." ;
+    oa:hasSelector [ a oa:TextPositionSelector ; oa:start 7200 ; oa:end 7290 ] ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+  # --- StyleMetrics_LensDrafting: new properties ---
+  narr:StyleMetrics_LensDrafting
+    narr:TypeTokenRatio "0.61"^^xsd:decimal ;
+    narr:Conciseness "high" ;
+    prov:wasGeneratedBy narr:Transaction_LensDrafting_20260308 ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+
+} ;
+
+# =============================================================
+# BLOCK 2 — UPDATE: Transaction_LensDrafting_20260308 title
+# =============================================================
+DELETE {
+  narr:Transaction_LensDrafting_20260308 dct:title ?oldTitle .
+}
+INSERT {
+  narr:Transaction_LensDrafting_20260308
+    dct:title "Lens Drafting Discovery Session — March 8, 2026" ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+}
+WHERE {
+  OPTIONAL { narr:Transaction_LensDrafting_20260308 dct:title ?oldTitle . }
+} ;
+
+# =============================================================
+# BLOCK 7 — UPDATE: Narrative_HubModelFinancial theme
+# =============================================================
+DELETE {
+  narr:Narrative_HubModelFinancial narr:theme ?oldTheme .
+}
+INSERT {
+  narr:Narrative_HubModelFinancial
+    narr:theme "The company itself is the proof of concept for the hub organizational model; consultant-first hiring reduces raise requirement and proves the product" ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+}
+WHERE {
+  OPTIONAL { narr:Narrative_HubModelFinancial narr:theme ?oldTheme . }
+} ;
+
+# =============================================================
+# BLOCK 13 — UPDATE: StyleMetrics_LensDrafting AverageSentenceLength + note
+# =============================================================
+DELETE {
+  narr:StyleMetrics_LensDrafting narr:AverageSentenceLength ?oldLen .
+  narr:StyleMetrics_LensDrafting skos:note ?oldNote .
+}
+INSERT {
+  narr:StyleMetrics_LensDrafting
+    narr:AverageSentenceLength 22 ;
+    skos:note "Estimated metrics: avg sentence length ~22 words (mix of short aphorisms and longer explanatory sentences); active voice dominant (~88%); low jargon density with controlled coined terms; high type-token ratio indicating lexical variety; overall conciseness high with no padding. RhythmVariance is notable — short punchy declaratives alternate with longer block-quote passages." ;
+    prov:wasGeneratedBy narr:Tx_20260308T214552Z .
+}
+WHERE {
+  OPTIONAL { narr:StyleMetrics_LensDrafting narr:AverageSentenceLength ?oldLen . }
+  OPTIONAL { narr:StyleMetrics_LensDrafting skos:note ?oldNote . }
+}

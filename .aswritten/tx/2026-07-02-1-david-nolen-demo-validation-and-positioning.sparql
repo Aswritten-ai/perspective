@@ -1,0 +1,413 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────
+INSERT DATA {
+  narr:Tx_20260702T023158Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T02:31:58Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-02-1-david-nolen-demo-validation-and-positioning" ;
+    narr:originRef "call/david-nolen" ;
+    dct:title "David Nolen demo: skeptical senior engineer validates provenance + archaeology, contests dev-vs-strategy positioning" ;
+    prov:generated
+      narr:Sample_DavidNolenDemo_20260625,
+      narr:Narrative_WhiteSpaceMechanism,
+      narr:Narrative_ModelAsOS,
+      narr:Narrative_StoreDecisionProcessNotArtifact,
+      narr:Narrative_ArchaeologyQueryUseCase,
+      narr:Claim_DavidNolenProvenanceValidation,
+      narr:Claim_DavidNolenArchaeologyValidation,
+      narr:Claim_IntrospectFixesHallucination,
+      narr:Claim_ConvictionTemporalityExternalValidation,
+      narr:Claim_DeveloperLikeMeICPNarrowing,
+      narr:Claim_DemoLegibilityOwnDataRequired,
+      narr:Obs_DavidNolenProvenanceDatesQuote,
+      narr:Obs_DavidNolenArchaeologyQuote,
+      narr:Obs_DavidNolenArchaeologyEmotionalPeakQuote,
+      narr:Obs_DavidNolenIntrospectQuote,
+      narr:Obs_ScarletDeveloperLikeMeQuote,
+      narr:Obs_ScarletSiloingFeatureNotBugQuote,
+      narr:Obs_ScarletDemoLegibilityQuote,
+      narr:Obs_ScarletWhiteSpaceQuote,
+      narr:Obs_DavidNolenWhiteSpaceNonDeterministicQuote,
+      narr:Obs_ScarletModelAsOSQuote,
+      narr:Obs_ScarletStoreDecisionProcessQuote,
+      narr:StyleObs_DavidNolen_BlockQuoteStyle,
+      narr:StyleObs_DavidNolen_TimestampCitations,
+      narr:StyleObs_DavidNolen_SkepticalVoiceContrast,
+      narr:StyleMetrics_DavidNolenDemo_20260625 .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T023158Z {
+
+    # ── Sample ──────────────────────────────────────────────────
+    narr:Sample_DavidNolenDemo_20260625 a narr:Sample ;
+      dct:title "David Nolen demo: skeptical senior engineer validates provenance + archaeology, contests dev-vs-strategy positioning" ;
+      dct:created "2026-06-25"^^xsd:date ;
+      narr:inputLength 11007 ;
+      dct:description "Scarlet ↔ David Nolen video call, June 25 2026 (~1 hr). Product demo + advisor feedback. David is a senior Clojure engineer (ex-DRW) who probed positioning, validated provenance/archaeology/introspect differentiators, and contested the developer ICP." .
+
+    # ── Narratives ──────────────────────────────────────────────
+
+    narr:Narrative_WhiteSpaceMechanism a narr:Narrative ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      narr:theme "White space: the organizational perspective fills in what the model decides by default" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "Scarlet's coinage for the core mechanism: whatever you don't specify, the model decides — those decisions come from the model's default. The more specific your prompt, the less white space. aswritten preloads an organizational perspective that fills in white space before you do anything. David sharpened it: 'that white space is also non-deterministic.'" .
+
+    narr:Narrative_ModelAsOS a narr:Narrative ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      narr:theme "Model as operating system; perspective as application that runs on top" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "Prompted by David's Sonnet-vs-Opus workflow discussion: the model is just the operating system and the perspective is an application that runs on top of it — a program that bootstraps the model to think in a certain way, portable across any individual model. Expresses the model-independence / installable-program thesis." .
+
+    narr:Narrative_StoreDecisionProcessNotArtifact a narr:Narrative ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      narr:theme "Store the decision process, not the half-baked artifact" ;
+      skos:broader narr:Differentiators ;
+      skos:note "Most systems store facts; aswritten steps upstream and stores the discussion and decision-making process that got there, because AI makes new decisions based on what was previously decided, not replicating what's already there. Vivid version: AI 'looks at the codebase and says I see you do it this way, when that way is some half-baked version of the thing we tried three different ways three different times and got 60% of the way.'" .
+
+    narr:Narrative_ArchaeologyQueryUseCase a narr:Narrative ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      narr:theme "Archaeology query: show how it was originally done and all the conversations that led to this moment" ;
+      skos:broader narr:Differentiators ;
+      skos:note "David constructed this use case himself — unprompted — asking whether he could query 'show me how it was originally done and all the conversations that led to this moment where it was decided to implement it this new way with a different set of trade-offs.' He then answered his own excitement: 'that's the classic — any organization you walk in and you're like, how did we end up here? And your ability to find out how you got to a place is almost impossible.' Reached for his DRW maze-of-Confluence-documents trauma. This was the emotional peak of the demo, and the prospect generated it, not the pitch." .
+
+    # ── Claims ──────────────────────────────────────────────────
+
+    narr:Claim_DavidNolenProvenanceValidation a narr:Claim ;
+      narr:aboutNode narr:Narrative_ProvenanceCitationMoment ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ProvenanceCitationMoment ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "David Nolen — a credible senior technical evaluator — independently validated the provenance/citation differentiator: 'that part is really cool, the provenance stuff… getting back answers grounded in some truth' [35:37], and unprompted: 'the fact that it has dates… the date thing is awesome, a nice reference point for doing research. All the citations at the bottom is really cool' [53:02]. External-validation data point, not Scarlet's pitch." .
+
+    narr:Claim_DavidNolenArchaeologyValidation a narr:Claim ;
+      narr:aboutNode narr:Narrative_ArchaeologyQueryUseCase ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ArchaeologyQueryUseCase ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "David constructed the archaeology use case himself — unprompted — and reached emotional peak describing his DRW Confluence-documents trauma. The prospect generated the use case, not the pitch. This is the strongest independent validation signal in the call." .
+
+    narr:Claim_IntrospectFixesHallucination a narr:Claim ;
+      narr:aboutNode narr:Differentiators ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Differentiators ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "David independently validated introspect-as-escalation: 'that fixes one huge problem with LLMs — once you're in unknown territory it just makes up plausible stuff, it doesn't stop and claim it doesn't know something' [01:12:31]. External-validation data point on the 'it knows what it doesn't know' differentiator." .
+
+    narr:Claim_ConvictionTemporalityExternalValidation a narr:Claim ;
+      narr:aboutNode narr:Narrative_ConvictionFramework ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_ConvictionFramework ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "David asked the exact question the conviction model answers — facts 'set in stone' vs. the evolving 'frontier' [42:57] — and the stepwise-conviction answer (notion → decision → foundational, incremented/decremented on re-extraction) landed. External validation of the conviction stack's user-legibility." .
+
+    narr:Claim_DeveloperLikeMeICPNarrowing a narr:Claim ;
+      narr:aboutNode narr:Narrative_TierContinuumNotDistinctMarkets ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_TierContinuumNotDistinctMarkets ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "Scarlet's load-bearing resolution to David's four-times-repeated positioning challenge: 'When I say it's really useful for developers, I mean it's really useful for developers like me — developers who are involved in the product process or who are running an organization themselves. And I actually think that team shape is becoming a lot more prevalent.' [01:17:15]. This narrows the ICP rather than defending 'everyone' — held against a credible challenge, consistent with the continuum thesis, and sharpens (rather than resolves) the standing 'coding tool vs. strategy tool — it's the middle point' tension." .
+
+    narr:Claim_DemoLegibilityOwnDataRequired a narr:Claim ;
+      narr:aboutNode narr:Narrative_ActivationGap ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_ActivationGap ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "Scarlet: 'it's hard to have the moment with it that isn't your stuff… until it cites you in a way that's meaningful, and until it tells you it's missing something in a way that's actually true, it's kind of all theoretical. So I really encourage people to try it.' [01:13:12]. Corroborates the activation-gap / two-sided-legibility material. David's exit was 'give it a try myself,' not 'I'm sold from the demo.'" .
+
+    # ── Observations ────────────────────────────────────────────
+
+    narr:Obs_DavidNolenProvenanceDatesQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "David's unprompted validation of provenance and dates as differentiators" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4398 ; oa:end 4542
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the fact that it has dates… the date thing is awesome, a nice reference point for doing research. All the citations at the bottom is really cool" ;
+          oa:prefix "Later, unprompted: " ;
+          oa:suffix " [53:02]."
+        ]
+      ] .
+
+    narr:Obs_DavidNolenArchaeologyQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "David's self-constructed archaeology query use case" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4677 ; oa:end 4846
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "show me how it was originally done and all the conversations that led to this moment where it was decided to implement it this new way with a different set of trade-offs" ;
+          oa:prefix "He asked whether he could query " ;
+          oa:suffix " [48:37]"
+        ]
+      ] .
+
+    narr:Obs_DavidNolenArchaeologyEmotionalPeakQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "David's emotional peak — the 'how did we end up here' moment, self-generated" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4894 ; oa:end 5057
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "that's the classic — any organization you walk in and you're like, how did we end up here? And your ability to find out how you got to a place is almost impossible" ;
+          oa:prefix "then answered his own excitement: " ;
+          oa:suffix " [49:42]"
+        ]
+      ] .
+
+    narr:Obs_DavidNolenIntrospectQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "David's independent validation of introspect-as-escalation / 'it knows what it doesn't know'" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5339 ; oa:end 5497
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "that fixes one huge problem with LLMs — once you're in unknown territory it just makes up plausible stuff, it doesn't stop and claim it doesn't know something" ;
+          oa:prefix "On introspect-as-escalation: " ;
+          oa:suffix " [01:12:31]."
+        ]
+      ] .
+
+    narr:Obs_ScarletDeveloperLikeMeQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "Scarlet's load-bearing ICP narrowing under pressure from David" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2540 ;
+          oa:end 2720
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "When I say it's really useful for developers, I mean it's really useful for developers like me — developers who are involved in the product process or who are running an organization themselves." ;
+          oa:prefix "Scarlet [01:17:15]: " ;
+          oa:suffix " And I actually think that team shape is becoming a lot more prevalent."
+        ]
+      ] .
+
+    narr:Obs_ScarletSiloingFeatureNotBugQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "Scarlet conceding David's siloing point as a real design boundary, not a misunderstanding" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3091 ; oa:end 3167
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the siloing and segmentation for some teams is actually a feature, not a bug" ;
+          oa:prefix "Scarlet [01:17:56]: " ;
+          oa:suffix " — which is why the product supports per-folder / per-repo compilation"
+        ]
+      ] .
+
+    narr:Obs_ScarletDemoLegibilityQuote a narr:Observation ;
+      skos:broader narr:Narrative_ActivationGap ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "Scarlet's candid articulation of the demo-legibility problem" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 7680 ; oa:end 7893
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "it's hard to have the moment with it that isn't your stuff… until it cites you in a way that's meaningful, and until it tells you it's missing something in a way that's actually true, it's kind of all theoretical." ;
+          oa:prefix "Scarlet [01:13:12]: " ;
+          oa:suffix " So I really encourage people to try it."
+        ]
+      ] .
+
+    narr:Obs_ScarletWhiteSpaceQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "Scarlet's coinage of 'white space' as the mechanism for how the perspective fills in model defaults" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6613 ; oa:end 6879
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "whatever you didn't specify, the model makes decisions about, and those decisions come from the model's default… the more specific your prompt, the less white space. This product preloads an organizational perspective that fills in white space before you do anything" ;
+          oa:prefix "I think about AI development in terms of what I call white space — " ;
+          oa:suffix " [28:26]."
+        ]
+      ] .
+
+    narr:Obs_DavidNolenWhiteSpaceNonDeterministicQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "David sharpening the white-space coinage" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6911 ; oa:end 6953
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "that white space is also non-deterministic" ;
+          oa:prefix "David sharpened it: " ;
+          oa:suffix " [29:33]."
+        ]
+      ] .
+
+    narr:Obs_ScarletModelAsOSQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "Scarlet's model-as-OS / perspective-as-application framing" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6173 ; oa:end 6407
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the model is just the operating system and then we bring our application that runs on top of it… programs that run on top of the model hardware, that you can take to any individual model and that bootstrap it to think in a certain way" ;
+          oa:prefix "Scarlet [19:52]: " ;
+          oa:suffix "."
+        ]
+      ] .
+
+    narr:Obs_ScarletStoreDecisionProcessQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      skos:note "Scarlet's articulation of storing the decision process vs. the half-baked artifact" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 7028 ; oa:end 7262
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Most systems intend to store facts… we step upstream and store the discussion and decision-making process that got us there, because AI is making new decisions based on what was previously decided, not replicating what's already there" ;
+          oa:prefix "Scarlet [38:53]: " ;
+          oa:suffix "."
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────
+
+    narr:StyleObs_DavidNolen_BlockQuoteStyle a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      rdf:value true ;
+      skos:note "Heavy use of attributed block-quotes with timestamp markers (e.g. [28:15], [01:15:34]) to carry evidentiary weight. Speaker attribution precedes each quote. Consistent with Scarlet's session-memo idiolect for call notes." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1859 ; oa:end 1972
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "is this mostly for people who are higher up the chain of command in organizations? Is this really for developers?" ;
+          oa:prefix "David [28:15]: " ;
+          oa:suffix " This is not necessarily for that, right?"
+        ]
+      ] .
+
+    narr:StyleObs_DavidNolen_TimestampCitations a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      rdf:value true ;
+      skos:note "Timestamp citations in [HH:MM:SS] format used throughout as inline provenance anchors for every attributed quote. Consistent with call-notes format across the perspective." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4398 ; oa:end 4451
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the fact that it has dates… the date thing is awesome" ;
+          oa:prefix "Later, unprompted: " ;
+          oa:suffix ", a nice reference point for doing research."
+        ]
+      ] .
+
+    narr:StyleObs_DavidNolen_SkepticalVoiceContrast a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      rdf:value true ;
+      skos:note "The document structures David's skeptical voice against Scarlet's reframes as a series of antithesis pairs: developer-vs-management, siloing-as-bug-vs-feature, demo-value-vs-own-data-required. The skeptic's challenge is preserved verbatim alongside the resolution, not smoothed away." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemo_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2364 ; oa:end 2518
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the issue with software developers and something like this is that… people put blinders on developers on purpose. This is the whole point of microservices" ;
+          oa:prefix "David [01:16:13 / 01:17:07]: " ;
+          oa:suffix " — I don't want you to really care about what other people are doing."
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────
+
+    narr:StyleMetrics_DavidNolenDemo_20260625 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_DavidNolenDemo_20260625 ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.78"^^xsd:decimal ;
+      narr:JargonDensity "0.14"^^xsd:decimal ;
+      skos:note "Call-notes format with heavy embedded verbatim block-quotes from two speakers. David's quoted speech is expansive and probing (~28 words avg per sentence); Scarlet's editorial prose is shorter and declarative (~18 words avg). Active voice dominant in editorial sections. Jargon density low-moderate — product terms (perspective, introspect, conviction stack, white space) used without definition, implying internal audience. Antithesis-heavy structure (developer vs. management, siloing-as-bug vs. feature, demo-value vs. own-data-required). Consistent with Scarlet session-memo idiolect." .
+
+  }
+}

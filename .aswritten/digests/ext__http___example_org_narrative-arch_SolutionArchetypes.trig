@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ext__http___example_org_narrative-arch_SolutionArchetypes> {
+  <https://aswritten.ai/narrative#Digest_ext__http___example_org_narrative-arch_SolutionArchetypes> a narr:Digest ;
+    narr:digestOf <http://example.org/narrative-arch#SolutionArchetypes> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub organizes the product's solution space as a matrix of two axes — *who creates* and *who reviews*. Four quadrant cases anchor it: [Solo](narr:http://example.org/narrative#UseCase_Solo) (single creator, self-review; maps to demo 'After the Call'), [Salon](narr:http://example.org/narrative#UseCase_Salon) (single proposer, group review; the viral use case), [Parallel](narr:http://example.org/narrative#UseCase_Parallel) (multiple creators, self-review), and [Teams](narr:http://example.org/narrative#UseCase_Teams) (multiple creators, group review; maps to demo 'The War Room'). A fifth case, [Hub](narr:http://example.org/narrative#UseCase_Hub), introduces a distinct review mode — many contributors funneling to one designated authority — that doesn't sit in a clean self/group binary. A separate [Salon archetype observation](narr:http://example.org/narrative#Observation_SolutionArchetype_Salon) restates the Salon flow (texting a topic, adding people by handle, AI-guided consensus, branch-merge on agreement). Only Solo and Teams currently bind to named demos; the others remain unmapped use cases.""" ;
+    narr:covers <http://example.org/narrative#Observation_SolutionArchetype_Salon> ;
+    narr:covers <http://example.org/narrative#UseCase_Hub> ;
+    narr:covers <http://example.org/narrative#UseCase_Parallel> ;
+    narr:covers <http://example.org/narrative#UseCase_Salon> ;
+    narr:covers <http://example.org/narrative#UseCase_Solo> ;
+    narr:covers <http://example.org/narrative#UseCase_Teams> ;
+    narr:keyPhrase [ narr:text "One person adds memories and approves their own worldview shift." ; narr:phraseSource <http://example.org/narrative#UseCase_Solo> ] ;
+    narr:keyPhrase [ narr:text "Expansion of Salon when multiple people also contribute content, not just review." ; narr:phraseSource <http://example.org/narrative#UseCase_Teams> ] ;
+    narr:keyPhrase [ narr:text "one designated reviewer/approver for all branches" ; narr:phraseSource <http://example.org/narrative#UseCase_Hub> ] ;
+    narr:keyPhrase [ narr:text "User texts topic, adds people by handle, AI guides toward consensus" ; narr:phraseSource <http://example.org/narrative#UseCase_Salon> ] ;
+    narr:keyPhrase [ narr:text "no shared reviewer" ; narr:phraseSource <http://example.org/narrative#UseCase_Parallel> ] ;
+    narr:variation [ narr:text "Hub breaks the clean 2x2: its review axis is 'single authority/designated approver', a third mode beyond self-review vs group review." ; narr:over <http://example.org/narrative#UseCase_Hub> ] ;
+    narr:variation [ narr:text "Salon appears twice — as a UseCase quadrant and as a standalone archetype observation — a near-duplicate that may be redundant or signal it's the seed case." ; narr:over <http://example.org/narrative#UseCase_Salon> ; narr:over <http://example.org/narrative#Observation_SolutionArchetype_Salon> ] ;
+    narr:variation [ narr:text "Teams is framed as an 'expansion of Salon' rather than an independent quadrant, blurring the matrix boundary between the two group-review cases." ; narr:over <http://example.org/narrative#UseCase_Teams> ; narr:over <http://example.org/narrative#UseCase_Salon> ] ;
+    narr:variation [ narr:text "Only Solo and Teams map to named demos ('After the Call', 'The War Room'); Salon, Parallel, and Hub are unanchored to any concrete demo." ; narr:over <http://example.org/narrative#UseCase_Solo> ; narr:over <http://example.org/narrative#UseCase_Teams> ; narr:over <http://example.org/narrative#UseCase_Parallel> ; narr:over <http://example.org/narrative#UseCase_Hub> ] ;
+    narr:writer "claude (subscription)" .
+}

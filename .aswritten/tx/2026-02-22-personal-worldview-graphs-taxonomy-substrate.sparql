@@ -1,0 +1,373 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# SPARQL INSERT TRANSACTION
+# Source memory : .aswritten/memories/2026-02-22-personal-worldview-graphs-taxonomy-substrate.md
+# Generated     : 2026-02-22T05:30:37.147Z
+# Model         : anthropic/claude-sonnet-4.6
+# =============================================================
+
+INSERT DATA {
+
+  # --- TRANSACTION PROVENANCE ---
+
+  narr:Transaction_20260222_PWG a prov:Activity ;
+      prov:wasAssociatedWith <https://aswritten.ai> ;
+      prov:wasAttributedTo   <https://n8n.aswritten.ai> ;
+      prov:generatedAtTime   "2026-02-22T05:30:37.147Z"^^xsd:dateTime ;
+      sb:originPath          ".aswritten/memories/2026-02-22-personal-worldview-graphs-taxonomy-substrate.md" ;
+      sb:originRef           "main" ;
+      sb:model               "anthropic/claude-sonnet-4.6" .
+
+  # --- SAMPLE ---
+
+  narr:Sample_PWG a narr:Sample ;
+      dct:title "Personal Worldview Graphs: Individual Memory as Product Layer" ;
+      narr:inputLength 4847 ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Actor_ClaudeSonnet a narr:Actor ;
+      skos:prefLabel "Claude Sonnet" ;
+      skos:note "AI coworker, mobile session participant" ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  # --- NARRATIVES ---
+
+  narr:Narrative_PersonalGraphLayer a narr:Narrative ;
+      dct:source narr:Sample_PWG ;
+      narr:theme "Personal worldview graphs as a missing product layer beneath organizational memory" ;
+      skos:note "The use case taxonomy (Solo/Parallel/Hub/Salon/Teams) lacks a personal dimension; personal graphs transform every case from generic to personalized by encoding individual worldview, communication style, fears, and processing preferences." ;
+      skos:broader narr:ProductOverview ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Narrative_ThreeLayerMemory a narr:Narrative ;
+      dct:source narr:Sample_PWG ;
+      narr:theme "Three-layer memory architecture: personal, organizational, and relationship graphs" ;
+      skos:note "Personal graph (private, agent-mediated), organizational graph (shared, collaborative), and relationship graph (what you know about how specific people work together) form a hierarchy where the relationship layer may be the most valuable for consensus." ;
+      skos:broader narr:ArchitectureOverview ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Narrative_NotificationAsEpistemicAlignment a narr:Narrative ;
+      dct:source narr:Sample_PWG ;
+      narr:theme "Notification collapses into persuasion when driven by personal worldview graphs" ;
+      skos:note "Current systems notify by role; with a personal graph, the agent composes communication drawing from the recipient's worldview, priorities, communication style, and known resistances — collapsing the distinction between notification and persuasion." ;
+      skos:broader narr:NarrativeAnchor ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Narrative_ConsensusEngine a narr:Narrative ;
+      dct:source narr:Sample_PWG ;
+      narr:theme "Consensus requires reaching each person through their worldview, not a generic prompt" ;
+      skos:note "The salon consensus engine works only when each participant is reached through their personal graph. The tagline 'Text a topic, name your people, get to consensus' depends on personal graphs to function rather than being a fancy group chat." ;
+      skos:broader narr:CoreNarratives ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Narrative_DensityInversionAtScale a narr:Narrative ;
+      dct:source narr:Sample_PWG ;
+      narr:theme "Personal graphs enable density inversion at scale: dense thinkers' communication liability becomes an asset" ;
+      skos:note "The agent reads a dense personal graph and composes output appropriate for each recipient's processing style, operationalizing the density inversion claim at scale." ;
+      skos:broader narr:ResonanceUse ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  # --- CLAIMS ---
+
+  narr:Claim_NovelPersonalOrgCompile a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:aboutNode narr:Narrative_PersonalGraphLayer ;
+      narr:supports narr:Narrative_PersonalGraphLayer ;
+      skos:note "No competitor has conceptualized the personal-to-org compile layer. OpenAI Frontier, Notion AI, Guru, Confluence are all org-only." ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Claim_DensityInversion a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:aboutNode narr:Narrative_DensityInversionAtScale ;
+      narr:supports narr:Narrative_DensityInversionAtScale ;
+      skos:note "BOULDER: Both Scarlet and Tony personally validated that AI mediates dense thinking into human-approachable formats. Personal graph enables this at scale." ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Claim_AgentMediatedPrivacy a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:aboutNode narr:Narrative_ThreeLayerMemory ;
+      skos:note "Proposed privacy model: agent-mediated access only. No human reads your graph directly. Output is synthesized communication, never raw data transfer." ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Claim_RelationshipGraphMostValuable a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:aboutNode narr:Narrative_ThreeLayerMemory ;
+      skos:note "The relationship graph — what you know about how specific people work together — is potentially the most valuable layer for consensus, though this is an open hypothesis." ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  # --- OBSERVATIONS ---
+
+  narr:Observation_CoreFraming a narr:Observation ;
+      skos:broader narr:WhatIsIt ;
+      dct:source narr:Sample_PWG ;
+      skos:note "Scarlet's exact framing of the personal graph concept — the founding insight of this session" ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 614 ;
+          oa:end 897
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm thinking about how the roadmapped ability to compile submodules or connected repos would enable this kind of conversation — that I could have a personal repo that is my own worldview, my personality and history through different lenses, my fears and solutions and strategies." ;
+          oa:prefix "Scarlet's exact framing:\n> " ;
+          oa:suffix " And then the organizational memory is layered on."
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Observation_TwoQuestions a narr:Observation ;
+      skos:broader narr:ProblemContext ;
+      dct:source narr:Sample_PWG ;
+      skos:note "The two questions that currently collapse into one — the core product gap" ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1050 ;
+          oa:end 1230
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "What should aswritten do? (org memory: positioning, traction, differentiation)" ;
+          oa:prefix "1. **" ;
+          oa:suffix "\n2. **How should Scarlet do it?"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Observation_NotificationPersuasion a narr:Observation ;
+      skos:broader narr:ActorIncentiveAnalysis ;
+      dct:source narr:Sample_PWG ;
+      skos:note "Scarlet's elaboration collapsing notification and persuasion via personal graph" ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2470
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The relationship layer is interesting for the salon and parallel cases — notifications driven by profiles with the depth of worldview. Instead of an actor being told something changed because their role is 'CTO,' there's an agent that reads their personal graph and understands exactly what they care about and how they can be told — and how to get their interest and buy-in." ;
+          oa:prefix "Scarlet's elaboration on the notification model:\n> " ;
+          oa:suffix "\n\nThis collapses the distinction"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Observation_Tagline a narr:Observation ;
+      skos:broader narr:Tagline ;
+      dct:source narr:Sample_PWG ;
+      skos:note "Core product tagline — short, imperative, three-beat cadence" ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2720 ;
+          oa:end 2770
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Text a topic, name your people, get to consensus." ;
+          oa:prefix "**" ;
+          oa:suffix "**"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Observation_SeniorExpertBottleneck a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_PWG ;
+      skos:note "The senior expert bottleneck as a special case of the personal graph value proposition" ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4480 ;
+          oa:end 4620
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The 'senior expert bottleneck' is a special case: the expert's tacit knowledge lives in their personal worldview graph, and the org can't access it without interview." ;
+          oa:prefix "The " ;
+          oa:suffix "\n\n## Connection to Density Inversion"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Observation_CompetitiveLandscape a narr:Observation ;
+      skos:broader narr:CompetitiveLandscape ;
+      dct:source narr:Sample_PWG ;
+      skos:note "Named competitors explicitly positioned as org-only, establishing the personal-to-org compile layer as a novel competitive moat" ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4380 ;
+          oa:end 4480
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "No competitor has conceptualized this layer. OpenAI Frontier, Notion AI, Guru, Confluence — all org-only." ;
+          oa:prefix "**Competitive position:** " ;
+          oa:suffix " The personal-to-org compile layer is novel."
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:Observation_OpenQuestions a narr:Observation ;
+      skos:broader narr:RisksMitigations ;
+      dct:source narr:Sample_PWG ;
+      skos:note "Four open design questions: privacy/consent model, UX for multi-repo, join timing (compile vs query vs notification time), competitive position" ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3800 ;
+          oa:end 3960
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Currently one MCP tool instance, one repo. Personal graph requires working across repos simultaneously. The interaction model is an open design question — not a settings page problem." ;
+          oa:prefix "**UX for multi-repo:** " ;
+          oa:suffix "\n\n**Where the join happens:"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  # --- STYLE OBSERVATIONS ---
+
+  narr:StyleObs_RuleOfThree_Tagline a narr:StyleObservation ;
+      skos:broader narr:RuleOfThree ;
+      dct:source narr:Sample_PWG ;
+      skos:related narr:Tagline ;
+      skos:note "Three-beat imperative cadence: verb phrase, verb phrase, verb phrase. Compressed, action-oriented, parallel structure." ;
+      rdf:value true ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2720 ;
+          oa:end 2770
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Text a topic, name your people, get to consensus." ;
+          oa:prefix "**" ;
+          oa:suffix "**"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:StyleObs_BoldKeyTerms a narr:StyleObservation ;
+      skos:broader narr:AICompanyizationCase ;
+      dct:source narr:Sample_PWG ;
+      skos:related narr:KeyPhrases ;
+      skos:note "Systematic use of **bold** markdown for key terms and taxonomy labels throughout the document, functioning as inline emphasis and navigation anchors." ;
+      rdf:value true ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1050 ;
+          oa:end 1100
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**What should aswritten do?**" ;
+          oa:prefix "1. " ;
+          oa:suffix " (org memory:"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:StyleObs_Antithesis_OrgVsPersonal a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_PWG ;
+      skos:related narr:NarrativeAnchor ;
+      skos:note "Structural antithesis: 'what the org should do' vs 'how I can most effectively do it as a person' — the core tension that drives the entire document." ;
+      rdf:value true ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 897 ;
+          oa:end 1010
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I want to know both what the org should do and how I can most effectively do it as a person." ;
+          oa:prefix "Because when I ask what I should do for a particular task, " ;
+          oa:suffix "\"\n\nTwo questions"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:StyleObs_Metaphor_CollapseDistinction a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_PWG ;
+      skos:related narr:WhatDoesItDo ;
+      skos:note "'Collapses the distinction' used twice as a structural metaphor — two separate concepts merging into one via the personal graph mechanism. Signals conceptual compression." ;
+      rdf:value true ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2470 ;
+          oa:end 2530
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "This collapses the distinction between \"notification\" and \"persuasion.\"" ;
+          oa:prefix ".\n\n" ;
+          oa:suffix " Current systems notify by role"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:StyleObs_TableAsArgument a narr:StyleObservation ;
+      skos:broader narr:Parallelism ;
+      dct:source narr:Sample_PWG ;
+      skos:related narr:SolutionDifferentiation ;
+      skos:note "Markdown table used as rhetorical device: before/after structure across all five taxonomy cases makes the argument visually and structurally. Each row is a parallel proof point." ;
+      rdf:value true ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1560 ;
+          oa:end 1960
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "| **Solo** | AI interviews you generically | AI knows your processing style, fears, depth preference |" ;
+          oa:prefix "| Taxonomy Case | Without Personal Graph | With Personal Graph |\n|---|---|---|\n" ;
+          oa:suffix "\n| **Parallel** |"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:StyleObs_ShortPunchyTransitions a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_PWG ;
+      skos:related narr:FlowCoherence ;
+      skos:note "Short declarative sentences used as section pivots after longer analytical passages. Creates rhythm: expand → compress → expand." ;
+      rdf:value true ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1230 ;
+          oa:end 1310
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "These are different knowledge graphs. Today, #2 is reconstructed from scratch every session or carried in the founder's head." ;
+          oa:prefix "(personal memory: communication patterns, fears, processing style, what unlocks her)\n\n" ;
+          oa:suffix "\n\n## How Personal Graphs"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  narr:StyleObs_ConvictionLabel a narr:StyleObservation ;
+      skos:broader narr:BrandNameStylization ;
+      dct:source narr:Sample_PWG ;
+      skos:related narr:Conviction ;
+      skos:note "BOULDER used as an inline conviction label in all-caps — a proprietary epistemic marker functioning as both metadata and rhetorical signal of validated confidence." ;
+      rdf:value true ;
+      oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4640 ;
+          oa:end 4760
+      ] ;
+      oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "BOULDER: \"Both Scarlet and Tony personally validated that AI mediates dense thinking into human-approachable formats\"" ;
+          oa:prefix "The density inversion claim (" ;
+          oa:suffix ") is exactly what"
+      ] ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+  # --- STYLE METRICS ---
+
+  narr:StyleMetrics_PWG a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_PWG ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.12"^^xsd:decimal ;
+      skos:note "Active voice dominant; jargon is domain-specific (worldview graph, compile, agent-mediated) rather than filler jargon. Average sentence length moderate with high variance — long analytical sentences punctuated by short declarative pivots. Table-heavy structure reduces prose density in middle sections." ;
+      prov:wasGeneratedBy narr:Transaction_20260222_PWG .
+
+}

@@ -1,0 +1,188 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+
+  narr:Tx_20260224T030948Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-02-24T03:09:48.141Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-02-24-beta-strategy-reframe-full-service-consulting.md" ;
+    sb:originRef           "main" .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — INSERT DATA
+# =============================================================
+INSERT DATA {
+
+  # --- Sample ---
+  narr:Sample_BetaStrategyReframe a narr:Sample ;
+    dct:title              "Beta Strategy Reframe: Full-Service Consulting as Product Validation" ;
+    narr:inputLength       5800 ;
+    .
+
+  # --- Narratives ---
+  narr:Narrative_BetaAsConsulting a narr:Narrative ;
+    dct:source             narr:Sample_BetaStrategyReframe ;
+    narr:theme             "Full-service consulting engagement as the mechanism for beta product validation" ;
+    skos:broader           narr:StrategyOverview ;
+    skos:note              "Beta is not self-service onboarding; it is delivering the full consulting engagement so the product is tested under real load with real organizational knowledge." ;
+    .
+
+  narr:Narrative_FullEngagementUnlocksTesting a narr:Narrative ;
+    dct:source             narr:Sample_BetaStrategyReframe ;
+    narr:theme             "Withholding engagement from unpaid relationships undermines product validation; inverting this is the beta strategy" ;
+    skos:broader           narr:NarrativeAnchor ;
+    skos:note              "Scarlet previously identified a pattern of holding back engagement with unpaid relationships. The beta reframe explicitly inverts this: give the full [amount] engagement to beta users because that is the only way to test whether the product works at production scale." ;
+    .
+
+  narr:Narrative_SalonAsCapability a narr:Narrative ;
+    dct:source             narr:Sample_BetaStrategyReframe ;
+    narr:theme             "Salon is a per-memory capability, not a fifth deployment pattern" ;
+    skos:broader           narr:CoreNarratives ;
+    skos:note              "The reviewers frontmatter on any memory turns it into a Salon. Every org gets Salon for free as a feature of the memory primitive, not a deployment choice." ;
+    .
+
+  narr:Narrative_BetaFeedbackLoopIsSalon a narr:Narrative ;
+    dct:source             narr:Sample_BetaStrategyReframe ;
+    narr:theme             "The product tests itself: beta feedback loop is itself a Salon" ;
+    skos:broader           narr:CoreNarratives ;
+    skos:note              "Scarlet runs Salon across the beta cohort to synthesize feedback. The beta feedback loop IS a Salon — the product testing its own product." ;
+    .
+
+  narr:Narrative_MultiTenantHub a narr:Narrative ;
+    dct:source             narr:Sample_BetaStrategyReframe ;
+    narr:theme             "Directory inheritance enables multi-tenant Hub deployment for consultants working across multiple clients" ;
+    skos:broader           narr:ArchitectureOverview ;
+    skos:note              "a beta user from outside tech's case maps to a multi-tenant Hub. The compile tool's dir parameter supports directory-scoped compilation with inheritance, allowing methodology to compound across clients." ;
+    .
+
+  # --- Claims ---
+  narr:Claim_BetaIsConsulting a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode          narr:Narrative_BetaAsConsulting ;
+    narr:supports           narr:StrategyOverview ;
+    skos:note               "Beta is not onboarding them so they know how to build collective memory; it is getting them connected, onboarding to workflow enough so they know how to pull docs, and then doing the consulting that would be charged [amount] for so as to fully test someone using it with full utility." ;
+    .
+
+  narr:Claim_SalonIsPerMemory a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode          narr:Narrative_SalonAsCapability ;
+    narr:supports           narr:CoreNarratives ;
+    narr:challenges         narr:Claim_SalonIsFifthPattern ;
+    skos:note               "Salon is not a fifth deployment pattern — it is a per-memory capability. The reviewers frontmatter on any memory triggers group interview → consensus → merge." ;
+    .
+
+  narr:Claim_SalonIsFifthPattern a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Notion ;
+    narr:aboutNode          narr:Narrative_SalonAsCapability ;
+    skos:note               "Prior taxonomy treated Salon as a fifth org-level deployment pattern alongside Solo, Parallel, Hub, Teams. This claim is now challenged." ;
+    .
+
+  narr:Claim_QualityOfEngagementIsValidation a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode          narr:Narrative_FullEngagementUnlocksTesting ;
+    narr:supports           narr:StrategyOverview ;
+    skos:note               "The quality of the engagement IS the product validation." ;
+    .
+
+  # --- Observations ---
+  narr:Observation_BetaCallPattern a narr:Observation ;
+    skos:broader            narr:StrategyOverview ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:note               "Five-step beta call pattern: (1) Interview them — call IS the first memory. (2) Walk through onboarding mode together. (3) Upload documents. (4) Do ingestion and narrative strategy. (5) Solicit feedback in use." ;
+    .
+
+  narr:Observation_TaxonomyRevision a narr:Observation ;
+    skos:broader            narr:CoreNarratives ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:note               "Revised taxonomy: four org-level deployment patterns (Solo, Parallel, Hub, Teams) plus one per-memory capability (Salon). Full cohort coverage achieved." ;
+    .
+
+  # --- Style Observations ---
+  narr:StyleObs_VerbatimReframe a narr:StyleObservation ;
+    skos:broader            narr:RhetoricalDevices ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:related            narr:KeyPhrases ;
+    rdf:value               true ;
+    skos:note               "Antithesis / reframe construction: 'It's not X, it's Y' — direct negation followed by positive redefinition. Core rhetorical move of the document." ;
+    .
+
+  narr:StyleObs_DollarFigureAnchor a narr:StyleObservation ;
+    skos:broader            narr:DictionWordChoice ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:related            narr:KeyPhrases ;
+    rdf:value               true ;
+    skos:note               "Concrete dollar anchor ([amount] / 15k) used twice to calibrate the value of the engagement being given away. Lowercase '15k' in direct quote signals informal spoken register." ;
+    .
+
+  narr:StyleObs_CallIsMemory a narr:StyleObservation ;
+    skos:broader            narr:RhetoricalDevices ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:related            narr:Tagline ;
+    rdf:value               true ;
+    skos:note               "Aphoristic equation: 'The call IS the first memory.' Capitalised IS for spoken emphasis. Short punchy cadence; functions as a product principle." ;
+    .
+
+  narr:StyleObs_ProductTestingItself a narr:StyleObservation ;
+    skos:broader            narr:RhetoricalDevices ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:related            narr:Tagline ;
+    rdf:value               true ;
+    skos:note               "Recursive aphorism: 'the product testing its own product.' Self-referential loop used as rhetorical payoff. Short punchy cadence." ;
+    .
+
+  narr:StyleObs_QualityIsValidation a narr:StyleObservation ;
+    skos:broader            narr:ShortPunchyCadence ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:related            narr:Tagline ;
+    rdf:value               true ;
+    skos:note               "One-sentence paragraph used as rhetorical full stop. Equation structure: 'The quality of the engagement IS the product validation.' Capitalised IS for emphasis." ;
+    .
+
+  narr:StyleObs_BoldKeyTerms a narr:StyleObservation ;
+    skos:broader            narr:AICompanyizationCase ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:related            narr:NamingConventions ;
+    rdf:value               true ;
+    skos:note               "Markdown bold (**) used systematically for key terms in tables and lists: org pattern names (Solo, Parallel, Hub, Teams, Salon), call steps, and actor names. Functions as a controlled vocabulary marker." ;
+    .
+
+  narr:StyleObs_InformalRegisterInQuote a narr:StyleObservation ;
+    skos:broader            narr:RegisterFormality ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:related            narr:ToneDirectPersonal ;
+    rdf:value               true ;
+    skos:note               "Direct speech quote preserves informal spoken register: lowercase '15k', dropped subject 'I', colloquial 'I'd be like'. Contrasts with formal analytical prose surrounding it." ;
+    .
+
+  narr:StyleObs_ArrowNotation a narr:StyleObservation ;
+    skos:broader            narr:PunctuationTypography ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    skos:related            narr:NamingConventions ;
+    rdf:value               true ;
+    skos:note               "Em-dash arrow (→) used as a process-flow shorthand in the Salon capability description: 'group interview → consensus → merge'. Compact technical cadence." ;
+    .
+
+  # --- Style Metrics ---
+  narr:StyleMetrics_BetaStrategyReframe a narr:StyleMetrics ;
+    skos:broader            narr:StyleMetrics ;
+    dct:source              narr:Sample_BetaStrategyReframe ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio   "0.82"^^xsd:decimal ;
+    narr:JargonDensity      "0.12"^^xsd:decimal ;
+    skos:note               "Mixed register: analytical prose with embedded informal direct-speech quotes. Heavy use of markdown tables and code blocks for structured data. Aphoristic one-sentence paragraphs used as rhetorical anchors. Second-person implicit (instructions framed as steps). Predominantly first-person in quoted speech." ;
+    .
+
+} 

@@ -1,0 +1,280 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260702T024632Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T02:46:32Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-02-1-lead-with-personal-vision-authority-b2c-funding" ;
+    narr:originRef "dev" ;
+    dct:title "a design collaborator Call — Authority Layer, B2C Lean, Funding on Emotional Story" ;
+    prov:generated
+      
+      narr:Narrative_FounderAsAuthorityLayer,
+      narr:Claim_B2BDefaultCareerArtifact,
+      narr:Claim_FounderIsConsistentThroughLine,
+      narr:Obs_AuthoritativeSpaceCyclicalQuote,
+      narr:Obs_BrandingCharacterQuote,
+      narr:Obs_FounderShiftPivotQuote,
+      narr:Obs_VisionManifestoPrescriptionQuote,
+      narr:Obs_IntroEmailBestEverQuote,
+      narr:Obs_B2CSellingStyleQuote,
+      narr:StyleObs_DesignCollaboratorBlockquoteRegister,
+      narr:StyleObs_CyclicalMetaphorDevice,
+      narr:StyleObs_BrandingAnalogy,
+      narr:StyleMetrics_DesignCollaboratorCall_20260629 .
+} ;
+
+# ── Actor update: a design collaborator — add brand-strategy-counsel role detail ──
+DELETE {
+  GRAPH ?g {
+    narr:Actor_DesignCollaborator skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260702T024632Z {
+    narr:Actor_DesignCollaborator skos:note "Former designer and creative director at Vouch; close friend and informal advisor to aswritten.ai; currently working on a collaborator with Tony Maley and a technical collaborator. On the June 29 2026 call, provided brand-strategy counsel: the founder's personal vision should function as a distinct authority layer that cyclically builds credibility for both the person and the business. Recipient of Scarlet's original introductory email, which he still cites as the best introductory email he has ever read and which he argues matters more now than it did then. Contributed the 'amplification' framing on the June 29 2026 call." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Actor_DesignCollaborator skos:note ?oldNote .
+  }
+} ;
+
+# ── New Narrative: Founder as Authority Layer ────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T024632Z {
+    narr:Narrative_FounderAsAuthorityLayer a narr:Narrative ;
+
+      narr:theme "The founder's personal vision is a distinct authority layer that cyclically builds credibility for both the person and the business" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "a design collaborator's brand-strategy counsel from the June 29 2026 call: a business needs a human character at its center, and for aswritten that character is Scarlet herself. The vision/manifesto is not part of the product but a separate authoritative space that cyclically builds credibility for both the person and the business. The through-line — the durable asset across whatever Scarlet builds next — is Scarlet, not any one product. Prescription: a Scarlet Vision manifesto linked to the website, decks, and brochures, reinforced cyclically. Rooted in 'branding 101': give the business an image of a person that people can connect to (Mailchimp chimp, Tony as face of Vouch)." .
+  }
+} ;
+
+# ── New Claims ───────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T024632Z {
+
+    narr:Claim_B2BDefaultCareerArtifact a narr:Claim ;
+      narr:aboutNode narr:Narrative_FounderFitB2CTurn ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_B2CPivot ;
+
+      skos:note "Scarlet's self-diagnosis from the June 29 2026 call: her B2B default is an artifact of her career history — she worked for so many B2B companies that she adopted a default stance toward B2B without it being a considered fit. Her actual selling style (narrative-driven, vision-led) is native to B2C. This is the causal explanation for the B2C pivot, adding to the existing 'founder-fit' framing." .
+
+    narr:Claim_FounderIsConsistentThroughLine a narr:Claim ;
+      narr:aboutNode narr:Narrative_FounderAsAuthorityLayer ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_FounderAsAuthorityLayer ;
+
+      skos:note "a design collaborator's counsel: the durable asset across whatever Scarlet builds next is Scarlet herself, not any one product. She can talk about a moonshot all day because she has been ahead of the AI game. The thing that stays consistent is her. This frames the personal vision/manifesto as the through-line that survives product pivots." .
+  }
+} ;
+
+# ── Observations (verbatim quotes with selectors) ────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T024632Z {
+
+    narr:Obs_AuthoritativeSpaceCyclicalQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+
+      skos:note "a design collaborator's framing of the authoritative space as a cyclical credibility mechanism" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1088 ; oa:end 1203
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you don't have an about page, you don't have a LinkedIn page, don't have a profile. You have an authoritative space" ;
+          oa:prefix "a design collaborator's core counsel is drawn from brand strategy: " ;
+          oa:suffix "... And by using that to prop up the business"
+        ]
+      ] .
+
+    narr:Obs_BrandingCharacterQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+
+      skos:note "a design collaborator's 'branding 101' argument: give the business a human character people can connect to" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1352 ; oa:end 1500
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "whenever I'm doing a branding for any business, you give the business an image of a person, a character. That's something that people can connect to" ;
+          oa:prefix "He roots it in \"branding 101\": " ;
+          oa:suffix ". Probably one of the best well known early ones"
+        ]
+      ] .
+
+    narr:Obs_FounderShiftPivotQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+
+      skos:note "a design collaborator's explicit statement that Scarlet is the durable through-line across pivots" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1844 ; oa:end 1984
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you're the shift, you're the pivot... you can [talk about a moonshot] all day long because you've been ahead of the AI game for like forever" ;
+          oa:prefix "And he is explicit that the through-line — " ;
+          oa:suffix "... The thing that stays consistent is you."
+        ]
+      ] .
+
+    narr:Obs_VisionManifestoPrescriptionQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+
+      skos:note "a design collaborator's prescription for the Scarlet Vision manifesto" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2051 ; oa:end 2222
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you having a Scarlet Vision manifesto, whatever you want to put on there that talks about your view of the world, that's linked to the website, that's linked to your decks" ;
+          oa:prefix "His prescription: " ;
+          oa:suffix ", to your brochures... and then you reinforce that."
+        ]
+      ] .
+
+    narr:Obs_IntroEmailBestEverQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "a design collaborator re-anchors the original introductory email as the founding artifact of their working relationship, arguing it matters more now than it did then" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2520 ; oa:end 2644
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "it is the best introductory email I've ever read ever... If anything, I'd say it probably matters more now than it did then." ;
+          oa:prefix "a design collaborator also re-anchors the value of the original introductory email: " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:Obs_B2CSellingStyleQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+
+      skos:note "Scarlet's self-diagnosis: B2B default is a career-history artifact, not a considered fit; her selling style is native to B2C" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2862 ; oa:end 3055
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I've sort of adopted a default stance towards B2B because I've worked for so many B2B companies. And I actually think... the way I think and sell is actually much more effective in a B2C space." ;
+          oa:prefix "Scarlet surfaces a new piece of self-diagnosis: " ;
+          oa:suffix " And I think... this product does have an enterprise application"
+        ]
+      ] .
+  }
+} ;
+
+# ── Style Observations ───────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T024632Z {
+
+    narr:StyleObs_DesignCollaboratorBlockquoteRegister a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+
+      rdf:value true ;
+      skos:note "Markdown blockquotes set a design collaborator's direct speech apart from the analytical framing — same dual-register memo pattern as Scarlet's own session memos, here applied to an advisor's voice. The blockquoted speech is colloquial, conviction-forward, and uses rhetorical questions." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1088 ; oa:end 1203
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you don't have an about page, you don't have a LinkedIn page, don't have a profile. You have an authoritative space" ;
+          oa:prefix "> " ;
+          oa:suffix "... And by using that to prop up the business"
+        ]
+      ] .
+
+    narr:StyleObs_CyclicalMetaphorDevice a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+
+      rdf:value true ;
+      skos:note "'Cyclical thing' is a structural metaphor for the authority-layer mechanism: person props up business, business props up person, in a loop. Characteristic of a design collaborator's brand-strategy idiom — abstract mechanism made concrete through a single plain-language word ('cyclical')." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1207 ; oa:end 1315
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "And by using that to prop up the business also puts credence into the person. So it's like a cyclical thing." ;
+          oa:prefix "You have an authoritative space... " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:StyleObs_BrandingAnalogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+
+      rdf:value true ;
+      skos:note "a design collaborator uses named brand analogies (Mailchimp chimp character, Tony as face of Vouch) to ground abstract brand-strategy counsel in recognizable precedents. Characteristic of the advisor-as-practitioner register: theory delivered through cases, not principles." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1502 ; oa:end 1625
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Probably one of the best well known early ones... was mailchimp, that actual chimp character... Tony was the face of Vouch." ;
+          oa:prefix "you give the business an image of a person, a character. " ;
+          oa:suffix " Tony was the image of that."
+        ]
+      ] .
+  }
+} ;
+
+# ── Style Metrics ────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T024632Z {
+    narr:StyleMetrics_DesignCollaboratorCall_20260629 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.09"^^xsd:decimal ;
+      skos:note "Mixed register: analytical editorial prose (third-person, structured) framing advisor blockquotes (first-person colloquial, conviction-forward). Active voice dominant in editorial sections. Jargon density low — product terms (B2C, B2B, manifesto, authority layer) used without definition, implying internal audience. Blockquote-heavy structure signals advisor-counsel memo genre. Sentence length elevated by embedded blockquotes; prose sections are shorter and more direct. Consistent with Scarlet session-memo idiolect." .
+  }
+}

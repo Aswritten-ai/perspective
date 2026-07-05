@@ -1,0 +1,43 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_CaseStudies> {
+  <https://aswritten.ai/narrative#Digest_CaseStudies> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#CaseStudies> ;
+    narr:childCount "20"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers aswritten's real-world engagements, and the dominant axis is the contrast between a converted enterprise pilot and a stalled solo prospect. [the enterprise customer's bulk-mail build](narr:CaseStudy_EnterpriseCustomerBulkMail) is the deepest case: 60 markdown docs ingested AI-to-AI, cross-platform MCP validation, and [convergence on ARB-to-memory within nine days](narr:Narrative_EnterpriseCustomerWeekOneConvergence). It [became the first paying team customer on 2026-03-26](narr:Narrative_FirstPayingTeamCustomer), with [QA onboarding named the killer demo](narr:SolutionArchetype_QAOnboarding) and the customer's chief architect's [\"clone me\" delegation pain](narr:Obs_CustomerArchitectCloneMeQuote) firing the buy trigger. Against this, [an early prospect](narr:Actor_EarlyProspect_MVPRef) — the Knowledge Packager archetype and [planned first pilot](narr:Narrative_EarlyProspectFirstPilot) — [stalled in March: neither solo-pain nor delegation trigger firing](narr:Obs_EarlyProspectMar22Text). [Scarlet reads the enterprise customer and an engineering manager at the customer as the same structural pattern](narr:Obs_CustomerArchitectEnterpriseCustomerFitsPattern). Adjacent cases span [Elephant Collective's SMS-driven events](narr:Observation_ElephantCollective), [a founder beta user's beta + VC intro](narr:Outcome_BetaCommitment), and usage-archetype observations.""" ;
+    narr:covers <https://aswritten.ai/narrative#Actor_EarlyProspect_MVPRef> ;
+    narr:covers <https://aswritten.ai/narrative#CaseStudy_EnterpriseCustomerBulkMail> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DeliveryGate> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EnterpriseCustomerWeekOneConvergence> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_FirstPayingTeamCustomer> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EarlyProspectFirstPilot> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TextForTopicPrecedent> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectFullLoopPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectCloneMeQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectEnterpriseCustomerFitsPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_OrioleReaderGrounderPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_EarlyProspectLivingModuleQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_EarlyProspectMar22Text> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerEngManagerPilotDemoQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_ElephantCollective> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_CustomerArchitectARBVolume> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_OrioleCiteVolume> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_WebsiteCaseStudyStrategy> ;
+    narr:covers <https://aswritten.ai/narrative#Outcome_BetaCommitment> ;
+    narr:covers <https://aswritten.ai/narrative#SolutionArchetype_QAOnboarding> ;
+    narr:keyPhrase [ narr:text "I wish we could clone me." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomerArchitectCloneMeQuote> ] ;
+    narr:keyPhrase [ narr:text "I'm sold on the potential value of your application, but I don't feel a rush to begin using it." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_EarlyProspectMar22Text> ] ;
+    narr:keyPhrase [ narr:text "upgrading to the Team plan ([amount]/month) on 2026-03-26" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_FirstPayingTeamCustomer> ] ;
+    narr:keyPhrase [ narr:text "the killer sales demo" ; narr:phraseSource <https://aswritten.ai/narrative#SolutionArchetype_QAOnboarding> ] ;
+    narr:keyPhrase [ narr:text "the customer's chief architect wants to give the ARB perspective to coworkers so they only ask him if they make it to the end of the funnel" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomerArchitectEnterpriseCustomerFitsPattern> ] ;
+    narr:keyPhrase [ narr:text "Bootstrapped from [amount]to [amount]/event in 6 months." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_ElephantCollective> ] ;
+    narr:variation [ narr:text "Converted vs stalled: the enterprise customer bought and converged fast; an engineering manager at the customer explicitly feels no rush, neither trigger firing — opposite outcomes from the same archetype." ; narr:over <https://aswritten.ai/narrative#Narrative_FirstPayingTeamCustomer> ; narr:over <https://aswritten.ai/narrative#Obs_EarlyProspectMar22Text> ; narr:over <https://aswritten.ai/narrative#Actor_EarlyProspect_MVPRef> ] ;
+    narr:variation [ narr:text "Distinct usage depths: the customer's chief architect is the full-loop 'expert' (perspective→introspect→remember→cite) while a collaborator is a reader-grounder with zero authoring yet." ; narr:over <https://aswritten.ai/narrative#Obs_CustomerArchitectFullLoopPattern> ; narr:over <https://aswritten.ai/narrative#Obs_OrioleReaderGrounderPattern> ] ;
+    narr:variation [ narr:text "an engineering manager at the customer pilot reframed by the a practitioner beta user Barber session (Apr 30): trust-transfer referral becomes the launch flow, not three equal-weight flows." ; narr:over <https://aswritten.ai/narrative#Narrative_EarlyProspectFirstPilot> ] ;
+    narr:variation [ narr:text "an engineering manager at the customer as pilot vs demo: framed as not really a demo but a real public-facing deployment, with a free chapter-distillation offered as a trigger-bridge." ; narr:over <https://aswritten.ai/narrative#Obs_CustomerEngManagerPilotDemoQuote> ; narr:over <https://aswritten.ai/narrative#Obs_EarlyProspectLivingModuleQuote> ; narr:over <https://aswritten.ai/narrative#Actor_EarlyProspect_MVPRef> ] ;
+    narr:variation [ narr:text "Outlier domain: Elephant Collective is SMS-first event mobilization, structurally unlike the knowledge-packaging/enterprise cases." ; narr:over <https://aswritten.ai/narrative#Observation_ElephantCollective> ] ;
+    narr:variation [ narr:text "Commercial-structure thread: a live-demo delivery gate with non-refundable [amount] deposit, separate from the case narratives." ; narr:over <https://aswritten.ai/narrative#Narrative_DeliveryGate> ; narr:over <https://aswritten.ai/narrative#Outcome_BetaCommitment> ] ;
+    narr:writer "claude (subscription)" .
+}

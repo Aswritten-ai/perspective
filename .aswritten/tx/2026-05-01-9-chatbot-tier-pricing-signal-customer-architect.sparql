@@ -1,0 +1,89 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260501T210000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-01T21:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260501-chatbot-tier-pricing-signal" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      narr:StyleObs_NotNegotiationFloor,
+      narr:StyleObs_NotionLevelCadence,
+      narr:Metrics_ChatbotPricingSignal_20260501 .
+} ;
+
+# Style observation 2: Notion-level conviction cadence
+INSERT DATA {
+  GRAPH narr:Tx_20260501T210000Z {
+    narr:StyleObs_NotionLevelCadence a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+
+      skos:note "notion-level-hedging: The memory uses a consistent hedging register — 'single anchor point,' 'worth tracking,' 'not a recommendation,' 'notion until repeated.' This is the Scarlet session-memo idiolect for Notion-level conviction: explicit epistemic humility paired with clear tracking rationale." ;
+      rdf:value false ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 1870
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "notion until repeated" ;
+          oa:prefix "**Status**: " ;
+          oa:suffix ""
+        ]
+      ] .
+  }
+} ;
+
+# Style observation 3: Backtick IRI reference convention
+INSERT DATA {
+  GRAPH narr:Tx_20260501T210000Z {
+    narr:StyleObs_NotNegotiationFloor a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+
+      skos:note "backtick-iri-convention: The memory uses backtick-wrapped IRIs (e.g., `Claim_10xGapIntentional`, `Claim_EnterpriseCustomerPEBoardInterest`) to reference existing graph entities inline. This is a consistent Scarlet idiolect for cross-referencing collective memory nodes within prose." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 760 ;
+          oa:end 820
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "`Claim_10xGapIntentional`" ;
+          oa:prefix "documents that the " ;
+          oa:suffix " documents that the 10x price gap"
+        ]
+      ] .
+  }
+} ;
+
+# Style metrics
+INSERT DATA {
+  GRAPH narr:Tx_20260501T210000Z {
+    narr:Metrics_ChatbotPricingSignal_20260501 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      skos:note "Strategic pricing signal memo. Mixed register: analytical prose with embedded verbatim blockquote from the customer's chief architect. Antithesis-heavy structure (upper end vs. negotiation floor, design now vs. track first, tier vs. custom SOW). Active voice dominant in editorial prose. Jargon density low-moderate — product terms (Team tier, Enterprise tier, MCP, chatbot deployment, Phase 2) used without definition, implying internal audience. Sentence length varies between short declaratives and longer analytical passages. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "17"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal .
+  }
+} 

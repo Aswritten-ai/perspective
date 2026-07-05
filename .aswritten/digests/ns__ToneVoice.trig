@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__ToneVoice> {
+  <https://aswritten.ai/narrative#Digest_ns__ToneVoice> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#ToneVoice> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers observations of a single brand voice across registers. The dominant mode is confident and [agent-centered active voice](narr:StyleObs_ActiveVoice) — declarative \"We eliminate / We make / We give\" constructions with no hedging — paired with [parallel structure and second-person address](narr:StyleObs_8) (\"your AI\", \"you draft\") and imperative calls to action. Voice oscillates between [personal first-person](narr:StyleObs_FirstPerson) (\"I just started this new company\", \"I'm able to steer models\") and collective \"we\" agency. The register is not uniformly product-pitch: it climbs into an [elevated philosophical/spiritual key](narr:StyleObs_Register_Spiritual) (\"the precipice of spirituality\") and leans on [self-answered rhetorical questions](narr:StyleObs_RhetoricalQ) to frame stakes and objections (\"what is the importance of narrative? ... it's everything\"). Together these describe a voice that is direct, rhythmic, and conviction-driven, willing to shift from concrete product claims to existential framing.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_8> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_ActiveVoice> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_FirstPerson> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Register_Spiritual> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQ> ;
+    narr:keyPhrase [ narr:text "We eliminate the 3-6 month AI onboarding tax. We make knowledge loss on departure impossible." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ActiveVoice> ] ;
+    narr:keyPhrase [ narr:text "This eliminates strategy-execution disconnect" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ActiveVoice> ] ;
+    narr:keyPhrase [ narr:text "Documentation describes; worldview generates. Documentation goes stale; worldview evolves" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_8> ] ;
+    narr:keyPhrase [ narr:text "we stand on the precipice of spirituality, right? Of spirituality, not as religion" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Register_Spiritual> ] ;
+    narr:keyPhrase [ narr:text "So what is the importance of narrative? I mean, it's everything" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQ> ] ;
+    narr:keyPhrase [ narr:text "I just started this new company" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_FirstPerson> ] ;
+    narr:variation [ narr:text "Register splits: confident product-pitch active voice vs. an elevated philosophical/spiritual key — the same voice reaches for existential framing, not just feature claims." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ActiveVoice> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Register_Spiritual> ] ;
+    narr:variation [ narr:text "Person oscillates between intimate first-person 'I' and collective 'we' agency rather than settling on one." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_FirstPerson> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ActiveVoice> ] ;
+    narr:variation [ narr:text "Not all rhetorical questions are triumphant: one voices an enterprise security worry ('How do I make sure ... they shouldn't have?'), a doubting register against the no-hedging confidence." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQ> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ActiveVoice> ] ;
+    narr:writer "claude (subscription)" .
+}

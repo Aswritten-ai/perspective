@@ -1,0 +1,509 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20250714T160000Z a prov:Activity ;
+    prov:generatedAtTime "2025-07-14T16:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-31-design-session-review-architecture.md" ;
+    narr:originRef "main" ;
+    dct:title "Design Session: Synchronous Review After Remember + Plan-Tier Feature Architecture — Full Extraction" ;
+    prov:generated
+      narr:Narrative_WarmStartVsColdStart,
+      narr:Narrative_ReviewReturnValuePattern,
+      narr:Narrative_TierAxisGitHubTeamSize,
+      narr:Narrative_ReviewLoopIsRemember,
+      narr:Claim_WarmStartSkipsIntro,
+      narr:Claim_ColdStartFullIntro,
+      narr:Claim_FreeTierReadOnly_DesignSession,
+      narr:Claim_ExpertTierSyncReview,
+      narr:Claim_TeamTierGitHubBranch,
+      narr:Claim_NotificationTransactionSideEffect,
+      narr:Claim_ShiftsTerminology,
+      narr:Claim_RememberReturnThreeFields,
+      narr:Claim_TxSummaryNoLatency,
+      narr:Claim_ReviewInstructionsNotBlocking,
+      narr:Obs_ScarletReviewKickoffQuote,
+      narr:Obs_ScarletReturnValueShiftQuote,
+      narr:Obs_ScarletBranchPolicyQuote,
+      narr:Obs_ScarletExpertGitHubQuote,
+      narr:Obs_ScarletTeamWithoutGitHubQuote,
+      narr:Obs_ReviewIsRememberQuote,
+      narr:StyleObs_DirectPersonalTone_DesignSession,
+      narr:StyleObs_Antithesis_WarmCold,
+      narr:StyleObs_TechnicalJargon_DesignSession,
+      narr:StyleObs_ShortPunchy_DesignSession,
+      narr:StyleMetrics_DesignSession_Full .
+} ;
+
+# ── UPDATE: narr:Narrative_SynchronousReviewIntegration ─────────────────────
+# Current note is minimal; memory provides rich detail about the design decision.
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_SynchronousReviewIntegration skos:note ?oldNote ;
+      narr:theme ?oldTheme .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250714T160000Z {
+    narr:Narrative_SynchronousReviewIntegration
+      skos:note "Design session (Scarlet + Claude, 2026-03-31 to 2026-04-02) triggered by the Tony advisory call memory as a case study. The current model: remember saves a memory, extraction runs, a PR is created, a notification goes out, and eventually someone starts a review in a separate session. The new model: remember returns with enough context and instructions that the agent immediately offers review in the same session. Three new fields added to remember's return: tx_summary (plain-language summary of what shifted), zones (domains/areas affected), review_instructions (prompt fragment for warm-start review protocol). The tx_summary is generated during extraction so it adds no latency. The handoff: saved confirmation → 2-4 bullet shift summary → zones affected → 'Review now?' with a one-line explanation. Review is strongly offered, not mandatory." ;
+      narr:theme "Review moves from async PR-based flow into remember's return path, enabling immediate same-session review with tx_summary, zones, and review_instructions fields" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_SynchronousReviewIntegration skos:note ?oldNote .
+    OPTIONAL { narr:Narrative_SynchronousReviewIntegration narr:theme ?oldTheme . }
+  }
+} ;
+
+# ── UPDATE: narr:Claim_ReviewInRememberReturn ────────────────────────────────
+# Current note is brief; memory adds tx_summary/zones/review_instructions detail.
+DELETE {
+  GRAPH ?g {
+    narr:Claim_ReviewInRememberReturn skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250714T160000Z {
+    narr:Claim_ReviewInRememberReturn
+      skos:note "The review process moves from an async PR-based flow to a synchronous return-value flow in the remember tool. Three new fields in remember's return: tx_summary (plain-language summary of what shifted in the worldview), zones (domains/areas affected by the extraction), review_instructions (prompt fragment telling the agent the warm-start review protocol). The agent should present the shift summary, offer review, and if accepted, run the warm-start protocol. Instructions explicitly should not block future work if the user declines review. Scarlet: 'As soon as the memory returns, I want to get a little summary of here's what shifted, here's what that might affect. Do you want to start review?'" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_ReviewInRememberReturn skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Claim_PromptingInReturnValues ───────────────────────────────
+# Current note is brief; memory adds product-wide framing and Scarlet quote.
+DELETE {
+  GRAPH ?g {
+    narr:Claim_PromptingInReturnValues skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250714T160000Z {
+    narr:Claim_PromptingInReturnValues
+      skos:note "This is not just a review feature — it is a product-wide shift in how aswritten tools communicate with agents. The pattern: reinforce agent behavior at the point of tool return, not just in upfront tool descriptions and server instructions. Scarlet: 'This is part of a shift I want to start making in the product as a whole: doing more prompting in the return values from tools instead of always just up front in the tool descriptions. The tool descriptions are a good place, certainly; the server instructions are also a good place. We want to reinforce that at the actual return point by giving really clear instructions for what should happen next.' The review_instructions field in remember's return is the first implementation of this pattern. It is not a blocking initiative — the pattern will be adopted incrementally across tools." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_PromptingInReturnValues skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Claim_ReviewToolAbstraction ────────────────────────────────
+# Current note is brief; memory adds detail about transactions from remember's return.
+DELETE {
+  GRAPH ?g {
+    narr:Claim_ReviewToolAbstraction skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250714T160000Z {
+    narr:Claim_ReviewToolAbstraction
+      skos:note "The review tool currently requires a PR number. The real input is a set of transactions. PR number is one way to get them; remember's return value is another. Scarlet: 'This whole start review with PR number is really just pulling a set of transactions from that PR number. What we want to abstract here is that review should just take a set of transactions, and the PR number is an optional way to pull that set of transactions.' The review tool signature opens up: pr_number becomes optional. Transactions can be provided directly from remember's return, or pulled from a PR, or pulled from a commit." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_ReviewToolAbstraction skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Claim_TierFeatureArchitecture ───────────────────────────────
+# Current note is brief; memory adds the full two-axis model.
+DELETE {
+  GRAPH ?g {
+    narr:Claim_TierFeatureArchitecture skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250714T160000Z {
+    narr:Claim_TierFeatureArchitecture
+      skos:note "Tiers don't directly determine flow. Two independent axes do: (1) GitHub connected or not; (2) Single user or team. Scarlet: 'In the consumer AI case where this is being used from a chat context, there is no branch. There's no repo, there's no Claude code that this is being run in, and you can be switching between multiple repos while doing work. In that sense, saving to a branch is a non-intuitive operation. The case where branch starts to make sense is if you are working in a coding agent and you're actually pulling the repo, so that's GitHub only.' Feature gates: Free→Expert = save and curate your own perspective, sync review after every save. Expert→Team = multiple people contributing to the same worldview. +GitHub (any paid tier) = branches, PRs, structured cross-user review, formal consensus flow, multi-repo for Expert." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_TierFeatureArchitecture skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Claim_BranchPolicyShift ────────────────────────────────────
+# Current note is brief; memory adds context-dependent guidance detail.
+DELETE {
+  GRAPH ?g {
+    narr:Claim_BranchPolicyShift skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250714T160000Z {
+    narr:Claim_BranchPolicyShift
+      skos:note "The blanket rule 'NEVER write to main' is lifted; branch policy becomes context-dependent and prompt-guided. Branch (ref) is optional. Defaults to main. Always. Branch guidance lives in prompts (server instructions, tool descriptions) and varies by context: No GitHub: don't mention branches, main only. GitHub single user: main is default, branches available if agent context supports it. GitHub team: default to topic branch, PRs aggregate memories for teammate review. Scarlet: 'I think branch should be optional, and it should default to main. If you're in an agentic environment in which branch is a thing, there should be some part of the prompt that makes it clear that the agent should work with the user to decide which branch is appropriate.' Plan-specific tool descriptions and server instructions are needed to vary this guidance per tier — open work item." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_BranchPolicyShift skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Metrics_DesignSession_20260331 ──────────────────────────────
+# ActiveVoiceRatio is 0 (placeholder); add JargonDensity; correct ratio.
+DELETE {
+  GRAPH ?g {
+    narr:Metrics_DesignSession_20260331 narr:ActiveVoiceRatio ?oldRatio .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20250714T160000Z {
+    narr:Metrics_DesignSession_20260331
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.10"^^xsd:decimal ;
+      skos:note "Design session transcript with structured markdown overlay. Mixed register: analytical prose in section headers; colloquial first-person in Scarlet's quoted speech. Antithesis-heavy structure (warm-start vs cold-start, async vs synchronous, GitHub vs no-GitHub). Active voice dominant. Jargon density moderate — product terms (tx_summary, zones, review_instructions, MCP, PR, warm-start, cold-start) used without definition, implying internal audience. Average sentence length elevated by quoted speech; prose sections are shorter and punchier." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Metrics_DesignSession_20260331 narr:ActiveVoiceRatio ?oldRatio .
+  }
+} ;
+
+# ── NEW ENTITIES ─────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20250714T160000Z {
+
+    # ── Narrative: Warm-Start vs Cold-Start Review ──────────────────────────
+    narr:Narrative_WarmStartVsColdStart a narr:Narrative ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:QualityReviewGates ;
+      skos:prefLabel "Warm-Start vs Cold-Start Review: Two Entry Points into Shared Core" ;
+      skos:note "The current monolithic review prompt splits into a shared core and two entry points. Shared core (both paths): (1) test document selection, (2) baseline comparison (before vs after) — 'super important' per Scarlet, (3) shifts (2-4 pairs, improvement/counter), (4) fact review (conviction levels, relationships), (5) wrap-up (corrections → another remember; done → offer merge if applicable). Warm-start entry (from remember's return, same session): skips intro, skips TX summary (already shown), skips zone identification as separate step (already shown), agent suggests test document from session context rather than asking open-ended, goes directly into shared core. Cold-start entry (from review tool, PR-based, different session/person): full intro, TX summary (reviewer hasn't seen it), zone identification (reviewer picks focus areas), test document full negotiation, then into shared core." ;
+      narr:theme "Review splits into warm-start (same session, skips intro/summary) and cold-start (different session, full intro) entry points feeding a shared core protocol" .
+
+    # ── Narrative: Prompting in Return Values as Product-Wide Shift ─────────
+    narr:Narrative_ReviewReturnValuePattern a narr:Narrative ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:ProcessPolicyUpdates ;
+      skos:prefLabel "Prompting in Return Values: Product-Wide Shift in Agent Communication" ;
+      skos:note "The review_instructions field in remember's return is the first implementation of a product-wide pattern: reinforce agent behavior at the point of tool return, not just in upfront tool descriptions and server instructions. The pattern will be adopted incrementally across tools. It is not a blocking initiative. The instructions tell the agent: present the shift summary, offer review, and if accepted, run the warm-start protocol. They should explicitly not block future work if the user declines review." ;
+      narr:theme "Tool return values become a third reinforcement point for agent behavior, complementing tool descriptions and server instructions" .
+
+    # ── Narrative: Two-Axis Tier Model ──────────────────────────────────────
+    narr:Narrative_TierAxisGitHubTeamSize a narr:Narrative ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:PackagingEntitlement ;
+      skos:prefLabel "Tier Feature Architecture: GitHub Connection × Team Size as the Real Axes" ;
+      skos:note "Tiers don't directly determine flow. Two independent axes determine capability: (1) GitHub connected or not; (2) Single user or team. These axes drive branch policy, review flow, and PR aggregation. No GitHub + single user = main only, sync self-review. No GitHub + team = shared provisioned perspective on main, each user reviews own memories. GitHub + single user = main default, branches available. GitHub + team = topic branch default, PRs aggregate memories, cold-start review for teammates. Feature gates: Free→Expert = save and curate own perspective, sync review after every save. Expert→Team = multiple people contributing to same worldview. +GitHub (any paid tier) = branches, PRs, structured cross-user review, formal consensus flow, multi-repo for Expert." ;
+      narr:theme "GitHub connectivity and team size are the two real axes determining flow — tiers are a packaging layer on top of these capability dimensions" .
+
+    # ── Narrative: Review Is Just Another Remember ───────────────────────────
+    narr:Narrative_ReviewLoopIsRemember a narr:Narrative ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:CoreWorkflows ;
+      skos:prefLabel "Review Is Just Another Remember: The Natural Loop" ;
+      skos:note "Review corrections produce a new memory, which triggers extraction, which produces new transactions. The loop is natural: remember → extraction → review → corrections? → remember (review memory) → extraction → review → ... → done. Scarlet: 'Any review does is produce another memory, right? It's not a special type of memory; it may have a specific type of content in it because it's a review, but it's just another memory.' Each remember in the chain commits to the same location. In Team + GitHub, the PR accumulates all rounds. Merge is offered at the end but never automatic. Authority to merge is a GitHub concern, not an aswritten concern. No automated consensus — humans decide when they're done." ;
+      narr:theme "Review corrections are just another remember — the review loop is the same pipeline recursively applied, not a special flow" .
+
+    # ── Claims: Warm-Start / Cold-Start ─────────────────────────────────────
+    narr:Claim_WarmStartSkipsIntro a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "Warm-start entry (from remember's return, same session) skips: intro (just explained in the offer), TX summary (already shown in shift summary), zone identification as separate step (already shown). Test document: agent suggests from session context rather than asking open-ended — the agent was in the session when the memory was written and knows what content was being worked on. Goes directly into shared core." ;
+      narr:aboutNode narr:Narrative_WarmStartVsColdStart ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_SynchronousReviewIntegration .
+
+    narr:Claim_ColdStartFullIntro a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "Cold-start entry (from review tool, PR-based, different session/person) includes: full intro ('How this review works'), TX summary (reviewer hasn't seen it), zone identification (reviewer picks focus areas), test document full negotiation (registered docs, draft from perspective, or bring your own), then into shared core. This is the path for teammates reviewing a PR they were not present for." ;
+      narr:aboutNode narr:Narrative_WarmStartVsColdStart ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_WarmStartVsColdStart .
+
+    # ── Claims: Tier Definitions ─────────────────────────────────────────────
+    narr:Claim_FreeTierReadOnly_DesignSession a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "Free tier: read-only. Can load and use perspectives. Cannot save memories. Cannot review. This is the capability gate that drives the Free→Expert upgrade." ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_TierAxisGitHubTeamSize .
+
+    narr:Claim_ExpertTierSyncReview a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "Expert tier default: provisioned repo under aswritten org. Commits to main. No branches, no PRs. Sync self-review after every save. With GitHub connected (power user opt-in): multi-repo. Default still main. Branches available but not the default flow. Scarlet on Expert + GitHub: 'In the Expert case, it actually makes most sense to always commit to main. In the single-user case, it usually makes sense to commit to main by default and to have synchronous review.'" ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_TierAxisGitHubTeamSize .
+
+    narr:Claim_TeamTierGitHubBranch a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "Team tier without GitHub: multiple authenticated users push to the same provisioned perspective on main. Each user reviews their own memories. No structured cross-user review. Scarlet: 'In Team without GitHub, a user reviews their own memories, and we're just working against the same thing. That is decidedly not as clean as with GitHub, but that's the whole point.' Team tier with GitHub: default to topic branch. PRs aggregate memories. Author gets sync review. Teammates get notified (transaction side effect, already implemented). Teammates do cold-start review off the PR. Back and forth until human consensus. Merge offered but never automatic." ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_TierAxisGitHubTeamSize .
+
+    # ── Claims: Remember Return Fields ──────────────────────────────────────
+    narr:Claim_RememberReturnThreeFields a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "Three new fields in remember's return value: (1) tx_summary — plain-language summary of what shifted in the worldview; (2) zones — domains/areas affected by the extraction; (3) review_instructions — prompt fragment telling the agent the warm-start review protocol. These fields enable the agent to immediately offer review in the same session without a separate async operation." ;
+      narr:aboutNode narr:Narrative_SynchronousReviewIntegration ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ReviewReturnValuePattern .
+
+    narr:Claim_TxSummaryNoLatency a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "The tx_summary is generated during extraction so it adds no latency to remember. It is not a post-processing step — it is produced as part of the extraction pipeline run." ;
+      narr:aboutNode narr:Narrative_SynchronousReviewIntegration ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Claim_RememberReturnThreeFields .
+
+    narr:Claim_ReviewInstructionsNotBlocking a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "The review_instructions in remember's return should explicitly not block future work if the user declines review. Scarlet: 'We don't want to bombard the user with a giant block of text at the back end. We want a clear summary of the shift and a clear presentation of do you want to review this? with a quick statement of what that means. You can say yes, but you can also just keep working.' Review is strongly offered, not mandatory." ;
+      narr:aboutNode narr:Process ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Claim_RememberReturnThreeFields .
+
+    # ── Claims: Notification and Terminology ────────────────────────────────
+    narr:Claim_NotificationTransactionSideEffect a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "Notification fires when transactions land, triggered by tx/post-commit. It is not part of the review flow. It already works. Not being redesigned. Teammates get notified when new knowledge is extracted regardless of whether the author has reviewed it. Notification is a transaction side effect, not a review mechanism." ;
+      narr:aboutNode narr:Process ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ReviewLoopIsRemember .
+
+    narr:Claim_ShiftsTerminology a narr:Claim ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "'Shifts' is the user-facing term (not 'lenses'). 'Optometrist model' is an internal abstraction for the test-through-reaction review approach. These should remain distinct in documentation — shifts is what users see; optometrist model is how the system is designed internally." ;
+      narr:aboutNode narr:TerminologyControl ;
+      narr:hasConvictionLevel narr:Conviction_Foundation .
+
+    # ── Observations ────────────────────────────────────────────────────────
+    narr:Obs_ScarletReviewKickoffQuote a narr:Observation ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:QualityReviewGates ;
+      skos:note "Scarlet's verbatim articulation of the desired review kickoff behavior after remember returns." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 527 ;
+          oa:end 727
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If I save a memory after remember returns, I want to have a review immediately started, or it offered to immediately start review." ;
+          oa:prefix "let's do the immediate kickoff of review after remember returns. " ;
+          oa:suffix " I want to be forced into that."
+        ]
+      ] .
+
+    narr:Obs_ScarletReturnValueShiftQuote a narr:Observation ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:ProcessPolicyUpdates ;
+      skos:note "Scarlet's canonical statement of the product-wide shift toward prompting in return values." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1380 ;
+          oa:end 1580
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "This is part of a shift I want to start making in the product as a whole: doing more prompting in the return values from tools instead of always just up front in the tool descriptions." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " The tool descriptions are a good place"
+        ]
+      ] .
+
+    narr:Obs_ScarletBranchPolicyQuote a narr:Observation ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:ProcessPolicyUpdates ;
+      skos:note "Scarlet's statement on branch defaulting to main with context-dependent guidance." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3820 ;
+          oa:end 4010
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I think branch should be optional, and it should default to main. If you're in an agentic environment in which branch is a thing, there should be some part of the prompt that makes it clear" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " that the agent should work with the user"
+        ]
+      ] .
+
+    narr:Obs_ScarletExpertGitHubQuote a narr:Observation ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:PackagingEntitlement ;
+      skos:note "Scarlet's articulation of Expert tier + GitHub behavior — main as default for single-user case." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4320 ;
+          oa:end 4480
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "In the Expert case, it actually makes most sense to always commit to main. In the single-user case, it usually makes sense to commit to main by default and to have synchronous review." ;
+          oa:prefix "Scarlet on Expert + GitHub: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_ScarletTeamWithoutGitHubQuote a narr:Observation ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:PackagingEntitlement ;
+      skos:note "Scarlet's articulation of Team without GitHub — users review their own memories against shared perspective." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4620 ;
+          oa:end 4780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "In Team without GitHub, a user reviews their own memories, and we're just working against the same thing. That is decidedly not as clean as with GitHub, but that's the whole point." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_ReviewIsRememberQuote a narr:Observation ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:CoreWorkflows ;
+      skos:note "Scarlet's canonical statement that review corrections are just another memory — not a special flow." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5120 ;
+          oa:end 5280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Any review does is produce another memory, right? It's not a special type of memory; it may have a specific type of content in it because it's a review, but it's just another memory." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_DirectPersonalTone_DesignSession a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "First-person direct speech dominates the memory; Scarlet's voice is quoted extensively in full sentences. The document alternates between analytical prose (section headers, design rationale) and verbatim founder speech, creating a dual-register structure characteristic of design session notes." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 480 ;
+          oa:end 730
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "What we want to do when you draft the memory is get the current structure. Before we implement anything, pre-remember, let's do the immediate kickoff of review after remember returns." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " If I save a memory"
+        ]
+      ] .
+
+    narr:StyleObs_Antithesis_WarmCold a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "The memory is structured around a series of antitheses: warm-start vs cold-start, async vs synchronous, GitHub vs no-GitHub, single user vs team, main vs branch. This antithesis-heavy structure is characteristic of Scarlet's design thinking and appears throughout the document as the primary organizational device." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2350
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Warm-Start Entry (from remember's return, same session)" ;
+          oa:prefix "### " ;
+          oa:suffix "\n- Skips intro"
+        ]
+      ] .
+
+    narr:StyleObs_TechnicalJargon_DesignSession a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "Product-specific jargon (tx_summary, zones, review_instructions, warm-start, cold-start, PR, MCP) is used without definition throughout, signaling an internal audience. The jargon is consistent and controlled — these are canonical terms being established, not incidental technical vocabulary." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1050 ;
+          oa:end 1200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "tx_summary — plain-language summary of what shifted in the worldview" ;
+          oa:prefix "- **" ;
+          oa:suffix "\n- **zones**"
+        ]
+      ] .
+
+    narr:StyleObs_ShortPunchy_DesignSession a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:note "Short declarative sentences punctuate longer analytical passages at key decision moments. 'Short. Not a wall of text.' is the canonical example — a two-word sentence followed by a four-word sentence, used to describe the desired UX. This cadence pattern signals high-conviction design decisions." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1720 ;
+          oa:end 1760
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Short. Not a wall of text." ;
+          oa:prefix "### What the User Sees After Remember\n\n" ;
+          oa:suffix "\n\nScarlet:"
+        ]
+      ] .
+
+    # ── Style Metrics (full) ─────────────────────────────────────────────────
+    narr:StyleMetrics_DesignSession_Full a narr:StyleMetrics ;
+      dct:source narr:Sample_DesignSession_20260331 ;
+      skos:broader narr:StyleMetrics ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.10"^^xsd:decimal ;
+      skos:note "Design session transcript with structured markdown overlay. Mixed register: analytical prose in section headers and rationale sections; colloquial first-person in Scarlet's quoted speech. Antithesis-heavy structure (warm-start vs cold-start, GitHub vs no-GitHub, sync vs async). Short punchy declaratives at key design moments. Active voice dominant. Jargon density moderate — product terms (tx_summary, zones, review_instructions, warm-start, cold-start, PR) used without definition, implying internal audience. Markdown table for feature gates compresses multi-dimensional information." .
+
+  }
+}

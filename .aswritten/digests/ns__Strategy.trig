@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Strategy> {
+  <https://aswritten.ai/narrative#Digest_ns__Strategy> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Strategy> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the strategic thesis that [narrative is an organizational operating system](narr:Concept_NarrativeArchitecture) — a framework embedding narrative into organization, model, and strategy. The load-bearing strategic claim is [narrative as the control mechanism for AI](narr:Narrative_AI_Steering): the founder frames narrative as the fundamental steering and alignment layer for AI behavior. From there the children specify mechanisms: a [worldview that branches like code](narr:Narrative_BranchingWorldview), making direction changes explicit, reviewable and testable; [strategic context that propagates automatically](narr:Narrative_DemocratizationContext) when all role agents query one compiled worldview; a [review point moved upstream](narr:Narrative_WorldviewReview) to worldview deltas rather than outputs; and [zero-code interfaces](narr:Narrative_NonTechnicalAccessibility) — conversational AI and a Discourse forum — hiding RDF/SPARQL complexity for non-technical users. Read together these cover AI alignment, version control of worldview, democratized context, the locus of human review, and accessibility — the span an agent should recognize as living here.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Concept_NarrativeArchitecture> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_AI_Steering> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_BranchingWorldview> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_DemocratizationContext> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_NonTechnicalAccessibility> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_WorldviewReview> ;
+    narr:keyPhrase [ narr:text "narrative as the fundamental control mechanism for AI behavior and alignment" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_AI_Steering> ] ;
+    narr:keyPhrase [ narr:text "Worldview becomes branchable like code; direction changes are explicit, reviewable, testable." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_BranchingWorldview> ] ;
+    narr:keyPhrase [ narr:text "Strategic context propagates automatically when all role agents query the same compiled worldview." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_DemocratizationContext> ] ;
+    narr:keyPhrase [ narr:text "Review point moves upstream from outputs to worldview deltas; cascading changes become observable." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_WorldviewReview> ] ;
+    narr:keyPhrase [ narr:text "Conversational AI and Discourse forum as zero-code interfaces hiding RDF/SPARQL complexity" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_NonTechnicalAccessibility> ] ;
+    narr:variation [ narr:text "Two distinct purposes sit under one hub: narrative as AI-control/alignment versus narrative as human-strategy democratization — different audiences, possibly different design pressures." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_AI_Steering> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_DemocratizationContext> ] ;
+    narr:variation [ narr:text "An engineering metaphor (worldview branchable 'like code', version-controlled) sits against the zero-code, hide-the-RDF/SPARQL accessibility goal — treating worldview as code while hiding all code." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_BranchingWorldview> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_NonTechnicalAccessibility> ] ;
+    narr:variation [ narr:text "Branching worldviews (explicit divergence) cuts against a single compiled worldview every agent queries (convergence/democratization) — autonomy vs shared context." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_BranchingWorldview> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_DemocratizationContext> ] ;
+    narr:variation [ narr:text "A deliberate road-not-taken: review upstream worldview deltas rather than the conventional review of outputs — a reframing of where human oversight lands." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_WorldviewReview> ] ;
+    narr:writer "claude (subscription)" .
+}

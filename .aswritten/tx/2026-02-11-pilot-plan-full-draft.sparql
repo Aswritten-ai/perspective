@@ -1,0 +1,246 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260211T175507Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-11T17:55:07.380Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-11-pilot-plan-full-draft.md" ;
+    sb:originRef "main" ;
+    prov:generated 
+                   narr:Narrative_PilotOffer,
+                   narr:Narrative_DataOwnership,
+                   narr:Narrative_ExpansionTracks,
+                   narr:ClientResponsibilities_Pilot,
+                   narr:Narrative_PostPilotSelfSufficiency,
+                   narr:StyleObs_BrandName_1,
+                   narr:StyleObs_Cadence_1,
+                   narr:StyleObs_RhetoricalQ_1,
+                   narr:StyleObs_Analogy_1,
+                   narr:StyleObs_Verb_1,
+                   narr:StyleObs_Parallelism_1,
+                   narr:StyleObs_EmDash_1,
+                   narr:StyleObs_Idiolect_1,
+                   narr:StyleObs_DirectAddress_1,
+                   narr:StyleObs_Terminology_1,
+                   narr:StyleObs_RuleOfThree_1,
+                   narr:StyleObs_Signature_1,
+                   narr:Metrics_PilotPlan,
+                   narr:Rubric_Register_PilotPlan,
+                   narr:Rubric_Phrasing_PilotPlan,
+                   narr:Rubric_Cadence_PilotPlan,
+                   narr:Rubric_StrategicAlignment_PilotPlan,
+                   narr:Rubric_Tailoring_PilotPlan,
+                   narr:Rubric_Resonance_PilotPlan,
+                   narr:Rubric_Flow_PilotPlan,
+                   narr:Rubric_Novelty_PilotPlan,
+                   narr:Rubric_Accuracy_PilotPlan .
+
+  # Narrative entities
+  narr:Narrative_PilotOffer a narr:Narrative ;
+
+    narr:theme "Consulting pilot as entry point for collective memory adoption" ;
+    skos:broader narr:StrategyOverview ;
+    skos:related narr:PositioningThesis, narr:ProductLadder ;
+    skos:note "Minimum services for collective memory to deliver clear initial value in an org." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Narrative_ExpansionTracks a narr:Narrative ;
+
+    narr:theme "Three expansion tracks: Core (Product/Eng), Enterprise (On-prem/Compliance), Executive (Founders/Board)" ;
+    skos:broader narr:NarrativeDrivenRoadmap ;
+    skos:related narr:ExpansionPathway, narr:Segmentation ;
+    skos:note "Phase 1 pilot is same entry; expansion depends on buyer persona and use case. Operationalizes and extends the three-phase beta model (Content → People → Process) with buyer-specific pathways." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Narrative_DataOwnership a narr:Narrative ;
+
+    narr:theme "Client owns memories, transactions, custom ontology extensions; base ontology licensed; repo under client org from day one" ;
+    skos:broader narr:DataGovernance ;
+    skos:related narr:SecurityPrivacyModel, narr:CompliancePosture ;
+    skos:note "Base ontology framework is licensed, not sold. Custom ontology extensions and all deliverables (memories, transactions, stories) are work-for-hire and owned by client. Repo lives under client GitHub org from day one. No vendor lock-in." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  # Process requirement entity
+  narr:ClientResponsibilities_Pilot a narr:ProcessRequirement ;
+
+    skos:prefLabel "Client responsibilities for pilot" ;
+    skos:note "Access to 2-3 domain experts (4-6 hours total). Documentation, Slack/Discord exports, GitHub repos. GitHub org for memory repo. Consent for recording interviews. Sponsor availability for live demo." ;
+    dct:isPartOf narr:Narrative_PilotOffer ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Narrative_PostPilotSelfSufficiency a narr:Narrative ;
+
+    narr:theme "Post-pilot team autonomy: no ongoing dependency" ;
+    skos:broader narr:ValueExchange ;
+    skos:related narr:Narrative_PilotOffer, narr:ProductLadder ;
+    skos:note "On day one post-pilot, team can add memories, run introspect, generate drafts, query the graph — full self-service capability with free tier." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  # Style observations
+  narr:StyleObs_BrandName_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+
+    oa:hasBody narr:BrandNameStylization ;
+    skos:note "Brand name lowercase stylization." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_Cadence_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+
+    oa:hasBody narr:ShortPunchyCadence ;
+    skos:note "Short, declarative sentence; active voice; outcome-first." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_RhetoricalQ_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RhetoricalQuestion ;
+
+    oa:hasBody narr:RhetoricalQuestion ;
+    skos:note "Opens with rhetorical question to establish shared pain; second-person direct address." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_Analogy_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+
+    oa:hasBody narr:Analogy ;
+    skos:note "Concrete analogy to make abstract concept tangible." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_Verb_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+
+    oa:hasBody narr:VerbChoice ;
+    skos:note "Strong active verb 'shifts'; outcome-oriented phrasing." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_Parallelism_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Parallelism ;
+
+    oa:hasBody narr:Parallelism ;
+    skos:note "Parallel structure in list; each item follows 'role + gerund' pattern; builds rhythm." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_EmDash_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:PunctuationTypography ;
+
+    oa:hasBody narr:PunctuationTypography ;
+    skos:note "Em dash used to introduce clarifying detail; creates pause and emphasis." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_Idiolect_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:IdiolectPhrasing ;
+
+    oa:hasBody narr:IdiolectPhrasing ;
+    skos:note "Characteristic phrasing: 'compounds value' — financial/growth metaphor applied to knowledge." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_DirectAddress_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:SecondPerson ;
+
+    oa:hasBody narr:SecondPerson ;
+    skos:note "Consistent second-person 'you/your' throughout; conversational register." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_Terminology_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+
+    oa:hasBody narr:TerminologyControl ;
+    skos:note "Canonical term 'compile and query' repeated; establishes product vocabulary." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_RuleOfThree_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+
+    oa:hasBody narr:RuleOfThree ;
+    skos:note "Triadic list for memorability and rhythm." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:StyleObs_Signature_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+
+    oa:hasBody narr:StockPhrases ;
+    skos:note "Signature sign-off 'Herself' — distinctive personal brand marker." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  # Style metrics
+  narr:Metrics_PilotPlan a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+
+    narr:AverageSentenceLength 18.5 ;
+    narr:ActiveVoiceRatio 0.82 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade: 10.2" ;
+    skos:note "High active voice ratio; conversational but professional register; moderate sentence length variation." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  # Rubric assessments
+  narr:Rubric_Register_PilotPlan a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+
+    rdf:value 4.5 ;
+    skos:note "Conversational, direct, second-person throughout; active voice dominant; professional but approachable; fits consulting sales context perfectly." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Rubric_Phrasing_PilotPlan a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+
+    rdf:value 4.0 ;
+    skos:note "Strong domain verbs ('compile', 'query', 'ingest', 'compounds value'); canonical product terms established; 'Herself' signature; financial metaphors for knowledge growth." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Rubric_Cadence_PilotPlan a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+
+    rdf:value 4.0 ;
+    skos:note "Mix of short declarative sentences and longer explanatory clauses; em dashes for emphasis; bullet lists create rhythm; triadic structures (rule of three) throughout." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Rubric_StrategicAlignment_PilotPlan a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+
+    rdf:value 5.0 ;
+    skos:note "Directly articulates positioning thesis (collective memory as org-level brain), pricing model, expansion pathways, delivery guarantee, and data ownership — complete strategic artifact." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Rubric_Tailoring_PilotPlan a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+
+    rdf:value 4.5 ;
+    skos:note "Three distinct expansion tracks (Core/Enterprise/Executive) tailored to buyer personas; examples span junior dev, intern, CSA, sales rep; addresses multiple stakeholder concerns (founder, CTO, CFO)." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Rubric_Resonance_PilotPlan a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+
+    rdf:value 4.0 ;
+    skos:note "'Org-level brain' analogy; 'compounds value' metaphor; live demo as delivery gate creates concrete proof moment; rhetorical questions establish shared pain." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Rubric_Flow_PilotPlan a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+
+    rdf:value 4.5 ;
+    skos:note "Clear progression: Goal → Pitch → Offer → Cost → Process → Expansion → Terms → Email → Open Questions; parallel structure in expansion tracks; natural transitions between sections." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Rubric_Novelty_PilotPlan a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+
+    rdf:value 3.5 ;
+    skos:note "'Collective memory' framing distinct; 'compounds value' fresh; 'Herself' signature unique; some consulting boilerplate (phases, retainers) but applied to novel domain." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+
+  narr:Rubric_Accuracy_PilotPlan a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+
+    rdf:value 4.0 ;
+    skos:note "Specific pricing ([amount] pilot, [amount]/mo license); concrete deliverables (2-3 experts, 2-4 weeks); named tools (Claude, Cursor, MCP); Open Questions section flags uncertainties; no false claims detected." ;
+    prov:wasGeneratedBy narr:Tx_20260211T175507Z .
+}

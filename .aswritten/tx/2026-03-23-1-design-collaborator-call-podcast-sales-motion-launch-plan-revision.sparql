@@ -1,0 +1,464 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ───────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260323T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-23T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-23-design-collaborator-podcast-sales-motion-demo-launch.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_DesignCollaborator_20260323,
+      narr:Narrative_PodcastInterviewSalesMotion,
+      narr:Narrative_HeroVideoFormat,
+      narr:Narrative_DemoScriptOutsideTechBetaUser,
+      narr:Narrative_TierRenameExpertTeam,
+      narr:Narrative_ContentFlywheel,
+      narr:Claim_InterviewThreeOutputs,
+      narr:Claim_HumanMomentSellsBetter,
+      narr:Claim_DesignCollaboratorStyleGuide,
+      narr:Claim_DesignCollaboratorInterviewInterest,
+      narr:Claim_OutreachTemplates,
+      narr:Claim_ContentSiteSubdomain,
+      narr:Claim_TierRenameDecided,
+      narr:Claim_AswrittenModeSwitch,
+      narr:Claim_MarketplaceInterviewDriven,
+      narr:Obs_ScarletInstallableExpertise,
+      narr:Obs_ScarletMoatQuote,
+      narr:Obs_ScarletTargetMarketQuote,
+      narr:Obs_ScarletDelegationQuote,
+      narr:Obs_ScarletAppleAnalogy,
+      narr:StyleObs_InstallableExpertiseTerm,
+      narr:StyleObs_AswrittenModeMarker,
+      narr:StyleObs_RuleOfThreeOutputs .
+} ;
+
+# ── Sample node ───────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Sample_DesignCollaborator_20260323 a narr:Sample ;
+      dct:title "a design collaborator Call: Podcast Sales Motion, Demo Format, and Launch Plan Revision" ;
+      dct:created "2026-03-23"^^xsd:date ;
+      dct:description "Working session with a design collaborator (designer, advisor) that clarified the demo format, revealed the podcast/interview as a sales motion, and revised the April 1 launch plan. a design collaborator committed to a style guide for landing page, blog, and docs site by end of week." ;
+      narr:inputLength 6842 .
+  }
+} ;
+
+# ── UPDATE: narr:Actor_DesignCollaborator — add new context from this session ─────
+DELETE {
+  GRAPH ?g {
+    narr:Actor_DesignCollaborator skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Actor_DesignCollaborator skos:note "Former designer and creative director at Vouch; close friend and informal advisor to aswritten.ai; currently working on a collaborator with Tony Maley and a technical collaborator. March 23 2026: committed to style guide by end of week covering landing page, docs.aswritten.ai, and content/blog site — text hierarchy, color usage, component patterns, NOT comps but a system AI can apply. Wants to do an interview himself to create an installable a design collaborator perspective as one of the first marketplace modules. Immediately understood the podcast model: the interview removes the 'finding time' barrier because the expert doesn't have to do the setup work." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Actor_DesignCollaborator skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Claim_TierStructureNamed — tier rename decided ───────────────
+DELETE {
+  GRAPH ?g {
+    narr:Claim_TierStructureNamed skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Claim_TierStructureNamed skos:note "Tier structure named in Strategy Document V1: Free (read-only), Individual ([amount]/month), Publisher ([amount]/month, 10 teammates), Organization ([amount]/month + [amount]setup) — renamed from 'Enterprise'. UPDATED 2026-03-23: Individual renamed to Expert, Publisher renamed to Team. Decided in earlier session on March 23, not yet propagated in code. This supersedes the three-tier model from March 17 and the 'Enterprise' tier name." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_TierStructureNamed skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_April1SoftLaunch — revised above/below-the-line ───
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_April1SoftLaunch skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Narrative_April1SoftLaunch skos:note "After April 1, beta testing is done. Public-facing marketing, outreach, push with tiers (free trial → paid). REVISED 2026-03-23 (a design collaborator session): Above the line (must ship by April 1): fix share/import (broken, only sending 2 files), share via link/ID (not just email — audiences not 1:1), compile from shared perspective without owning a repo (free tier), org-managed repo for Expert tier (no GitHub), tool silo (product vs org tools), hero video (interview format not screen recording), feature GIFs (a beta user from outside tech scenario — citation close-up, introspect, remember), landing page with hero video + GIFs, intro deck (5 slides not 12), outreach templates for interview invitations, dev→main merge + QA, payment flow working, docs.aswritten.ai current enough. Below the line: marketplace browse/search (distribution is interview-driven not browse-driven), starter perspectives (interviews CREATE the starter set), full naming pass in code (after launch), content library (each interview IS content, publish as you go)." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_April1SoftLaunch skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Claim_AboveTheLine_April1 — revised item list ────────────────
+DELETE {
+  GRAPH ?g {
+    narr:Claim_AboveTheLine_April1 skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Claim_AboveTheLine_April1 skos:note "Must ship by April 1 (revised 2026-03-23): fix share/import (broken, only sending 2 files); share via link/ID not just email (audiences not 1:1); compile from shared perspective without owning a repo (free tier); org-managed repo for Expert tier (no GitHub); tool silo (product vs org tools); hero video (interview format not screen recording); feature GIFs (a beta user from outside tech scenario — citation close-up, introspect, remember); landing page with hero video + GIFs; intro deck (5 slides not 12); outreach templates for interview invitations; dev→main merge + QA; payment flow working; docs.aswritten.ai current enough. Prior list also included: language pass, MVP slimming, initial modules/perspectives shipped, GitHub abstraction for initial users, aswritten perspective set defined and available to all users, sales assets." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_AboveTheLine_April1 skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Claim_BelowTheLine_April1 — marketplace explicitly below ─────
+DELETE {
+  GRAPH ?g {
+    narr:Claim_BelowTheLine_April1 skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Claim_BelowTheLine_April1 skos:note "Below the line (important but not launch-blocking), revised 2026-03-23: marketplace browse/search (distribution is interview-driven not browse-driven); starter perspectives (interviews CREATE the starter set); full naming pass in code (after launch); content library (each interview IS content, publish as you go). Prior list also included: content site built out with articles, full naming decision on 'module', module forking, revenue share infrastructure." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_BelowTheLine_April1 skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Claim_CoreValuePropInstallExpertise — installable expertise framing ──
+DELETE {
+  GRAPH ?g {
+    narr:Claim_CoreValuePropInstallExpertise skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Claim_CoreValuePropInstallExpertise skos:note "Core value proposition emerged from MVP redefinition session: 'A way to install expertise into your AI and verify where it's coming from.' Scarlet confirmed: 'That's gold.' REINFORCED 2026-03-23 (a design collaborator session): Scarlet explicitly dropped the 'memory' word and reframed as 'installable expertise.' Quote: 'I've let go of the memory word sort of entirely and I'm now calling it installable expertise. Because what we need and the big narrative foundation is not intelligence is capability. And more information does not solve your problem.' This is the crystallized positioning statement replacing prior framings." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_CoreValuePropInstallExpertise skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_SupplierSideDistribution — interview IS distribution ─
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_SupplierSideDistribution skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Narrative_SupplierSideDistribution skos:note "The expert is not coming to a marketplace to browse. They encounter aswritten because an expert they trust distributed it to them — QR code in a clinic, link in a training, install instructions from an employer. This is supplier-side distribution, not buyer-side marketplace. REINFORCED 2026-03-23: The podcast/interview model IS the distribution mechanism. Scarlet: 'I could build out the marketplace by basically creating a podcast where I interview people about their business and perspective, and each of those things gets packaged into an installable expertise and they're just available.' The interview removes the 'finding time' barrier and builds the supply side simultaneously. The product may not need a marketplace at launch, just a share/install flow." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_SupplierSideDistribution skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE: narr:Narrative_MarketplaceNotNeededAtLaunch — interview-driven ────
+DELETE {
+  GRAPH ?g {
+    narr:Claim_MarketplaceNotNeededAtLaunch skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Claim_MarketplaceNotNeededAtLaunch skos:note "The marketplace concept shifts from buyer-side browsing to supplier-side distribution. The product may not need a marketplace at launch — just a share/install flow. Experts do not come to a marketplace to browse; they encounter aswritten because an expert they trust distributed it to them. CONFIRMED 2026-03-23 (a design collaborator session): marketplace browse/search is explicitly below the line for April 1. Distribution is interview-driven not browse-driven. Starter perspectives are also below the line because interviews CREATE the starter set." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_MarketplaceNotNeededAtLaunch skos:note ?oldNote .
+  }
+} ;
+
+# ── NEW ENTITIES ──────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260323T120000Z {
+
+    # Section 1: Podcast/Interview as Sales Motion
+    narr:Narrative_PodcastInterviewSalesMotion a narr:Narrative ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "The Podcast/Interview as Sales Motion: Three Outputs from One Conversation" ;
+      skos:note "The breakthrough insight from the a design collaborator session: the demo call, the marketing content, and the product onboarding are the same event. You interview an expert about their expertise. That conversation becomes: (1) their installable perspective — the product, they get a free account with it already in it; (2) a podcast episode / content piece — marketing, published with permission; (3) a live demo of the product — proof, the interview itself shows the product working. Three outputs from one conversation. This is a content flywheel that also builds the marketplace supply side. a design collaborator's reaction to the demo walkthrough confirmed this: the human moment sells better than any screen recording." ;
+      narr:theme "The interview is simultaneously the sales call, the product demo, the onboarding, and the content piece — three outputs from one conversation" .
+
+    narr:Narrative_ContentFlywheel a narr:Narrative ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:ExpansionPathway ;
+      skos:prefLabel "Interview as Content Flywheel: Supply Side + Marketing + Demo" ;
+      skos:note "The interview model creates a flywheel: each expert interview produces an installable perspective (supply side), a published content piece (marketing), and a live proof of the product working (sales). Scarlet: 'I could build out the marketplace by basically creating a podcast where I interview people about their business and perspective, and each of those things gets packaged into an installable expertise and they're just available.' This resolves the cold-start problem, the content problem, and the demo problem simultaneously." ;
+      narr:theme "Each interview compounds: it builds supply side, generates marketing content, and demonstrates the product — a flywheel with no wasted motion" .
+
+    narr:Claim_InterviewThreeOutputs a narr:Claim ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "One interview conversation produces three distinct outputs: (1) installable perspective for the expert (product delivery — free account pre-populated); (2) podcast episode / content piece (marketing — published with permission); (3) live demo of the product working (proof — the interview itself is the demo). This collapses the sales motion, onboarding, content creation, and supply-side building into a single event." ;
+      narr:aboutNode narr:Narrative_PodcastInterviewSalesMotion ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ContentFlywheel .
+
+    narr:Claim_HumanMomentSellsBetter a narr:Claim ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "a design collaborator's reaction to the demo walkthrough confirmed: the human moment (the call, the expert's reaction to seeing their words cited) sells better than any screen recording. Tony's 'it just looks real' applied to video, not just GIFs. The hero video should be a human moment, not a screen recording." ;
+      narr:aboutNode narr:Narrative_HeroVideoFormat ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_GIFBasedSalesMaterials .
+
+    # Section 2: Tier Upgrade Path
+    narr:Narrative_TierRenameExpertTeam a narr:Narrative ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:PackagingPricing ;
+      skos:prefLabel "Tier Rename: Individual→Expert, Publisher→Team" ;
+      skos:note "Decided in earlier session on March 23, not yet propagated. Individual tier renamed to Expert ([amount]/month). Publisher tier renamed to Team ([amount]/month). The upgrade path from the interview: Free (interviewed, here's your perspective, free forever) → Expert ([amount]/month, want to add more materials) → Team ([amount]/month, team collaboration, cited) → Organization ([amount]/month, full engagement, distillation, multiple roles, on-prem). Each tier is a natural next step, not a paywall. The interview seeds the perspective; the user decides how far to take it." ;
+      narr:theme "Tier rename (Individual→Expert, Publisher→Team) and the interview-seeded upgrade path make each tier a natural behavioral next step, not a paywall" .
+
+    narr:Claim_TierRenameDecided a narr:Claim ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "Tier rename decided in earlier session on March 23: Individual→Expert, Publisher→Team. Not yet propagated in code. This is an open item from the session. The upgrade path is: interview → trial with perspective → Free (free forever) → Expert ([amount]/month, add more) → Team ([amount]/month, team collaboration) → Organization ([amount]/month, full engagement)." ;
+      narr:aboutNode narr:PackagingPricing ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_TierRenameExpertTeam .
+
+    # Section 3: Hero Video Format
+    narr:Narrative_HeroVideoFormat a narr:Narrative ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "Hero Video Format: Human Moment, Not Screen Recording" ;
+      skos:note "a design collaborator's design insight: don't make people read text in a video. The hero video is a human moment, not a screen recording. Format: (1) you on a call with someone — 10 seconds of real conversation; (2) brief clip showing the perspective being created; (3) the output citing the person's words — screen showing citations; (4) the expert's reaction — 'whoa, that's my methodology'; (5) brief statement of what they now have and what their team/students/clients can do with it. Can be assembled from existing a beta user from outside tech call footage if video exists, or from a new short recording. Key insight: 'The human moment sells, not the text.'" ;
+      narr:theme "The hero video is a human moment — real conversation, expert reaction, cited output — not a screen recording or text-heavy explainer" .
+
+    # Section 4: Demo Script
+    narr:Narrative_DemoScriptOutsideTechBetaUser a narr:Narrative ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "Demo Script Finalized: a beta user from outside tech / Bluebird Learning Partners Scenario" ;
+      skos:note "Four-step demo script using a beta user from outside tech @ bluebirdlearningpartners.com as scenario: (1) 'Just got off the phone with a beta user from outside tech @ bluebirdlearningpartners.com. She told me that program directors are afraid to use AI because they don't trust it to use reliable sources. Can you explain in a short paragraph how her program directors can get AI to cite her methodology when working with teachers?' → AI asks for a brain dump (the problem — everyone recognizes this). (2) 'Write the intro paragraph for the SOW to turn her training docs for new interns into installable perspectives, so her intern's work can cite her words, aswritten. Annotate your work.' → 100% cited output. Every claim traces to a beta user from outside tech's actual methodology. Footnotes visible. (3) 'What are we missing about her market?' → Gap analysis. Three specific gaps with severity. The product knows what it doesn't know. (4) 'Here's the call transcript, can you add her experiences to our perspective?' → Paste transcript. Memory saved. Perspective grows. The ', aswritten' at the end of prompt 2 is the mode switch — it tells the AI to use real sources, not make things up. The viewer learns what this means by seeing the output change." ;
+      narr:theme "The four-step demo script shows the full product loop: problem recognition, cited output, gap analysis, memory growth — using a beta user from outside tech as the canonical scenario" .
+
+    narr:Claim_AswrittenModeSwitch a narr:Claim ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "The ', aswritten' suffix at the end of a prompt is the mode switch — it tells the AI to use real sources from the installed perspective, not make things up. The viewer learns what this means by seeing the output change. This is the product's core differentiator made visible in the demo." ;
+      narr:aboutNode narr:Narrative_DemoScriptOutsideTechBetaUser ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ProvenanceCitationMoment .
+
+    # Section 5: Scarlet's Articulation
+    narr:Obs_ScarletInstallableExpertise a narr:Observation ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "Scarlet's reframe on the memory word, from the a design collaborator call." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaborator_20260323 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3100 ;
+          oa:end 3320
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I've let go of the memory word sort of entirely and I'm now calling it installable expertise. Because what we need and the big narrative foundation is not intelligence is capability." ;
+          oa:prefix "On the reframe: " ;
+          oa:suffix " And more information does not solve your problem."
+        ]
+      ] .
+
+    narr:Obs_ScarletMoatQuote a narr:Observation ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:MoatLeverage ;
+      skos:note "Scarlet's articulation of the technical moat from the a design collaborator call." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaborator_20260323 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3400 ;
+          oa:end 3580
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The real differentiator and the technical moat is that I take textual documents and I extract perspective from them and then I make that perspective citable in the individual task." ;
+          oa:prefix "On the moat: " ;
+          oa:suffix "\n\nOn the market:"
+        ]
+      ] .
+
+    narr:Obs_ScarletTargetMarketQuote a narr:Observation ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:Segmentation ;
+      skos:note "Scarlet's articulation of the target market from the a design collaborator call." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaborator_20260323 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3600 ;
+          oa:end 3820
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The target market is becoming an expert that currently packages their work in a static and bounded way." ;
+          oa:prefix "On the market: " ;
+          oa:suffix " Are you producing a book, a blog, a set of trainings"
+        ]
+      ] .
+
+    narr:Obs_ScarletDelegationQuote a narr:Observation ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "Scarlet's articulation of delegation as the core use case from the a design collaborator call." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaborator_20260323 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3900 ;
+          oa:end 4060
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's really about the delegation of work that requires expertise to carry it out. And the person, the business owner, the consultant, the expert, is currently the bottleneck." ;
+          oa:prefix "On delegation: " ;
+          oa:suffix "\n\nOn the Apple analogy:"
+        ]
+      ] .
+
+    narr:Obs_ScarletAppleAnalogy a narr:Observation ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "Scarlet's Apple analogy for product positioning from the a design collaborator call." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaborator_20260323 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4100 ;
+          oa:end 4210
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm more interested in developing the Apple to installable expertise than I am in giving you a toolbox." ;
+          oa:prefix "On the Apple analogy: " ;
+          oa:suffix "\n\nOn the network approach:"
+        ]
+      ] .
+
+    # Section 6: a design collaborator's Design Contribution
+    narr:Claim_DesignCollaboratorStyleGuide a narr:Claim ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "a design collaborator committed to: style guide by end of week based on existing brand package; unifying landing page, docs.aswritten.ai, and content/blog site; text hierarchy, color usage, component patterns; NOT comps — a system that AI can apply. Scarlet sends him: glossary (Identity & Style section), intro deck structure (information architecture for landing page), screenshots of current docs/landing page/content site, the demo walkthrough (static version)." ;
+      narr:aboutNode narr:Actor_DesignCollaborator ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_April1SoftLaunch .
+
+    # Section 7: a design collaborator's Own Interest
+    narr:Claim_DesignCollaboratorInterviewInterest a narr:Claim ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "a design collaborator wants to do an interview himself — create an installable a design collaborator with his approach to design. This would be one of the first perspectives in the marketplace. Scheduled for a future call. a design collaborator also reflected the same pattern other prospects have shown: 'I have an idea of when I have the time, I will invest and build the perspective.' But he immediately understood the podcast model: the interview removes the 'finding time' barrier because the expert doesn't have to do the setup work." ;
+      narr:aboutNode narr:Actor_DesignCollaborator ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_PodcastInterviewSalesMotion .
+
+    # Section 8: Outreach Templates
+    narr:Claim_OutreachTemplates a narr:Claim ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "SMS and email templates saved to docs/sales/outreach-templates.md for inviting experts to interviews. Key elements: what happens (30 min conversation), what they get (free perspective), what's free vs paid (explicit), content angle (published with permission). No bait and switch." ;
+      narr:aboutNode narr:Narrative_PodcastInterviewSalesMotion ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_April1SoftLaunch .
+
+    # Section 9: Open Items
+    narr:Claim_ContentSiteSubdomain a narr:Claim ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "Content site subdomain is undecided. Currently drafts.aswritten.ai. Could be perspectives.aswritten.ai or aswritten.ai/interviews. Each interview produces a published perspective + blog post + media clip. The 'drafts' framing is internal; the published version should feel like a media property. Decision needed." ;
+      narr:aboutNode narr:Narrative_April1SoftLaunch ;
+      narr:hasConvictionLevel narr:Conviction_Notion .
+
+    narr:Claim_MarketplaceInterviewDriven a narr:Claim ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "Marketplace browse/search is below the line for April 1 because distribution is interview-driven, not browse-driven. Starter perspectives are also below the line because interviews CREATE the starter set. The interview model makes the marketplace a downstream artifact, not a prerequisite." ;
+      narr:aboutNode narr:Narrative_SupplierSideDistribution ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_April1SoftLaunch .
+
+    # Style Observations
+    narr:StyleObs_InstallableExpertiseTerm a narr:StyleObservation ;
+      skos:broader narr:TerminologyControl ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "'installable expertise' as the replacement for 'memory' — a deliberate terminology shift that moves from technical/process framing to outcome/value framing" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaborator_20260323 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3100 ;
+          oa:end 3200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I've let go of the memory word sort of entirely and I'm now calling it installable expertise." ;
+          oa:prefix "On the reframe: " ;
+          oa:suffix " Because what we need"
+        ]
+      ] .
+
+    narr:StyleObs_AswrittenModeMarker a narr:StyleObservation ;
+      skos:broader narr:BrandNameStylization ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "', aswritten' as a lowercase suffix appended to prompts — a mode-switch marker that is simultaneously a brand name, a command, and a rhetorical device. Lowercase consistent with brand stylization." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaborator_20260323 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2600 ;
+          oa:end 2720
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "so her intern's work can cite her words, aswritten. Annotate your work." ;
+          oa:prefix "installable perspectives, " ;
+          oa:suffix "\n\n3. **\"What are we missing"
+        ]
+      ] .
+
+    narr:StyleObs_RuleOfThreeOutputs a narr:StyleObservation ;
+      skos:broader narr:RuleOfThree ;
+      dct:source narr:Sample_DesignCollaborator_20260323 ;
+      skos:note "Rule of three used to structure the interview outputs: (1) installable perspective, (2) podcast episode/content piece, (3) live demo. The numbered list format reinforces the parallel structure and makes the flywheel legible." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaborator_20260323 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 420 ;
+          oa:end 620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "1. **Their installable perspective** (the product — they get a free account with it already in it)\n2. **A podcast episode / content piece** (marketing — published with permission)\n3. **A live demo of the product** (proof — the interview itself shows the product working)" ;
+          oa:prefix "That conversation becomes:\n\n" ;
+          oa:suffix "\n\nThree outputs from one conversation."
+        ]
+      ] .
+  }
+}

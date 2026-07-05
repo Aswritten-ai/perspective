@@ -1,0 +1,184 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260518T200000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-18T20:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# Vision Frame + Acquisition Strategy & Tipping Points — May 17-18, 2026" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      narr:Narrative_CollaborativeConfigurableAIVision,
+      narr:Narrative_VentureScaleCalmCompanyExecution,
+      narr:Narrative_TrimodalCompLandscape,
+      narr:Claim_VettingAsBeachhead,
+      narr:Claim_TrimodalCompLandscape,
+      narr:Claim_MidMarketPitchBuyVsBuild,
+      narr:StyleObs_VisionFrameDirectQuote,
+      narr:StyleObs_TableHeavyStructure,
+      narr:StyleObs_AntithesisVentureVsCalm,
+      narr:StyleMetrics_VisionAcquisitionStrategy_20260517 .
+} ;
+
+# ── UPDATE: narr:Narrative_CalmCompanyThesis — extend with venture-scale synthesis ──
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_CalmCompanyThesis skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260518T200000Z {
+    narr:Narrative_CalmCompanyThesis skos:note "The Calm Company thesis frames aswritten as an ambitious bootstrapped company with deep founder expertise in a niche domain — not a lifestyle business and not a venture-scale company. The goal is a single raise that produces a company capable of sustaining itself and returning profit to investors. If money is taken in the future, it is by choice of scale, not necessity. This supersedes the prior fundraising framing that positioned the F&F raise as a stepping stone to venture capital. Extended May 17-18: the vision IS venture-scale (collaborative configurable AI individuals deployed in pursuit of goals, every AI for every task on any vendor) but achievable on calm-company economics because the wedge is high-value (enterprise + regulated industries), unit economics are strong (B2B SaaS gross margins), IP is durable (ontology, trust contract, citation infrastructure), and platform components make enterprise MSA possible. Intentional slowness while ontology and security mature." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_CalmCompanyThesis skos:note ?oldNote .
+  }
+} ;
+
+# ── New entities ─────────────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260518T200000Z {
+
+    # ── Narrative: The unified vision frame ──────────────────────────────────
+    narr:Narrative_CollaborativeConfigurableAIVision
+
+
+      skos:broader narr:Vision ;
+      skos:prefLabel "Collaborative Configurable AI Individuals Deployed in Pursuit of Goals" ;
+      skos:note "Scarlet's articulated vision: vetting is the beachhead to create a perspective that represents an individual; the real product is collaboratively configurable/buildable AI individuals deployed in pursuit of goals. Trust mechanism = citation, visible reference, source privacy, escalation, governance. Platform components make enterprise MSA possible. Wedge = enterprise + regulated industries where citation-grounded trust is mandatory. Future state = AI individuals with personality and individuality you can trust, applied to every AI task on every vendor. Ambition = venture-scale goal achievable on calm-company economics." ;
+      narr:theme "The extension of aswritten is not that vetting is the beachhead but that vetting creates a perspective representing an individual — collaboratively configurable AI individuals deployed in pursuit of goals, trustable through citation and visible reference, applicable to every AI task on every vendor" .
+
+    # ── Narrative: Venture-scale goal, calm-company execution ────────────────
+    narr:Narrative_VentureScaleCalmCompanyExecution
+
+
+      skos:broader narr:StrategyOverview ;
+      skos:prefLabel "Venture-Scale Goal, Calm-Company Execution" ;
+      skos:note "The vision is venture-scale but the approach is calm-company: one enterprise contract and one team and one expert monthly spend at a time. Intentional slowness while ontology and security mature. The [amount] acquisition target is achievable without venture-scale money because (1) the wedge is high-value, (2) unit economics are strong, (3) IP is durable, (4) platform components make enterprise MSA possible — different from feature-grade competitors." ;
+      narr:theme "Venture-scale ambition is achievable on calm-company economics when the wedge is high-value, unit economics are strong, and IP is durable" .
+
+    # ── Narrative: Trimodal comp landscape ──────────────────────────────────
+    narr:Narrative_TrimodalCompLandscape
+
+
+      skos:broader narr:CompetitiveLandscape ;
+      skos:prefLabel "Trimodal Competitive Landscape: Light SaaS / Heavy Enterprise / Custom Build" ;
+      skos:note "Mid-market ICP doesn't shop Fortune-500 platforms. Three tiers: Tier A (Light SaaS) — ChatGPT/Claude Enterprise [amount]-3K/mo, Notion AI [amount]-4.5K/mo, GitHub Copilot [amount]-2K/mo, Vector DB [amount]-3K/mo; typical AI stack at 150-person co [amount]-15K/mo; no sovereignty, no citation, no on-prem. Tier B (Heavy enterprise assembly) — Glean [amount]-40K/mo fully-loaded TCO, Coveo [amount]-33K/mo, Decagon [amount]/mo median, Sierra [amount]-150K/mo+, stitched stack [amount]-40K/mo + integration cost. Tier C (Custom build) — first-year amortized ~[amount]-75K/mo equivalent. aswritten sits 2-10x cheaper than comparable Tier B assembly." ;
+      narr:theme "The mid-market ICP competitor is DIY engineering time plus currently-fragmented AI tools, not enterprise platforms like Glean — that is the buy-vs-build conversation that lands" .
+
+    # ── Claims ───────────────────────────────────────────────────────────────
+
+    narr:Claim_VettingAsBeachhead
+      a narr:Claim ;
+
+      skos:note "Vetting (patient vetting, project vetting, client vetting) is the specific entry-point use case — the beachhead. The real product is creating a perspective that represents an individual. The bigger frame is collaboratively configurable/buildable AI individuals deployed in pursuit of goals. Vetting is not the destination; it is the wedge that creates the perspective primitive." ;
+      narr:aboutNode narr:Narrative_CollaborativeConfigurableAIVision ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_CategoryCuratedExpertiseInstallation .
+
+    narr:Claim_TrimodalCompLandscape
+      a narr:Claim ;
+
+      skos:note "Three-tier competitive landscape for mid-market ICP: Tier A (Light SaaS, what mid-market currently uses) — typical AI tooling stack at 150-person co [amount]-15K/mo, limitation is no sovereignty/citation/on-prem/agent deployments. Tier B (Heavy enterprise platforms, assembly cost for similar functionality) — Glean [amount]-40K/mo fully-loaded, Coveo [amount]-33K/mo, Decagon [amount]/mo median, Sierra [amount]-150K/mo+, stitched stack [amount]-40K/mo + integration. Tier C (Custom build) — first-year amortized ~[amount]-75K/mo equivalent. The competitor is DIY engineering time + fragmented AI tools, not enterprise platforms like Glean." ;
+      narr:aboutNode narr:Narrative_TrimodalCompLandscape ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:PositioningThesis .
+
+    narr:Claim_MidMarketPitchBuyVsBuild
+      a narr:Claim ;
+
+      skos:note "Mid-market pitch is buy-vs-build vs DIY engineering, NOT vs Glean/Fortune-500 platforms. For technical mid-market vendors (DIY-tempted buyer): 'You're a 150-person company. You don't want to buy Glean — it's too big a commitment for your scale. You don't want to build custom RAG — that's 6 months of engineering time. You want AI that knows what your senior people know, deployed how YOU need it deployed, with citations so your team can trust the output. We're [amount]-10K/mo, single-tenant if you need it, on-prem if you really need it. We're the right size for you.' For medical/professional practices (per-practitioner-value buyer): practitioners billing [amount]-400/hr, saving 5 hrs/week = [amount]-8K/mo value per practitioner; [amount]-11K/mo for full Org tier with HIPAA pays for itself in less than one practitioner's first week." ;
+      narr:aboutNode narr:Narrative_TrimodalCompLandscape ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ICPRefinedTwoSubsegments .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+
+    narr:StyleObs_VisionFrameDirectQuote
+      a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+
+      skos:note "Extended first-person blockquote from Scarlet mid-session: run-on, stream-of-consciousness, filler-heavy ('you know', 'sort of', 'and so on and so forth'), averaging ~35 words per sentence. Characteristic idiolect: nested subordinate clauses, self-interrupting structure, conviction peaks marked by short declaratives embedded in longer analytical passages." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 348 ;
+          oa:end 548
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "vetting is a beachhead to create a perspective that represents an individual" ;
+          oa:prefix "the extension of this is not that " ;
+          oa:suffix " and what we're doing as we're creating"
+        ]
+      ] .
+
+    narr:StyleObs_TableHeavyStructure
+      a narr:StyleObservation ;
+      skos:broader narr:InformationArchitecture ;
+
+      skos:note "Heavy use of markdown tables for acquirer categories, valuation ranges, and competitive positioning ratios. Tables compress multi-dimensional information (acquirer, rationale, range) into scannable units. Consistent with Scarlet session-memo idiolect across the perspective. Tables alternate with prose analysis sections." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2800 ;
+          oa:end 2980
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "| Acquirer | Why they'd buy | Likely range |" ;
+          oa:prefix "**Category 1 — Major AI labs (highest strategic premium):**\n\n" ;
+          oa:suffix "\n|---|---|---|\n| Anthropic"
+        ]
+      ] .
+
+    narr:StyleObs_AntithesisVentureVsCalm
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      skos:note "Antithesis-heavy structure throughout: venture-scale goal vs. calm-company execution, 'valuable enough' vs. 'pressure on the acquirer', 'shop the company' vs. 'being legible and available', 'needs to sell' vs. 'doesn't need to sell'. Short punchy declaratives at conviction peaks ('That absolutely is a venture-scale goal.', '[amount] target is Y5-Y6 territory at base-case growth. Achievable. Not guaranteed.')." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 9200 ;
+          oa:end 9380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The thing that DOESN'T happen: a [amount] exit because aswritten ran a process and shopped the company." ;
+          oa:prefix "that conversation happens.\n\n" ;
+          oa:suffix " Strategic acquisitions at this size happen"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+
+    narr:StyleMetrics_VisionAcquisitionStrategy_20260517
+      a narr:StyleMetrics ;
+
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo with extended verbatim blockquote from Scarlet plus structured analysis sections. Mixed register: first-person stream-of-consciousness in blockquote (~35 words avg per sentence) vs. analytical editorial prose (~16 words avg). Active voice dominant in editorial sections. Jargon density moderate — financial terms (ARR, SAFE, acqui-hire, corp-dev, TCO, ACV) and product terms (EDO, HIPAA, SOC2, citation infrastructure, perspective primitive) used without definition, implying internal audience. Table-heavy structure compresses multi-dimensional competitive data. Antithesis-heavy structure (venture-scale vs. calm-company, needs-to-sell vs. doesn't-need-to-sell). Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.11"^^xsd:decimal .
+  }
+}

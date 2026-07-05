@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__ValueExchange> {
+  <https://aswritten.ai/narrative#Digest_ns__ValueExchange> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#ValueExchange> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers how value is exchanged and articulated around the collective-memory product. The pivotal moment is a [reframe from advisory to buying intent](narr:Insight_ReframeTrigger) once a prospect saw AI could extract expert knowledge and let sales query it. The core trade is stated as a [CEO-level ROI exchange](narr:Observation_ValueExchange_MetricsROI) — budget and org mandate given, IP protection, pivot-to-execution speed, and consensus returned. Below that sit three operational [before/after problem-solution pairs](narr:StyleObs_parallel_1): [fragmented context](narr:ValueProp_FragmentationProblem), [knowledge loss on departure](narr:ValueProp_KnowledgeLossProblem), and [blind onboarding](narr:ValueProp_OnboardingProblem), each resolved into shared memory. A distinct go-to-market thread routes value through a [VC channel](narr:Narrative_VCChannel) — naming buyer, champion, and channel personas. Cutting across is an adoption claim that there is [no network problem](narr:Observation_NoNetworkProblem) — value accrues to a single user before any second one.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Insight_ReframeTrigger> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_VCChannel> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_ValueExchange_MetricsROI> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_parallel_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#ValueProp_FragmentationProblem> ;
+    narr:covers <https://aswritten.ai/ns/narrative#ValueProp_KnowledgeLossProblem> ;
+    narr:covers <https://aswritten.ai/ns/narrative#ValueProp_OnboardingProblem> ;
+    narr:keyPhrase [ narr:text "If AI could interview me and store it in memory, and then our sales guy could just ask the memory and get back an answer based on the interview—that'll be worth a lot of money." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Insight_ReframeTrigger> ] ;
+    narr:keyPhrase [ narr:text "Value exchange: CEO gives budget + org mandate; receives quantified IP protection, time from pivot to execution (weeks→days), consensus building without overhead." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_ValueExchange_MetricsROI> ] ;
+    narr:keyPhrase [ narr:text "There is actually no network problem here. This is just as useful for one person, but it is even more useful for two people" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ] ;
+    narr:keyPhrase [ narr:text "Before: Context lost when people leave | After: Zero knowledge loss, collective memory persists" ; narr:phraseSource <https://aswritten.ai/ns/narrative#ValueProp_KnowledgeLossProblem> ] ;
+    narr:keyPhrase [ narr:text "Primary = CEO/founder, Champion = Strategy/CTO, Channel = VCs/advisors." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_VCChannel> ] ;
+    narr:variation [ narr:text "Single-user vs collective value: 'no network problem, useful for one person' sits against the shared-memory/cross-agent value props that lean on multi-party effect." ; narr:over <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ; narr:over <https://aswritten.ai/ns/narrative#ValueProp_FragmentationProblem> ; narr:over <https://aswritten.ai/ns/narrative#Observation_ValueExchange_MetricsROI> ] ;
+    narr:variation [ narr:text "Strategic vs operational value framing: CEO-level ROI (IP, pivot speed, consensus) vs concrete operational before/after fixes (fragmentation, loss, onboarding)." ; narr:over <https://aswritten.ai/ns/narrative#Observation_ValueExchange_MetricsROI> ; narr:over <https://aswritten.ai/ns/narrative#ValueProp_FragmentationProblem> ; narr:over <https://aswritten.ai/ns/narrative#ValueProp_KnowledgeLossProblem> ; narr:over <https://aswritten.ai/ns/narrative#ValueProp_OnboardingProblem> ] ;
+    narr:variation [ narr:text "Buyer ambiguity: the VC-channel thread splits the 'who's the buyer?' question into CEO/founder (primary), Strategy/CTO (champion), and VC/advisor (channel) rather than one persona." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_VCChannel> ; narr:over <https://aswritten.ai/ns/narrative#Insight_ReframeTrigger> ] ;
+    narr:writer "claude (subscription)" .
+}

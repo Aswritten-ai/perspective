@@ -1,0 +1,235 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# narr:Tx_20260301T160353Z
+# =============================================================
+
+INSERT DATA {
+
+  narr:Tx_20260301T160353Z a prov:Activity ;
+    dct:title "SPARQL Transaction: March 2026 Brain Dump — Product Priorities" ;
+    prov:wasAssociatedWith <https://aswritten.ai/agents/aswritten-ai> ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-03-01T16:03:53.589Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-03-01-march-2026-braindump-product-priorities.md" ;
+    sb:originRef           "main" ;
+    prov:used              <https://aswritten.ai/agents/anthropic/claude-sonnet-4.6> .
+
+  # =============================================================
+  # SAMPLE
+  # =============================================================
+
+  narr:Sample_BrainDump_Mar2026 a narr:Sample ;
+    dct:title "March 2026 Brain Dump: Product Priorities and Architectural Insights" ;
+    narr:inputLength 4821 ;
+    dct:creator "Scarlet Dame" ;
+    dct:date "2026-03-01"^^xsd:date ;
+    dct:description "Handwritten notebook notes from day off, transcribed and discussed in Claude Code session. Covers architectural insights, process pain points, a new demo concept, and feature ideas." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:Narrative_ReviewableWorldview a narr:Narrative ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    narr:theme "The Reviewable Worldview demo supersedes Demo 1 and shows the full product: capture, collaborative review, validation, and merge" ;
+    skos:broader narr:CoreNarratives ;
+    skos:note "Full flow: Auth → Init → Compile → Onboarding → Talk → Draft memory → Add reviewers → Remember → Extract → PR opened → Reviewer notified → start_review (new MCP tool) → Interview → Draft review memory → Extract → Notify shifts → Approve → Merge PR → Notify. Review happens in Claude sessions, not SMS." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:Narrative_PromptsAsOntologyTargets a narr:Narrative ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    narr:theme "LLM prompts as ontology compilation targets: versioned, scoped, and recompiled when the worldview shifts" ;
+    skos:broader narr:StackOverview ;
+    skos:note "Prompts/skills as objects in the ontology, scoped via subgraph, versioned and compiled like stories. Different orgs get different prompt behavior from same template because different worldviews compile different prompts. Flagged by Scarlet for inclusion in pitches." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:Narrative_PersonalGraphFederation a narr:Narrative ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    narr:theme "Personal graphs federated with org repos act as both filter and expander on worldview changes" ;
+    skos:broader narr:DataIntegrationFlows ;
+    skos:note "Personal repo for perspective and preferences (work history, enneagram patterns, blog posts) federated with org repo. On worldview change, personal graph filters (show me what matters to ME) and expands (connect to personal context). Links to open question: does introspect take a vector of [& [owner repo]]?" ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:Narrative_ProductKnowledgeSecondGraph a narr:Narrative ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    narr:theme "Compile returns two graphs: org worldview AND aswritten product knowledge graph — self-updating, no static artifacts" ;
+    skos:broader narr:DataModelLifecycle ;
+    skos:note "Option C for task-071 (product knowledge injection to beta repos). Same mechanism as org worldview, self-updating, eliminates stale static artifacts." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  # =============================================================
+  # CLAIMS
+  # =============================================================
+
+  narr:Claim_CompileIsProductWorking a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+    narr:supports narr:PositioningThesis ;
+    skos:note "Compile reliability is not infrastructure — it IS the product working or not working. Every demo, beta user, and sales conversation runs through compile." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:Claim_ReviewableWorldviewSupersedesDemo1 a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Narrative_ReviewableWorldview ;
+    narr:supports narr:CoreNarratives ;
+    skos:note "Reviewable Worldview demo is more compelling than Demo 1 After the Call. After the Call is a waypoint within it, not a standalone demo." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:Claim_PromptsInPitches a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Narrative_PromptsAsOntologyTargets ;
+    narr:supports narr:NarrativeAnchor ;
+    skos:note "Prompts as ontology compilation targets should be remembered and included in pitches. Along with personal graphs, exemplifies hierarchical/federated knowledge as a strong pitch narrative." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:Claim_FundraiseWithWorkingDemo a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_ReviewableWorldview ;
+    narr:supports narr:CallToAction ;
+    skos:note "Fundraise with a working demo — not a deck about a vision, but a video of a working product. The thing you're selling needs to work before you sell it." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  # =============================================================
+  # STYLE OBSERVATIONS
+  # =============================================================
+
+  narr:StyleObs_AllCapsEmphasis a narr:StyleObservation ;
+    skos:broader narr:AICompanyizationCase ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:ToneAuthoritative ;
+    rdf:value true ;
+    skos:note "ALL-CAPS used for rhetorical emphasis on critical terms: THE, FULL, TWO. Signals conviction and urgency without exclamation marks." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:StyleObs_EmDashRhetoric a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:ToneDirectPersonal ;
+    rdf:value true ;
+    skos:note "Em-dash used repeatedly as a rhetorical pivot — sets up a reframe or clarification after the dash. Pattern: assertion — correction/elevation." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:StyleObs_ReframePattern a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:NarrativeAnchor ;
+    rdf:value true ;
+    skos:note "Explicit reframe construction: 'This reframes X from Y to Z.' Used to signal a conceptual elevation, not just a description change. High conviction rhetorical move." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:StyleObs_DirectFirstPerson a narr:StyleObservation ;
+    skos:broader narr:FirstPerson ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:ToneDirectPersonal ;
+    rdf:value true ;
+    skos:note "First-person voice used for high-stakes personal admissions: sales confidence, process frustration. Increases credibility and urgency of the claim." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:StyleObs_NumberedConvergence a narr:StyleObservation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:RuleOfThree ;
+    rdf:value true ;
+    skos:note "Numbered list of three convergent problems used to build logical inevitability for the triple store solution. Parallelism reinforces that these are equivalent-weight problems." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:StyleObs_QuotedTermReframe a narr:StyleObservation ;
+    skos:broader narr:RhetoricalDevices ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:TerminologyControl ;
+    rdf:value true ;
+    skos:note "Scare-quotes used to mark terms being explicitly rejected or elevated: 'infrastructure' vs 'the product working or not working'. Signals deliberate vocabulary choice." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:StyleObs_BoldKeyTerms a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Markdown bold used to highlight product terms and quick-win labels. Functions as inline heading within prose." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:StyleObs_KeyReframeTagline a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Closing reframe delivered as a short punchy sentence functioning as a tagline or thesis statement. Cadence: short declarative after longer explanatory prose." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:StyleObs_ArrowFlowNotation a narr:StyleObservation ;
+    skos:broader narr:GrammarSyntax ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:Flows ;
+    rdf:value true ;
+    skos:note "Arrow notation (→) used to represent sequential product flows and UI transitions. Compresses multi-step processes into scannable linear chains. Technical/engineering register." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  narr:StyleObs_InlineTaskRef a narr:StyleObservation ;
+    skos:broader narr:NamingConventions ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    skos:related narr:TerminologyControl ;
+    rdf:value true ;
+    skos:note "Inline task references (task-068, task-070, task-071, task-072) used as stable identifiers linking prose to a backlog. Engineering convention applied to narrative writing." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+  # =============================================================
+  # STYLE METRICS
+  # =============================================================
+
+  narr:StyleMetrics_BrainDump_Mar2026 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_BrainDump_Mar2026 ;
+    narr:AverageSentenceLength 22 ;
+    narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+    narr:JargonDensity "0.14"^^xsd:decimal ;
+    skos:note "High active voice ratio consistent with direct, first-person technical writing. Jargon density moderate — technical terms (OOM, MCP, RDF, TX) used without definition, implying expert audience. Average sentence length elevated by enumerated flow sequences; prose sentences are shorter and punchier." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+
+}
+
+# =============================================================
+# UPDATE: narr:Actor_ScarletDame — add new skos:note and
+# prov:wasGeneratedBy link (idempotent guard via MINUS)
+# =============================================================
+
+# Step 1: Add new skos:note (guarded — only if this exact note absent)
+DELETE { }
+INSERT {
+  narr:Actor_ScarletDame
+    skos:note "Author and primary product thinker; founder/operator of aswritten. Source of all brain dump content. Identified compile reliability as core value prop blocker." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T160353Z .
+}
+WHERE {
+  MINUS {
+    narr:Actor_ScarletDame skos:note "Author and primary product thinker; founder/operator of aswritten. Source of all brain dump content. Identified compile reliability as core value prop blocker."
+  }
+} 

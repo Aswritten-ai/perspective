@@ -1,0 +1,204 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260516T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-16T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# What the the enterprise customer Pilot Reveals About the Product" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_EnterpriseCustomerPilotReveals_20260516,
+      narr:Narrative_AgentAsAnalyticsInterface,
+      narr:Narrative_ProductSurfacesOwnRoadmap,
+      narr:Claim_AswrittenUsageMCPTool,
+      narr:Claim_FourToolLoopEngagedUserPattern,
+      narr:Obs_CustomerCTOUsageVisibilityRequest,
+      narr:Obs_CustomerArchitectFullLoopPattern,
+      narr:Obs_OrioleReaderGrounderPattern,
+      narr:StyleObs_EnterpriseCustomerPilot_Antithesis,
+      narr:StyleObs_EnterpriseCustomerPilot_BoldFraming,
+      narr:Metrics_EnterpriseCustomerPilotReveals_20260516 .
+} ;
+
+# ── UPDATE: narr:Narrative_CiteIntrospectAnalyticsGoldmine — add roadmap framing ──
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_CiteIntrospectAnalyticsGoldmine skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260516T120000Z {
+    narr:Narrative_CiteIntrospectAnalyticsGoldmine skos:note "Introspect responses surface explicit named gaps (what the customer is asking about); cite responses surface uncommitted claims (gaps in the perspective exposed by writing). Together they reveal both what the perspective is used for and where it falls short — a richer signal than authoring metrics alone. After nine days of the enterprise customer use, introspect had surfaced 62 specific named gaps and 76 recommended actions, of which 15+ were P1 high-impact. These were surfaced by the team asking the perspective what it knew — not by interviews. This is a product capability worth foregrounding in positioning and sales: aswritten tells you what you don't know yet." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_CiteIntrospectAnalyticsGoldmine skos:note ?oldNote .
+  }
+} ;
+
+# ── INSERT: New entities ─────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260516T120000Z {
+
+    # Sample
+    narr:Sample_EnterpriseCustomerPilotReveals_20260516 a narr:Sample ;
+      dct:title "What the the enterprise customer Pilot Reveals About the Product" ;
+      dct:created "2026-05-16"^^xsd:date ;
+      dct:description "Post-pilot review after first nine days of real the enterprise customer customer use (Phase 1, paying customer). Three moment-in-time product observations plus two surfaced product frictions." ;
+      narr:inputLength 4821 .
+
+    # ── Narrative 1: Agent-as-interface for analytics ──────────────────────
+    narr:Narrative_AgentAsAnalyticsInterface a narr:Narrative ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:broader narr:ProductOverview ;
+      skos:prefLabel "Agent-as-Interface Is the Right Shape for Analytics" ;
+      skos:note "the customer's CTO asked for 'usage visibility' during the 2026-05-07 kickoff. A traditional product would respond by building a dashboard. The path actually being implemented — the aswritten_usage MCP tool, gated to Outseta billing contacts, returning structured rollups directly through the same MCP interface the customer's CTO already uses for everything else — is the dogfood version of 'your agent is your operations interface.' Consumption visibility is just another knowledge surface, gated to the right roles, accessed through the same tool-calling pattern. This validates the broader thesis that the agent IS the operations interface for organizational knowledge work." ;
+      narr:theme "Usage analytics delivered through the agent interface rather than a dashboard validates the thesis that the agent is the operations interface for organizational knowledge work" .
+
+    # ── Narrative 2: Product surfaces its own roadmap ──────────────────────
+    narr:Narrative_ProductSurfacesOwnRoadmap a narr:Narrative ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:broader narr:Differentiators ;
+      skos:prefLabel "The Product Surfaces Its Own Roadmap Through Use" ;
+      skos:note "Introspect doesn't just return what's documented in the perspective — it returns a structured list of named gaps and prioritized recommendations. After nine days of the enterprise customer use, the tool had surfaced 62 specific named gaps and 76 recommended actions, of which 15+ were P1 high-impact. These weren't surfaced by interviews — they were surfaced by the team asking the perspective what it knew. The framing: aswritten tells you what you don't know yet. It's not a passive knowledge store; it's an active surface that points at its own thin spots. This is a product capability worth foregrounding in positioning and sales." ;
+      narr:theme "aswritten tells you what you don't know yet — introspect is an active surface that points at its own thin spots, not a passive knowledge store" .
+
+    # ── Claims ─────────────────────────────────────────────────────────────
+    narr:Claim_AswrittenUsageMCPTool a narr:Claim ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:note "The aswritten_usage MCP tool — gated to Outseta billing contacts, returning structured rollups through the same MCP interface already in use — is the implementation of 'your agent is your operations interface' for analytics. Instead of 'log into the aswritten admin portal,' it's 'ask your agent — the answer comes back through the same surface you already trust.' The Feltron-style PDF report exists as a hand-curated artifact for now, but the underlying signal will be queryable on demand once Phase 4 lands." ;
+      narr:aboutNode narr:Narrative_AgentAsAnalyticsInterface ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_AgentAsAnalyticsInterface .
+
+    narr:Claim_FourToolLoopEngagedUserPattern a narr:Claim ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:note "Two distinct usage patterns emerged organically across the enterprise customer's first nine days without prompting: (1) the customer's chief architect's full-loop pattern — perspective → introspect → remember → cite, distributed across all four core tools; the 'expert' archetype who captures, asks, reads, and grounds. (2) a collaborator's reader-grounder pattern — perspective → cite, repeatedly; pulls captured context, grounds her work against it via citation; zero authoring yet. The tools-as-a-set seem to be coherent in practice, not just in design. Worth confirming on subsequent customer engagements before treating as a settled finding — but it's a much better signal than 'users are calling tools' alone." ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_CiteIntrospectAnalyticsGoldmine .
+
+    # ── Observations ───────────────────────────────────────────────────────
+    narr:Obs_CustomerCTOUsageVisibilityRequest a narr:Observation ;
+      skos:broader narr:LeadingIndicators ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:note "the customer's CTO asked for 'usage visibility' during the 2026-05-07 kickoff. The response was not a dashboard but an MCP tool — validating the agent-as-interface thesis." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 338 ;
+          oa:end 490
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the customer's CTO asked for \"usage visibility\" during the 2026-05-07 kickoff" ;
+          oa:prefix "## 1. Agent-as-interface is the right shape for analytics\n\n" ;
+          oa:suffix ". A traditional product would respond by building a dashboard."
+        ]
+      ] .
+
+    narr:Obs_CustomerArchitectFullLoopPattern a narr:Observation ;
+      skos:broader narr:CaseStudies ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:note "the customer's chief architect's full-loop pattern: perspective → introspect → remember → cite, distributed across all four core tools. The 'expert' archetype — captures, asks, reads, and grounds." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1900 ;
+          oa:end 2050
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**the customer's chief architect's full-loop pattern**: perspective → introspect → remember → cite, distributed across all four core tools" ;
+          oa:prefix "- " ;
+          oa:suffix ". The \"expert\" archetype — captures, asks, reads, and grounds."
+        ]
+      ] .
+
+    narr:Obs_OrioleReaderGrounderPattern a narr:Observation ;
+      skos:broader narr:CaseStudies ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:note "a collaborator's reader-grounder pattern: perspective → cite, repeatedly. Pulls captured context, grounds her work against it via citation. Zero authoring (yet)." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2060 ;
+          oa:end 2200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**a collaborator's reader-grounder pattern**: perspective → cite, repeatedly" ;
+          oa:prefix "- " ;
+          oa:suffix ". Pulls captured context, grounds her work against it via citation. Zero authoring (yet)."
+        ]
+      ] .
+
+    # ── Style Observations ─────────────────────────────────────────────────
+    narr:StyleObs_EnterpriseCustomerPilot_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:note "Antithesis used to contrast traditional product response (dashboard) with agent-interface approach throughout the document." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 490 ;
+          oa:end 620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "A traditional product would respond by building a dashboard" ;
+          oa:prefix "during the 2026-05-07 kickoff. " ;
+          oa:suffix ". The path actually being implemented"
+        ]
+      ] .
+
+    narr:StyleObs_EnterpriseCustomerPilot_BoldFraming a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:note "Bold text used as rhetorical anchors for key claims: 'aswritten tells you what you don't know yet.' and 'Memory commits take 3 to 5 minutes'. Signals conviction peaks within analytical prose." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1750 ;
+          oa:end 1820
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**aswritten tells you what you don't know yet.**" ;
+          oa:prefix "The framing is: " ;
+          oa:suffix " It's not a passive knowledge store"
+        ]
+      ] .
+
+    # ── Style Metrics ──────────────────────────────────────────────────────
+    narr:Metrics_EnterpriseCustomerPilotReveals_20260516 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_EnterpriseCustomerPilotReveals_20260516 ;
+      skos:note "Analytical memo register with embedded blockquoted verbatim examples and bold rhetorical anchors. Antithesis-heavy structure (dashboard vs. agent interface, passive store vs. active surface, full-loop vs. reader-grounder). Active voice dominant in editorial prose. Jargon density moderate — product terms (MCP, introspect, Outseta, Datomic, task-240, p95) used without definition, implying internal audience. Sentence length varies between short punchy declaratives at conviction peaks and longer analytical sentences in friction sections." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.10"^^xsd:decimal .
+
+  }
+}

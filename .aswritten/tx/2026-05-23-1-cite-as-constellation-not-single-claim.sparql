@@ -1,0 +1,260 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260523T000000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-23T00:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-05-23-cite-constellation-citations.md" ;
+    narr:originRef "worktree-scarlet+cite-constellation-citations" ;
+    dct:title "Cite tool: citations are constellations, not single claims" ;
+    prov:generated
+      
+      narr:Actor_Scarlet_Dame,
+      narr:Narrative_CiteConstellationModel,
+      narr:Narrative_CiteDeduplicationInvariant,
+      narr:Claim_SingleClaimFrameReductionist,
+      narr:Claim_CitationsAreConstellations,
+      narr:Claim_PrimaryUniquenessInvariant,
+      narr:Claim_RelatedArraysMustDiffer,
+      narr:Claim_NewSchemaAddsPrimaryRelatedNarrative,
+      narr:Obs_ScarletQuote_SameClaim,
+      narr:Obs_ScarletQuote_Reductionist,
+      narr:Obs_ScarletQuote_Constellation,
+      narr:Obs_ScarletQuote_PrimaryUnique,
+      narr:StyleObs_DirectQuoteRegister,
+      narr:StyleObs_Antithesis_ConstellationVsSingle,
+      narr:StyleObs_JargonPolicy,
+      narr:StyleObs_BoldHeadingStructure,
+      narr:StyleMetrics_CiteConstellationReview .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260523T000000Z {
+
+    # ── Actor ───────────────────────────────────────────────────────────────
+    narr:Actor_Scarlet_Dame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Reviewer and product lead who diagnosed the cite tool's deduplication and single-claim-frame bugs during the 2026-05-23 landing page comp review." .
+
+    # ── Narratives ──────────────────────────────────────────────────────────
+
+    narr:Narrative_CiteConstellationModel a narr:Narrative ;
+
+      narr:theme "Citations are constellations, not single claims" ;
+      skos:broader narr:CoreNarratives ;
+      skos:note "The cite tool should return a primary source plus a ranked set of related sources (each annotated with a relevance type and a why sentence) rather than a single matched claim. The journalistic narrative paragraph weaves the constellation. This reframes the matching question from 'what is THE claim' to 'what claims, narratives, and historical changes BEAR ON this text'." .
+
+    narr:Narrative_CiteDeduplicationInvariant a narr:Narrative ;
+
+      narr:theme "Deduplication invariant: unique_citations ≤ supported; no two citations share a primary" ;
+      skos:broader narr:CoreNarratives ;
+      skos:note "When the same primary source supports multiple text points, those points share ONE citation entry. Primary sources are globally unique within a single response. Inline footnote markers may repeat; citation entries do not duplicate. Two citations whose related[] arrays are identical signal flat copies, not distinct constellations." .
+
+    # ── Claims ──────────────────────────────────────────────────────────────
+
+    narr:Claim_SingleClaimFrameReductionist a narr:Claim ;
+      narr:aboutNode narr:Narrative_CiteConstellationModel ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_CiteConstellationModel ;
+
+      skos:note "The current cite prompt asks 'what is THE claim that supports this text' — a single-match, reductionist frame that produces thin, wooden citations. The right question is 'what claims, narratives, and historical changes in the graph BEAR ON this text'." .
+
+    narr:Claim_CitationsAreConstellations a narr:Claim ;
+      narr:aboutNode narr:Narrative_CiteConstellationModel ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_CiteConstellationModel ;
+
+      skos:note "A citation that surfaces the constellation — primary plus related plus what-changed-over-time — preserves the structure the ontology was built to hold. The product's differentiator is showing the lineage of how the organization thinks, not just retrieving facts." .
+
+    narr:Claim_PrimaryUniquenessInvariant a narr:Claim ;
+      narr:aboutNode narr:Narrative_CiteDeduplicationInvariant ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_CiteDeduplicationInvariant ;
+
+      skos:note "Primary sources are globally unique within a single response. The deduplication invariant: unique_citations ≤ supported, where two citations never share a primary. Inline footnote markers ([^1]) may repeat across text; citation entries do not duplicate." .
+
+    narr:Claim_RelatedArraysMustDiffer a narr:Claim ;
+      narr:aboutNode narr:Narrative_CiteDeduplicationInvariant ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_CiteDeduplicationInvariant ;
+
+      skos:note "A related source can legitimately appear in multiple constellations under different relevance tags. What is NOT acceptable is two citations whose related[] arrays are identical — that signals flat copies, not distinct constellations." .
+
+    narr:Claim_NewSchemaAddsPrimaryRelatedNarrative a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+
+
+      skos:note "Consumers of aswritten_cite should expect: each citation entry carries a primary source object, a related[] array with relevance tags, and a narrative paragraph rendered directly as the footnote body. The narrative embeds the primary's verbatim quote as an inline blockquote. Plan: merge to dev and test against multiple models." .
+
+    narr:Obs_ScarletQuote_SameClaim a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet's direct diagnosis of the deduplication problem." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1452 ;
+        oa:end 1510
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "we don't want to cite the same claim for the same piece of text." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\""
+      ] .
+
+    narr:Obs_ScarletQuote_Reductionist a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet's diagnosis of the single-claim reductionist frame in the cite prompt." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1720 ;
+        oa:end 1870
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "It's trying to find 'one claim to cite', and actually it should be returning all of the claims that bear on that particular thing" ;
+        oa:prefix "> \"" ;
+        oa:suffix ", or a ranked list"
+      ] .
+
+    narr:Obs_ScarletQuote_Constellation a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet articulates the constellation frame: richer citations from the interaction between many claims and narratives." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1880 ;
+        oa:end 2030
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "we're not just talking about one claim. We're actually talking about the interaction between quite a number of claims and narratives" ;
+        oa:prefix "> \"I think we'll get much richer citations that way, because " ;
+        oa:suffix " and things that have changed"
+      ] .
+
+    narr:Obs_ScarletQuote_PrimaryUnique a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet's refinement: primary must be unique within a single return, but constellations can have intersecting related sets." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2080 ;
+        oa:end 2190
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "primary shouldn't be the same across a single return, but the constellation can have intersecting related sets (that should never be identical)" ;
+        oa:prefix "> \"" ;
+        oa:suffix "\""
+      ] .
+
+    # ── Style Observations ──────────────────────────────────────────────────
+
+    narr:StyleObs_DirectQuoteRegister a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+
+      skos:note "Scarlet's diagnosis is rendered as verbatim block-quoted speech, creating a direct, first-person register that contrasts with the analytical prose surrounding it. The document shifts register deliberately between analysis and testimony." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1452 ;
+          oa:end 1510
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "we don't want to cite the same claim for the same piece of text." ;
+          oa:prefix "> \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:StyleObs_Antithesis_ConstellationVsSingle a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      skos:note "The document's central rhetorical move is antithesis: 'citations are constellations, not single claims' — a binary opposition that structures the entire argument. The title itself encodes the antithesis." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 7 ;
+          oa:end 60
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "citations are constellations, not single claims" ;
+          oa:prefix "Cite tool: " ;
+          oa:suffix "\n\nWhile iterating"
+        ]
+      ] .
+
+    narr:StyleObs_JargonPolicy a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+
+      skos:note "The document uses controlled technical jargon (constellation, primary, related[], relevance tags, verbatim policy, deduplication invariant) consistently and defines each term on first use. Jargon is domain-specific and not gratuitous." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2220 ;
+          oa:end 2380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "extends | supersedes | superseded-by | adjacent | contradicts | validates" ;
+          oa:prefix "relevance type (" ;
+          oa:suffix ") and a one-to-two-sentence"
+        ]
+      ] .
+
+    narr:StyleObs_BoldHeadingStructure a narr:StyleObservation ;
+      skos:broader narr:GrammarSyntax ;
+
+      skos:note "The 'Two interlocking insights' section uses bold numbered labels (**1. Deduplication.** **2. Citations are constellations...**) as inline section headers within a prose block — a hybrid structure that signals parallel structure without full H3 headings." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2200 ;
+          oa:end 2240
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**1. Deduplication.**" ;
+          oa:prefix "\n\n" ;
+          oa:suffix " When the same primary"
+        ]
+      ] .
+
+    # ── Style Metrics ───────────────────────────────────────────────────────
+
+    narr:StyleMetrics_CiteConstellationReview a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 28 ;
+      narr:ActiveVoiceRatio "0.72"^^xsd:decimal ;
+      narr:JargonDensity "0.09"^^xsd:decimal ;
+      skos:note "Register: analytical-technical with deliberate register shifts into first-person testimony (block quotes). Sentences are long and complex in analytical sections; short and declarative in diagnostic sections. Jargon is controlled and domain-specific. Active voice dominates but passive constructions appear in historical/commit references." .
+
+  }
+}

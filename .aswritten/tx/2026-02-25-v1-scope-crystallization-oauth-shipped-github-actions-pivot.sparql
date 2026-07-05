@@ -1,0 +1,312 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+
+  narr:Tx_20260225T221909Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agents/aswritten.ai> ;
+    prov:wasAttributedTo   <https://n8n.aswritten.ai> ;
+    prov:generatedAtTime   "2026-02-25T22:19:09.080Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-02-25-v1-scope-crystallization-oauth-shipped-github-actions-pivot.md" ;
+    sb:originRef           "main" .
+
+# =============================================================
+# SAMPLE
+# =============================================================
+
+  narr:Sample_1 a narr:Sample ;
+    dct:title        "V1 Scope Crystallization: OAuth Shipped, GitHub Actions Pivot, Three Blockers" ;
+    narr:inputLength 8847 ;
+    .
+
+# =============================================================
+# ACTORS
+# =============================================================
+
+  narr:Actor_ScarletDame a narr:Actor ;
+    skos:prefLabel "Scarlet Dame" ;
+    skos:note      "Founder; primary decision-maker for V1 scope, architectural choices, and backlog prioritization." ;
+    .
+
+  narr:Actor_Claude a narr:Actor ;
+    skos:prefLabel "Claude" ;
+    skos:note      "AI agent; pair-programming and strategic session partner." ;
+    .
+
+  narr:Narrative_BYOKFeature a narr:Narrative ;
+    dct:source      narr:Sample_1 ;
+    narr:theme      "BYOK (Bring Your Own Key) reframed from limitation to enterprise selling point" ;
+    narr:direction  "Positive" ;
+    skos:broader    narr:PositioningThesis ;
+    .
+
+  narr:Narrative_SoakTestQuality a narr:Narrative ;
+    dct:source      narr:Sample_1 ;
+    narr:theme      "Quality validation requires sustained real-world use, not unit tests" ;
+    narr:direction  "Neutral" ;
+    skos:broader    narr:Calibration ;
+    .
+
+  narr:Claim_BYOKEnterpriseValue a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode          narr:Narrative_BYOKFeature ;
+    narr:supports           narr:PositioningThesis ;
+    skos:note "Enterprise users control spend via their own OpenRouter dashboard; shared key serves beta users." ;
+    .
+
+# =============================================================
+# OBSERVATIONS
+# =============================================================
+
+  narr:Obs_V1UXVision a narr:Observation ;
+    skos:broader narr:WhatDoesItDo ;
+    dct:source   narr:Sample_1 ;
+    skos:note    "Scarlet's articulated V1 UX: MCP endpoint + notifications; GitHub is infrastructure, not interface." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 5230 ;
+      oa:end   5480
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "The only time a user touches GitHub is to install the GitHub App. Everything else happens through MCP tools and notifications. Add memories → branches created → extraction runs → PR opened → notification sent → user reviews from their channel → confirms → merged. Solo scope with single reviewer." ;
+      oa:prefix "Scarlet articulated the target user experience:\n\n> " ;
+      oa:suffix "\n\nThis is the product surface"
+    ] ;
+    .
+
+  narr:Obs_SoakTestDefinition a narr:Observation ;
+    skos:broader narr:MeasurementPlan ;
+    dct:source   narr:Sample_1 ;
+    skos:note    "Quality definition: living-with-it testing over days/weeks, not passing unit tests." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 6350 ;
+      oa:end   6530
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "living-with-it testing — the kind of quality evaluation that takes days/weeks of actual use, not just passing tests." ;
+      oa:prefix "Scarlet described needing \"" ;
+      oa:suffix " Like the backlog prompt removal"
+    ] ;
+    .
+
+# =============================================================
+# STYLE OBSERVATIONS
+# =============================================================
+
+  narr:StyleObs_BlockquoteVoice a narr:StyleObservation ;
+    skos:broader  narr:ToneDirectPersonal ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:NarrativeAnchor ;
+    skos:note     "Founder voice injected via Markdown blockquote (>) to distinguish decision-maker speech from narrative prose. Creates authority and intimacy simultaneously." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1040 ;
+      oa:end   1060
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "> The fix was creating" ;
+      oa:prefix "blocking production.\n\n" ;
+      oa:suffix " a separate `aswritten_prod`"
+    ] ;
+    .
+
+  narr:StyleObs_BacktickTerms a narr:StyleObservation ;
+    skos:broader  narr:BrandNameStylization ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:TerminologyControl ;
+    skos:note     "Backtick code spans used for task IDs, file names, workflow names, and SQL identifiers — enforces precision and scannability in technical prose." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1330 ;
+      oa:end   1380
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "`injest-memories.yml`, `validate-sparql.yml`, and `draft-stories.yml`" ;
+      oa:prefix "The " ;
+      oa:suffix " workflows run"
+    ] ;
+    .
+
+  narr:StyleObs_BoldConviction a narr:StyleObservation ;
+    skos:broader  narr:ToneAuthoritative ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:KeyPhrases ;
+    skos:note     "Bold markdown used to mark irreversible architectural facts and pivotal decisions — signals conviction level without hedging language." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 870 ;
+      oa:end   920
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "**Datomic is single-writer**" ;
+      oa:prefix "Root cause: " ;
+      oa:suffix " — only one transactor"
+    ] ;
+    .
+
+  narr:StyleObs_EmDashCausal a narr:StyleObservation ;
+    skos:broader  narr:CadenceRhythm ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:Tagline ;
+    skos:note     "Em-dash used as a high-velocity causal connector — replaces 'because', 'therefore', 'which means'. Accelerates logical flow without subordinate clauses." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3100 ;
+      oa:end   3175
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "GitHub Actions work today." ;
+      oa:prefix "This was wrong — **" ;
+      oa:suffix "** The `injest-memories.yml`"
+    ] ;
+    .
+
+  narr:StyleObs_ArrowChainFlow a narr:StyleObservation ;
+    skos:broader  narr:ShortPunchyCadence ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:WhatDoesItDo ;
+    skos:note     "Unicode arrow (→) chains product flow steps in a single sentence — compresses multi-step process into scannable linear sequence without numbered lists." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 5310 ;
+      oa:end   5430
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "Add memories → branches created → extraction runs → PR opened → notification sent → user reviews from their channel → confirms → merged." ;
+      oa:prefix "through MCP tools and notifications. " ;
+      oa:suffix " Solo scope with single reviewer."
+    ] ;
+    .
+
+  narr:StyleObs_NotPattern a narr:StyleObservation ;
+    skos:broader  narr:Antithesis ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:WhatItsNot ;
+    skos:note     "Recurring 'X, not Y' antithesis used to sharpen scope boundaries and reframe constraints as features. High conviction signaling device." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 5480 ;
+      oa:end   5535
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "GitHub is infrastructure, not interface." ;
+      oa:prefix "This is the product surface: MCP endpoint + notifications. " ;
+      oa:suffix "\n\n## Part 3"
+    ] ;
+    .
+
+  narr:StyleObs_DeferralTable a narr:StyleObservation ;
+    skos:broader  narr:Parallelism ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:FocusSequencing ;
+    skos:note     "Markdown tables used for architectural decisions and deferred tasks — parallel structure enforces consistent reasoning format (Decision | Rationale | Reversibility)." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 7800 ;
+      oa:end   7900
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "| Decision | Rationale | Reversibility |" ;
+      oa:prefix "## Architectural Decisions Summary\n\n" ;
+      oa:suffix "\n|----------|-----------|---------------|\n"
+    ] ;
+    .
+
+  narr:StyleObs_OptimizationNotPrereq a narr:StyleObservation ;
+    skos:broader  narr:IdiolectPhrasing ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:StockPhrases ;
+    skos:note     "'Optimization, not prerequisite' is a recurring reframe idiom — repositions deferred work as additive rather than blocking. Appears multiple times as a scope-reduction rhetorical move." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3200 ;
+      oa:end   3265
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "Moving to proxy-orchestrated pipeline is an optimization, not a prerequisite." ;
+      oa:prefix "Actions work today. " ;
+      oa:suffix "\n\nThis also connects"
+    ] ;
+    .
+
+  narr:StyleObs_ImperativeTechnical a narr:StyleObservation ;
+    skos:broader  narr:SecondPerson ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:VerbChoice ;
+    skos:note     "SQL block and numbered check steps use imperative/second-person framing — direct, no hedging, assumes reader competence." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1430 ;
+      oa:end   1470
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "CREATE TABLE datomic_kvs (" ;
+      oa:prefix "```sql\n" ;
+      oa:suffix "\n  id TEXT NOT NULL,"
+    ] ;
+    .
+
+  narr:StyleObs_NumberedCheckSteps a narr:StyleObservation ;
+    skos:broader  narr:ClauseComplexity ;
+    dct:source    narr:Sample_1 ;
+    skos:related  narr:CoreWorkflows ;
+    skos:note     "Numbered lists used for sequential check logic (task-085 divergence check) — enforces procedural reading order and makes branching logic explicit." ;
+    rdf:value     true ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 5900 ;
+      oa:end   5990
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "PR #1 merges → main's manifest/graph changes" ;
+      oa:prefix "1. " ;
+      oa:suffix "\n2. For each remaining open PR"
+    ] ;
+    .
+
+# =============================================================
+# STYLE METRICS
+# =============================================================
+
+  narr:StyleMetrics_Sample1 a narr:StyleMetrics ;
+    skos:broader              narr:StyleMetrics ;
+    dct:source                narr:Sample_1 ;
+    narr:AverageSentenceLength "22"^^xsd:integer ;
+    narr:ActiveVoiceRatio      "0.82"^^xsd:decimal ;
+    narr:JargonDensity         "0.12"^^xsd:decimal ;
+    narr:Conciseness           "High — tables, arrows, and antithesis compress multi-step logic into scannable units" ;
+    skos:note "Technical register with high active voice; jargon is domain-specific (Datomic, OAuth, PKCE, MCP) and not decorative. Sentence length varies: short declarative punches alternate with longer explanatory clauses. Blockquote-framed founder speech elevates authority without distancing." ;
+    .
+
+}

@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_CallToAction> {
+  <https://aswritten.ai/narrative#Digest_CallToAction> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#CallToAction> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers how the fundraise should *land* with prospective investors — the concrete ask and the path to becoming a user. The throughline: [fundraise with a working demo](narr:Claim_FundraiseWithWorkingDemo), a video of a working product rather than a deck about a vision. For non-technical F&F readers, the [call-to-action is a Calendly link to a live demo](narr:Narrative_HowToTryItTamarackVersion) (Mar 13), since live knowledge extraction creates enough initial value and self-serve is higher friction; a collaborator's onboarding doubles as the SMB sales motion. The brief itself should carry a [How to Try It section](narr:Narrative_HowToTryItSection) (Mar 15) with demo, scheduling link, and possibly an embedded intro demo. Separately, [the Ask is unclear for both audiences](narr:Narrative_TheAskNeedsClarity) (Mar 13) — F&F needs SAFE mechanics, tax, and literal how-to-invest steps; VC/angel needs edge cases. Most recently a narrower [gift-round story for a family member](narr:Obs_GiftStoryForFamilyMember) (Mar 20) frames an initial-traction ask.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_FundraiseWithWorkingDemo> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_HowToTryItTamarackVersion> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_HowToTryItSection> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TheAskNeedsClarity> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_GiftStoryForFamilyMember> ;
+    narr:keyPhrase [ narr:text "The thing you're selling needs to work before you sell it." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FundraiseWithWorkingDemo> ] ;
+    narr:keyPhrase [ narr:text "The call-to-action for non-technical F&F investors is a Calendly link for a live demo — self-serve is too high friction" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_HowToTryItTamarackVersion> ] ;
+    narr:keyPhrase [ narr:text "if one wanted to invest/contribute, how does that happen?" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TheAskNeedsClarity> ] ;
+    narr:keyPhrase [ narr:text "This is the initial investment to get through to traction." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_GiftStoryForFamilyMember> ] ;
+    narr:keyPhrase [ narr:text "The Ask must be made concrete for both audiences — F&F needs step-by-step mechanics; VC/angel needs edge cases and scenario modeling" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TheAskNeedsClarity> ] ;
+    narr:variation [ narr:text "Calendly-mediated live demo is favored, but self-serve onboarding is acknowledged as possible — just higher friction for non-technical users." ; narr:over <https://aswritten.ai/narrative#Narrative_HowToTryItTamarackVersion> ] ;
+    narr:variation [ narr:text "The ask splits by audience: F&F needs step-by-step SAFE/tax/how-to-invest mechanics; VC/angel needs edge cases and scenario modeling — one CTA does not serve both." ; narr:over <https://aswritten.ai/narrative#Narrative_TheAskNeedsClarity> ; narr:over <https://aswritten.ai/narrative#Narrative_HowToTryItTamarackVersion> ] ;
+    narr:variation [ narr:text "The demo deliberately withholds the review flow until beta, showing only the read path (compile → annotate → introspect) — a scoped, not full-product, CTA." ; narr:over <https://aswritten.ai/narrative#Narrative_HowToTryItTamarackVersion> ] ;
+    narr:variation [ narr:text "A distinct, narrower 'gift round for a family member' ask emerges latest (Mar 20), reframing the CTA as personal seed-for-traction rather than institutional fundraise." ; narr:over <https://aswritten.ai/narrative#Obs_GiftStoryForFamilyMember> ] ;
+    narr:writer "claude (subscription)" .
+}

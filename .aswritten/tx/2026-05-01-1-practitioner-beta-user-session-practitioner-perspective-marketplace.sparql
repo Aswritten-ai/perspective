@@ -1,0 +1,464 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260430T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-30T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-04-30-a practitioner beta user-barber-practitioner-perspective-marketplace.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_PractitionerBetaUserBarber_20260430,
+      narr:Narrative_ProposalArtifactPractitioner,
+      narr:Narrative_TrustTransferMechanic,
+      narr:Narrative_PractitionerThreeRoles,
+      narr:Narrative_ReferrerGiftEconomy,
+      narr:Narrative_FirstAppointmentNotAlternative,
+      narr:Narrative_CitationEngineNotSynthesis,
+      narr:Narrative_MethodologyDensityOverContent,
+      narr:Narrative_WedgeCashPayNYC,
+      narr:Claim_PatientAsGoalHolder,
+      narr:Claim_PractitionerEarnsConvertingMethodology,
+      narr:Claim_ProposalRegulatorySafeguard,
+      narr:Claim_PTPractitionerMeetingTwoMonths,
+      narr:Claim_PractitionerBetaUserContentAvailability,
+      narr:Claim_PractitionerBetaUserMarketingPain,
+      narr:Claim_WedgeDensityFirst,
+      narr:Claim_CrossVerticalPattern,
+      narr:Claim_IntroducerGapOpen,
+      narr:Obs_ScarletVettingQuote,
+      narr:Obs_ScarletReferralQuote,
+      narr:Obs_ScarletCitationEngineQuote,
+      narr:Obs_ScarletMethodologyQuote,
+      narr:Obs_ScarletProposalQuote,
+      narr:Obs_ScarletFirstAppointmentQuote,
+      narr:StyleObs_PractitionerBetaUserBlockquoteRegister,
+      narr:StyleObs_AntithesisStructure,
+      narr:StyleObs_JargonDensityHealthcare,
+      narr:Metrics_PractitionerBetaUserBarber_20260430 .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260430T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_PractitionerBetaUserBarber_20260430 a narr:Sample ;
+      dct:title "a practitioner beta user Barber Session — Practitioner Perspective Marketplace as Application of Goal-Driven Payment (April 30, 2026)" ;
+      dct:created "2026-04-30"^^xsd:date ;
+      dct:description "a collaborator session with a practitioner beta user Barber (an early prospect's business partner, co-founding a collaborator). Conversation began on the table; a practitioner beta user recounted a PT meeting story. Session worked through applying the existing aswritten platform to a consumer-facing healthcare use case: patient-as-goal-holder payer model, trust transfer mechanic, proposal artifact, practitioner three roles, referrer gift economy, and citation engine vs. synthesis engine distinction." ;
+      narr:inputLength 14200 .
+
+    # ── NEW NARRATIVES ───────────────────────────────────────────────────────
+
+    narr:Narrative_ProposalArtifactPractitioner a narr:Narrative ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "The Proposal: What the Patient Receives from the Practitioner's AI" ;
+      skos:note "The artifact the patient receives is a proposal — not a vetting report, not a research assistant, not a treatment plan. It describes: how the practitioner approaches cases like the patient's; specific techniques and frameworks in their own words (a practitioner beta user's jenga-block model, consent on the table, on-body examination); evidence of capability (training lineage, cited methodology, handoff network); engagement logistics (visit cadence, evaluation timing, billing, handoff criteria, intake, expectations). All cited to source material the practitioner authored. Structurally accurate across verticals: lawyers write engagement letters, architects write fee proposals, financial advisors write IPS documents. Every expertise service already has a proposal artifact — currently produced ad hoc, after a paid first appointment, by the practitioner under time pressure. aswritten produces it on demand, before commitment, with full methodology surfaced through citations. Regulatory boundary: this is NOT a treatment plan. It describes engagement shape and general methodology, not specific clinical decisions." ;
+      narr:theme "The proposal artifact — produced on demand before commitment, citing the practitioner's own methodology — is the lock-in framing for the consumer healthcare use case" .
+
+    narr:Narrative_TrustTransferMechanic a narr:Narrative ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:broader narr:ValueExchange ;
+      skos:prefLabel "Trust Transfer Mechanic: The Structural Insight Holding the Design Together" ;
+      skos:note "a practitioner beta user→patient trust already exists. a practitioner beta user→PT trust already exists. Patient→PT trust does not exist yet — that is what the vet manufactures cheaply because the other two trust edges are already there. The platform's job is not to break the trust transfer while adding targeted analytical value (the proposal) on top of it. This is why the a practitioner beta user-introduced case is the launch flow, not just one of three flows of equal weight. The trust math is fundamentally different in introducer-mediated vs. cold-patient cases. Cold patient (Psychology Today shortlist): zero pre-existing trust; vet must do everything — establish legitimacy, methodology fit, fit for specific case. Introducer-mediated (a practitioner beta user case): strong pre-existing trust through the referrer; vet only has to verify fit for the specific case, not legitimacy. Even a moderately good vet feels like clear value because most of the trust work was already done." ;
+      narr:theme "Introducer-mediated trust transfer makes the vet cheap to produce — the two existing trust edges (a practitioner beta user→patient, a practitioner beta user→PT) mean the vet only needs to verify fit, not establish legitimacy" .
+
+    narr:Narrative_PractitionerThreeRoles a narr:Narrative ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:broader narr:RoleTopology ;
+      skos:prefLabel "The Practitioner's Three Roles in the System" ;
+      skos:note "Same human, same account, three different transaction shapes: (1) Practitioner as supplier of perspective — earns content-licensing payments / patient consultation fees; cash relationship. (2) Practitioner as professional networker — uses other practitioners' perspectives to vet referral partners; subscription/feature relationship. (3) Practitioner as trust-broker for their patients — routes patients via aswritten without taking a cut; gift-economy relationship. The product's tier design has to account for the practitioner moving fluidly between all three. Most marketplace platforms put participants in one role; here the practitioner is simultaneously supplier, customer, and unpaid trust node, depending on which transaction is active." ;
+      narr:theme "The practitioner is simultaneously supplier, customer, and unpaid trust node — three transaction shapes from one account, requiring tier design that accommodates fluid role-switching" .
+
+    narr:Narrative_ReferrerGiftEconomy a narr:Narrative ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:broader narr:ValueExchange ;
+      skos:prefLabel "Trusted Referrers Stay in the Gift Economy — No Money in the Loop" ;
+      skos:note "The most argued point in the session. Initial framing (referrer takes a cut of the patient's vet fee) was rejected because money in the loop degrades the trust capital that makes the referral valuable in the first place. Final framing: the referrer's incentive is reach and distribution of their own perspective, not a cash cut. They route patients through aswritten, the patient gets vetting without imposing on the referrer's time, and the referrer's perspective rides along as the trust signal in the introduction. Anti-fee-splitting in NY healthcare is also a constraint, but the trust math is the primary reason. Open question: whether there is a stronger positive incentive for the introducer beyond reach — candidates include perspective sharpening through network effect, referral network expansion without scheduling cost, meta-contract for own practice becoming citable. None tested with a practitioner beta user." ;
+      narr:theme "Money in the referral loop degrades the trust capital that makes the referral valuable — the introducer's incentive is reach and perspective distribution, not a cash cut" .
+
+    narr:Narrative_FirstAppointmentNotAlternative a narr:Narrative ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "The First Appointment Is Not the Alternative — It's a Category Change" ;
+      skos:note "The patient's [amount]-100 isn't competing with the [amount]first appointment. The first appointment is real: scheduling, intake, surface impressions, bedside manner. But the actual test of whether the practitioner is right for the patient happens over weeks or months of treatment, and there is no current way to see the shape of that arc in advance. The proposal describes that arc. The willingness-to-pay anchors against the cost of the wrong months-long engagement, not against the first-appointment fee. That's a much higher ceiling. The first appointment doesn't necessarily do what aswritten can either — that can be a shallow first contact. The perspective can understand how care would look over a much longer timeline that you might actually need to go to many treatments to understand." ;
+      narr:theme "The patient's vet fee competes with the cost of the wrong months-long engagement, not the first appointment — a category change, not a price comparison" .
+
+    narr:Narrative_CitationEngineNotSynthesis a narr:Narrative ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:broader narr:Differentiators ;
+      skos:prefLabel "Citation Engine, Not Synthesis Engine: The Core Moat Over Generic AI" ;
+      skos:note "A correction Scarlet made mid-session: aswritten does not tell you a practitioner takes a trauma-informed approach — that's a worthless statement. aswritten creates memories that contain specific and deep methodology, worldview, process. aswritten cites these specific points in any synthesis, so instead of 'trauma informed' (a bullshit non-meaning statement you'd find on Psychology Today) you get that a practitioner beta user trained under this person, that he collaborates with PTs in this case and here's what he said about the handoff criteria for this specific condition in this podcast. This is the moat over normal AI which collapses content into platitude — aswritten cites. Generic LLMs collapse practitioner content into platitudes because they're optimized for fluency and the source material has been smoothed away. aswritten preserves specificity through citation — expanding from sources to citations rather than compressing sources to summary." ;
+      narr:theme "aswritten is a citation engine, not a synthesis engine — it expands from sources to citations rather than compressing sources to summary, preserving specificity that generic AI collapses into platitude" .
+
+    narr:Narrative_MethodologyDensityOverContent a narr:Narrative ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Methodology Density Over Content Density: The High-Value Practitioner Case" ;
+      skos:note "The requirement for a perspective is actually methodology and protocol, not marketing content. The most aswritten-suitable practitioners aren't the most-marketed ones. They're the ones with the most protocolized, specific, verifiable thinking — regardless of whether any of it has been packaged for public consumption. The content-rich case (an engineering manager at the customer, a practitioner beta user with podcasts and books) is the visible starter. The high-value case is the methodology-rich-but-marketing-poor practitioner — the group a practitioner beta user flagged as 'many great practitioners.' Voice memos describing handoff criteria, internal protocols, and case rationale are higher-signal inputs than podcasts. The supply-side pitch should lead with: 'send us your protocols, training notes, case rationale, voice memos about how you actually think' — not 'send us your podcasts and blog posts.'" ;
+      narr:theme "Methodology and protocol density is the real requirement for a perspective — the high-value case is the methodology-rich-but-marketing-poor practitioner, not the most-marketed one" .
+
+    narr:Narrative_WedgeCashPayNYC a narr:Narrative ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:broader narr:Segmentation ;
+      skos:prefLabel "Wedge: Cash-Pay Alternative Care, NYC, Density First" ;
+      skos:note "Cash-pay alternative care, NYC. Pelvic floor, pain, somatic, integrative. Practitioners with podcast/book content density and methodology richness. Two warm beachheads: an early prospect and a practitioner beta user Barber, opening a collaborator together, with a referral network across PT, acupuncture, and concierge medicine on the Upper West Side. Density first, geography second. Per the existing density-over-count launch principle, the goal is 50 active practitioners in one referral neighborhood, not 50 scattered practitioners across cities. The Tony distribution claim ('20-50 people, word of mouth catapults it') is the operating thesis." ;
+      narr:theme "Cash-pay alternative care NYC is the wedge: density-first in one referral neighborhood, with an early prospect and a practitioner beta user Barber as warm beachheads" .
+
+    # ── NEW CLAIMS ───────────────────────────────────────────────────────────
+
+    narr:Claim_PatientAsGoalHolder a narr:Claim ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Patient pays per consultation with the practitioner's AI, or subscribes for a profile that compounds across consults and verticals. [amount]-100 range per vet was the working number. The patient is the goal-holder for this transaction (their goal: a vetting outcome / a proposal they can act on). Per the existing perspective's goal-driven payment model: whoever holds the goal pays for goal completion. This session's design extends Claim_CPCDissolvesSaleGap with a second payer side — patient-as-goal-holder — rather than superseding it. Both modes coexist: practitioner pays per click on their booking page when they deploy their AI for inbound discovery; patient pays per vet when they consult against an existing perspective. Same instrument, parameterized by who holds the goal." ;
+      narr:aboutNode narr:Narrative_CPCOnGoalURL ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Claim_CPCDissolvesSaleGap .
+
+    narr:Claim_PractitionerEarnsConvertingMethodology a narr:Claim ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Practitioner earns by converting unstructured methodology into a reusable, citable AI of themselves with a paying patient already attached. Practitioner sets the rate. Higher tiers add observation and escalation: their AI handles initial conversations, they step in when grounding runs out (the existing perspective-grounded escalation principle, applied to consumer surface). The practitioner's economic argument isn't a one-time content licensing fee — they're buying an AI of themselves that gets deployed across multiple workflows. One asset, many surfaces. One production process, one perspective, one ongoing rev share." ;
+      narr:aboutNode narr:Narrative_PractitionerThreeRoles ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ScarceExpertFilterGoalGated .
+
+    narr:Claim_ProposalRegulatorySafeguard a narr:Claim ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "The boundary that keeps the proposal on the right side of regulatory edges: this is not a treatment plan. It describes the shape of the engagement and the practitioner's general methodology for cases like this — not specific clinical decisions for this patient. The escalation principle handles the boundary at runtime: when a patient asks for case-specific clinical decisions, the AI escalates rather than confabulates ('I can tell you how a practitioner beta user thinks about cases like this in general, but for your specific situation he'd need to see you'). This is the same escalation pattern already settled in the perspective." ;
+      narr:aboutNode narr:Narrative_ProposalArtifactPractitioner ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:GovernanceSafetyTrust .
+
+    narr:Claim_PTPractitionerMeetingTwoMonths a narr:Claim ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "a practitioner beta user described a meeting he had recently scheduled with a PT to discuss each other's methodology. The meeting took two months to schedule and they were connected by a mutually respected practitioner. Two opportunities: (1) if the PT could have talked to an AI with a practitioner beta user's perspective beforehand, it would have done initial vetting and created better questions; (2) for follow-up, when a specific question comes up in five hours or five weeks, they could text a perspective with aswritten in front of it and get a deep answer without waiting. This was the entry point for the session." ;
+      narr:aboutNode narr:Narrative_TrustTransferMechanic ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ExhaustedExpertTrigger .
+
+    narr:Claim_PractitionerBetaUserContentAvailability a narr:Claim ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "a practitioner beta user immediately said that many podcasts exist plus the forthcoming book and marketing/blog content. Important caveat in his own words: many of the podcasts don't contain direct statements about his own practice — he talks about the framing of how to evaluate a good practitioner in the pelvic floor space and it's implied that he's doing those things, but it's not directly 'I do those things in these ways.' Scarlet's reaction: there's an opportunity to take unstructured content that wasn't intended as marketing or coherent copy and condense it into a perspective that can then be interrogated at full depth. This connects directly to the existing 'interview is the manufacturing process' framing and the Knowledge Packager archetype." ;
+      narr:aboutNode narr:Archetype_KnowledgePackager ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_TranscriptBootstrappingUnderplayed .
+
+    narr:Claim_PractitionerBetaUserMarketingPain a narr:Claim ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "a practitioner beta user separately lamented that his marketing website is a constant source of frustration and needs work. The session connected this to the perspective-as-evaluation thesis: a perspective becomes a way to evaluate whether the current marketing content matches the methodology, and perspective shifts can drive content updates that match. This is adjacent to but more concrete than the older content-driven-by-perspective framing in the perspective." ;
+      narr:aboutNode narr:Narrative_MatchingSearchReframe ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_TwoSidedLegibilityProblem .
+
+    narr:Claim_WedgeDensityFirst a narr:Claim ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Density first, geography second. The goal is 50 active practitioners in one referral neighborhood, not 50 scattered practitioners across cities. an early prospect and a practitioner beta user Barber opening a collaborator together, with a referral network across PT, acupuncture, and concierge medicine on the Upper West Side, are the two warm beachheads. The Tony distribution claim ('20-50 people, word of mouth catapults it') is the operating thesis." ;
+      narr:aboutNode narr:Narrative_WedgeCashPayNYC ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      .
+
+    narr:Claim_CrossVerticalPattern a narr:Claim ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "The shape of the problem is identical across expertise services: the buyer can't evaluate the seller's fit for their specific need without an expensive synchronous interaction (a consult), and the seller can't profitably do that interaction at the top of the funnel because it's unpaid speculative labor. Architects, lawyers, therapists, financial advisors, designers, executive coaches, college consultants. The pattern: high-context expertise, low-cost-to-produce-perspective, high-cost-to-vet-via-conversation, asymmetric information. But each vertical adds compliance overhead non-additively — therapy has crisis-state synthesis-quality risk, legal has UPL exposure, financial has fiduciary regulatory weight. Launch healthcare cash-pay first (cleanest regulatory). Defer therapy, insurance-billed care, and legal until the model is proven." ;
+      narr:aboutNode narr:Narrative_ScarceExpertFilterGoalGated ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_CategoryCuratedExpertiseInstallation .
+
+    narr:Claim_IntroducerGapOpen a narr:Claim ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Settled: the introducer doesn't get money, money would degrade the trust capital, and the introducer benefits via reach/distribution and the negative incentive of avoiding unpaid vetting labor at scale. What's still open: whether there's a stronger positive incentive for the introducer beyond reach. Possible candidates: their own perspective gets sharper through the network effect, their referral network expands without scheduling cost, their meta-contract for their own practice becomes citable in turn. None of these were tested with a practitioner beta user. Worth flagging for the next conversation with him or an engineering manager at the customer." ;
+      narr:aboutNode narr:Narrative_ReferrerGiftEconomy ;
+      narr:hasConvictionLevel narr:Conviction_Notion .
+
+    # ── OBSERVATIONS (grounded quotes) ──────────────────────────────────────
+
+    narr:Obs_ScarletVettingQuote a narr:Observation ;
+      skos:broader narr:ValueExchange ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Scarlet's articulation of why patient-pays-per-vet is genuinely additive — the founding evidence for the patient-as-goal-holder claim." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PractitionerBetaUserBarber_20260430 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3820 ;
+          oa:end 4050
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "That a client can encounter and vet the full depth of a practitioner's perspective" ;
+          oa:prefix "What is that here? " ;
+          oa:suffix " and approach to their targeted issue without having to schedule a consult"
+        ]
+      ] .
+
+    narr:Obs_ScarletReferralQuote a narr:Observation ;
+      skos:broader narr:ValueExchange ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Scarlet's articulation of the gift-economy referral mechanic — the founding evidence for the referrer-stays-in-gift-economy claim." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PractitionerBetaUserBarber_20260430 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6180 ;
+          oa:end 6340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "He's happy to refer me, but doesn't have time to vet for me." ;
+          oa:prefix "Scarlet's articulation: \"" ;
+          oa:suffix " I'm happy to pay for the vetting."
+        ]
+      ] .
+
+    narr:Obs_ScarletCitationEngineQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Scarlet's verbatim correction establishing aswritten as citation engine not synthesis engine — the founding evidence for Narrative_CitationEngineNotSynthesis." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PractitionerBetaUserBarber_20260430 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 10420 ;
+          oa:end 10620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Aswritten does not tell you a practitioner takes a trauma informed approach" ;
+          oa:prefix "A correction Scarlet made mid-session: \"" ;
+          oa:suffix " — that's a worthless statement."
+        ]
+      ] .
+
+    narr:Obs_ScarletMethodologyQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Scarlet's verbatim correction establishing methodology density as the real requirement — the founding evidence for Narrative_MethodologyDensityOverContent." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PractitionerBetaUserBarber_20260430 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 11080 ;
+          oa:end 11180
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The requirement for a perspective is actually methodology and protocol, not marketing content." ;
+          oa:prefix "A related correction: \"" ;
+          oa:suffix "\"\n\nImplication:"
+        ]
+      ] .
+
+    narr:Obs_ScarletProposalQuote a narr:Observation ;
+      skos:broader narr:SolutionArchetypes ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Scarlet's articulation of the proposal as meta-contract — the founding evidence for the proposal-artifact framing." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PractitionerBetaUserBarber_20260430 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 8140 ;
+          oa:end 8290
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The meta contract is really a proposal, like we might pitch a enterprise company" ;
+          oa:prefix "Scarlet's articulation: \"" ;
+          oa:suffix " on aswritten, but written for a specific patient by a specific practitioner."
+        ]
+      ] .
+
+    narr:Obs_ScarletFirstAppointmentQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Scarlet's articulation of the category change vs. price comparison — the founding evidence for Narrative_FirstAppointmentNotAlternative." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PractitionerBetaUserBarber_20260430 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 9380 ;
+          oa:end 9580
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The 150-400 first appointment doesn't necessarily do what we can either" ;
+          oa:prefix "Scarlet's articulation: \"" ;
+          oa:suffix " — that can be a shallow first contact."
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────────────
+
+    narr:StyleObs_PractitionerBetaUserBlockquoteRegister a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Scarlet's in-session blockquotes are run-on, stream-of-consciousness, first-person. Contrasts with the analytical editorial prose in section headers. The blockquote register is lower-formality and filler-heavy ('sort of', 'you know'), consistent with voice-memo transcription style observed across other sessions." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PractitionerBetaUserBarber_20260430 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 2050
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Although they can obviously have this type of meeting and explain methodology face to face" ;
+          oa:prefix "> \"" ;
+          oa:suffix ", there are two opportunities here:"
+        ]
+      ] .
+
+    narr:StyleObs_AntithesisStructure a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Heavy antithesis structure throughout: cold patient vs. introducer-mediated, citation engine vs. synthesis engine, treatment plan vs. proposal, first appointment vs. vet, methodology density vs. content density, money in loop vs. gift economy. Consistent with the Scarlet idiolect pattern observed across all sessions." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PractitionerBetaUserBarber_20260430 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6680 ;
+          oa:end 6880
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Cold patient (Psychology Today shortlist): zero pre-existing trust" ;
+          oa:prefix "The trust math is fundamentally different in introducer-mediated vs. cold-patient cases:\n- " ;
+          oa:suffix ". Vet has to do everything"
+        ]
+      ] .
+
+    narr:StyleObs_JargonDensityHealthcare a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:note "Healthcare-specific jargon (pelvic floor, HIPAA, intake, handoff criteria, referring physician, concierge medicine, IPS documents) used without definition, implying internal audience. Product jargon (CPC, goal URL, perspective, escalation, Front) also used without definition. Jargon density moderate-high for a session memo. Consistent with the pattern of internal-audience memos across the perspective." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PractitionerBetaUserBarber_20260430 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 8680 ;
+          oa:end 8820
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "visit cadence, evaluation timing, billing, handoff criteria, what intake produces" ;
+          oa:prefix "Engagement logistics: " ;
+          oa:suffix ", what they expect of the patient"
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────────────────
+
+    narr:Metrics_PractitionerBetaUserBarber_20260430 a narr:StyleMetrics ;
+      dct:source narr:Sample_PractitionerBetaUserBarber_20260430 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo with embedded verbatim blockquotes from Scarlet. Mixed register: structured markdown with H2 section headers (memo genre) vs. conversational first-person in blockquoted speech. Active voice dominant in editorial prose; blockquoted speech is run-on and filler-heavy. Antithesis-heavy structure (cold patient vs. introducer-mediated, citation engine vs. synthesis engine, treatment plan vs. proposal, methodology density vs. content density). Jargon density moderate-high — healthcare terms (pelvic floor, HIPAA, handoff criteria, concierge medicine) and product terms (CPC, goal URL, perspective, escalation) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier. Consistent with the Scarlet session-memo idiolect across the perspective." ;
+      narr:AverageSentenceLength "19"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.12"^^xsd:decimal .
+
+  }
+} ;
+
+# ── UPDATE 1: Extend Claim_CPCDissolvesSaleGap with patient-payer note ───────
+DELETE {
+  GRAPH ?g {
+    narr:Claim_CPCDissolvesSaleGap skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260430T120000Z {
+    narr:Claim_CPCDissolvesSaleGap skos:note "CPC-on-goal-URL removes the upfront purchase decision that caused an engineering manager at the customer, the customer's chief architect, a collaborator, and a founder beta user to see value but not pay. Perspective-on-spec is the sales pitch itself; first payment arrives with first forward. This directly resolves the activation gap identified in Claim_UnderstandingNotEqualSale. Extended by a practitioner beta user Barber session (2026-04-30): the goal-driven payment primitive generalizes to multi-goal/multi-payer. Patient-as-goal-holder is a second payer mode — patient pays per vet when they consult against an existing perspective. Both modes coexist on the same platform: practitioner pays per click on their booking page for inbound discovery; patient pays per vet for outbound consultation. Same instrument, parameterized by who holds the goal." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_CPCDissolvesSaleGap skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE 2: Extend Narrative_MatchingSearchReframe with a practitioner beta user evidence ────
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_MatchingSearchReframe skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260430T120000Z {
+    narr:Narrative_MatchingSearchReframe skos:note "Scarlet reframed the product category: perspectives are an incredibly powerful search tool for a matching problem currently done very poorly — matching individuals to appropriate healthcare providers. Psychology Today is the negative example: property-based matching (specialties, modalities) that says nothing about how a practitioner actually thinks or what integrative care means to them. The reframe extends past alternative healthcare to therapists, psychiatrists, and traditional medicine. This does not replace the 'install expertise' mechanism — matching-search is what makes installation valuable when deployed externally. Extended by a practitioner beta user Barber session (2026-04-30): the practitioner marketplace use case concretizes this reframe — a practitioner beta user's PT meeting (two months to schedule) is the canonical example of the matching problem aswritten solves. The proposal artifact is the mechanism that resolves both patient illegibility and practitioner flattening simultaneously." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_MatchingSearchReframe skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE 3: Extend Narrative_TwoSidedLegibilityProblem with proposal resolution
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_TwoSidedLegibilityProblem skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260430T120000Z {
+    narr:Narrative_TwoSidedLegibilityProblem skos:note "an early prospect's advertising problem (positioning around pain, two pieces of expertise, but a perspective behind that) is the inverse of Scarlet's patient problem (can't parse the medical system, can't tell which credentials are meaningful, can't find referrals). Patient-side illegibility and practitioner-side flattening are the same problem from opposite ends. aswritten makes the practitioner's perspective legible without forcing them to flatten. Extended by a practitioner beta user Barber session (2026-04-30): the proposal artifact is the concrete resolution mechanism — it describes the shape of the engagement and the practitioner's general methodology for cases like the patient's, without forcing the practitioner to flatten their methodology into marketing copy. The trust transfer mechanic (a practitioner beta user→patient trust already exists; a practitioner beta user→PT trust already exists; patient→PT trust is what the vet manufactures cheaply) is the structural insight that makes this resolution cheap to produce." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_TwoSidedLegibilityProblem skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE 4: Extend Narrative_CompiledPerspectiveSourcePrivacy with healthcare application
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_CompiledPerspectiveSourcePrivacy skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260430T120000Z {
+    narr:Narrative_CompiledPerspectiveSourcePrivacy skos:note "The CTO's primary excitement was the ability to curate architectural knowledge abstracted from the codebase, allowing customer solution architects and partner AIs to query the knowledge base without accessing source code. This validates the compiled perspective / source privacy model as a core value proposition. Extended by a practitioner beta user Barber session (2026-04-30): the same mechanism applies to expertise services. Treatment cadence reasoning lives in clinical notes. Billing structure lives in operational documents. Handoff criteria live in supervisor letters. Visit pacing lives in case rationale notes. Methodology specificity (a practitioner beta user's jenga-block model) lives in the practitioner's head and unstructured material. None of this is on the practitioner's marketing site, and they don't want it to be. But the ideas in it are exactly what the patient needs to evaluate fit. aswritten ingests source-private content and cites the ideas without exposing the sources — the same mechanism that made the the enterprise customer CTO excited, applied to expertise services." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_CompiledPerspectiveSourcePrivacy skos:note ?oldNote .
+  }
+} ;
+
+# ── UPDATE 5: Extend Actor_PractitionerBetaUserBarber with session detail ─────────────────
+DELETE {
+  GRAPH ?g {
+    narr:Actor_PractitionerBetaUserBarber skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260430T120000Z {
+    narr:Actor_PractitionerBetaUserBarber skos:note "an early prospect's business partner at a collaborator. Expertise in pelvic floor care. Co-authoring a forthcoming book (May 21, 2026) explaining their methodology to other practitioners and patients. Has substantial podcast content but notes that many podcasts don't contain direct statements about his own practice — he talks about framing how to evaluate a good practitioner in the pelvic floor space, and it's implied he's doing those things but not directly stated. Marketing website is a constant source of frustration. Canonical Knowledge Packager archetype example alongside an early prospect. Session on April 30, 2026 (acupuncture table conversation with Scarlet) generated the practitioner marketplace design: patient-as-goal-holder payer model, trust transfer mechanic, proposal artifact, practitioner three roles, referrer gift economy. Warm beachhead for the cash-pay alternative care NYC wedge alongside an early prospect." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Actor_PractitionerBetaUserBarber skos:note ?oldNote .
+  }
+} 

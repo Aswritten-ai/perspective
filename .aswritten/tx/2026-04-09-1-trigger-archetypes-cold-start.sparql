@@ -1,0 +1,103 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260408T143000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-08T14:30:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-08-design-session-1.md" ;
+    narr:originRef "research/goal-directed-agents" ;
+    prov:generated narr:Sample_DesignSession_20260408, narr:Narrative_ExhaustedExpertTrigger, narr:Claim_Trigger3ExhaustedExpert, narr:Claim_BidirectionalCostMechanism, narr:Actor_Scarlet_AW, narr:Observation_BreadBakingGifter, narr:StyleObservation_CasualArchetypeVoice, narr:StyleObservation_OneLinerRhetoric, narr:StyleObservation_StructuralAnalogy, narr:StyleMetrics_DesignSession_20260408 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260408T143000Z {
+    narr:Sample_DesignSession_20260408 a narr:Sample ;
+      dct:title "The trigger, the mechanism, the archetypes, and the warm cold start" ;
+      narr:inputLength 6450 .
+
+    narr:Narrative_ExhaustedExpertTrigger a narr:Narrative ;
+      dct:source narr:Sample_DesignSession_20260408 ;
+      narr:theme "The Exhausted-Expert Purchase Trigger" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "A third purchase trigger based on social-cost pain (exhaustion from repeating oneself) rather than work-productivity pain." .
+
+    narr:Claim_Trigger3ExhaustedExpert a narr:Claim ;
+      narr:aboutNode narr:Narrative_ExhaustedExpertTrigger ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:PositioningThesis ;
+      dct:source narr:Sample_DesignSession_20260408 ;
+      skos:note "Trigger 3: 'I don't want to be their only option for this anymore.' Closes the activation gap by addressing social pain." .
+
+    narr:Claim_BidirectionalCostMechanism a narr:Claim ;
+      narr:aboutNode narr:ValueExchange ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_DesignSession_20260408 ;
+      skos:note "The trigger fires when bidirectional cost (social currency for asker, attention for expert) blocks interaction entirely." .
+
+    narr:Actor_Scarlet_AW a narr:Actor ;
+      skos:prefLabel "Scarlet" ;
+      skos:note "Designer and 'first exhausted expert' for aswritten." .
+
+    narr:Observation_BreadBakingGifter a narr:Observation ;
+      skos:broader narr:ExampleStoryboard ;
+      dct:source narr:Sample_DesignSession_20260408 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1010 ;
+        oa:end 1220
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "my friend just asked me about bread baking, call me and we'll talk it through and then text them and now they have my perspective" ;
+        oa:prefix "something like " ;
+        oa:suffix "\""
+      ] .
+
+    narr:StyleObservation_CasualArchetypeVoice a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_DesignSession_20260408 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1225 ; oa:end 1350 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The bread baking example is the foundational illustration of the gifter archetype and should be preserved in its exact casual phrasing" ]
+      ] .
+
+    narr:StyleObservation_OneLinerRhetoric a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_DesignSession_20260408 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3050 ; oa:end 3150 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "I don't want to be their only option for this anymore, and I don't want them to have to wait until I'm free." ]
+      ] .
+
+    narr:StyleObservation_StructuralAnalogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_DesignSession_20260408 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignSession_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5200 ; oa:end 5350 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Scarlet is the most exhausted version of the exhausted-expert archetype for aswritten itself." ]
+      ] .
+
+    narr:StyleMetrics_DesignSession_20260408 a narr:StyleMetrics ;
+      dct:source narr:Sample_DesignSession_20260408 ;
+      skos:broader narr:StyleMetrics ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.12 ;
+      skos:note "Analytical design session register with high use of conceptual labels and direct quotes." .
+  }
+}

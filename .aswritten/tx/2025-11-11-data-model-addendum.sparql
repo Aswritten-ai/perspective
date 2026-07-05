@@ -1,0 +1,293 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260128T175025Z a prov:Activity ;
+    prov:wasAssociatedWith <urn:agent:aswritten.ai> ;
+    prov:wasAttributedTo <urn:actor:n8n.aswritten.ai> ;
+    prov:generatedAtTime "2026-01-28T17:50:25.302Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2025-11-11-data-model-addendum.md" ;
+    sb:originRef "main" ;
+    prov:used <urn:model:anthropic/claude-sonnet-4.5> .
+
+  # New Sample
+  narr:Sample_cm_addendum_20250130 a narr:Sample ;
+    dct:title "collective memory Data Model & API Architecture Discussion - ADDENDUM" ;
+    narr:inputLength 24567 ;
+    dct:created "2025-01-30T00:00:00Z"^^xsd:dateTime ;
+    skos:note "Final schema refinements and production-ready validation for collective memory system" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:Feature_MemoryFiltering a narr:Narrative ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    narr:theme "Product" ;
+    skos:prefLabel "Add mcp/memories tool with filtering capabilities" ;
+    skos:broader narr:ModulesCapabilities ;
+    skos:note "Supports temporal, author, and topic filters for context continuity and decision history" ;
+    narr:useCases "Load recent memories before creating new one; show user decision history; filter by topic" ;
+
+    dct:date "2025-01-30"^^xsd:date ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  # New Style Observations
+  narr:StyleObs_TechTerms a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_cm_addendum_20250130 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 450 ;
+        oa:end 550
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Simplifies tool signatures (one parameter instead of two)" ;
+        oa:prefix "**Rationale**:\n- " ;
+        oa:suffix "\n- Enforces synchronization"
+      ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Domain-specific terminology: 'tool signatures', 'snapshot', 'ontology', 'session-level caching'" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:StyleObs_CodeBlocks a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    oa:hasBody narr:PunctuationTypography ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_cm_addendum_20250130 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 750 ;
+        oa:end 900
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "(def State\n  [:map\n   [:snapshot #'Snapshot]\n   [:ontology #'Ontology]])" ;
+        oa:prefix "**Implementation**:\n```\n" ;
+        oa:suffix "\n\n(defn mcp/state"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Clojure code blocks with syntax highlighting; triple-backtick fencing" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:StyleObs_TaskLists a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    oa:hasBody narr:PunctuationTypography ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_cm_addendum_20250130 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 22100 ;
+        oa:end 22250
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "- [ ] `snapshot/load` with Query support\n- [ ] `snapshot/ontology` with SHACL parsing" ;
+        oa:prefix "### **Priority 1: Core Infrastructure**\n" ;
+        oa:suffix "\n- [ ] `mcp/state` with caching"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "GitHub-flavored Markdown task lists; backtick-wrapped function names" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:StyleObs_NoEmoji a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ToneAuthoritative ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    oa:hasBody narr:ToneAuthoritative ;
+    rdf:value true ;
+    skos:note "Authoritative technical tone; no emoji or casual markers; evidence-led" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:StyleObs_MermaidDiagrams a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    oa:hasBody narr:PunctuationTypography ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_cm_addendum_20250130 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 23500 ;
+        oa:end 23650
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "stateDiagram-v2\n    [*] --> Uncached: Session starts" ;
+        oa:prefix "### 1. State Lifecycle & Caching\n\n```\n" ;
+        oa:suffix "\n    \n    Uncached --> Compiling"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Mermaid syntax for state diagrams, flowcharts, class diagrams, pie charts" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:StyleObs_MermaidAsDocPattern a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:InformationArchitecture ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    oa:hasBody narr:InformationArchitecture ;
+    rdf:value true ;
+    skos:note "Extensive use of Mermaid diagrams (9 total) as primary visual documentation pattern: state lifecycle, memory creation flow, type composition, context tiers, multi-tenant isolation, filtering patterns, type hierarchy, tool dependencies, token budgets" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:StyleObs_SectionNumbers a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:InformationArchitecture ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    oa:hasBody narr:InformationArchitecture ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_cm_addendum_20250130 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 200 ;
+        oa:end 280
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "### 1. State Abstraction Finalized" ;
+        oa:prefix "## Key Refinements (v4 → v5)\n\n" ;
+        oa:suffix "\n**Decision**: Bundle `Snapshot`"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Numbered subsections (1-9) under major headings; clear hierarchy" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:StyleObs_InlineCode a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_cm_addendum_20250130 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 350 ;
+        oa:end 420
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Bundle `Snapshot` + `Ontology` into single `State` type" ;
+        oa:prefix "**Decision**: " ;
+        oa:suffix "\n\n**Rationale**:"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Consistent backtick wrapping for type names, function names, parameters" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:StyleObs_Tables a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    oa:hasBody narr:PunctuationTypography ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_cm_addendum_20250130 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 8500 ;
+        oa:end 8700
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "| **Tier** | **Components** | **Token Cost** | **Use Case** |" ;
+        oa:prefix "### 6. Context Tiers Formalized\n\n" ;
+        oa:suffix "\n|----------|----------------|----------------|--------------|\n"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Markdown tables with bold headers, pipe delimiters, alignment" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  # New Style Metrics
+  narr:Metrics_cm_addendum a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    narr:AverageSentenceLength 18 ;
+    narr:JargonDensity 0.35 ;
+    narr:ActiveVoiceRatio 0.75 ;
+    narr:TypeTokenRatio 0.62 ;
+    skos:note "High jargon density appropriate for technical architecture document; active voice dominant; varied vocabulary" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  # New Rubric Assessments
+  narr:Assess_Register_cm a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    rdf:value 5.0 ;
+    skos:note "Formal technical register; authoritative tone; appropriate for architecture documentation; no casual markers" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:Assess_Phrasing_cm a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    rdf:value 4.5 ;
+    skos:note "Consistent domain terminology (State, Snapshot, Ontology, Transaction); clear technical phrasing; some stock phrases ('production ready', 'complete workflow')" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:Assess_Cadence_cm a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    rdf:value 4.0 ;
+    skos:note "Varied sentence length; mix of short declarative statements and longer explanatory sentences; good rhythm for technical documentation" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:Assess_Strategy_cm a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    rdf:value 5.0 ;
+    skos:note "Directly aligned with Architecture domain; supports Strategy (roadmap, sequencing), Product (capabilities), and Organization (team responsibilities); clear implementation phases" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:Assess_Tailoring_cm a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    rdf:value 4.5 ;
+    skos:note "Tailored for technical audience (engineering, architecture teams); includes code examples, type signatures, implementation details; assumes domain knowledge" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:Assess_Resonance_cm a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    rdf:value 4.0 ;
+    skos:note "Uses concrete examples (test cases, code snippets, diagrams); analogies implicit in architecture patterns; could add more narrative framing" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:Assess_Flow_cm a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    rdf:value 4.5 ;
+    skos:note "Excellent logical progression: refinements → workflows → specifications → implementation phases; clear section transitions; hierarchical structure supports navigation" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:Assess_Novelty_cm a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    rdf:value 3.5 ;
+    skos:note "Novel architecture patterns (State abstraction, Memory decomposition); some standard technical documentation phrases; Mermaid diagrams add visual novelty" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+
+  narr:Assess_Accuracy_cm a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_cm_addendum_20250130 ;
+    rdf:value 5.0 ;
+    skos:note "Precise type signatures; accurate code examples; consistent terminology; references to prior memory (collective memory Data Model & API Architecture Discussion); SHACL validation schema included" ;
+    prov:wasGeneratedBy narr:Tx_20260128T175025Z .
+}

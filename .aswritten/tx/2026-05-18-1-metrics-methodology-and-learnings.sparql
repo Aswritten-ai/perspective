@@ -1,0 +1,53 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250117T120000Z a prov:Activity ;
+    prov:generatedAtTime "2025-01-17T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "unknown" ;
+    narr:originRef "main" ;
+    dct:title "the enterprise customer Week-One Metrics Methodology and Learnings" ;
+    prov:generated
+      
+      
+      narr:Narrative_CiteIntrospectAnalyticsGoldmine,
+      narr:Claim_CiteIntrospectHighestValueSignal,
+      narr:StyleMetrics_EnterpriseCustomerWeekOne .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20250117T120000Z {
+
+    narr:Narrative_CiteIntrospectAnalyticsGoldmine a narr:Narrative ;
+
+      narr:theme "Cite and introspect tool pair is the highest-value analytics signal" ;
+      skos:broader narr:LeadingIndicators ;
+      skos:note "Introspect responses surface explicit named gaps (what the customer is asking about); cite responses surface uncommitted claims (gaps in the perspective exposed by writing). Together they reveal both what the perspective is used for and where it falls short — a richer signal than authoring metrics alone." .
+
+    narr:Claim_CiteIntrospectHighestValueSignal a narr:Claim ;
+      narr:aboutNode narr:LeadingIndicators ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_CiteIntrospectAnalyticsGoldmine ;
+
+      skos:note "The cite + introspect pair should be foregrounded in any future reporting. Claim-level conviction; worth validating against a second customer engagement to confirm the pattern." .
+
+    # ── Style Metrics ───────────────────────────────────────────
+    narr:StyleMetrics_EnterpriseCustomerWeekOne a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 28 ;
+      narr:ActiveVoiceRatio "0.78"^^xsd:decimal ;
+      narr:JargonDensity "0.18"^^xsd:decimal ;
+      skos:note "Technical post-mortem register. High active voice ratio; sentences are long due to embedded parenthetical data points and inline code. Jargon density elevated by system-specific identifiers (outseta-id, JSONB, webhook mode, JWT). Tone is authoritative and action-oriented throughout." .
+
+  }
+}

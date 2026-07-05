@@ -1,0 +1,29 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__StockPhrases> {
+  <https://aswritten.ai/narrative#Digest_ns__StockPhrases> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#StockPhrases> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers recurring **stock phrases** observed in the speaker's style, spanning several registers. The dominant anchor is the [narrative source of truth](narr:StyleObs_StockPhrase_1) concept — appearing 8+ times — echoed by the bare [source of truth](narr:StyleObs_stock_phrase_source_of_truth) repeated 3x, and the signature [as written](narr:StyleObs_stock_1) phrase woven through action verbs and state descriptions. A second cluster is business/sales idiom: [who signs the checks](narr:StyleObs_StockPhrase_SignsChecks) for economic-buyer authority, [train the trainers](narr:StyleObs_TrainTrainers) signaling consulting methodology, and [kick the tires](narr:StyleObs_2) for informal validation (distinguished from individual AI memory via 'collective memory'). A third cluster is AI-context shorthand: [state secrets to AI](narr:StyleObs_StockPhrase_StateSecrets) standing in for proprietary context one entrusts to a model. Phrases range from category-defining anchors to colloquial fillers, all treated as recognizable signatures of voice rather than novel coinages.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_2> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_GettingThere> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_SignsChecks> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_StateSecrets> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TrainTrainers> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_stock_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_stock_phrase_source_of_truth> ;
+    narr:keyPhrase [ narr:text "narrative source of truth" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_1> ] ;
+    narr:keyPhrase [ narr:text "source of truth" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_stock_phrase_source_of_truth> ] ;
+    narr:keyPhrase [ narr:text "as written" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_stock_1> ] ;
+    narr:keyPhrase [ narr:text "who's really the guy who signs the checks" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_SignsChecks> ] ;
+    narr:keyPhrase [ narr:text "when you tell state secrets to AI, you depend on that AI's memory" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_StateSecrets> ] ;
+    narr:keyPhrase [ narr:text "let me train the trainers and let me bring every thinking" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_TrainTrainers> ] ;
+    narr:keyPhrase [ narr:text "kick the tires" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_2> ] ;
+    narr:variation [ narr:text "The 'getting there' line is an inside joke / callback to a previous company — relationship continuity, not product or sales jargon like the rest." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_GettingThere> ] ;
+    narr:variation [ narr:text "Two phrases are weighted canonical anchors (8+x and 3x), while others are noted as single colloquial usages — uneven entrenchment, not a flat set." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_stock_phrase_source_of_truth> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_SignsChecks> ] ;
+    narr:variation [ narr:text "'source of truth' and 'narrative source of truth' may be one evolving concept or two distinct anchors — the split across children leaves this ambiguous." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_StockPhrase_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_stock_phrase_source_of_truth> ] ;
+    narr:writer "claude (subscription)" .
+}

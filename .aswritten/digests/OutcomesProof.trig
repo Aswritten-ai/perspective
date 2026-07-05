@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_OutcomesProof> {
+  <https://aswritten.ai/narrative#Digest_OutcomesProof> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#OutcomesProof> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """OutcomesProof gathers heterogeneous evidence that the system delivers value. Commercially, the [live-demo delivery gate](narr:Narrative_DeliveryGate) ties payment to demonstrated value — sponsor pays [amount] only if the live session lands, with a non-refundable [amount] deposit. Qualitative proof comes from demo reactions: [git-native versioning resonated](narr:Obs_GitNativeReaction) with provenance/evolution of goals called \"really key,\" validating the architecture choice, while the [knowledge-graph cascade demo](narr:Obs_CascadeReaction) surfaced a non-obvious downstream implication a founder beta user flagged about updating job descriptions. Technically, the [verification status](narr:Obs_VerificationStatus) shows the memory ingestion pipeline verified end-to-end (221s extract, PR comment on PR #51), though story regeneration is built but untested. Separately, the [Elephant Collective case](narr:Observation_ElephantCollective) records an analog bootstrapping outcome — [amount]to [amount]/event in six months. The region spans commercial willingness-to-pay, user resonance, pipeline verification, and an external growth precedent; it does not contain end-user retention or revenue-from-the-product data.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DeliveryGate> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CascadeReaction> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_GitNativeReaction> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_VerificationStatus> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_ElephantCollective> ;
+    narr:keyPhrase [ narr:text "Sponsor sees value in live session or doesn't pay [amount]; [amount] deposit non-refundable (covers consultant time)." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_DeliveryGate> ] ;
+    narr:keyPhrase [ narr:text "the provenance of goals, the evolution of goals, is really key." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_GitNativeReaction> ] ;
+    narr:keyPhrase [ narr:text "It's less intuitive that you have to update job descriptions." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CascadeReaction> ] ;
+    narr:keyPhrase [ narr:text "Story regeneration pipeline built but not yet E2E tested." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_VerificationStatus> ] ;
+    narr:keyPhrase [ narr:text "Bootstrapped from [amount]to [amount]/event in 6 months." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_ElephantCollective> ] ;
+    narr:variation [ narr:text "Proof is incomplete: ingestion pipeline verified E2E, but story-regeneration pipeline is built and not yet tested — a gap in the technical evidence." ; narr:over <https://aswritten.ai/narrative#Obs_VerificationStatus> ] ;
+    narr:variation [ narr:text "Elephant Collective is a structural outlier — an external analog bootstrapping success ([amount]/event), not a reaction to or verification of this product." ; narr:over <https://aswritten.ai/narrative#Observation_ElephantCollective> ] ;
+    narr:variation [ narr:text "Two different kinds of proof sit side by side: commercial willingness-to-pay (delivery gate) versus qualitative demo resonance — they validate different claims." ; narr:over <https://aswritten.ai/narrative#Narrative_DeliveryGate> ; narr:over <https://aswritten.ai/narrative#Obs_GitNativeReaction> ] ;
+    narr:variation [ narr:text "a founder beta user's cascade reaction reads two ways — validation of propagation, or a flag that the downstream implication is counterintuitive and may be a usability friction." ; narr:over <https://aswritten.ai/narrative#Obs_CascadeReaction> ] ;
+    narr:writer "claude (subscription)" .
+}

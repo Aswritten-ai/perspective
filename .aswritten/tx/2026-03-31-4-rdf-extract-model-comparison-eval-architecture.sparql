@@ -1,0 +1,40 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260331T143000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-31T14:30:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-31-rdf-extract-model-comparison.md" ;
+    narr:originRef "main@abc1234" ;
+    prov:generated  narr:Narrative_UpdateProblem_Evolution, narr:StyleObs_ModelComparison_3 .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260331T143000Z {
+
+    narr:Narrative_UpdateProblem_Evolution a narr:Narrative ;
+
+      narr:theme "The Update Problem: Knowledge Evolution and Abstraction" ;
+      skos:broader narr:TechnicalExplainers ;
+      skos:note "The real quality differentiator in extraction is how models handle the relationship between new knowledge and existing graph state, specifically the ability to recognize when evidence warrants higher-level abstraction." .
+
+    narr:StyleObs_ModelComparison_3 a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1200 ; oa:end 1400 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "the real quality differentiator isn't one-shot extraction accuracy — it's how the model handles the relationship between new knowledge and existing graph state" ]
+      ] .
+  }
+} 

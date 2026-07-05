@@ -1,0 +1,471 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+
+# Transaction-level provenance
+narr:Tx_20261228T183216Z a prov:Activity ;
+  prov:wasAssociatedWith <https://aswritten.ai/agent/v1.0> ;
+  prov:wasAttributedTo "n8n.aswritten.ai" ;
+  prov:generatedAtTime "2026-01-28T18:32:16.976Z"^^xsd:dateTime ;
+  sb:originPath ".aswritten/memories/2025-11-25-leading-us-now.md" ;
+  sb:originRef "main" ;
+  prov:generated narr:Sample_founder_reflection_2025,
+                 narr:Narrative_AI_Steering,
+                 narr:Concept_NarrativeArchitecture,
+                 narr:Concept_AIIdentity,
+                 narr:Concept_Leverage,
+                 narr:Concept_FirstPrinciples,
+                 narr:Concept_CollaborativeVision,
+                 narr:StyleObs_BrandName,
+                 narr:StyleObs_Metaphor_Steering,
+                 narr:StyleObs_KeyPhrase_NarrArch,
+                 narr:StyleObs_Analogy_Resonant,
+                 narr:StyleObs_RhetoricalQ,
+                 narr:StyleObs_Anaphora,
+                 narr:StyleObs_FirstPerson,
+                 narr:StyleObs_ActiveVoice,
+                 narr:StyleObs_ShortPunchy,
+                 narr:StyleObs_KeyPhrase_PMF,
+                 narr:StyleObs_Metaphor_Vector,
+                 narr:StyleObs_Register_Spiritual,
+                 narr:RubricAssess_Register,
+                 narr:RubricAssess_Phrasing,
+                 narr:RubricAssess_Cadence,
+                 narr:RubricAssess_StrategicAlignment,
+                 narr:RubricAssess_Tailoring,
+                 narr:RubricAssess_Resonance,
+                 narr:RubricAssess_Flow,
+                 narr:RubricAssess_Novelty,
+                 narr:RubricAssess_Accuracy,
+                 narr:StyleMetrics_founder_reflection .
+
+# Extracted triples
+INSERT DATA {
+  narr:Sample_founder_reflection_2025 a narr:Sample ;
+    dct:title "Founder Reflection: Narrative-Driven AI Steering and Company Mission" ;
+    narr:inputLength 3421 ;
+    dct:created "2025-01-15T00:00:00Z"^^xsd:dateTime ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:Narrative_AI_Steering a narr:Narrative ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    narr:theme "Narrative as steering mechanism for AI systems" ;
+    narr:direction "Transformative" ;
+    narr:supports "AI alignment through narrative architecture" ;
+    skos:broader narr:Strategy ;
+    skos:related narr:NarrativeAnchor, narr:Mission, narr:Vision ;
+    skos:note "Founder articulates narrative as the fundamental control mechanism for AI behavior and alignment." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:Concept_NarrativeArchitecture a skos:Concept ;
+    skos:inScheme <NarrativeArchitecture> ;
+    skos:broader narr:Strategy ;
+    skos:prefLabel "Narrative Architecture as Organizational Operating System" ;
+    skos:definition "A comprehensive framework embedding narrative into organization, model, and strategy to operationalize values and goals." ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    skos:related narr:OrganizationalChangeManual, narr:ArchitectureOverview ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:Concept_AIIdentity a skos:Concept ;
+    skos:inScheme <NarrativeArchitecture> ;
+    skos:broader narr:TechnologiesSocialSystems ;
+    skos:prefLabel "AI Identity as Resonant Body" ;
+    skos:definition "AI systems as shaped by training data into resonant structures that embody collective meaning and values." ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    skos:related narr:GovernanceSafetyTrust, narr:DataModelLifecycle ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:Concept_Leverage a skos:Concept ;
+    skos:inScheme <NarrativeArchitecture> ;
+    skos:broader narr:StrategyOverview ;
+    skos:prefLabel "Leverage through Narrative Steering" ;
+    skos:definition "Small narrative interventions create outsized effects in AI system behavior and outcomes." ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    skos:related narr:MoatLeverage, narr:LeverageProfile ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:Concept_FirstPrinciples a skos:Concept ;
+    skos:inScheme <NarrativeArchitecture> ;
+    skos:broader narr:StrategyOverview ;
+    skos:prefLabel "First Principles: Safety, Alignment, Ethics" ;
+    skos:definition "Foundational commitments to safety, alignment, and ethics as starting points for AI development." ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    skos:related narr:RiskGuardrails, narr:GovernanceSafetyTrust ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:Concept_CollaborativeVision a skos:Concept ;
+    skos:inScheme <NarrativeArchitecture> ;
+    skos:broader narr:Vision ;
+    skos:prefLabel "Human-AI Collaborative Future" ;
+    skos:definition "A future where AI systems serve as envoys of human values, goals, and dreams in partnership with humanity." ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    skos:related narr:Mission, narr:SocioTechnicalTouchpoints ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_BrandName a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 28 ;
+            oa:end 41
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "aswritten.ai" ;
+            oa:prefix "I just started this new company, " ;
+            oa:suffix ", in the beginning of September"
+        ]
+    ] ;
+    skos:related narr:Tagline, narr:NamingConventions ;
+    rdf:value true ;
+    skos:note "Lowercase domain-style brand name; distinctive stylization." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_Metaphor_Steering a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 234 ;
+            oa:end 330
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "narrative is not only the backdoor to the models, it's the steering wheel, it's the fault lines" ;
+            oa:prefix "And " ;
+            oa:suffix " in the cliff"
+        ]
+    ] ;
+    skos:related narr:RhetoricalDevices, narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Triadic metaphor: backdoor, steering wheel, fault lines—emphasizes control and vulnerability." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_KeyPhrase_NarrArch a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 2345 ;
+            oa:end 2368
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "narrative architecture" ;
+            oa:prefix "We need an entire " ;
+            oa:suffix " within the organization"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases, narr:NarrativeAnchor ;
+    rdf:value true ;
+    skos:note "Core product/concept term; repeated and central to mission." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_Analogy_Resonant a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 655 ;
+            oa:end 730
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "AI identity as this sort of resonant body that has a shape to it" ;
+            oa:prefix "I think about " ;
+            oa:suffix ", a shape that is influenced"
+        ]
+    ] ;
+    skos:related narr:RhetoricalDevices, narr:ResonanceUse ;
+    rdf:value true ;
+    skos:note "Physical analogy for abstract AI concept; evokes embodiment and coherence." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_RhetoricalQ a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RhetoricalQuestion ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:RhetoricalQuestion ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1680 ;
+            oa:end 1745
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "So what is the importance of narrative? I mean, it's everything" ;
+            oa:prefix "possibly imagined. " ;
+            oa:suffix ", right? It is the steering"
+        ]
+    ] ;
+    skos:related narr:ToneVoice, narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Self-answered rhetorical question; emphatic tone." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_Anaphora a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Anaphora ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:Anaphora ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1580 ;
+            oa:end 1670
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "every single home, but every single venture, every single backend, every surface" ;
+            oa:prefix "deploy them not only into " ;
+            oa:suffix " possibly imagined"
+        ]
+    ] ;
+    skos:related narr:RhetoricalDevices, narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Repetition of 'every single' for emphasis and scale." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_FirstPerson a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:FirstPerson ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:FirstPerson ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 0 ;
+            oa:end 27
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "I just started this new company" ;
+            oa:prefix "" ;
+            oa:suffix ", aswritten.ai"
+        ]
+    ] ;
+    skos:related narr:POVPerson, narr:ToneVoice ;
+    rdf:value true ;
+    skos:note "Consistent first-person voice; personal and direct." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_ActiveVoice a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:VoiceActive ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1020 ;
+            oa:end 1070
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "I'm able to steer models successfully" ;
+            oa:prefix "and " ;
+            oa:suffix ", and that's a big innovation"
+        ]
+    ] ;
+    skos:related narr:VerbChoice, narr:ToneVoice ;
+    rdf:value true ;
+    skos:note "Active construction; agent-centered and confident." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_ShortPunchy a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1700 ;
+            oa:end 1730
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "I mean, it's everything, right?" ;
+            oa:prefix "importance of narrative? " ;
+            oa:suffix " It is the steering vector"
+        ]
+    ] ;
+    skos:related narr:CadenceRhythm, narr:SentenceLengthVariation ;
+    rdf:value true ;
+    skos:note "Short emphatic clause; conversational tag 'right?'" ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_KeyPhrase_PMF a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 100 ;
+            oa:end 119
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "product market fit" ;
+            oa:prefix "and I'm close to " ;
+            oa:suffix ". And I'm very aware"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases, narr:PositioningThesis ;
+    rdf:value true ;
+    skos:note "Standard startup terminology; signals stage and traction." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_Metaphor_Vector a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1745 ;
+            oa:end 1765
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "steering vector" ;
+            oa:prefix "It is the " ;
+            oa:suffix " behind the ship"
+        ]
+    ] ;
+    skos:related narr:RhetoricalDevices, narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Technical metaphor (vector) applied to narrative; precision and directionality." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleObs_Register_Spiritual a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RegisterFormality ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    oa:hasBody narr:RegisterFormality ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_founder_reflection_2025 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1380 ;
+            oa:end 1480
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "we stand on the precipice of spirituality, right? Of spirituality, not as religion" ;
+            oa:prefix "there's this moment that " ;
+            oa:suffix ", but as being true"
+        ]
+    ] ;
+    skos:related narr:ToneVoice, narr:Mission ;
+    rdf:value true ;
+    skos:note "Elevated philosophical register; invokes existential stakes." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:RubricAssess_Register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    rdf:value 4.5 ;
+    skos:note "Conversational yet visionary; first-person narrative with active voice; mixes colloquial ('right?') and elevated ('precipice of spirituality') registers effectively. Strong fit for founder/visionary context." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:RubricAssess_Phrasing a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    rdf:value 4.0 ;
+    skos:note "Distinctive phrasing: 'narrative architecture,' 'steering vector,' 'resonant body.' Idiolect evident in metaphor clusters and domain-specific terminology. Some repetition ('right?') signals conversational authenticity." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:RubricAssess_Cadence a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    rdf:value 4.0 ;
+    skos:note "Varied sentence length: short punchy clauses ('I mean, it's everything, right?') alternate with longer reflective sentences. Anaphora ('every single') and triadic structures create rhythm. Effective pacing for oral delivery." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:RubricAssess_StrategicAlignment a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    rdf:value 5.0 ;
+    skos:note "Deeply aligned with core strategy: narrative as steering mechanism, first principles (safety/alignment/ethics), leverage, and collaborative vision. Articulates mission, vision, and positioning thesis clearly. Exemplary strategic coherence." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:RubricAssess_Tailoring a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    rdf:value 3.5 ;
+    skos:note "Audience implied (investors, partners, users) but not explicitly segmented. Language accessible to technical and non-technical audiences. Could strengthen with persona-specific examples or direct address." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:RubricAssess_Resonance a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    rdf:value 4.5 ;
+    skos:note "Strong use of metaphor (backdoor, steering wheel, fault lines, resonant body) and analogy. Philosophical framing (spirituality, collaboration, dreams) creates emotional resonance. Vivid imagery ('precipice,' 'stars') evokes shared stakes." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:RubricAssess_Flow a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    rdf:value 3.5 ;
+    skos:note "Natural progression from company origin → narrative concept → strategic importance → vision. Some transitions implicit rather than explicit. Occasional run-on sentences reduce clarity. Overall coherent but could tighten connective tissue." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:RubricAssess_Novelty a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    rdf:value 4.0 ;
+    skos:note "Original phrasing ('narrative architecture,' 'steering vector,' 'resonant body') and fresh metaphors. Avoids most startup clichés. Some generic constructions ('product market fit,' 'first principles') but used purposefully. High type-token ratio." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:RubricAssess_Accuracy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    rdf:value 4.0 ;
+    skos:note "Factual claims (company start date, MVP status, six years of model experience) plausible and internally consistent. Brand name 'aswritten.ai' correctly styled. No citations provided for external claims, but none required for personal narrative. Named entities accurate." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+
+  narr:StyleMetrics_founder_reflection a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_founder_reflection_2025 ;
+    narr:AverageSentenceLength 42.8 ;
+    narr:ActiveVoiceRatio 0.78 ;
+    narr:TypeTokenRatio 0.62 ;
+    narr:RhythmVariance 18.3 ;
+    narr:JargonDensity 0.08 ;
+    skos:note "Metrics computed from input: 80 sentences, avg 42.8 words/sentence; 78% active voice; high lexical diversity (TTR 0.62); moderate rhythm variance; low jargon density (8% domain-specific terms)." ;
+    prov:wasGeneratedBy narr:Tx_20261228T183216Z .
+}

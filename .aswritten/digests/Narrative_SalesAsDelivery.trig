@@ -1,0 +1,23 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_SalesAsDelivery> {
+  <https://aswritten.ai/narrative#Digest_Narrative_SalesAsDelivery> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_SalesAsDelivery> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub holds the thesis that [the sales motion and product delivery are one thing](narr:Claim_SalesIsDelivery) — Demo 1 *is* the sale, and every call transcript lands in the prospect's repo before they say yes. Several children extend it concretely: [the process itself is the sellable unit](narr:Claim_ProcessSaleNoMaterialNeeded) (channel setup, voice mirroring, MSA rollout) with no case study or material needed (Apr 21); [the Team-tier sales call doubles as onboarding and first knowledge extraction](narr:Claim_TeamTierSalesCallIsOnboarding), producing the first memory and seeding the worldview (Mar 17); and [sell a [amount] engagement now](narr:Claim_RevenueBeforeRaise) on the logic that revenue beats projections and strengthens the raise. The trajectory firms from Mar through Apr, moving from principle toward concrete sales packaging. But the motion is not fully validated — see variation.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ProcessSaleNoMaterialNeeded> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RevenueBeforeRaise> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SalesAsDeliveryEarlyProspectDeferred> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SalesIsDelivery> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TeamTierSalesCallIsOnboarding> ;
+    narr:keyPhrase [ narr:text "Demo 1 IS the sales motion. Every sales call transcript goes into the prospect's repo collective memory before they say yes." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SalesIsDelivery> ] ;
+    narr:keyPhrase [ narr:text "you can take exactly what you're doing now as a process and start selling that already without showing them any material" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ProcessSaleNoMaterialNeeded> ] ;
+    narr:keyPhrase [ narr:text "Revenue before raise > projections about future revenue. Investment package becomes stronger with even one paid engagement." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_RevenueBeforeRaise> ] ;
+    narr:keyPhrase [ narr:text "The sales call for the Team tier IS the onboarding IS the first knowledge extraction. No separate setup deliverable needed." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_TeamTierSalesCallIsOnboarding> ] ;
+    narr:keyPhrase [ narr:text "This is an open validation gap." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SalesAsDeliveryEarlyProspectDeferred> ] ;
+    narr:variation [ narr:text "The motion is proposed but untested for the Knowledge Packager archetype — an early prospect never received his pre-populated repo because the a practitioner beta user follow-up was deferred (Mar 19); an explicit open validation gap." ; narr:over <https://aswritten.ai/narrative#Claim_SalesAsDeliveryEarlyProspectDeferred> ] ;
+    narr:variation [ narr:text "Team-tier pricing is unsettled — only 'leaning toward no setup fee,' not committed." ; narr:over <https://aswritten.ai/narrative#Claim_TeamTierSalesCallIsOnboarding> ] ;
+    narr:writer "claude (subscription)" .
+}

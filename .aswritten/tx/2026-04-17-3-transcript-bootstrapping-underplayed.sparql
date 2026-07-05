@@ -1,0 +1,247 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260416T180000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-16T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-16-transcript-bootstrapping-underplayed.md" ;
+    narr:originRef "main" ;
+    dct:title "Transcript Bootstrapping Is Underplayed — April 16, 2026" ;
+    prov:generated
+      narr:Sample_TranscriptBootstrapping_20260416,
+      narr:Narrative_TranscriptBootstrappingUnderplayed,
+      narr:Claim_TranscriptSurpriseSignal,
+      narr:Claim_VoiceMemosAndTranscriptsPrimaryInputs,
+      narr:Claim_CreatePerspectiveNotTrain,
+      narr:Claim_FirefliesWebhookActivePitch,
+      narr:Obs_EnterpriseCustomerTranscriptSurpriseQuote,
+      narr:Obs_ScarletPrimaryInputsQuote,
+      narr:Obs_CreatePerspectivePitchQuote,
+      narr:Obs_FirefliesWebhookQuote,
+      narr:StyleObs_TranscriptBootstrap_AssetFraming,
+      narr:StyleObs_TranscriptBootstrap_VerbConstraint,
+      narr:StyleObs_TranscriptBootstrap_ConversationalRegister,
+      narr:Metrics_TranscriptBootstrapping_20260416 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260416T180000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────
+    narr:Sample_TranscriptBootstrapping_20260416 a narr:Sample ;
+      dct:title "Transcript Bootstrapping Is Underplayed (April 16, 2026)" ;
+      dct:created "2026-04-16"^^xsd:date ;
+      dct:description "Post-launch walk voice memo from Scarlet Dame reflecting on three signals from the the enterprise customer engagement and the customer's chief architect's question that reveal aswritten is underplaying call transcripts as a bootstrap onramp and value proposition. Argues for promoting the Fireflies/Gemini/Zoom webhook pipeline from 'waiting to build' to 'actively pitch'." ;
+      narr:inputLength 3850 ;
+      narr:styleProfile "<https://aswritten.ai/narrative#ToneDirectPersonal> <https://aswritten.ai/narrative#IdiolectPhrasing> <https://aswritten.ai/narrative#Antithesis> <https://aswritten.ai/narrative#ShortPunchyCadence>" .
+
+    # ── PRIMARY NARRATIVE ────────────────────────────────────────
+    narr:Narrative_TranscriptBootstrappingUnderplayed a narr:Narrative ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Transcript Bootstrapping Is Underplayed as Onramp and Value Proposition" ;
+      skos:note "Three signals from the April 16 post-launch walk converge on a single diagnosis: aswritten is underplaying the call transcript angle both as an onramp and as a value proposition. Signal 1: the enterprise customer's surprise that their own ARB transcripts were an asset. Signal 2: the customer's chief architect had to ask whether Scarlet uses her own transcripts — she does, constantly, as one of two primary inputs. Signal 3: The 'send me your last 10 Fireflies transcripts and I'll give you back a working perspective tomorrow' pitch is stronger than 'let's schedule an interview.' The pitch should lead with transcripts, not interviews." ;
+      narr:theme "Call transcripts are already an asset prospects don't recognize as such — the surprise-to-them pattern is itself a signal that aswritten is underplaying the transcript bootstrap pitch" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────
+
+    # Signal 1: the enterprise customer surprise as pitch signal
+    narr:Claim_TranscriptSurpriseSignal a narr:Claim ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "The fact that the enterprise customer was surprised to learn their own historical ARB transcripts were an asset is itself a signal — not just evidence that transcripts are useful, but evidence that aswritten is failing to communicate this as the default pitch. People do not think of their own transcripts as an asset until someone points at them. The pattern of surprise-to-them is the pitch gap." ;
+      narr:aboutNode narr:Narrative_TranscriptBootstrappingUnderplayed ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_PodcastInterviewSalesMotion .
+
+    # Signal 2: Scarlet's own usage — voice memos and call transcripts as primary inputs
+    narr:Claim_VoiceMemosAndTranscriptsPrimaryInputs a narr:Claim ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Scarlet herself uses call transcripts and voice memos as her two primary inputs into aswritten. The fact that the customer's chief architect had to ask, and Scarlet had to confirm, reveals this is not being communicated as the default usage pattern. Both inputs — conversations with others (call transcripts) and conversations with herself (voice memos) — are downplayed in the pitch as 'this is what you do.'" ;
+      narr:aboutNode narr:Narrative_TranscriptBootstrappingUnderplayed ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ExpertiseOnDemandReframe .
+
+    # Signal 3: Language constraint — "create a perspective" not "train"
+    narr:Claim_CreatePerspectiveNotTrain a narr:Claim ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Do NOT say 'train' — say 'create a perspective'. The inputs are 'conversations you're already having' — not extra work, not additional effort. Transcripts are already an asset, not yet-to-be-created material. This language constraint is required for the transcript bootstrap pitch to land correctly." ;
+      narr:aboutNode narr:NamingConventions ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_TranscriptBootstrappingUnderplayed .
+
+    # Signal 3: Fireflies/webhook pipeline should move from waiting-to-build to actively-pitch
+    narr:Claim_FirefliesWebhookActivePitch a narr:Claim ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "The Fireflies/Gemini/Zoom webhook pipeline — where every call automatically updates the perspective and the system texts the person to do the review over text — has already been discussed. This should move from 'waiting to build' to 'actively pitch.' The sales pitch 'send me your last 10 Fireflies transcripts and I'll give you back a working perspective tomorrow' is a stronger opener than 'let's schedule an interview.' It removes the favor framing. the enterprise customer and similar prospects may want this." ;
+      narr:aboutNode narr:Narrative_TranscriptBootstrappingUnderplayed ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Claim_AIAgentLongTailInterviews .
+
+    # ── OBSERVATIONS (grounded quotes) ──────────────────────────
+
+    narr:Obs_EnterpriseCustomerTranscriptSurpriseQuote a narr:Observation ;
+      skos:broader narr:Signals ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Scarlet's verbatim account of the enterprise customer's surprise — the founding evidence for the pitch gap diagnosis." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TranscriptBootstrapping_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 374 ;
+          oa:end 520
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the enterprise customer was like, 'Oh we have historical transcripts' and that sort of didn't seem obvious to them" ;
+          oa:prefix "From the the enterprise customer engagement:\n\n> \"" ;
+          oa:suffix " so I think we're really underplaying the call transcript angle."
+        ]
+      ] .
+
+    narr:Obs_ScarletPrimaryInputsQuote a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Scarlet's verbatim articulation of her two primary inputs — the evidence that the default usage pattern is not being communicated." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TranscriptBootstrapping_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1020 ;
+          oa:end 1200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the conversations I have with other people and the conversations I have with myself (i.e. these voice memos) are really my two primary inputs" ;
+          oa:prefix "I do. It's one of the primary inputs into the system, both " ;
+          oa:suffix " and I think both of those are downplayed"
+        ]
+      ] .
+
+    narr:Obs_CreatePerspectivePitchQuote a narr:Observation ;
+      skos:broader narr:NamingConventions ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Scarlet's verbatim articulation of the create-a-perspective pitch and the Fireflies integration as a strong demo." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TranscriptBootstrapping_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1280 ;
+          oa:end 1480
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "We should not say 'train'; create a perspective based on your historical meeting notes" ;
+          oa:prefix "The other thing that's downplayed is you can create a perspective. " ;
+          oa:suffix " and immediately have something that understands what your organization's doing"
+        ]
+      ] .
+
+    narr:Obs_FirefliesWebhookQuote a narr:Observation ;
+      skos:broader narr:TechnologiesSocialSystems ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Scarlet's verbatim description of the Fireflies/webhook pipeline that should move from 'previously existing idea' to 'actively pitch.'" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TranscriptBootstrapping_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2050 ;
+          oa:end 2280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you connect your Fireflies or other transcription service, Zoom notes, Calendly transcription, whichever, Google Gemini on-meets transcription by webhook" ;
+          oa:prefix "One example would be something that's been talked about before, which is " ;
+          oa:suffix ". Every call automatically updates the perspective"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────
+
+    narr:StyleObs_TranscriptBootstrap_AssetFraming a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Reframing pattern: 'already an asset, not yet-to-be-created material' — Scarlet's characteristic antithesis construction that pairs what something IS against what it is NOT. Appears in naming constraints section." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TranscriptBootstrapping_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1760 ;
+          oa:end 1840
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Transcripts are already an asset, not yet-to-be-created material" ;
+          oa:prefix "- " ;
+          oa:suffix "\n\n## What to promote"
+        ]
+      ] .
+
+    narr:StyleObs_TranscriptBootstrap_VerbConstraint a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Explicit verb prohibition pattern: 'Do NOT say X — say Y.' Scarlet uses this construction to encode terminology control as a hard rule. 'train' is prohibited; 'create a perspective' is mandated. Consistent with prior naming constraint memos." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TranscriptBootstrapping_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1700 ;
+          oa:end 1760
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Do NOT say \"train\" — say \"create a perspective\"" ;
+          oa:prefix "## Language constraints\n\n- " ;
+          oa:suffix "\n- The inputs are"
+        ]
+      ] .
+
+    narr:StyleObs_TranscriptBootstrap_ConversationalRegister a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Voice memo register: first-person stream-of-consciousness with embedded blockquotes of Scarlet's own speech. Run-on sentences with parenthetical asides ('i.e. these voice memos'). Conviction peaks marked by 'I think' hedges that function as rhetorical intensifiers rather than genuine uncertainty. Consistent with other Scarlet voice memo samples in the graph." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TranscriptBootstrapping_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 940 ;
+          oa:end 1050
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the customer's chief architect brought up, 'Oh don't you do this all the time? Use a lot of your call transcripts.' I do." ;
+          oa:prefix "> \"" ;
+          oa:suffix " It's one of the primary inputs"
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────
+
+    narr:Metrics_TranscriptBootstrapping_20260416 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_TranscriptBootstrapping_20260416 ;
+      skos:note "Voice memo / post-walk reflection format. Mixed register: structured markdown headers with embedded first-person blockquotes. Active voice dominant. Short punchy declaratives at conviction peaks ('I do.', 'This should move from waiting to build to actively pitch.'). Jargon density low-moderate — product terms (Fireflies, Gemini, webhook, perspective) used without definition, implying internal audience. Antithesis-heavy structure (already an asset vs. yet-to-be-created; create a perspective vs. train; stronger opener vs. let's schedule an interview). Average sentence length elevated by blockquoted speech; prose sections are shorter and punchier." ;
+      narr:AverageSentenceLength "17"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal .
+
+  }
+}

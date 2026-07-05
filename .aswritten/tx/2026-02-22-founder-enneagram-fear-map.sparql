@@ -1,0 +1,233 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+};
+
+# =============================================================
+# ADDS — INSERT DATA
+# =============================================================
+INSERT DATA {
+
+  narr:Actor_FounderBetaUser_2 a narr:Actor ;
+    skos:prefLabel "a founder beta user" ;
+    skos:note "Beta user; asked to use the product; onboarding model developed; follow-up creates external deadline for Demo 1." ;
+    .
+
+  # --- Observations ---
+  narr:Obs_AsWritten a narr:Observation ;
+    skos:broader narr:NarrativeAnchor ;
+    dct:source narr:Sample_1 ;
+    skos:note "'As written' is both the company name and the editorial policy: ship things as they are, process content over polished content." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3012 ;
+      oa:end   3120
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "\"As written\" is the publishing principle. The company name is the editorial policy. Ship things as they are." ;
+      oa:prefix "3. " ;
+      oa:suffix " Process content over polished content."
+    ] ;
+    .
+
+  narr:Obs_GraphPlacementDecision a narr:Observation ;
+    skos:broader narr:OperatingModelShifts ;
+    dct:source narr:Sample_1 ;
+    skos:note "Explicit design decision: pragmatism over architectural purity; personal memory placed in org graph pending personal graph submodule; migration documented as intentional." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 390 ;
+      oa:end   620
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "This is itself a design decision: pragmatism over architectural purity, documented so the migration is intentional." ;
+      oa:prefix "When personal graph submodules ship, this memory should migrate. " ;
+      oa:suffix ""
+    ] ;
+    .
+
+  # --- Style Observations ---
+  narr:StyleObs_1 a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Staccato fragment sequence used for dramatic emphasis; each fragment is a complete thought." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 2490 ;
+      oa:end   2545
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "Complete. Powerful. Distribution plan documented. Not published." ;
+      oa:prefix "The honest pitch manifesto was written 2026-02-11. " ;
+      oa:suffix ""
+    ] ;
+    .
+
+  narr:StyleObs_2 a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:RhetoricalDevices ;
+    rdf:value true ;
+    skos:note "Antithesis: belief vs. action; the reframe exists at FOUNDATION level but the behavior has not followed." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 2620 ;
+      oa:end   2710
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "The belief exists. The action doesn't." ;
+      oa:prefix "\"asking for money is normal, humble, honest, and direct.\" " ;
+      oa:suffix ""
+    ] ;
+    .
+
+  narr:StyleObs_3 a narr:StyleObservation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Rule of three used in reframe questions for the AI coworker; parallel interrogative structure." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3520 ;
+      oa:end   3700
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "\"Who else can carry this?\" (Tony buffer)\n- \"What's the external deadline?\" (accountability)\n- \"Can this ship as process content?\" (authenticity reframe)" ;
+      oa:prefix "reframe:\n- " ;
+      oa:suffix "\n- \"What evidence says the market wants this?\""
+    ] ;
+    .
+
+  narr:StyleObs_4 a narr:StyleObservation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ToneVoice ;
+    rdf:value true ;
+    skos:note "Direct second-person imperative address to AI coworker; prescriptive without hedging." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3480 ;
+      oa:end   3530
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "Don't add pressure — reframe:" ;
+      oa:prefix "If the avoided items are high-exposure tasks, the 4+1 pattern is active. " ;
+      oa:suffix ""
+    ] ;
+    .
+
+  narr:StyleObs_5 a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:RhetoricalDevices ;
+    rdf:value true ;
+    skos:note "'Escape valve' as mechanical metaphor for psychological pressure-release function of Type 7 ideation." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3780 ;
+      oa:end   3860
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "The 7 generates new ideas as an escape valve for the 4's exposure anxiety." ;
+      oa:prefix "check if a high-friction task was due. " ;
+      oa:suffix " Name it without judgment."
+    ] ;
+    .
+
+  narr:StyleObs_6 a narr:StyleObservation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:GrammarSyntax ;
+    rdf:value true ;
+    skos:note "Parallel quoted-voice structure: each Enneagram type given its own quoted inner-voice line, creating a dramatic internal dialogue." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1680 ;
+      oa:end   1820
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "4: \"It doesn't represent the vision yet.\"\n- 1: \"Shipping something imperfect is irresponsible.\"\n- 7: \"But what about this new idea for personal graph submodules?\"" ;
+      oa:prefix "**Pushing the beta out:**\n- " ;
+      oa:suffix "\n- Result:"
+    ] ;
+    .
+
+  narr:StyleObs_7 a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:OrthographySpelling ;
+    rdf:value true ;
+    skos:note "'FOUNDATION' in all-caps signals a formal conviction-level taxonomy term; capitalization carries semantic weight." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1380 ;
+      oa:end   1430
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "FOUNDATION conviction level" ;
+      oa:prefix "in some cases at " ;
+      oa:suffix ". What's missing is not clarity but exposure."
+    ] ;
+    .
+
+  narr:StyleObs_8 a narr:StyleObservation ;
+    skos:broader narr:ToneAuthoritative ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:NarrativeAnchor ;
+    rdf:value true ;
+    skos:note "Declarative diagnostic framing: 'The 4+1 combination is the key pattern' — stated as settled fact, not hypothesis." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1050 ;
+      oa:end   1110
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "The 4+1 combination is the key pattern." ;
+      oa:prefix "\n\n" ;
+      oa:suffix " The 4 says"
+    ] ;
+    .
+
+  narr:StyleObs_9 a narr:StyleObservation ;
+    skos:broader narr:PlainLanguage ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:InclusiveAccessibility ;
+    rdf:value true ;
+    skos:note "Self-aware meta-commentary on document placement; plain-language explanation of architectural trade-off for future readers." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 310 ;
+      oa:end   390
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "This memory is conceptually personal — it belongs in a founder's personal worldview graph, not the organizational graph." ;
+      oa:prefix "**Note on graph placement:** " ;
+      oa:suffix " It's placed in the org graph now because"
+    ] ;
+    .
+
+}

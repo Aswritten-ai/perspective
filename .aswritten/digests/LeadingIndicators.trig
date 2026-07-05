@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_LeadingIndicators> {
+  <https://aswritten.ai/narrative#Digest_LeadingIndicators> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#LeadingIndicators> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the [leading-indicator signals](narr:Narrative_CiteIntrospectAnalyticsGoldmine) tracked from early customer use. The dominant thesis (Jan 17): the [cite + introspect tool pair is the highest-value analytics signal](narr:Narrative_CiteIntrospectAnalyticsGoldmine) — introspect surfaces explicit named gaps (what customers ask about), cite surfaces uncommitted claims (where the perspective falls short), together richer than authoring metrics. Week-one evidence: [73% of 124 cited claims were grounded](narr:Obs_CiteGrounded73Pct), and [62 named gaps across 29 introspect calls](narr:Obs_IntrospectGaps62). A [claim-level conviction](narr:Claim_CiteIntrospectHighestValueSignal) flags this as worth foregrounding but still wanting a second engagement to confirm. Running alongside is a different framing of \"the indicator that matters\": the [Pilot-to-Full Conversion key metric](narr:Narrative_KeyMetric), a single number gating practice-vs-business scale. A later witness (May 7, 2026) — [the customer's CTO's usage-visibility request](narr:Obs_CustomerCTOUsageVisibilityRequest) — answered as an MCP tool rather than a dashboard, validating agent-as-interface.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CiteIntrospectHighestValueSignal> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CiteIntrospectAnalyticsGoldmine> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_KeyMetric> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CiteGrounded73Pct> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_IntrospectGaps62> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerCTOUsageVisibilityRequest> ;
+    narr:keyPhrase [ narr:text "Cite and introspect tool pair is the highest-value analytics signal" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_CiteIntrospectAnalyticsGoldmine> ] ;
+    narr:keyPhrase [ narr:text "Of 124 claims checked via cite, 90 were grounded in the perspective (73%) and 34 were uncommitted." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CiteGrounded73Pct> ] ;
+    narr:keyPhrase [ narr:text "Introspect responses contained 62 explicit named gaps across 29 calls in week one" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_IntrospectGaps62> ] ;
+    narr:keyPhrase [ narr:text "Single number that determines whether this is a [amount] consulting practice or a [amount]+ business." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_KeyMetric> ] ;
+    narr:keyPhrase [ narr:text "the customer's CTO asked for \"usage visibility\" during the 2026-05-07 kickoff" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomerCTOUsageVisibilityRequest> ] ;
+    narr:variation [ narr:text "Two competing 'leading indicator' framings coexist: cite+introspect as the analytics goldmine vs. Pilot-to-Full Conversion as the single business-defining number." ; narr:over <https://aswritten.ai/narrative#Narrative_CiteIntrospectAnalyticsGoldmine> ; narr:over <https://aswritten.ai/narrative#Narrative_KeyMetric> ] ;
+    narr:variation [ narr:text "Grounding rate is highly uneven per user — the customer's chief architect 100%, a collaborator 78%, a collaborator only 20% (PDDP not yet in perspective) — so the 73% aggregate hides an outlier." ; narr:over <https://aswritten.ai/narrative#Obs_CiteGrounded73Pct> ] ;
+    narr:variation [ narr:text "The highest-value-signal thesis is explicitly held at claim-level conviction and asks to be validated against a second customer before being trusted." ; narr:over <https://aswritten.ai/narrative#Claim_CiteIntrospectHighestValueSignal> ] ;
+    narr:variation [ narr:text "the customer's CTO's request reframed 'usage visibility' away from a dashboard toward an MCP tool — a road-not-taken on how the signal gets surfaced." ; narr:over <https://aswritten.ai/narrative#Obs_CustomerCTOUsageVisibilityRequest> ] ;
+    narr:writer "claude (subscription)" .
+}

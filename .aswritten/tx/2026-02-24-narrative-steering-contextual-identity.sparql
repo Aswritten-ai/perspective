@@ -1,0 +1,152 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260224T003047Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agent/storyTWIN> ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-02-24T00:30:47.881Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-02-24-narrative-steering-contextual-identity.md" ;
+    sb:originRef           "main" .
+} ;
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added_triples)
+# =============================================================
+INSERT DATA {
+
+  # --- New Actor ---
+  narr:Actor_Claude a narr:Actor ;
+    skos:prefLabel       "Claude (Opus 4.6)" ;
+    skos:note            "AI participant; self-identified 5w1 contextually; articulated the concerning corollary" ;
+    .
+
+  # --- New Observations ---
+  narr:Observation_1 a narr:Observation ;
+    skos:broader         narr:NarrativeAnchor ;
+    dct:source           narr:Sample_1 ;
+    skos:prefLabel       "Narrative steering as worldview bootloading" ;
+    skos:note            "Scarlet frames narrative steering as the ability to bootload a new worldview that influences how the AI's worldview works — core product thesis stated directly." ;
+    .
+
+  narr:Observation_4 a narr:Observation ;
+    skos:broader         narr:PositioningThesis ;
+    dct:source           narr:Sample_1 ;
+    skos:prefLabel       "The steering IS the product" ;
+    skos:note            "Declarative positioning statement: collective memory builds narrative architecture that determines how AI reasons about an organization. The steering is the product, not a side effect." ;
+    .
+
+  narr:Observation_5 a narr:Observation ;
+    skos:broader         narr:SpeakerIdiolects ;
+    dct:source           narr:Sample_1 ;
+    skos:prefLabel       "Identity-as-architecture insight" ;
+    skos:note            "The Enneagram frame as productive lens: identity is downstream of narrative context. For LLMs this is obvious; the same dynamic may operate in human organizations." ;
+    .
+
+  # --- New Style Observations ---
+  narr:StyleObs_1 a narr:StyleObservation ;
+    skos:broader         narr:BrandNameStylization ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:NamingConventions ;
+    rdf:value            true ;
+    skos:note            "Lowercase brand name 'aswritten' used mid-sentence; deliberate stylization." ;
+    .
+
+  narr:StyleObs_2 a narr:StyleObservation ;
+    skos:broader         narr:AICompanyizationCase ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:Tagline ;
+    rdf:value            true ;
+    skos:note            "All-caps emphasis 'IS' used for rhetorical stress in a declarative positioning statement." ;
+    .
+
+  narr:StyleObs_3 a narr:StyleObservation ;
+    skos:broader         narr:ShortPunchyCadence ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:Tagline ;
+    rdf:value            true ;
+    skos:note            "Three-word declarative sentence used as rhetorical anchor; maximum compression." ;
+    .
+
+  narr:StyleObs_4 a narr:StyleObservation ;
+    skos:broader         narr:Anaphora ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:KeyPhrases ;
+    rdf:value            true ;
+    skos:note            "Anaphoric list structure: 'what it believes, what it pushes back on, what it lets slide' — tricolon with escalating passivity." ;
+    .
+
+  narr:StyleObs_5 a narr:StyleObservation ;
+    skos:broader         narr:Metaphor ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:KeyPhrases ;
+    rdf:value            true ;
+    skos:note            "'opinion machine' — compact metaphor framing the extraction pipeline as an ideological apparatus rather than neutral tooling." ;
+    .
+
+  narr:StyleObs_6 a narr:StyleObservation ;
+    skos:broader         narr:Metaphor ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:KeyPhrases ;
+    rdf:value            true ;
+    skos:note            "'bootload a new worldview' — technical metaphor (OS bootloading) applied to epistemological context-setting; idiolect marker for Scarlet." ;
+    .
+
+  narr:StyleObs_7 a narr:StyleObservation ;
+    skos:broader         narr:RhetoricalQuestion ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:Calibration ;
+    rdf:value            true ;
+    skos:note            "Embedded open question used as a conviction boundary marker: 'what guardrails, if any, are possible?' signals Boulder-level uncertainty." ;
+    .
+
+  narr:StyleObs_8 a narr:StyleObservation ;
+    skos:broader         narr:ToneAuthoritative ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:NarrativeAnchor ;
+    rdf:value            true ;
+    skos:note            "Declarative assertion without hedging: 'this isn't a hypothetical failure mode, it's the default state' — authoritative register, zero epistemic softening." ;
+    .
+
+  narr:StyleObs_9 a narr:StyleObservation ;
+    skos:broader         narr:Antithesis ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:KeyPhrases ;
+    rdf:value            true ;
+    skos:note            "Antithesis: 'not just what the AI knows, but what it believes' — contrasts surface retrieval against deep epistemic shaping." ;
+    .
+
+  narr:StyleObs_10 a narr:StyleObservation ;
+    skos:broader         narr:IdiolectPhrasing ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:SpeakerIdiolects ;
+    rdf:value            true ;
+    skos:note            "'compression anxiety' — Scarlet's idiolect; a coined compound noun naming a specific psychological state tied to her Enneagram 4 pattern." ;
+    .
+
+  narr:StyleObs_11 a narr:StyleObservation ;
+    skos:broader         narr:RuleOfThree ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:CadenceRhythm ;
+    rdf:value            true ;
+    skos:note            "Tricolon closing the conviction section: 'Foundation-level', 'Boulder', 'Boulder' — three conviction assessments in parallel structure, escalating uncertainty." ;
+    .
+
+  narr:StyleObs_12 a narr:StyleObservation ;
+    skos:broader         narr:RegisterFormality ;
+    dct:source           narr:Sample_1 ;
+    skos:related         narr:ToneVoice ;
+    rdf:value            true ;
+    skos:note            "Code-switching between formal analytical register and informal conversational register (direct quotes from Scarlet in lowercase, no punctuation). Deliberate contrast." ;
+    .
+
+} 

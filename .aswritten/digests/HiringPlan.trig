@@ -1,0 +1,33 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_HiringPlan> {
+  <https://aswritten.ai/narrative#Digest_HiringPlan> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#HiringPlan> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub holds the company's staffing arc, rooted in a [solo-founder capacity ceiling](narr:Narrative_CapacityConstraint) — \"Solo founder maxes out at ~1.5 concurrent engagements.\" An early [seed-plan sketch](narr:Narrative_SeedPlanHires) (Mar 2026, VC/angel framing) named three generic hires — engineer, commission salesperson, and a product/delivery person to [\"marshal the whole middle layer\"](narr:Claim_SeedPlanHires). The May 17-18 session hardened this into a [named Tranche-1 team plan](narr:Narrative_TeamPlanPostTranche1): [the planned engineering/architecture hire](narr:Claim_PlannedEngHireCompensationStructure) ([amount]/mo eng/arch, already contracted), [a collaborator-archetype](narr:Claim_SparrowCompensationStructure) ([amount]/mo delivery), [a collaborator](narr:Claim_StarlingCompensationStructure) ([amount]/mo content/marketing), plus a lawyer retainer, all starting September 2026. Sequencing is raise-contingent: at [amount] all three start together; at [amount] a collaborator goes first as the active bottleneck. The longer [team vision](narr:Claim_TeamVision7to8People) targets 7-8 people at [amount] ARR. Running alongside is an [advisory staffing model](narr:Claim_SeniorPeopleWouldSayYes) — Tony argues senior people unavailable for full-time would engage on a cadence.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StarlingCompensationStructure> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SparrowCompensationStructure> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PlannedEngHireCompensationStructure> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SeedPlanHires> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SeniorPeopleWouldSayYes> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TeamVision7to8People> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CapacityConstraint> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SeedPlanHires> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TeamPlanPostTranche1> ;
+    narr:keyPhrase [ narr:text "Solo founder maxes out at ~1.5 concurrent engagements." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_CapacityConstraint> ] ;
+    narr:keyPhrase [ narr:text "marshal the whole middle layer" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SeedPlanHires> ] ;
+    narr:keyPhrase [ narr:text "cannot run customer relationships at 10 hrs/wk, cannot be on-call, gets the dregs of her week" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SparrowCompensationStructure> ] ;
+    narr:keyPhrase [ narr:text "you're convinced laura is hard to recruit, i'm pretty sure she's available and i know others like her. i don't need a recruiter." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SparrowCompensationStructure> ] ;
+    narr:keyPhrase [ narr:text "running with one foot cut off" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PlannedEngHireCompensationStructure> ] ;
+    narr:keyPhrase [ narr:text "me + delivery/product + eng/arch + design + content/marketing + legal + optional second eng focused on domain like data science." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_TeamVision7to8People> ] ;
+    narr:keyPhrase [ narr:text "I can't imagine they would say no." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SeniorPeopleWouldSayYes> ] ;
+    narr:variation [ narr:text "Two distinct plans coexist: the Mar seed-plan names a commission salesperson and full founder salary; the May named-hire plan drops the salesperson entirely for the planned engineering/architecture hire/a collaborator/a collaborator." ; narr:over <https://aswritten.ai/narrative#Narrative_SeedPlanHires> ; narr:over <https://aswritten.ai/narrative#Claim_SeedPlanHires> ; narr:over <https://aswritten.ai/narrative#Narrative_TeamPlanPostTranche1> ] ;
+    narr:variation [ narr:text "Direct named hires vs. the advisory/cadence staffing model — Tony pitches senior advisors as the way to access talent, against concrete full-cost contractor comp." ; narr:over <https://aswritten.ai/narrative#Claim_SeniorPeopleWouldSayYes> ; narr:over <https://aswritten.ai/narrative#Narrative_TeamPlanPostTranche1> ] ;
+    narr:variation [ narr:text "a collaborator's structuring was contested: quarter-time was explicitly rejected as too low for an operational delivery role, settling at ~20 hrs/wk with a 25% discount." ; narr:over <https://aswritten.ai/narrative#Claim_SparrowCompensationStructure> ] ;
+    narr:variation [ narr:text "Recruitability dispute — someone held a collaborator hard to recruit; Scarlet insists the a collaborator-shape supply exists in-network with no recruiter fee." ; narr:over <https://aswritten.ai/narrative#Claim_SparrowCompensationStructure> ] ;
+    narr:variation [ narr:text "Equity is firm for the planned engineering/architecture hire (3-5%) and a collaborator (1.5-2%, vested) but left TBD for a collaborator, whose start can also slip on a budget trigger." ; narr:over <https://aswritten.ai/narrative#Claim_StarlingCompensationStructure> ; narr:over <https://aswritten.ai/narrative#Claim_PlannedEngHireCompensationStructure> ; narr:over <https://aswritten.ai/narrative#Claim_SparrowCompensationStructure> ] ;
+    narr:variation [ narr:text "May 27 reframe: the planned engineering/architecture hire's retainer-plus-profit-share is recast as an instance of the SEL alignment principle, not just a comp line — a later read layered onto the May 18 resolution." ; narr:over <https://aswritten.ai/narrative#Claim_PlannedEngHireCompensationStructure> ] ;
+    narr:writer "claude (subscription)" .
+}

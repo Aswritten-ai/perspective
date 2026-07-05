@@ -1,0 +1,355 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/schema#>
+
+# ============================================================
+# Transaction Provenance
+# ============================================================
+
+INSERT DATA {
+  narr:Tx_20260210T204102Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-10T20:41:02.414Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-10-gtm-consultant-led-sales-pricing.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:generated narr:Sample_GTM_2026_02_10,
+                   narr:Narrative_BuilderTrap,
+                   narr:Narrative_DemoRepoNeeded,
+                   narr:Workflow_ConsultingEngagement,
+                   narr:Question_DemoRepoDomain,
+                   narr:StyleObs_BuilderTrap,
+                   narr:StyleObs_AswrittenLowercase,
+                   narr:StyleObs_CleanToSell,
+                   narr:StyleObs_NaturalUpgrade,
+                   narr:StyleObs_PriorityStack,
+                   narr:StyleObs_TXFactReview,
+                   narr:StyleMetrics_GTM,
+                   narr:RubricAssess_Register_GTM,
+                   narr:RubricAssess_Phrasing_GTM,
+                   narr:RubricAssess_Cadence_GTM,
+                   narr:RubricAssess_Strategy_GTM,
+                   narr:RubricAssess_Tailoring_GTM,
+                   narr:RubricAssess_Resonance_GTM,
+                   narr:RubricAssess_Flow_GTM,
+                   narr:RubricAssess_Novelty_GTM,
+                   narr:RubricAssess_Accuracy_GTM .
+} ;
+
+# ============================================================
+# Added Triples: New Sample, Narratives, Workflow, Actor, Questions, Pricing, Priority Stack, Style Observations, Metrics, Rubric Assessments
+# ============================================================
+
+INSERT DATA {
+  # New Sample
+  narr:Sample_GTM_2026_02_10 a narr:Sample ;
+    dct:title "GTM Strategy Decision: Consultant-Led Sales with Tiered Product Licensing" ;
+    narr:inputLength 5847 ;
+    dct:created "2026-02-10"^^xsd:date ;
+    skos:note "Post-YC application strategic decision memo on sales posture, pricing, licensing, and engagement process." ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  # New Narrative: Builder Trap
+  narr:Narrative_BuilderTrap a narr:Narrative ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    narr:theme "Builder trap is not building instead of selling—it's not knowing what you're selling" ;
+    narr:direction "Cautionary" ;
+    narr:supports "Strategic clarity" ;
+    skos:broader narr:RiskGuardrails ;
+    skos:note "Defining a concrete consulting offer resolves ambiguity and prevents speculative engineering." ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  # New Narrative: Demo Repo Needed (CORRECTED: skos:broader changed to narr:SalesDecks)
+  narr:Narrative_DemoRepoNeeded a narr:Narrative ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    narr:theme "Demo repo needed to show completed collective memory without exposing source" ;
+    narr:direction "Neutral" ;
+    narr:supports "Sales enablement" ;
+    skos:broader narr:SalesDecks ;
+    skos:note "Bridges consulting delivery and product demonstration. Org/domain TBD (fictional? public? OSS?). Sales enablement artifact for 'here's what you get' demonstration." ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  # New Workflow: Consulting Engagement Process (7 steps)
+  narr:Workflow_ConsultingEngagement a narr:Workflow ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    dct:title "Two-Week Consulting Engagement Process" ;
+    skos:broader narr:CoreWorkflows ;
+    narr:hasStep narr:Step_Kickoff,
+                  narr:Step_IdentifyExperts,
+                  narr:Step_IngestDocs,
+                  narr:Step_Calls,
+                  narr:Step_ReviewExtracted,
+                  narr:Step_Demo,
+                  narr:Step_SetupTrial ;
+    skos:note "Week 1: kickoff, identify experts, ingest docs. Week 1-2: calls, transcripts, review. Week 2: demo, setup, 30-day trial." ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:Step_Kickoff a narr:WorkflowStep ;
+    narr:stepNumber 1 ;
+    skos:prefLabel "Kickoff call" ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:Step_IdentifyExperts a narr:WorkflowStep ;
+    narr:stepNumber 2 ;
+    skos:prefLabel "Identify 2-3 domain experts" ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:Step_IngestDocs a narr:WorkflowStep ;
+    narr:stepNumber 3 ;
+    skos:prefLabel "Ingest existing docs (Notion, Confluence, wikis)" ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:Step_Calls a narr:WorkflowStep ;
+    narr:stepNumber 4 ;
+    skos:prefLabel "Schedule 3-5 calls with experts" ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:Step_ReviewExtracted a narr:WorkflowStep ;
+    narr:stepNumber 5 ;
+    skos:prefLabel "Review extracted knowledge (TX fact review loop)" ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:Step_Demo a narr:WorkflowStep ;
+    narr:stepNumber 6 ;
+    skos:prefLabel "Demo the collective memory" ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:Step_SetupTrial a narr:WorkflowStep ;
+    narr:stepNumber 7 ;
+    skos:prefLabel "Set up 30-day trial with MCP access" ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:Question_DemoRepoDomain a narr:Question ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    skos:prefLabel "What org/domain for demo repo?" ;
+    skos:related narr:SalesDecks ;
+    skos:note "Open question: fictional, public, or OSS domain for demo collective memory." ;
+    skos:related narr:Narrative_DemoRepoNeeded ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  # New Style Observations
+  narr:StyleObs_BuilderTrap a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_GTM_2026_02_10 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 267 ;
+        oa:end 355
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The builder trap isn't \"building instead of selling\" — it's \"not knowing what you're selling\"" ;
+        oa:prefix "identified risk of defaulting to engineering over revenue. " ;
+        oa:suffix ", so you keep building.\""
+      ]
+    ] ;
+    skos:note "Stock phrase / idiolect: reframes common startup failure mode with precision." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  # CORRECTED: Renamed from PucksOnTrucks to AswrittenLowercase, updated oa:exact
+  narr:StyleObs_AswrittenLowercase a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_GTM_2026_02_10 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 0 ;
+        oa:end 9
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten" ;
+        oa:prefix "" ;
+        oa:suffix " is the tool you use"
+      ]
+    ] ;
+    skos:note "Brand name stylization: lowercase 'aswritten' consistently used throughout source." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:StyleObs_CleanToSell a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_GTM_2026_02_10 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1520 ;
+        oa:end 1620
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Clean to sell: \"What's the next project you're going to onboard junior folks into?\"" ;
+        oa:prefix "Priced per knowledge domain (e.g., \"pricing engine\", \"client onboarding\", \"architecture decisions\"). " ;
+        oa:suffix ""
+      ]
+    ] ;
+    skos:note "Short, punchy cadence with direct second-person framing." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:StyleObs_NaturalUpgrade a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Simile ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    oa:hasBody narr:Simile ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_GTM_2026_02_10 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2680 ;
+        oa:end 2770
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Natural upgrade path: consulting delivers initial value, licensing captures ongoing value." ;
+        oa:prefix "This is the ongoing value — the system that keeps learning. Includes support.\n\n" ;
+        oa:suffix ""
+      ]
+    ] ;
+    skos:note "Metaphor/analogy: 'natural upgrade path' frames business model as organic progression." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:StyleObs_PriorityStack a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_GTM_2026_02_10 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4150 ;
+        oa:end 4180
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Priority Stack (Updated)" ;
+        oa:prefix "## " ;
+        oa:suffix ""
+      ]
+    ] ;
+    skos:note "Terminology control: 'Priority Stack' as canonical term for sequenced work." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  # CORRECTED: skos:broader changed from AcronymPluralization to TerminologyControl
+  narr:StyleObs_TXFactReview a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_GTM_2026_02_10 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3450 ;
+        oa:end 3480
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the TX fact review loop" ;
+        oa:prefix "7. Review extracted knowledge — " ;
+        oa:suffix ""
+      ]
+    ] ;
+    skos:note "Acronym usage: 'TX' for transaction, domain-specific shorthand. Terminology control, not pluralization." ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  # New Style Metrics
+  narr:StyleMetrics_GTM a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    narr:AverageSentenceLength 18.5 ;
+    narr:ActiveVoiceRatio 0.82 ;
+    narr:JargonDensity 0.12 ;
+    narr:Conciseness 0.78 ;
+    skos:note "High active voice, moderate jargon (domain terms like 'MCP', 'TX', 'collective memory'), concise phrasing." ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  # New Rubric Assessments
+  narr:RubricAssess_Register_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    rdf:value 4.5 ;
+    skos:note "Direct, conversational register with second-person framing ('you're selling', 'your AI'). High active voice. Fits strategic memo context." ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:RubricAssess_Phrasing_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    rdf:value 4.5 ;
+    skos:note "Strong idiolect: 'builder trap', 'clean to sell', 'natural upgrade path'. Domain verbs ('onboard', 'ingest', 'extract'). Stock phrases evident." ;
+    skos:related narr:StyleObs_BuilderTrap, narr:StyleObs_CleanToSell ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:RubricAssess_Cadence_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    rdf:value 4.0 ;
+    skos:note "Short, punchy sentences mixed with structured lists. Effective rhythm for decision memo. Some longer explanatory clauses." ;
+    skos:related narr:StyleObs_CleanToSell ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:RubricAssess_Strategy_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    rdf:value 5.0 ;
+    skos:note "Directly articulates strategy (consultant-led GTM), pricing model, licensing tiers, engagement process. Explicit updates to prior roadmap. Perfect alignment." ;
+    skos:related narr:Narrative_GTM_ConsultantLed, narr:Narrative_PricingPerDomain ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:RubricAssess_Tailoring_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    rdf:value 4.0 ;
+    skos:note "Tailored to internal strategic decision-making (founder + AI coworker). References specific actors (the customer's chief architect, Tony). Could be adapted for external pitch." ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:RubricAssess_Resonance_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    rdf:value 4.0 ;
+    skos:note "Uses concrete examples (the customer's chief architect price signal, YC application context). 'Builder trap' reframe is memorable. Could add more customer stories." ;
+    skos:related narr:StyleObs_BuilderTrap, narr:StyleObs_NaturalUpgrade ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:RubricAssess_Flow_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    rdf:value 4.5 ;
+    skos:note "Logical progression: problem (builder trap) → decision (consultant-led) → pricing → licensing → process → priorities. Clear section headers. Natural transitions." ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:RubricAssess_Novelty_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    rdf:value 4.0 ;
+    skos:note "Fresh phrasing ('builder trap' reframe, 'natural upgrade path'). Some standard consulting/SaaS terms ('pilot', 'retainer'). Brand voice distinct." ;
+    skos:related narr:StyleObs_BuilderTrap, narr:StyleObs_NaturalUpgrade ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+
+  narr:RubricAssess_Accuracy_GTM a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_GTM_2026_02_10 ;
+    rdf:value 4.5 ;
+    skos:note "Concrete dates, names, prices. Explicit attribution (the customer's chief architect signal). Open questions flagged. High factual precision for strategic memo." ;
+    prov:wasGeneratedBy narr:Tx_20260210T204102Z .
+} 

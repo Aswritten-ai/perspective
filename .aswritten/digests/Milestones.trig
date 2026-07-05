@@ -1,0 +1,31 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Milestones> {
+  <https://aswritten.ai/narrative#Digest_Milestones> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Milestones> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers product and partnership milestones across spring 2026. The mainline is aswritten's own launch: a [beta at ~10 users](narr:Narrative_ProductBetaStatus) shifting from sprint to marathon, an [April 1 soft launch](narr:Narrative_April1SoftLaunch) (revised 2026-03-23 into above/below-the-line cuts), and a retrospective [28-day flight-control arc](narr:Narrative_LaunchFlightControlArc) (Mar 19–Apr 14) reporting 24 tools reduced to 7 and 73+ E2E tests. Running alongside is the the enterprise customer partnership thread: a [bulk-mail MVP in a customer test environment](narr:Narrative_BulkMailMVPLive), [described by the customer's chief architect](narr:Obs_CustomerArchitectBulkMailMVPQuote), framing an 8-week, ~100-feature sprint as a team-trial proving ground. Technical and commercial milestones sit beneath: a [V0 channel-agnostic SMS deep-link](narr:Narrative_V0_SMS_DeepLink) (Apr 8–11), [single-node extraction merge decisions](narr:Observation_SingleNodeExtractionStatus), and [agreed next steps](narr:Observation_NextSteps) including a [amount]/month pricing discussion. The region spans launch readiness, beta traction, customer-trial mechanics, and infra/model choices.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_April1SoftLaunch> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_BulkMailMVPLive> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_LaunchFlightControlArc> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ProductBetaStatus> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_V0_SMS_DeepLink> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectBulkMailMVPQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_NextSteps> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_SingleNodeExtractionStatus> ;
+    narr:keyPhrase [ narr:text "approximately 10 people have tried it" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ProductBetaStatus> ] ;
+    narr:keyPhrase [ narr:text "needs to get into 20-50 people's hands for word of mouth to catapult" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ProductBetaStatus> ] ;
+    narr:keyPhrase [ narr:text "the enterprise customer has ~100 new features to build in the next eight weeks." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_BulkMailMVPLive> ] ;
+    narr:keyPhrase [ narr:text "The customer won't go live until October 2026." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_BulkMailMVPLive> ] ;
+    narr:keyPhrase [ narr:text "58+ transactions, 24 tools reduced to 7, 73+ E2E tests, 17+ documents written or substantially revised." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_LaunchFlightControlArc> ] ;
+    narr:keyPhrase [ narr:text "MVP of our bulk mail new component to one of our customers. I mean it's not going to production" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomerArchitectBulkMailMVPQuote> ] ;
+    narr:keyPhrase [ narr:text "Pricing discussion at [amount]/month" ; narr:phraseSource <https://aswritten.ai/narrative#Observation_NextSteps> ] ;
+    narr:variation [ narr:text "Two clocks: aswritten's own April-1 launch is urgent and now, while the enterprise customer's bulk-mail customer won't go live until October 2026 — different velocities under one hub." ; narr:over <https://aswritten.ai/narrative#Narrative_April1SoftLaunch> ; narr:over <https://aswritten.ai/narrative#Narrative_BulkMailMVPLive> ] ;
+    narr:variation [ narr:text "Distribution is interview-driven not browse-driven — marketplace browse/search, starter perspectives, and content library were explicitly cut below the line." ; narr:over <https://aswritten.ai/narrative#Narrative_April1SoftLaunch> ] ;
+    narr:variation [ narr:text "Mode shift from sprint to marathon contrasts with the flight-control arc's compressed 28-day sprint framing — which is the milestone that defines the moment?" ; narr:over <https://aswritten.ai/narrative#Narrative_ProductBetaStatus> ; narr:over <https://aswritten.ai/narrative#Narrative_LaunchFlightControlArc> ] ;
+    narr:variation [ narr:text "Model road not yet taken: pragmatic path is merge Sonnet now and eval Gemini in parallel, blocked on eval infra (task-072) rather than committing to Gemini." ; narr:over <https://aswritten.ai/narrative#Observation_SingleNodeExtractionStatus> ] ;
+    narr:variation [ narr:text "The April-14 flight-control arc reads as a concluding retrospective, but it post-dates and reframes the still-open April-1 launch and live beta — a closed story laid over open ones." ; narr:over <https://aswritten.ai/narrative#Narrative_LaunchFlightControlArc> ; narr:over <https://aswritten.ai/narrative#Narrative_April1SoftLaunch> ] ;
+    narr:writer "claude (subscription)" .
+}

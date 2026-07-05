@@ -1,0 +1,146 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260408T150000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-08T15:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-08-design-session-1.md" ;
+    narr:originRef "research/goal-directed-agents" ;
+    prov:generated narr:Sample_FrontSubstrate_20260408, narr:Narrative_FrontHITLSubstrate, narr:Narrative_TierReframeInfrastructure, narr:Claim_FrontIsCoordinationBrain, narr:Claim_OrgTierDedicatedPlane, narr:Claim_SalesMotionRecursiveDogfooding, narr:Principle_AppropriatenessGate, narr:Principle_DisclosureDefault, narr:Narrative_MonetizationAuthorConversion, narr:StyleMetrics_FrontSubstrate, narr:StyleObs_ArchitecturalHuge, narr:StyleObs_WizardOfOz, narr:StyleObs_RecursiveDogfooding .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260408T150000Z {
+    narr:Sample_FrontSubstrate_20260408 a narr:Sample ;
+      dct:title "Front as substrate, sales motion as dogfooding, principles, and the tier reframe" ;
+      dct:created "2026-04-08"^^xsd:date ;
+      narr:inputLength 10500 .
+
+    narr:Narrative_FrontHITLSubstrate a narr:Narrative ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      narr:theme "Front App as the Human-in-the-Loop (HITL) coordination substrate" ;
+      skos:broader narr:TechnologiesSocialSystems ;
+      skos:note "Front App provides the coordination layer that makes goal-directed agents shippable by collapsing conversation state, threading, and human handoff into existing tooling." .
+
+    narr:Narrative_TierReframeInfrastructure a narr:Narrative ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      narr:theme "Tier structure reframe: whose infrastructure, not who can deploy" ;
+      skos:broader narr:PackagingEntitlement ;
+      skos:note "The distinction between Team and Org tiers is the ownership of the coordination plane. Org tier owns their own Front-equivalent stack; Team tier are guests on Scarlet's managed infrastructure." .
+
+    narr:Claim_FrontIsCoordinationBrain a narr:Claim ;
+      narr:aboutNode narr:Narrative_FrontHITLSubstrate ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      skos:note "Front is the coordination brain handling conversation state, threading, history, and ambient visibility for the principal, while Twilio is pure transport." .
+
+    narr:Claim_OrgTierDedicatedPlane a narr:Claim ;
+      narr:aboutNode narr:Narrative_TierReframeInfrastructure ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      skos:note "The Org tier is categorically different because it provides a dedicated coordination plane where the organization acts as the 'wizard of oz' behind their own agents." .
+
+    narr:Claim_SalesMotionRecursiveDogfooding a narr:Claim ;
+      narr:aboutNode narr:Narrative_ExhaustedExpertTrigger ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      skos:note "Applying goal-directed agents to aswritten's own sales motion is the ultimate dogfooding of the exhausted-expert trigger." ;
+      narr:supports narr:Claim_SalesIsDelivery .
+
+    narr:Principle_AppropriatenessGate a narr:Claim ;
+      narr:aboutNode narr:GovernanceSafetyTrust ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      skos:note "A perspective-grounded agent must refuse to act if the principal's principles forbid the action (e.g., refusing cold outreach if warm-intro-only is a principle)." .
+
+    narr:Principle_DisclosureDefault a narr:Claim ;
+      narr:aboutNode narr:GovernanceSafetyTrust ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      skos:note "Agent outreach uses disclosure by default, with the principal visibly present in the coordination substrate able to take over as themselves." .
+
+    narr:Narrative_MonetizationAuthorConversion a narr:Narrative ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      narr:theme "Monetization principle: paywall converts recipients into authors" ;
+      skos:broader narr:ValueExchange ;
+      skos:note "Recipients have no goal and are never charged to read. Senders have goals and pay to author shares. Conversion is horizontal (reader to author)." .
+
+    narr:StyleMetrics_FrontSubstrate a narr:StyleMetrics ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      skos:broader narr:StyleMetrics ;
+      narr:AverageSentenceLength 19 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.12 .
+
+    narr:StyleObs_ArchitecturalHuge a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FrontSubstrate_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1024 ; oa:end 1042 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "architecturally huge" ; oa:prefix "This is " ; oa:suffix ". Every hand-wavy" ]
+      ] .
+
+    narr:StyleObs_WizardOfOz a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FrontSubstrate_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5420 ; oa:end 5432 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "wizard of oz" ; oa:prefix "able to be the " ; oa:suffix " in front" ]
+      ] .
+
+    narr:StyleObs_RecursiveDogfooding a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_FrontSubstrate_20260408 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FrontSubstrate_20260408 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4350 ; oa:end 4370 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Recursive dogfooding" ; oa:prefix "founder... " ; oa:suffix "." ]
+      ] .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Claim_10xGapIntentional skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260408T150000Z {
+    narr:Claim_10xGapIntentional skos:note "The 10x price gap between Team and Org signals a categorical jump: delegatable autonomy with dedicated human-checkpoint infrastructure (own coordination plane) vs. being a guest on Scarlet's plane." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_10xGapIntentional skos:note ?oldNote .
+  }
+} ;
+
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_NewTierStructure_20260319 skos:note ?oldTierNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260408T150000Z {
+    narr:Narrative_NewTierStructure_20260319 skos:note "Corrected tier structure: Free (consumer/read-only), Expert/Team (authors on managed infra), Org (full stack with dedicated coordination plane)." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_NewTierStructure_20260319 skos:note ?oldTierNote .
+  }
+}

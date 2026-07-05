@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__TechnicalExplainers> {
+  <https://aswritten.ai/narrative#Digest_ns__TechnicalExplainers> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#TechnicalExplainers> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers material on how technical concepts get *explained* — both a design decision and the deck/communication choices around it. The load-bearing decision is to [bundle Snapshot and Ontology into one State type](narr:Decision_StateAbstraction), justified as simplifying tool signatures, enforcing synchronization, and enabling session-level caching. Around it sit two deck-revision notes that flag where explanations currently fall short: [adding a context-window management explanation](narr:DeckUpdate_ContextWindowMgmt) via layered compilation (layer0/1/2/3) to answer a metadata-heavy-docs concern, and [clarifying propagation mechanics](narr:DeckUpdate_PropagationMechanics) through the git submodule hierarchy, presently left vague. Two style observations annotate register rather than content: one notes the [colloquial 'hand waving'](narr:StyleObs_HandWaving) metaphor as a vagueness signal, the other flags [domain jargon like 'context windows'](narr:StyleObs_Jargon) as presupposing a technical audience. The region is about explanation quality — what to simplify, what is under-specified, and the informal-vs-technical register the explanations adopt.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Decision_StateAbstraction> ;
+    narr:covers <https://aswritten.ai/ns/narrative#DeckUpdate_ContextWindowMgmt> ;
+    narr:covers <https://aswritten.ai/ns/narrative#DeckUpdate_PropagationMechanics> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_HandWaving> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Jargon> ;
+    narr:keyPhrase [ narr:text "Simplifies tool signatures, enforces synchronization, enables session-level caching, maps to Standard Context Tier (15K tokens)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Decision_StateAbstraction> ] ;
+    narr:keyPhrase [ narr:text "One parameter instead of two; ontology always matches snapshot version; compile once, use many times" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Decision_StateAbstraction> ] ;
+    narr:keyPhrase [ narr:text "Add brief context window management explanation (layered compilation: layer0/1/2/3) to address metadata-heavy docs concern" ; narr:phraseSource <https://aswritten.ai/ns/narrative#DeckUpdate_ContextWindowMgmt> ] ;
+    narr:keyPhrase [ narr:text "Clarify propagation mechanics (git submodule hierarchy); currently hand-waved as 'all materials update automatically'" ; narr:phraseSource <https://aswritten.ai/ns/narrative#DeckUpdate_PropagationMechanics> ] ;
+    narr:keyPhrase [ narr:text "it's great to like do hand waving and go oh, it'll propagate and it does this and it does that" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_HandWaving> ] ;
+    narr:keyPhrase [ narr:text "how do you manage context windows, especially in large docs?" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Jargon> ] ;
+    narr:variation [ narr:text "Register pulls two opposite ways: jargon ('context windows') assumes a technical audience while 'hand waving' signals over-vague under-explanation — the explainers are simultaneously too technical and too loose." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Jargon> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_HandWaving> ] ;
+    narr:variation [ narr:text "Two explanations are flagged as currently inadequate (propagation hand-waved as 'updates automatically'; context-window mgmt needs adding), in tension with the decision child's confident simplification claims." ; narr:over <https://aswritten.ai/ns/narrative#DeckUpdate_PropagationMechanics> ; narr:over <https://aswritten.ai/ns/narrative#DeckUpdate_ContextWindowMgmt> ; narr:over <https://aswritten.ai/ns/narrative#Decision_StateAbstraction> ] ;
+    narr:variation [ narr:text "These are mixed-kind children — a settled design decision, two open to-do revisions, and two meta style observations — not a single coherent argument." ; narr:over <https://aswritten.ai/ns/narrative#Decision_StateAbstraction> ; narr:over <https://aswritten.ai/ns/narrative#DeckUpdate_PropagationMechanics> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_HandWaving> ] ;
+    narr:writer "claude (subscription)" .
+}

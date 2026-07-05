@@ -1,0 +1,89 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260316T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-16T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-16-prompt-architecture-regression-start-absorption.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      narr:Narrative_ConvictionLevelRename,
+      narr:Obs_ConvictionLabelPlainEnglish .
+} ;
+
+# ── NARRATIVES ────────────────────────────────────────────────────────────────
+
+INSERT DATA {
+  GRAPH narr:Tx_20260316T120000Z {
+
+    narr:Narrative_ConvictionLevelRename a narr:Narrative ;
+
+      skos:broader narr:TerminologyControl ;
+      skos:prefLabel "Conviction Level Rename: Metaphorical to Plain English" ;
+      skos:note "Conviction levels renamed from metaphorical to plain English: notion (unchanged), claim (was stake), decision (was boulder), principle (was foundation). Rationale: stake and boulder required a key to decode; the new labels form a natural progression — all nouns, all self-explanatory. Backend (n8n extraction, SPARQL, compiled snapshots) still emits old enum values; update tracked in Notion. Frontend labels updated in CLAUDE.md, claude-prepend.md, and ASWRITTEN.md." ;
+      narr:theme "Conviction level labels renamed from metaphors (stake, boulder, foundation) to plain English (claim, decision, principle) to eliminate the need for a decoding key" .
+
+  }
+} ;
+
+# ── OBSERVATIONS ──────────────────────────────────────────────────────────────
+
+INSERT DATA {
+  GRAPH narr:Tx_20260316T120000Z {
+
+    narr:Obs_ConvictionLabelPlainEnglish a narr:Observation ;
+
+      skos:broader narr:TerminologyControl ;
+      skos:note "Conviction level rename rationale: notion and foundation already worked as plain English; stake and boulder were metaphors requiring a key to decode. New labels: notion (unchanged), claim (was stake), decision (was boulder), principle (was foundation). All nouns, all self-explanatory, forming a natural progression." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2380 ;
+          oa:end 2560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The confusion is with stake and boulder without prior explanation." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+  }
+} ;
+
+# ── UPDATE: Narrative_ConvictionFramework — rename from grave to principle ─────
+# Snapshot narr:Narrative_ConvictionFramework mentions "notion → stake → boulder → grave".
+# Memory asserts the rename: stake→claim, boulder→decision, foundation→principle.
+# The snapshot also uses "Foundation" not "grave" in most places.
+# We update the ConvictionFramework note to reflect the new plain-English labels.
+
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_ConvictionFramework skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260316T120000Z {
+    narr:Narrative_ConvictionFramework skos:note "Conviction framework renamed to plain English as of March 16, 2026: notion (unchanged, easily moved, early thinking), claim (was stake, asserted, still validating), decision (was boulder, settled, hard to revisit), principle (was foundation, bedrock, career-arc level). Backend (n8n extraction, SPARQL, compiled snapshots) still emits old enum values (Notion/Stake/Boulder/Foundation); update tracked in Notion. Frontend labels updated in CLAUDE.md, claude-prepend.md, and ASWRITTEN.md. Prior label: notion → stake → boulder → foundation (grave was an earlier variant)." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_ConvictionFramework skos:note ?oldNote .
+    FILTER(CONTAINS(STR(?oldNote), "stake") || CONTAINS(STR(?oldNote), "boulder") || CONTAINS(STR(?oldNote), "grave"))
+  }
+} 

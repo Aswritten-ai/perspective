@@ -1,0 +1,126 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260413T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-13T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-04-13-reachability-promise.md" ;
+    narr:originRef "research/goal-directed-agents" ;
+    prov:generated narr:Sample_ReachabilityPromise_20260413, 
+                   narr:Narrative_ReachabilityWithoutInterruptibility,
+                   narr:Claim_ReachabilityAsKeystonePromise,
+                   narr:Claim_CodingAgentAsClient,
+                   narr:Claim_ProxyEvolvesThroughConversation,
+                   narr:Observation_PeaceAsBenefit,
+                   narr:Observation_TrustContractPrincipledEscalation,
+                   narr:Observation_EnterpriseCustomerDemoReframe,
+                   narr:StyleObs_VisceralDiction,
+                   narr:StyleObs_VerbatimPrecision,
+                   narr:StyleObs_ArchetypeTesting,
+                   narr:Metrics_ReachabilityPromise .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260413T120000Z {
+    narr:Sample_ReachabilityPromise_20260413 a narr:Sample ;
+      dct:title "Reachability Without Being Interruptible — the Proxy as the Customer-Facing Promise" ;
+      dct:created "2026-04-13"^^xsd:date ;
+      narr:inputLength 12500 .
+
+    narr:Narrative_ReachabilityWithoutInterruptibility a narr:Narrative ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      narr:theme "Reachable without being interruptible" ;
+      skos:note "The keystone customer-facing promise: the proxy absorbs routine interactions and surfaces only what matters, delivering 'peace' to the expert." .
+
+    narr:Claim_ReachabilityAsKeystonePromise a narr:Claim ;
+      narr:aboutNode narr:Narrative_ReachabilityWithoutInterruptibility ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      skos:note "This framing is a principle candidate that would partially supersede existing category definitions (Curated Expertise, Delegation) by adding a 'promise' layer above the 'mechanism' layer." .
+
+    narr:Claim_CodingAgentAsClient a narr:Claim ;
+      narr:aboutNode narr:ActorPain_CodingAgents ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      skos:note "The coding agent IS the client. A proxy mediates the developer's interaction with their tools so the developer is not a 'cron job' for AI." .
+
+    narr:Claim_ProxyEvolvesThroughConversation a narr:Claim ;
+      narr:aboutNode narr:Narrative_ReachabilityWithoutInterruptibility ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      skos:note "The principal can create new variants during real interactions, meaning the proxy learns and sharpens over time. It is a 'clone-that-grows' rather than a static chatbot." .
+
+    narr:Observation_PeaceAsBenefit a narr:Observation ;
+      skos:broader narr:Outcomes ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      skos:note "The word 'peace' is the felt benefit that experts will pay almost anything for." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1280 ; oa:end 1300 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The word peace is the felt benefit." ] .
+
+    narr:Observation_TrustContractPrincipledEscalation a narr:Observation ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      skos:note "Principled escalation (knowing limits) is the trust contract that makes delegation real." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2850 ; oa:end 2920 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "This is the trust contract that makes delegation real." ] .
+
+    narr:Observation_EnterpriseCustomerDemoReframe a narr:Observation ;
+      skos:broader narr:SalesDecks ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      skos:note "Reframes the the enterprise customer demo from 'goal-directed agent primitive' to 'handing you back peace'." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 6800 ; oa:end 6900 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "We hand you back peace and you give up nothing but the boring conversations." ] .
+
+    narr:StyleObs_VisceralDiction a narr:StyleObservation ;
+      skos:broader narr:DictionWordChoice ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      skos:note "Use of visceral, emotional nouns like 'peace' and 'thefts' to describe business value." ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_ReachabilityPromise_20260413 ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The product is peace." ] ] .
+
+    narr:StyleObs_VerbatimPrecision a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      skos:note "Explicit preservation of verbatim quotes because 'the precision matters'." ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_ReachabilityPromise_20260413 ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "preserved verbatim because the precision matters" ] ] .
+
+    narr:StyleObs_ArchetypeTesting a narr:StyleObservation ;
+      skos:broader narr:RhetoricalDevices ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      skos:note "Systematic testing of a new principle against a list of established archetypes to prove universality." ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_ReachabilityPromise_20260413 ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "testing it against every archetype in the perspective" ] ] .
+
+    narr:Metrics_ReachabilityPromise a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_ReachabilityPromise_20260413 ;
+      narr:AverageSentenceLength 19 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.08 .
+  }
+} ;
+
+DELETE {
+  GRAPH ?g {
+    narr:Claim_ActivationGapDiagnosis skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260413T120000Z {
+    narr:Claim_ActivationGapDiagnosis skos:note "The activation gap closes when the trigger names a recurring weekly pain (like thefts of attention) rather than an abstract capability." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_ActivationGapDiagnosis skos:note ?oldNote .
+  }
+} 

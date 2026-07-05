@@ -1,0 +1,179 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260521T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-21T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# Bulk transcript ingestion is a valid onboarding path" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_BulkIngestionCorrection_20260521,
+      narr:Claim_BulkIngestionViaAISummarizationValid,
+      narr:Claim_OnboardingPromiseSixMonthsTranscripts,
+      narr:Claim_ThreeRankedIngestionMethods,
+      narr:Narrative_BulkIngestionValidMethod,
+      narr:StyleObs_DirectCorrectionRegister_20260521,
+      narr:StyleObs_VerbatimBlockquote_20260521,
+      narr:StyleObs_AntithesisOverplayed_20260521,
+      narr:StyleMetrics_BulkIngestionCorrection_20260521 .
+} ;
+
+# UPDATE: Challenge narr:Claim_DirectIngestionIsTrap — memory explicitly contradicts it
+DELETE {
+  GRAPH ?g {
+    narr:Claim_DirectIngestionIsTrap narr:hasConvictionLevel ?oldLevel ;
+      skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260521T120000Z {
+    narr:Claim_DirectIngestionIsTrap narr:hasConvictionLevel narr:Conviction_Notion ;
+      skos:note "CORRECTED 2026-05-21 by Scarlet: The direct ingestion framing is overplayed. It is not an explicit anti-pattern. Bulk historical ingestion via AI summarization is a valid and effective method — Scarlet advised the customer's chief architect to use it for the enterprise customer ARB transcripts specifically because it would be faster, and it was effective. The 'we discovered it by failing' framing was a bad AI artifact. Prior Foundation-level conviction is superseded." ;
+      narr:challenges narr:Narrative_DirectIngestionAntiPattern .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_DirectIngestionIsTrap narr:hasConvictionLevel ?oldLevel .
+    OPTIONAL { narr:Claim_DirectIngestionIsTrap skos:note ?oldNote . }
+  }
+} ;
+
+# UPDATE: Challenge narr:Narrative_DirectIngestionAntiPattern — memory explicitly contradicts its theme
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_DirectIngestionAntiPattern narr:theme ?oldTheme ;
+      skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260521T120000Z {
+    narr:Narrative_DirectIngestionAntiPattern narr:theme "CORRECTED: Direct historical transcript ingestion via AI summarization is a valid onboarding path — not an explicit anti-pattern. The anti-pattern framing was overplayed. Bulk summarization across a set is effective; the concern is unreviewed direct ingestion without summarization or topic analysis, not bulk ingestion per se." ;
+      skos:note "2026-05-21 correction by Scarlet: The 'direct ingestion is an explicit anti-pattern' claim was wrong. Bulk ingestion via AI summarization was a deliberate, successful method Scarlet advised the customer's chief architect to use. The prior framing conflated unreviewed raw ingestion with summarization-mediated bulk ingestion." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_DirectIngestionAntiPattern narr:theme ?oldTheme .
+    OPTIONAL { narr:Narrative_DirectIngestionAntiPattern skos:note ?oldNote . }
+  }
+} ;
+
+# INSERT: New sample, claims, narrative, style observations
+INSERT DATA {
+  GRAPH narr:Tx_20260521T120000Z {
+
+    narr:Sample_BulkIngestionCorrection_20260521 a narr:Sample ;
+      dct:title "Bulk transcript ingestion is a valid onboarding path — 'direct ingestion is an anti-pattern' is a graph error" ;
+      dct:created "2026-05-21"^^xsd:date ;
+      narr:inputLength 2847 ;
+      skos:note "Pitch-reframe strategy synthesis review session, May 21 2026. Scarlet corrects a Foundation-level claim the graph held about direct ingestion being an explicit anti-pattern. Covers the onboarding promise, three ranked ingestion methods, and the reconciliation tool gap." .
+
+    narr:Claim_BulkIngestionViaAISummarizationValid a narr:Claim ;
+      dct:source narr:Sample_BulkIngestionCorrection_20260521 ;
+      skos:note "Bulk historical ingestion via AI summarization is a valid and effective onboarding method. Scarlet explicitly advised the customer's chief architect to use it for the enterprise customer's ARB transcripts because it would be faster than processing every transcript individually — and it was indeed effective. The 'we discovered it by failing' framing was a bad AI artifact; they did not fail. This directly supersedes the Foundation-level Claim_DirectIngestionIsTrap." ;
+      narr:aboutNode narr:Narrative_BulkIngestionValidMethod ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:challenges narr:Claim_DirectIngestionIsTrap ;
+      narr:supports narr:Narrative_ThreePartSeedingPattern .
+
+    narr:Claim_OnboardingPromiseSixMonthsTranscripts a narr:Claim ;
+      dct:source narr:Sample_BulkIngestionCorrection_20260521 ;
+      skos:note "'Send us six months of transcripts and get a perspective tomorrow' is absolutely a promise the product can make. The onboarding promise holds because bulk ingestion via AI summarization is a valid, effective method. Scarlet confirmed this explicitly during the May 21 pitch-reframe review." ;
+      narr:aboutNode narr:Narrative_BulkIngestionValidMethod ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_TranscriptBootstrappingUnderplayed .
+
+    narr:Claim_ThreeRankedIngestionMethods a narr:Claim ;
+      dct:source narr:Sample_BulkIngestionCorrection_20260521 ;
+      skos:note "Three bulk ingestion methods ranked: (1) Full summarization across the set — what the customer's chief architect did, effective; (2) Per-transcript memory-by-memory ingestion — slow and overwhelming; (3) Target method — batched ingestion followed by a human reconciliation pass, or a hybrid of batched individual transcripts and cross-set topic summaries. Method 3 is best but depends on the reconciliation tool, which is not yet built." ;
+      narr:aboutNode narr:Narrative_BulkIngestionValidMethod ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ThreePartSeedingPattern .
+
+    narr:Narrative_BulkIngestionValidMethod a narr:Narrative ;
+      dct:source narr:Sample_BulkIngestionCorrection_20260521 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Bulk Historical Transcript Ingestion via AI Summarization Is a Valid Onboarding Path" ;
+      skos:note "Scarlet's correction of a graph error: bulk ingestion via AI summarization is a deliberate, successful method she advised the customer's chief architect to use for the enterprise customer's ARB transcripts. The 'direct ingestion is an anti-pattern' framing was overplayed. The onboarding promise ('send us six months of transcripts, get a perspective tomorrow') holds. The missing piece is the reconciliation tool for the optimal hybrid method." ;
+      narr:theme "Bulk historical transcript ingestion via AI summarization is a valid, effective onboarding method — the anti-pattern framing was a graph error; the missing capability is a reconciliation tool for the optimal hybrid approach" .
+
+    # Style observations
+    narr:StyleObs_DirectCorrectionRegister_20260521 a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_BulkIngestionCorrection_20260521 ;
+      skos:note "authoritative-corrective; declarative negation of prior claim" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BulkIngestionCorrection_20260521 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 0 ;
+          oa:end 120
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The direct ingestion thing is also overplayed. It's not an explicit anti-pattern." ;
+          oa:prefix "In Scarlet's words:\n\n> " ;
+          oa:suffix " The way to ingest"
+        ]
+      ] .
+
+    narr:StyleObs_VerbatimBlockquote_20260521 a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_BulkIngestionCorrection_20260521 ;
+      skos:note "first-person blockquote; run-on conversational cadence; self-interrupting clause structure" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BulkIngestionCorrection_20260521 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 350 ;
+          oa:end 520
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Send us six months of transcripts and get a perspective tomorrow is absolutely a promise the product can make." ;
+          oa:prefix "In Scarlet's words:\n\n> " ;
+          oa:suffix "\n\nWhat is not yet built"
+        ]
+      ] .
+
+    narr:StyleObs_AntithesisOverplayed_20260521 a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_BulkIngestionCorrection_20260521 ;
+      skos:note "antithesis structure: 'overplayed / not an explicit anti-pattern' vs prior claim; deliberate vs accidental framing" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BulkIngestionCorrection_20260521 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1200 ;
+          oa:end 1380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Really, we need reconciliation more than anyone else on this graph. There's all sorts of errors like this all over the place." ;
+          oa:prefix "Scarlet also named the larger point this error exposes — the firsthand case for reconciliation:\n\n> " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:StyleMetrics_BulkIngestionCorrection_20260521 a narr:StyleMetrics ;
+      dct:source narr:Sample_BulkIngestionCorrection_20260521 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Correction memo register with embedded verbatim blockquotes from Scarlet. Antithesis-heavy structure (overplayed vs. explicit anti-pattern; deliberate vs. accidental; what is built vs. what is not yet built). Active voice dominant in editorial prose; blockquoted speech is run-on and conversational. Jargon density low — product terms (ingestion, summarization, reconciliation, perspective) used without definition, implying internal audience. Short punchy declaratives at correction peaks." ;
+      narr:AverageSentenceLength "17"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.07"^^xsd:decimal .
+
+  }
+}

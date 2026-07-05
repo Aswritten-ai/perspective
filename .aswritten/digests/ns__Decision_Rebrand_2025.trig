@@ -1,0 +1,24 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Decision_Rebrand_2025> {
+  <https://aswritten.ai/narrative#Digest_ns__Decision_Rebrand_2025> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Decision_Rebrand_2025> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """The 2025 rebrand decision bundles a positioning overhaul of aswritten.ai across three distinct reorientation axes plus its operational and execution scaffolding. The headline reframing moves [from documentation-for-people to collective-memory-for-AI](narr:StrategyShift_HumanToAICentric), recasting the audience itself. Running alongside it, a [storyBASE-as-infrastructure to aswritten.ai-as-product shift](narr:StrategyShift_InfraToProduct) changes what is sold and named, while a third axis reframes [AI from passive retrieval tool to active collaborator with shared context](narr:StrategyShift_PassiveToActive) — a change in the agent's role, not just the audience or the packaging. The strategy is grounded operationally in a [canonical memory creation workflow](narr:Workflow_CanonicalMemoryCreation) (human has experience → AI notices → draft together → approve → write), and is carried into execution by a [five-step migration plan](narr:MigrationPlan_Rebrand). No witness dates or human reconciliation are attached, so the digest reports these as concurrent, mutually reinforcing moves rather than a resolved endpoint.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#MigrationPlan_Rebrand> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StrategyShift_HumanToAICentric> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StrategyShift_InfraToProduct> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StrategyShift_PassiveToActive> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Workflow_CanonicalMemoryCreation> ;
+    narr:keyPhrase [ narr:text "From: Human-centric (documentation for people) | To: AI-centric (collective memory for AI agents)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StrategyShift_HumanToAICentric> ] ;
+    narr:keyPhrase [ narr:text "From: Infrastructure layer (storyBASE) | To: Product identity (aswritten.ai)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StrategyShift_InfraToProduct> ] ;
+    narr:keyPhrase [ narr:text "From: AI as passive retrieval tool | To: AI as active collaborator with shared context" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StrategyShift_PassiveToActive> ] ;
+    narr:keyPhrase [ narr:text "Human has experience → AI notices → draft together → approve → write to collective memory" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Workflow_CanonicalMemoryCreation> ] ;
+    narr:keyPhrase [ narr:text "5-step migration plan for rebrand execution" ; narr:phraseSource <https://aswritten.ai/ns/narrative#MigrationPlan_Rebrand> ] ;
+    narr:variation [ narr:text "Three separable axes are folded into one decision — audience (human→AI), packaging (infra→product), and agent role (passive→active) — which could be adopted or contested independently rather than as a single move." ; narr:over <https://aswritten.ai/ns/narrative#StrategyShift_HumanToAICentric> ; narr:over <https://aswritten.ai/ns/narrative#StrategyShift_InfraToProduct> ; narr:over <https://aswritten.ai/ns/narrative#StrategyShift_PassiveToActive> ] ;
+    narr:variation [ narr:text "The canonical workflow keeps a human approval gate ('approve' before write), qualifying the 'active collaborator' framing — the AI notices and drafts but does not autonomously commit memory." ; narr:over <https://aswritten.ai/ns/narrative#Workflow_CanonicalMemoryCreation> ; narr:over <https://aswritten.ai/ns/narrative#StrategyShift_PassiveToActive> ] ;
+    narr:variation [ narr:text "Strategy/positioning versus execution: the migration plan is concrete rollout mechanics, structurally distinct from the four conceptual repositioning children and the place where the decision actually lands operationally." ; narr:over <https://aswritten.ai/ns/narrative#MigrationPlan_Rebrand> ] ;
+    narr:writer "claude (subscription)" .
+}

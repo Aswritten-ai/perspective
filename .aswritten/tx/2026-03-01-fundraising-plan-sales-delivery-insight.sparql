@@ -1,0 +1,207 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+
+INSERT DATA {
+
+  narr:Tx_20260301T213225Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-03-01T21:32:25Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-03-01-fundraising-plan-sales-delivery-insight.md" ;
+    sb:originRef           "main" ;
+    dct:title              "Extraction: Fundraising Plan and Sales-as-Delivery Insight" .
+
+} ;
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added triples)
+# =============================================================
+
+INSERT DATA {
+
+  # --- Sample_1: new title and provenance link ---
+  narr:Sample_1
+    dct:title "Fundraising Plan and Sales-as-Delivery Insight — Session March 1, 2026" ;
+    dct:source narr:Sample_1 ;
+    .
+
+  # --- New Narratives ---
+  narr:Narrative_SalesAsDelivery a narr:Narrative ;
+    dct:title "Sales-as-Delivery Insight" ;
+    narr:theme "The sales motion and product delivery are the same thing" ;
+    skos:note "Every sales call builds collective memory for the prospect's repo. By the time the prospect is ready to buy, the system is already partially populated with their organizational knowledge. The free trial is experiencing the product during the sales process itself." ;
+    dct:source narr:Sample_1 ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:Narrative_ConciergeToProduct a narr:Narrative ;
+    dct:title "Concierge MVP as Product Validation" ;
+    narr:theme "Manual consulting delivery IS product validation; automation comes later" ;
+    skos:note "Scarlet manually does the interviews (the consulting engagement); engineer automates the pipeline later. This is not a temporary compromise — the consulting IS the sales motion and the manual delivery IS the product validation." ;
+    dct:source narr:Sample_1 ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:Narrative_RevenueBeforeRaise a narr:Narrative ;
+    dct:title "Revenue Before Raise" ;
+    narr:theme "Sell first, raise from strength rather than from projections" ;
+    skos:note "Once the deliverable crystallized, the priority inverted: sell a [amount] engagement NOW, use that revenue and case study to raise from strength. Revenue before raise > projections about future revenue." ;
+    dct:source narr:Sample_1 ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:Obs_MoatLeverage a narr:Observation ;
+    skos:broader narr:MoatLeverage ;
+    dct:source narr:Sample_1 ;
+    skos:note "Proprietary system, 7 org case studies, deep deployment knowledge cited as durable moat even in failure scenario." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:Obs_ProductDeliverable a narr:Observation ;
+    skos:broader narr:WhatIsIt ;
+    dct:source narr:Sample_1 ;
+    skos:note "Crystallized product definition: MCP server + 3 interviews = working collective memory system. [amount] price point. Three conversations with CEO, CTO, senior engineer." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:Obs_TimeToValue a narr:Observation ;
+    skos:broader narr:TimeToValue ;
+    dct:source narr:Sample_1 ;
+    skos:note "Three interviews to working system. Explicitly contrasted with 'six-month implementation'." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:Obs_SalesMotionBreakthrough a narr:Observation ;
+    skos:broader narr:ApproachPattern ;
+    dct:source narr:Sample_1 ;
+    skos:note "Sales call IS the product demo IS the delivery. Fireflies transcript routed to prospect repo automatically. Free trial embedded in sales process." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:Obs_TimingThesis a narr:Observation ;
+    skos:broader narr:TimingThesis ;
+    dct:source narr:Sample_1 ;
+    skos:note "Raise framing: raw innovation with traction → specific product with sales motion → angel/seed from case studies and unit economics. Summer 2026 as inflection point." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:Obs_FrictionFailure a narr:Observation ;
+    skos:broader narr:FrictionFailure ;
+    dct:source narr:Sample_1 ;
+    skos:note "Root cause of sales friction identified: lack of clarity on exactly what is being sold." ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  # --- New Claims ---
+  narr:Claim_SalesIsDelivery a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_SalesAsDelivery ;
+    narr:supports narr:Narrative_ConciergeToProduct ;
+    skos:note "The sales motion and product delivery are the same thing. Demo 1 IS the sales motion. Every sales call transcript goes into the prospect's repo collective memory before they say yes." ;
+    dct:source narr:Sample_1 ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:Claim_RevenueBeforeRaise a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_RevenueBeforeRaise ;
+    narr:supports narr:Narrative_SalesAsDelivery ;
+    skos:note "Sell a [amount] engagement NOW. Revenue before raise > projections about future revenue. Investment package becomes stronger with even one paid engagement." ;
+    dct:source narr:Sample_1 ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  # --- New Style Observations ---
+  narr:StyleObs_RhetoricalQuestion a narr:StyleObservation ;
+    skos:broader narr:RhetoricalQuestion ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ToneDirectPersonal ;
+    skos:note "Rhetorical question used to generalize the sales-as-delivery insight mid-realization. Raw, unpolished discovery voice." ;
+    rdf:value true ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:StyleObs_ArrowCadence a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Arrow notation (→) used as a compressed process cadence marker. Three-step pipeline rendered as visual rhythm: interviews → memory → server." ;
+    rdf:value true ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:StyleObs_AllCapsEmphasis a narr:StyleObservation ;
+    skos:broader narr:AICompanyizationCase ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:Tagline ;
+    skos:note "ALL CAPS 'IS' used for maximum rhetorical emphasis on the identity claim. Appears three times across the document as a refrain." ;
+    rdf:value true ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:StyleObs_Anaphora a narr:StyleObservation ;
+    skos:broader narr:Anaphora ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:NarrativePillars ;
+    skos:note "Anaphoric repetition of 'the consulting IS' across three bullet points reinforces the core identity claim as a rhetorical refrain." ;
+    rdf:value true ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:StyleObs_ThreeSentenceRule a narr:StyleObservation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:Tagline ;
+    skos:note "Explicit meta-commentary on the three-sentence structure of the gift ask. Cadence discipline named and enforced by the author." ;
+    rdf:value true ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:StyleObs_BrandNameMCP a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:TerminologyControl ;
+    skos:note "'MCP server' as technical brand term used consistently. 'SAFE', 'YNAB', 'Fireflies', 'Clerky' as named-entity anchors establishing credibility through specificity." ;
+    rdf:value true ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:StyleObs_DirectAddress a narr:StyleObservation ;
+    skos:broader narr:ToneAuthoritative ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:NarrativeAnchor ;
+    skos:note "Investor story framed as direct first-person declaration. Authoritative, no hedging. Mirrors pitch-deck voice." ;
+    rdf:value true ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:StyleObs_SentenceLengthVariation a narr:StyleObservation ;
+    skos:broader narr:SentenceLengthVariation ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:CadenceRhythm ;
+    skos:note "Deliberate alternation between long analytical sentences and short declarative punches. '[amount].' and 'Three sentences.' as extreme short-form anchors." ;
+    rdf:value true ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+  narr:StyleObs_Antithesis a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:KeyPhrases ;
+    skos:note "'Revenue before raise > projections about future revenue' as antithetical compression. Mathematical operator used rhetorically." ;
+    rdf:value true ;
+
+    prov:wasGeneratedBy narr:Tx_20260301T213225Z .
+
+} 

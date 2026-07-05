@@ -1,0 +1,397 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/schema/storybook#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260217T211513Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai> ;
+    prov:wasAttributedTo <http://n8n.aswritten.ai> ;
+    prov:generatedAtTime "2026-02-17T21:15:13.844Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-17-tony-weekly-call-20260217.md"^^xsd:string ;
+    sb:originRef "main"^^xsd:string ;
+    prov:generated narr:Sample_WeeklyCall_Feb2026,
+                   narr:Narrative_KnowledgeExtractionBeachhead,
+                   narr:Narrative_ArchitectureTeamsBeachhead,
+                   narr:Narrative_SharedAgentMemory,
+                   narr:Narrative_InfluenceSales,
+                   narr:Narrative_ContentAsReengagement,
+                   narr:Narrative_VouchIdentityForAgents,
+                   narr:Narrative_TwoYearWindow,
+                   narr:StyleObs_RollerCoaster,
+                   narr:StyleObs_AmazingProductNotProduct,
+                   narr:StyleObs_UntilSomeoneBuys,
+                   narr:StyleObs_NoOnesSellingThat,
+                   narr:StyleObs_DontGiveThemAnOut,
+                   narr:StyleObs_NotSellingPanacea,
+                   narr:StyleObs_SharedMemoryQuote,
+                   narr:StyleObs_TwoYearWindow,
+                   narr:StyleMetrics_WeeklyCall,
+                   narr:RubricAssess_Register_WeeklyCall,
+                   narr:RubricAssess_Phrasing_WeeklyCall,
+                   narr:RubricAssess_Cadence_WeeklyCall,
+                   narr:RubricAssess_StrategicAlignment_WeeklyCall,
+                   narr:RubricAssess_Tailoring_WeeklyCall,
+                   narr:RubricAssess_Resonance_WeeklyCall,
+                   narr:RubricAssess_Flow_WeeklyCall,
+                   narr:RubricAssess_Novelty_WeeklyCall,
+                   narr:Claim_KnowledgeExtractionMarketGap,
+                   narr:Claim_TwoYearWindowTiming,
+                   narr:Claim_SharedAgentMemoryProductFit .
+
+  # Sample entity
+  narr:Sample_WeeklyCall_Feb2026 a narr:Sample ;
+    dct:title "Weekly Call: Scarlet Dame & Tony Maley — February 17, 2026" ;
+    narr:inputLength 9847 ;
+    dct:created "2026-02-17"^^xsd:date ;
+    skos:note "Fireflies transcript of strategic sales and product discussion." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:Narrative_KnowledgeExtractionBeachhead a narr:Narrative ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    narr:theme "Knowledge Extraction as Enterprise Entry Point" ;
+    skos:broader narr:PositioningThesis ;
+    skos:note "Tony proposes consultative, topical approach: [amount] engagement for knowledge extraction from undocumented or arcane sources." ;
+    skos:related narr:TAM_SAM_SOM, narr:Segmentation, narr:ValueExchange ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:Narrative_ArchitectureTeamsBeachhead a narr:Narrative ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    narr:theme "Architecture Teams as Beachhead" ;
+    skos:broader narr:Segmentation ;
+    skos:note "Architecture/standards teams identified as ideal beachhead: they influence everyone but nobody understands them." ;
+    skos:related narr:PrimaryActors, narr:PersonasJTBD ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:Narrative_SharedAgentMemory a narr:Narrative ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    narr:theme "Shared Agent Memory (Hub-and-Spoke Model)" ;
+    skos:broader narr:ProductLadder ;
+    skos:note "Tony proposes agents for collaborators share memory; detect novelty/convergence; automate manual knowledge sharing. Scarlet confirms existing product capabilities map to this." ;
+    skos:related narr:Primitives, narr:Behaviors, narr:Flows, narr:Differentiators ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:Narrative_InfluenceSales a narr:Narrative ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    narr:theme "Influence-First Sales Strategy" ;
+    skos:broader narr:NarrativeDrivenRoadmap ;
+    skos:note "Tony's approach: influence conversation → send content → offer intro. Needs one-sheet, not full deck. CIO Forum events for 20-30 intros in two hours." ;
+    skos:related narr:ExpansionPathway, narr:CoreWorkflows ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:Narrative_ContentAsReengagement a narr:Narrative ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    narr:theme "Content & Newsletter as Re-engagement Tool" ;
+    skos:broader narr:Templates ;
+    skos:note "Ghost blog/newsletter to re-engage warm leads without awkward follow-up. Scarlet commits to launch within a week." ;
+    skos:related narr:SocialPosts, narr:LandingPages, narr:NarrativePillars ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:Narrative_VouchIdentityForAgents a narr:Narrative ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    narr:theme "Vouch.io Identity Infrastructure for Agent Security" ;
+    skos:broader narr:TechnologiesSocialSystems ;
+    skos:note "Tony validated Vouch tech against OpenClaw agent security problem; Claude confirmed 'you solved this problem eight years ago'. Open question: open source as standard or sell as enterprise product." ;
+    skos:related narr:SecurityPrivacyModel, narr:GovernanceSafetyTrust, narr:InteroperabilityStandards ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:Narrative_TwoYearWindow a narr:Narrative ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    narr:theme "Two-Year Window Before Corporate Complexity Kills Freedom" ;
+    skos:broader narr:TimingThesis ;
+    skos:note "Tony: 'You've got a two year window' before legal pressure breaks current LLMs; next wave will be built from approved sources." ;
+    skos:related narr:Signals, narr:Conflicts, narr:InflectionPoints ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  # Style observations
+  narr:StyleObs_RollerCoaster a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WeeklyCall_Feb2026 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 245 ;
+            oa:end 280
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "I'm in the roller coaster of this thing" ;
+            oa:prefix "Scarlet expressed being in an uncertain middle ground post-YC application submission. " ;
+            oa:suffix "... I'm not at either the top or the bottom."
+        ]
+    ] ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Metaphor: emotional state as physical motion." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:StyleObs_AmazingProductNotProduct a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    oa:hasBody narr:Antithesis ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WeeklyCall_Feb2026 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 612 ;
+            oa:end 665
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "It's both an amazing product and not a product at all" ;
+            oa:prefix "Tony's response: " ;
+            oa:suffix " — referencing the same dynamic that plagued Vouch."
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Antithesis: paradox of unvalidated product." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:StyleObs_UntilSomeoneBuys a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WeeklyCall_Feb2026 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 666 ;
+            oa:end 698
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "Until someone buys it, it doesn't exist." ;
+            oa:prefix "— referencing the same dynamic that plagued Vouch. " ;
+            oa:suffix "\n\n## Sales Strategy:"
+        ]
+    ] ;
+    skos:related narr:Tagline ;
+    rdf:value true ;
+    skos:note "Short, punchy declarative; active voice." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:StyleObs_NoOnesSellingThat a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WeeklyCall_Feb2026 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1012 ;
+            oa:end 1095
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "No one's selling that as a solution. Even if there's tools that can do it... no one's selling that as a solution." ;
+            oa:prefix "**Why it works:** " ;
+            oa:suffix "\n- **Pricing:**"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Repeated phrase for emphasis; conversational register." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:StyleObs_DontGiveThemAnOut a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WeeklyCall_Feb2026 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1345 ;
+            oa:end 1386
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "Don't give them an out before they need one." ;
+            oa:prefix "Tony pushed back: " ;
+            oa:suffix "\n- **Sales roadmap:**"
+        ]
+    ] ;
+    skos:related narr:WhatDoesItDo ;
+    rdf:value true ;
+    skos:note "Imperative mood; colloquial phrasing." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:StyleObs_NotSellingPanacea a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WeeklyCall_Feb2026 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1712 ;
+            oa:end 1788
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "You're not selling panacea. You're selling a topical solution for a specific problem." ;
+            oa:prefix "Tony's key framing: " ;
+            oa:suffix "\n\n## Enterprise Target:"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Precise diction: 'panacea' vs. 'topical solution'." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:StyleObs_SharedMemoryQuote a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:SecondPerson ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    oa:hasBody narr:SecondPerson ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WeeklyCall_Feb2026 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 4512 ;
+            oa:end 4645
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "Imagine if [the agents] had shared memory or topics and you could say, Scarlet's bot, Tony's bot, a collaborator's bot — we're all friends. Here's shared memory." ;
+            oa:prefix "Tony proposed a concept where AI agents for a group of collaborators share memory between themselves:\n\n> " ;
+            oa:suffix "\n\nThe idea in detail:"
+        ]
+    ] ;
+    skos:related narr:Vision ;
+    rdf:value true ;
+    skos:note "Second-person imperative ('Imagine'); conversational register." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:StyleObs_TwoYearWindow a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WeeklyCall_Feb2026 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 7234 ;
+            oa:end 7262
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "You've got a two year window" ;
+            oa:prefix "- Tony: " ;
+            oa:suffix " before corporate/enterprise complexity kills the current freedom"
+        ]
+    ] ;
+    skos:related narr:TimingThesis ;
+    rdf:value true ;
+    skos:note "Short declarative; urgent tone." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  # Style metrics
+  narr:StyleMetrics_WeeklyCall a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio 0.82 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: 10.2" ;
+    skos:note "Conversational register; mix of short punchy sentences and longer explanatory clauses." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  # Rubric assessments
+  narr:RubricAssess_Register_WeeklyCall a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    rdf:value 4.0 ;
+    skos:note "Conversational, direct; second-person address; active voice dominates. Fits strategic sales conversation context." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:RubricAssess_Phrasing_WeeklyCall a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    rdf:value 4.5 ;
+    skos:note "Strong idiolect: 'panacea', 'topical solution', 'no one's selling that'. Stock phrases reinforce key concepts. See narr:StyleObs_NoOnesSellingThat." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:RubricAssess_Cadence_WeeklyCall a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    rdf:value 4.0 ;
+    skos:note "Short, punchy sentences mixed with longer explanatory clauses. Avg sentence length 18 words. See narr:StyleObs_UntilSomeoneBuys." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:RubricAssess_StrategicAlignment_WeeklyCall a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    rdf:value 4.5 ;
+    skos:note "Tight alignment with positioning thesis (knowledge extraction beachhead), segmentation (architecture teams), and timing thesis (two-year window). See narr:Narrative_KnowledgeExtractionBeachhead, narr:Narrative_TwoYearWindow." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:RubricAssess_Tailoring_WeeklyCall a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    rdf:value 4.0 ;
+    skos:note "Tailored to founder/sales context; references specific personas (an enterprise prospect, CIO Forum attendees, architecture teams). Could strengthen with more explicit persona JTBD framing." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:RubricAssess_Resonance_WeeklyCall a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    rdf:value 4.0 ;
+    skos:note "Strong use of metaphor ('roller coaster'), antithesis ('amazing product and not a product'), and analogies (shared agent memory). See narr:StyleObs_RollerCoaster, narr:StyleObs_AmazingProductNotProduct." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:RubricAssess_Flow_WeeklyCall a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    rdf:value 4.0 ;
+    skos:note "Natural progression from founder psychology → sales strategy → product insights → action items. Transitions are implicit (topic headers) rather than explicit connectives." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:RubricAssess_Novelty_WeeklyCall a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_WeeklyCall_Feb2026 ;
+    rdf:value 3.5 ;
+    skos:note "Fresh framing ('hub-and-spoke' vs. shared-chat model; 'topical solution' vs. panacea). Some domain-standard phrases ('beachhead', 'validation gap'). Type-token ratio suggests moderate lexical diversity." ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  # Claims
+  narr:Claim_KnowledgeExtractionMarketGap a narr:Claim ;
+    skos:broader narr:Conviction_Stake ;
+    narr:aboutNode narr:Narrative_KnowledgeExtractionBeachhead ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    skos:note "Tony asserts 'no one's selling that as a solution' — proposed stake, needs validation via sales." ;
+    prov:wasAttributedTo "Tony Maley" ;
+    narr:supports narr:PositioningThesis ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:Claim_TwoYearWindowTiming a narr:Claim ;
+    skos:broader narr:Conviction_Boulder ;
+    narr:aboutNode narr:Narrative_TwoYearWindow ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    skos:note "Tony's prediction: 'You've got a two year window' before legal/corporate pressure reshapes AI landscape. Settled view based on prior experience (Internet boom pattern)." ;
+    prov:wasAttributedTo "Tony Maley" ;
+    narr:supports narr:TimingThesis ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+
+  narr:Claim_SharedAgentMemoryProductFit a narr:Claim ;
+    skos:broader narr:Conviction_Stake ;
+    narr:aboutNode narr:Narrative_SharedAgentMemory ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    skos:note "Scarlet confirms existing product capabilities map to shared agent memory concept. Proposed stake; needs user validation." ;
+    prov:wasAttributedTo "Scarlet Dame" ;
+    narr:supports narr:Differentiators ;
+    prov:wasGeneratedBy narr:Tx_20260217T211513Z .
+}

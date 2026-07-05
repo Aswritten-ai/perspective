@@ -1,0 +1,103 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260317T220000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-17T22:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-17-customer-architect-the enterprise customer-bulk-mail-poc-team-trial.md" ;
+    narr:originRef "main" ;
+    dct:title "the customer's chief architect — the enterprise customer: Bulk Mail POC, Team Trial, Cross-Repo Value (March 17, 2026)" ;
+    prov:generated
+      
+      narr:Narrative_CrossRepoMemoryEnterpriseHook,
+      narr:Narrative_AIBackPressureCodeReview,
+      narr:Claim_CrossRepoMemoryUnsolvedProblem,
+      narr:Claim_AICodeVolumeBottleneck,
+      narr:Obs_CustomerArchitectCrossRepoQuote,
+      narr:Obs_ScarletBackPressureQuote .
+} ;
+
+# ── INSERT: Sample node ──────────────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260317T220000Z {
+
+    # ── Section 6: Cross-Repo Memory ──────────────────────────────────────
+    narr:Narrative_CrossRepoMemoryEnterpriseHook a narr:Narrative ;
+
+      skos:broader narr:Differentiators ;
+      skos:prefLabel "Cross-Repo, Cross-Platform, Org-Owned Memory: The Enterprise Hook Nobody Else Solves" ;
+      skos:note "the customer's chief architect articulated the strongest resonance point: nobody is solving cross-repo, cross-platform, org-owned memory. Copilot Memories is scoped to a repo. the enterprise customer's code is in BitBucket (not GitHub), with experimental work in GitHub Enterprise, production in BitBucket, and some work in customer-owned repos. Memory needs to span all of this while remaining the enterprise customer-owned. Scarlet explained that aswritten memory lives in a repo but doesn't have to be co-located with the working repo, and supports directory inheritance. This is aswritten's strongest enterprise differentiator for the enterprise customer." ;
+      narr:theme "Cross-project, cross-platform, org-owned memory is the pain nobody else is solving — stronger than onboarding, stronger than knowledge extraction as an enterprise hook" .
+
+    narr:Claim_CrossRepoMemoryUnsolvedProblem a narr:Claim ;
+
+      skos:note "the customer's chief architect explicitly stated 'nobody seems to be solving this problem in a way that I like.' Copilot Memories is repo-scoped. the enterprise customer uses BitBucket for production, GitHub Enterprise for experiments, and customer-owned repos — memory needs to span all of this while remaining the enterprise customer-owned. This is the strongest resonance point from the call and aswritten's clearest enterprise differentiator for the enterprise customer." ;
+      narr:aboutNode narr:Narrative_CrossRepoMemoryEnterpriseHook ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Differentiators .
+
+    narr:Obs_CustomerArchitectCrossRepoQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+
+      skos:note "the customer's chief architect's articulation of the cross-repo memory problem that nobody is solving." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2820 ;
+          oa:end 3010
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Nobody seems to be solving this problem in a way that I like. Copilot has a feature called Copilot Memories, but it's scoped to a repo" ;
+          oa:prefix "" ;
+          oa:suffix ". [...] And it annoys me that it's scoped to a repo"
+        ]
+      ] .
+
+    # ── Section 8: AI Code Back-Pressure ──────────────────────────────────
+    narr:Narrative_AIBackPressureCodeReview a narr:Narrative ;
+
+      skos:broader narr:FrictionFailure ;
+      skos:prefLabel "AI Code Back-Pressure: Volume Outpaces Human Review Capacity" ;
+      skos:note "Both Scarlet and the customer's chief architect independently identified the same problem: AI generates code faster than humans can review it. the customer's chief architect: 'it's kind of hard to manage [...] some institutional challenges around managing the volume of code we're generating.' Scarlet: 'That's my biggest problem too, honestly, is review. And I'm starting to spend more and more time about [...] the concept of back pressure in AI development.' Scarlet described ending up with 'eight honking PRs of world changing features that would have taken us three weeks previously.' This is a shared pain point worth exploring as a product angle." ;
+      narr:theme "AI generates code faster than humans can review it — back-pressure in AI development is a shared pain point for both the enterprise customer and aswritten, and a potential product angle" .
+
+    narr:Claim_AICodeVolumeBottleneck a narr:Claim ;
+
+      skos:note "Both Scarlet and the customer's chief architect independently identified code review as the bottleneck in AI-accelerated development. Scarlet named it 'back pressure in AI development.' This convergence from two different organizations validates it as a real, widespread pain point worth exploring as a product angle." ;
+      narr:aboutNode narr:Narrative_AIBackPressureCodeReview ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:FrictionFailure .
+
+    narr:Obs_ScarletBackPressureQuote a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+
+      skos:note "Scarlet's articulation of the AI code review back-pressure problem and the PR volume it creates." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4180 ;
+          oa:end 4340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I will spend a couple days and end up with eight honking PRs of world changing features that would have taken us three weeks previously" ;
+          oa:prefix "" ;
+          oa:suffix "."
+        ]
+      ] .
+
+  }
+}

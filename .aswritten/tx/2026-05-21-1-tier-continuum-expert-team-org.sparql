@@ -1,0 +1,163 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260521T150000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-21T15:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# Expert, Team, and Org are one use case at different scale — not distinct markets" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_PitchReframeReview_20260521,
+      narr:Narrative_TierContinuumNotDistinctMarkets,
+      narr:Claim_CoreUseIdenticalAcrossTiers,
+      narr:Claim_ExpertTierAsFeeder,
+      narr:Claim_ExpertTierAsPaidDemo,
+      narr:Claim_EnterpriseDoesNotSupersedB2C,
+      narr:StyleObs_ScarletTierContinuumQuote,
+      narr:StyleObs_TierContinuumAntithesis,
+      narr:StyleObs_NaturalEvolutionPhrasing,
+      narr:StyleMetrics_PitchReframeReview_20260521 .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260521T150000Z {
+
+    # ── SAMPLE ────────────────────────────────────────────────────────────────
+    narr:Sample_PitchReframeReview_20260521
+      a narr:Sample ;
+      dct:title "Expert, Team, and Org are one use case at different scale — not distinct markets" ;
+      dct:created "2026-05-21"^^xsd:date ;
+      dct:description "Pitch-reframe strategy synthesis review session, May 21 2026. Scarlet resolves the apparent tension between the B2C primary market claim and the enterprise-centered Tranche-1 ICP by establishing that Expert, Team, and Org tiers are a continuum of one use case, not distinct markets." ;
+      narr:inputLength 2041 ;
+      narr:styleProfile "<https://aswritten.ai/narrative#SpeakerIdiolects> <https://aswritten.ai/narrative#Antithesis> <https://aswritten.ai/narrative#ToneDirectPersonal> <https://aswritten.ai/narrative#IdiolectPhrasing>" .
+
+    # ── CORE NARRATIVE ────────────────────────────────────────────────────────
+    narr:Narrative_TierContinuumNotDistinctMarkets
+
+      dct:source narr:Sample_PitchReframeReview_20260521 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Expert, Team, and Org Are a Continuum of One Use Case, Not Distinct Markets" ;
+      skos:note "Scarlet's resolution of the apparent tension between the B2C primary market claim and the enterprise-centered Tranche-1 ICP: the tiers are not separate markets. The core use — capturing decision-making over time and driving AI from the resulting perspective — is identical whether one person or a whole organization is doing it. The only variable is how many people write to and read from the perspective. There is a natural evolution along that axis: a solo Expert user's perspective feeds into a Team project; a Team grows into an Org. Leading with the enterprise or organizational shape does not supersede or contradict the B2C framing." ;
+      narr:theme "Expert, Team, and Org tiers are a continuum of one use case differentiated only by the number of people writing to and consuming the perspective — not by distinct market segments" ;
+      narr:supports narr:Narrative_B2CPivot .
+
+    # ── CLAIMS ────────────────────────────────────────────────────────────────
+    narr:Claim_CoreUseIdenticalAcrossTiers
+      a narr:Claim ;
+      dct:source narr:Sample_PitchReframeReview_20260521 ;
+      skos:note "The core use — capturing decision-making over time and driving AI from the resulting perspective — is identical whether one person or a whole organization is doing it. Scarlet: 'It's just as useful as a solo person as it is as a team.' The only variable across Expert, Team, and Org is how many people write to and read from the perspective." ;
+      narr:aboutNode narr:Narrative_TierContinuumNotDistinctMarkets ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_TierContinuumNotDistinctMarkets .
+
+    narr:Claim_ExpertTierAsFeeder
+      a narr:Claim ;
+      dct:source narr:Sample_PitchReframeReview_20260521 ;
+      skos:note "The Expert tier functions as a feeder into the Team and Organization tiers. A solo Expert user's perspective feeds into a Team project; a Team grows into an Org. There is a natural evolution along the axis of how many people write to and consume the perspective. Scarlet: 'That feeds into team projects, so I don't think they're really distinct.'" ;
+      narr:aboutNode narr:Narrative_TierContinuumNotDistinctMarkets ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    narr:Claim_ExpertTierAsPaidDemo
+      a narr:Claim ;
+      dct:source narr:Sample_PitchReframeReview_20260521 ;
+      skos:note "The Expert tier specifically functions as a feeder — and, in sales conversations, as something close to a paid demo, since many prospects use it that way. Scarlet: 'The expert plan becomes not exactly a paid demo, but there's a lot of folks that do that.' The Expert tier is the on-ramp into the organizational tiers, not a separate business." ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_TierContinuumNotDistinctMarkets .
+
+    narr:Claim_EnterpriseDoesNotSupersedB2C
+      a narr:Claim ;
+      dct:source narr:Sample_PitchReframeReview_20260521 ;
+      skos:note "Leading with the enterprise or organizational shape does not supersede or contradict the B2C framing. The tiers are a continuum of one use case. The organizational tiers are where the Tranche-1 materials point; the solo Expert tier is the on-ramp into them, not a separate business. This resolves the apparent tension between the B2C primary market claim and the enterprise-centered Tranche-1 ICP." ;
+      narr:aboutNode narr:Narrative_B2CPivot ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_B2CPivot .
+
+    # ── STYLE OBSERVATIONS ────────────────────────────────────────────────────
+    narr:StyleObs_ScarletTierContinuumQuote
+      a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_PitchReframeReview_20260521 ;
+      skos:note "Scarlet's idiolect: run-on, stream-of-consciousness first-person speech with filler words ('like', 'you know', 'sort of') and self-corrections mid-sentence. The quoted block is characteristic of her spoken register — dense with meaning but grammatically loose." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PitchReframeReview_20260521 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 312 ;
+          oa:end 512
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "My read on B2C and the other — the expert, and even the team plans — is that they're a feeder into team and organization tier." ;
+          oa:prefix "In Scarlet's words:\n\n> " ;
+          oa:suffix " As I'm having discussions"
+        ]
+      ] .
+
+    narr:StyleObs_TierContinuumAntithesis
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_PitchReframeReview_20260521 ;
+      skos:note "The memory is structured as an antithesis resolution: apparent tension (B2C vs enterprise) → resolution (no tension, tiers are a continuum). The editorial prose uses short declarative sentences to frame the resolution before the long quoted block." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PitchReframeReview_20260521 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 0 ;
+          oa:end 200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Scarlet resolved an apparent tension between the graph's \"B2C is the primary market\" claim and the enterprise-centered Tranche-1 ideal customer profile. Her resolution: there is no tension, because the tiers are not separate markets." ;
+          oa:prefix "Reviewing the pitch-reframe strategy synthesis on May 21, 2026, " ;
+          oa:suffix "\n\nIn Scarlet's words:"
+        ]
+      ] .
+
+    narr:StyleObs_NaturalEvolutionPhrasing
+      a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_PitchReframeReview_20260521 ;
+      skos:note "Scarlet uses 'natural evolution' as a stock phrase to describe tier progression — consistent with her idiolect of framing product architecture in organic/biological terms rather than mechanical ones. Also: 'feeder' as a metaphor for the Expert tier's role." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PitchReframeReview_20260521 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 820 ;
+          oa:end 960
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "there's a natural evolution between those" ;
+          oa:prefix "consuming the perspective, and " ;
+          oa:suffix "."
+        ]
+      ] .
+
+    # ── STYLE METRICS ─────────────────────────────────────────────────────────
+    narr:StyleMetrics_PitchReframeReview_20260521
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_PitchReframeReview_20260521 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic resolution memo with extended verbatim blockquote from Scarlet. Mixed register: short declarative editorial prose framing the resolution, followed by a long run-on first-person blockquote. Active voice dominant in editorial sections. Jargon density low — product terms (Expert plan, Team, Org, Tranche-1, ICP) used without definition, implying internal audience. Antithesis-heavy structure (apparent tension vs. resolution, B2C vs. enterprise, separate markets vs. continuum). Sentence length elevated by blockquoted speech; prose sections are shorter and punchier. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.06"^^xsd:decimal .
+
+  }
+}

@@ -1,0 +1,280 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260302T222515Z a prov:Activity ;
+    dct:title "RDF Transactionizer run: 2026-03-02-annotate-tool-rationale" ;
+    prov:wasAssociatedWith <https://aswritten.ai/agents/rdf-transactionizer> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-03-02T22:25:15Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-03-02-annotate-tool-rationale.md" ;
+    sb:originRef "main" .
+} ;
+
+# =============================================================
+# BLOCK 1 — INSERT DATA (added triples)
+# =============================================================
+INSERT DATA {
+
+  # --- New Observations ---
+  narr:Observation_InvertedComplement a narr:Observation ;
+    skos:broader narr:DesignTradeoffs ;
+    dct:source narr:Sample_1 ;
+    skos:note "The document explicitly frames introspect and annotate as inverted complements operating on the same graph from opposite directions — a key architectural design tradeoff." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 614 ;
+      oa:end 820
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "Introspect and annotate are inverted complements — they approach the same graph from opposite directions" ;
+      oa:prefix "## Why It Exists: The Inverted Complement\n\n" ;
+      oa:suffix ":\n\n- **Introspect** starts from the graph"
+    ] ;
+    .
+
+  narr:Observation_VerificationCycle a narr:Observation ;
+    skos:broader narr:CoreWorkflows ;
+    dct:source narr:Sample_1 ;
+    skos:note "Three-step verification cycle: Introspect identifies undocumented knowledge, Remember fills gaps, Annotate confirms text reflects what was documented." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1198 ;
+      oa:end 1380
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "1. **Introspect** identifies what's undocumented\n2. **Remember** fills the gaps\n3. **Annotate** confirms the text reflects what was documented" ;
+      oa:prefix "These three form a complete verification cycle:\n" ;
+      oa:suffix "\n\n## The Feedback Loop"
+    ] ;
+    .
+
+  narr:Observation_FeedbackLoop a narr:Observation ;
+    skos:broader narr:FeedbackLoops ;
+    dct:source narr:Sample_1 ;
+    skos:note "Five-step feedback loop: annotate surfaces unsupported claims → agent offers to document → user provides knowledge → memory saved, extraction runs → re-annotate confirms shift." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1430 ;
+      oa:end 1700
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "This makes annotation a knowledge growth driver, not just a verification tool." ;
+      oa:prefix "5. Re-annotate confirms the shift\n\n" ;
+      oa:suffix "\n\n## The Augmentation Principle"
+    ] ;
+    .
+
+  narr:Observation_AugmentFirst a narr:Observation ;
+    skos:broader narr:OperatingModelShifts ;
+    dct:source narr:Sample_1 ;
+    skos:note "Augmentation principle: annotate first, complete the request, present annotation results alongside — provenance awareness layered onto every agent action." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1780 ;
+      oa:end 2020
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "1. Annotate first — use the annotation results to inform its work\n2. Complete the user's actual request\n3. Present annotation results alongside the completed task" ;
+      oa:prefix "The agent should:\n\n" ;
+      oa:suffix "\n\nIf someone says"
+    ] ;
+    .
+
+  # --- New Style Observations ---
+  narr:StyleObs_1 a narr:StyleObservation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:NamingConventions ;
+    rdf:value true ;
+    skos:note "Tool names 'annotate', 'introspect', 'remember' are consistently lowercased even mid-sentence, functioning as brand-name stylization that signals these are proper system primitives." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 614 ;
+      oa:end 660
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "Introspect and annotate are inverted complements" ;
+      oa:prefix "## Why It Exists: The Inverted Complement\n\n" ;
+      oa:suffix " — they approach the same graph"
+    ] ;
+    .
+
+  narr:StyleObs_2 a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:RhetoricalDevices ;
+    rdf:value true ;
+    skos:note "Antithesis: 'knowledge growth driver, not just a verification tool' — the 'not just' construction explicitly inverts the expected framing to elevate the concept." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1680 ;
+      oa:end 1740
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "a knowledge growth driver, not just a verification tool" ;
+      oa:prefix "This makes annotation " ;
+      oa:suffix ".\n\n## The Augmentation Principle"
+    ] ;
+    .
+
+  narr:StyleObs_3 a narr:StyleObservation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:Parallelism ;
+    rdf:value true ;
+    skos:note "Rule of three with parallel conditional structure: three 'I'm about to / I have / I have' decision branches, each mapping to a single tool. Highly compressed decision heuristic." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1050 ;
+      oa:end 1195
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "\"I'm about to work on a topic\" → introspect\n- \"I have text to verify\" → annotate\n- \"I have a draft memory to validate\" → introspect with working_memory" ;
+      oa:prefix "The decision heuristic:\n- " ;
+      oa:suffix "\n\n## The Tool Interaction Model"
+    ] ;
+    .
+
+  narr:StyleObs_4 a narr:StyleObservation ;
+    skos:broader narr:Anaphora ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ShortPunchyCadence ;
+    rdf:value true ;
+    skos:note "Anaphoric numbered imperatives: 'Annotate first', 'Complete the user's actual request', 'Present annotation results' — each begins with a strong verb, creating a commanding cadence." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1780 ;
+      oa:end 1920
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "1. Annotate first — use the annotation results to inform its work" ;
+      oa:prefix "The agent should:\n\n" ;
+      oa:suffix "\n2. Complete the user's actual request"
+    ] ;
+    .
+
+  narr:StyleObs_5 a narr:StyleObservation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:RhetoricalDevices ;
+    rdf:value true ;
+    skos:note "Spatial metaphor: tools 'approach the same graph from opposite directions' — outward vs. inward — maps abstract tool behavior onto a directional spatial model." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 660 ;
+      oa:end 820
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "they approach the same graph from opposite directions" ;
+      oa:prefix "Introspect and annotate are inverted complements — " ;
+      oa:suffix ":\n\n- **Introspect** starts from the graph"
+    ] ;
+    .
+
+  narr:StyleObs_6 a narr:StyleObservation ;
+    skos:broader narr:ToneAuthoritative ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:ToneVoice ;
+    rdf:value true ;
+    skos:note "Declarative authoritative tone: 'annotation augments the agent's response — it doesn't replace it' — em-dash used to sharpen the contrast and assert the rule without hedging." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1740 ;
+      oa:end 1810
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "annotation augments the agent's response — it doesn't replace it" ;
+      oa:prefix "When the user provides text, " ;
+      oa:suffix ". The agent should:"
+    ] ;
+    .
+
+  narr:StyleObs_7 a narr:StyleObservation ;
+    skos:broader narr:PlainLanguage ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:WhatDoesItDo ;
+    rdf:value true ;
+    skos:note "Plain language numeric anchoring: 0.0 and 1.0 defined in plain English immediately after introduction, making an abstract metric instantly concrete." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 370 ;
+      oa:end 510
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "0.0 means nothing is grounded, 1.0 means every claim traces to a specific memory with full provenance" ;
+      oa:prefix "The key output is the **coverage score**: " ;
+      oa:suffix ".\n\n## Why It Exists"
+    ] ;
+    .
+
+  narr:StyleObs_8 a narr:StyleObservation ;
+    skos:broader narr:SecondPerson ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:POVPerson ;
+    rdf:value true ;
+    skos:note "Second-person address used in decision heuristic to directly implicate the reader/agent in the decision, increasing immediacy and actionability." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1050 ;
+      oa:end 1090
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "\"I'm about to work on a topic\"" ;
+      oa:prefix "The decision heuristic:\n- " ;
+      oa:suffix " → introspect"
+    ] ;
+    .
+
+  narr:StyleObs_9 a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    skos:related narr:SentenceLengthVariation ;
+    rdf:value true ;
+    skos:note "Short punchy sentence used as section-closing clincher after longer explanatory prose: 'This makes annotation a knowledge growth driver, not just a verification tool.' Contrast with surrounding paragraph length." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1660 ;
+      oa:end 1742
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact "This makes annotation a knowledge growth driver, not just a verification tool." ;
+      oa:prefix "5. Re-annotate confirms the shift\n\n" ;
+      oa:suffix "\n\n## The Augmentation Principle"
+    ] ;
+    .
+
+  # --- New facets on narr:Sample_1 ---
+  narr:Sample_1
+    dct:title "The Annotate Tool: Claim-Level Citation Mapping for Collective Memory" ;
+    .
+
+  # --- New facets on narr:Actor_ScarletDame ---
+  narr:Actor_ScarletDame
+    skos:note "Builder of the annotate tool (task-122); integrating it into the prompt architecture via PR #74." ;
+    dct:source narr:Sample_1 ;
+    .
+
+} 

@@ -1,0 +1,54 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Analogy> {
+  <https://aswritten.ai/narrative#Digest_Analogy> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Analogy> ;
+    narr:childCount "31"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the recurring **analogies and metaphors** aswritten reaches for to make abstract positioning concrete. The founder's origin frame casts [narrative as a physics vector](narr:StyleObs_2) from 2012 flocking simulations. Skill-transfer is pitched via pop culture — the [Matrix \"I know Kung Fu\" chip](narr:StyleObs_Analogy_Matrix), recurring across [several](narr:StyleObs_KungFu) [observations](narr:StyleObs_4). Governance and review borrow from engineering and academia: the customer's CTO's unprompted [PR-with-unit-tests metaphor](narr:StyleObs_CustomerCTOPRMetaphor_Analogy), [code as compilation output](narr:StyleObs_Analogy_1), and a collaborator's [peer-review frame](narr:StyleObs_TamarackReview_PeerReviewAnalogy) plus [research-paper citations](narr:StyleObs_Analogy_ResearchPaper). Product identity leans on the [Apple-not-Microsoft opinionated-workflow](narr:StyleObs_OpinionatedWorkflow) contrast and the [book-vs-living-module](narr:StyleObs_AnalogyBookVsModule) pitch. Concrete, colloquial registers appear too — a demo-call prospect's [McDonald picture menu](narr:StyleObs_McDonaldPictureMenu), [plumbing](narr:StyleObservation_Analogy_1), [branch-and-trunk](narr:StyleObs_BranchTrunkAnalogy), and the [optometrist phoropter](narr:StyleObs_Optometrist) for iterative review. The span is rhetorical-device craft: cite the known, assert the upgrade.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CarfaxSubstackAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_MemoryIngestionAsCodeReview> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_2> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_4> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_6> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_AnalogyBookVsModule> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_AnalogyReadableTest> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Analogy_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Analogy_Citations> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Analogy_Matrix> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Analogy_ResearchPaper> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TamarackReview_PeerReviewAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BranchTrunkAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ConsultantInterviewAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ConsultingFrame> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_GitHubTier_Analogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_KungFu> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_LeanStartupAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_McDonaldPictureMenu> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Metaphor_PromptAsSchema> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OpinionatedWorkflow> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OpinionatedWorkflowAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Optometrist> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SecondWorld> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_StructurallyIdentical> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ThreeLayerQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CustomerCTOPRMetaphor_Analogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObservation_Analogy_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObservation_AppleComparison> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObservation_StructuralAnalogy> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObservation_TechnicalAnalogy> ;
+    narr:keyPhrase [ narr:text "narrative operates like a velocity or acceleration vector in these particle systems" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:keyPhrase [ narr:text "we should treat that like code. We should treat that like a pull request with unit tests." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_CustomerCTOPRMetaphor_Analogy> ] ;
+    narr:keyPhrase [ narr:text "The review flow is exactly peer review, the difference is we're reviewing fundamental worldview shifts, not necessarily all of the specific facts" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TamarackReview_PeerReviewAnalogy> ] ;
+    narr:keyPhrase [ narr:text "your book is a snapshot; your module is alive." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AnalogyBookVsModule> ] ;
+    narr:keyPhrase [ narr:text "Explain like I'm five for executives, McDonald picture menu." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_McDonaldPictureMenu> ] ;
+    narr:keyPhrase [ narr:text "This is the Apple comparison she's made before — not Microsoft, not a tool that does everything." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObservation_AppleComparison> ] ;
+    narr:keyPhrase [ narr:text "Carfax for patients, Substack for practitioners" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_CarfaxSubstackAnalogy> ] ;
+    narr:variation [ narr:text "The Carfax analogy is explicitly flagged as LIMITED — useful for opening pitches but breaks down because aswritten synthesizes interpretation, not just facts." ; narr:over <https://aswritten.ai/narrative#Narrative_CarfaxSubstackAnalogy> ] ;
+    narr:variation [ narr:text "the customer's CTO's PR metaphor is distinct: it came unprompted from the skeptic seat (CTO), validating the conviction-tracking thesis independently rather than adopting vendor framing." ; narr:over <https://aswritten.ai/narrative#Narrative_MemoryIngestionAsCodeReview> ; narr:over <https://aswritten.ai/narrative#StyleObs_CustomerCTOPRMetaphor_Analogy> ] ;
+    narr:variation [ narr:text "A cluster of structural/self-referential analogies sits apart from the rhetorical-device ones — Scarlet as the exhausted-expert archetype for aswritten itself, and Microsoft's diagnostic orchestrator as a claim 'in another costume'." ; narr:over <https://aswritten.ai/narrative#StyleObservation_StructuralAnalogy> ; narr:over <https://aswritten.ai/narrative#StyleObservation_TechnicalAnalogy> ; narr:over <https://aswritten.ai/narrative#StyleObs_StructurallyIdentical> ] ;
+    narr:variation [ narr:text "The Matrix 'I know Kung Fu' analogy is duplicated across at least three children — a redundancy/over-reliance signal rather than three distinct ideas." ; narr:over <https://aswritten.ai/narrative#StyleObs_Analogy_Matrix> ; narr:over <https://aswritten.ai/narrative#StyleObs_KungFu> ; narr:over <https://aswritten.ai/narrative#StyleObs_4> ] ;
+    narr:variation [ narr:text "The Lean Startup analogy encodes a characteristic move — cite the established methodology, then immediately assert the AI-era upgrade beyond it — a pattern that risks the analogy under-delivering on the 'beyond' claim." ; narr:over <https://aswritten.ai/narrative#StyleObs_LeanStartupAnalogy> ; narr:over <https://aswritten.ai/narrative#StyleObs_GitHubTier_Analogy> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,29 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__RuleOfThree> {
+  <https://aswritten.ai/narrative#Digest_ns__RuleOfThree> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#RuleOfThree> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers observations of the document's recurring [rule-of-three rhetoric](narr:StyleObs_rule_of_three) — triadic parallelism used for emphasis and memorability across a product pitch. The cleanest exemplars: the three product pillars [AI-Assisted Development / Executive Assistance / Content Generation](narr:StyleObs_RuleOfThree_UseCases), the [git-native triad](narr:Observation_GitNativeTriad) with parallel -able suffixes, and the [escalating-severity triad](narr:StyleObs_RuleOfThree) (supercharged → dumb → useless). The pattern also drives [audience lists](narr:StyleObs_4), [verb triads at the cursor](narr:StyleObs_10), and [parallel noun-phrase cadence](narr:StyleObs_cadence_1). Several observations note the device's purpose is scannable rhythm and a value prop deliverable in under thirty seconds. Note the mix of triad *types*: balanced/parallel (pillars, audiences), escalating (severity), and suffix-parallel (git). Not every instance is strictly three — and one child records a different compression pattern entirely.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_10> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_4> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_6> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree_UseCases> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TimeMetrics> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_cadence_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_rule_of_three> ;
+    narr:keyPhrase [ narr:text "git native, i.e. versionable, branchable, reviewable" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ] ;
+    narr:keyPhrase [ narr:text "Senior people have supercharged AIs. Junior people have dumb AIs. New hires have useless AIs." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree> ] ;
+    narr:keyPhrase [ narr:text "new hires, clients, and investors" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_4> ] ;
+    narr:keyPhrase [ narr:text "explicit, reviewable, and testable" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_10> ] ;
+    narr:keyPhrase [ narr:text "positioning, offering, product, teams, and process" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_6> ] ;
+    narr:variation [ narr:text "Outlier — not a triad: five parallel clauses, the rule-of-three 'extended for completeness' (positioning, offering, product, teams, and process)." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_6> ] ;
+    narr:variation [ narr:text "Different device entirely: a before→after compression pattern (days → 15 minutes), not parallel triadic structure." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TimeMetrics> ] ;
+    narr:variation [ narr:text "Structurally distinct attachment — joined via skos:related, not broader; parallel noun phrases without verbs." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_cadence_1> ] ;
+    narr:variation [ narr:text "Triad mechanism varies: escalating severity and -able suffix parallelism sit alongside the flat balanced lists." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree> ; narr:over <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ] ;
+    narr:writer "claude (subscription)" .
+}

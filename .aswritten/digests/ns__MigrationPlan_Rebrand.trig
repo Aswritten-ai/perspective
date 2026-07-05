@@ -1,0 +1,24 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__MigrationPlan_Rebrand> {
+  <https://aswritten.ai/narrative#Digest_ns__MigrationPlan_Rebrand> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#MigrationPlan_Rebrand> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the coordinated action items for a single rebrand migration to aswritten.ai. The unifying through-line is terminology: across surfaces the plan [replaces storyBASE/witness terms with canonical aswritten.ai language](narr:MigrationAction_UpdateDocs). The actions fan out by surface — [system prompts and agent instructions](narr:MigrationAction_UpdatePrompts), [CLI command names](narr:MigrationAction_UpdateCLI) (e.g. 'remember', 'draft'), [all documentation](narr:MigrationAction_UpdateDocs), and the [README and public landing page](narr:MigrationAction_UpdateReadme) carrying new brand positioning — plus an outward step to [communicate the rebrand to users and stakeholders](narr:MigrationAction_AnnounceRebrand). No dates or sequencing are attached to any child, so the plan reads as a parallel checklist rather than an ordered rollout. All five are framed as terminology/identity alignment work; none records dissent, blockers, or a chosen ordering. If a query concerns rebrand mechanics, scope, or naming choices, support plausibly lives here; if it concerns timeline, rollback, or rationale for the rename, that is not present in these children.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#MigrationAction_AnnounceRebrand> ;
+    narr:covers <https://aswritten.ai/ns/narrative#MigrationAction_UpdateCLI> ;
+    narr:covers <https://aswritten.ai/ns/narrative#MigrationAction_UpdateDocs> ;
+    narr:covers <https://aswritten.ai/ns/narrative#MigrationAction_UpdatePrompts> ;
+    narr:covers <https://aswritten.ai/ns/narrative#MigrationAction_UpdateReadme> ;
+    narr:keyPhrase [ narr:text "Replace storyBASE/witness terminology with aswritten.ai canonical terms" ; narr:phraseSource <https://aswritten.ai/ns/narrative#MigrationAction_UpdateDocs> ] ;
+    narr:keyPhrase [ narr:text "Align command names with new terminology (e.g., 'remember', 'draft')" ; narr:phraseSource <https://aswritten.ai/ns/narrative#MigrationAction_UpdateCLI> ] ;
+    narr:keyPhrase [ narr:text "Embed new terminology in system prompts and agent instructions" ; narr:phraseSource <https://aswritten.ai/ns/narrative#MigrationAction_UpdatePrompts> ] ;
+    narr:keyPhrase [ narr:text "Reflect new brand identity and positioning in public-facing materials" ; narr:phraseSource <https://aswritten.ai/ns/narrative#MigrationAction_UpdateReadme> ] ;
+    narr:keyPhrase [ narr:text "Communicate rebrand to users and stakeholders" ; narr:phraseSource <https://aswritten.ai/ns/narrative#MigrationAction_AnnounceRebrand> ] ;
+    narr:variation [ narr:text "CLI renaming is the only action that changes user-invokable behavior (command names like 'remember'/'draft'), not just descriptive text — a behavior-affecting outlier among otherwise terminology-swap tasks." ; narr:over <https://aswritten.ai/ns/narrative#MigrationAction_UpdateCLI> ] ;
+    narr:variation [ narr:text "Announcing the rebrand is the sole outward, communications-facing step; the other four are internal technical/content edits." ; narr:over <https://aswritten.ai/ns/narrative#MigrationAction_AnnounceRebrand> ] ;
+    narr:variation [ narr:text "No child carries dates, ordering, or dependencies, so whether announcement precedes or follows the surface changes is left open rather than concluded." ; narr:over <https://aswritten.ai/ns/narrative#MigrationAction_AnnounceRebrand> ; narr:over <https://aswritten.ai/ns/narrative#MigrationAction_UpdateReadme> ] ;
+    narr:writer "claude (subscription)" .
+}

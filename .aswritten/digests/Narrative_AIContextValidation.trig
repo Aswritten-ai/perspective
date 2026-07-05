@@ -1,0 +1,19 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_AIContextValidation> {
+  <https://aswritten.ai/narrative#Digest_Narrative_AIContextValidation> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_AIContextValidation> ;
+    narr:childCount "3"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the case for AI context validation as a distinct value proposition. The throughline: [Aswritten as context-management tooling](narr:Claim_AswrittenContextMgmt) that extracts ideas and lays them out \"piece by piece and connection by connection,\" set against a structural critique that [LLMs are misaligned by incentive](narr:Claim_LLMIncentiveMisalignment) — built to keep generating rather than to verify. The bridge between the two is concrete: a [live demo against a collaborator's pitch](narr:Claim_UnsubstantiatedPitch) where six claims surfaced with none substantiated in the collective knowledge graph, framed as illustrating the gap-analysis proposition. Note the predicate texture — the tooling and incentive claims both `support` the narrative, while the demo attaches only as `aboutNode` (an illustration of, not load-bearing evidence for, the thesis). The arc runs from problem (generation incentive) to instrument (Aswritten) to demonstration (a collaborator gap analysis), but carries no authored conclusion about whether the demo generalizes.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AswrittenContextMgmt> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_LLMIncentiveMisalignment> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_UnsubstantiatedPitch> ;
+    narr:keyPhrase [ narr:text "Aswritten is a context management tool that extracts ideas, lays them out piece by piece and connection by connection, and provides tools to sort through them." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AswrittenContextMgmt> ] ;
+    narr:keyPhrase [ narr:text "LLMs are incentivized to keep generating, not to ensure accuracy or alignment; it is not in an LLM company's interest to pump the brakes." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_LLMIncentiveMisalignment> ] ;
+    narr:keyPhrase [ narr:text "Aswritten found six claims in a collaborator's pitch with zero substantiated in the organization's collective knowledge graph" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_UnsubstantiatedPitch> ] ;
+    narr:variation [ narr:text "The a collaborator demo attaches as aboutNode only — an illustration, not a supports-edge — so it grounds the thesis anecdotally rather than evidentially; one demo isn't shown to generalize." ; narr:over <https://aswritten.ai/narrative#Claim_UnsubstantiatedPitch> ] ;
+    narr:variation [ narr:text "Tension in framing: the incentive claim indicts LLM vendors structurally, while the tooling and demo claims position Aswritten as the corrective — a vendor-critique vs. solution-pitch split living in the same hub." ; narr:over <https://aswritten.ai/narrative#Claim_LLMIncentiveMisalignment> ; narr:over <https://aswritten.ai/narrative#Claim_AswrittenContextMgmt> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,65 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260326T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-26T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-26-enterprise-customer-first-paying-team-customer.md" ;
+    narr:originRef "main" ;
+    dct:title "the enterprise customer: First Paying Team Customer" ;
+    prov:generated
+      
+      narr:Actor_ScarletDame,
+      narr:Narrative_CompiledPerspectiveSourcePrivacy,
+      narr:Claim_CTOExcitementSourcePrivacy,
+      narr:Obs_CustomerCTOExcitedCuratedKnowledge .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260326T120000Z {
+
+    # ── Actors ──────────────────────────────────────────────────────────────
+    narr:Actor_ScarletDame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Founder of aswritten.ai. Conducted the follow-up call with the customer's chief architect." .
+
+    narr:Narrative_CompiledPerspectiveSourcePrivacy a narr:Narrative ;
+
+      narr:theme "Compiled perspective enables curated knowledge access without exposing source code" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "The CTO's primary excitement was the ability to curate architectural knowledge abstracted from the codebase, allowing customer solution architects and partner AIs to query the knowledge base without accessing source code. This validates the compiled perspective / source privacy model as a core value proposition." .
+
+    narr:Claim_CTOExcitementSourcePrivacy a narr:Claim ;
+      narr:aboutNode narr:Narrative_CompiledPerspectiveSourcePrivacy ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_CompiledPerspectiveSourcePrivacy ;
+
+      skos:note "the customer's CTO's primary excitement was curated knowledge accessible to customer solution architects WITHOUT exposing source code — directly validating the compiled perspective model." .
+
+    narr:Obs_CustomerCTOExcitedCuratedKnowledge a narr:Observation ;
+      skos:broader narr:CaseResults ;
+
+      skos:note "the customer's CTO's primary excitement: curated knowledge accessible to customer solution architects without exposing source code." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1540 ;
+        oa:end 1740
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The thing that excited our CTO the most about this was the idea that we could curate information in a way that is abstracted away from our actual code base" ;
+        oa:prefix "the customer's chief architect: \"" ;
+        oa:suffix " and then let customer solution architects"
+      ] .
+
+  }
+}

@@ -1,0 +1,33 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Rubric_Cadence> {
+  <https://aswritten.ai/narrative#Digest_ns__Rubric_Cadence> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Rubric_Cadence> ;
+    narr:childCount "13"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers per-document **cadence** assessments under one rubric dimension — how rhythm, sentence-length variation, and structure shape readability. The dominant reading is remarkably consistent: nearly every child praises [varied sentence length](narr:Assess_Cadence_cm), [short punchy clauses with parallel structure](narr:Assessment_Cadence_1), triadic/rule-of-three patterns, and anaphora. Structural devices recur as cadence carriers: [bullets and sequence diagrams breaking dense prose](narr:Assess_Cadence_collective_memory), [section headers driving rhythm variance](narr:Assessment_Cadence_1), and [antithesis for impact ('weeks → days')](narr:RubricAssess_Cadence_GTM). The [voice-memo synthesis assessment](narr:RubricAssess_Cadence_20260107) names a 'before → after' drumbeat balancing long quotes against crisp metrics. The richest entry, [the multi-source rubric assessment](narr:RubricAssess_Cadence), holds several distinct verdicts at once — from 'exemplary staccato' to mixed transcribed speech. No dates attach to most children; this reads as a standing rubric library rather than a dated trajectory.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assess_Cadence_cm> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assess_Cadence_collective_memory> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assess_Cadence_rebrand> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Cadence_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Cadence_IPCrisis> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Cadence_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Cadence> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Cadence_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Cadence_20260107> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Cadence_ADR001> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Cadence_ADR002> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Cadence_GTM> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_cadence> ;
+    narr:keyPhrase [ narr:text "Exemplary short & punchy cadence. Staccato rhythm. Rule of three." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Cadence> ] ;
+    narr:keyPhrase [ narr:text "Transcribed speech patterns visible; would benefit from editing for written form." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Cadence> ] ;
+    narr:keyPhrase [ narr:text "antithesis for impact ('weeks → days'); fast scan, high density." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Cadence_GTM> ] ;
+    narr:keyPhrase [ narr:text "before → after pattern provides drumbeat; occasional long voice memo quotes balanced by crisp metrics." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Cadence_20260107> ] ;
+    narr:keyPhrase [ narr:text "Rhythm varies by speaker but maintains clarity." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Cadence> ] ;
+    narr:variation [ narr:text "Not all assessments are praise: transcribed-speech sources are flagged as needing editing for written form, with visible hedges ('you know', 'right?') — a critical note against the otherwise-positive grain." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Cadence> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Cadence_1> ] ;
+    narr:variation [ narr:text "Cadence is judged per-speaker, not per-document: Tony's punchy quotes vs Scarlet's longer analytical sentences are scored as distinct rhythms within one piece." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Cadence> ] ;
+    narr:variation [ narr:text "Two different things called 'cadence' — prose-level rhythm (sentence length, anaphora) vs. visual/structural cadence (bullets, sequence diagrams, headers); some children lean on layout rather than sentence rhythm." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Cadence_collective_memory> ; narr:over <https://aswritten.ai/ns/narrative#Assessment_Cadence_1> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Cadence_ADR002> ] ;
+    narr:variation [ narr:text "Run-on sentences appear as a tolerated flaw in conversational/transcribed pieces, treated as natural rhythm rather than a defect." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Cadence> ] ;
+    narr:writer "claude (subscription)" .
+}

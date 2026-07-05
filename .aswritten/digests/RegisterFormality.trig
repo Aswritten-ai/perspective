@@ -1,0 +1,60 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_RegisterFormality> {
+  <https://aswritten.ai/narrative#Digest_RegisterFormality> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#RegisterFormality> ;
+    narr:childCount "33"^^xsd:integer ;
+    narr:generatedFrom "c354f003fe2a54a8d5d3268a64e6f8923cccb163" ;
+    narr:narration """This hub collects observations about register and formality across the corpus. The dominant pattern is **mixed register**: [session-memo code-switching](narr:https://aswritten.ai/narrative#StyleObs_12) between formal analytical prose and informal verbatim blockquotes appears repeatedly — in [ARB call memos](narr:https://aswritten.ai/narrative#StyleObs_ARB_ConversationalRegister), [agent-simulation documents](narr:https://aswritten.ai/narrative#StyleObs_AgentSim_BlockquoteRegister), [a design collaborator Tokens sessions](narr:https://aswritten.ai/narrative#StyleObs_DesignCollaboratorTokensBlockquoteRegister), and [Fable Window planning](narr:https://aswritten.ai/narrative#StyleObs_FableWindowBlockquoteStyle) — identified as Scarlet's session-memo idiolect. A second register cluster is **technical-authoritative**: [infrastructure vocabulary applied to product decisions](narr:https://aswritten.ai/narrative#StyleObs_PerspectiveOrdering_TechnicalRegister) and [engineering-audience prose without definition](narr:https://aswritten.ai/narrative#StyleObs_WriteFlow_TechnicalRegister). A third is **epistemic hedging as declared upfront style**: [conviction-status bolded in headers](narr:https://aswritten.ai/narrative#StyleObs_DiscoveryWedge_CaveatEmbedded), [notion-level hedging register](narr:https://aswritten.ai/narrative#StyleObs_NotionLevelCadence), and [provisional flags as both content and form](narr:https://aswritten.ai/narrative#StyleObs_ProvisionalFlagVoice). Spoken-transcript children preserve [filler-heavy colloquial speech](narr:https://aswritten.ai/narrative#StyleObs_CustomerArchitectColloquialRegister) and [unedited hedges](narr:https://aswritten.ai/narrative#StyleObs_HedgedRegister). The [voice memo register](narr:https://aswritten.ai/narrative#StyleObs_VoiceMemoRegister) adds a stream-of-consciousness variant. No single formality level dominates; the hub spans the full range from zero-hedging declarative to self-critical tentative.""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_12> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_8> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ARB_ConversationalRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_AgentSim_BlockquoteRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_AgentSim_ProvisionalFlag> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BlockquoteForScript> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ConversationalRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DesignCollaboratorTokensBlockquoteRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DirectQuote_UXIsShit> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DiscoveryWedge_CaveatEmbedded> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_EnterpriseShape_TentativeRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_EnterpriseCustomerPilot_InternalRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_EnterpriseCustomerWeekOne_BulletMetrics> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_FableWindowBlockquoteStyle> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_HedgedDirectness> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_HedgedRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_HedgedSelfDeprecation> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_InformalRegisterInQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_InsaneSpeed> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CustomerArchitectColloquialRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NegotiationLanguage> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NotionLevelCadence> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ParentheticalAsides> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_PerspectiveOrdering_TechnicalRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ProvisionalFlagVoice> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RawRegisterPD> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RegisterTechnical> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Register_Strategic> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SMB_BulletedExamples> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TechnicalRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ToneConversational> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_VoiceMemoRegister> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_WriteFlow_TechnicalRegister> ;
+    narr:keyPhrase [ narr:text "Consistent with Scarlet session-memo idiolect across the perspective." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ARB_ConversationalRegister> ] ;
+    narr:keyPhrase [ narr:text "Declarative assertion without hedging: 'this isn't a hypothetical failure mode, it's the default state' — authoritative register, zero epistemic softening." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_8> ] ;
+    narr:keyPhrase [ narr:text "if the only evidence for \"enterprise shape\" being primary is one pilot with a lukewarm champion (the customer's chief architect is sponsor, not champion — see separate memory), you are potentially rationalizing" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_EnterpriseShape_TentativeRegister> ] ;
+    narr:keyPhrase [ narr:text "**Conviction: claim / candidate — NOT a settled decision.**" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_DiscoveryWedge_CaveatEmbedded> ] ;
+    narr:keyPhrase [ narr:text "notion until repeated" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_NotionLevelCadence> ] ;
+    narr:keyPhrase [ narr:text "**Provisional — from research/agent-memory-architecture exploration branch, not yet promoted to main.**" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AgentSim_ProvisionalFlag> ] ;
+    narr:keyPhrase [ narr:text "A no-focus orientation call is byte-stable for a given graph state." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_PerspectiveOrdering_TechnicalRegister> ] ;
+    narr:keyPhrase [ narr:text "the protection-status endpoint requires admin permissions the app may not hold on customer repos, and a probe is a race" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_WriteFlow_TechnicalRegister> ] ;
+    narr:keyPhrase [ narr:text "proxy loads bundle from Postgres → extracts TX strings → JSON-stringifies → injects into JSON-RPC body" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TechnicalRegister> ] ;
+    narr:keyPhrase [ narr:text "Voice memo recorded by Scarlet after completing the section-by-section review of a collaborator's comments on the fundraising brief." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VoiceMemoRegister> ] ;
+    narr:variation [ narr:text "Zero-hedging authoritative declaration ('stated as settled fact, not hypothesis') sits in direct tension with the explicitly self-critical tentative register ('potentially rationalizing', 'working hypothesis') found in strategic memos — same author, opposite epistemic posture depending on document type." ; narr:over <https://aswritten.ai/narrative#StyleObs_8> ; narr:over <https://aswritten.ai/narrative#StyleObs_EnterpriseShape_TentativeRegister> ] ;
+    narr:variation [ narr:text "Provisional flag functions as a safety-rail content mechanism in one child and as a stylistic form (document announces its own epistemic status as both content and structure) in another — the same surface feature carries different functional weight." ; narr:over <https://aswritten.ai/narrative#StyleObs_AgentSim_ProvisionalFlag> ; narr:over <https://aswritten.ai/narrative#StyleObs_ProvisionalFlagVoice> ] ;
+    narr:variation [ narr:text "Profanity and unfiltered register appear as deliberate authenticity and conviction signals (a beta user from outside tech's idiolect, UX frustration) — an outlier against the dominant analytical-memo formality of the corpus." ; narr:over <https://aswritten.ai/narrative#StyleObs_DirectQuote_UXIsShit> ; narr:over <https://aswritten.ai/narrative#StyleObs_RawRegisterPD> ] ;
+    narr:variation [ narr:text "Technical register splits between expert-to-expert prose with deliberate informal asides ('zombie', 'all of that') and purely authoritative technical prose with no explanatory softening — two distinct stances within the same register family." ; narr:over <https://aswritten.ai/narrative#StyleObs_RegisterTechnical> ; narr:over <https://aswritten.ai/narrative#StyleObs_WriteFlow_TechnicalRegister> ] ;
+    narr:variation [ narr:text "Spoken-transcript filler preservation (the customer's chief architect's colloquial run-ons, hedged spoken registers) contrasts with the editorial tightening applied to Scarlet's own analytical prose in the same documents — the mixed-register pattern is asymmetric by speaker." ; narr:over <https://aswritten.ai/narrative#StyleObs_CustomerArchitectColloquialRegister> ; narr:over <https://aswritten.ai/narrative#StyleObs_HedgedRegister> ; narr:over <https://aswritten.ai/narrative#StyleObs_ARB_ConversationalRegister> ] ;
+    narr:variation [ narr:text "Hedged directness in founder-pitch contexts ('let's call it 5k') and hedged self-deprecation ('I don't actually need that much money') represent a register variant — confidence-through-restraint — distinct from both the analytical memo hedging and the zero-hedging declarative mode." ; narr:over <https://aswritten.ai/narrative#StyleObs_HedgedDirectness> ; narr:over <https://aswritten.ai/narrative#StyleObs_HedgedSelfDeprecation> ] ;
+    narr:writer "anthropic/claude-sonnet-4.6" .
+}

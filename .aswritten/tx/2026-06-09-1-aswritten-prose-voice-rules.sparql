@@ -1,0 +1,499 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  narr:Tx_20260609T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-09T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-06-09-scarlet-prose-voice-rules.md" ;
+    narr:originRef "main" ;
+    dct:title "Aswritten Prose Voice: Scarlet's Rules" ;
+    prov:generated
+      narr:Sample_ScarletRules_20260609,
+      narr:Actor_ScarletDame,
+      narr:Narrative_AswrittenProseVoiceRules,
+      narr:Claim_MomentumOverLandingPlane,
+      narr:Claim_AswrittenAICompanyized,
+      narr:Claim_NoXNotY,
+      narr:Claim_NoHandWavedClosings,
+      narr:Claim_SceneGrammarSpecificSubject,
+      narr:Claim_ActiveVoice,
+      narr:Claim_NoEmDashes,
+      narr:Claim_NoAILanguageTricks,
+      narr:Claim_PositiveDirectClaims,
+      narr:Claim_ExamplesCarryContext,
+      narr:Claim_CutCruft,
+      narr:Observation_CorePrincipleQuote,
+      narr:Observation_LandingThePlaneQuote,
+      narr:Observation_AswrittenCapQuote,
+      narr:Observation_ActiveSentencesQuote,
+      narr:Observation_HandWavedQuote,
+      narr:Observation_SceneGrammarQuote,
+      narr:Observation_ActiveVoiceQuote,
+      narr:Observation_EmDashQuote,
+      narr:Observation_AITricksQuote,
+      narr:Observation_PositiveClaimsQuote,
+      narr:Observation_ExamplesContextQuote,
+      narr:Observation_CutCruftQuote,
+      narr:Observation_WorkedExampleBefore,
+      narr:Observation_WorkedExampleAfter,
+      narr:StyleObs_BrandNameStylization,
+      narr:StyleObs_NoEmDashPolicy,
+      narr:StyleObs_BeliefSpecificsBeliefCadence,
+      narr:StyleObs_ActiveVoiceRule,
+      narr:StyleObs_NoXNotYAntithesis,
+      narr:StyleMetrics_ScarletRules .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260609T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────
+    narr:Sample_ScarletRules_20260609 a narr:Sample ;
+      dct:title "Aswritten Prose Voice: Scarlet's Rules" ;
+      dct:description "Prose-voice rules articulated by Scarlet Dame during the June 7–9 2026 voice pass on the Aswritten landing page. Governs how Aswritten speaks in all AI-generated and human-edited copy." ;
+      dct:created "2026-06-09"^^xsd:date ;
+      narr:inputLength 4312 .
+
+    # ── Actor ───────────────────────────────────────────────────
+    narr:Actor_ScarletDame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Founder/principal at Aswritten. Articulated the prose-voice rules during the June 7–9 2026 landing page voice pass on ghost-theme/content/landing.md." .
+
+    # ── Top-level Narrative ─────────────────────────────────────
+    narr:Narrative_AswrittenProseVoiceRules a narr:Narrative ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      narr:theme "Aswritten prose voice: Scarlet's editorial rules" ;
+      skos:broader narr:EditorialRules ;
+      skos:note "A codified set of prose-voice rules governing how Aswritten speaks across all copy, AI-generated or human-edited. Rules were shaped paragraph-by-paragraph by Scarlet Dame during the June 2026 landing page voice pass. The governing principle: build contrast through momentum (belief, specifics, belief), not through landing-the-plane clauses." .
+
+    # ── Claims ──────────────────────────────────────────────────
+
+    narr:Claim_MomentumOverLandingPlane a narr:Claim ;
+      narr:aboutNode narr:EditorialRules ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "The core principle: build contrast through momentum. Walk the reader from where things start to where they're going. Belief, specifics, belief. 'Landing the plane' clauses (e.g., 'Zero data retention is the architecture, not a configuration.') close a point with a tidy contrast and must be cut. Let the sentences before do the work." .
+
+    narr:Claim_AswrittenAICompanyized a narr:Claim ;
+      narr:aboutNode narr:BrandNameStylization ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "'Aswritten' is always capitalized in body prose, narratives, and anywhere it is the subject. 'Aswritten.ai' for brand/company references in footer and copyright. URLs and email addresses stay lowercase. The ASWRITTEN wordmark stays all-caps as a logo." .
+
+    narr:Claim_NoXNotY a narr:Claim ;
+      narr:aboutNode narr:Antithesis ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Cut the 'X, not Y' pattern. It lands the plane. If contrast carries load-bearing meaning, rebuild it through momentum (belief, specifics, belief). Active sentences only." .
+
+    narr:Claim_NoHandWavedClosings a narr:Claim ;
+      narr:aboutNode narr:EditorialRules ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Drop hand-waved closings: 'from day one', 'snaps into focus', 'scrolls away by Friday', 'finally added up', 'where it all clicked', 'the quiet part' without naming what the part is. Drop anything that sounds like the resolution of an arc. Say the specific thing. If you can't say the specific thing, the claim isn't there yet." .
+
+    narr:Claim_SceneGrammarSpecificSubject a narr:Claim ;
+      narr:aboutNode narr:EditorialRules ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scene grammar form: The [subject of the conversation] [conversation-type] [where, with whom]. First-person when the scene is from Scarlet's own life. The subject is the actual content of the conversation, not a tidy summary. Drop client names from public scenes. Drop persona templates. Use actual moments." .
+
+    narr:Claim_ActiveVoice a narr:Claim ;
+      narr:aboutNode narr:VoiceActive ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Always use active voice. Cut 'had to explain', 'needed to figure out', 'tried to communicate'. Use 'explained', 'figured out', 'said'. 'had feels pandering.'" .
+
+    narr:Claim_NoEmDashes a narr:Claim ;
+      narr:aboutNode narr:PunctuationTypography ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Replace em-dashes with commas, periods, or colons. The em-dash has become an AI tell. Rule applies in code comments, design docs, memories, and public copy, anywhere AI-generated text might accumulate." .
+
+    narr:Claim_NoAILanguageTricks a narr:Claim ;
+      narr:aboutNode narr:EditorialRules ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Sneaking a metaphor into a descriptive noun (e.g., 'scrolls away by Friday') is the same pattern as the hand-waved closing. Be direct. Say 'disappears'. Say what happened." .
+
+    narr:Claim_PositiveDirectClaims a narr:Claim ;
+      narr:aboutNode narr:ToneDirectPersonal ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Form claims about what Aswritten does. Make clear positive statements that state what is actually changing, what is happening. Not 'aswritten inverts this' but say what it does instead." .
+
+    narr:Claim_ExamplesCarryContext a narr:Claim ;
+      narr:aboutNode narr:EditorialRules ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "If an example needs scaffolding to make sense, scaffold it or drop it. Don't drop a free-floating example and expect the reader to infer." .
+
+    narr:Claim_CutCruft a narr:Claim ;
+      narr:aboutNode narr:Conciseness ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AswrittenProseVoiceRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "When a sentence repeats what the prior sentence implied, or extends a metaphor that wasn't earned, cut it. Let paragraphs end when they're done." .
+
+    # ── Observations (verbatim quotes) ──────────────────────────
+
+    narr:Observation_CorePrincipleQuote a narr:Observation ;
+      skos:broader narr:EditorialRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Core principle statement" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 330 ;
+        oa:end 430
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Build contrast through momentum. Walk the reader from where things start to where they're going. Belief, specifics, belief." ;
+        oa:prefix "## The core principle\n\n" ;
+        oa:suffix "\n\nA \"landing the plane\""
+      ] .
+
+    narr:Observation_LandingThePlaneQuote a narr:Observation ;
+      skos:broader narr:EditorialRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote rejecting the 'X, not Y' landing-the-plane pattern" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 680 ;
+        oa:end 870
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The problem isn't contrast, we want contrast. But you want to create the contrast through moving sentences that build momentum through telling the story of where we started and where we're going. These clauses all try to land the plane." ;
+        oa:prefix "> " ;
+        oa:suffix "\n\n## The rules"
+      ] .
+
+    narr:Observation_AswrittenCapQuote a narr:Observation ;
+      skos:broader narr:BrandNameStylization ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote on Aswritten capitalization rule" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 920 ;
+        oa:end 1060
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "i have changed my mind and want aswritten to always be capitalized and optionally also have Aswritten.ai when it's the brand/company name." ;
+        oa:prefix "> " ;
+        oa:suffix " Aswritten as the subject"
+      ] .
+
+    narr:Observation_ActiveSentencesQuote a narr:Observation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote on active sentences and no X-not-Y" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1230 ;
+        oa:end 1265
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "No this not that. Active sentences." ;
+        oa:prefix "> " ;
+        oa:suffix "\n\nThe pattern lands the plane."
+      ] .
+
+    narr:Observation_HandWavedQuote a narr:Observation ;
+      skos:broader narr:EditorialRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quotes on hand-waved closings" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1480 ;
+        oa:end 1545
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "From day one is handwavey. Doesn't mean anything." ;
+        oa:prefix "> " ;
+        oa:suffix "\n> \"Snaps into focus."
+      ] .
+
+    narr:Observation_SceneGrammarQuote a narr:Observation ;
+      skos:broader narr:EditorialRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote on scene grammar specificity" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1720 ;
+        oa:end 1742
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Something specific!" ;
+        oa:prefix "> " ;
+        oa:suffix "\n\nForm: `The [subject"
+      ] .
+
+    narr:Observation_ActiveVoiceQuote a narr:Observation ;
+      skos:broader narr:VoiceActive ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote on active voice" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2060 ;
+        oa:end 2100
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "had feels pandering, always use active voice" ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nCut *had to explain*"
+      ] .
+
+    narr:Observation_EmDashQuote a narr:Observation ;
+      skos:broader narr:PunctuationTypography ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote on em-dash prohibition" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2200 ;
+        oa:end 2250
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "they're lovely but they scream AI now. commas are nice." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nReplace em-dashes"
+      ] .
+
+    narr:Observation_AITricksQuote a narr:Observation ;
+      skos:broader narr:EditorialRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote on AI-language tricks" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2420 ;
+        oa:end 2510
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Slack thread that scrolls away by Friday, this is the same kind of AI language tricks that isn't actually cute. Be direct." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nSneaking a metaphor"
+      ] .
+
+    narr:Observation_PositiveClaimsQuote a narr:Observation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote on positive direct claims" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2640 ;
+        oa:end 2710
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "make clear positive statements. Not positive vibe, that state what is actually changing. What is happening." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nForm claims about"
+      ] .
+
+    narr:Observation_ExamplesContextQuote a narr:Observation ;
+      skos:broader narr:EditorialRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote on examples needing context" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2870 ;
+        oa:end 2960
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The company decided to pivot to b2c? Where did this come from? What is this? Is this an example? Unclear to me." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nIf an example needs"
+      ] .
+
+    narr:Observation_CutCruftQuote a narr:Observation ;
+      skos:broader narr:Conciseness ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Scarlet's direct quote on cutting cruft" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3060 ;
+        oa:end 3120
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The customer never waits for a real person. ^ last sentence is just cruft." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nWhen a sentence repeats"
+      ] .
+
+    narr:Observation_WorkedExampleBefore a narr:Observation ;
+      skos:broader narr:EditorialRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "Before version of Architecture beat showing multiple AI-tells: 'from day one', 'not a configuration', 'not the conversation you had'" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3220 ;
+        oa:end 3510
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Zero data retention is the architecture, not a configuration." ;
+        oa:prefix "The graph has no persistent home on our side. " ;
+        oa:suffix "\n>\n> This is why on-prem"
+      ] .
+
+    narr:Observation_WorkedExampleAfter a narr:Observation ;
+      skos:broader narr:EditorialRules ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      skos:note "After version of Architecture beat: belief, specifics, belief shape. Contrast emerges from the walk through what we believe and what actually crosses the wire." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3700 ;
+        oa:end 3960
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "We believe zero data retention shouldn't have to be turned on." ;
+        oa:prefix "includes the framing, annotations, hedges, and tangents, that we extract into the next piece of your perspective. " ;
+        oa:suffix "\n>\n> On-prem, air-gapped"
+      ] .
+
+    # ── Style Observations ──────────────────────────────────────
+
+    narr:StyleObs_BrandNameStylization a narr:StyleObservation ;
+      skos:broader narr:BrandNameStylization ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      rdf:value true ;
+      skos:note "'Aswritten' capitalized as subject in body prose; 'Aswritten.ai' for brand references; ASWRITTEN all-caps as wordmark; URLs lowercase" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletRules_20260609 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1060 ;
+          oa:end 1200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "\"Aswritten\" capitalized in body prose, narratives, anywhere it's the subject. \"Aswritten.ai\" for brand references in the footer and copyright." ;
+          oa:prefix "Aswritten as the subject in a sentence that is doing something.\"\n\n" ;
+          oa:suffix " URLs and email addresses stay lowercase."
+        ]
+      ] .
+
+    narr:StyleObs_NoEmDashPolicy a narr:StyleObservation ;
+      skos:broader narr:PunctuationTypography ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      rdf:value false ;
+      skos:note "Em-dashes prohibited everywhere AI-generated text accumulates: code comments, design docs, memories, public copy. Replace with commas, periods, or colons." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletRules_20260609 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2250 ;
+          oa:end 2400
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Replace em-dashes with commas, periods, or colons. The em-dash has become an AI tell." ;
+          oa:prefix "commas are nice.\"\n\n" ;
+          oa:suffix " The rule applies in code comments"
+        ]
+      ] .
+
+    narr:StyleObs_BeliefSpecificsBeliefCadence a narr:StyleObservation ;
+      skos:broader narr:CadenceRhythm ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      rdf:value true ;
+      skos:note "Governing cadence pattern: belief, specifics, belief. Contrast emerges from walking the reader through what we believe and what actually happens, not from a closing contrast clause." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletRules_20260609 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 330 ;
+          oa:end 430
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Build contrast through momentum. Walk the reader from where things start to where they're going. Belief, specifics, belief." ;
+          oa:prefix "## The core principle\n\n" ;
+          oa:suffix "\n\nA \"landing the plane\""
+        ]
+      ] .
+
+    narr:StyleObs_ActiveVoiceRule a narr:StyleObservation ;
+      skos:broader narr:VoiceActive ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      rdf:value true ;
+      skos:note "Active voice required throughout. Cut modal-passive constructions: 'had to explain' -> 'explained', 'needed to figure out' -> 'figured out', 'tried to communicate' -> 'said'." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletRules_20260609 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2060 ;
+          oa:end 2160
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Cut *had to explain*, *needed to figure out*, *tried to communicate*. Use *explained*, *figured out*, *said*." ;
+          oa:prefix "had feels pandering, always use active voice\"\n\n" ;
+          oa:suffix "\n\n### No em-dashes"
+        ]
+      ] .
+
+    narr:StyleObs_NoXNotYAntithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      rdf:value false ;
+      skos:note "The 'X, not Y' antithesis pattern is prohibited as a sentence-closing device. It 'lands the plane' instead of building momentum. Example cut: 'Both are tools the AI uses during the work, not reports you read after' -> 'The AI calls both during the work.'" ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletRules_20260609 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1265 ;
+          oa:end 1420
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The pattern lands the plane. Cut *\"Both are tools the AI uses during the work, not reports you read after\"* to *\"The AI calls both during the work.\"*" ;
+          oa:prefix "No this not that. Active sentences.\"\n\n" ;
+          oa:suffix " If the contrast carries load-bearing meaning"
+        ]
+      ] .
+
+    # ── Style Metrics ───────────────────────────────────────────
+
+    narr:StyleMetrics_ScarletRules a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_ScarletRules_20260609 ;
+      narr:AverageSentenceLength 14 ;
+      narr:ActiveVoiceRatio "0.92"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal ;
+      skos:note "The memory itself follows its own rules: short declarative sentences, active voice throughout, minimal jargon. Register is direct and instructional. Scarlet's quoted speech is notably terse and imperative. The worked example demonstrates the before/after contrast explicitly." .
+
+  }
+}

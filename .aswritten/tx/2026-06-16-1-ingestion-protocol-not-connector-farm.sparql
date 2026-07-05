@@ -1,0 +1,293 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────
+INSERT DATA {
+  narr:Tx_20260609T120000Z a prov:Activity ;
+    dct:title "Ingestion Is a Protocol in the User's Agent, Not a Connector Farm" ;
+    prov:generatedAtTime "2026-06-09T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-06-09-ingestion-protocol-not-connector-farm.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_IngestionProtocol_20260609,
+      narr:Actor_ScarletDame,
+      narr:Narrative_IngestionIsProtocol,
+      narr:Narrative_NoCustodyDataPhilosophy,
+      narr:Narrative_UserAgentIngestionModel,
+      narr:Claim_OtterAPIGated,
+      narr:Claim_ClaudeCodeSessionsArePrimarySource,
+      narr:Claim_VerbatimFlaggingAtReview,
+      narr:Claim_RepoConsentGate,
+      narr:Obs_TranscriptionToolsSurvey,
+      narr:Obs_DataLineQuote,
+      narr:Obs_UserAgentAssumptionQuote,
+      narr:Obs_CustomerArchitectCadence,
+      narr:Obs_ClaudeCodeJSONL,
+      narr:Obs_OneProtocolSpineQuote,
+      narr:StyleObs_NoNoNoAnaphora,
+      narr:StyleObs_PointYourAgentReframe,
+      narr:StyleObs_AntithesisNotBuilding,
+      narr:StyleMetrics_IngestionProtocol .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260609T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────
+    narr:Sample_IngestionProtocol_20260609 a narr:Sample ;
+      dct:title "Ingestion Is a Protocol in the User's Agent, Not a Connector Farm" ;
+      dct:created "2026-06-09"^^xsd:date ;
+      dct:description "Working session (Scarlet Dame + Claude) on Workstream 1 transcript integration. Retires connector-farm framing; establishes ingestion-as-protocol via user's own agentic environment." ;
+      narr:inputLength 27500 .
+
+    # ── Actors ──────────────────────────────────────────────────
+    narr:Actor_ScarletDame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Primary author and session participant. Articulated the documentation-ingestion methodology; operator of the dogfood Claude Code environment (147 sessions, 19 projects)." .
+
+    # ── Narratives ──────────────────────────────────────────────
+
+    # S4 / S1 — Core strategic reframe
+    narr:Narrative_IngestionIsProtocol a narr:Narrative ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      narr:theme "Ingestion is a protocol inside the user's agent, not a connector farm built by aswritten" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "The June 9 handoff framed Workstream 1 as OAuth connector-building (Fireflies first). This session retires that framing: aswritten does not build or operate transcription connectors. The integration is a protocol — instructions that run inside the user's own agentic environment against the user's own MCP sources. The raw corpus never flows through aswritten's servers. Achieved by not building, not by building more." .
+
+    # S3 — Data philosophy
+    narr:Narrative_NoCustodyDataPhilosophy a narr:Narrative ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      narr:theme "aswritten is a processor, not a data store — users own their transcripts" ;
+      skos:broader narr:SecurityPrivacyModel ;
+      skos:note "Any aswritten material that says 'give us your data' is wrong and should be fixed on sight. The capability promise stands; the custody inverts: 'point your agent at six months of transcripts and get a perspective tomorrow.' aswritten acts as processor, not store. This sharpens the May 21 onboarding promise without retiring it." .
+
+    # S6 — Protocol generalization
+    narr:Narrative_UserAgentIngestionModel a narr:Narrative ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      narr:theme "One protocol, many sources: transcripts, AI sessions, codebases, docs, email all ingested via user's local AI context" ;
+      skos:broader narr:DataIntegrationFlows ;
+      skos:note "All source types (transcription tools, AI-session history, connected codebase, Drive docs, email) are instances of one spine: pull into local AI context, write memories annotating primary source, produce hybrid synthesis + landmark memories, gate on human reconciliation. This is the protocol-ized form of the May 21 bulk-ingestion decision." .
+
+    # S2 — Otter API gated
+    narr:Claim_OtterAPIGated a narr:Claim ;
+      narr:aboutNode narr:Actor_ScarletDame ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_IngestionIsProtocol ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Otter — likely the most popular transcription tool — gates its API behind Enterprise contracts; no self-serve API path exists. Any architecture that depends on aswritten holding vendor API integrations hits this wall. This dissolves the Otter problem: the user's own access is the access." .
+
+    # S5 — Claude Code sessions as primary source
+    narr:Claim_ClaudeCodeSessionsArePrimarySource a narr:Claim ;
+      narr:aboutNode narr:Narrative_UserAgentIngestionModel ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_UserAgentIngestionModel ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Claude Code persists full session transcripts locally as plaintext JSONL, directly readable by the agent. Scarlet's machine: 147 sessions across 19 projects. Session-history ingestion needs zero new infrastructure — same protocol, different reader. The history of building aswritten in Claude Code is itself primary-source material for aswritten's perspective." .
+
+    # S6 — Verbatim flagging
+    narr:Claim_VerbatimFlaggingAtReview a narr:Claim ;
+      narr:aboutNode narr:Narrative_UserAgentIngestionModel ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_UserAgentIngestionModel ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Landmark memories may quote primary sources at length. Wherever ingestion stores source content verbatim, the protocol surfaces that explicitly at review time. Flag mechanics and metadata schema: Workstream 1 spec (backlog)." .
+
+    # S7 — Repo consent gate
+    narr:Claim_RepoConsentGate a narr:Claim ;
+      narr:aboutNode narr:Narrative_NoCustodyDataPhilosophy ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_NoCustodyDataPhilosophy ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "User-owned connected repo is the default for rich ingestion. Org-managed repos permitted behind an explicit consent gate: protocol discloses 'this stores verbatim content with us' and proceeds on consent. Philosophy preserved through disclosure rather than prohibition. Transfer-on-upgrade path (org-managed → user-owned) raised in priority. Power door (engineers, CTOs) connects own repo first; light door (non-technical, a beta user from outside tech-shape) starts org-managed." .
+
+    # ── Observations ────────────────────────────────────────────
+
+    # S2 — Transcription tools survey
+    narr:Obs_TranscriptionToolsSurvey a narr:Observation ;
+      skos:broader narr:CompetitiveLandscape ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Six-tool survey (Fireflies, Otter, Google Meet/Gemini, Microsoft Teams, Zoom, Krisp) verified against vendor developer docs. Key finding: native API grain already matches aswritten's philosophy — nearly every tool fires a notification and lets you pull one transcript at a time." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1020 ;
+        oa:end 1200
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "six tools (Fireflies, Otter, Google Meet/Gemini, Microsoft Teams, Zoom, Krisp), each verified against the vendor's own current developer documentation" ;
+        oa:prefix "The survey ran the same day — " ;
+        oa:suffix ". Strategic findings"
+      ] .
+
+    # S3 — Data line quote
+    narr:Obs_DataLineQuote a narr:Observation ;
+      skos:broader narr:SecurityPrivacyModel ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Core data-philosophy statement: aswritten is processor not store. Any 'give us your data' framing is wrong and should be corrected on sight." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2180 ;
+        oa:end 2380
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "We want to connect a tool that puts your transcripts into a context that you own, right? This is the design we need to build that is consistent with our philosophy about data." ;
+        oa:prefix "You do not need to give us your transcripts. " ;
+        oa:suffix " How do we create an integration"
+      ] .
+
+    # S4 — User-agent assumption quote
+    narr:Obs_UserAgentAssumptionQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Foundational assumption enabling the protocol model: rich-content onboarding users can be assumed to have Claude Code or equivalent agentic environment." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3200 ;
+        oa:end 3430
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Onboarding — and this type of onboarding that does rich content ingestion from a user's existing project — is always going to be done by a technically savvy person for whom Claude Code or [Codex] or any other MCP agentic environment can be taken for granted" ;
+        oa:prefix "Three assumptions, stated and adopted: " ;
+        oa:suffix ", or we can force that essentially."
+      ] .
+
+    # S4 — the customer's chief architect cadence as live proof
+    narr:Obs_CustomerArchitectCadence a narr:Observation ;
+      skos:broader narr:CaseIntervention ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "the customer's chief architect's nightly ARB transcript ingestion is live proof the protocol works before it was formalized. The first enterprise user already runs this loop by hand." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3900 ;
+        oa:end 4050
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "every evening he downloads ARB transcripts and ingests them through his own environment. The first enterprise user already runs this loop by hand; the protocol formalizes it." ;
+        oa:prefix "the customer's chief architect's operational cadence is live confirmation of the model itself: " ;
+        oa:suffix ""
+      ] .
+
+    # S5 — Claude Code JSONL detail
+    narr:Obs_ClaudeCodeJSONL a narr:Observation ;
+      skos:broader narr:DataIntegrationFlows ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Claude Code persists full session transcripts as plaintext JSONL, directly readable by the agent. Scarlet: 147 sessions across 19 projects. Zero new infrastructure needed for session-history ingestion." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4600 ;
+        oa:end 4800
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Claude Code persists full session transcripts locally as plaintext JSONL, directly readable by the agent (on Scarlet's machine: 147 sessions across 19 projects)" ;
+        oa:prefix "Confirmed in-session: " ;
+        oa:suffix ". Session-history ingestion needs zero new infrastructure"
+      ] .
+
+    # S6 — One protocol spine quote
+    narr:Obs_OneProtocolSpineQuote a narr:Observation ;
+      skos:broader narr:DataIntegrationFlows ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Defines the hybrid output shape: synthesis memories (cross-corpus recurrent themes + user framing) and landmark memories (specific sessions/docs annotated directly). Human reconciliation is the gate." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5200 ;
+        oa:end 5430
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "You are pulling all of this data into your local AI context, your Claude or whatever context, and then you and Claude are writing memories annotating the primary source in those documents." ;
+        oa:prefix "All instances of one spine: " ;
+        oa:suffix " Again, this hybrid of some summary"
+      ] .
+
+    # ── Style Observations ──────────────────────────────────────
+
+    # SO1 — Anaphora: "No, no, no, no, no"
+    narr:StyleObs_NoNoNoAnaphora a narr:StyleObservation ;
+      skos:broader narr:Anaphora ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Emphatic anaphoric repetition used to mark a hard philosophical boundary. Five-fold 'No' signals categorical rejection, not negotiation." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_IngestionProtocol_20260609 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1980 ;
+          oa:end 2010
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "No, no, no, no, no." ;
+          oa:prefix "Give us your transcripts and we'll give you...' " ;
+          oa:suffix " We are not over and over again"
+        ]
+      ] .
+
+    # SO2 — Antithesis: "achieved by not building"
+    narr:StyleObs_AntithesisNotBuilding a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Rhetorical antithesis used to crystallize the strategic inversion: the purest version of the philosophy is achieved by not building the thing you might expect to build. Compact paradox that carries the whole reframe." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_IngestionProtocol_20260609 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4280 ;
+          oa:end 4420
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "achieved by not building — where the connector-farm plan would have achieved a weaker version by building more" ;
+          oa:prefix "This is the purest version of the data philosophy, " ;
+          oa:suffix ". It also dissolves the Otter problem"
+        ]
+      ] .
+
+    # SO3 — Reframe via verb swap: "point your agent at"
+    narr:StyleObs_PointYourAgentReframe a narr:StyleObservation ;
+      skos:broader narr:VerbChoice ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      skos:note "Precise verb substitution ('point your agent at' replacing 'send us') enacts the custody inversion in a single phrase. The reframe is performed linguistically, not just described." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_IngestionProtocol_20260609 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2700 ;
+          oa:end 2790
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "point your agent at six months of transcripts and get a perspective tomorrow" ;
+          oa:prefix "The promise becomes: **" ;
+          oa:suffix ".** Likewise the April 17 intent"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────
+    narr:StyleMetrics_IngestionProtocol a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_IngestionProtocol_20260609 ;
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.18"^^xsd:decimal ;
+      skos:note "Register: technical-strategic hybrid. Voice is direct and authoritative with embedded verbatim quotes from session. High jargon density (MCP, OAuth, JSONL, ZDR, ICP, webhook) signals practitioner audience. Active voice dominates; passive used selectively for institutional framing ('was left open', 'are permitted'). Sentence length varies widely — short punchy declarations ('No, no, no, no, no.') alternate with long compound-complex analytical sentences." .
+
+  }
+}

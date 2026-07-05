@@ -1,0 +1,244 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+
+# ========================================
+# Transaction-level Provenance
+# ========================================
+
+INSERT DATA {
+  narr:Tx_20260211T011647Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-11T01:16:47.189Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-10-tx-fact-review-design-decisions.md" ;
+    sb:originRef "refs/heads/main" .
+} ;
+
+# ========================================
+# INSERT DATA: New Style Observations
+# ========================================
+
+INSERT DATA {
+  # New style observations with full Web Annotation structure
+  narr:StyleObs_Optometrist a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_TXFactReview_20260210 ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_TXFactReview_20260210 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1023 ;
+        oa:end 1098
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Review is iterative and convergent, like an eye exam with a phoropter." ;
+        oa:prefix "### 2. The Optometrist Model\n\n" ;
+        oa:suffix " System generates micro-telltales"
+      ]
+    ] ;
+    skos:related narr:ResonanceUse ;
+    rdf:value true ;
+    skos:note "Extended analogy grounding abstract review process in familiar physical experience." ;
+    prov:wasGeneratedBy narr:Tx_20260211T011647Z .
+
+  narr:StyleObs_BetterAorB a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_TXFactReview_20260210 ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_TXFactReview_20260210 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1512 ;
+        oa:end 1660
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The system needs an equivalent to the eye chart with progressively smaller lines — micro-telltales at decreasing granularity" ;
+        oa:prefix "does viewing through this lens produce the right output?\"\n\n" ;
+        oa:suffix " that test whether the triples produce correct outputs"
+      ]
+    ] ;
+    skos:related narr:ResonanceUse ;
+    rdf:value true ;
+    skos:note "Concrete visual metaphor for abstraction levels in validation." ;
+    prov:wasGeneratedBy narr:Tx_20260211T011647Z .
+
+  narr:StyleObs_Lenses a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_TXFactReview_20260210 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_TXFactReview_20260210 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4102 ;
+        oa:end 4121
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten/remember" ;
+        oa:prefix "memories are not necessarily human-authored prose. The `" ;
+        oa:suffix "` MCP tool is called by the LLM"
+      ]
+    ] ;
+    skos:related narr:NamingConventions ;
+    rdf:value true ;
+    skos:note "Lowercase brand stylization with slash separator for tool naming." ;
+    prov:wasGeneratedBy narr:Tx_20260211T011647Z .
+
+  narr:StyleObs_NotFacts a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RhetoricalQuestion ;
+    dct:source narr:Sample_TXFactReview_20260210 ;
+    oa:hasBody narr:RhetoricalQuestion ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_TXFactReview_20260210 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1390 ;
+        oa:end 1510
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "You don't ask \"is this triple true?\" — you ask \"does viewing through this lens produce the right output?\"" ;
+        oa:prefix "continue to produce the right outcomes.\" " ;
+        oa:suffix "\n\nThe system needs an equivalent"
+      ]
+    ] ;
+    skos:related narr:ToneVoice ;
+    rdf:value true ;
+    skos:note "Antithetical rhetorical questions frame epistemological shift." ;
+    prov:wasGeneratedBy narr:Tx_20260211T011647Z .
+
+  narr:StyleObs_FeatureNotBug a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_TXFactReview_20260210 ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_TXFactReview_20260210 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 165 ;
+        oa:end 181
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "fire-and-forget" ;
+        oa:prefix "Designing the triple review system that moves extraction from " ;
+        oa:suffix " to human-validated iterative refinement."
+      ]
+    ] ;
+    skos:related narr:IdiolectPhrasing ;
+    rdf:value true ;
+    skos:note "Idiomatic compound adjective for one-shot processes." ;
+    prov:wasGeneratedBy narr:Tx_20260211T011647Z .
+
+  narr:StyleObs_MicroTelltales a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_TXFactReview_20260210 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_TXFactReview_20260210 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2078 ;
+        oa:end 2183
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Review status is per-triple at the extraction level." ;
+        oa:prefix "**Critical granularity rule**: " ;
+        oa:suffix " If a new TX adds triples that mark existing concepts"
+      ]
+    ] ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value true ;
+    skos:note "Declarative sentence, 8 words, strong subject-verb-object." ;
+    prov:wasGeneratedBy narr:Tx_20260211T011647Z .
+
+  narr:StyleObs_TranslatesFeedback a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_TXFactReview_20260210 ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_TXFactReview_20260210 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5089 ;
+        oa:end 5161
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The model translates feedback into triple modifications." ;
+        oa:prefix "natural language feedback suggesting changes or approvals. " ;
+        oa:suffix " These model-expanded triples are provisional"
+      ]
+    ] ;
+    skos:related narr:VoiceActive ;
+    rdf:value true ;
+    skos:note "Active voice, concrete verb 'translates' for agent action." ;
+    prov:wasGeneratedBy narr:Tx_20260211T011647Z .
+
+  narr:StyleObs_LensMicroTelltale a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_TXFactReview_20260210 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_TXFactReview_20260210 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1099 ;
+        oa:end 1198
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "System generates micro-telltales — small content artifacts that exercise the triples in a given lens." ;
+        oa:prefix "like an eye exam with a phoropter. " ;
+        oa:suffix " User evaluates whether the output looks right."
+      ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Canonical domain terms 'lens' and 'micro-telltale' introduced and consistently reused." ;
+    prov:wasGeneratedBy narr:Tx_20260211T011647Z .
+
+  narr:StyleObs_ArrowParallelism a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Parallelism ;
+    dct:source narr:Sample_TXFactReview_20260210 ;
+    oa:hasBody narr:Parallelism ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_TXFactReview_20260210 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5250 ;
+        oa:end 5378
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "extract → lens → micro-telltale → human feedback → modify triples → re-lens → repeat" ;
+        oa:prefix "The iterative cycle: " ;
+        oa:suffix ". Like the optometrist going back and forth"
+      ]
+    ] ;
+    skos:related narr:GrammarSyntax ;
+    rdf:value true ;
+    skos:note "Arrow-linked parallel verb phrases create rhythmic flow." ;
+    prov:wasGeneratedBy narr:Tx_20260211T011647Z .
+} 

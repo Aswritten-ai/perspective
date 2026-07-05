@@ -1,0 +1,424 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+PREFIX storytwin: <http://storytwin.com/ontology#>
+
+# ============================================================
+# Transaction Provenance
+# ============================================================
+
+INSERT DATA {
+  narr:Tx_20260128T174338Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai/agent> ;
+    prov:wasAttributedTo <http://n8n.aswritten.ai/actor> ;
+    prov:generatedAtTime "2026-01-28T17:43:38.155Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2025-11-10-data-model-architecture.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:used <anthropic/claude-sonnet-4.5> .
+
+# ============================================================
+# Extracted Narrative Data
+# ============================================================
+
+# New Sample
+narr:Sample_collective_memory_arch a narr:Sample ;
+    dct:title "collective memory Data Model & API Architecture Discussion" ;
+    narr:inputLength 23847 ;
+    dct:created "2025-01-30"^^xsd:date ;
+    skos:note "Technical architecture discussion covering Clojure/Malli API schema, integration patterns, and multi-tenant workflows" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+# New Narrative Elements
+narr:Narrative_NonTechnicalAccessibility a narr:Narrative ;
+    dct:source narr:Sample_collective_memory_arch ;
+    narr:theme "Accessibility for non-technical users" ;
+    skos:broader narr:Strategy ;
+    skos:related narr:ActorIncentiveAnalysis ;
+    skos:note "Conversational AI and Discourse forum as zero-code interfaces hiding RDF/SPARQL complexity" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Narrative_TwoInterfaceModel a narr:Narrative ;
+    dct:source narr:Sample_collective_memory_arch ;
+    narr:theme "Dual interface architecture" ;
+    skos:broader narr:Architecture ;
+    skos:related narr:SystemTopology ;
+    skos:note "Chat for fast iteration, Discourse for async collaboration; two-step save pattern" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Narrative_RepoAsSourceOfTruth a narr:Narrative ;
+    dct:source narr:Sample_collective_memory_arch ;
+    narr:theme "Git-centric architecture" ;
+    skos:broader narr:Architecture ;
+    skos:related narr:DataModelLifecycle ;
+    skos:note "All content committed to Git before extraction; GitHub Actions handle async processing; append-only transactions" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Narrative_DryRunFirst a narr:Narrative ;
+    dct:source narr:Sample_collective_memory_arch ;
+    narr:theme "Preview before commit" ;
+    skos:broader narr:Process ;
+    skos:related narr:QualityReviewGates ;
+    skos:note "mcp/posit previews extraction impact with plain-English summary before mcp/remember triggers async job" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+# Architecture Observations
+narr:Obs_AsyncExtraction a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ArchitectureOverview ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:ArchitectureOverview ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1842 ;
+            oa:end 1912
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "GitHub Actions handles extraction: load snapshot → extract → diff → create TX → commit" ;
+            oa:prefix "- " ;
+            oa:suffix "\n- Returns"
+        ]
+    ] ;
+    skos:related narr:CoreWorkflows ;
+    skos:note "Async extraction pipeline pattern" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Obs_TwoStepSave a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:IntegrationPoints ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:IntegrationPoints ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1485 ;
+            oa:end 1650
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "1. User ideates in chat with AI\n2. AI offers to post to Discourse for team visibility\n3. Discourse post includes `@aswritten` mention" ;
+            oa:prefix "**Integration Pattern** (Two-Step Save):\n" ;
+            oa:suffix "\n4. Discourse webhook"
+        ]
+    ] ;
+    skos:related narr:FeedbackLoops ;
+    skos:note "Collaboration pattern bridging chat and forum" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Obs_ToolLayering a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:SystemTopology ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:SystemTopology ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 2685 ;
+            oa:end 2850
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "**MCP Tools** (user-facing):\n- Orchestrate workflows\n- Handle authorization/validation\n- Return high-level types (Job, Commit, Transaction)" ;
+            oa:prefix "### 4. Tool Layering\n\n" ;
+            oa:suffix "\n- Examples:"
+        ]
+    ] ;
+    skos:related narr:RoleTopology ;
+    skos:note "Separation of concerns: orchestration vs atomic operations" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Obs_CategoryMapping a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:SocioTechnicalTouchpoints ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:SocioTechnicalTouchpoints ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 4165 ;
+            oa:end 4310
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "**Category Mapping**:\n- Each Discourse category = folder in repo\n- Each thread = subfolder\n- Each post = transaction in thread folder" ;
+            oa:prefix "**Data Flow**:\n\n" ;
+            oa:suffix "\n- Provenance preserved"
+        ]
+    ] ;
+    skos:related narr:DataModelLifecycle ;
+    skos:note "Mapping social structure to file system hierarchy" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+# Terminology Observations
+narr:Obs_MemoryDefinition a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3395 ;
+            oa:end 3490
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "**Memory**: Ephemeral user content (chat message, Discourse post, uploaded doc)" ;
+            oa:prefix "### 5. Key Type Definitions\n\n" ;
+            oa:suffix "\n- Auto-generated"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Domain-specific term for input artifacts" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Obs_TransactionDefinition a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3565 ;
+            oa:end 3630
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "**Transaction**: Graph changes (insert/delete operations)" ;
+            oa:prefix "- Triggers extraction when committed to repo\n\n" ;
+            oa:suffix "\n- Has provenance"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Core abstraction for graph mutations" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Obs_SystemHandle a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 5085 ;
+            oa:end 5140
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "**Handle**: \"aswritten\" (centralized constant)" ;
+            oa:prefix "### 8. System Identity\n\n" ;
+            oa:suffix "\n- Used in Discourse"
+        ]
+    ] ;
+    skos:related narr:NamingConventions ;
+    skos:note "Lowercase brand stylization for system identity" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+# Style Metrics
+narr:Metrics_collective_memory_arch a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_collective_memory_arch ;
+    narr:AverageSentenceLength 18.5 ;
+    narr:JargonDensity 0.42 ;
+    narr:ActiveVoiceRatio 0.78 ;
+    narr:TypeTokenRatio 0.61 ;
+    skos:note "High jargon density appropriate for technical architecture document; strong active voice usage" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+# Rubric Assessments
+narr:Assess_Register_collective_memory a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_collective_memory_arch ;
+    rdf:value 4.5 ;
+    skos:note "Technical register with clear structure; appropriate formality for architecture documentation; consistent use of second-person in user-facing descriptions" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Assess_Phrasing_collective_memory a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_collective_memory_arch ;
+    rdf:value 4.0 ;
+    skos:note "Domain-specific terminology (Memory, Transaction, Snapshot) used consistently; clear naming conventions (mcp/ prefix for tools); technical idioms appropriate for audience" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Assess_Cadence_collective_memory a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_collective_memory_arch ;
+    rdf:value 4.0 ;
+    skos:note "Mix of short declarative sentences and structured lists; bullet points create scannable rhythm; sequence diagrams break up dense technical prose" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Assess_Strategy_collective_memory a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_collective_memory_arch ;
+    rdf:value 5.0 ;
+    skos:note "Strong alignment with narrative architecture principles: accessibility (non-technical users), provenance (Git as source of truth), collaboration (two-interface model), auditability (append-only transactions)" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Assess_Tailoring_collective_memory a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_collective_memory_arch ;
+    rdf:value 4.5 ;
+    skos:note "Explicitly addresses multiple personas (nonprofit coordinators, sales execs, educators); separates user-facing from internal tools; includes both technical and non-technical stakeholder concerns" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Assess_Resonance_collective_memory a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_collective_memory_arch ;
+    rdf:value 4.0 ;
+    skos:note "Concrete examples (DC37 training story, email domain migration); sequence diagrams illustrate workflows; use cases ground abstract patterns in real scenarios" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Assess_Flow_collective_memory a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_collective_memory_arch ;
+    rdf:value 4.5 ;
+    skos:note "Logical progression from decisions → workflows → architecture → data types; clear section headers; diagrams complement prose; 'Open Questions Resolved' section provides closure" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Assess_Novelty_collective_memory a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_collective_memory_arch ;
+    rdf:value 4.0 ;
+    skos:note "Novel integration pattern (two-step save); creative use of Git as narrative log; fresh framing of 'Memory' as ephemeral input vs 'Transaction' as durable change; avoids generic SaaS architecture clichés" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Assess_Accuracy_collective_memory a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_collective_memory_arch ;
+    rdf:value 5.0 ;
+    skos:note "Precise technical specifications; explicit corrections documented ('Technical Corrections Made' section); consistent type definitions; accurate sequence diagrams; verifiable claims about system behavior" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+# Product Ladder Observations
+narr:Obs_MCPPrimitives a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Primitives ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:Primitives ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 2945 ;
+            oa:end 3070
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "**Lower-Level Tools** (internal):\n- Atomic operations\n- Used by MCP tools and GitHub Actions\n- Examples: `snapshot/extract`, `tx/commit`, `story/draft`" ;
+            oa:prefix "- Examples: `mcp/snapshot`, `mcp/remember`, `mcp/draft-story`\n\n" ;
+            oa:suffix "\n\n### 5. Key Type"
+        ]
+    ] ;
+    skos:related narr:ModulesCapabilities ;
+    skos:note "Atomic operations as foundational primitives" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Obs_WorkflowBehaviors a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Behaviors ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:Behaviors ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1740 ;
+            oa:end 1840
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "- `mcp/create-memory` → `mcp/posit` (preview) → `mcp/remember` (commit file)" ;
+            oa:prefix "#### Remember (Async Extraction)\n" ;
+            oa:suffix "\n- GitHub Actions"
+        ]
+    ] ;
+    skos:related narr:CoreWorkflows ;
+    skos:note "Sequenced behaviors forming complete workflow" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Obs_StoryFlow a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Flows ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:Flows ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 2330 ;
+            oa:end 2430
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "- `mcp/draft-story` executes `.story` file against snapshot\n- **Synchronous**: Returns rendered Markdown immediately" ;
+            oa:prefix "#### Story Generation\n" ;
+            oa:suffix "\n- Incremental mode"
+        ]
+    ] ;
+    skos:related narr:SolutionArchetypes ;
+    skos:note "End-to-end story generation flow" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+# Proof & Outcomes
+narr:Obs_ProductionReady a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Outcomes ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:Outcomes ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 6485 ;
+            oa:end 6580
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "**Production-Ready**: All schemas complete, tool chains validated, workflows coherent" ;
+            oa:prefix "## Architecture Status\n\n" ;
+            oa:suffix "\n\n**Next Implementation"
+        ]
+    ] ;
+    skos:related narr:Milestones ;
+    skos:note "Explicit milestone declaration" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+narr:Obs_NextSteps a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ImplementationPath ;
+    dct:source narr:Sample_collective_memory_arch ;
+    oa:hasBody narr:ImplementationPath ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_collective_memory_arch ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 6582 ;
+            oa:end 6800
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "**Next Implementation Steps**:\n1. Implement `story/group-txs` (transaction deduplication logic)\n2. Prototype `snapshot/process` (bulk transformation engine)\n3. Build Discourse webhook → GitHub Actions pipeline" ;
+            oa:prefix "workflows coherent\n\n" ;
+            oa:suffix "\n4. Test incremental"
+        ]
+    ] ;
+    skos:related narr:NarrativeDrivenRoadmap ;
+    skos:note "Prioritized implementation sequence" ;
+    prov:wasGeneratedBy narr:Tx_20260128T174338Z .
+
+}

@@ -1,0 +1,84 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────
+INSERT DATA {
+  narr:Tx_20260705T143429Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-05T14:34:29Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-07-05-1-fable-window-allocation-architect-implementer-split.md" ;
+    narr:originRef "call/fable-window-allocation" ;
+    dct:title "Fable-Window Allocation: Multi-Pass Spike and Architect/Implementer Split" ;
+    prov:generated
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      narr:StyleObs_FableWindowBlockquoteStyle,
+      narr:StyleObs_FableWindowAntithesisPattern .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260705T143429Z {
+
+    # ── Style Observations ───────────────────────────────────────
+    narr:StyleObs_FableWindowBlockquoteStyle a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+
+      rdf:value true ;
+      skos:note "Planning session memo with embedded blockquoted speech. The document alternates between authoritative third-person editorial prose (decisions, rationale, corrections) and first-person blockquoted Scarlet voice. The blockquote is the primary evidence unit — verbatim attribution as governing style, consistent with the Quotes hub pattern." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 742 ; oa:end 852
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "self-serve demo paramount, but already underway. wondering if maybe multi-pass extraction is a huge win spike?" ;
+          oa:prefix "on in her planning outline:\n\n> \"" ;
+          oa:suffix " or first the reactions prompt u"
+        ]
+      ] .
+
+    narr:StyleObs_FableWindowAntithesisPattern a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      rdf:value true ;
+      skos:note "Antithesis structures the 'What was explicitly not chosen' section: each alternative is named and then categorized as 'deferred rather than rejected,' 'dissolved rather than rejected,' or 'partially adopted.' This dissolved/deferred/rejected taxonomy is a recurring Scarlet idiolect pattern for decision documentation." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2745 ; oa:end 2775
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "dissolved rather than rejected" ;
+          oa:prefix "alone reactions-prompt pass** — " ;
+          oa:suffix ": task-317 (reactions from remem"
+        ]
+      ] .
+
+  }
+}

@@ -1,0 +1,36 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260612T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-12T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# Correction: No [amount] Tranche 2 — the Bridge Leads to a [amount]-4M Institutional Round" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      narr:Metrics_Correction_Tranche2_20260612    .
+} ;
+
+# INSERT new entities
+INSERT DATA {
+  GRAPH narr:Tx_20260612T120000Z {
+
+    narr:Metrics_Correction_Tranche2_20260612 a narr:StyleMetrics ;
+
+      skos:broader narr:StyleMetrics ;
+      skos:note "Correction memo register. Three-section antithesis structure (wrong / correct / scope). Short punchy declaratives at key retraction moments ('There is no [amount] Tranche 2.'). Active voice dominant. Jargon density moderate — financial terms (SAFE, SEL, SAFE + SEL, tranche, envelope, dilution) used without definition, implying internal audience. Sentence length elevated in the 'What's correct' section by the staircase-discipline explanation; retraction sections are shorter and more direct." ;
+      narr:AverageSentenceLength "16"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.84"^^xsd:decimal ;
+      narr:JargonDensity "0.10"^^xsd:decimal .
+  }
+}

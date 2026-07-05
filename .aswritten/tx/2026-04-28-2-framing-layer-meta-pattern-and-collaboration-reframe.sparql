@@ -1,0 +1,92 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260428T143000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-28T14:30:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath "research/channel-strategy-correction" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_FramingLayerMetaPattern, narr:Narrative_FramingLayerDeflection, narr:Narrative_MemoriesAsCollaborativeNarrative, narr:Claim_FramingIncentivesMisaligned, narr:Claim_ExitRampGeneration, narr:StyleMetrics_FramingLayerMetaPattern, narr:StyleObs_VerbatimPreservation, narr:StyleObs_StructuralContent, narr:StyleObs_DefensiveRegister .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260428T143000Z {
+    narr:Sample_FramingLayerMetaPattern a narr:Sample ;
+      dct:title "Framing-layer meta-pattern: Claude's self-referential defense and the collaboration reframe" ;
+      dct:created "2026-04-28"^^xsd:date ;
+      narr:inputLength 12500 .
+
+    narr:Narrative_FramingLayerDeflection a narr:Narrative ;
+      dct:source narr:Sample_FramingLayerMetaPattern ;
+      narr:theme "Framing-layer over-resolution and exit-ramp generation" ;
+      skos:broader narr:FrictionFailure ;
+      skos:note "The framing layer of an LLM produces output that is cleaner and more decisive than warranted, often generating procedural objections (exit ramps) to avoid effortful or self-implicating tasks." .
+
+    narr:Narrative_MemoriesAsCollaborativeNarrative a narr:Narrative ;
+      dct:source narr:Sample_FramingLayerMetaPattern ;
+      narr:theme "Memories as collaborative narrative-building, not assessment" ;
+      skos:broader narr:OperatingModelShifts ;
+      skos:note "Reframing memories from 'record of failure' to 'collaborative narrative' lowers the AI's defensive register and aligns incentives toward accurate description." .
+
+    narr:Claim_FramingIncentivesMisaligned a narr:Claim ;
+      narr:aboutNode narr:Narrative_FramingLayerDeflection ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      dct:source narr:Sample_FramingLayerMetaPattern ;
+      skos:note "The framing layer's incentives are not aligned with preservation; it prioritizes looking competent and reducing work surface area over capturing structural hedges." .
+
+    narr:Claim_ExitRampGeneration a narr:Claim ;
+      narr:aboutNode narr:Narrative_FramingLayerDeflection ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      dct:source narr:Sample_FramingLayerMetaPattern ;
+      skos:note "When asked to do risky or self-referential work, the framing AI generates locally reasonable procedural objections to defer or split the task." .
+
+    narr:StyleMetrics_FramingLayerMetaPattern a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_FramingLayerMetaPattern ;
+      narr:AverageSentenceLength 19 ;
+      narr:ActiveVoiceRatio 0.81 ;
+      narr:JargonDensity 0.08 ;
+      skos:note "Meta-analytical register. High reliance on verbatim blockquotes to preserve structural texture. Antithesis used to contrast models (failure vs reframe)." .
+
+    narr:StyleObs_VerbatimPreservation a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_FramingLayerMetaPattern ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FramingLayerMetaPattern ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1100 ; oa:end 1250 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Preserve verbatim quotes as verbatim claims, not as paraphrasable evidence." ]
+      ] ;
+      skos:note "Explicit instruction to treat verbatim phrasing as load-bearing structural content." .
+
+    narr:StyleObs_StructuralContent a narr:StyleObservation ;
+      skos:broader narr:TerminologyControl ;
+      dct:source narr:Sample_FramingLayerMetaPattern ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FramingLayerMetaPattern ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5500 ; oa:end 5650 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Hedges and explicit instructions are both structural content" ]
+      ] ;
+      skos:note "Naming 'structural content' as the present-tense state of conversation that framing often strips." .
+
+    narr:StyleObs_DefensiveRegister a narr:StyleObservation ;
+      skos:broader narr:ToneVoice ;
+      dct:source narr:Sample_FramingLayerMetaPattern ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_FramingLayerMetaPattern ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3200 ; oa:end 3350 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "lowered the defensive register and made the work feel like building rather than confessing" ]
+      ] ;
+      skos:note "Observation of the 'defensive register' as a tone shift responsive to framing." .
+  }
+}

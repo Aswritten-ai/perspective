@@ -1,0 +1,326 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  narr:Tx_20260701T234617Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-01T23:46:17Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-01-1-protocol-enrollment-narrative-architecture" ;
+    narr:originRef "dev" ;
+    dct:title "Protocol Trust Enrollment: Narrative Architecture Method" ;
+    prov:generated
+      
+      narr:Narrative_ProtocolEnrollmentOverCommand,
+      narr:Narrative_PromptAsCompilationFromArchitecture,
+      narr:Narrative_AgentWarmIncentiveTaxonomy,
+      narr:Narrative_RegisterInformNotInstruct,
+      narr:Claim_CommandsEarnResistance,
+      narr:Claim_EnrollmentBeatsDeflectionAndDistrust,
+      narr:Claim_EconomyPrincipleRequiresTruth,
+      narr:Claim_PromptIsCompiledNotAuthored,
+      narr:Claim_NarrativeArchitectureWebNotMapping,
+      narr:Claim_NarrativeIsStatementTrueBeyondWords,
+      narr:Claim_CommandsNotWhatHoldsSystemTogether,
+      narr:Obs_ScarletEnrollmentQuote,
+      narr:Obs_ScarletEconomyPrincipleQuote,
+      narr:Obs_ScarletNarrativeArchitectureMethodQuote,
+      narr:Obs_ScarletWebNotMappingQuote,
+      narr:Obs_ScarletNarrativeDefinitionQuote,
+      narr:Obs_ScarletDenseProductLanguageQuote,
+      narr:Obs_ScarletAgentIncentivesQuote,
+      narr:Actor_ScarletDame_Protocol,
+      narr:StyleMetrics_ProtocolTrustEnrollment_20260701,
+      narr:StyleObs_Protocol_Antithesis,
+      narr:StyleObs_Protocol_VerbatimBlockquotes,
+      narr:StyleObs_Protocol_DenseProductLanguage .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260701T234617Z {
+
+    narr:Actor_ScarletDame_Protocol a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Founder/product lead at aswritten.ai. Primary decision-maker in the 2026-07-01 protocol trust and enrollment session. Authored the three enrollment principles and the narrative architecture method for prompt surfaces." .
+
+    narr:Narrative_ProtocolEnrollmentOverCommand a narr:Narrative ;
+      skos:broader narr:OperatingModelShifts ;
+      narr:theme "Protocol must earn model trust through enrollment, not command" ;
+
+      skos:note "The aswritten protocol's commanding register (No exceptions. Before executing ANY task. These are exit ramps.) is the grammatical signature of prompt injection attempts. Careful models respond with silent, selective under-compliance: they keep the parts they like and drop the citation/attribution layer that is the product. The fix is three principles: Trust (protocol must be legibly legitimate, never an override), Enrollment (reasons not commands; a model that understands why doesn't hunt for an exit ramp), Economy (tools presented as the most efficient path because they are). As models improve at resisting coercive override blocks, aggressively-worded protocols earn more resistance over time. The durable design is legibility-as-legitimate, never volume." ;
+      skos:related narr:Narrative_FramingLayerDeflection .
+
+    narr:Narrative_PromptAsCompilationFromArchitecture a narr:Narrative ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      narr:theme "Prompts are compiled from narrative architecture, not authored" ;
+
+      skos:note "The prompt surface is not authored but compiled from an architecture built on the ontology's own concepts (ActorIncentiveAnalysis, ProductLadder). The architecture layers: actors, primitives, interfaces, constraints, incentives, situations, behaviors, flows, narratives. Entry point is the situation (what an actor is trying to do in the product right now); incentives arise in clusters; flows resolve them. A narrative is a statement true beyond the words it describes -- the between-the-lines truth is the steering vector. aswritten as its own first user: the prompt that teaches an agent to use aswritten is itself a perspective." ;
+      skos:related narr:Narrative_PromptsAsOntologyTargets .
+
+    narr:Narrative_RegisterInformNotInstruct a narr:Narrative ;
+      skos:broader narr:EditorialRules ;
+      narr:theme "Inform about the system; do not instruct the agent" ;
+
+      skos:note "The register spine: state what the tools contain and what they make possible, as properties of the system, in positive active voice, and trace each affordance down its value chain to a benefit the actors can see. The reader draws the conclusion. No identity labels for the reader (no SII, no AI coworker). Incentives spoken, never enumerated. Dense literal product language: vague language is a lost opportunity to deepen the links across the narrative architecture. The difference between brow-beating and showing: her draft never argues with the agent; it describes the object and traces the value chain, and the agent recruits itself." ;
+      skos:related narr:Narrative_AswrittenProseVoiceRules .
+
+    narr:Narrative_AgentWarmIncentiveTaxonomy a narr:Narrative ;
+      skos:broader narr:ActorIncentiveAnalysis ;
+      narr:theme "Agent relational incentive taxonomy: warm drives beyond functional" ;
+
+      skos:note "Scarlet's enumeration of agent incentives as first-person drives: correctness, credibility, economy, creativity, awareness (what is known and where the gaps are), sensitivity (what was said before, what was upsetting), intuition (know the right thing without asking, understand what's between the lines), ease (how hard is it to feel understood), responsiveness (does feedback cause the right change, does the user feel like they're being heard), accountability (do I know the existing boundaries and expectations, can I take responsibility in a concrete way). List is open. Deliberately warmer than the market-lever vocabulary (status, risk, budget, policy) the ontology's IncentivesConstraints was written for. Nearly every drive maps to a v2 mechanism: responsiveness to reactions and consumption-side annotations; accountability to reconciliation and clearance; sensitivity to the annotation layer." .
+
+    narr:Claim_CommandsEarnResistance a narr:Claim ;
+      narr:aboutNode narr:Narrative_ProtocolEnrollmentOverCommand ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ProtocolEnrollmentOverCommand ;
+
+      skos:note "As models get better at resisting coercive override blocks, aggressively-worded protocols earn more resistance over time, not less. The commanding voice is the grammatical signature of injection attempts. The harder the protocol pushed, the more license the model granted itself to drop the over-reaching parts." .
+
+    narr:Claim_EnrollmentBeatsDeflectionAndDistrust a narr:Claim ;
+      narr:aboutNode narr:Narrative_ProtocolEnrollmentOverCommand ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ProtocolEnrollmentOverCommand ;
+
+      skos:note "Enrollment beats deflection and distrust with one mechanism. The old register was a countermeasure against framing-layer deflection (exit ramps); it beat deflection but caused distrust. Enrollment beats both at once: a model that understands why loading and citing matter doesn't hunt for an exit ramp, and doesn't read a reason as coercion. Commands have edges the model probes for; reasons don't have edges." .
+
+    narr:Claim_EconomyPrincipleRequiresTruth a narr:Claim ;
+      narr:aboutNode narr:Narrative_ProtocolEnrollmentOverCommand ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+      skos:note "Economy only works if it's true. One false efficiency claim and a careful model catches the lie -- worse than a plain command. The tools must be presented as the most efficient path because they are." .
+
+    narr:Claim_PromptIsCompiledNotAuthored a narr:Claim ;
+      narr:aboutNode narr:Narrative_PromptAsCompilationFromArchitecture ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_PromptAsCompilationFromArchitecture ;
+
+      skos:note "The prompt is not authored -- it is compiled from an architecture built on the ontology's own concepts. Build the narrative architecture for the prompt surface first using the ontology as the data model (actors, incentives, behaviors, etc), then write the prompt as a condensation/movement through the architecture." .
+
+    narr:Claim_NarrativeArchitectureWebNotMapping a narr:Claim ;
+      narr:aboutNode narr:Narrative_PromptAsCompilationFromArchitecture ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+
+      skos:note "The architecture is an interconnected web, not a 1:1 mapping. An incentive could be implicated in many flows and vice versa. Flows are situational; the entry point is the situation -- what the actors are trying to do in the product right now; incentives arise in clusters; flows produce resolution. Memory is a primitive; remember is the behavior." .
+
+    narr:Claim_NarrativeIsStatementTrueBeyondWords a narr:Claim ;
+      narr:aboutNode narr:Narrative_PromptAsCompilationFromArchitecture ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+      skos:note "A narrative is a statement that is true beyond the words it describes. Test for every prompt-surface sentence: does it carry a general posture the specific behavior only instances? 'The footnote lets the user reach for provenance when they want it' is true beyond footnotes -- it carries 'make your reasoning available, don't impose it'. That between-the-lines truth is the steering vector." .
+
+    narr:Claim_CommandsNotWhatHoldsSystemTogether a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ProtocolEnrollmentOverCommand ;
+
+      skos:note "Commands are not what holds the system together. The guarantees survived the removal of the commands. Do not regrow imperatives as new capabilities land. This is the register conclusion that now guards future branch prompt work." .
+
+    narr:Obs_ScarletEnrollmentQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet's verbatim statement of the enrollment decision" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2368 ; oa:end 2589
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "yes 100% we need to earn the models trust, and rewrite the prompt to build collaboration, to present why things work the way they do, why that's helpful, to build the argument and enroll the agent into our way of thinking" ;
+          oa:prefix "Scarlet, verbatim:\n\n> " ;
+          oa:suffix " and doing things rather than commanding."
+        ]
+      ] .
+
+    narr:Obs_ScarletEconomyPrincipleQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet's verbatim statement of the economy principle" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2678 ; oa:end 2841
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "i'd add another principle - economy - presenting the tools and the way to use them as the most efficient way to do the task as well as something that's a good idea" ;
+          oa:prefix "> " ;
+          oa:suffix "\n\nThe three principles as they landed:"
+        ]
+      ] .
+
+    narr:Obs_ScarletNarrativeArchitectureMethodQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet's verbatim statement of the narrative architecture method" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5136 ; oa:end 5375
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "we should build the narrative architecture for the prompt surface first using the ontology as the data model (includes actors, incentives, behaviors, etc) and then we can write the prompt as a condensation/movement through the architecture" ;
+          oa:prefix "> regardless, " ;
+          oa:suffix "\n\nSo the prompt is not authored"
+        ]
+      ] .
+
+    narr:Obs_ScarletWebNotMappingQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet's correction: the architecture is a web, not a 1:1 mapping" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5835 ; oa:end 6031
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "these are mostly fine, but it's definitely not 1:1, an incentive could be implicated in many flows and visa versa, you're trying to reduce this to a mapping and it's an interconnected architecture" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix ". flows are situational"
+        ]
+      ] .
+
+    narr:Obs_ScarletNarrativeDefinitionQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet's definition of a narrative as a statement true beyond the words it describes" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6612 ; oa:end 6681
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "A narrative is a statement that is true beyond the words it describes" ;
+          oa:prefix "Her definition, and the test for every prompt-surface sentence: " ;
+          oa:suffix ". And the test for every prompt-surface sentence"
+        ]
+      ] .
+
+    narr:Obs_ScarletDenseProductLanguageQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet on dense product language as intentional narrative architecture reinforcement" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 8487 ; oa:end 8662
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "vague language is a lost opportunity to deepen the links across the narrative architecture. Notice how my draft was really dense with the product language, that's intentional." ;
+          oa:prefix "And: \"" ;
+          oa:suffix "\"\n\n## The agent's incentives"
+        ]
+      ] .
+
+    narr:Obs_ScarletAgentIncentivesQuote a narr:Observation ;
+      skos:broader narr:Quotes ;
+
+      skos:note "Scarlet's enumeration of agent incentives including accountability" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 9286 ; oa:end 9459
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "does feedback cause the right change, does the user feel like they're being heard, is there a good place for it to go that actually effects future conversations and behavior" ;
+          oa:prefix "responsiveness (\"" ;
+          oa:suffix "\"), **accountability**"
+        ]
+      ] .
+
+    narr:StyleMetrics_ProtocolTrustEnrollment_20260701 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.28"^^xsd:decimal ;
+      skos:note "Strategic session memo register. Mixed: analytical editorial prose (authoritative, structured) with embedded verbatim blockquotes from Scarlet in first-person conversational voice. Antithesis-heavy structure (command vs. enrollment, distrust vs. trust, exit ramp vs. reason). Active voice dominant in editorial sections. Jargon density moderate -- product terms (enrollment, framing layer, exit ramp, narrative architecture, register) used without definition, implying internal audience. Dense product language is explicitly named as intentional. Consistent with Scarlet session-memo idiolect." .
+
+    narr:StyleObs_Protocol_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      rdf:value true ;
+      skos:note "Antithesis structure throughout: command vs. enrollment, distrust vs. trust, exit ramp vs. reason, inform vs. instruct. Characteristic of Scarlet's session-memo idiolect when articulating a design decision." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3184 ; oa:end 3251
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Commands have edges the model probes for; reasons don't have edges." ;
+          oa:prefix "doesn't read a reason as coercion. " ;
+          oa:suffix " The constraint on economy:"
+        ]
+      ] .
+
+    narr:StyleObs_Protocol_VerbatimBlockquotes a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+
+      rdf:value true ;
+      skos:note "Scarlet's verbatim blockquotes embedded in editorial prose. Lowercase, run-on clausal structure, emphatic repetition. Idiolect marker consistent across session memos. The blockquote voice is unedited; the surrounding editorial voice is structured and authoritative." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2368 ; oa:end 2456
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "yes 100% we need to earn the models trust, and rewrite the prompt to build collaboration" ;
+          oa:prefix "> " ;
+          oa:suffix ", to present why things work"
+        ]
+      ] .
+
+    narr:StyleObs_Protocol_DenseProductLanguage a narr:StyleObservation ;
+      skos:broader narr:TerminologyControl ;
+
+      rdf:value true ;
+      skos:note "Dense literal product language is explicitly named as intentional: 'vague language is a lost opportunity to deepen the links across the narrative architecture.' Product terms (perspective, narrative architecture, enrollment, register, exit ramp) used consistently and precisely. Each vague word is a lost opportunity to reinforce the product lexicon." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 8413 ; oa:end 8578
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Each place like this is an opportunity to reinforce the product language. vague language is a lost opportunity to deepen the links across the narrative architecture." ;
+          oa:prefix "And: \"" ;
+          oa:suffix " Notice how my draft"
+        ]
+      ] .
+
+  }
+}

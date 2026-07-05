@@ -1,0 +1,347 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260319T230000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-19T23:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-19-bounded-domain-fidelity-collaboration-taxonomy-document-ecosystem.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_BoundedDomainFidelity_20260319,
+      narr:Narrative_BoundedDomainFidelityArgument,
+      narr:Narrative_CollaborationTaxonomy,
+      narr:Narrative_DocumentEcosystem,
+      narr:Claim_BoundedDomainHigherFidelity,
+      narr:Claim_StaleGraphCitationsWorse,
+      narr:Claim_FounderAsPoorUserExample,
+      narr:Claim_SalonReclassifiedAsReviewBehavior,
+      narr:Claim_SMSEntryOpenProductIdea,
+      narr:Claim_BirchVoiceInterviewModel,
+      narr:Claim_StrategyDocAsInternalSourceOfTruth,
+      narr:Obs_BoundedDomainQuote,
+      narr:Obs_StaleGraphDanger,
+      narr:Obs_FounderPowerUserQuote,
+      narr:Obs_CollaborationTaxonomyList,
+      narr:Obs_DocumentEcosystemTable,
+      narr:StyleObs_VerbatimQuoteStyle_BDF,
+      narr:StyleObs_TableStructure_BDF,
+      narr:StyleObs_Antithesis_BDF .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260319T230000Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_BoundedDomainFidelity_20260319 a narr:Sample ;
+      dct:title "Bounded-Domain Fidelity, Collaboration Taxonomy, and Document Ecosystem (2026-03-19)" ;
+      dct:created "2026-03-19"^^xsd:date ;
+      dct:description "End-of-session brain dump following V1 strategy document creation. Captures the bounded-domain fidelity argument (expertise modules are higher fidelity than org memory), the collaboration taxonomy missing from the strategy doc, open product ideas (SMS entry, AI voice interviews), and the full document ecosystem to be derived from the strategy doc." ;
+      narr:inputLength 3421 .
+
+    # ── Scale 1: Document-level Narratives ──────────────────────────────────
+
+    narr:Narrative_BoundedDomainFidelityArgument a narr:Narrative ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Bounded-Domain Fidelity: Expertise Modules Are Higher Fidelity Than Org Memory" ;
+      skos:note "Expertise modules (courses, books, consulting deliverables) are bounded and intentionally updated — each update is a deliberate act by the expert. Organizational memory is inherently lossy because it tracks a moving target. The bounded case is structurally higher fidelity. This is a compelling argument for leading with the expertise module vertical rather than the organizational memory use case. Danger: stale graph + citations = worse than no citations at all." ;
+      narr:theme "Expertise modules are higher fidelity than org memory because they are bounded, intentionally curated, and do not drift without the expert's knowledge" .
+
+    narr:Narrative_CollaborationTaxonomy a narr:Narrative ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Collaboration Shape Taxonomy: Individual→Self, Individual→Team, Individual→Many, Team→Many" ;
+      skos:note "The strategy doc has three archetypes but is missing the collaboration shape taxonomy. Four shapes: Individual→Self (creating expertise for own AI consumption), Individual→Team (expertise consumed by a team), Individual→Many (publishing expertise to many — the publisher), Team→Many (a team publishing expertise to many). The Salon archetype from the original Solo/Parallel/Hub/Salon/Teams taxonomy has been reclassified as the review behavior — collaborative review IS the salon." ;
+      narr:theme "The collaboration shape taxonomy (Individual→Self / →Team / →Many, Team→Many) is the missing structural layer in the strategy doc's archetype model" .
+
+    narr:Narrative_DocumentEcosystem a narr:Narrative ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      skos:prefLabel "Document Ecosystem: Strategy Doc as Internal Source of Truth for All Derived Documents" ;
+      skos:note "The strategy document is the internal source of truth. From it, multiple documents need to be derived: product doc (internal, users/tools/flows/actor stories), F&F fundraising doc (family, plain language, split from existing brief), VC/Angels doc (investors, no raise amount), intro deck (first meeting, forwards to follow-up), white paper (external/thought leadership), sales playbook (internal/a demo-call prospect), one sheet (external), public docs (user-facing), case studies (external/sales — need audit). Scarlet also wants a product doc following her original consulting framework (ontology contains the progression: users, incentives, org profiles, actions, components, tools, flows, actor stories)." ;
+      narr:theme "The strategy document is the single internal source of truth; all audience-specific documents are derived from it, not the other way around" .
+
+    # ── Scale 2: Section-level Claims ───────────────────────────────────────
+
+    narr:Claim_BoundedDomainHigherFidelity a narr:Claim ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "Expertise modules (courses, books, consulting deliverables) are bounded and intentionally updated — each update is a deliberate act by the expert. Org memory is inherently lossy because it tracks a moving target. The bounded case is actually higher fidelity than the org case. This is a structural advantage for leading with the expertise module vertical." ;
+      narr:aboutNode narr:Narrative_BoundedDomainFidelityArgument ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PositioningThesis .
+
+    narr:Claim_StaleGraphCitationsWorse a narr:Claim ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "The danger with organizational memory: stale graph + citations = worse than having no citations at all. If the graph is inaccurate and someone is delegating work to AI that cites collective memory, the result is work with citations to something that is wrong. That is worse than generic AI with no citations." ;
+      narr:aboutNode narr:Narrative_BoundedDomainFidelityArgument ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:GovernanceSafetyTrust .
+
+    narr:Claim_FounderAsPoorUserExample a narr:Claim ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "Scarlet noted: 'Because my using the product is the central use case, I'm a poor user. I'm a poor example of a user because I am the power user par excellence. My memories are going to stay about as current as you may ever get.' Most users will not maintain their graph the way the founder does. This is a product design and user research implication." ;
+      narr:aboutNode narr:Narrative_BoundedDomainFidelityArgument ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PersonasJTBD .
+
+    narr:Claim_SalonReclassifiedAsReviewBehavior a narr:Claim ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "The Salon archetype from the original solution archetypes (Solo/Parallel/Hub/Salon/Teams) has been reclassified as the review behavior — collaborative review IS the salon. This supersedes the prior treatment of Salon as a fifth deployment pattern." ;
+      narr:aboutNode narr:Narrative_CollaborationTaxonomy ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_CollaborationTaxonomy .
+
+    narr:Claim_SMSEntryOpenProductIdea a narr:Claim ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "The SMS-first entry point (text to start a topic, multiple groups with different reviewers) is currently described in the graph as an 'SMS-first' product, which is an overstatement. It is an open product idea, not the current product. The salon case in the collaboration taxonomy." ;
+      narr:aboutNode narr:Narrative_CollaborationTaxonomy ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:challenges narr:Narrative_CollaborationTaxonomy .
+
+    narr:Claim_BirchVoiceInterviewModel a narr:Claim ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "a founder beta user's a collaborator (wound down AI voice product, originally for recruiting) is a model for automated interviews for knowledge extraction. In the expertise module model, the question of how to initially get expertise out of people where it is undocumented is the key challenge. AI voice interviews are a proposed answer. Also: a demo-call prospect mentioned a product that does AI voice onboarding for new users — name blanked." ;
+      narr:aboutNode narr:Narrative_BoundedDomainFidelityArgument ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_BoundedDomainFidelityArgument .
+
+    narr:Claim_StrategyDocAsInternalSourceOfTruth a narr:Claim ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "The strategy document is the internal source of truth. From it, multiple documents need to be derived for different audiences: product doc, F&F fundraising doc, VC/Angels doc, intro deck, white paper, sales playbook, one sheet, public docs, case studies. Scarlet also wants a product doc following her original consulting framework (users, incentives, org profiles, actions, components, tools, flows, actor stories)." ;
+      narr:aboutNode narr:Narrative_DocumentEcosystem ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:NarrativeDrivenRoadmap .
+
+    # ── Scale 3: Observations with selectors ────────────────────────────────
+
+    narr:Obs_BoundedDomainQuote a narr:Observation ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "Scarlet's verbatim articulation of the bounded-domain fidelity argument — the structural case for expertise modules over org memory." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BoundedDomainFidelity_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 497 ;
+          oa:end 697
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "that package expertise actually is a point in time and it can get updated later but each update is intentional" ;
+          oa:prefix "The expertise modules for domain experts, where this is an evolution of a book or a course or a consulting deliverable — " ;
+          oa:suffix ". It's not trying to track an organizational perspective that is always lossy"
+        ]
+      ] .
+
+    narr:Obs_StaleGraphDanger a narr:Observation ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      skos:note "The stale graph + citations danger: worse than generic AI with no citations. Key risk for org memory use case." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BoundedDomainFidelity_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1010 ;
+          oa:end 1180
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "stale graph + citations = worse than having no citations" ;
+          oa:prefix "The danger with organizational memory: " ;
+          oa:suffix ". If the graph isn't accurate and someone is delegating work to AI"
+        ]
+      ] .
+
+    narr:Obs_FounderPowerUserQuote a narr:Observation ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:broader narr:PersonasJTBD ;
+      skos:note "Scarlet's self-diagnosis as a poor user example — the power user par excellence whose graph stays current in ways typical users' will not." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BoundedDomainFidelity_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1490 ;
+          oa:end 1660
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I'm a poor example of a user because I am the power user par excellence" ;
+          oa:prefix "Because my using the product is the central use case, " ;
+          oa:suffix ". My memories are going to stay about as current as you may ever get."
+        ]
+      ] .
+
+    narr:Obs_CollaborationTaxonomyList a narr:Observation ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:note "The four collaboration shapes: Individual→Self, Individual→Team, Individual→Many (publisher), Team→Many. Missing from the strategy doc's three-archetype model." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BoundedDomainFidelity_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1780 ;
+          oa:end 2020
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Individual → Self: Creating expertise for their own AI consumption" ;
+          oa:prefix "The strategy doc has three archetypes but is missing the collaboration shape taxonomy:\n\n- **" ;
+          oa:suffix "\n- **Individual → Team:** Creating expertise consumed by a team"
+        ]
+      ] .
+
+    narr:Obs_DocumentEcosystemTable a narr:Observation ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      skos:note "The full document ecosystem table: nine derived documents from the strategy doc, each with audience and relationship to strategy. Includes product doc, F&F doc, VC/Angels doc, intro deck, white paper, sales playbook, one sheet, public docs, case studies." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BoundedDomainFidelity_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2600 ;
+          oa:end 2800
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Product doc | Internal | Users, tools, flows, actor stories" ;
+          oa:prefix "| Document | Audience | Relationship to Strategy |\n|---|---|---|\n| **" ;
+          oa:suffix " — source of truth for roadmap/tickets/Notion |"
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+
+    narr:StyleObs_VerbatimQuoteStyle_BDF a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "Extended verbatim block quotes from Scarlet used to anchor strategic arguments. The quote style is run-on, first-person, stream-of-consciousness — characteristic of voice memo transcription. Lowercase 'i' not present; full sentences with embedded subordinate clauses." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BoundedDomainFidelity_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 430 ;
+          oa:end 700
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The expertise modules for domain experts, where this is an evolution of a book or a course" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " or a consulting deliverable — that package expertise actually is a point in time"
+        ]
+      ] .
+
+    narr:StyleObs_TableStructure_BDF a narr:StyleObservation ;
+      skos:broader narr:InformationArchitecture ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "Markdown table used for the document ecosystem section — three columns (Document, Audience, Relationship to Strategy). Consistent with the document's pattern of using structured formats to compress multi-dimensional information. Table is the dominant format for the document ecosystem section." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BoundedDomainFidelity_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2540 ;
+          oa:end 2620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "| Document | Audience | Relationship to Strategy |" ;
+          oa:prefix "\n\n" ;
+          oa:suffix "\n|---|---|---|"
+        ]
+      ] .
+
+    narr:StyleObs_Antithesis_BDF a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_BoundedDomainFidelity_20260319 ;
+      skos:note "Antithesis used to sharpen the bounded-domain argument: 'bounded' vs 'lossy', 'intentional' vs 'always doing it', 'higher fidelity' vs 'inherently lossy'. The rhetorical structure mirrors the strategy doc's antithesis-heavy style." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BoundedDomainFidelity_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 200 ;
+          oa:end 380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The bounded case is actually *higher fidelity* than the org case" ;
+          oa:prefix "Organizational memory is inherently lossy because it's trying to track a moving target. " ;
+          oa:suffix "."
+        ]
+      ] .
+
+  }
+} ;
+
+# ── UPDATE 1: Correct SMS-first product description ──────────────────────────
+# Memory explicitly states: "currently described in the graph as 'SMS-first' product,
+# which is an overstatement — it's an open product idea, not the current product."
+# This contradicts the existing narr:Product_SMSCollectiveMemory positioning.
+DELETE {
+  GRAPH ?g {
+    narr:Product_SMSCollectiveMemory skos:prefLabel ?oldLabel .
+    narr:Positioning_SMSProduct skos:prefLabel ?oldPositioningLabel .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260319T230000Z {
+    narr:Product_SMSCollectiveMemory skos:prefLabel "SMS-First Collective Memory (Open Product Idea, Not Current Product)" ;
+      skos:note "CORRECTION 2026-03-19: Previously described as the current product direction. Scarlet clarified this is an open product idea, not the current product. The 'SMS-first' framing is an overstatement. This is the salon case in the collaboration taxonomy." .
+    narr:Positioning_SMSProduct skos:prefLabel "SMS-First Collective Memory Positioning (Open Idea)" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Product_SMSCollectiveMemory skos:prefLabel ?oldLabel .
+  }
+  OPTIONAL {
+    GRAPH ?g {
+      narr:Positioning_SMSProduct skos:prefLabel ?oldPositioningLabel .
+    }
+  }
+} ;
+
+# ── UPDATE 2: Expand Narrative_BusinessPlanAsSource with document ecosystem ──
+# Memory significantly expands the document ecosystem concept with a full table
+# of nine derived documents. The existing narrative has a narrow theme about
+# working on the actual business plan vs. proxies. Memory adds the full ecosystem.
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_BusinessPlanAsSource narr:theme ?oldTheme ;
+      skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260319T230000Z {
+    narr:Narrative_BusinessPlanAsSource narr:theme "The strategy document is the single internal source of truth; all audience-specific documents (product doc, F&F doc, VC/Angels doc, intro deck, white paper, sales playbook, one sheet, public docs, case studies) are derived from it" ;
+      skos:note "UPDATED 2026-03-19: Expanded from fundraising brief framing to full document ecosystem. The strategy document is the internal source of truth. Nine derived documents identified: product doc (internal, users/tools/flows/actor stories), F&F fundraising doc (family, plain language, split from existing brief), VC/Angels doc (investors, no raise amount), intro deck (first meeting), white paper (external/thought leadership), sales playbook (internal/a demo-call prospect), one sheet (external), public docs (user-facing), case studies (external/sales — need audit). Scarlet also wants a product doc following her original consulting framework: users, incentives, org profiles, actions, components, tools, flows, actor stories. Original note: Scarlet wants to get the full business plan draft done — the fundraising briefs are audience-specific proxies; the business plan is the whole picture." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_BusinessPlanAsSource narr:theme ?oldTheme .
+  }
+  OPTIONAL {
+    GRAPH ?g {
+      narr:Narrative_BusinessPlanAsSource skos:note ?oldNote .
+    }
+  }
+}

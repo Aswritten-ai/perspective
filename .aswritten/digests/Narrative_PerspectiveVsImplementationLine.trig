@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_PerspectiveVsImplementationLine> {
+  <https://aswritten.ai/narrative#Digest_Narrative_PerspectiveVsImplementationLine> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_PerspectiveVsImplementationLine> ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub states a single durable principle and its enforcement machinery: the line between what the **perspective** holds and what the **implementation** holds. The [perspective holds intent](narr:Claim_PerspectiveHoldsIntent) — decisions, reasoning, felt intent, the conceptual how — while [literal values are implementation detail](narr:Claim_ImplementationDetailExclusion) that live in files (tokens.json, CSS, SCSS) and must not appear in the perspective. The boundary runs *inside* 'how': directional/relational how stays up, specific values and config drop down. Two failure modes motivate the split: [authority confusion](narr:Claim_AuthorityConfusionFail) (repo and perspective asserting the same value, leaving canonicality ambiguous) and [staleness](narr:Claim_StalenessFail) (a memory asserting a value silently lies once the source file is edited). [Three diagnostic questions](narr:Claim_ThreeTestQuestions) operationalize routing, including the subtle case where a decision *about* a detail still belongs in perspective. The principle is framed as [durable by design](narr:Claim_DurabilityPrinciple), and was [encoded across four product files](narr:Claim_ProductFilesUpdated) plus a generated brand/ repo structure (20260414).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AuthorityConfusionFail> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DurabilityPrinciple> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ImplementationDetailExclusion> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PerspectiveHoldsIntent> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ProductFilesUpdated> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StalenessFail> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ThreeTestQuestions> ;
+    narr:keyPhrase [ narr:text "The repo owns the value because code runs." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AuthorityConfusionFail> ] ;
+    narr:keyPhrase [ narr:text "The file is the source of truth for the value; the perspective is the source of truth for why the value was chosen." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_StalenessFail> ] ;
+    narr:keyPhrase [ narr:text "directional and relational how belongs in the perspective; specific values, identifiers, and config belong in the implementation." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PerspectiveHoldsIntent> ] ;
+    narr:keyPhrase [ narr:text "It should be superseded only if the perspective/implementation line is explicitly redrawn by a future session. It is durable by design." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DurabilityPrinciple> ] ;
+    narr:keyPhrase [ narr:text "Is it a decision about an implementation detail, not the detail itself? → Still perspective." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ThreeTestQuestions> ] ;
+    narr:variation [ narr:text "Two distinct (non-identical) risks justify the line — authority confusion (canonicality ambiguous when both assert a value) vs staleness (perspective silently lies after file edit); an agent reasoning from only one misses the other." ; narr:over <https://aswritten.ai/narrative#Claim_AuthorityConfusionFail> ; narr:over <https://aswritten.ai/narrative#Claim_StalenessFail> ] ;
+    narr:variation [ narr:text "Durability tension: explicitly framed as a principle, not a tactical decision, revisable only by explicitly redrawing the line — a high bar that resists ordinary session-level updates." ; narr:over <https://aswritten.ai/narrative#Claim_DurabilityPrinciple> ] ;
+    narr:variation [ narr:text "The boundary is not clean: a decision about an implementation detail stays in the perspective even though the value itself does not — the 'still perspective' edge case that blurs the otherwise sharp split." ; narr:over <https://aswritten.ai/narrative#Claim_ThreeTestQuestions> ; narr:over <https://aswritten.ai/narrative#Claim_PerspectiveHoldsIntent> ] ;
+    narr:writer "claude (subscription)" .
+}

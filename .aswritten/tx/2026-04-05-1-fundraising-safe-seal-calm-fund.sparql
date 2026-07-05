@@ -1,0 +1,78 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260331T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-31T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-31-fundraising-strategy-pivot.md" ;
+    narr:originRef "main@abc1234" ;
+    prov:generated  narr:Narrative_VCPivot_OrganicScale, narr:Claim_NoVCAtThisStage, narr:Claim_SEAL_Ambition, narr:StyleObs_Antithesis_VC, narr:StyleObs_Register_Strategic, narr:StyleObs_Terminology_SEAL, narr:Metrics_FundraisingPivot_20260331 .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260331T120000Z {
+
+    narr:Narrative_VCPivot_OrganicScale a narr:Narrative ;
+
+      narr:theme "Shift away from venture capital toward organic scale" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "Scarlet articulates a clear shift away from venture scale money in favor of organic growth for the current business shape." .
+
+    narr:Claim_NoVCAtThisStage a narr:Claim ;
+      narr:aboutNode narr:Narrative_VCPivot_OrganicScale ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+      skos:note "Venture scale money would not be a meaningful help to the business in its current shape; organic scale is preferred." .
+
+    narr:Claim_SEAL_Ambition a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+
+      skos:note "SEAL is designed for ambitious long-term businesses with niche targets and deep founder expertise, not lifestyle businesses." .
+
+    narr:StyleObs_Antithesis_VC a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1050 ; oa:end 1250 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "bootstrapping but that are not lifestyle businesses are actually like very ambitious long term businesses" ]
+      ] .
+
+    narr:StyleObs_Register_Strategic a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 200 ; oa:end 400 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Scarlet articulated a clear shift away from venture capital for the current stage" ]
+      ] .
+
+    narr:StyleObs_Terminology_SEAL a narr:StyleObservation ;
+      skos:broader narr:TerminologyControl ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 900 ; oa:end 1000 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Shared Earnings Agreement (SEAL)" ]
+      ] .
+
+    narr:Metrics_FundraisingPivot_20260331 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 19 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.12 .
+  }
+} 

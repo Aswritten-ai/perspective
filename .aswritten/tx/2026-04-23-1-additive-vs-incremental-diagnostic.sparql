@@ -1,0 +1,76 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Transaction provenance
+INSERT DATA {
+  narr:Tx_20250522T100000Z a prov:Activity ;
+    prov:generatedAtTime "2025-05-22T10:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - [email]\n---\n\n# Additive vs. Incremental: The Purchase Trigger Diagnostic\n\n**Date:** 2026-04-21\n**Source:** Tony Maley, check-in call with Scarlet Dame after the the enterprise customer demo and board presentation\n**Conviction:** claim (new diagnostic, sharper than existing Two Purchase Triggers framing)\n\n## The diagnostic\n\nTony's test for whether a prospect will convert or spin:\n\n> Tony [34:07]: \"For her, this isn't, you know, just table sticks. This is something she does not have or cannot do is additive to the company or her personally. And that was her measure of success. And I think what you're doing is actually additive for the customer's chief architect. Right. It's something that he cannot do. He cannot be in every conversation at the same time, and he cannot trust other people to do it.\"\n\n> Tony [35:02]: \"So it's an additive thing. Right. So for these individuals that you're talking about, is it. Is that an additive thing for them? Right. Or is that just a. Is it just a increment? You know, is it. You know, does it change the game or does it make it slightly easier?\"\n\n**The test**: Can the prospect do this thing today, just with more effort? If yes, it's incremental. If no — if it's something they literally cannot do — it's additive.\n\n## Why this matters\n\nScarlet's framing of the question:\n\n> Scarlet [31:50]: \"I'm feeling a little unsure about... how much I want to continue pushing on some of the other user archetypes right now, or if I should try to focus sort of exactly on this, you know, enterprise and adjacent organ.\"\n\n> Scarlet [32:50]: \"So I'm wondering, like, do I try to stay directly on that or do I continue like the other use case has been individuals that are expertise, that are experts, that are publishing their own expertise to some sort of consuming audience... I guess I feel like that's. That's feeling like it's really powerful. It's really powerful to be able to develop your work in this paradigm, but it feels like an incremental improvement instead of like, thank God no one's contacting me anymore. In the middle of the workday would be like a really night and day thing.\"\n\nScarlet herself identified the asymmetry before Tony named it. For the customer's chief architect (the enterprise customer), aswritten removes a bottleneck that is currently impossible to remove — he cannot be in every architecture conversation. For a beta user from outside tech (education consulting), an engineering manager at the customer (acupuncture), and similar expertise-distributor archetypes, aswritten makes existing work easier but does not enable something previously impossible.\n\n## Application to the current funnel\n\nApplied to named prospects:\n\n- **the customer's chief architect / the enterprise customer** — Additive. Cannot be in every ARB conversation. Cannot trust other people to be him.\n- **the enterprise customer-shape prospects (a private-equity firm portfolio, similar consultancies)** — Additive by hypothesis. Same pattern: internal expert as bottleneck, internal/external stakeholders need access.\n- **an early prospect / a collaborator** — Partially additive. an engineering manager at the customer fields inbound inquiries constantly about his expertise from clients and prescribing practitioners. Scarlet [31:50]: \"The acupuncturist that I, you know, I'm trying to work with actually does have the same pattern of being someone that fields inbound, you know, customer service and sort of inquiry constantly about his expertise, both for potential clients, but also for prescribing practitioners, which is a very similar, you know, thing to a sort of B2B use case like etcher has. And the engagement is actually the same shape, even though that's an organization of like 5 versus 150.\" So an engineering manager at the customer may be more additive than the expertise-distribution framing suggested.\n- **a beta user from outside tech / Bluebird** — Incremental. She CAN write her trainings today; aswritten makes it easier and more consistent.\n- **a founder beta user Klepsch** — Incremental. He CAN plan and build; aswritten accelerates.\n- **a collaborator / Crooked Media** — Unknown; needs diagnostic application.\n\n## The strategic implication\n\nTony's follow-on:\n\n> Tony [35:22] / Scarlet: \"This stuff is so hard. It's such a hard feeling... I just figured out how to package it in the way that is. Yeah. Additive, but also quick and low friction. And obvious is it's hard.\"\n\n> Tony: \"Yeah. It's incredibly hard, especially when it's a change, you know? I was always jealous of companies that just sold a better mousetrap.\"\n\nThe additive-vs-incremental frame is how you pick where to spend sales effort. Additive prospects convert. Incremental prospects are slow unless the purchase trigger fires on its own.\n\n## Connects to\n\n- Narrative_TwoPurchaseTriggers — extends. The existing framing identifies Solo Professional (Trigger 1) and Delegator (Trigger 2). Additive vs. incremental is a sharper field-usable test for Trigger 2 strength specifically. Solo Professional trigger may correlate with incremental; Delegator trigger correlates with additive when the delegation is structurally impossible without the product.\n- Archetype_TrustSeeker — relates. Additive for the enterprise customer because trust-seeking requires something the customer's chief architect cannot otherwise provide (provenance + his perspective at scale).\n- Claim_Trigger3ExhaustedExpert — relates. Exhaustion is one signal of additive, but not the only one.\n- Archetype_KnowledgePackager — challenges. an engineering manager at the customer fits the Knowledge Packager archetype AND the additive pattern (an engineering manager at the customer as inbound bottleneck). May require archetype refinement.\n\n## Open questions\n\n- Can the additive test be applied pre-conversation, from public content alone, to filter outbound targets?\n- Does the additive classification shift over time for a given prospect as their usage pattern evolves?\n- How does this interact with the perspective-on-spec outbound motion? Do you pre-filter targets to additive-shaped orgs only?\n- Where does the expertise-distributor archetype fit in the funnel if it's classified as incremental — deprioritized, self-serve only, or a different motion entirely?\n\"" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_PurchaseTriggerDiagnostic_20260421, narr:Narrative_AdditiveVsIncremental, narr:Claim_AdditiveDiagnosticTest, narr:Actor_ScarletDame, narr:StyleMetrics_PurchaseTriggerDiagnostic .
+} ;
+
+# Extracted entities
+INSERT DATA {
+  GRAPH narr:Tx_20250522T100000Z {
+    narr:Sample_PurchaseTriggerDiagnostic_20260421 a narr:Sample ;
+      dct:title "Additive vs. Incremental: The Purchase Trigger Diagnostic" ;
+      dct:created "2026-04-21"^^xsd:date ;
+      narr:inputLength 4200 .
+
+    narr:Narrative_AdditiveVsIncremental a narr:Narrative ;
+      dct:source narr:Sample_PurchaseTriggerDiagnostic_20260421 ;
+      narr:theme "Additive vs. Incremental Value" ;
+      skos:broader narr:Segmentation ;
+      skos:note "A diagnostic framework for distinguishing between 'additive' value (enabling the impossible) and 'incremental' value (improving the existing)." .
+
+    narr:Claim_AdditiveDiagnosticTest a narr:Claim ;
+      narr:aboutNode narr:Narrative_AdditiveVsIncremental ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_PurchaseTriggerDiagnostic_20260421 ;
+      skos:note "The test: Can the prospect do this thing today, just with more effort? If yes, it's incremental. If no, it's additive." .
+
+    narr:Actor_ScarletDame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" .
+
+    narr:Observation_AdditiveQuote a narr:Observation ;
+      skos:broader narr:KeyPhrases ;
+      dct:source narr:Sample_PurchaseTriggerDiagnostic_20260421 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 450 ;
+        oa:end 550
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "This is something she does not have or cannot do is additive to the company or her personally." ;
+        oa:prefix "you know, just table sticks. " ;
+        oa:suffix " And that was her measure of success."
+      ] .
+
+    narr:StyleObservation_ContrastRhetoric a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_PurchaseTriggerDiagnostic_20260421 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_PurchaseTriggerDiagnostic_20260421 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 800 ; oa:end 880 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "does it change the game or does it make it slightly easier?" ]
+      ] ;
+      skos:note "Rhetorical contrast between game-changing (additive) and incremental improvement." .
+
+    narr:StyleMetrics_PurchaseTriggerDiagnostic a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_PurchaseTriggerDiagnostic_20260421 ;
+      narr:AverageSentenceLength 15 ;
+      narr:ActiveVoiceRatio 0.75 ;
+      narr:JargonDensity 0.05 .
+  }
+}

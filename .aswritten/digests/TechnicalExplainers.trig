@@ -1,0 +1,38 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_TechnicalExplainers> {
+  <https://aswritten.ai/narrative#Digest_TechnicalExplainers> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#TechnicalExplainers> ;
+    narr:childCount "15"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """Technical explainers spanning aswritten's architecture choices and LLM-extraction findings. On format, the [TriG-over-JSON decision](narr:Claim_TriGOverJSON) and [schema-as-prompt observation](narr:Claim_MCP_SchemaAsPrompt) anchor concrete representation choices, with quantified rationale like [OOM-at-compile-limit constraints](narr:StyleObs_TechnicalRationale). The dominant thread is the **update problem**: that [the real quality differentiator is how models relate new knowledge to existing graph state](narr:Narrative_UpdateProblemIsTheCentralChallenge), empirically grounded March 25 when [three models handled the FOCH/CPI overlap three different ways and none abstracted](narr:Narrative_AbstractionGapInKnowledgeEvolution) — [the hardest, most valuable behavior](narr:Obs_ThirdOptionAbstractionQuote). A parallel research strand maps [Park et al.'s memory mechanism onto aswritten's roadmap](narr:Narrative_AgentMemoryArchitectureParallel) while carefully marking [what doesn't transfer](narr:Narrative_AgentSimResearchWhatDoesntTransfer). Operational findings include the [Qwen3.5-27B extraction failure](narr:Narrative_SelfHostedExtractionFailure), the [unresolved decay-vs-depreciation distinction](narr:Narrative_DecayVsDepreciationDistinction), the [surprising absence of vector search in surveyed papers](narr:Claim_VectorSearchNotUsedInPapers), and [code quality through business context](narr:SolutionArchetype_CodeQualityThroughContext).""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MCP_SchemaAsPrompt> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ReflectionLoopAsAbstractionMechanism> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TriGOverJSON> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_VectorSearchNotUsedInPapers> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AbstractionGapInKnowledgeEvolution> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AgentMemoryArchitectureParallel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AgentSimResearchWhatDoesntTransfer> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DecayVsDepreciationDistinction> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SelfHostedExtractionFailure> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_UpdateProblemIsTheCentralChallenge> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_UpdateProblem_Evolution> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ThirdOptionAbstractionQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_UpdateProblemQuote> ;
+    narr:covers <https://aswritten.ai/narrative#SolutionArchetype_CodeQualityThroughContext> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TechnicalRationale> ;
+    narr:keyPhrase [ narr:text "JSON was 1.94x the token cost with no information gain." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_TriGOverJSON> ] ;
+    narr:keyPhrase [ narr:text "a parameter in the schema is more effective than prose descriptions" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MCP_SchemaAsPrompt> ] ;
+    narr:keyPhrase [ narr:text "Vector search and its classic form was never really used um uh for any of the papers um which I covered. That's kind of was surprising to me." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_VectorSearchNotUsedInPapers> ] ;
+    narr:keyPhrase [ narr:text "Model spent all 16,384 tokens in a think block, correctly analyzing memory content but never producing JSON/SPARQL output." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SelfHostedExtractionFailure> ] ;
+    narr:keyPhrase [ narr:text "The third option — cross-site abstraction — is the hardest and most valuable extraction behavior" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ThirdOptionAbstractionQuote> ] ;
+    narr:keyPhrase [ narr:text "not only does it do a better job writing the code, it also means that the steering of your coding agents is now collaborative." ; narr:phraseSource <https://aswritten.ai/narrative#SolutionArchetype_CodeQualityThroughContext> ] ;
+    narr:keyPhrase [ narr:text "Two concurrent compiles caused OOM at 3.5GB container limit" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TechnicalRationale> ] ;
+    narr:variation [ narr:text "The central claim that abstraction-on-update is the key differentiator rests on a negative result: three models took three approaches (parallel narratives, risky cross-cohort update, nothing) and none produced the correct cross-site abstraction — the desired behavior is observed only by its absence." ; narr:over <https://aswritten.ai/narrative#Narrative_AbstractionGapInKnowledgeEvolution> ; narr:over <https://aswritten.ai/narrative#Narrative_UpdateProblemIsTheCentralChallenge> ; narr:over <https://aswritten.ai/narrative#Obs_ThirdOptionAbstractionQuote> ] ;
+    narr:variation [ narr:text "Agent-simulation research is read both ways: Park et al.'s memory mechanism is claimed to map structurally onto the roadmap, while streaming substrate, interview-based generation, and values-alignment-as-trust are explicitly marked as non-transfers." ; narr:over <https://aswritten.ai/narrative#Narrative_AgentMemoryArchitectureParallel> ; narr:over <https://aswritten.ai/narrative#Narrative_AgentSimResearchWhatDoesntTransfer> ] ;
+    narr:variation [ narr:text "Decay (automatic, temporal) and depreciation (human-driven, semantic) are treated as separate items but may need a single coherent workflow — an open design tension, not a settled distinction." ; narr:over <https://aswritten.ai/narrative#Narrative_DecayVsDepreciationDistinction> ] ;
+    narr:variation [ narr:text "The Qwen extraction failure cuts against a simple capability story: domain understanding passed (topology, layers, bloat, TriG all identified) yet output failed because the distilled think loop consumed the budget — failure mode, not comprehension gap." ; narr:over <https://aswritten.ai/narrative#Narrative_SelfHostedExtractionFailure> ] ;
+    narr:variation [ narr:text "Vector search's classic form was absent from all five surveyed papers — an outlier signal that the field works around retrieval with procedural mechanisms, against the default assumption it would anchor agent memory." ; narr:over <https://aswritten.ai/narrative#Claim_VectorSearchNotUsedInPapers> ; narr:over <https://aswritten.ai/narrative#Claim_ReflectionLoopAsAbstractionMechanism> ] ;
+    narr:writer "claude (subscription)" .
+}

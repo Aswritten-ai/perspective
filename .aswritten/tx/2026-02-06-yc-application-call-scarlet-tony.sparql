@@ -1,0 +1,403 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/schema#>
+
+# ============================================================================
+# Transaction Provenance
+# ============================================================================
+
+narr:Tx_20260211T011119Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agent/v1.0> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-11T01:11:19.356Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-06-yc-application-call-scarlet-tony.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:used <anthropic/claude-sonnet-4.5> .
+
+# ============================================================================
+# INSERT DATA: Added Triples
+# ============================================================================
+
+INSERT DATA {
+    # New Narrative: Conviction Framework
+    narr:Narrative_ConvictionFramework a narr:Narrative ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        skos:broader narr:Conviction ;
+        narr:theme "Conviction levels: notion → stake → boulder → grave" ;
+        skos:note "Notion: can be changed easily. Stake: planted but needs validation. Boulder: hard to move without others involved. Grave: done, settled. Memories can increase/decrease conviction with provenance tracking." ;
+        narr:direction "Positive" ;
+        narr:supports "governance, change management, decision rights" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    # New Narrative: Why YC
+    narr:Narrative_WhyYC a narr:Narrative ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        skos:broader narr:StrategyOverview ;
+        narr:theme "YC as best market partner: biggest network to most organizations" ;
+        skos:note "YC is the best market partner we could have — biggest network to the most organizations. We're building foundational infrastructure — like Git for software, aswritten.ai is for AI collaboration. We know the product works. What we need help with is taking it to everyone." ;
+        narr:direction "Positive" ;
+        narr:supports "distribution, credibility, network effects" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    # Style Observations (10 new)
+    narr:StyleObs_SeparatedAtBirth a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:StockPhrases ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:StockPhrases ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 345 ;
+                oa:end 368
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "we were separated at birth" ;
+                oa:prefix "Tony said " ;
+                oa:suffix " - After the call"
+            ]
+        ] ;
+        skos:related narr:FoundingStory ;
+        rdf:value true ;
+        skos:note "Idiomatic phrase signaling deep alignment; used to describe founder chemistry" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:StyleObs_BrandName a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:BrandNameStylization ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:BrandNameStylization ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 1142 ;
+                oa:end 1155
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "aswritten.ai" ;
+                oa:prefix "entity; " ;
+                oa:suffix " is brand"
+            ]
+        ] ;
+        skos:related narr:Tagline ;
+        rdf:value true ;
+        skos:note "Lowercase, no spaces, .ai TLD; consistent brand stylization" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:StyleObs_SnappySnappy a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:Anaphora ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:Anaphora ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 2145 ;
+                oa:end 2159
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "snappy, snappy" ;
+                oa:prefix "advice: " ;
+                oa:suffix " — fast cuts"
+            ]
+        ] ;
+        skos:related narr:ShortPunchyCadence ;
+        rdf:value true ;
+        skos:note "Repetition for emphasis; cadence marker for editing style" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:StyleObs_KungFu a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:Analogy ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:Analogy ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 3512 ;
+                oa:end 3526
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "I know Kung Fu" ;
+                oa:prefix "perspective (" ;
+                oa:suffix " Matrix chips"
+            ]
+        ] ;
+        skos:related narr:Vision ;
+        rdf:value true ;
+        skos:note "Pop culture reference (The Matrix) to explain instant skill transfer via worldview marketplace" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:StyleObs_Onboards a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:VerbChoice ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:VerbChoice ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 1685 ;
+                oa:end 1693
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "onboards" ;
+                oa:prefix "Tony as 'new hire' " ;
+                oa:suffix " Claude → gets"
+            ]
+        ] ;
+        skos:related narr:VoiceActive ;
+        rdf:value true ;
+        skos:note "Domain-specific verb; active voice; concise" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:StyleObs_GitMetaphor a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:Metaphor ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:Metaphor ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 3725 ;
+                oa:end 3791
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "like Git for software, aswritten.ai is for AI collaboration" ;
+                oa:prefix "infrastructure — " ;
+                oa:suffix " We know the"
+            ]
+        ] ;
+        skos:related narr:PositioningThesis ;
+        rdf:value true ;
+        skos:note "Positioning metaphor: maps familiar infrastructure (Git) to new domain (AI collaboration)" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:StyleObs_WhyYC a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:RhetoricalQuestion ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:RhetoricalQuestion ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 3650 ;
+                oa:end 3656
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "Why YC" ;
+                oa:prefix "## " ;
+                oa:suffix " - 'YC is"
+            ]
+        ] ;
+        skos:related narr:StrategyOverview ;
+        rdf:value true ;
+        skos:note "Section header as implicit rhetorical question; frames strategic rationale" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:StyleObs_MCP a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:JargonPolicy ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:JargonPolicy ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 3345 ;
+                oa:end 3348
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "MCP" ;
+                oa:prefix "beyond " ;
+                oa:suffix " to agentic"
+            ]
+        ] ;
+        skos:related narr:TerminologyControl ;
+        rdf:value true ;
+        skos:note "Acronym used without expansion; assumes domain knowledge" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:StyleObs_NotionCadence a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:ShortPunchyCadence ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:ShortPunchyCadence ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 2345 ;
+                oa:end 2373
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "Notion: can be changed easily" ;
+                oa:prefix "- " ;
+                oa:suffix " - Stake:"
+            ]
+        ] ;
+        skos:related narr:CadenceRhythm ;
+        rdf:value true ;
+        skos:note "Short declarative sentence; colon structure; punchy rhythm" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:StyleObs_SecondPerson a narr:StyleObservation, oa:Annotation ;
+        skos:broader narr:SecondPerson ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        oa:hasBody narr:SecondPerson ;
+        oa:hasTarget [
+            a oa:SpecificResource ;
+            oa:hasSource narr:Sample_YC_Call_2026_02_05 ;
+            oa:hasSelector [
+                a oa:TextPositionSelector ;
+                oa:start 3912 ;
+                oa:end 3915
+            ] ;
+            oa:hasSelector [
+                a oa:TextQuoteSelector ;
+                oa:exact "you" ;
+                oa:prefix "Tony: '" ;
+                oa:suffix " need to make"
+            ]
+        ] ;
+        skos:related narr:ToneDirectPersonal ;
+        rdf:value true ;
+        skos:note "Direct address; conversational register" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    # Rubric Assessments (8 new)
+    narr:Assessment_Register_YC a narr:RubricAssessment ;
+        skos:broader narr:Rubric_Register ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        rdf:value "4.0"^^xsd:decimal ;
+        skos:note "Conversational, direct, second-person; active voice; sharp and confident. Appropriate for founder-to-founder working session." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:Assessment_Phrasing_YC a narr:RubricAssessment ;
+        skos:broader narr:Rubric_Phrasing ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        rdf:value "4.5"^^xsd:decimal ;
+        skos:note "Strong idiolect: 'separated at birth', 'snappy, snappy', 'I know Kung Fu'. Domain verbs ('onboards'). Stock phrases signal identity and chemistry. Supporting observation: narr:StyleObs_SeparatedAtBirth" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:Assessment_Cadence_YC a narr:RubricAssessment ;
+        skos:broader narr:Rubric_Cadence ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        rdf:value "4.0"^^xsd:decimal ;
+        skos:note "Short, punchy sentences; colon structures; fast cuts in demo storyboard. Rhythm supports urgency and clarity. Supporting observation: narr:StyleObs_NotionCadence" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:Assessment_StrategicAlignment_YC a narr:RubricAssessment ;
+        skos:broader narr:Rubric_StrategicAlignment ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        rdf:value "5.0"^^xsd:decimal ;
+        skos:note "Entire call aligns to YC application strategy: founding story, product vision, differentiation, why YC. Every narrative element reinforces core thesis: collective memory as foundation for AI-native teams." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:Assessment_Tailoring_YC a narr:RubricAssessment ;
+        skos:broader narr:Rubric_Tailoring ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        rdf:value "4.5"^^xsd:decimal ;
+        skos:note "Tailored to YC application context: 50-char tagline, 3-min demo video, 60-sec founder video. Decisions (e.g., not mentioning consulting) reflect audience awareness." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:Assessment_Resonance_YC a narr:RubricAssessment ;
+        skos:broader narr:Rubric_Resonance ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        rdf:value "4.5"^^xsd:decimal ;
+        skos:note "Strong analogies ('Git for software', 'I know Kung Fu'), founding story, conviction framework. Resonates with YC values: technical depth, founder chemistry, clear vision. Supporting observation: narr:StyleObs_GitMetaphor" ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:Assessment_Flow_YC a narr:RubricAssessment ;
+        skos:broader narr:Rubric_Flow ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        rdf:value "4.0"^^xsd:decimal ;
+        skos:note "Natural progression: founding story → application decisions → tagline → demo storyboard → conviction framework → differentiation → vision → why YC. Coherent, logical flow." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:Assessment_Novelty_YC a narr:RubricAssessment ;
+        skos:broader narr:Rubric_Novelty ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        rdf:value "4.0"^^xsd:decimal ;
+        skos:note "Fresh phrasing ('worldview behind the skill', 'separated at birth', 'I know Kung Fu'). Avoids boilerplate. Conviction framework (notion/stake/boulder/grave) is novel taxonomy." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    narr:Assessment_Accuracy_YC a narr:RubricAssessment ;
+        skos:broader narr:Rubric_Accuracy ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        rdf:value "5.0"^^xsd:decimal ;
+        skos:note "Factual: dates, names, entities, product details all verifiable. No unsupported claims. Citations implicit (e.g., 'YouTube video' reference)." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+
+    # Style Metrics
+    narr:Metrics_YC a narr:StyleMetrics ;
+        skos:broader narr:StyleMetrics ;
+        dct:source narr:Sample_YC_Call_2026_02_05 ;
+        narr:AverageSentenceLength "18.5"^^xsd:decimal ;
+        narr:ActiveVoiceRatio "0.85"^^xsd:decimal ;
+        narr:JargonDensity "0.12"^^xsd:decimal ;
+        narr:TypeTokenRatio "0.68"^^xsd:decimal ;
+        skos:note "Metrics computed from full transcript. High active voice ratio, moderate jargon density (domain-appropriate), good lexical diversity." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+} ;
+
+# ============================================================================
+# DELETE/INSERT WHERE: Updated Triples
+# ============================================================================
+
+DELETE {
+    narr:Narrative_FoundingStory skos:note ?oldNote1 .
+}
+INSERT {
+    narr:Narrative_FoundingStory skos:note "Founders met when Scarlet cold-emailed Tony after discovering best developers worked for him. 20 minutes into first call, Tony said 'we were separated at birth'. Scarlet sent follow-up email Tony described as 'dialed in the exact thing all the way through'. Shared original vision at Vouch: delegated authority for AI agents. Scarlet left to build upstream dependency (organizational worldview), recently brought Tony back to reunite vision: collective memory as foundation, delegated authority as future." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+}
+WHERE {
+    narr:Narrative_FoundingStory skos:note ?oldNote1 .
+} ;
+
+DELETE {
+    narr:Narrative_ProductVision skos:note ?oldNote2 .
+}
+INSERT {
+    narr:Narrative_ProductVision skos:note "V1: Collective memory (single worldview per org). V2: Combine and perform math on worldviews to reach new perspective; deploy worldview beyond MCP to agentic bootstrapping. V3: Marketplace — reusable organizational perspective ('I know Kung Fu' Matrix chips for AI). V4: Organizational authority — agents approved to act on behalf of company with worldview + delegated authority. Core strategic decision to build complete product rather than license underlying technology." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+}
+WHERE {
+    narr:Narrative_ProductVision skos:note ?oldNote2 .
+} ;
+
+DELETE {
+    narr:Claim_WorldviewNotSkills skos:note ?oldNote3 .
+}
+INSERT {
+    narr:Claim_WorldviewNotSkills skos:note "A skill is limited context and instructions. We're talking about worldview — an entirety of process, methodology, and code that sets the framing for how a skill executes. Same skill in different worldviews does something completely different. It's the worldview behind the skill. Validated in YC application call 2026-02-05." ;
+        prov:wasGeneratedBy narr:Tx_20260211T011119Z .
+}
+WHERE {
+    narr:Claim_WorldviewNotSkills skos:note ?oldNote3 .
+} ;
+
+# ============================================================================
+# End of Transaction
+# ============================================================================

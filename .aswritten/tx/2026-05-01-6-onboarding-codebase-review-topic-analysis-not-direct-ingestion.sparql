@@ -1,0 +1,252 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260501T180000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-01T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260501-onboarding-methodology-the enterprise customer" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_OnboardingMethodology_20260501,
+      narr:Narrative_ThreePartSeedingPattern,
+      narr:Narrative_DirectIngestionAntiPattern,
+      narr:Claim_CodeBaseReviewStep1,
+      narr:Claim_TopicAnalysisStep2,
+      narr:Claim_OngoingIterationStep3,
+      narr:Claim_DirectIngestionIsTrap,
+      narr:Claim_TopicAnalysisPlatformFeature,
+      narr:Claim_OnboardingMethodologyGeneralizes,
+      narr:Claim_UserDomainCommentaryRequired,
+      narr:Obs_ScarletTopicAnalysisQuote,
+      narr:Obs_ScarletVoiceMemoQuote,
+      narr:Obs_DirectIngestionDriftQuote,
+      narr:StyleObs_OnboardingMethodology_DirectPersonal,
+      narr:StyleObs_OnboardingMethodology_Antithesis,
+      narr:StyleObs_OnboardingMethodology_BlockquoteVoice,
+      narr:StyleMetrics_OnboardingMethodology_20260501 .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260501T180000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────
+    narr:Sample_OnboardingMethodology_20260501 a narr:Sample ;
+      dct:title "Onboarding Methodology: Code-Base Review + Topic Analysis, Not Direct Historical Ingestion" ;
+      dct:created "2026-05-01"^^xsd:date ;
+      dct:description "Scarlet articulates a three-part seeding pattern for Phase 1 the enterprise customer onboarding on the 2026-05-01 call with the customer's chief architect. Explicitly rejects direct historical transcript ingestion as an anti-pattern that introduces drift. Generalizes to any ARB-shape customer with historical recordings." ;
+      narr:inputLength 4821 ;
+      narr:styleProfile "narr:ToneDirectPersonal narr:Antithesis narr:SpeakerIdiolects narr:RegisterFormality" .
+
+    # ── DOCUMENT-LEVEL NARRATIVE ─────────────────────────────────
+    narr:Narrative_ThreePartSeedingPattern a narr:Narrative ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Three-Part Seeding Pattern: Code-Base Review, Topic Analysis, Ongoing Iteration" ;
+      skos:note "Scarlet's recommended onboarding methodology for Phase 1 the enterprise customer: (1) code-base review with targeted prompts via Claude/Copilot CLI connected to aswritten.ai; (2) topic analysis of historical transcripts rather than direct ingestion — surface domains, open questions, frequently covered things, then add user domain commentary before persisting; (3) ongoing iteration using new ARB transcripts as diagnostics, with 30-minute voice memos to fill gaps. The methodology explicitly rejects direct historical ingestion as a trap. Generalizes to any domain expertise codified in historical recordings." ;
+      narr:theme "Seeding organizational perspective requires code-base review, topic-analyzed transcript distillation with domain commentary, and ongoing diagnostic iteration — not direct historical ingestion" .
+
+    narr:Narrative_DirectIngestionAntiPattern a narr:Narrative ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:broader narr:RiskGuardrails ;
+      skos:prefLabel "Direct Historical Transcript Ingestion Is a Trap" ;
+      skos:note "Direct ingestion of historical transcripts fails because: (1) conversations mix real, speculative, and future-state content without marking; (2) volume overwhelms reviewer attention; (3) drift accumulates and reviewers stop noticing inaccuracies; (4) the system encodes confused or contradictory positions as settled. Scarlet: 'If you are not watching the output of every single one of those transcripts and doing a fully fledged sort of review process, you're going to introduce error and drift over time.'" ;
+      narr:theme "Direct historical transcript ingestion encodes drift and contradiction as settled knowledge — the volume and mixed-state nature of conversations makes unreviewed ingestion a trap" .
+
+    # ── SECTION 1: CODE-BASE REVIEW ─────────────────────────────
+    narr:Claim_CodeBaseReviewStep1 a narr:Claim ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Step 1 of the three-part seeding pattern: use Claude / Copilot CLI connected to aswritten.ai to read the code base with structured questions ('read the code base, understand what the core pre-built workflows are and write a paragraph about each one and persist that paragraph to collective memory'), with iteration. The MCP aswritten_remember tool plus the connected perspective's context guides the memory-creation flow. the customer's chief architect's framing: 'I have a plan, so that's easy. I think I'm pretty set on how to do that.'" ;
+      narr:aboutNode narr:Narrative_ThreePartSeedingPattern ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    # ── SECTION 2: TOPIC ANALYSIS ────────────────────────────────
+    narr:Claim_TopicAnalysisStep2 a narr:Claim ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Step 2 of the three-part seeding pattern: rather than ingesting six months of ARB transcripts directly, use Claude to perform a topic analysis across the corpus — 'what are these talking about? what are the open questions? what are frequently covered things?' — then create memories scoped to the surfaced domains, with the user's domain commentary added before persisting. The user (the customer's chief architect, as the only person with architectural context) must validate or correct what the topic analysis surfaces. Without domain experts who can review and annotate, seeding will produce sparse or wrong knowledge." ;
+      narr:aboutNode narr:Narrative_ThreePartSeedingPattern ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    # ── SECTION 3: ONGOING ITERATION ────────────────────────────
+    narr:Claim_OngoingIterationStep3 a narr:Claim ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Step 3 of the three-part seeding pattern: as ARB meetings happen, ingest each transcript with active review. The transcript is the diagnostic, not the memory. When the system fails to answer a question well, the user does a 30-minute voice memo unpacking the missing context, which becomes the gap-filling memory. Scarlet: 'After every ARB, you might spend 30 minutes on a voice memo like talking through that whole system. Dump the transcript into aswritten and over the course of a couple weeks or even a couple months, you'll converge on having pretty much everything covered.'" ;
+      narr:aboutNode narr:Narrative_ThreePartSeedingPattern ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    # ── SECTION 4: ANTI-PATTERN ──────────────────────────────────
+    narr:Claim_DirectIngestionIsTrap a narr:Claim ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Direct ingestion of historical transcripts is an explicit anti-pattern because: conversations mix real, speculative, and future-state content without marking; volume overwhelms reviewer attention; drift accumulates and reviewers stop noticing inaccuracies after a few transcripts; the system encodes confused or contradictory positions as if they were settled. This is a stated onboarding guardrail for the Enterprise tier." ;
+      narr:aboutNode narr:Narrative_DirectIngestionAntiPattern ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_DirectIngestionAntiPattern .
+
+    # ── SECTION 5: PRODUCT IMPLICATIONS ─────────────────────────
+    narr:Claim_TopicAnalysisPlatformFeature a narr:Claim ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "The topic analysis step (Step 2) is currently entirely operator-driven and is a high-value activity that could become a Platform feature. The anti-pattern (direct historical ingestion) should be reflected in onboarding documentation and possibly enforced via UX (e.g., warn when uploading multiple raw transcripts without review pacing)." ;
+      narr:aboutNode narr:Narrative_ThreePartSeedingPattern ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:NarrativeDrivenRoadmap .
+
+    narr:Claim_OnboardingMethodologyGeneralizes a narr:Claim ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "The three-part seeding methodology generalizes beyond the enterprise customer: any domain expertise codified in historical recordings (sales calls, customer interviews, OKR retrospectives) is a candidate for the same pattern. This is a stated onboarding playbook for the Enterprise tier that does not require building new tooling — it is a sequencing of existing capabilities." ;
+      narr:aboutNode narr:Narrative_ThreePartSeedingPattern ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      .
+
+    narr:Claim_UserDomainCommentaryRequired a narr:Claim ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "The methodology assumes the customer has domain experts who can review and annotate the topic analysis output. The user — not aswritten.ai staff — provides the architectural commentary at Step 2. Without that, the seeding will produce sparse or wrong knowledge. the customer's chief architect is the only person with the architectural context to validate or correct what the topic analysis surfaces at the enterprise customer." ;
+      narr:aboutNode narr:Narrative_ThreePartSeedingPattern ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    # ── OBSERVATIONS (GROUNDED QUOTES) ───────────────────────────
+    narr:Obs_ScarletTopicAnalysisQuote a narr:Observation ;
+      skos:broader narr:SolutionArchetypes ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Scarlet's verbatim articulation of the topic analysis approach as the preferred alternative to direct ingestion of historical transcripts." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OnboardingMethodology_20260501 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1021 ;
+          oa:end 1380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "One thing you might do instead of directly ingesting all of the historical transcripts is after you do a code base review" ;
+          oa:prefix "Scarlet (2026-05-01): \"" ;
+          oa:suffix " or actually before for it probably doesn't matter."
+        ]
+      ] .
+
+    narr:Obs_ScarletVoiceMemoQuote a narr:Observation ;
+      skos:broader narr:CoreWorkflows ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Scarlet's verbatim articulation of the ongoing iteration step — voice memo as gap-filling mechanism after each ARB." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OnboardingMethodology_20260501 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2420
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "After every ARB, you might spend 30 minutes on a voice memo like talking through that whole system." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " Dump the transcript into aswritten"
+        ]
+      ] .
+
+    narr:Obs_DirectIngestionDriftQuote a narr:Observation ;
+      skos:broader narr:RiskGuardrails ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Scarlet's verbatim articulation of why direct historical ingestion introduces drift — the founding evidence for the anti-pattern claim." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OnboardingMethodology_20260501 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2680 ;
+          oa:end 2900
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If you are not watching the output of every single one of those transcripts and doing a fully fledged sort of review process, you're going to introduce error and drift over time." ;
+          oa:prefix "Scarlet (2026-05-01): \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ───────────────────────────────────────
+    narr:StyleObs_OnboardingMethodology_DirectPersonal a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "First-person direct address throughout; Scarlet speaks in present tense imperatives ('Use Claude / Copilot CLI', 'you might do instead of') that position the methodology as actionable guidance, not abstract theory. Mirrors the idiolect pattern across other Scarlet session memos." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OnboardingMethodology_20260501 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 380 ;
+          oa:end 520
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Use Claude / Copilot CLI connected to aswritten.ai to read the code base with structured questions" ;
+          oa:prefix "### Step 1: Code-base review with targeted prompts\n\n" ;
+          oa:suffix ", with iteration."
+        ]
+      ] .
+
+    narr:StyleObs_OnboardingMethodology_Antithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Heavy antithesis structure throughout: 'NOT direct ingestion' vs. 'topic analysis'; 'transcript is not the memory; the transcript is the diagnostic.' The anti-pattern section is structured as a direct inversion of the recommended pattern, consistent with Scarlet's session-memo idiolect." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OnboardingMethodology_20260501 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1780 ;
+          oa:end 1870
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The transcript is not the memory; the transcript is the diagnostic." ;
+          oa:prefix "ingest each transcript with active review. " ;
+          oa:suffix " When the system fails"
+        ]
+      ] .
+
+    narr:StyleObs_OnboardingMethodology_BlockquoteVoice a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Blockquoted verbatim speech from Scarlet is run-on and filler-heavy ('you know', 'like', 'sort of'), contrasting with the tighter editorial prose in the numbered steps. This dual-register pattern — structured memo prose + conversational blockquote — is the canonical Scarlet session-memo idiolect across the perspective." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_OnboardingMethodology_20260501 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1021 ;
+          oa:end 1200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "One thing you might do instead of directly ingesting all of the historical transcripts is after you do a code base review or actually before for it probably doesn't matter." ;
+          oa:prefix "> Scarlet (2026-05-01): \"" ;
+          oa:suffix " You could ask Claude"
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────
+    narr:StyleMetrics_OnboardingMethodology_20260501 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_OnboardingMethodology_20260501 ;
+      skos:note "Strategic session memo with embedded verbatim blockquotes from Scarlet. Mixed register: structured markdown with H2/H3 section headers (memo genre) vs. conversational first-person in blockquoted speech. Antithesis-heavy structure (direct ingestion vs. topic analysis, transcript as memory vs. transcript as diagnostic). Active voice dominant in editorial prose; blockquoted speech is run-on and filler-heavy. Jargon density low-moderate — product terms (MCP, aswritten_remember, ARB, perspective) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal .
+
+  }
+}

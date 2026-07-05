@@ -1,0 +1,29 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__ToneDirectPersonal> {
+  <https://aswritten.ai/narrative#Digest_ns__ToneDirectPersonal> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#ToneDirectPersonal> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers stylistic observations about a **direct, second-person, personal voice** running through the product's marketing and pitch material. The dominant register is imperative and conversational: [imperative hooks](narr:StyleObs_DirectTone) like \"Add collective memory to your repo,\" [second-person product framing](narr:StyleObs_5) built on git-parallel vocabulary, and [parallel old-vs-new constructions](narr:StyleObs_8) (\"Documentation describes; worldview generates\"). The voice [addresses the reader as an agent](narr:StyleObs_7) (\"you can connect that to anything\") and leans [action-oriented and confident](narr:StyleObs_Tone_DirectImperative) (\"Let's pilot\"). Pain is surfaced through [first-person rhetorical questions](narr:StyleObs_RhetoricalQuestions) that mirror internal monologue, and through [impossibility framing](narr:StyleObs_YouCantFraming) — the parenthetical \"(You can't)\" rather than \"it's hard.\" the customer's chief architect's pitch carries the same [outcome-first, conversational](narr:StyleObs_CustomerArchitectPitch_DirectSpeech) register. Across these the through-line is accessibility: technical concepts delivered in plain, direct address.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_5> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_7> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_8> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_DirectTone> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_CustomerArchitectPitch_DirectSpeech> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQuestions> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Tone_DirectImperative> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_VoiceMemoQuotes> ;
+    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_YouCantFraming> ;
+    narr:keyPhrase [ narr:text "Hook: \"Add collective memory to your repo, never write README again\"" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_DirectTone> ] ;
+    narr:keyPhrase [ narr:text "Documentation describes; worldview generates. Documentation goes stale; worldview evolves" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_8> ] ;
+    narr:keyPhrase [ narr:text "you can connect that to anything that you could automate with Zapier" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_7> ] ;
+    narr:keyPhrase [ narr:text "How long does it take to set up a new employee to get the same answers from AI that you do? (You can't)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_YouCantFraming> ] ;
+    narr:keyPhrase [ narr:text "So it's like being able to talk to those people without actually bothering them." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_CustomerArchitectPitch_DirectSpeech> ] ;
+    narr:variation [ narr:text "Some children are imperative/instructional commands ('Create single source of truth', 'Let's pilot'), while others are empathetic first-person questions mirroring the reader's own monologue — two different routes to 'direct.'" ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Tone_DirectImperative> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQuestions> ] ;
+    narr:variation [ narr:text "The voice mixes accessible plain language with domain shorthand (acronym 'SSoT', product term 'witness repository'), a tension between non-technical reach and insider vocabulary." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "One observation preserves an informal, unpolished spoken register ('Oh shiny', em-dashes) that sits apart from the otherwise crafted marketing copy." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_VoiceMemoQuotes> ] ;
+    narr:variation [ narr:text "Impossibility framing ('You can't') is a sharper, more confrontational tactic than the rest of the warmly conversational register." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_YouCantFraming> ] ;
+    narr:writer "claude (subscription)" .
+}

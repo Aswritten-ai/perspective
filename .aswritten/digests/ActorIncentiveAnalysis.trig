@@ -1,0 +1,35 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ActorIncentiveAnalysis> {
+  <https://aswritten.ai/narrative#Digest_ActorIncentiveAnalysis> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#ActorIncentiveAnalysis> ;
+    narr:childCount "12"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the *incentive* readings of the people and companies around aswritten.ai — why a given actor would buy, adopt, hesitate, or champion. Buyer economics split across registers: [the customer's chief architect's [amount]-is-noise-but-procurement-freezes](narr:Obs_CustomerArchitectQ2RevenueQuote) at the enterprise customer under PE Q2 pressure, and [enterprise token-cost sensitivity](narr:Narrative_TokenCostSensitivity) where Opus-vs-Codex price shapes choice even when the company pays. Value-framing answers this with [ratio/time-unit reframing](narr:Narrative_MetricReframe) so buyers self-apply context. On the champion side: [undocumented-knowledge extraction](narr:Narrative_UndocumentedKnowledgeExtraction) is the feature Tony says animates people, validated by the [CEO knowledge-transfer test](narr:SolutionArchetype_CEOKnowledgeTransfer). Distribution leans on the [Vouch alumni network](narr:Network_VouchAlumni) and an [in-person NYC sales advantage](narr:Narrative_InPersonSalesAdvantage). Founder-side incentives appear too — [the post-YC validation gap](narr:Narrative_FounderPsychology) and an [Enneagram 4-3-8 power center](narr:Obs_PowerCenter). Pricing is set by [per-group billing with free participants](narr:Arch_ParticipantsFree); [notification/persuasion collapse](narr:Observation_NotificationPersuasion) and [actor-transform temporality](narr:Obs_ActorTransformTemporalityQuote) frame how incentives get surfaced.""" ;
+    narr:covers <https://aswritten.ai/narrative#Arch_ParticipantsFree> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_FounderPsychology> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_InPersonSalesAdvantage> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_MetricReframe> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TokenCostSensitivity> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_UndocumentedKnowledgeExtraction> ;
+    narr:covers <https://aswritten.ai/narrative#Network_VouchAlumni> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ActorTransformTemporalityQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectQ2RevenueQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_PowerCenter> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_NotificationPersuasion> ;
+    narr:covers <https://aswritten.ai/narrative#SolutionArchetype_CEOKnowledgeTransfer> ;
+    narr:keyPhrase [ narr:text "We have kind of disappointing Q2 revenue projections, so everybody's in a little bit of panic about cost right now. [...] But AI investment everybody's excited about" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomerArchitectQ2RevenueQuote> ] ;
+    narr:keyPhrase [ narr:text "Opus costs 3x Codex in GitHub Copilot environment. Cost differential influences model choice even when company pays." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TokenCostSensitivity> ] ;
+    narr:keyPhrase [ narr:text "New hires 50% productive for 3-6mo; seniors lose 20% time on repeat questions; context leaves with departures; lock-in to first AI tool invested in. Payback = first hire or departure." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_MetricReframe> ] ;
+    narr:keyPhrase [ narr:text "Tony identified undocumented knowledge extraction as the one feature benefit no one else is considering—the specific moment that makes people get animated." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_UndocumentedKnowledgeExtraction> ] ;
+    narr:keyPhrase [ narr:text "If I'm looking at an actor transformation, I want to see more about what Tony thinks might need to happen in the different temporalities than the things that I want to have seen happening." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ActorTransformTemporalityQuote> ] ;
+    narr:keyPhrase [ narr:text "Tight network of former Vouch employees now engaged with aswritten.ai and a collaborator: Tony Maley, a design collaborator, a technical collaborator, a collaborator." ; narr:phraseSource <https://aswritten.ai/narrative#Network_VouchAlumni> ] ;
+    narr:variation [ narr:text "Cost sensitivity reads two ways: [amount]/mo is below-notice 'noise' yet formal procurement risks a spending freeze — the same buyer is both insensitive and acutely sensitive depending on the purchase path." ; narr:over <https://aswritten.ai/narrative#Obs_CustomerArchitectQ2RevenueQuote> ; narr:over <https://aswritten.ai/narrative#Narrative_TokenCostSensitivity> ] ;
+    narr:variation [ narr:text "Champion-conviction (undocumented knowledge extraction as the animating feature) vs. independent validation (CEO knowledge-transfer test) — one is what excites, the other is what proves; they are not yet shown to coincide." ; narr:over <https://aswritten.ai/narrative#Narrative_UndocumentedKnowledgeExtraction> ; narr:over <https://aswritten.ai/narrative#SolutionArchetype_CEOKnowledgeTransfer> ] ;
+    narr:variation [ narr:text "Scarlet pushes actor analysis toward forward temporalities (what might need to happen) and against settled/conviction items — a stance in tension with retrospective incentive accounts." ; narr:over <https://aswritten.ai/narrative#Obs_ActorTransformTemporalityQuote> ] ;
+    narr:variation [ narr:text "Sales-motion claim that NYC physical presence converts in ways remote cannot — an outlier bet on serendipity that the rest of the model (per-group billing, network referrals) doesn't depend on." ; narr:over <https://aswritten.ai/narrative#Narrative_InPersonSalesAdvantage> ] ;
+    narr:variation [ narr:text "Incentives framed psychologically (validation gap, Enneagram 4-3-8 power center) sit beside market/economic framings — a person-level lens that could either explain or distort the buyer-economics reads." ; narr:over <https://aswritten.ai/narrative#Narrative_FounderPsychology> ; narr:over <https://aswritten.ai/narrative#Obs_PowerCenter> ] ;
+    narr:variation [ narr:text "Pricing: participants free but billed per group — value accrues per-seat (more participants = more value) while revenue is flat per group, a monetization tension." ; narr:over <https://aswritten.ai/narrative#Arch_ParticipantsFree> ] ;
+    narr:writer "claude (subscription)" .
+}

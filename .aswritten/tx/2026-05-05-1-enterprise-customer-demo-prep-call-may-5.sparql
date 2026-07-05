@@ -1,0 +1,103 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260505T140000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-05T14:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-05-05-the enterprise customer-kickoff-prep.md" ;
+    narr:originRef "main@abc1234" ;
+    prov:generated  narr:Narrative_IdentityOnboardingGap, narr:Narrative_PerProjectPromptExtension, narr:Narrative_MultiUserRepoPromptChallenge, narr:Claim_IdentityGapImplication, narr:Claim_PromptExtensionPattern, narr:StyleMetrics_EnterpriseCustomerKickoffPrep .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260505T140000Z {
+
+    narr:Narrative_IdentityOnboardingGap a narr:Narrative ;
+
+      narr:theme "Identity Onboarding Gap" ;
+      skos:broader narr:FrictionFailure ;
+      skos:note "A surfaced gap in the onboarding methodology: customers may skip corporate identity because 'it doesn't matter to the weeds,' but the AI needs it for context grounding to avoid inventing its own location." .
+
+    narr:Narrative_PerProjectPromptExtension a narr:Narrative ;
+
+      narr:theme "Per-Project Prompt Extension" ;
+      skos:broader narr:ProductOverview ;
+      skos:note "A reusable architecture pattern where a project-specific prompt (e.g., ARB coaching goals) layers on top of the base aswritten system prompt to narrow agent focus to specific organizational jobs-to-be-done." .
+
+    narr:Narrative_MultiUserRepoPromptChallenge a narr:Narrative ;
+
+      narr:theme "Multi-User Repo System Prompt Challenge" ;
+      skos:broader narr:FrictionFailure ;
+      skos:note "The design tension of placing system prompts in shared repos where only a subset of users use the tool, potentially creating noise/distraction for non-users." .
+
+    narr:Claim_IdentityGapImplication a narr:Claim ;
+      narr:aboutNode narr:Narrative_IdentityOnboardingGap ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+
+      skos:note "The onboarding methodology must force an explicit pass for organizational identity even when the customer thinks it is unnecessary, because the agent will ground itself somewhere; the question is whether that grounding is correct or invented." .
+
+    narr:Claim_PromptExtensionPattern a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerProjectPromptExtension ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+      skos:note "Base aswritten prompt + customer-specific extension is a real, reusable product pattern for scaffolding agents for specific use cases." .
+
+    narr:StyleMetrics_EnterpriseCustomerKickoffPrep a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.82 ;
+      narr:JargonDensity 0.09 ;
+      skos:note "Strategic prep memo register. High use of verbatim blockquotes to validate methodology. Antithesis used to frame design tensions (power users vs AI-resistant, identity vs weeds)." .
+
+    # Style Observations
+    narr:StyleObs_MethodologyValidation a narr:StyleObservation ;
+      skos:broader narr:RhetoricalDevices ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2341 ; oa:end 2485 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "This directly validates 2026-05-01-6-onboarding-codebase-review-topic-analysis-not-direct-ingestion — the customer's chief architect independently arrived at the same anti-pattern conclusion" ]
+      ] .
+
+    narr:StyleObs_IdentityMetaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4210 ; oa:end 4350 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The agent will ground itself somewhere; the question is whether that grounding is correct or invented." ]
+      ] .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_ThreePartSeedingPattern skos:note ?oldNote .
+    narr:Claim_ConvictionAndTemporalityAreDistinctAxes skos:note ?oldConvNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260505T140000Z {
+    narr:Narrative_ThreePartSeedingPattern skos:note "Seeding organizational perspective requires code-base review, topic-analyzed transcript distillation, and ongoing diagnostic iteration. Validated by the customer's chief architect's independent arrival at the topic-analysis conclusion on May 5, 2026." .
+    narr:Claim_ConvictionAndTemporalityAreDistinctAxes skos:note "Conviction and temporality are orthogonal axes. Validated by the customer's chief architect's demo pollution and the customer's CTO's 200-page speculative solution design, which is structurally indistinguishable from a real commitment." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_ThreePartSeedingPattern skos:note ?oldNote .
+    narr:Claim_ConvictionAndTemporalityAreDistinctAxes skos:note ?oldConvNote .
+  }
+}

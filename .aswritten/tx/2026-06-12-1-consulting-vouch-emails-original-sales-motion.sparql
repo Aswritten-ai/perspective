@@ -1,0 +1,287 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260714T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-14T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# The Vouch emails as the original sales motion" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_VouchEmailsSalesMotion_20260610,
+      narr:Narrative_VouchEmailSalesMotionTemplate,
+      narr:Narrative_GenerosityAsDemonstration,
+      narr:Narrative_DeliStoryReframe,
+      narr:Actor_TonyMaley_VouchRef,
+      narr:Claim_VouchEmailMotionTemplate,
+      narr:Claim_DeliEmailMostEffectiveSales,
+      narr:Claim_48HourGiftSystematic,
+      narr:Claim_FounderTransparencyLine,
+      narr:Claim_VulnerabilityPersonFirstOutreach,
+      narr:Obs_DeliStoryQuote1,
+      narr:Obs_DeliStoryQuote2,
+      narr:Obs_DeliStoryQuote3,
+      narr:Obs_VulnerabilityTenorQuote,
+      narr:StyleObs_VulnerableRegister,
+      narr:StyleObs_AntithesisRhetoric,
+      narr:StyleObs_ImperativeCadence,
+      narr:Metrics_VouchEmailsSalesMotion .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260714T120000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────
+    narr:Sample_VouchEmailsSalesMotion_20260610
+      a narr:Sample ;
+      dct:title "The Vouch emails as the original sales motion" ;
+      dct:created "2026-06-10"^^xsd:date ;
+      dct:description "Part 1 of consulting-engagement session record (June 10-12, 2026). Scarlet Dame and Claude working session. Examines the two emails that won Scarlet the Vouch chief strategist role as a template for a sales motion: person-first outreach through named human threads, a values-resonance call, a 48-hour unsolicited bespoke artifact (the deli story), and conversion to a durable container. The 2026 translation maps this to aswritten's current sales motion." ;
+      narr:inputLength 2041 .
+
+    narr:Actor_TonyMaley_VouchRef
+      a narr:Actor ;
+      skos:prefLabel "Tony Maley (Vouch)" ;
+      skos:note "Tony Maley at Vouch; Scarlet's first call with Tony was the trigger for the deli story email sent hours later. The deli story performed narrative strategy on Vouch itself, unsolicited and free, and effectively hired Scarlet on the spot." .
+
+    # ── NARRATIVES ──────────────────────────────────────────────────
+    narr:Narrative_VouchEmailSalesMotionTemplate
+
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "The Vouch Email Four-Step Sales Motion Template" ;
+      skos:note "The two Vouch emails are a template for a motion, not for words. Step 1: person-first outreach through named human threads, with an honest account of situation and a small ask. Step 2: a call that runs on values resonance, listening for the other person's live tension. Step 3: within 48 hours, an unsolicited bespoke artifact that does the work on them — generosity as demonstration. Step 4: the relationship converts into a durable container. This is the founding instance of the sales-as-delivery pattern, predating aswritten." ;
+      narr:theme "A four-step sales motion — person-first outreach, values-resonance call, 48-hour unsolicited bespoke artifact, durable container — is the template underlying Scarlet's most effective sales communication" ;
+      narr:supports narr:Narrative_SalesAsDelivery .
+
+    narr:Narrative_GenerosityAsDemonstration
+
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "Generosity as Demonstration: The 48-Hour Bespoke Artifact" ;
+      skos:note "The deli story email was sent hours after the first call with Tony Maley — unsolicited and free. It performed narrative strategy on Vouch itself, rebranding the company and effectively hiring Scarlet on the spot. The pattern: within 48 hours of a values-resonance call, deliver an unsolicited bespoke artifact that does the work on the prospect. Generosity is the demonstration. In the 2026 translation, this becomes systematic: with permission, the prospect's own first call is extracted into a demo perspective branch — the deli story manufactured from the conversation itself." ;
+      narr:theme "The most effective sales move is an unsolicited bespoke artifact delivered within 48 hours of a values-resonance call — generosity as demonstration, not pitch" ;
+      narr:supports narr:Narrative_PerspectiveOnSpec .
+
+    narr:Narrative_DeliStoryReframe
+
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:prefLabel "The Deli Story Reframe: The Only Time She Sold 'My Thing, Done for You'" ;
+      skos:note "The session's reframe: the deli email is the only time Scarlet has ever sold 'my thing, done for you' — and it is the most effective piece of sales communication she has ever written. She just didn't invoice it. The deli story's core: describing her regular sandwich shop where a new employee replaced the one who knew her order. The insight: 'I don't want to prove my credentials, I just want to be recognized and treated as the regular I am.' This reframes the Vouch pitch from credentials to recognition, from power to invitation. The 2026 translation: the honest line becomes founder transparency ('I'm building aswritten; I take a small number of engagements to fund the build'), which also explains why someone this senior is available part-time." ;
+      narr:theme "The deli story is the founding instance of 'my thing, done for you' — the most effective sales communication Scarlet has ever written, delivered as a gift, not an invoice" ;
+      narr:supports narr:Narrative_SalesAsDelivery .
+
+    # ── CLAIMS ──────────────────────────────────────────────────────
+    narr:Claim_VouchEmailMotionTemplate
+      a narr:Claim ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:note "The two Vouch emails are a template for a motion, not for words. The four steps: (1) person-first outreach through named human threads, honest account of situation, small ask; (2) call that runs on values resonance, listening for the other person's live tension; (3) within 48 hours, unsolicited bespoke artifact that does the work on them — generosity as demonstration; (4) relationship converts into a durable container. This is the structural template underlying the most effective sales communication Scarlet has ever produced." ;
+      narr:aboutNode narr:Narrative_VouchEmailSalesMotionTemplate ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_SalesAsDelivery .
+
+    narr:Claim_DeliEmailMostEffectiveSales
+      a narr:Claim ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:note "The reframe Scarlet accepted: the deli email is the only time she has ever sold 'my thing, done for you' — and it is the most effective piece of sales communication she has ever written. She just didn't invoice it. The deli story performed narrative strategy on Vouch itself, unsolicited and free, and effectively hired her on the spot." ;
+      narr:aboutNode narr:Narrative_DeliStoryReframe ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_GenerosityAsDemonstration .
+
+    narr:Claim_48HourGiftSystematic
+      a narr:Claim ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:note "The 2026 translation of the deli story pattern: the 48-hour gift becomes systematic. With permission, the prospect's own first call is extracted into a demo perspective branch — the deli story manufactured from the conversation itself. This is the aswritten operationalization of generosity-as-demonstration." ;
+      narr:aboutNode narr:Narrative_GenerosityAsDemonstration ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_PerspectiveOnSpec .
+
+    narr:Claim_FounderTransparencyLine
+      a narr:Claim ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:note "The 2026 translation of the honest line from the Vouch outreach email: 'I'm building aswritten; I take a small number of engagements to fund the build' — which also explains why someone this senior is available part-time. Founder transparency replaces hardship framing. This is the updated version of the person-first outreach step for the aswritten context." ;
+      narr:aboutNode narr:Narrative_VouchEmailSalesMotionTemplate ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_SellTheProcessPreCaseStudy .
+
+    narr:Claim_VulnerabilityPersonFirstOutreach
+      a narr:Claim ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:note "The tenor of the Vouch outreach emails was 'very very different from everything I've been sending about aswritten lately — much more vulnerable about my personal situation, much more connected to individuals related to the company.' The first email was cold-ish outreach through community threads (the Clojure conj sponsors list; David Nolen and a practitioner beta user named as human connections), honest about her situation — laid off, 'although they ended up fighting to give me a half time contract' — with a small ask: a conversation. Vulnerability and person-first connection are structural features of the motion, not incidental." ;
+      narr:aboutNode narr:Narrative_VouchEmailSalesMotionTemplate ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_InterviewForcingFunction .
+
+    # ── OBSERVATIONS (grounded quotes) ──────────────────────────────
+    narr:Obs_DeliStoryQuote1
+      a narr:Observation ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "Core line from the deli story email: the recognition framing that rebranded Vouch." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_VouchEmailsSalesMotion_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1050 ;
+          oa:end 1130
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I don't want to prove my credentials, I just want to be recognized and treated as the regular I am." ;
+          oa:prefix "describing her regular sandwich shop where a new employee replaced the one who knew her order:\n\n> " ;
+          oa:suffix "\n\n> Can we move away from metaphors"
+        ]
+      ] .
+
+    narr:Obs_DeliStoryQuote2
+      a narr:Observation ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "The pivot line from the deli story email: reframing Vouch's positioning from power/control/security to respect/comfort/invitation." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_VouchEmailsSalesMotion_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1135 ;
+          oa:end 1230
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Can we move away from metaphors of power, control, and security towards respect, comfort, and invitation?" ;
+          oa:prefix "I just want to be recognized and treated as the regular I am.\n\n> " ;
+          oa:suffix "\n\n> Vouch — be recognized"
+        ]
+      ] .
+
+    narr:Obs_DeliStoryQuote3
+      a narr:Observation ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:broader narr:Tagline ;
+      skos:note "The tagline that closed the deli story email — the rebranding of Vouch in three words." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_VouchEmailsSalesMotion_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1235 ;
+          oa:end 1258
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Vouch — be recognized" ;
+          oa:prefix "towards respect, comfort, and invitation?\n\n> " ;
+          oa:suffix "\n\nIt rebranded the company"
+        ]
+      ] .
+
+    narr:Obs_VulnerabilityTenorQuote
+      a narr:Observation ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:broader narr:SpeakerIdiolects ;
+      skos:note "Scarlet's characterization of the tenor of the Vouch emails vs. her current aswritten outreach — the structural difference she identified as the template." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_VouchEmailsSalesMotion_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 420 ;
+          oa:end 560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "very very different from everything I've been sending about aswritten lately — much more vulnerable about my personal situation, much more connected to individuals related to the company" ;
+          oa:prefix "noting their tenor was \"" ;
+          oa:suffix ".\""
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────
+    narr:StyleObs_VulnerableRegister
+      a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:note "vulnerable-personal; the deli story email uses first-person vulnerability and personal narrative (the sandwich shop regular) as the rhetorical vehicle for a business reframe — a register Scarlet identifies as structurally different from her current aswritten outreach" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_VouchEmailsSalesMotion_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 420 ;
+          oa:end 560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "very very different from everything I've been sending about aswritten lately — much more vulnerable about my personal situation, much more connected to individuals related to the company" ;
+          oa:prefix "noting their tenor was \"" ;
+          oa:suffix ".\""
+        ]
+      ] .
+
+    narr:StyleObs_AntithesisRhetoric
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:note "antithesis-as-reframe; the deli story pivots Vouch's positioning through explicit antithesis: 'away from metaphors of power, control, and security towards respect, comfort, and invitation' — a three-beat antithetical structure that performs the reframe rather than arguing for it" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_VouchEmailsSalesMotion_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1135 ;
+          oa:end 1230
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Can we move away from metaphors of power, control, and security towards respect, comfort, and invitation?" ;
+          oa:prefix "I just want to be recognized and treated as the regular I am.\n\n> " ;
+          oa:suffix "\n\n> Vouch — be recognized"
+        ]
+      ] .
+
+    narr:StyleObs_ImperativeCadence
+      a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:note "short-punchy-tagline; the deli story closes with a three-word imperative tagline ('Vouch — be recognized') that compresses the entire reframe into a brand directive — the shortest possible unit of the motion" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_VouchEmailsSalesMotion_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1235 ;
+          oa:end 1258
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Vouch — be recognized" ;
+          oa:prefix "towards respect, comfort, and invitation?\n\n> " ;
+          oa:suffix "\n\nIt rebranded the company"
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────────
+    narr:Metrics_VouchEmailsSalesMotion
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_VouchEmailsSalesMotion_20260610 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo register with embedded verbatim blockquotes from the original Vouch emails. Mixed register: analytical prose in framing sections (memo genre) vs. first-person narrative in the deli story blockquotes (personal/epistolary). Antithesis-heavy structure (power vs. invitation, credentials vs. recognition, invoice vs. gift, hardship vs. founder transparency). Active voice dominant in editorial prose. Jargon density very low — no product terms; the deli story is deliberately plain language. Sentence length elevated by the blockquoted email content; prose sections are shorter and more analytical. The session's reading section uses numbered list structure for the four-step motion." ;
+      narr:AverageSentenceLength "17"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.03"^^xsd:decimal .
+
+  }
+}

@@ -1,0 +1,38 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260704T235334Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-04T23:53:34Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-07-04-1-cutover-smoke-20260704.md" ;
+    narr:originRef "t-cutover-smoke" ;
+    dct:title "Dev→Main Cutover Smoke — 2026-07-04" ;
+    prov:generated
+      
+      
+      
+      narr:Claim_AnchorFiveBaselineDelta .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260704T235334Z {
+
+    # ── Claim: anchor-5 baseline delta ──────────────────────────────────────
+    narr:Claim_AnchorFiveBaselineDelta a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+
+      skos:note "Anchor-5 baseline quantified the delta: position-exact offsets went from 0% on the May pipeline to 100% on the new pipeline. This is the content-verification result (not shape) that the verification doctrine requires." .
+
+  }
+} 

@@ -1,0 +1,28 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_InflectionPoints> {
+  <https://aswritten.ai/narrative#Digest_InflectionPoints> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#InflectionPoints> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """A mixed hub gathering the moments Scarlet flagged as inflections — strategic, market, and tactical. The dominant frame is [base camp, not camp 4](narr:Narrative_BaseCampNotCamp4): the the enterprise customer pilot's week-1 surge (8/16 engaging, license expansion 2→7→16, MSA to lawyer) flips the question from acquisition to customer success — real inflection, long climb (May 18). Against that sits a closing-window counter-clock: Tony's [two-year window](narr:Narrative_TwoYearWindow) before legal pressure reshapes LLMs toward approved sources. Macro signal echoes it — [enterprise budget reallocation](narr:Observation_InflectionPoints_1) as SaaS incumbents sell off on disintermediation fears. A distinct product-model thread: the [optometrist convergence](narr:Observation_ConvergenceInsight), where Scarlet's misremembered task resolved into the review flow itself, plus the [parallel-temporality articulation](narr:Obs_ScarletTemporalityQuote) (May 1). Tactical residue clusters separately: the [live-transcription question](narr:Obs_LiveTranscriptionQuestion) (Fireflies post-call only), its [BlackHole + MacWhisper answer](narr:Claim_BlackHoleMacWhisper) still open, and three [quick wins](narr:Observation_QuickWins). The digest holds these on parallel tracks rather than one arc.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_BlackHoleMacWhisper> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_BaseCampNotCamp4> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TwoYearWindow> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_LiveTranscriptionQuestion> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletTemporalityQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_ConvergenceInsight> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_InflectionPoints_1> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_QuickWins> ;
+    narr:keyPhrase [ narr:text "license expansion 2→7→16 in one week, MSA out to lawyer" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_BaseCampNotCamp4> ] ;
+    narr:keyPhrase [ narr:text "You've got a two year window" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_TwoYearWindow> ] ;
+    narr:keyPhrase [ narr:text "SaaS stocks (Salesforce, ServiceNow, Workday, SAP) sold off on AI agent disintermediation fears" ; narr:phraseSource <https://aswritten.ai/narrative#Observation_InflectionPoints_1> ] ;
+    narr:keyPhrase [ narr:text "the optometrist model IS the review flow" ; narr:phraseSource <https://aswritten.ai/narrative#Observation_ConvergenceInsight> ] ;
+    narr:keyPhrase [ narr:text "BlackHole + MacWhisper is the long-term answer for 7+ beta calls; currently an open question" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_BlackHoleMacWhisper> ] ;
+    narr:variation [ narr:text "Two opposed clocks: week-1 success says the moment has arrived; Tony's two-year window says it's already closing." ; narr:over <https://aswritten.ai/narrative#Narrative_BaseCampNotCamp4> ; narr:over <https://aswritten.ai/narrative#Narrative_TwoYearWindow> ] ;
+    narr:variation [ narr:text "Strategic/market inflections sit beside purely tactical tooling notes — different altitude, same hub." ; narr:over <https://aswritten.ai/narrative#Observation_QuickWins> ; narr:over <https://aswritten.ai/narrative#Obs_LiveTranscriptionQuestion> ] ;
+    narr:variation [ narr:text "The live-transcription long-term answer is explicitly unresolved — an open question, not a decision." ; narr:over <https://aswritten.ai/narrative#Claim_BlackHoleMacWhisper> ; narr:over <https://aswritten.ai/narrative#Obs_LiveTranscriptionQuestion> ] ;
+    narr:variation [ narr:text "The optometrist convergence is a product-model correction, not a market signal — a structurally distinct inflection." ; narr:over <https://aswritten.ai/narrative#Observation_ConvergenceInsight> ] ;
+    narr:writer "claude (subscription)" .
+}

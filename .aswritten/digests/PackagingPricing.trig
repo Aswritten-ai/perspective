@@ -1,0 +1,62 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_PackagingPricing> {
+  <https://aswritten.ai/narrative#Digest_PackagingPricing> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#PackagingPricing> ;
+    narr:childCount "38"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """Pricing evolved through repeated reframing. [Feb per-repo pricing](narr:Claim_ThreeTierSupersedes) ([amount]/mo, 10 seats) gave way to a [March three-tier model](narr:Narrative_ThreeTierPricingModel) — Individual/Team/Professional — then a [four-tier structure](narr:Narrative_NewTierStructure_20260319) adding Free, then a [rename](narr:Narrative_TierRenameExpertTeam) (Individual→Expert, Publisher→Team), still unpropagated in code. By May 18 the structure [firmed](narr:Claim_OrgBaseLocked4K): Org [amount]/mo floor, Expert [amount]/user, Team [amount]/user (10 seats), plus value-priced [EDO add-ons](narr:Claim_EDO_SingleTenantManaged). The [10x Team→Professional gap](narr:Narrative_10xGapIsFeature) is positioned as intentional signal — a human doing work for you. Validation arrived from prospects: the customer's chief architect called [[amount]'not real money'](narr:Claim_400PerMonthNotRealMoney), Tony said the tiers [track for him](narr:Claim_PricingTierValidatedByTony), the customer's CTO probed [scaling and the team→enterprise switch](narr:Claim_CustomerCTOScalingPricing). The [setup fee was reframed](narr:Narrative_SetupFeeAsConversionService) as a conversion service, with [we-do-it vs they-do-it](narr:Claim_TheyDoItConversionModel) revenue splits. Competitive framing: aswritten [2-10x cheaper](narr:Claim_AswrittenCheaperThanTierB) than Tier B assembly.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_10xGapIntentional> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_400PerMonthNotRealMoney> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AswrittenCheaperThanTierB> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_EDO_SingleTenantManaged> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_InterviewAsPremiumOnramp> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OrgBaseLocked4K> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_POCMSAParallelNotSequential> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PricingTierValidatedByTony> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SetupFeeSplitsPerContractor> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OutsideTechBetaUserCommercialStatusRelational> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TeamVsEnterpriseTierCleanBreak> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TheyDoItConversionModel> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ThreeTierSupersedes> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TierRenameDecided> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_TierStructureNamed> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_Tony10xCalculation> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_Tranche1Breakpoints> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CustomerCTOScalingPricing> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_WeDoItConversionModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_10xGapIsFeature> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CPCOnGoalURL> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ChatbotTierPricingSignal> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_NewTierStructure_20260319> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PricingModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PricingValidatedNotRealMoney> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SetupFeeAsConversionService> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ThreeTierPricingModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TierRenameExpertTeam> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CPCPricingQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_DemoProspectCommissionGapQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_DemoProspectSetupFeeStructure> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectChatbotPricingQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectPricingQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_PackagingPricing> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletRevenueModelQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletSetupFeeQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_Tranche1BreakpointQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_UpgradePathQuote> ;
+    narr:keyPhrase [ narr:text "[amount]a month isn't like real money" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_400PerMonthNotRealMoney> ] ;
+    narr:keyPhrase [ narr:text "that all tracks for me." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PricingTierValidatedByTony> ] ;
+    narr:keyPhrase [ narr:text "Org base locked at [amount]/mo (the enterprise customer floor preserved)." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OrgBaseLocked4K> ] ;
+    narr:keyPhrase [ narr:text "Think about when it switches from team to enterprise. I think that happens reasonably quickly." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CustomerCTOScalingPricing> ] ;
+    narr:keyPhrase [ narr:text "2-10x cheaper than comparable Tier B assembly" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AswrittenCheaperThanTierB> ] ;
+    narr:keyPhrase [ narr:text "Instead of taking a cut of practitioner fee, it could be outcome based. I.e., every perspective carries a goal which is a forward to a link. Essentially a click like ads." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CPCPricingQuote> ] ;
+    narr:variation [ narr:text "A whole alternative pricing philosophy: CPC-on-goal-URL (outcome-based, ad-like clicks) for external funnels vs. subscription for internal — not just different numbers but a different revenue logic." ; narr:over <https://aswritten.ai/narrative#Narrative_CPCOnGoalURL> ; narr:over <https://aswritten.ai/narrative#Obs_CPCPricingQuote> ] ;
+    narr:variation [ narr:text "the customer's chief architect's chatbot calibration ([amount]-[amount] for 20-30 users) implies a tier that would fill the very 10x Team→Enterprise gap the model insists is an intentional 'clean break.'" ; narr:over <https://aswritten.ai/narrative#Narrative_ChatbotTierPricingSignal> ; narr:over <https://aswritten.ai/narrative#Obs_CustomerArchitectChatbotPricingQuote> ; narr:over <https://aswritten.ai/narrative#Claim_TeamVsEnterpriseTierCleanBreak> ] ;
+    narr:variation [ narr:text "Tier naming never settled: Individual/Publisher → Expert/Team renames decided March 23 but still not propagated in code, with conflicting labels across strategy docs." ; narr:over <https://aswritten.ai/narrative#Claim_TierRenameDecided> ; narr:over <https://aswritten.ai/narrative#Claim_TierStructureNamed> ; narr:over <https://aswritten.ai/narrative#Narrative_TierRenameExpertTeam> ] ;
+    narr:variation [ narr:text "Conversion-service revenue is unresolved: 'we do it' (upfront fee + marketplace %) vs 'they do it' (marketplace % only) — both called viable, neither chosen." ; narr:over <https://aswritten.ai/narrative#Claim_WeDoItConversionModel> ; narr:over <https://aswritten.ai/narrative#Claim_TheyDoItConversionModel> ; narr:over <https://aswritten.ai/narrative#Obs_ScarletRevenueModelQuote> ] ;
+    narr:variation [ narr:text "a beta user from outside tech sits on Individual tier by relationship (fiancé/beta tester), not sales logic — an outlier that neither validates nor invalidates the pricing it appears to instantiate." ; narr:over <https://aswritten.ai/narrative#Claim_OutsideTechBetaUserCommercialStatusRelational> ] ;
+    narr:variation [ narr:text "Setup/pilot pricing has its own churn: [amount] SOW vs earlier [amount]/[amount] pilot splits vs [amount] EDO single-tenant setup (bumped from [amount])." ; narr:over <https://aswritten.ai/narrative#Narrative_PricingModel> ; narr:over <https://aswritten.ai/narrative#Claim_EDO_SingleTenantManaged> ] ;
+    narr:variation [ narr:text "MSA timing tension: clean-break tiering attaches MSA at the Enterprise boundary, while Tony's unlock runs MSA/procurement in parallel with the POC, not after." ; narr:over <https://aswritten.ai/narrative#Claim_TeamVsEnterpriseTierCleanBreak> ; narr:over <https://aswritten.ai/narrative#Claim_POCMSAParallelNotSequential> ] ;
+    narr:writer "claude (subscription)" .
+}

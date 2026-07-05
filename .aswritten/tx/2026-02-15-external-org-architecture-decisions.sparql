@@ -1,0 +1,253 @@
+PREFIX narr: <http://example.org/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://example.org/sb#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260217T162921Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-17T16:29:21.264Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-15-external-org-architecture-decisions.md" ;
+    sb:originRef "main" .
+
+  # Generated entities with provenance link
+  narr:Sample_1 a narr:Sample ;
+    dct:title "External Org Architecture Decisions" ;
+    narr:inputLength 2847 ;
+    dct:created "2026-02-13"^^xsd:date ;
+    skos:note "Architecture decisions for a founder beta user (factoryfactory.ai) pilot — first external-org deployment." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:Narrative_1 a narr:Narrative ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Separation of Concerns" ;
+    skos:broader narr:ArchitectureOverview ;
+    skos:note "GitHub App handles auth only; scaffolding is separate CLI tool." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:Narrative_2 a narr:Narrative ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Credential Security" ;
+    skos:broader narr:SecurityPrivacyModel ;
+    skos:note "Credentials live only in repo; GitHub App reads them at runtime; no plain text sharing." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:Narrative_3 a narr:Narrative ;
+    dct:source narr:Sample_1 ;
+    narr:theme "Centralized Infrastructure" ;
+    skos:broader narr:SystemTopology ;
+    skos:note "MAIN_REPO always points to aswritten-ai/aswritten for shared ontology and templates." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:Decision_1 a narr:DesignTradeoffs ;
+    dct:source narr:Sample_1 ;
+    skos:broader narr:TechnicalExplainers ;
+    skos:prefLabel "GitHub App = Auth Only" ;
+    skos:definition "GitHub App handles authentication and access permissions. Does NOT scaffold files or create .aswritten/ directory structure." ;
+    skos:note "Rationale: Installing app on all repos should not scaffold into every repo by default." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:Decision_2 a narr:DesignTradeoffs ;
+    dct:source narr:Sample_1 ;
+    skos:broader narr:TechnicalExplainers ;
+    skos:prefLabel "aswritten init npm Package" ;
+    skos:definition "Repo scaffolding comes from separate CLI tool: aswritten init. Creates .aswritten/ directory, copies base stories, ontology, shapes, .mcp.json." ;
+    skos:note "Replaces scaffold n8n workflow and task-027 file-installation approach." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:Decision_3 a narr:SecurityPrivacyModel ;
+    dct:source narr:Sample_1 ;
+    skos:prefLabel "Credential Flow: Repo-Only" ;
+    skos:definition "Credentials live ONLY in repo (GitHub secrets/environment variables). GitHub App installation gives aswritten infrastructure ability to read repo's environment credentials at runtime." ;
+    skos:note "Target state: a founder beta user sets OPENROUTER_API_KEY in repo → n8n pulls credentials via GitHub App → no plain text keys shared." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:StyleObs_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 0 ;
+        oa:end 9
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten" ;
+        oa:prefix "" ;
+        oa:suffix " infrastructure"
+      ]
+    ] ;
+    skos:note "Brand name 'aswritten' consistently lowercase." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:StyleObs_2 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:TerminologyControl ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 450 ;
+        oa:end 461
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "scaffolding" ;
+        oa:prefix "What would be missing without " ;
+        oa:suffix ": base story templates"
+      ]
+    ] ;
+    skos:note "Technical term 'scaffolding' used consistently for directory/file initialization." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:StyleObs_3 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 350 ;
+        oa:end 358
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "nil-pun" ;
+        oa:prefix "Reads should " ;
+        oa:suffix " (handle missing"
+      ]
+    ] ;
+    skos:note "Technical verb 'nil-pun' (functional programming idiom) signals developer audience." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:StyleObs_4 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 150 ;
+        oa:end 200
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The GitHub App handles authentication and access permissions." ;
+        oa:prefix "### GitHub App = Auth Only\n" ;
+        oa:suffix " It does NOT scaffold"
+      ]
+    ] ;
+    skos:note "Short declarative sentences; direct tone." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:StyleObs_5 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:AICompanyizationCase ;
+    dct:source narr:Sample_1 ;
+    oa:hasBody narr:AICompanyizationCase ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_1 ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1100 ;
+        oa:end 1109
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "MAIN_REPO" ;
+        oa:prefix "### " ;
+        oa:suffix " is Always"
+      ]
+    ] ;
+    skos:note "ALL CAPS for environment variable names (MAIN_REPO, N8N_WEBHOOK_BASE, OPENROUTER_API_KEY)." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:Metrics_1 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_1 ;
+    narr:AverageSentenceLength 18 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:JargonDensity 0.12 ;
+    narr:Conciseness 0.78 ;
+    skos:note "High active voice ratio; moderate jargon density appropriate for technical audience." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:RubricAssess_Register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.5 ;
+    skos:note "Direct, technical register; second-person implied ('a founder beta user sets'); active voice dominant." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:RubricAssess_Phrasing a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.0 ;
+    skos:note "Domain-specific terms (scaffolding, nil-pun, BYOK); consistent brand stylization (aswritten)." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:RubricAssess_Cadence a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.0 ;
+    skos:note "Short, punchy sentences; bullet-point structure; clear decision markers." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:RubricAssess_Strategy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_1 ;
+    rdf:value 5.0 ;
+    skos:note "Directly aligned with Architecture domain; explicit rationale for each decision; clear separation of concerns." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:RubricAssess_Tailoring a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.5 ;
+    skos:note "Tailored to technical audience (a founder beta user, factoryfactory.ai pilot); assumes familiarity with GitHub, n8n, npm." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:RubricAssess_Resonance a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_1 ;
+    rdf:value 3.5 ;
+    skos:note "Concrete examples (a founder beta user pilot setup); could add more analogies or stories for broader resonance." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:RubricAssess_Flow a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.5 ;
+    skos:note "Logical progression from decisions → setup → open questions; clear section headers; minimal formulaic transitions." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:RubricAssess_Novelty a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.0 ;
+    skos:note "Fresh phrasing ('nil-pun', 'BYOK model'); avoids boilerplate; specific to aswritten context." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+
+  narr:RubricAssess_Accuracy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_1 ;
+    rdf:value 4.5 ;
+    skos:note "Accurate technical details; open questions flagged explicitly; no unsupported claims." ;
+    prov:wasGeneratedBy narr:Tx_20260217T162921Z .
+}

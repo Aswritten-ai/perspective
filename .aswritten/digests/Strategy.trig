@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Strategy> {
+  <https://aswritten.ai/narrative#Digest_Strategy> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Strategy> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """The Strategy hub gathers the load-bearing architectural and business bets, none dated. The dominant thread is an architectural reframe: [identity as downstream of narrative architecture](narr:Narrative_1), shifting from one-shot generation to iterative, refraction-based maintenance where refraction checks against registered documents replace story regeneration on PR. The read-layer bet runs parallel — [bring LLM associativity rather than formal query](narr:Narrative_ContextArch_1), treating the graph as a substrate the agent navigates. The risk posture is candid: [org memory modeled on human memory](narr:Narrative_ContextArch_4) — directional, sometimes imprecise, but attributable and auditable, with git history and provenance as the safety net. On execution, a [scope-collapse pivot](narr:Narrative_GitHubActionsPivot) drops the proxy pipeline as a V1 prerequisite. The lone explicit business-model lever is [Gemini Flash as distribution unit economics](narr:Claim_GeminiFlashBusinessModel) — framed as gating broad distribution, not mere cost. Together they narrate a strategy choosing associative recall and maintenance over generation and formal query — but the tradeoffs sit unresolved beneath.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_GeminiFlashBusinessModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_1> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContextArch_1> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContextArch_4> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_GitHubActionsPivot> ;
+    narr:keyPhrase [ narr:text "Gemini Flash (task-038.04) gates broad distribution unit economics, not just cost optimization." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_GeminiFlashBusinessModel> ] ;
+    narr:keyPhrase [ narr:text "Identity is downstream of narrative architecture" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_1> ] ;
+    narr:keyPhrase [ narr:text "bring LLM associativity to the read layer rather than formal query; treat the graph as a substrate the LLM navigates" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ContextArch_1> ] ;
+    narr:keyPhrase [ narr:text "Organizational memory works like human memory: directional, contextualized, sometimes imprecise, but attributable and auditable" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ContextArch_4> ] ;
+    narr:keyPhrase [ narr:text "Scope collapse via insight: existing GitHub Actions eliminate proxy pipeline as V1 prerequisite" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_GitHubActionsPivot> ] ;
+    narr:variation [ narr:text "Gemini Flash framed as a business-model lever gating distribution unit economics — explicitly not just cost optimization, an infra-vs-strategy tension." ; narr:over <https://aswritten.ai/narrative#Claim_GeminiFlashBusinessModel> ] ;
+    narr:variation [ narr:text "Contested read-layer choice: LLM associativity over formal query, betting navigability beats precise retrieval." ; narr:over <https://aswritten.ai/narrative#Narrative_ContextArch_1> ] ;
+    narr:variation [ narr:text "Superseded framing: generated artifacts as quality signals deemed insufficient, replaced by refraction checks against registered documents." ; narr:over <https://aswritten.ai/narrative#Narrative_1> ] ;
+    narr:variation [ narr:text "Accepted-imprecision posture: org memory allowed to be sometimes imprecise, leaning on provenance, git history, and honest customer framing rather than correctness guarantees." ; narr:over <https://aswritten.ai/narrative#Narrative_ContextArch_4> ] ;
+    narr:variation [ narr:text "Road not taken: the proxy pipeline dropped as a V1 prerequisite via scope-collapse on existing GitHub Actions." ; narr:over <https://aswritten.ai/narrative#Narrative_GitHubActionsPivot> ] ;
+    narr:writer "claude (subscription)" .
+}

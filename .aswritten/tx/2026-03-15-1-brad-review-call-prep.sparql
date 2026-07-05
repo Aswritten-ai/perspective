@@ -1,0 +1,170 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260313T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-13T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-13-tamarack-review-fundraising-brief-call-prep.md" ;
+    narr:originRef "main" ;
+    dct:title "a collaborator Review of Fundraising Brief & White Paper — Call Prep Session" ;
+    prov:generated
+      
+      
+      
+      
+      narr:Claim_ConvictionLabelsRemovedUserFacing,
+      narr:Narrative_OnboardingEffectivenessVsCoverage,
+      narr:Narrative_ExtractionTargetsNarrativeNotFacts,
+      narr:Narrative_ReviewAsPeerReview,
+      narr:Claim_ConsentAttributionRBAC,
+      narr:Narrative_DocumentGenerationAsProductDemo,
+      narr:Narrative_HowToTryItTamarackVersion,
+      narr:StyleObs_TamarackReview_PlainLanguage,
+      narr:StyleObs_TamarackReview_SelfReflexiveQuote,
+      narr:StyleObs_TamarackReview_PeerReviewAnalogy .
+} ;
+
+# ── NEW ENTITIES (named graph) ───────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260313T120000Z {
+
+    # ── Claim: Conviction Labels Removed from User-Facing Product ───────────
+    narr:Claim_ConvictionLabelsRemovedUserFacing
+      a narr:Claim ;
+
+      skos:note "Conviction level labels (notion/stake/boulder/foundation) have been removed from the product — from the system prompt and tool descriptions. Multiple beta testers found the labels confusing, though all appreciate the functionality. Scarlet: 'It's in the language, not the concept. We just don't need to surface it.' Do not surface them in user-facing docs." ;
+      narr:aboutNode narr:Narrative_ConvictionLevelRename ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ConvictionLevelRename .
+
+    # ── Narrative: Onboarding Effectiveness vs. Coverage ────────────────────
+    narr:Narrative_OnboardingEffectivenessVsCoverage
+
+
+      skos:broader narr:EnablementTraining ;
+      skos:prefLabel "Onboarding: Effectiveness vs. Coverage — A Key Distinction" ;
+      skos:note "The dedicated human onboarding increases the *amount of knowledge* the product deploys (coverage), not the *effectiveness* of the product itself. Narrative steering works fast with minimal input. But if you want the system to reference specific conversations, those need to be ingested — the onboarding front-loads that. The human onboarding is intentional optimization, not a requirement. Scarlet: 'Importantly, this doesn't increase the effectiveness of the product, but it increases the amount of knowledge that the product is able to deploy on the org's behalf while doing tasks.' Automation roadmap: a founder beta user (advisor) has a company doing voice AI agents for recruiting interviews — once aswritten onboarding is vetted by humans, it can be automated by AI." ;
+      narr:theme "Human onboarding increases knowledge coverage, not product effectiveness — narrative steering works fast; onboarding front-loads the knowledge base" .
+
+    # ── Narrative: Extraction Targets Narrative, Not Every Fact ─────────────
+    narr:Narrative_ExtractionTargetsNarrativeNotFacts
+
+
+      skos:broader narr:NarrativeAnchor ;
+      skos:prefLabel "Extraction Targets Narrative Direction, Not Every Fact" ;
+      skos:note "Scarlet: 'It actually is amazing and hard to understand how much I can extract in a single session, and that's most importantly because what we're extracting is narrative direction, not every single fact about how a business operates.' Tension from beta: the extraction does such a good job at facts that users expect the AI to know everything. But the design target is narrative. The new memories tool bridges this — semantic search links to actual source documents for everything else." ;
+      narr:theme "The extraction pipeline targets narrative direction, not encyclopedic facts — the design target is steering, not omniscience" .
+
+    # ── Narrative: Review Process as Peer Review ─────────────────────────────
+    narr:Narrative_ReviewAsPeerReview
+
+
+      skos:broader narr:QualityReviewGates ;
+      skos:prefLabel "Review Flow as Peer Review: Worldview Shifts, Not Every Fact" ;
+      skos:note "a collaborator drew a direct parallel to scientific peer review — and he's right. The new review flow IS peer review, with the difference being it reviews fundamental worldview shifts, not every specific fact. Scarlet: 'The review flow is exactly peer review, the difference is we're reviewing fundamental worldview shifts, not necessarily all of the specific facts.' For a collaborator specifically, 'peer review' is the perfect frame. For non-scientists, 'editorial review' or 'fact-checking before publishing' might land better." ;
+      narr:theme "The review flow is peer review for worldview shifts — the frame should be adapted by audience: 'peer review' for scientists, 'editorial review' for others" .
+
+    # ── Claim: Consent, Attribution, and RBAC ───────────────────────────────
+    narr:Claim_ConsentAttributionRBAC
+      a narr:Claim ;
+
+      skos:note "a collaborator asked: 'Will my comments end up in the next version?' Scarlet: 'They would show up if I choose to put them there.' This connects to an active product design conversation with a demo-call prospect (beta user) about knowledge scoping — can a CEO's emails be isolated from engineers while still ingesting narrative and linking to the graph? Scarlet: 'Can we isolate a CEO's emails from ever being shown to an engineer but still ingest narrative from them and link them to the graph? Can we have intelligent and transparent RBAC?'" ;
+      narr:aboutNode narr:GovernanceSafetyTrust ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:GovernanceSafetyTrust .
+
+    # ── Narrative: Document Generation as Product Demo ───────────────────────
+    narr:Narrative_DocumentGenerationAsProductDemo
+
+
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "Document Generation as Product Demo: How This Document Was Made" ;
+      skos:note "The brief should include a 'How This Document Was Made' walkthrough: compile → introspect → frame → section draft → annotate → respond → iterate. This serves as both process transparency and product demo. Can include a GIF from in-flight agent-driven flow recordings. a collaborator's question about how the doc was made is the reaction every reader should have." ;
+      narr:theme "The fundraising brief should include a 'How This Document Was Made' walkthrough that doubles as a product demo — a collaborator's curiosity about the process is the target reaction" .
+
+    # ── Narrative: How to Try It (a collaborator Version) ──────────────────────────────
+    narr:Narrative_HowToTryItTamarackVersion
+
+
+      skos:broader narr:CallToAction ;
+      skos:prefLabel "How to Try It: Calendly Link and Live Demo Path" ;
+      skos:note "a collaborator explicitly asked how to become a user. Lean toward a Calendly link scheduling a demo — live knowledge extraction creates enough initial value. Self-serve is possible but higher friction for non-technical users. Future: demos/walkthroughs page with GIFs. a collaborator's demo plan: setting a collaborator up with an account and live onboarding — which IS the SMB sales motion. Demo flow covers his questions, concerns, and interests. Hold the review flow until it's been through beta; show the read path (compile → annotate → introspect)." ;
+      narr:theme "The call-to-action for non-technical F&F investors is a Calendly link for a live demo — self-serve is too high friction" .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_TamarackReview_PlainLanguage
+      a narr:StyleObservation ;
+      skos:broader narr:PlainLanguage ;
+
+      skos:note "plain-language-imperative: Scarlet frames accessibility as an absolute standard, not a preference" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 614 ;
+          oa:end 741
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "F&F document shouldn't use any jargon unless it defines it first and attempts to plain language regardless" ;
+          oa:prefix "Scarlet: \"I think it's clear that we need to meet the needs of two audiences. " ;
+          oa:suffix ".\""
+        ]
+      ] .
+
+    narr:StyleObs_TamarackReview_SelfReflexiveQuote
+      a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+
+      skos:note "self-reflexive-honesty: Scarlet names her own default bias explicitly, a recurring idiolect pattern" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2891 ;
+          oa:end 2988
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I was defaulting to enterprise because the last many tech companies I have worked for have been enterprise targeted" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix ".\""
+        ]
+      ] .
+
+    narr:StyleObs_TamarackReview_PeerReviewAnalogy
+      a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+
+      skos:note "domain-bridging-analogy: a collaborator's scientific peer review frame adopted and extended by Scarlet as canonical positioning" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6820 ;
+          oa:end 6966
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The review flow is exactly peer review, the difference is we're reviewing fundamental worldview shifts, not necessarily all of the specific facts" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix ".\""
+        ]
+      ] .
+
+  }
+}

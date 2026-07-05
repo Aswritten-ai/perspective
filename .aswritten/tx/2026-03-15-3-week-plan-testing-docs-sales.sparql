@@ -1,0 +1,52 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260315T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-15T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-15-week-plan-testing-consolidation-documentation.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      narr:Narrative_TamarackDemoAsLiveSalesMotion,
+      narr:Claim_SalesPlaybookForDemoProspect,
+      narr:Claim_GIFDemoReady .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260315T120000Z {
+
+    # ── BRAD DEMO PLAN NARRATIVES ────────────────────────────────
+    narr:Narrative_TamarackDemoAsLiveSalesMotion a narr:Narrative ;
+
+      skos:broader narr:SalesDecks ;
+      skos:note "The demo with a collaborator is explicitly framed as the same sales motion used with any SMB prospect — not a special investor demo. Live knowledge extraction, product walkthrough, account setup. a collaborator is technically savvy but not in the domain, providing a useful outside perspective distinct from the typical beta cohort." ;
+      narr:theme "The a collaborator demo IS the sales motion: live knowledge extraction with any prospect is the product" .
+
+    narr:Claim_GIFDemoReady a narr:Claim ;
+
+      skos:note "GIF generation is ready and impressive. May make sense to embed an intro demo GIF into the F&F plan itself as a visual proof point." ;
+
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      .
+
+    narr:Claim_SalesPlaybookForDemoProspect a narr:Claim ;
+
+      skos:note "A sales playbook for a demo-call prospect is the critical sales enablement piece this week. It should be a play-by-play with GIF descriptions showing what it looks like to take someone from first contact through a demo with deep knowledge extraction, setting them up with the product, and ongoing engagement. The playbook must be ready so a demo-call prospect has a repeatable process, not just a deal structure." ;
+
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_DirectVsInfluenceSales .
+
+  }
+}

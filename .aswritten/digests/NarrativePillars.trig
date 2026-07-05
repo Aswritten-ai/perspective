@@ -1,0 +1,23 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_NarrativePillars> {
+  <https://aswritten.ai/narrative#Digest_NarrativePillars> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#NarrativePillars> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers two unlike strands under one roof. The bulk is a cluster of style observations on how strategic prose is constructed: [anaphoric repetition](narr:StyleObs_Anaphora) for emphasis, [bold Title Case labels](narr:StyleObs_BoldLabels) signaling executive register, [em-dash arrow cadence](narr:StyleObs_BulletCadence) that mimics slide-deck logic in prose, and [parallel numbered failure progression](narr:StyleObs_FailureProgression) building toward a breakthrough. Cutting across these is a lone operational commitment — [content/newsletter as a re-engagement tool](narr:Narrative_ContentAsReengagement), a Ghost blog to warm leads with a one-week launch pledge. Read together, the style children describe a recognizable rhetorical register (executive-summary, deck-like, momentum-driven), while the re-engagement child is a concrete go-to-market action rather than a craft observation. No dates are attached to any child, so there is no trajectory to report; the grouping is thematic, not sequential.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContentAsReengagement> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Anaphora> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldLabels> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BulletCadence> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_FailureProgression> ;
+    narr:keyPhrase [ narr:text "Ghost blog/newsletter to re-engage warm leads without awkward follow-up. Scarlet commits to launch within a week." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ContentAsReengagement> ] ;
+    narr:keyPhrase [ narr:text "signals executive summary register" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BoldLabels> ] ;
+    narr:keyPhrase [ narr:text "a structured cadence that mimics slide deck logic within prose" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BulletCadence> ] ;
+    narr:keyPhrase [ narr:text "Creates rhetorical momentum toward the breakthrough" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_FailureProgression> ] ;
+    narr:keyPhrase [ narr:text "reinforcing the prohibition on side effects in pure functions" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Anaphora> ] ;
+    narr:variation [ narr:text "Structural outlier: four children are craft/style observations, but the re-engagement child is a concrete business action with a launch deadline — a different kind of 'pillar' entirely." ; narr:over <https://aswritten.ai/narrative#Narrative_ContentAsReengagement> ] ;
+    narr:variation [ narr:text "The anaphora child spans two unrelated witness contexts — code documentation on pure functions and a 'the consulting IS' identity refrain — so its theme is not single." ; narr:over <https://aswritten.ai/narrative#StyleObs_Anaphora> ] ;
+    narr:writer "claude (subscription)" .
+}

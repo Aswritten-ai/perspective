@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_PerspectiveOnSpec> {
+  <https://aswritten.ai/narrative#Digest_Narrative_PerspectiveOnSpec> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_PerspectiveOnSpec> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the April thesis that a perspective built *on spec* — before any prospect interview — is itself the pitch. The throughline: [the demo is the sale](narr:Claim_DemoIsTheSale), since a perspective-grounded agent that navigates a prospect's own funnel proves understanding without their time. Because [interviews don't scale but public content does](narr:Claim_ExistingContentScales), podcasts, blogs and YouTube become the [bootstrap substrate](narr:Claim_PublicContentBootstrapOnramp) for outbound. A reframe argues [the medium, not fidelity, is the message](narr:Claim_MediumIsTheMessage) — the transparent back-and-forth agent compels regardless of the perspective's absolute accuracy. On 20260421 the cold-outreach tactic firmed: Scarlet floated aggressive clone-as-you outreach; [Tony softened it](narr:Claim_OutboundVariantSoftening) toward a bounded, less-scary script. The region spans go-to-market mechanics (demo, outbound, content seeding) and the product-philosophy question of what actually compels — not implementation, pricing, or perspective-construction internals.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_DemoIsTheSale> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ExistingContentScales> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_MediumIsTheMessage> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OutboundVariantSoftening> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PublicContentBootstrapOnramp> ;
+    narr:keyPhrase [ narr:text "The demo IS the sale: the prospect receives a perspective-grounded agent that proves it understands their business by navigating their own funnel and hitting their contact channel." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DemoIsTheSale> ] ;
+    narr:keyPhrase [ narr:text "Interviews don't scale, but existing public content (podcasts, blogs, YouTube) does." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ExistingContentScales> ] ;
+    narr:keyPhrase [ narr:text "The compelling part of the product is the MEDIUM (the transparent agent that can go back and forth), not necessarily the perspective's absolute fidelity." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MediumIsTheMessage> ] ;
+    narr:keyPhrase [ narr:text "You don't want it to be so scary that they're freaked out by it and worried about it." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OutboundVariantSoftening> ] ;
+    narr:keyPhrase [ narr:text "a perspective trained on a singular artifact is lower fidelity than one built with self-directing interactive feedback" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OutboundVariantSoftening> ] ;
+    narr:keyPhrase [ narr:text "The bounded claim ('I've cloned your voice for PR questions, try me') is the correct cold outreach script." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OutboundVariantSoftening> ] ;
+    narr:variation [ narr:text "Fidelity tension: MediumIsTheMessage says absolute fidelity doesn't matter much, while the softening child's own guardrail warns a perspective trained on a singular artifact is genuinely lower fidelity — so don't overpromise." ; narr:over <https://aswritten.ai/narrative#Claim_MediumIsTheMessage> ; narr:over <https://aswritten.ai/narrative#Claim_OutboundVariantSoftening> ] ;
+    narr:variation [ narr:text "Aggressiveness tension: Scarlet's original cold-outreach pitch (deploy an agent that contacts the prospect as them) was explicitly walked back by Tony toward 'less is more,' a bounded PR-only claim — the scary version is the road not taken." ; narr:over <https://aswritten.ai/narrative#Claim_OutboundVariantSoftening> ] ;
+    narr:variation [ narr:text "Scale-vs-fidelity tradeoff: seeding from existing public content scales reach but is the very low-fidelity path the softening guardrail cautions against, leaving the on-spec demo quality unresolved." ; narr:over <https://aswritten.ai/narrative#Claim_ExistingContentScales> ; narr:over <https://aswritten.ai/narrative#Claim_PublicContentBootstrapOnramp> ; narr:over <https://aswritten.ai/narrative#Claim_OutboundVariantSoftening> ] ;
+    narr:writer "claude (subscription)" .
+}

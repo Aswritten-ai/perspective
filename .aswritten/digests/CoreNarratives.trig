@@ -1,0 +1,53 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_CoreNarratives> {
+  <https://aswritten.ai/narrative#Digest_CoreNarratives> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#CoreNarratives> ;
+    narr:childCount "29"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers aswritten.ai's positioning narratives around one thesis: [the next bottleneck is missing organizational context, not model capability](narr:Claim_WorldviewBottleneck). The competitive frame is a [three-layer model](narr:Claim_ThreeLayerModel) — [Creation](narr:Narrative_CreationGap) (knowledge must be *extracted*, not retrieved), [Architecture](narr:Narrative_ArchitectureGap) (narrative ontology with conviction levels steers rather than dilutes), and [Infrastructure](narr:Narrative_InfrastructureGap) (worldview as git-native code in CI/CD). Around these sit product claims: [worldview as versioned code](narr:Narrative_OrgKnowledgeAsCode), [Salon recast as a per-memory capability](narr:Narrative_SalonAsCapability) rather than a deployment pattern (per the [revised taxonomy](narr:Observation_TaxonomyRevision)), [citations as constellations](narr:Narrative_CiteConstellationModel) instead of single matched claims (witnessed 2026-05-23), and [agentic coherence / back-pressure](narr:Narrative_AgenticCoherence) as the workflow rationale. Go-to-market threads run alongside: the [fundraising arc](narr:Obs_FundraisingStory), the [two-call structure](narr:Obs_TwoCallStructure), and a [decision to retire zero-context language](narr:Narrative_RetireZeroContext). Several framings are explicitly in motion — demos, sales structure, and Salon's classification have all been reframed.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_1> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AgenticBackPressure> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ReviewableWorldviewSupersedesDemo1> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SalonIsPerMemory> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StatementIndex> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ThreeLayerModel> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_WorldviewBottleneck> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AgenticCoherence> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ArchitectureGap> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_BetaFeedbackLoopIsSalon> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CiteConstellationModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CiteDeduplicationInvariant> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ConsensusEngine> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CreationGap> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_HTMLArtifacts> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_HybridSalesMotion> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_InfrastructureGap> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_OrgKnowledgeAsCode> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_RetireZeroContext> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ReviewableWorldview> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SalonAsCapability> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SoftwareCedar> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_FundraisingStory> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_GitHubActionsPivotQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_TwoCallStructure> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_3> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_TaxonomyRevision> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Anaphora_HereIs> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RuleOfThree_Layers> ;
+    narr:keyPhrase [ narr:text "The next bottleneck in AI productivity is not LLM capability but the absence of a versioned, coherent organizational context." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_WorldviewBottleneck> ] ;
+    narr:keyPhrase [ narr:text "The most consequential organizational knowledge was never written down and cannot be retrieved — it must be extracted" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_CreationGap> ] ;
+    narr:keyPhrase [ narr:text "Organizational worldview as git-native code at the core of CI/CD enables agentic automations, multi-player contribution, and composable distribution" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_InfrastructureGap> ] ;
+    narr:keyPhrase [ narr:text "Salon is a per-memory capability, not a fifth deployment pattern" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SalonAsCapability> ] ;
+    narr:keyPhrase [ narr:text "it is an opinion machine whose editorial choices become invisible once compiled" ; narr:phraseSource <https://aswritten.ai/narrative#Observation_3> ] ;
+    narr:keyPhrase [ narr:text "Citations are constellations, not single claims" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_CiteConstellationModel> ] ;
+    narr:keyPhrase [ narr:text "The zero-context framing is a liability with sophisticated buyers who already have context solutions; replacement framing acknowledges the industry and positions against it" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_RetireZeroContext> ] ;
+    narr:variation [ narr:text "Salon was reclassified: not a fifth deployment pattern but a per-memory capability triggered by the reviewers frontmatter — a taxonomy correction, not the original framing." ; narr:over <https://aswritten.ai/narrative#Narrative_SalonAsCapability> ; narr:over <https://aswritten.ai/narrative#Claim_SalonIsPerMemory> ; narr:over <https://aswritten.ai/narrative#Observation_TaxonomyRevision> ] ;
+    narr:variation [ narr:text "Demo framing shifted: Reviewable Worldview supersedes Demo 1 / After the Call, which is demoted to a waypoint within it rather than a standalone demo." ; narr:over <https://aswritten.ai/narrative#Claim_ReviewableWorldviewSupersedesDemo1> ; narr:over <https://aswritten.ai/narrative#Narrative_ReviewableWorldview> ] ;
+    narr:variation [ narr:text "The rigid two-call sales structure is being questioned as too prescriptive; the an early prospect call evidenced a fluid hybrid with the write path running in the background during Call One." ; narr:over <https://aswritten.ai/narrative#Obs_TwoCallStructure> ; narr:over <https://aswritten.ai/narrative#Narrative_HybridSalesMotion> ] ;
+    narr:variation [ narr:text "Counter to the clean 'infrastructure' positioning: the extraction pipeline is framed as a non-neutral opinion machine whose editorial choices vanish once compiled." ; narr:over <https://aswritten.ai/narrative#Observation_3> ] ;
+    narr:variation [ narr:text "A self-reflexive thread claims the product tests itself — the beta feedback loop IS a Salon — distinct from the outward-facing positioning narratives." ; narr:over <https://aswritten.ai/narrative#Narrative_BetaFeedbackLoopIsSalon> ] ;
+    narr:variation [ narr:text "Cite matching is reframed from 'what is THE claim' to 'what bears on this text', plus a dedup invariant — a structural outlier from the positioning claims." ; narr:over <https://aswritten.ai/narrative#Narrative_CiteConstellationModel> ; narr:over <https://aswritten.ai/narrative#Narrative_CiteDeduplicationInvariant> ] ;
+    narr:writer "claude (subscription)" .
+}

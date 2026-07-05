@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Simile> {
+  <https://aswritten.ai/narrative#Digest_Simile> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Simile> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub collects the [figurative devices](narr:StyleObs_2) the speaker reaches for — predominantly **similes and conceptual metaphors** drawn from physics, music, biology, and everyday life. The load-bearing one frames [narrative as a physics vector](narr:StyleObs_2): \"narrative operates like a velocity or acceleration vector,\" rooted in a 2012 flocking-of-birds origin story and emergent-behavior thesis, alongside a recurring two-sentence antithesis pattern (\"The assumption has been bootstrap. That's wrong.\"). A second emergence metaphor — the [modular-synthesizer simile](narr:StyleObs_ModularSynthesizerSimile) (20260319) — likens AI-assisted strategy work to playing modular synths: guided but not controlled. Other figures serve different rhetorical jobs: a [natural-upgrade-path metaphor](narr:StyleObs_NaturalUpgrade) frames the consulting→licensing business model as organic progression, and an [editing simile](narr:StyleObs_Simile_1) warns against boring pacing (\"like watching someone read the newspaper\"). One child, a [Claude-vs-Codex preference](narr:StyleObs_ClaudeCodexComparison), is barely figurative at all — a casual tool-switching statement. The region is about *how positioning and process get illustrated*, not a single argument; expand for the metaphor's source domain, not for a settled claim.""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_2> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ClaudeCodexComparison> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ModularSynthesizerSimile> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NaturalUpgrade> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Simile_1> ;
+    narr:keyPhrase [ narr:text "narrative operates like a velocity or acceleration vector in these particle systems" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:keyPhrase [ narr:text "This is my life's work. It started in 2012 programming the flocking of birds" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:keyPhrase [ narr:text "I'm getting the same feeling I get when I make music with modular synthesizers" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ModularSynthesizerSimile> ] ;
+    narr:keyPhrase [ narr:text "Natural upgrade path: consulting delivers initial value, licensing captures ongoing value." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_NaturalUpgrade> ] ;
+    narr:keyPhrase [ narr:text "It's like watching someone read the newspaper" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Simile_1> ] ;
+    narr:variation [ narr:text "Two distinct emergence metaphors (flocking-physics vs. modular-synth) share a guided-not-controlled thesis but come from unrelated source domains — one biological/physical, one musical." ; narr:over <https://aswritten.ai/narrative#StyleObs_2> ; narr:over <https://aswritten.ai/narrative#StyleObs_ModularSynthesizerSimile> ] ;
+    narr:variation [ narr:text "Not all children are similes: StyleObs_2 also bundles an antithesis/reversal rhetorical pattern (belief-vs-action reframe at FOUNDATION level), a different device than the figurative comparisons." ; narr:over <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:variation [ narr:text "Outlier: the Claude-vs-Codex 'I liked it better' is a pragmatic preference statement with no figurative content and no quote — weakly attached to a simile hub." ; narr:over <https://aswritten.ai/narrative#StyleObs_ClaudeCodexComparison> ] ;
+    narr:variation [ narr:text "Function splits the set: emergence/identity metaphors (vector, synth) vs. instrumental framings — business-model progression and editing-pacing — that illustrate strategy rather than worldview." ; narr:over <https://aswritten.ai/narrative#StyleObs_NaturalUpgrade> ; narr:over <https://aswritten.ai/narrative#StyleObs_Simile_1> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,289 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# ════════════════════════════════════════════════════════════════════
+# TRANSACTION PROVENANCE
+# ════════════════════════════════════════════════════════════════════
+INSERT DATA {
+  narr:Tx_20260310T234028Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-03-10T23:40:28.310Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-03-10-review-process-design-corrections.md" ;
+    sb:originRef           "main" ;
+    sb:model               "anthropic/claude-sonnet-4.6" .
+} ;
+
+# ════════════════════════════════════════════════════════════════════
+# OPERATION 1 — INSERT DATA (added_triples)
+# ════════════════════════════════════════════════════════════════════
+INSERT DATA {
+
+  # ── SAMPLE ─────────────────────────────────────────────────────
+  narr:Sample_ReviewProcessDesign a narr:Sample ;
+    dct:title        "Review Process Design Corrections (March 10, 2026)" ;
+    narr:inputLength 3721 ;
+    skos:note        "Live lens review of PR #98 with Scarlet as reviewer; seven process corrections iterated in real time." ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  # ── NARRATIVES ─────────────────────────────────────────────────
+  narr:Narrative_ReviewProcess a narr:Narrative ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    narr:theme   "Iterative review process design requires establishing baseline before introducing shifts, labeling intent explicitly, and managing scale through chunked comparisons." ;
+    skos:broader narr:Process ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  narr:Narrative_ReviewMemoryFlow a narr:Narrative ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    narr:theme   "Saving a review memory ends a round and triggers extraction; merge signals no corrections needed and closes the PR — corrections always require at least two rounds." ;
+    skos:broader narr:ChangeManagement ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  narr:Narrative_MetaphorClarity a narr:Narrative ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    narr:theme   "Internal metaphors (optometrist/eye chart) useful for system design but confusing for end users; present process in plain language instead." ;
+    skos:broader narr:NarrativeAnchor ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  # ── CLAIMS ─────────────────────────────────────────────────────
+  narr:Claim_BaselineFirst a narr:Claim ;
+    narr:aboutNode          narr:QualityReviewGates ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:supports           narr:CoreWorkflows ;
+    dct:source              narr:Sample_ReviewProcessDesign ;
+    skos:note               "Correction 1: Show before vs new (PR state) as a single comparison first; offer shifts as pairs only after baseline is established. Not three versions simultaneously." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234028Z .
+
+  narr:Claim_LabelShiftIntent a narr:Claim ;
+    narr:aboutNode          narr:QualityReviewGates ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:supports           narr:CoreWorkflows ;
+    dct:source              narr:Sample_ReviewProcessDesign ;
+    skos:note               "Correction 2: Each shift must be labeled as improvement (sharpening current direction) or counter (testing alternative direction). Reviewer must know why they are looking at the shifted version." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234028Z .
+
+  narr:Claim_ComparisonScale a narr:Claim ;
+    narr:aboutNode          narr:QualityReviewGates ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:supports           narr:CoreWorkflows ;
+    dct:source              narr:Sample_ReviewProcessDesign ;
+    skos:note               "Correction 3: Maximum comparison unit is a few sentences. Longer content must be broken into comparison-sized chunks. Four paragraphs side-by-side is too much." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234028Z .
+
+  narr:Claim_LargeTXScale a narr:Claim ;
+    narr:aboutNode          narr:IntakePrioritization ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:supports           narr:QualityReviewGates ;
+    dct:source              narr:Sample_ReviewProcessDesign ;
+    skos:note               "Correction 4: Large TXs handled via TX summary → zone identification → 2-4 targeted shifts in chosen zones → fact review catches the rest before merge." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234028Z .
+
+  narr:Claim_EyeChartScoping a narr:Claim ;
+    narr:aboutNode          narr:IntakePrioritization ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:supports           narr:QualityReviewGates ;
+    dct:source              narr:Sample_ReviewProcessDesign ;
+    skos:note               "Correction 5: Scope domain first from TX zones reviewer chose; check for existing compilation doc; draft from worldview if none fits; negotiate scope if doc is too broad or narrow." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234028Z .
+
+  narr:Claim_DropOptometristMetaphor a narr:Claim ;
+    narr:aboutNode          narr:NarrativeAnchor ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:challenges         narr:CommonConfusions ;
+    dct:source              narr:Sample_ReviewProcessDesign ;
+    skos:note               "Correction 6: Eye exam metaphor (eye chart, lenses, brackets of three) is useful internally but confusing for reviewers. Present as: comparing before vs new worldview, then testing shifts." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234028Z .
+
+  narr:Claim_ReviewMemorySemantics a narr:Claim ;
+    narr:aboutNode          narr:ChangeManagement ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:supports           narr:FeedbackLoops ;
+    dct:source              narr:Sample_ReviewProcessDesign ;
+    skos:note               "Correction 7: Save memory = corrections exist, ends round, PR updates. Merge = no corrections needed, closes PR. A review with corrections always takes at least two rounds." ;
+    prov:wasGeneratedBy     narr:Tx_20260310T234028Z .
+
+  # ── OBSERVATIONS ───────────────────────────────────────────────
+  narr:Observation_BaselineFlow a narr:Observation ;
+    skos:broader narr:CoreWorkflows ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    skos:note    "Ordered flow: (1) baseline comparison, (2) shift pairs, (3) fact review before merge." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 272 ;
+      oa:end   490
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "1. Baseline first: Show before vs new (the PR state) as a single comparison. No shifts yet. Let the reviewer see what changed.\n2. Then offer shifts as pairs: Each shift is the new version alongside a shifted version. Not three at once." ;
+      oa:prefix "The correct flow:\n\n" ;
+      oa:suffix "\n\nScarlet's words:"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  narr:Observation_TXScaleFlow a narr:Observation ;
+    skos:broader narr:IntakePrioritization ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    skos:note    "Four-step scale management for large TXs: summary, zone ID, targeted shifts, fact review." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1680 ;
+      oa:end   1990
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "1. TX summary at full scale — show what the PR changes about what the org believes, once, for the whole TX\n2. Zone identification — cluster changes into domains, reviewer picks which 2-3 to exercise\n3. 2-4 targeted shifts within chosen zones" ;
+      oa:prefix "The process must handle this without requiring exhaustive review of every change:\n\n" ;
+      oa:suffix " — based on where introspect finds"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  # ── STYLE OBSERVATIONS ─────────────────────────────────────────
+  narr:StyleObs_VerbatimAttribution a narr:StyleObservation ;
+    skos:broader narr:CitationConventions ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    skos:related narr:Quotes ;
+    rdf:value    true ;
+    skos:note    "Repeated pattern: 'Scarlet's words:' followed by block quote. Establishes authority through direct attribution." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 491 ;
+      oa:end   720
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "Scarlet's words: \"instead of giving me three lens at a time, we need to establish the baseline first with a single comparison of before against what's current being called centrist" ;
+      oa:prefix "Not three at once.\n\n" ;
+      oa:suffix " (which is just the state of the PR)."
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  narr:StyleObs_ImperativeNumberedList a narr:StyleObservation ;
+    skos:broader narr:GrammarSyntax ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    skos:related narr:CoreWorkflows ;
+    rdf:value    true ;
+    skos:note    "Imperative mood in numbered lists drives procedural clarity. Verbs: 'Show', 'Let', 'offer', 'Scope', 'Check', 'draft', 'negotiate'." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 272 ;
+      oa:end   370
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "Baseline first: Show before vs new (the PR state) as a single comparison. No shifts yet. Let the reviewer see what changed." ;
+      oa:prefix "The correct flow:\n\n1. " ;
+      oa:suffix "\n2. Then offer shifts"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  narr:StyleObs_ShortPunchyDeclaratives a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    skos:related narr:CadenceRhythm ;
+    rdf:value    true ;
+    skos:note    "Staccato declaratives used to enforce rules: 'No shifts yet.' 'Not three at once.' 'Merge means no corrections to add.' Avg ~5 words." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 330 ;
+      oa:end   380
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "No shifts yet." ;
+      oa:prefix "as a single comparison. " ;
+      oa:suffix " Let the reviewer see"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  narr:StyleObs_EmDashDefinition a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    skos:related narr:CoreWorkflows ;
+    rdf:value    true ;
+    skos:note    "Em-dash used consistently to append clarifying definitions inline: 'TX summary at full scale — show what the PR changes...'" ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1680 ;
+      oa:end   1760
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "TX summary at full scale — show what the PR changes about what the org believes, once, for the whole TX" ;
+      oa:prefix "1. " ;
+      oa:suffix "\n2. Zone identification"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  narr:StyleObs_DomainJargon a narr:StyleObservation ;
+    skos:broader narr:JargonPolicy ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    skos:related narr:TerminologyControl ;
+    rdf:value    true ;
+    skos:note    "Controlled jargon: 'TX' (transaction), 'PR' (pull request), 'zone', 'lens', 'centrist', 'introspect'. Used without definition — assumes insider audience." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 1570 ;
+      oa:end   1640
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "A TX might touch many concepts across multiple domains." ;
+      oa:prefix "## Correction 4: Managing Scale for Large TXs\n\n" ;
+      oa:suffix " The process must handle this"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  narr:StyleObs_Antithesis a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    skos:related narr:RhetoricalDevices ;
+    rdf:value    true ;
+    skos:note    "Contrast pairs used to define process semantics: 'Save memory = corrections / Merge = no corrections'. Binary framing clarifies decision points." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 3490 ;
+      oa:end   3620
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "Save memory = \"I have corrections\" → ends the round, PR updates with new extraction\n- Merge = \"No corrections needed\" → close it out" ;
+      oa:prefix "The flow:\n- " ;
+      oa:suffix "\n\nThis means a review"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+  narr:StyleObs_NegotiationLanguage a narr:StyleObservation ;
+    skos:broader narr:ToneDirectPersonal ;
+    dct:source   narr:Sample_ReviewProcessDesign ;
+    skos:related narr:RegisterFormality ;
+    rdf:value    true ;
+    skos:note    "Collaborative negotiation framed as quoted dialogue: 'this covers more than the TX touches, want to narrow?' Softens directives with user agency." ;
+    oa:hasSelector [
+      a oa:TextPositionSelector ;
+      oa:start 2490 ;
+      oa:end   2600
+    ] ;
+    oa:hasSelector [
+      a oa:TextQuoteSelector ;
+      oa:exact  "\"this covers more than the TX touches, want to narrow?\" or \"this is too specific, want me to draft broader?\"" ;
+      oa:prefix "negotiate — " ;
+      oa:suffix "\n\nThe user can still bring"
+    ] ;
+    prov:wasGeneratedBy narr:Tx_20260310T234028Z .
+
+} ;
+
+# ════════════════════════════════════════════════════════════════════
+# OPERATION 2 — UPDATE narr:Actor_Scarlet (updated_triples)
+# Adds new skos:note and dct:source from PR #98 reviewer context.
+# Uses INSERT (not DELETE/INSERT) because skos:note is multi-valued
+# and the new dct:source is additive — no prior value is replaced.
+# ════════════════════════════════════════════════════════════════════
+INSERT DATA {
+}

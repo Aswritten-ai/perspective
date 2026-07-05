@@ -1,0 +1,135 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250714T150000Z a prov:Activity ;
+    prov:generatedAtTime "2025-07-14T15:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-30-tool-naming-perspective-cite-review.md" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_ToolNaming_20260330, narr:Narrative_ToolNamesLeakImplementation, narr:Narrative_UserFacingVsInternalLanguageSplit, narr:Claim_PerspectiveAsCorePrimitive, narr:Claim_AnnotateVsCite, narr:Claim_StartReviewVsReview, narr:Claim_FullToolSurfaceHumanWords, narr:Claim_GitHubAbstractionComplete, narr:Claim_InternalCompileTermCorrect, narr:Claim_PerspectiveVerbConcernResolved, narr:StyleMetrics_ToolNaming_20260330 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20250714T150000Z {
+    narr:Sample_ToolNaming_20260330 a narr:Sample ;
+      dct:title "Tool Naming: perspective, cite, review — User-Facing vs Internal Language" ;
+      dct:created "2026-03-30"^^xsd:date ;
+      narr:inputLength 4021 .
+
+    narr:Narrative_ToolNamesLeakImplementation a narr:Narrative ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      narr:theme "Tool names that use engineering metaphors leak implementation details into the user-facing product" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "The core realization from the 2026-03-30 design conversation: 'compile' is an engineering metaphor that doesn't belong in the user-facing product. This extends to 'annotate' (system action) and 'start_review' (unnecessary prefix). The abstraction is complete only when the language doesn't leak implementation." .
+
+    narr:Narrative_UserFacingVsInternalLanguageSplit a narr:Narrative ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      narr:theme "User-facing tool names and internal system terms are intentionally different layers with a proxy mapping between them" ;
+      skos:broader narr:StrategyOverview ;
+      skos:note "User calls 'perspective' → proxy routes to the compile workflow. Same pattern as 'remember' (user-facing) mapping to 'extract triples and commit to repo' (internal). The engineering metaphor is correct for the engineering layer; the human word is correct for the user layer." .
+
+    narr:Claim_PerspectiveAsCorePrimitive a narr:Claim ;
+      narr:aboutNode narr:Narrative_ToolNamesLeakImplementation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "'perspective' is the chosen tool name replacing 'compile'. The tool name IS the product's core primitive. You don't 'do something to' a perspective — you're in one. Decision reached after brainstorming 17+ candidate words." .
+
+    narr:Claim_AnnotateVsCite a narr:Claim ;
+      narr:aboutNode narr:Narrative_ToolNamesLeakImplementation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "'annotate' renamed to 'cite'. 'Annotate' is a system action; 'cite' is what the user wants: verify where claims come from. Matches the product doc's behavior table." .
+
+    narr:Claim_StartReviewVsReview a narr:Claim ;
+      narr:aboutNode narr:Narrative_ToolNamesLeakImplementation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "'start_review' renamed to 'review'. Drop the start_ prefix. You review knowledge, you don't 'start a review.' list_open_reviews folds into no-arg review." .
+
+    narr:Claim_FullToolSurfaceHumanWords a narr:Claim ;
+      narr:aboutNode narr:Narrative_UserFacingVsInternalLanguageSplit ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "Full tool surface: perspective, cite, remember, forget, review, introspect, share. Every tool name is a word a non-technical person would use in conversation." .
+
+    narr:Claim_GitHubAbstractionComplete a narr:Claim ;
+      narr:aboutNode narr:Narrative_UserFacingVsInternalLanguageSplit ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "The tool naming IS the GitHub abstraction completing. Free/Expert users don't see 'compile from repo' or 'load from share bundle.' They see 'perspective'. The abstraction is complete when the language doesn't leak implementation." .
+
+    narr:Claim_InternalCompileTermCorrect a narr:Claim ;
+      narr:aboutNode narr:Narrative_UserFacingVsInternalLanguageSplit ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "On the code side, 'compile' is retained. The n8n workflow literally compiles memories + transactions into a worldview snapshot. The engineering metaphor is correct for the engineering layer." .
+
+    narr:Claim_PerspectiveVerbConcernResolved a narr:Claim ;
+      narr:aboutNode narr:Claim_PerspectiveAsCorePrimitive ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Claim_PerspectiveAsCorePrimitive ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "The concern that 'perspective' is not a verb ('you can't perspective the perspective') was raised and resolved: nobody says 'perspective the perspective' — they say 'perspective a beta user from outside tech-bluebird' or the AI says 'working from a beta user from outside tech's perspective.'" .
+
+    narr:Obs_CoreFrustrationCompile a narr:Observation ;
+      skos:broader narr:DesignTradeoffs ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "Scarlet's opening statement identifying the core problem with 'compile' as a tool name." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 450 ; oa:end 530 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Scarlet started with the core frustration: \"compile\" is wrong — it's the wrong metaphorical domain." ] .
+
+    narr:Obs_KeyConstraintPerspective a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "Scarlet's key constraint that drove selection of 'perspective': the AI becomes the perspective, not just consults it." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 680 ; oa:end 830 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "We want to make it clear that the AI is working within and almost becomes the perspective, not just consults or references an outside source." ] .
+
+    narr:Obs_ToolNameConversationalWord a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "Scarlet demonstrating how 'perspective' becomes a natural conversational word, and 'aswritten' lands as provenance marker." ;
+      oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1000 ; oa:end 1150 ] ;
+      oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "So then 'what perspective are we using?', 'a beta user from outside tech's training perspective, aswritten.' — The tool name becomes a conversational word." ] .
+
+    narr:StyleObs_ToneDirect a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_ToolNaming_20260330 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 450 ; oa:end 530 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Scarlet started with the core frustration: \"compile\" is wrong" ] ] .
+
+    narr:StyleObs_JargonSplit a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "Intentional split between user-facing human words and internal engineering metaphors." ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_ToolNaming_20260330 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1800 ; oa:end 1950 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "User-facing (tool name, docs, prompts) | perspective | It's what you're doing" ] ] .
+
+    narr:StyleObs_VerbDecision a narr:StyleObservation ;
+      skos:broader narr:VerbChoice ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      skos:note "Decision to prioritize noun-based primitive over verb-based action." ;
+      oa:hasTarget [ a oa:SpecificResource ; oa:hasSource narr:Sample_ToolNaming_20260330 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1180 ; oa:end 1280 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The issue with perspective is it's not a verb. You can't perspective the perspective." ] ] .
+
+    narr:StyleMetrics_ToolNaming_20260330 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_ToolNaming_20260330 ;
+      narr:AverageSentenceLength 14 ;
+      narr:ActiveVoiceRatio 0.82 ;
+      narr:JargonDensity 0.18 ;
+      skos:note "Register: semi-formal design notes with direct dialogue. Voice is predominantly active and first-person attributed. Jargon is product-specific (compile, perspective, n8n, MCP, proxy) but intentionally contrasted with plain-language alternatives throughout." .
+  }
+}

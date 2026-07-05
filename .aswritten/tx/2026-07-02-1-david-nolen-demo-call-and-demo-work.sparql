@@ -1,0 +1,296 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────
+INSERT DATA {
+  narr:Tx_20260702T122943Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T12:29:43Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-02-1-david-nolen-demo-call-and-demo-work" ;
+    narr:originRef "dev" ;
+    dct:title "David Nolen Demo Call — Value Landing, Audience Question, Demo Work" ;
+    prov:generated
+      narr:Sample_DavidNolenDemoCall_20260625,
+      narr:Narrative_ShowVsDemoProof,
+      narr:Narrative_MoneyAnswerDecisionArchaeology,
+      narr:Narrative_SelfServeDemoOnOwnPerspective,
+      narr:Claim_FeltVsShownOwnDataIsDeepener,
+      narr:Claim_DeveloperBlindersAudienceQuestion,
+      narr:Obs_DavidProvenanceQuote,
+      narr:Obs_DavidArchaeologyQuote,
+      narr:Obs_DavidKnowsWhatItDoesntKnowQuote,
+      narr:Obs_DavidConvictionQuote,
+      narr:Obs_DavidMicroservicesBlindersQuote,
+      narr:Obs_ScarletFeltVsShownQuote,
+      narr:Obs_ScarletNarrowingTemptationQuote,
+      narr:StyleObs_DavidNolenVerbatimBlockquotes,
+      narr:StyleObs_ScarletCorrectionCadence,
+      narr:StyleObs_BoldedSectionHeaders,
+      narr:StyleMetrics_DavidNolenDemoCall .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T122943Z {
+
+    # ── Sample ──────────────────────────────────────────────────
+    narr:Sample_DavidNolenDemoCall_20260625 a narr:Sample ;
+      dct:title "David Nolen Demo Call — What Landed, the Audience Question, and the Demo Work It Forced" ;
+      dct:created "2026-06-25"^^xsd:date ;
+      narr:inputLength 8354 ;
+      dct:description "~45-min video call with David Nolen (Clojure/ClojureScript core, ex-DRW). Scarlet's first live demo of the current product. Covers value moments, rough moments, the developer-blinders audience question, and post-call demo design lessons." .
+
+    # ── Narrative: Show vs. Try — value proven by showing, not by trying ──
+    narr:Narrative_ShowVsDemoProof a narr:Narrative ;
+      skos:broader narr:FrictionFailure ;
+      narr:theme "Value is proven by showing clearly; their-own-data is the conversion deepener, not the proof" ;
+      skos:note "The transcript inverts the 'you have to try it' hedge: David understood provenance, dates, citations, archaeology, and knows-what-it-doesn't-know from being shown — not from trying. The rough parts obscured value that is fully showable. Correction: the felt/shown crux is not a structural truth about needing one's own data to see value; it is a stale-demo hedge. Their-own-data deepens conversion after value has already landed." ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:related narr:Narrative_TwoPurchaseTriggers, narr:Claim_UnderstandingNeverSells .
+
+    # ── Narrative: The money answer — decision-archaeology form ──
+    narr:Narrative_MoneyAnswerDecisionArchaeology a narr:Narrative ;
+      skos:broader narr:Differentiators ;
+      narr:theme "The money answer is a real concrete question whose answer comes back grounded in dated cited conversational provenance — strongest form is the decision-archaeology answer" ;
+      skos:note "Strongest single demo form: the decision-archaeology answer ('how did we get to X, and why?') → a dated trail with citations you click open. Anti-pattern (learned from the slop): never demo the product explaining its own mechanism (e.g., 'how does aswritten do compression' → abstraction); demo it doing the user's work on real content." ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:related narr:Narrative_ProvenanceCitationMoment, narr:Narrative_CitationEngineNotSynthesis .
+
+    # ── Narrative: Self-serve demo on aswritten's own perspective ──
+    narr:Narrative_SelfServeDemoOnOwnPerspective a narr:Narrative ;
+      skos:broader narr:SolutionArchetypes ;
+      narr:theme "The self-serve demo should run on aswritten's own perspective from a trial session: solves cold-start, is self-demonstrating, and the honesty beats are the least-fakeable material" ;
+      skos:note "Running the self-serve demo on aswritten's own perspective (from a trial session the same day) solves cold-start with the richest real perspective that exists, is self-demonstrating, and the honesty beats — the product flagging its own uncommitted areas and its own data anomalies — are the least-fakeable, most credible material. Lead with the honesty, not the positive answer. Lands on task-276.01 (self-serve web try / digest browser) as the demo design." ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:related  narr:Narrative_DigestBrowserProductSurface .
+
+    # ── Claim: Felt-vs-shown — own data is deepener, not proof ──
+    narr:Claim_FeltVsShownOwnDataIsDeepener a narr:Claim ;
+      narr:aboutNode narr:Narrative_ShowVsDemoProof ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_ShowVsDemoProof ;
+      skos:note "Their-own-data is the conversion deepener, not the proof. The proof is a clear show. The rough parts in the David Nolen demo obscured value that is fully showable — the fix list is the bugs between David and the value he already saw." ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 .
+
+    # ── Claim: Developer blinders — audience question ──
+    narr:Claim_DeveloperBlindersAudienceQuestion a narr:Claim ;
+      narr:aboutNode narr:Narrative_TierContinuumNotDistinctMarkets ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      skos:note "David's microservices/blinders point is real: for siloed dev teams, cross-org context is a non-feature. What landed regardless of role: provenance / anti-hallucination / 'how did we get here.' Lead every surface with the role-agnostic hook and let people self-select the frame. The resonant dev frame is 'developers like me — involved in product / running an org,' and that team shape is increasingly common. Resist over-narrowing to 'cross-repo memory for dev teams' before deciding. This is the B2C↔org continuum live." ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 .
+
+    # ── Observations (verbatim quotes) ──────────────────────────
+
+    narr:Obs_DavidProvenanceQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:note "David Nolen's reaction to the provenance/citation feature — the primary value-landing moment." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 556 ; oa:end 693
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "that part is really cool, the provenance stuff. So like, you know, getting back answers which are like, you know, grounded in some truth." ;
+          oa:prefix "> " ;
+          oa:suffix "\n\n> the fact"
+        ]
+      ] .
+
+    narr:Obs_DavidArchaeologyQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:note "David Nolen's articulation of the decision-archaeology use case — the founding evidence for Narrative_MoneyAnswerDecisionArchaeology." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1019 ; oa:end 1191
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "show me how it was originally done and show me all the conversations that led to this moment where it was decided that this feature needed to be implemented in this new way" ;
+          oa:prefix "would I be able to ask like... " ;
+          oa:suffix " with a different set of trade offs"
+        ]
+      ] .
+
+    narr:Obs_DavidKnowsWhatItDoesntKnowQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:note "David Nolen on the knows-what-it-doesn't-know feature — anti-hallucination value landing." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1558 ; oa:end 1709
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "that fixes one huge problem with LLMs, which is that, like, once you're in unknown territory, just makes up stuff. Right. It makes up plausible things." ;
+          oa:prefix "[on knows-what-it-doesn't-know] " ;
+          oa:suffix " It doesn't stop"
+        ]
+      ] .
+
+    narr:Obs_DavidConvictionQuote a narr:Observation ;
+      skos:broader narr:Conviction ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:note "David Nolen asked for conviction unprompted — the founding evidence that the conviction/temporality distinction resonates with technical users." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1828 ; oa:end 1989
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "is there any distinction between sort of like, facts, which are like, in flux because of just their novelty... versus facts, which are like, more deeply embedded" ;
+          oa:prefix "[conviction — David asked for it unprompted] " ;
+          oa:suffix " just from like, you know, the passage of time?"
+        ]
+      ] .
+
+    narr:Obs_DavidMicroservicesBlindersQuote a narr:Observation ;
+      skos:broader narr:Segmentation ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:note "David Nolen's microservices/blinders argument — the audience question pushed three times; founding evidence for Claim_DeveloperBlindersAudienceQuestion." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2547 ; oa:end 2726
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the issue with software developers and this, something like this is that like I do see this as being useful but often like developers, people put blinders on developers on purpose" ;
+          oa:prefix "my issue is that, you know, " ;
+          oa:suffix ". Right. This is the whole point of microservices"
+        ]
+      ] .
+
+    narr:Obs_ScarletFeltVsShownQuote a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:note "Scarlet's articulation of the felt-vs-shown crux — founding evidence for Claim_FeltVsShownOwnDataIsDeepener." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3202 ; oa:end 3402
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "it's hard to have the moment with it that isn't your stuff... until it cites you in a way that's meaningful and then until it tells you know, that it's missing something in a way that is actually true" ;
+          oa:prefix "> " ;
+          oa:suffix ", it's kind of, I don't know, it's kind of all theoretical."
+        ]
+      ] .
+
+    narr:Obs_ScarletNarrowingTemptationQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      skos:note "Scarlet's articulation of the narrowing temptation — the over-narrow pitch she resists." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3730 ; oa:end 3881
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I would probably have an easier time selling if I narrowed my use case like substantially... this is a tool for cross repo memory for development teams" ;
+          oa:prefix "> " ;
+          oa:suffix " so that they can encode their engineering governance process"
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────
+
+    narr:StyleObs_DavidNolenVerbatimBlockquotes a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      rdf:value true ;
+      skos:note "Heavy use of verbatim blockquotes from David Nolen and Scarlet, attributed by speaker. Carries evidentiary weight; consistent with the direct-quote style across the Quotes hub." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 556 ; oa:end 603
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "that part is really cool, the provenance stuff." ;
+          oa:prefix "> " ;
+          oa:suffix " So like, you know, getting back answers"
+        ]
+      ] .
+
+    narr:StyleObs_ScarletCorrectionCadence a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      rdf:value true ;
+      skos:note "Commentary sections use a 'central lesson, then its correction' structure — antithesis-driven prose that names the wrong framing before asserting the right one. Characteristic of Scarlet's session-memo idiolect." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4498 ; oa:end 4538
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The central lesson, then its correction." ;
+          oa:prefix "**" ;
+          oa:suffix " In the moment Scarlet said"
+        ]
+      ] .
+
+    narr:StyleObs_BoldedSectionHeaders a narr:StyleObservation ;
+      skos:broader narr:AICompanyizationCase ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      rdf:value true ;
+      skos:note "Commentary sections use bolded noun-phrase headers ('The money answer', 'The audience question is the live positioning tension') — a structural device that signals the key lesson before the supporting prose. Consistent with Scarlet's editorial register." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DavidNolenDemoCall_20260625 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5082 ; oa:end 5098
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The money answer" ;
+          oa:prefix "**" ;
+          oa:suffix " = a real, concrete question"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────
+
+    narr:StyleMetrics_DavidNolenDemoCall a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_DavidNolenDemoCall_20260625 ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.78"^^xsd:decimal ;
+      narr:JargonDensity "0.14"^^xsd:decimal ;
+      skos:note "Call-notes format with heavy embedded verbatim blockquotes. Editorial prose is analytical and declarative (~22 words avg sentence); David's quoted speech is expansive and exploratory (~30 words avg). Active voice dominant in editorial sections. Jargon density low-moderate — product terms (provenance, conviction, archaeology query, self-serve, perspective) used without definition, implying internal audience. Antithesis-heavy structure (felt vs. shown, pre-bake vs. perform, show vs. try). Short punchy declaratives at conviction peaks ('The money answer = ...'). Consistent with Scarlet session-memo idiolect." .
+
+  }
+}

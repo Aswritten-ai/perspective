@@ -1,0 +1,346 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology#>
+
+# Transaction-level provenance
+narr:Tx_20260209T170413Z a prov:Activity ;
+  prov:wasAssociatedWith <https://aswritten.ai/agent/rdf-transactionizer-xkos/1.0> ;
+  prov:wasAttributedTo "n8n.aswritten.ai" ;
+  prov:generatedAtTime "2026-02-09T17:04:13.309Z"^^xsd:dateTime ;
+  sb:originPath ".aswritten/memories/2026-02-09-scarlet-founding-story-career-arc.md" ;
+  sb:originRef "refs/heads/main" ;
+  prov:generated narr:Sample_ScarletDame_FoundingStory,
+                 narr:Narrative_SteeringVector,
+                 narr:Narrative_CareerArc,
+                 narr:Observation_FlockingInsight,
+                 narr:Observation_LLMContinuation,
+                 narr:Observation_VouchSSoT,
+                 narr:Observation_ElephantCollective,
+                 narr:StyleObs_SteeringVector,
+                 narr:StyleObs_BrandName,
+                 narr:StyleObs_DirectAddress,
+                 narr:StyleObs_ShortPunchy,
+                 narr:StyleObs_RuleOfThree,
+                 narr:StyleObs_ActiveVoice,
+                 narr:StyleObs_CaretBracket,
+                 narr:Rubric_Register_ScarletDame,
+                 narr:Rubric_Phrasing_ScarletDame,
+                 narr:Rubric_Cadence_ScarletDame,
+                 narr:Rubric_StrategicAlignment_ScarletDame,
+                 narr:Rubric_Tailoring_ScarletDame,
+                 narr:Rubric_Resonance_ScarletDame,
+                 narr:Rubric_Flow_ScarletDame,
+                 narr:Rubric_Novelty_ScarletDame,
+                 narr:Rubric_Accuracy_ScarletDame,
+                 narr:StyleMetrics_ScarletDame,
+                 narr:Claim_SteeringVectorThesis,
+                 narr:ConvictionAggregate_SteeringVector .
+
+INSERT DATA {
+  narr:Sample_ScarletDame_FoundingStory a narr:Sample ;
+    dct:title "Scarlet Dame — Founding Story & Career Arc" ;
+    narr:inputLength 5847 ;
+    dct:created "2026-02-08"^^xsd:date ;
+    skos:note "Voice memos synthesized during YC application session" ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Narrative_SteeringVector a narr:Narrative ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    narr:theme "Narrative as steering vector for generative systems" ;
+    skos:definition "Local actor incentives create emergent behavior in larger networks. Language, narrative, and meaning operate as steering vectors analogous to velocity/acceleration in particle systems." ;
+    skos:broader narr:TechnologiesSocialSystems ;
+    skos:related narr:Mission, narr:Vision ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Narrative_CareerArc a narr:Narrative ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    narr:theme "Career progression from physics to NLP to organizational memory" ;
+    skos:definition "Traced from particle physics (NYU ITP) through NLP (a collaborator), mass coordination (Elephant Collective), LLM theory (Clojure talk), to organizational memory (Vouch, aswritten.ai)." ;
+    skos:broader narr:StrategyOverview ;
+    skos:related narr:PositioningThesis ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Observation_FlockingInsight a narr:Observation, oa:Annotation ;
+    skos:broader narr:TechnologiesSocialSystems ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ScarletDame_FoundingStory ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 543 ;
+        oa:end 743
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The incentives around the behavior of what seem like small actors within larger systems drive emergent behavior in larger networks in a way that creates incredibly complex, powerful and beautiful interactions." ;
+        oa:prefix "Scarlet's words: " ;
+        oa:suffix " ### Void LLC"
+      ]
+    ] ;
+    oa:hasBody narr:ActorIncentiveAnalysis ;
+    skos:note "Foundational insight from NYU ITP flocking simulations" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Observation_LLMContinuation a narr:Observation ;
+    skos:broader narr:TechnologiesSocialSystems ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    skos:note "LLMs are continuation machines, not thinking machines. They follow narrative vectors embedded in training data." ;
+    skos:related narr:StackOverview ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Observation_VouchSSoT a narr:Observation ;
+    skos:broader narr:NarrativeAnchor ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    skos:note "Created 'narrative source of truth' manually at Vouch — seeding AI conversations with organizational context and sanctioned narrative statements as steering vectors." ;
+    skos:related narr:KeyPhrases, narr:WhatDoesItDo ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Observation_ElephantCollective a narr:Observation ;
+    skos:broader narr:Proof ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    skos:note "Bootstrapped from [amount]to [amount]/event in 6 months. ~20 artists-in-residence, 1,000–2,000 person events, 100–200 volunteer crew recruited via mass SMS." ;
+    skos:related narr:CaseStudies, narr:OutcomesProof ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:StyleObs_SteeringVector a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ScarletDame_FoundingStory ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 0 ;
+        oa:end 85
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Narrative as steering vector for generative systems" ;
+        oa:prefix "## Throughline " ;
+        oa:suffix " — traced from particle physics"
+      ]
+    ] ;
+    oa:hasBody narr:Metaphor ;
+    skos:related narr:Tagline, narr:KeyPhrases ;
+    skos:note "Core metaphor: narrative = steering vector" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:StyleObs_BrandName a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ScarletDame_FoundingStory ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5485 ;
+        oa:end 5498
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten.ai" ;
+        oa:prefix "### " ;
+        oa:suffix " (Aug 2025–present"
+      ]
+    ] ;
+    oa:hasBody narr:BrandNameStylization ;
+    skos:note "Lowercase brand stylization with .ai TLD" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:StyleObs_DirectAddress a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:SecondPerson ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ScarletDame_FoundingStory ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6090 ;
+        oa:end 6120
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Do NOT list as a client." ;
+        oa:prefix "was never placed on contracts. " ;
+        oa:suffix " Clojure community ties"
+      ]
+    ] ;
+    oa:hasBody narr:SecondPerson ;
+    skos:note "Imperative mood, direct instruction" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:StyleObs_ShortPunchy a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ScarletDame_FoundingStory ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5485 ;
+        oa:end 5650
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Automation of the Vouch process. Ingestion pipeline → extract narrative → version in git → compile as worldview layer for any AI agent." ;
+        oa:prefix "aswritten.ai (Aug 2025–present, Founder & CEO) " ;
+        oa:suffix " Single source, context-agnostic."
+      ]
+    ] ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    skos:note "Arrow notation, telegraphic style, process flow" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:StyleObs_RuleOfThree a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ScarletDame_FoundingStory ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4640 ;
+        oa:end 4705
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "rebuilt life, health, identity, and energy" ;
+        oa:prefix "The five-year wait — " ;
+        oa:suffix " to have foundations"
+      ]
+    ] ;
+    oa:hasBody narr:RuleOfThree ;
+    skos:note "Triadic list (life, health, identity) + fourth element for emphasis" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:StyleObs_ActiveVoice a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_ScarletDame_FoundingStory ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3390 ;
+        oa:end 3480
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Helped architect narrative ingestion pipeline + classification system for Gates Foundation" ;
+        oa:prefix "Harmony Labs). " ;
+        oa:suffix " (narratives around poverty)."
+      ]
+    ] ;
+    oa:hasBody narr:VoiceActive ;
+    skos:note "Active construction: subject performs action" ;
+    rdf:value true ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:StyleObs_CaretBracket a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:CaretBracketMarker ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    skos:note "No caret-bracket citation markers present in this sample" ;
+    rdf:value false ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Rubric_Register_ScarletDame a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    rdf:value 4.5 ;
+    skos:note "Professional, direct, conversational. Mix of imperative ('Do NOT list') and declarative. Active voice dominant. Appropriate for internal strategic memo." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Rubric_Phrasing_ScarletDame a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    rdf:value 4.0 ;
+    skos:note "Domain-specific phrasing ('steering vector', 'narrative source of truth', 'continuation machines'). Consistent terminology. Arrow notation for process flows." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Rubric_Cadence_ScarletDame a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    rdf:value 4.5 ;
+    skos:note "Short, punchy sentences. Telegraphic style in places ('Bootstrapped from [amount]to [amount]/event in 6 months'). Effective use of em-dashes and arrows. Strong rhythm variation." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Rubric_StrategicAlignment_ScarletDame a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    rdf:value 5.0 ;
+    skos:note "Entire document is strategic alignment artifact. Traces core thesis ('narrative as steering vector') through career arc to current product. Explicit YC application framing. Perfect alignment." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Rubric_Tailoring_ScarletDame a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    rdf:value 4.5 ;
+    skos:note "Tailored for YC application context. Explicit decisions about what to include/exclude. Addresses YC-specific questions (system hack, most impressive thing). Audience-aware." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Rubric_Resonance_ScarletDame a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    rdf:value 4.0 ;
+    skos:note "Strong central metaphor (steering vector). Concrete examples (Elephant Collective, Vouch SSoT). Personal story (five-year wait) adds human resonance. Could use more analogies." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Rubric_Flow_ScarletDame a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    rdf:value 4.5 ;
+    skos:note "Chronological career arc structure. Clear section headers. Natural transitions between roles. 'Pending Questions' section signals incompleteness transparently. Minimal formulaicness." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Rubric_Novelty_ScarletDame a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    rdf:value 4.0 ;
+    skos:note "Fresh phrasing ('continuation machines', 'narrative source of truth'). Avoids startup clichés. Arrow notation distinctive. Some standard bio language but overall original." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Rubric_Accuracy_ScarletDame a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    rdf:value 4.5 ;
+    skos:note "Specific dates, numbers, names. Explicit corrections ('Do NOT list Cognitect'). Transparent about uncertainties ('Pending Questions'). Attribution clear ('Scarlet's words'). High factual rigor." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:StyleMetrics_ScarletDame a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_ScarletDame_FoundingStory ;
+    narr:AverageSentenceLength 18.5 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:TypeTokenRatio 0.62 ;
+    skos:note "Estimated metrics: short average sentence length, high active voice ratio, high lexical diversity." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:Claim_SteeringVectorThesis a narr:Claim ;
+    narr:aboutNode narr:Narrative_SteeringVector ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:supports narr:Mission, narr:Vision ;
+    narr:evidencedBy narr:Observation_FlockingInsight, narr:Observation_LLMContinuation, narr:Observation_VouchSSoT ;
+    prov:wasAttributedTo "Scarlet Dame" ;
+    skos:note "Core thesis traced through entire career arc. Foundational to aswritten.ai positioning." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+
+  narr:ConvictionAggregate_SteeringVector a narr:ConvictionAggregate ;
+    narr:individuationCount 3 ;
+    narr:convictionScore 0.95 ;
+    narr:distanceToNarrative 0 ;
+    narr:computedAt "2026-02-08T00:00:00Z"^^xsd:dateTime ;
+    skos:note "High conviction: multiple independent observations across 15+ year career arc." ;
+    prov:wasGeneratedBy narr:Tx_20260209T170413Z .
+}

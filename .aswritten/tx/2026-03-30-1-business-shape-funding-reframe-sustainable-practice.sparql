@@ -1,0 +1,104 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260330T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-30T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-30-business-shape-funding-reframe.md" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_BusinessShape_20260330, narr:Narrative_InterviewIsTheBusiness, narr:Claim_NoCoFounderNeeded, narr:Claim_AdvisorAsHighCadenceExpert, narr:Claim_TeamAsPerspectives, narr:StyleObs_BusinessShape_1, narr:StyleObs_BusinessShape_2, narr:StyleObs_BusinessShape_3, narr:Metrics_BusinessShape_20260330 .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260330T120000Z {
+    narr:Sample_BusinessShape_20260330 a narr:Sample ;
+      dct:title "Business Shape, Funding Reframe, and the Practice Model" ;
+      dct:created "2026-03-30"^^xsd:date ;
+      narr:inputLength 6500 .
+
+    narr:Narrative_InterviewIsTheBusiness a narr:Narrative ;
+      dct:source narr:Sample_BusinessShape_20260330 ;
+      narr:theme "The Interview IS the Business" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "Inversion of prior thinking: interviews are the manufacturing process and product creation; product development is the support function." .
+
+    narr:Claim_NoCoFounderNeeded a narr:Claim ;
+      narr:aboutNode narr:RoleTopology ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_BusinessShape_20260330 ;
+      skos:note "Scarlet decided she does not need a co-founder, but rather a constellation of trusted partners and advisors." .
+
+    narr:Claim_AdvisorAsHighCadenceExpert a narr:Claim ;
+      narr:aboutNode narr:ValueExchange ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_BusinessShape_20260330 ;
+      skos:note "Advisors are experts maintained on an ongoing cadence for free in exchange for their contribution to organizational perspective." .
+
+    narr:Claim_TeamAsPerspectives a narr:Claim ;
+      narr:aboutNode narr:RoleTopology ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_BusinessShape_20260330 ;
+      skos:note "Roles are represented by aswritten perspectives contributed to by humans on cadence, rather than traditional full-time hires." .
+
+    narr:StyleObs_BusinessShape_1 a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_BusinessShape_20260330 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BusinessShape_20260330 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1540 ; oa:end 1620 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "explicitly rejected the false dichotomy between \"lifestyle business\" and \"real company.\"" ]
+      ] .
+
+    narr:StyleObs_BusinessShape_2 a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_BusinessShape_20260330 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BusinessShape_20260330 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 2250 ; oa:end 2300 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The consulting is the manufacturing process." ]
+      ] .
+
+    narr:StyleObs_BusinessShape_3 a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_BusinessShape_20260330 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_BusinessShape_20260330 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 650 ; oa:end 720 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Scarlet decided she does not need a co-founder." ]
+      ] .
+
+    narr:Metrics_BusinessShape_20260330 a narr:StyleMetrics ;
+      dct:source narr:Sample_BusinessShape_20260330 ;
+      skos:broader narr:StyleMetrics ;
+      narr:AverageSentenceLength 16 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.10 .
+  }
+} ;
+
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_April1SoftLaunch narr:theme ?oldTheme .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260330T120000Z {
+    narr:Narrative_April1SoftLaunch narr:theme "April 9 Launch: Build the Practice and Proof of Engine" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_April1SoftLaunch narr:theme ?oldTheme .
+  }
+} 

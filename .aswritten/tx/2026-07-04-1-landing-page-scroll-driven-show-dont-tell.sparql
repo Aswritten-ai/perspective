@@ -1,0 +1,146 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  narr:Tx_20260704T225048Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-04T22:50:48Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-07-04-1-landing-page-scroll-driven-show-dont-tell.md" ;
+    narr:originRef "dev" ;
+    dct:title "Landing Page as Scroll-Driven Experience: Show Don't Tell" ;
+    prov:generated
+      narr:Sample_LandingPageScrollDriven_20260704,
+      narr:Narrative_ScrollDrivenLandingPage,
+      narr:Narrative_LandingPageEpistemicArchitecture,
+      narr:Claim_LandingPageShowDontTell_Scarlet,
+      narr:Claim_ScrollDrivenAnimationMechanism,
+      narr:Claim_PersonasNotSeparateScenarios,
+      narr:Claim_LandingPageContentCommentaryIA,
+      narr:Obs_ScarletShowDontTellQuote,
+      narr:Obs_ScarletScrollAnimationQuote,
+      narr:Obs_ScarletDifferentiatorDefinitionQuote,
+      narr:StyleMetrics_LandingPageScrollDriven_20260704 .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260704T225048Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────────────
+    narr:Sample_LandingPageScrollDriven_20260704 a narr:Sample ;
+      dct:title "Landing Page as Scroll-Driven Experience: Show Don't Tell" ;
+      dct:description "Scarlet solo voice memo (23 min), Saturday morning writing, 2026-07-04. Transcribed locally with whisper.cpp large-v3-turbo with per-token confidence and paralinguistic signals. First artifact of the rich-transcription format." ;
+      dct:created "2026-07-04"^^xsd:date ;
+      narr:inputLength 9597 .
+
+    narr:Narrative_LandingPageEpistemicArchitecture a narr:Narrative ;
+      dct:source narr:Sample_LandingPageScrollDriven_20260704 ;
+      narr:theme "The landing page's information architecture mirrors the product's own epistemics: primary source material plus commentary and framing" ;
+      skos:broader narr:InformationArchitecture ;
+      skos:note "Scarlet frames the landing page with the same structure as a memory itself: primary source material (what is actually happening) plus commentary and framing (briefly). The product's own epistemics become the page's IA. This is a new application of the content/commentary split principle (narr:Narrative_ContentCommentarySplit) to the marketing surface." ;
+      skos:related narr:Narrative_ContentCommentarySplit .
+
+    # ── CLAIMS ──────────────────────────────────────────────────────────────
+
+    narr:Claim_LandingPageShowDontTell_Scarlet a narr:Claim ;
+      narr:aboutNode narr:LandingPages ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ScrollDrivenLandingPage ;
+      dct:source narr:Sample_LandingPageScrollDriven_20260704 ;
+      skos:note "Scarlet's core reframe (Jul 4): the current landing page fails by mode, not by content — it explains the product instead of demonstrating it. The fix is to shift from telling to showing: primary source material plus brief commentary and framing. Stated as a settled conclusion (delivery: measured and settled, 2.0 w/s, energy below baseline, conf 0.96)." .
+
+    narr:Claim_ScrollDrivenAnimationMechanism a narr:Claim ;
+      narr:aboutNode narr:Narrative_ScrollDrivenLandingPage ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_LandingPageScrollDriven_20260704 ;
+      skos:note "The mechanism: a curated scroll-driven animation (popularised by NYT Snowfall) where scrolling drives the full pipeline visually. Beats: (1) typed user message; (2) conversations flow in as labeled boxes; (3) each conversation breaks into symbol particles that form a network; (4) network feeds AI thinking; (5) nodes descend as provenance footnotes; (6) generated response mostly transparent, a few statements at full opacity; (7) hover footnote draws provenance line into graph; (8) perspective load-and-expand shown; (9) 'something's missing' → introspect → gap shown; (10) voice memo ingestion → directional vectors → transaction enters graph; (11) GitHub branch/PR review; (12) sharing/deployment with phone agent. Idea arrived as the generative moment of the memo (delivery: 4.7 w/s, fast and fluent)." .
+
+    narr:Claim_PersonasNotSeparateScenarios a narr:Claim ;
+      narr:aboutNode narr:Narrative_ScrollDrivenLandingPage ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_LandingPageScrollDriven_20260704 ;
+      skos:note "Personas are NOT separate scenarios or a selector: 'we just want to make sure there's points in this where any of those personas can see themselves.' Each beat gets at most a couple sentences of commentary — more importantly how it's unique and different from other ways of doing this — with links out to articles that go deeper on that particular moment." .
+
+    narr:Claim_LandingPageContentCommentaryIA a narr:Claim ;
+      narr:aboutNode narr:InformationArchitecture ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_LandingPageEpistemicArchitecture ;
+      dct:source narr:Sample_LandingPageScrollDriven_20260704 ;
+      skos:note "The landing page's IA is structured as: primary source material (what is actually happening) + commentary and framing (briefly). This is the same structure as a memory itself. The product's own epistemics become the page's information architecture — a self-demonstrating design principle." .
+
+    # ── OBSERVATIONS ────────────────────────────────────────────────────────
+
+    narr:Obs_ScarletShowDontTellQuote a narr:Observation ;
+      skos:broader narr:LandingPages ;
+      dct:source narr:Sample_LandingPageScrollDriven_20260704 ;
+      skos:note "Scarlet's core reframe on the landing page failure mode — stated as a settled conclusion at 2.0 w/s, energy below baseline, conf 0.96." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_LandingPageScrollDriven_20260704 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 785 ; oa:end 886
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "all of this is really in the spirit of show don't tell — the current landing page is entirely telling" ;
+          oa:prefix "nstead of demonstrating it:\n\n> \"" ;
+          oa:suffix "... but I want to shift this to "
+        ]
+      ] .
+
+    narr:Obs_ScarletScrollAnimationQuote a narr:Observation ;
+      skos:broader narr:Narrative_ScrollDrivenLandingPage ;
+      dct:source narr:Sample_LandingPageScrollDriven_20260704 ;
+      skos:note "The generative moment of the memo — the scroll-driven animation idea arriving fast and fluent at 4.7 w/s, the idea outrunning the sentence." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_LandingPageScrollDriven_20260704 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2390 ; oa:end 2527
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "maybe the better way to show that kind of message extraction... provenance stuff, is actually with a true curated scroll-driven animation" ;
+          oa:prefix "ph the invisible machinery:\n\n> \"" ;
+          oa:suffix "... this was popularized by that"
+        ]
+      ] .
+
+    narr:Obs_ScarletDifferentiatorDefinitionQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_LandingPageScrollDriven_20260704 ;
+      skos:note "Scarlet's in-memo answer to 'how is this different from another knowledge graph?' — stated deliberately at 1.76 w/s with a long pause before 'conversational events', word-searching on the definition but content arriving intact." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_LandingPageScrollDriven_20260704 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 7188 ; oa:end 7324
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "we model conversational events and abstract the narratives about them to model not only change of ideas over time but how they were said" ;
+          oa:prefix " another knowledge graph?\":\n\n> \"" ;
+          oa:suffix ", and how that feels, how strong"
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────────────────
+
+    narr:StyleMetrics_LandingPageScrollDriven_20260704 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_LandingPageScrollDriven_20260704 ;
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.78"^^xsd:decimal ;
+      narr:JargonDensity "0.14"^^xsd:decimal ;
+      skos:note "Voice memo transcription register with structured markdown overlay. Mixed register: raw first-person exploratory speech in blockquotes (run-on, self-interrupting, clause-heavy) vs. editorial prose in section headers and analysis. Active voice dominant in editorial sections; passive and hedged constructions appear in the exploratory blockquotes. Jargon density moderate-low — product terms (MCP server, D3.js, scroll-driven animation, directional vectors, provenance) used without definition, implying internal audience. Sentence length elevated by long embedded blockquotes and multi-clause exploratory speech. Signal sidecar section is JSON-formatted technical data. Whisper correction notes at end are technical-procedural register." .
+
+  }
+}

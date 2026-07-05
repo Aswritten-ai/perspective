@@ -1,0 +1,28 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_SecondPerson> {
+  <https://aswritten.ai/narrative#Digest_SecondPerson> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#SecondPerson> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers style observations on **second-person and direct address** across aswritten's documents. The mainline is a consistent conversational [second-person register](narr:StyleObs_SecondPerson) — \"you/your\" keeping every sentence in the prospect's frame, including a possessive section header (\"Your Investment\") that hands the reader a stake. The same [you/your throughout](narr:StyleObs_DirectAddress_1) appears in guidance. Two distinct *uses* of second person sit side by side: an [emotional, confrontational register](narr:StyleObs_DirectSecondPerson) (\"You fear you're not enough\") and a [technical imperative](narr:StyleObs_ImperativeTechnical) where SQL and numbered steps assume reader competence. Imperative mood recurs — [\"Do NOT list as a client.\"](narr:StyleObs_DirectAddress) and the [\"Imagine\" prompt](narr:StyleObs_SharedMemoryQuote). Register is deliberately hybrid: one document [alternates formal structure with lowercase brain-dump voice](narr:StyleObs_8).""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_8> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DirectAddress> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DirectAddress_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DirectSecondPerson> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ImperativeTechnical> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SecondPerson> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SecondPerson_Directive> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SharedMemoryQuote> ;
+    narr:keyPhrase [ narr:text "Do NOT list as a client." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_DirectAddress> ] ;
+    narr:keyPhrase [ narr:text "Direct second-person address in quoted analysis: 'You fear you're not enough. She fears she's too much.' Creates intimacy and confrontation simultaneously." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_DirectSecondPerson> ] ;
+    narr:keyPhrase [ narr:text "I built aswritten to feather our arrows" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_8> ] ;
+    narr:keyPhrase [ narr:text "Imagine if [the agents] had shared memory or topics and you could say, Scarlet's bot, Tony's bot, a collaborator's bot — we're all friends. Here's shared memory." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SharedMemoryQuote> ] ;
+    narr:keyPhrase [ narr:text "**What we're NOT showing** (to keep" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SecondPerson_Directive> ] ;
+    narr:variation [ narr:text "Not all children are second-person: one uses first-person plural 'we' for team alignment, sitting under a SecondPerson hub." ; narr:over <https://aswritten.ai/narrative#StyleObs_SecondPerson_Directive> ] ;
+    narr:variation [ narr:text "Two opposing functions of 'you': emotional intimacy/confrontation vs cold technical imperative assuming competence." ; narr:over <https://aswritten.ai/narrative#StyleObs_DirectSecondPerson> ; narr:over <https://aswritten.ai/narrative#StyleObs_ImperativeTechnical> ] ;
+    narr:variation [ narr:text "Register is split, not uniform — formal structured sections vs informal lowercase brain-dump voice within a single document." ; narr:over <https://aswritten.ai/narrative#StyleObs_8> ] ;
+    narr:variation [ narr:text "Some 'direct' framing is first-person declaration (investor/pitch voice), not second-person address." ; narr:over <https://aswritten.ai/narrative#StyleObs_DirectAddress> ; narr:over <https://aswritten.ai/narrative#StyleObs_8> ] ;
+    narr:writer "claude (subscription)" .
+}

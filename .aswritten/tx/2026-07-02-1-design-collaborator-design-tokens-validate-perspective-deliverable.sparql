@@ -1,0 +1,338 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260702T023756Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T02:37:56Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-02-1-a design collaborator-design-tokens-validate-perspective-deliverable" ;
+    narr:originRef "dev" ;
+    dct:title "a design collaborator Design-Token Practice — Independent Validation of Perspective-as-Deliverable" ;
+    prov:generated
+      narr:Sample_DesignCollaboratorTokens_20260629,
+      narr:Narrative_DesignTokenPerspectiveParallel,
+      narr:Narrative_BrandAsAIIdentity,
+      narr:Claim_LensIsIrreduciblePart,
+      narr:Claim_DesignTokenParallelValidation,
+      narr:Claim_VouchTextProcessPrecursor,
+      narr:Claim_PerspectiveDeckAlternativeUnexecuted,
+      narr:Claim_StaticAssetDependencyModel,
+      narr:Claim_BrandAIIdentityOrgWide,
+      narr:Obs_DesignCollaboratorTokenProcessQuote,
+      narr:Obs_DesignCollaboratorAIOutputQuote,
+      narr:Obs_DesignCollaboratorLensIrreducibleQuote,
+      narr:Obs_ScarletVouchPrecursorQuote,
+      narr:Obs_ScarletBrandAIIdentityQuote,
+      narr:Obs_ScarletCocaColaTargetStateQuote,
+      narr:Obs_ScarletUnexecutedUseCaseQuote,
+      narr:StyleObs_DesignCollaboratorTokensBlockquoteRegister,
+      narr:StyleObs_DesignCollaboratorTokensAntithesis,
+      narr:StyleObs_DesignCollaboratorTokensAnalogy,
+      narr:StyleMetrics_DesignCollaboratorTokens .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T023756Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_DesignCollaboratorTokens_20260629 a narr:Sample ;
+      dct:title "a design collaborator's Design-Token Practice Independently Validates Perspective-as-Deliverable and Brand-as-AI-Identity" ;
+      dct:created "2026-06-29"^^xsd:date ;
+      narr:inputLength 4898 ;
+      dct:description "Second documented session with a design collaborator (first: 2026-03-23). a design collaborator describes his extraction→tokens→AI-applied surfaces process; Scarlet recognises it as the Vouch text-process precursor; both converge on the lens as the irreducible part and on brand-as-AI-identity as the endpoint." .
+
+    # ── Narrative: Design-Token ↔ Perspective Parallel ──────────────────────
+    narr:Narrative_DesignTokenPerspectiveParallel a narr:Narrative ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      narr:theme "Design-token extraction process is structurally identical to perspective extraction: both tokenise a lens, apply it through AI to surfaces, and break without the lens" ;
+      skos:broader narr:Differentiators ;
+      skos:note "a design collaborator independently arrived at the same architecture as aswritten: extract a design language, tokenise it, apply tokens via AI to surfaces. The parallel was explicitly missing from the graph before this call. The irreducible part in both cases is the lens — without it the output collapses to generic AI." .
+
+    # ── Narrative: Brand-as-AI-Identity ─────────────────────────────────────
+    narr:Narrative_BrandAsAIIdentity a narr:Narrative ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      narr:theme "AI identities have the opportunity to be the brand's identity — an AI shaped to think, design, and talk like the brand, deployable across the org" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "Scarlet's endpoint for the design-token parallel: instead of a brand style guide, deliver an AI that IS the brand identity. Anyone in the org can use it; it designs and talks like the brand. Contrasted with the current default of one-shotting a generic Claude website. The Coca-Cola example is the target state." .
+
+    # ── Claim: The lens is the irreducible part ──────────────────────────────
+    narr:Claim_LensIsIrreduciblePart a narr:Claim ;
+      narr:aboutNode narr:Narrative_DesignTokenPerspectiveParallel ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_PerspectiveVsInformation ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "a design collaborator: 'without my input through my own lens, it breaks, it falls down. So that shows that the actual unique part is by [my] lens — is applying the lens, which I suppose is effectively what you've built there... it is the lens that controls all of that.' Independent practitioner validation that the lens/perspective is the non-commodifiable core — the AI output is generic without it." .
+
+    # ── Claim: Design-token parallel validates perspective-as-deliverable ────
+    narr:Claim_DesignTokenParallelValidation a narr:Claim ;
+      narr:aboutNode narr:Narrative_DesignTokenPerspectiveParallel ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_PerspectiveVsInformation ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "a design collaborator's extraction→tokens→AI-applied surfaces process is structurally identical to aswritten's extraction→perspective→AI-applied outputs. He arrived at it independently through his own design practice. This is convergent validation from outside aswritten of the core architecture." .
+
+    # ── Claim: Vouch text process is the product precursor ───────────────────
+    narr:Claim_VouchTextProcessPrecursor a narr:Claim ;
+      narr:aboutNode narr:Narrative_DesignTokenPerspectiveParallel ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "Scarlet recognised a design collaborator's process as the same thing she built at Vouch with text: a bunch of files representing how the team was thinking — the equivalent of design tokens for product language — put at the top of the chat to generate new work. This is the first explicit identification of the Vouch text process as the product's precursor." .
+
+    # ── Claim: Perspective-as-deck-alternative is unexecuted ────────────────
+    narr:Claim_PerspectiveDeckAlternativeUnexecuted a narr:Claim ;
+      narr:aboutNode narr:Narrative_ConsultingIsMeUsingProduct ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "Status note from Scarlet (June 29, 2026): 'I haven't delivered an AI perspective as an alternative to a deck to a consulting client yet.' The thesis is settled (boulder-level since March 19) but the use case has not been executed in practice. This is an open product move." .
+
+    # ── Claim: Static asset dependency model is what clients pay for today ───
+    narr:Claim_StaticAssetDependencyModel a narr:Claim ;
+      narr:aboutNode narr:Narrative_ConsultingIsMeUsingProduct ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:challenges narr:Narrative_ConsultingIsMeUsingProduct ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "What consulting clients pay for today: a static asset that makes them dependent on the consultant to execute, or requires an expensive in-house person to do a lossy interpretation and continue forward. This is the status quo the perspective-as-deliverable model replaces." .
+
+    # ── Claim: Brand AI identity deployable org-wide ─────────────────────────
+    narr:Claim_BrandAIIdentityOrgWide a narr:Claim ;
+      narr:aboutNode narr:Narrative_BrandAsAIIdentity ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_HowManyVoicesInSuperintelligence ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "Scarlet's endpoint: shape an AI that thinks like the brand, then let anyone use it across the org — it designs like the brand, talks like the brand, has the brand's narratives and understandings. The Coca-Cola example: ask it to one-shot a website and it looks like Coca-Cola, not like Claude." .
+
+    # ── Observations (verbatim grounding) ────────────────────────────────────
+
+    narr:Obs_DesignCollaboratorTokenProcessQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "a design collaborator's description of his extraction→tokens→surfaces process" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1234 ; oa:end 1369
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I have a process where I extract everything that builds into a design language which gets tokenized. The tokens get applied to surfaces" ;
+          oa:prefix "Describing what he has been building this year:\n> \"" ;
+          oa:suffix "... if I build a website"
+        ]
+      ] .
+
+    narr:Obs_DesignCollaboratorAIOutputQuote a narr:Observation ;
+      skos:broader narr:Differentiators ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "a design collaborator on the output not reading as generic AI" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1815 ; oa:end 1897
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It doesn't look anything like a Claude website. It looks like the initial designs." ;
+          oa:prefix "goes into Claude and gets converted into a website. " ;
+          oa:suffix " And I've actually been able to do this without giving it visuals."
+        ]
+      ] .
+
+    narr:Obs_DesignCollaboratorLensIrreducibleQuote a narr:Observation ;
+      skos:broader narr:MoatLeverage ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "a design collaborator naming the lens as the irreducible, defensible core" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2163 ; oa:end 2284
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "without my input through my own lens, it breaks, it falls down. So that shows that the actual unique part is by [my] lens" ;
+          oa:prefix "a design collaborator identifies exactly what carries the uniqueness — and names it as the same thing Scarlet has built:\n> \"" ;
+          oa:suffix " — is applying the lens"
+        ]
+      ] .
+
+    narr:Obs_ScarletVouchPrecursorQuote a narr:Observation ;
+      skos:broader narr:NarrativeAnchor ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "Scarlet recognising a design collaborator's process as the Vouch text process — the product's precursor" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2493 ; oa:end 2617
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It sounds like you're doing a very similar process with AI like I did at Vouch with text. Like the precursor to this product" ;
+          oa:prefix "> \"" ;
+          oa:suffix " was me building... something similar to what you're talking about."
+        ]
+      ] .
+
+    narr:Obs_ScarletBrandAIIdentityQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "Scarlet's articulation of brand-as-AI-identity" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3133 ; oa:end 3263
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "these AI identities have the opportunity to be the brand's identity. Like you can literally shape an AI that thinks like the brand" ;
+          oa:prefix "when you're talking about brand identity... " ;
+          oa:suffix " and then let anyone use it across the org"
+        ]
+      ] .
+
+    narr:Obs_ScarletCocaColaTargetStateQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "Scarlet's Coca-Cola example as the target state for brand-as-AI-identity" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3497 ; oa:end 3621
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "deliver an AI to Coca Cola, where if they ask it to one-shot a website, it looks like Coca Cola and it thinks like Coca Cola" ;
+          oa:prefix "how do we get from one-shotting a website [that] looks like [Claude] every time to " ;
+          oa:suffix " and it talks like Coca Cola"
+        ]
+      ] .
+
+    narr:Obs_ScarletUnexecutedUseCaseQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      skos:note "Scarlet's status note: the perspective-as-deck-alternative has not been executed with a consulting client" ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3841 ; oa:end 3934
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I haven't delivered an AI perspective as an alternative to a deck to a consulting client yet." ;
+          oa:prefix "> \"" ;
+          oa:suffix " But actually I think that's a really... that does seem like the future to me."
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+
+    narr:StyleObs_DesignCollaboratorTokensBlockquoteRegister a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      rdf:value true ;
+      skos:note "Mixed register: analytical editorial prose (authoritative, structured) alternating with verbatim blockquoted speech (first-person conversational, thinking-aloud). The blockquotes carry the primary evidence; the editorial prose frames the significance. Characteristic of Scarlet's session-memo idiolect." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1183 ; oa:end 1230
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Describing what he has been building this year:" ;
+          oa:prefix "**a design collaborator's process — extraction to tokens to AI-applied surfaces.** " ;
+          oa:suffix "\n> \"I have a process"
+        ]
+      ] .
+
+    narr:StyleObs_DesignCollaboratorTokensAntithesis a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      rdf:value true ;
+      skos:note "Antithesis structure used to frame the target state: 'one-shotting a website [that] looks like [Claude] every time' vs. 'deliver an AI to Coca Cola, where if they ask it to one-shot a website, it looks like Coca Cola.' The contrast makes the value proposition concrete and memorable." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3414 ; oa:end 3523
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "how do we get from one-shotting a website [that] looks like [Claude] every time to deliver an AI to Coca Cola" ;
+          oa:prefix "And the target state, stated as a contrast with the current generic default:\n> \"" ;
+          oa:suffix ", where if they ask it to one-shot a website"
+        ]
+      ] .
+
+    narr:StyleObs_DesignCollaboratorTokensAnalogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      rdf:value true ;
+      skos:note "Design-token analogy used to make the abstract perspective concept concrete: design tokens are to visual surfaces as perspective is to AI outputs. The analogy is structural (both tokenise a lens, both apply via AI, both break without the lens) and is introduced through a design collaborator's own practice rather than as a rhetorical device — giving it evidential weight." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorTokens_20260629 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 700 ;
+          oa:end 820
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the concrete design-token ↔ perspective parallel the graph was explicitly missing" ;
+          oa:prefix "What this call adds is (a) **independent validation** of that thesis from a working designer who arrived at it through his own practice, (b) " ;
+          oa:suffix ", and (c) a **status note**"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+
+    narr:StyleMetrics_DesignCollaboratorTokens a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_DesignCollaboratorTokens_20260629 ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.14"^^xsd:decimal ;
+      skos:note "Session-memo register with embedded verbatim blockquotes. Editorial prose is authoritative and structured; blockquoted speech is conversational and first-person. Active voice dominant in editorial sections. Jargon density moderate — product terms (design tokens, perspective, lens, extraction) used without definition, implying internal audience. Antithesis-heavy framing at conviction peaks. Consistent with Scarlet session-memo idiolect." .
+
+  }
+} ;
+
+# ── Update Actor_DesignCollaborator_2 to reflect second session ──────────────────
+DELETE {
+  GRAPH ?g {
+    narr:Actor_DesignCollaborator_2 skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260702T023756Z {
+    narr:Actor_DesignCollaborator_2 skos:note "Brand designer and Vouch-era collaborator. First session: 2026-03-23 (committed to a style-guide system that AI can apply, not static comps). Second session: 2026-06-29 — described his extraction→tokens→AI-applied surfaces process; independently validated the perspective-as-deliverable thesis and named the lens as the irreducible part. Origin of the 'amplification' vocabulary now central to the anti-monoculture narrative." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Actor_DesignCollaborator_2 skos:note ?oldNote .
+  }
+}

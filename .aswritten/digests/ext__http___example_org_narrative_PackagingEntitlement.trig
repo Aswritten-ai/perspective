@@ -1,0 +1,25 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ext__http___example_org_narrative_PackagingEntitlement> {
+  <https://aswritten.ai/narrative#Digest_ext__http___example_org_narrative_PackagingEntitlement> a narr:Digest ;
+    narr:digestOf <http://example.org/narrative#PackagingEntitlement> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers how product access is packaged and what clients forfeit. The mainline, settled 2026-02-11, is a [no-free-tier launch](narr:Decision_DropFreeTier) — \"No free version at launch\" — paired with hard [cancellation terms](narr:Decision_CancellationTerms): cancellation strips all MCP tooling, leaving only raw repo files. The driving rationale is [Tony's gaming-risk argument](narr:Claim_FreeTierGamingRisk) — a free tier invites abuse via read-heavy 2-writer/100-reader patterns. Both current decisions explicitly supersede earlier, more generous stances: a [permanent post-payment free tier](narr:PriorFreeTierPolicy) and a [read-only tier activating on full payment](narr:PriorDeliveryGuarantee), both replaced the same day. So the trajectory runs from payment-gated free access toward no free access plus tool-loss-on-cancel, with monetization simplicity and abuse-prevention as the stated motives.""" ;
+    narr:covers <http://example.org/narrative#Claim_FreeTierGamingRisk> ;
+    narr:covers <http://example.org/narrative#Decision_CancellationTerms> ;
+    narr:covers <http://example.org/narrative#Decision_DropFreeTier> ;
+    narr:covers <http://example.org/narrative#PriorDeliveryGuarantee> ;
+    narr:covers <http://example.org/narrative#PriorFreeTierPolicy> ;
+    narr:keyPhrase [ narr:text "No free version at launch; prevents clients from gaming 2-writer/100-reader model. Can revisit post-PMF." ; narr:phraseSource <http://example.org/narrative#Decision_DropFreeTier> ] ;
+    narr:keyPhrase [ narr:text "Cancellation = loss of all MCP tool access (compile, query, introspect, remember, drafts). Client keeps raw repo files only." ; narr:phraseSource <http://example.org/narrative#Decision_CancellationTerms> ] ;
+    narr:keyPhrase [ narr:text "Clients could game a free tier by having 2 writers and 100 readers" ; narr:phraseSource <http://example.org/narrative#Claim_FreeTierGamingRisk> ] ;
+    narr:keyPhrase [ narr:text "Free tier (compile/query) permanent post-payment." ; narr:phraseSource <http://example.org/narrative#PriorFreeTierPolicy> ] ;
+    narr:keyPhrase [ narr:text "Free license tier (read-only) only activates upon full payment." ; narr:phraseSource <http://example.org/narrative#PriorDeliveryGuarantee> ] ;
+    narr:variation [ narr:text "The no-free-tier decision is explicitly reversible — \"Can revisit post-PMF\" — not a permanent stance." ; narr:over <http://example.org/narrative#Decision_DropFreeTier> ] ;
+    narr:variation [ narr:text "Two superseded policies still describe a world with a free tier (permanent post-payment; read-only on full payment) that someone may reach for." ; narr:over <http://example.org/narrative#PriorFreeTierPolicy> ; narr:over <http://example.org/narrative#PriorDeliveryGuarantee> ] ;
+    narr:variation [ narr:text "The entire no-free-tier choice rests on one abuse hypothesis (read-heavy gaming); if that risk is mitigated otherwise, the rationale weakens." ; narr:over <http://example.org/narrative#Claim_FreeTierGamingRisk> ] ;
+    narr:variation [ narr:text "Cancellation terms keep raw repo files but revoke all tooling — a partial-retention stance distinct from full lockout or full access." ; narr:over <http://example.org/narrative#Decision_CancellationTerms> ] ;
+    narr:writer "claude (subscription)" .
+}

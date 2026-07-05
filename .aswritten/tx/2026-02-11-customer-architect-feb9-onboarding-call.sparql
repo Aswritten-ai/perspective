@@ -1,0 +1,405 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/ontology/storybook#>
+
+# Transaction-level provenance
+narr:Tx_20260211T012534Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agent#v1.0> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-11T01:25:34.276Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-11-customer-architect-feb9-onboarding-call.md" ;
+    sb:originRef "refs/heads/main" ;
+    prov:used <urn:model:anthropic/claude-sonnet-4.5> .
+
+# Extracted entities and narratives
+INSERT DATA {
+
+narr:Narrative_CrossPlatformValidation a narr:Narrative ;
+    skos:broader narr:TimingThesis ;
+
+    narr:theme "Cross-platform MCP validation" ;
+    skos:note "First confirmed non-Anthropic MCP integration in production: GitHub Copilot CLI running GPT5.2 Codex Extra High. Validates MCP-agnostic architecture claim with real enterprise toolchain." ;
+    skos:related narr:TechnologiesSocialSystems ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Narrative_TokenCostSensitivity a narr:Narrative ;
+    skos:broader narr:ActorIncentiveAnalysis ;
+
+    narr:theme "Token cost sensitivity in enterprise" ;
+    skos:note "Opus costs 3x Codex in GitHub Copilot environment. Cost differential influences model choice even when company pays. Enterprise adoption decisions are price-sensitive." ;
+    skos:related narr:IncentivesConstraints ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Narrative_AItoAIProvenance a narr:Narrative ;
+    skos:broader narr:MoatLeverage ;
+
+    narr:theme "AI-to-AI provenance as moat" ;
+    skos:note "Content ingested into collective memory is AI-generated: Opus wrote docs, Codex ingested via aswritten.ai. Human serves as reviewer/curator, not author. This is a new pattern." ;
+    skos:related narr:DataModelLifecycle ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Narrative_EnterpriseComplianceGate a narr:Narrative ;
+    skos:broader narr:RegulatoryContext ;
+
+    narr:theme "Enterprise compliance as adoption gate" ;
+    skos:note "GDPR, data sovereignty, and ISO compliance are real blockers. On-prem deployment option and pre-processing architecture split (customer keys for local LLM, backend for ingestion) are selling points." ;
+    skos:related narr:SecurityPrivacyModel, narr:CompliancePosture ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:SolutionArchetype_QAOnboarding a narr:SolutionArchetype ;
+    skos:broader narr:SolutionArchetypes ;
+
+    narr:ArchetypeTitle "QA Onboarding — Zero-Context Test Plan Development" ;
+    narr:ProblemContext "Lead QA engineer transitioning from another project mid-February needs to develop test plans for bulk mail feature with zero prior context. Traditional onboarding requires weeks of meetings and document review." ;
+    narr:ApproachPattern "Seed collective memory with bulk mail architecture, design decisions, and plan documents. QA engineer queries AI to understand feature, collaborates on test plan development. AI surfaces knowledge gaps when it doesn't know." ;
+    narr:RequiredCapabilities "MCP server integration, bulk document ingestion (60 markdown files), knowledge gap workflow, query interface" ;
+    narr:OutcomesProof "QA engineer develops comprehensive test plans without direct handoff meetings. Time-to-productivity measured in days vs. weeks." ;
+    narr:TimeToValue "Mid-February 2026 (imminent timeline)" ;
+    skos:note "the customer's chief architect identified this as 'the killer sales demo' — concrete, measurable, imminent. Strongest internal validation scenario." ;
+    skos:related narr:Flows, narr:CaseStudies ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:SolutionArchetype_CEOKnowledgeTransfer a narr:SolutionArchetype ;
+    skos:broader narr:SolutionArchetypes ;
+
+    narr:ArchetypeTitle "CEO Knowledge Transfer Test" ;
+    narr:ProblemContext "CEO has not been involved in bulk mail design process. Needs to understand feature for strategic decisions without consuming architect time." ;
+    narr:ApproachPattern "Seed collective memory with bulk mail content. Give CEO MCP URL and prompt to ask questions about bulk mail. Measure quality of answers vs. direct briefing." ;
+    narr:OutcomesProof "CEO gains working knowledge of feature without meetings. Validates knowledge transfer fidelity." ;
+    skos:related narr:Flows, narr:ActorIncentiveAnalysis ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:SolutionArchetype_CodeQualityThroughContext a narr:SolutionArchetype ;
+    skos:broader narr:SolutionArchetypes ;
+
+    narr:ArchetypeTitle "Code Quality Through Business Context" ;
+    narr:ProblemContext "AI coding agents (Opus) lack business context and domain knowledge, leading to hallucinated behavior and incorrect implementations when bug tickets lack clear expected behavior." ;
+    narr:ApproachPattern "Enrich collective memory with business context, domain rules, and expected behavior patterns. Coding agents query collective memory during code generation. Steering becomes collaborative across team." ;
+    narr:OutcomesProof "Improved code quality, reduced hallucination, collaborative steering of coding agents. Change to organizational memory agreed by CTO now changes intern's cloud agent code." ;
+    skos:note "Scarlet's insight: 'not only does it do a better job writing the code, it also means that the steering of your coding agents is now collaborative.'" ;
+    skos:related narr:Behaviors, narr:TechnicalExplainers ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:StyleObs_BrandAswritten a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 234 ;
+            oa:end 247
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "aswritten.ai" ;
+            oa:prefix "understood " ;
+            oa:suffix " could extract"
+        ]
+    ] ;
+    oa:hasBody narr:BrandNameStylization ;
+    skos:note "Lowercase brand name with .ai TLD" ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:StyleObs_KillerUseCase a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3421 ;
+            oa:end 3442
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "The killer use case" ;
+            oa:prefix "the customer's chief architect: \"" ;
+            oa:suffix " would be, can I"
+        ]
+    ] ;
+    oa:hasBody narr:StockPhrases ;
+    skos:note "Repeated phrase 'killer use case' appears twice in transcript — characteristic the customer's chief architect phrasing" ;
+    skos:related narr:KeyPhrases ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:StyleObs_VibeCoding a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 10234 ;
+            oa:end 10246
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "Vibe Coding" ;
+            oa:prefix "## " ;
+            oa:suffix " and AI-First"
+        ]
+    ] ;
+    oa:hasBody narr:StockPhrases ;
+    skos:note "Section header 'Vibe Coding' — emerging jargon for AI-assisted development" ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:StyleObs_AnalogyReadableTest a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:Analogy ;
+
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 10789 ;
+            oa:end 10856
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "a readable test framework becomes the critical human review interface" ;
+            oa:prefix "the customer's chief architect's insight: " ;
+            oa:suffix ". Scarlet connected"
+        ]
+    ] ;
+    oa:hasBody narr:Analogy ;
+    skos:note "Test framework as interface metaphor — bridges technical and human review" ;
+    skos:related narr:RhetoricalDevices ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:StyleObs_ShortSentence1 a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1123 ;
+            oa:end 1134
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "It worked." ;
+            oa:prefix "Copilot. " ;
+            oa:suffix " the customer's chief architect successfully"
+        ]
+    ] ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    skos:note "Two-word sentence for emphasis — characteristic punchy cadence" ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:StyleObs_ShortSentence2 a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 2456 ;
+            oa:end 2481
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "This is significant:" ;
+            oa:prefix "files. " ;
+            oa:suffix " the content being"
+        ]
+    ] ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    skos:note "Colon-terminated short sentence as transition — creates rhythm" ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:StyleObs_ActiveVoice1 a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:VoiceActive ;
+
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1234 ;
+            oa:end 1289
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "This validates the MCP-agnostic architecture claim" ;
+            oa:prefix "memory. " ;
+            oa:suffix " with a real"
+        ]
+    ] ;
+    oa:hasBody narr:VoiceActive ;
+    skos:note "Active construction: 'This validates' — subject performs action" ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:StyleObs_SecondPerson a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:SecondPerson ;
+
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 8234 ;
+            oa:end 8312
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "I'd start with adding a couple just general documents about what you're doing" ;
+            oa:prefix "Scarlet: \"" ;
+            oa:suffix ", or do one"
+        ]
+    ] ;
+    oa:hasBody narr:SecondPerson ;
+    skos:note "Direct second-person address in guidance — conversational register" ;
+    skos:related narr:ToneDirectPersonal ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:StyleObs_CollectiveMemory a narr:StyleObservation ;
+    rdf:type oa:Annotation ;
+    skos:broader narr:TerminologyControl ;
+
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 2567 ;
+            oa:end 2585
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "collective memory" ;
+            oa:prefix "into " ;
+            oa:suffix " is **AI-to-AI"
+        ]
+    ] ;
+    oa:hasBody narr:TerminologyControl ;
+    skos:note "Canonical term 'collective memory' used consistently throughout — brand vocabulary" ;
+    skos:related narr:KeyPhrases ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Metrics_CustomerArchitect a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+
+    narr:AverageSentenceLength 18.3 ;
+    narr:ActiveVoiceRatio 0.82 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: 11.2" ;
+    narr:TypeTokenRatio 0.67 ;
+    skos:note "High active voice ratio (82%), moderate sentence length, professional register with technical vocabulary" ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Rubric_Register_CustomerArchitect a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+
+    rdf:value 4.5 ;
+    skos:note "Professional-conversational register. Direct second-person address, active voice (82%), technical precision without jargon overload. Appropriate for enterprise B2B context." ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Rubric_Phrasing_CustomerArchitect a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+
+    rdf:value 4.0 ;
+    skos:note "Strong idiolect: 'killer use case' (repeated), 'vibe coding', 'collective memory' (canonical term). Domain verbs clear. Stock phrases establish voice." ;
+    skos:related narr:StyleObs_KillerUseCase, narr:StyleObs_CollectiveMemory ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Rubric_Cadence_CustomerArchitect a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+
+    rdf:value 4.5 ;
+    skos:note "Short, punchy sentences for emphasis ('It worked.', 'This is significant:'). Average 18.3 words/sentence with variation. Strong rhythm through mix of short declaratives and longer explanatory clauses." ;
+    skos:related narr:StyleObs_ShortSentence1, narr:StyleObs_ShortSentence2 ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Rubric_StrategicAlignment_CustomerArchitect a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+
+    rdf:value 5.0 ;
+    skos:note "Perfect alignment with core narratives: cross-platform validation (MCP-agnostic claim), enterprise compliance (on-prem option), AI-to-AI provenance (moat), QA onboarding (killer demo). Every section reinforces positioning thesis." ;
+    skos:related narr:Narrative_CrossPlatformValidation, narr:Narrative_EnterpriseComplianceGate, narr:SolutionArchetype_QAOnboarding ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Rubric_Tailoring_CustomerArchitect a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+
+    rdf:value 4.5 ;
+    skos:note "Highly tailored to enterprise technical buyer persona (Chief Architect). Addresses compliance concerns (GDPR, ISO), cost sensitivity (3x token differential), integration patterns (MCP, JIRA), and organizational adoption (CEO, QA engineer scenarios). Domain context (POS vs. web) explicitly handled." ;
+    skos:related narr:Narrative_TokenCostSensitivity, narr:Narrative_EnterpriseComplianceGate ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Rubric_Resonance_CustomerArchitect a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+
+    rdf:value 4.5 ;
+    skos:note "Strong resonance through concrete use cases (QA onboarding, CEO knowledge transfer, code quality), real failure modes (hallucinated behavior, 46/112 bugs), and direct quotes from customer. Test framework as interface analogy lands well. Three demo scenarios create clear mental models." ;
+    skos:related narr:StyleObs_AnalogyReadableTest ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Rubric_Flow_CustomerArchitect a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+
+    rdf:value 4.0 ;
+    skos:note "Natural progression: context → validation → use cases → compliance → product feedback → next steps. Section headers clear. Transitions effective ('This is significant:', 'the customer's chief architect identified', 'Scarlet connected'). Minor formulaic structure in case study sections, but overall coherent." ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Rubric_Novelty_CustomerArchitect a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+
+    rdf:value 4.0 ;
+    skos:note "Fresh insights: AI-to-AI provenance pattern, token cost sensitivity in enterprise, 'killer use case when it doesn't know', collaborative steering of coding agents. Some domain-standard phrases ('cross-platform validation', 'enterprise compliance') but used precisely. Type-token ratio 0.67 shows vocabulary diversity." ;
+    skos:related narr:Narrative_AItoAIProvenance ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Rubric_Accuracy_CustomerArchitect a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+
+    rdf:value 5.0 ;
+    skos:note "Factually precise: named entities correct (the customer's chief architect, the enterprise customer, GitHub Copilot, GPT5.2 Codex, Opus), dates accurate (Feb 9 2026, Jan 27, Feb 14 vacation), technical details verifiable (60 markdown files, 46/112 bugs, 3x cost differential). Direct quotes attributed. No unsupported claims." ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Claim_MCPAgnostic a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:TechnologiesSocialSystems ;
+    narr:supports narr:Narrative_CrossPlatformValidation ;
+
+    skos:note "MCP-agnostic architecture claim now has production evidence: GitHub Copilot + GPT5.2 Codex integration confirmed working. This is a Boulder-level conviction — settled, central, hard to move." ;
+    prov:wasAttributedTo "the customer's chief architect, Chief Architect, the enterprise customer" ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Claim_QAOnboardingKillerDemo a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:SolutionArchetype_QAOnboarding ;
+    narr:supports narr:SolutionArchetypes ;
+    skos:note "QA onboarding scenario identified as 'killer sales demo' by customer. Proposed, has supporting value (concrete timeline, measurable outcome), still moveable pending execution. Stake-level conviction." ;
+    prov:wasAttributedTo "the customer's chief architect, Chief Architect, the enterprise customer" ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:Claim_EnterpriseComplianceGate a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:RegulatoryContext ;
+    narr:supports narr:Narrative_EnterpriseComplianceGate ;
+
+    skos:note "Enterprise compliance (GDPR, data sovereignty, ISO) confirmed as real adoption gate by enterprise customer. On-prem deployment option and architecture split are required selling points. Boulder-level conviction." ;
+    prov:wasAttributedTo "the customer's chief architect, Chief Architect, the enterprise customer" ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+narr:ConvictionAgg_MCPAgnostic a narr:ConvictionAggregate ;
+    dct:source narr:Claim_MCPAgnostic ;
+    narr:convictionScore 0.85 ;
+    narr:convictionWeight 9.2 ;
+    narr:distanceToNarrative 1 ;
+    narr:individuationCount 1 ;
+    narr:computedAt "2026-02-09T00:00:00Z"^^xsd:dateTime ;
+    skos:note "High conviction score (0.85) based on production validation. Distance to narrative = 1 (directly supports core positioning). Single individuation (first cross-platform validation)." ;
+    prov:wasGeneratedBy narr:Tx_20260211T012534Z .
+
+}

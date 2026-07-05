@@ -1,0 +1,175 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250715T213000Z a prov:Activity ;
+    prov:generatedAtTime "2025-07-15T21:30:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# Works from what was already said, and the question-first deck" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_WorksFromWhatWasSaid_20260610,
+      narr:Narrative_WorksFromWhatWasSaid,
+      narr:Narrative_QuestionFirstDeck,
+      narr:Claim_WhatWasSaidExceedsWhatWasDecided,
+      narr:Claim_QuestionFirstDeckStructure,
+      narr:Claim_DeckOperatingRules,
+      narr:Claim_PainFirstDeckTakenToLimit,
+      narr:StyleObs_ConversationalDistinction,
+      narr:StyleObs_QuestionFirstRhetoric,
+      narr:StyleObs_ShowDontSendCadence,
+      narr:StyleMetrics_WorksFromWhatWasSaid .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20250715T213000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────
+    narr:Sample_WorksFromWhatWasSaid_20260610
+      a narr:Sample ;
+      dct:title "Works from what was already said, and the question-first deck" ;
+      dct:created "2026-06-10"^^xsd:date ;
+      dct:description "Part 5 of the consulting-engagement session record (June 10-12, 2026). Scarlet Dame working session with Claude. Covers the 'works from what was already said' distinction (AI division of labor, objection pre-empt for executive AI fear) and the question-first iA Presenter deck design with operating rules." ;
+      narr:inputLength 2847 .
+
+    # ── NARRATIVE 1: Works from what was already said ───────────
+    narr:Narrative_WorksFromWhatWasSaid
+
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "The AI Speaks to, References, and Works from What Was Already Said" ;
+      skos:note "The goal is not to create an AI that makes new decisions in place of the decision-maker or process — it speaks to, references, and works from what was already said. 'What was said' deliberately exceeds 'what was decided': notions, open arguments, and half-formed positions steer thinking too, which is what conviction levels exist to carry. This is the objection pre-empt for executive AI fear and compresses to the existing tagline: Cited by AI." ;
+      narr:theme "The AI's role is transmission and application of the record with citations — new judgment stays human; 'what was said' is broader than 'what was decided' because notions and open arguments steer thinking too" .
+
+    # ── NARRATIVE 2: Question-first deck ────────────────────────
+    narr:Narrative_QuestionFirstDeck
+
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "The Question-First iA Presenter Deck" ;
+      skos:note "A question-first iA Presenter deck designed in the session and saved to docs/sales/decks. Cover question, optional why-now beat for AI-native buyers only, three discovery questions as slides one through three, bridge (the judgment that fixes all three already exists; it's spoken in your meetings every week; then it evaporates), turn slide mirroring the three questions and closing with the distinction in Scarlet's own phrasing, engagement slide, example metrics, and close: 'Next call, I'll show you this conversation — turned into the beginning of your perspective.' Replaces a fill-in-the-blank metrics slide Scarlet rejected as gimmicky." ;
+      narr:theme "The question-first deck does not present capabilities until the prospect has answered three pain questions about their own organization — the January pain-first deck decision taken to its limit" .
+
+    # ── CLAIM 1: What was said exceeds what was decided ─────────
+    narr:Claim_WhatWasSaidExceedsWhatWasDecided
+      a narr:Claim ;
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:note "'What was said' deliberately exceeds 'what was decided' because it is not just decisions — notions, open arguments, and half-formed positions steer thinking too. This is what conviction levels exist to carry. The distinction is the objection pre-empt for executive AI fear: the machine transmits and applies the record with citations; new judgment stays human — the client's, and Scarlet's in the calibration sessions." ;
+      narr:aboutNode narr:Narrative_WorksFromWhatWasSaid ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_WorksFromWhatWasSaid .
+
+    # ── CLAIM 2: Question-first deck structure ───────────────────
+    narr:Claim_QuestionFirstDeckStructure
+      a narr:Claim ;
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:note "Deck structure: (1) Cover question; (2) Optional why-now beat for AI-native buyers only; (3) Three discovery questions as slides 1-3; (4) Bridge — the judgment that fixes all three already exists, it's spoken in your meetings every week, then it evaporates; (5) Turn slide mirroring the three questions, closing with the distinction in Scarlet's own phrasing: 'It doesn't decide for you. It speaks to, references, and works from what was already said.'; (6) Engagement slide; (7) Example metrics (replacing the fill-in-the-blank metrics slide Scarlet rejected as gimmicky — 'Provide examples'); (8) Close: 'Next call, I'll show you this conversation — turned into the beginning of your perspective.'" ;
+      narr:aboutNode narr:Narrative_QuestionFirstDeck ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_QuestionFirstDeck .
+
+    # ── CLAIM 3: Deck operating rules ───────────────────────────
+    narr:Claim_DeckOperatingRules
+      a narr:Claim ;
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:note "Operating rules baked into the deck: (1) Consent beat spoken at the top of the call — 'I record my calls and build from them — you'll see exactly what that means by the end'; (2) Price structure appears on the slide but the number is spoken, never printed, until friendlies validate it; (3) No case-study slides — the close is the case study, performed on the prospect; (4) Show, don't send — call two is scheduled in the room. Consistent with the March 2026 podcast/interview sales-motion insight that the interview is simultaneously the sales call, the demo, and the onboarding." ;
+      narr:aboutNode narr:Narrative_QuestionFirstDeck ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_SalesAsDelivery .
+
+    # ── CLAIM 4: Pain-first deck taken to its limit ──────────────
+    narr:Claim_PainFirstDeckTakenToLimit
+      a narr:Claim ;
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:note "The question-first design is the January pain-first deck decision taken to its limit: the deck does not present capabilities at all until the prospect has answered the three pain questions about their own organization." ;
+      narr:aboutNode narr:Narrative_QuestionFirstDeck ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_FiveQuestionDiscoveryFramework .
+
+    # ── STYLE OBSERVATION 1: Conversational distinction phrasing ─
+    narr:StyleObs_ConversationalDistinction
+      a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:note "Scarlet's canonical phrasing of the AI distinction is preserved verbatim and explicitly flagged as the rule: 'it speaks to, references, and works from what was already said.' The June 12 voice-rule memory records that coined compressions of this phrase are rejected. The phrasing is a three-part parallel verb structure (speaks to / references / works from) that resists compression." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WorksFromWhatWasSaid_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 272 ;
+          oa:end 357
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "it speaks to, references, and works from what was already said" ;
+          oa:prefix "the goal isn't to create an AI that can make new decisions in place of the decision maker/process, " ;
+          oa:suffix " (more general than already decided"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATION 2: Question-first rhetorical structure ─
+    narr:StyleObs_QuestionFirstRhetoric
+      a narr:StyleObservation ;
+      skos:broader narr:RhetoricalQuestion ;
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:note "The deck's rhetorical architecture is built entirely on questions before any capability claim. The turn slide mirrors the three discovery questions in order — a structural anaphora that closes the loop. The close line ('Next call, I'll show you this conversation — turned into the beginning of your perspective') is a future-tense promise that makes the prospect the subject of the demo." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WorksFromWhatWasSaid_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1687 ;
+          oa:end 1762
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Next call, I'll show you this conversation — turned into the beginning of your perspective." ;
+          oa:prefix "closes with the close: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── STYLE OBSERVATION 3: Show don't send cadence ────────────
+    narr:StyleObs_ShowDontSendCadence
+      a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:note "The operating rules section uses short declarative imperatives as rhetorical anchors: 'Show, don't send: call two is scheduled in the room.' This is a two-beat antithesis (show / send) compressed to five words, consistent with Scarlet's idiolect pattern of short punchy declaratives at conviction peaks." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_WorksFromWhatWasSaid_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1820 ;
+          oa:end 1868
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Show, don't send: call two is scheduled in the room." ;
+          oa:prefix "consistent with the March 2026 podcast/interview sales-motion insight that the interview is simultaneously the sales call, the demo, and the onboarding. " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────
+    narr:StyleMetrics_WorksFromWhatWasSaid
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_WorksFromWhatWasSaid_20260610 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo register with embedded verbatim blockquote from Scarlet. Mixed register: analytical editorial prose (authoritative, structured) vs. first-person conversational in blockquoted speech. Antithesis-heavy structure (what was said vs. what was decided; show vs. send; capabilities vs. questions). Active voice dominant in editorial sections. Jargon density low-moderate — product terms (iA Presenter, conviction levels, calibration sessions, friendlies) used without definition, implying internal audience. Short punchy declaratives at conviction peaks ('Show, don't send.'). Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "20"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.07"^^xsd:decimal .
+
+  }
+}

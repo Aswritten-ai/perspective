@@ -1,0 +1,406 @@
+# =============================================================================
+# SPARQL Transaction: 2026-02-19-taxonomy-to-product-gtm-mapping
+# Generated:  2026-02-19T01:57:42.248Z
+# Agent:      aswritten.ai
+# Attributed: n8n.aswritten.ai
+# Model:      anthropic/claude-sonnet-4.6
+# Source:     .aswritten/memories/2026-02-19-taxonomy-to-product-gtm-mapping.md
+# =============================================================================
+
+PREFIX narr:  <http://example.org/narrative#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:   <http://purl.org/dc/terms/>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:    <http://www.w3.org/ns/oa#>
+PREFIX prov:  <http://www.w3.org/ns/prov#>
+PREFIX sb:    <http://example.org/sb#>
+
+# =============================================================================
+# BLOCK 1 — Transaction Provenance
+# =============================================================================
+
+INSERT DATA {
+
+  narr:Tx_20260219T015742Z
+      a prov:Activity ;
+      prov:wasAssociatedWith  "aswritten.ai" ;
+      prov:wasAttributedTo    "n8n.aswritten.ai" ;
+      prov:generatedAtTime    "2026-02-19T01:57:42.248Z"^^xsd:dateTime ;
+      sb:originPath           ".aswritten/memories/2026-02-19-taxonomy-to-product-gtm-mapping.md" ;
+      sb:originRef            "main" .
+
+} ;
+
+# =============================================================================
+# BLOCK 2 — INSERT DATA: Sample_1 additional triples
+# =============================================================================
+
+INSERT DATA {
+
+  narr:Sample_1
+      dct:title      "Taxonomy to Product & GTM Mapping" ;
+      narr:inputLength 4847 ;
+      dct:created    "2026-02-18"^^xsd:date ;
+      skos:note      "Conversation between Scarlet (founder) and Claude (AI coworker). Maps use-case taxonomy (Solo/Parallel/Hub/Salon/Teams) against product capability, dev backlog, and two GTM motions." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+} ;
+
+# =============================================================================
+# BLOCK 3 — INSERT DATA: Observation nodes
+# =============================================================================
+
+INSERT DATA {
+
+  narr:Obs_MarketContext_1
+      a narr:Observation ;
+      skos:broader narr:MarketContext ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Two distinct go-to-market motions identified: enterprise consultant-led ([amount]–[amount]) and consumer/viral SMS (undefined revenue model). Currently unconnected in strategy and backlog." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Obs_Segmentation_1
+      a narr:Observation ;
+      skos:broader narr:Segmentation ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Enterprise buyer persona: CEO/CTO of Seed/Series A technical companies. Consumer buyer: anyone with a phone." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Obs_FrictionFailure_1
+      a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Consumer SMS path introduces friction: SMS costs, abuse prevention, and onboarding without a consultant as identified failure modes." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Obs_PositioningThesis_1
+      a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Enterprise positioning: product-as-service, consultant-led knowledge extraction. Differentiator is Scarlet's interview and synthesis capability." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Obs_RiskGuardrails_1
+      a narr:Observation ;
+      skos:broader narr:RiskGuardrails ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Existing strategic guardrail: avoid consumer products and developer-first PLG. The SMS/topic product is identified as a third category that doesn't fit either exclusion cleanly." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Obs_CoreNarratives_1
+      a narr:Observation ;
+      skos:broader narr:CoreNarratives ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Core narrative arc: enterprise pilot = Salon, full engagement = Teams, retainer = Parallel. Same primitives, different initiator. This is the unifying insight that could resolve the two-motion tension." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Obs_ExpansionPathway_1
+      a narr:Observation ;
+      skos:broader narr:ExpansionPathway ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Consumer play could generate bottom-up enterprise demand, prove product without consulting labor, and create content pipeline automatically." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Obs_Primitives_1
+      a narr:Observation ;
+      skos:broader narr:Primitives ;
+      dct:source   narr:Sample_1 ;
+      skos:note    "Five shared primitives identified as the atomic units for both GTM motions: branch management, reviewer assignment, interview-to-memory pipeline, conversational review/approval, notification on merge." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+} ;
+
+# =============================================================================
+# BLOCK 4 — INSERT DATA: Style Observation nodes
+# =============================================================================
+
+INSERT DATA {
+
+  narr:StyleObs_1
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:GrammarSyntax ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:GrammarSyntax ;
+      skos:related narr:InformationArchitecture ;
+      rdf:value    true ;
+      skos:note    "Markdown table used as a structured gap-analysis device. Three-column format (Demo / What exists / What's missing) creates parallel visual structure that aids scanning." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:StyleObs_2
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:BrandNameStylization ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:BrandNameStylization ;
+      skos:related narr:KeyPhrases ;
+      rdf:value    true ;
+      skos:note    "Taxonomy terms (Solo, Parallel, Hub, Salon, Teams) consistently bolded throughout. Functions as controlled vocabulary / brand-name stylization for the use-case taxonomy." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:StyleObs_3
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:RhetoricalQuestion ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:RhetoricalQuestion ;
+      skos:related narr:PositioningThesis ;
+      rdf:value    true ;
+      skos:note    "Rhetorical question used to crystallize the strategic decision point. Declarative framing ('The question is whether...') rather than interrogative punctuation — characteristic of analytical memo style." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:StyleObs_4
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:Antithesis ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:Antithesis ;
+      skos:related narr:CoreNarratives ;
+      rdf:value    true ;
+      skos:note    "Antithesis compressed into a single short declarative sentence. Contrasts 'who pays' vs. 'who drives' to resolve the apparent divergence between two GTM motions." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:StyleObs_5
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:ToneAuthoritative ;
+      skos:related narr:RiskGuardrails ;
+      rdf:value    true ;
+      skos:note    "External authority (Tony) quoted inline within a parenthetical to add weight to the focus-dilution risk. Conversational attribution style consistent with internal memo register." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:StyleObs_6
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:Parallelism ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:Parallelism ;
+      skos:related narr:ModulesCapabilities ;
+      rdf:value    true ;
+      skos:note    "Parallel bullet structure: each capability named in bold, followed by status ('Works.' / 'exists' / 'Nothing built.'). Consistent grammatical pattern enables rapid scanning of build status." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:StyleObs_7
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:ShortPunchyCadence ;
+      skos:related narr:Tagline ;
+      rdf:value    true ;
+      skos:note    "Two-word declarative sentence used for maximum impact in capability inventory. Characteristic short-punchy cadence that signals directness and analytical confidence." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:StyleObs_8
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:Analogy ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:Analogy ;
+      skos:related narr:ResonanceUse ;
+      rdf:value    true ;
+      skos:note    "Structural analogy maps enterprise engagement stages (Pilot/Full engagement/Retainer) directly onto taxonomy levels (Salon/Teams/Parallel). Analogy is the core rhetorical move of the 'Unifying Insight' section." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:StyleObs_9
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:RegisterFormality ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:RegisterFormality ;
+      skos:related narr:ToneVoice ;
+      rdf:value    true ;
+      skos:note    "Register is internal analytical memo: structured headers, bold metadata block, third-person analysis. No second-person address. Neutral-to-formal band appropriate for founder-AI coworker strategic session." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:StyleObs_10
+      a narr:StyleObservation, oa:Annotation ;
+      skos:broader narr:VoiceActive ;
+      dct:source   narr:Sample_1 ;
+      oa:hasBody   narr:VoiceActive ;
+      skos:related narr:ToneVoice ;
+      rdf:value    true ;
+      skos:note    "Active voice dominates throughout. Subject-verb-object constructions ('Scarlet interviews...builds...shows') create momentum and clarity. Passive voice absent in key strategic claims." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+} ;
+
+# =============================================================================
+# BLOCK 5 — INSERT DATA: Assessment nodes
+# =============================================================================
+
+INSERT DATA {
+
+  narr:Assess_Register_1
+      a narr:Assessment ;
+      skos:broader narr:Rubric_Register ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "Strong register fit for internal strategic memo. Neutral-to-formal, analytical, no hype. Active voice dominant. Slight informality in parenthetical asides ('Tony: ...') is appropriate for founder-AI context. Supporting obs: narr:StyleObs_9." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Assess_Phrasing_1
+      a narr:Assessment ;
+      skos:broader narr:Rubric_Phrasing ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "3.5"^^xsd:decimal ;
+      skos:note    "Characteristic phrasing includes 'The difference is who pays and who drives' and 'Nothing built.' — short, declarative, confident. Taxonomy terms (Solo/Salon/Teams) function as controlled vocabulary. Some generic phrasing in backlog section. Supporting obs: narr:StyleObs_4, narr:StyleObs_7." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Assess_Cadence_1
+      a narr:Assessment ;
+      skos:broader narr:Rubric_Cadence ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "3.5"^^xsd:decimal ;
+      skos:note    "Mix of short declaratives ('Nothing built.', 'The difference is who pays and who drives.') and longer analytical sentences. Table and bullet structures create visual rhythm. Cadence is functional rather than rhetorical — appropriate for memo genre. Supporting obs: narr:StyleObs_7." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Assess_StrategicAlignment_1
+      a narr:Assessment ;
+      skos:broader narr:Rubric_StrategicAlignment ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.5"^^xsd:decimal ;
+      skos:note    "Exceptionally strong strategic alignment. Document explicitly maps product capability to use-case taxonomy, backlog to GTM motions, and resolves apparent tension via the 'Unifying Insight' analogy. Directly addresses mission (collective memory), vision (self-serve without consultant), and core narratives. Supporting obs: narr:Obs_CoreNarratives_1, narr:Narrative_1." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Assess_Tailoring_1
+      a narr:Assessment ;
+      skos:broader narr:Rubric_Tailoring ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "Well-tailored to the founder-AI coworker audience: assumes shared context (taxonomy defined in related doc, backlog task IDs referenced), uses internal shorthand (msg/*, task-081), and addresses Scarlet's specific decision context. Would score lower for external audiences. Supporting obs: narr:StyleObs_9." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Assess_Resonance_1
+      a narr:Assessment ;
+      skos:broader narr:Rubric_Resonance ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "3.5"^^xsd:decimal ;
+      skos:note    "Resonance achieved primarily through the structural analogy (Pilot=Salon, Full engagement=Teams, Retainer=Parallel) and the quoted external voice (Tony). Gap analysis table adds concrete grounding. No narrative story arc or emblematic customer example. Supporting obs: narr:StyleObs_8, narr:StyleObs_5." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Assess_Flow_1
+      a narr:Assessment ;
+      skos:broader narr:Rubric_Flow ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "Strong flow: Current Capability → Gap Analysis → Backlog Alignment → Two GTM Motions → Tension → Unifying Insight → Prioritization. Each section builds on the prior. Transitions are implicit (section headers) rather than explicit connective tissue, which is appropriate for memo genre. Supporting obs: narr:StyleObs_1." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Assess_Novelty_1
+      a narr:Assessment ;
+      skos:broader narr:Rubric_Novelty ;
+      dct:source   narr:Sample_1 ;
+      rdf:value    "4.0"^^xsd:decimal ;
+      skos:note    "High novelty in the core insight (enterprise engagement = Salon primitive). Taxonomy terms (Solo/Parallel/Hub/Salon/Teams) are original vocabulary. Some backlog section language is generic ('heavily weighted toward'). The 'Unifying Insight' framing is fresh and non-boilerplate. Supporting obs: narr:StyleObs_2, narr:StyleObs_8." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+} ;
+
+# =============================================================================
+# BLOCK 6 — INSERT DATA: Metrics_1 and Claim nodes
+# =============================================================================
+
+INSERT DATA {
+
+  narr:Metrics_1
+      narr:JargonDensity "0.12"^^xsd:decimal ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+
+  narr:Claim_UnifyingInsight
+      a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:aboutNode          narr:CoreNarratives ;
+      narr:supports           narr:Narrative_1 ;
+      dct:source              narr:Sample_1 ;
+      skos:note               "Claim: enterprise engagement stages map 1:1 onto use-case taxonomy primitives (Pilot=Salon, Full=Teams, Retainer=Parallel). Settled enough to drive prioritization decisions; would require significant counter-evidence to shift." ;
+      prov:wasGeneratedBy     narr:Tx_20260219T015742Z .
+
+  narr:Claim_ConsumerMotion
+      a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:aboutNode          narr:ExpansionPathway ;
+      dct:source              narr:Sample_1 ;
+      skos:note               "Claim: consumer/viral SMS play could generate bottom-up enterprise demand and prove product without consulting labor. Proposed but not yet validated; moveable pending evidence from msg/* build." ;
+      prov:wasGeneratedBy     narr:Tx_20260219T015742Z .
+
+} ;
+
+# =============================================================================
+# BLOCK 7 — UPDATE: narr:Narrative_1 theme and direction
+# (DELETE existing theme/direction/source/broader/note, INSERT new values)
+# =============================================================================
+
+DELETE {
+  narr:Narrative_1 narr:theme    ?theme .
+  narr:Narrative_1 narr:direction ?dir .
+  narr:Narrative_1 dct:source    ?src .
+  narr:Narrative_1 skos:broader  ?broader .
+  narr:Narrative_1 skos:note     ?note .
+}
+INSERT {
+  narr:Narrative_1
+      narr:theme     "Unified primitives power both enterprise and consumer GTM" ;
+      narr:direction "Positive" ;
+      dct:source     narr:Sample_1 ;
+      skos:broader   narr:NarrativeAnchor ;
+      skos:note      "The enterprise consultant engagement and the consumer SMS play use identical product primitives (branch, reviewer assignment, interview-to-memory, conversational review, notification). The difference is who initiates, not what the system does." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+}
+WHERE {
+  narr:Narrative_1 narr:theme ?theme .
+  OPTIONAL { narr:Narrative_1 narr:direction ?dir . }
+  OPTIONAL { narr:Narrative_1 dct:source    ?src . }
+  OPTIONAL { narr:Narrative_1 skos:broader  ?broader . }
+  OPTIONAL { narr:Narrative_1 skos:note     ?note . }
+} ;
+
+# =============================================================================
+# BLOCK 8 — UPDATE: narr:Narrative_2 theme and direction
+# =============================================================================
+
+DELETE {
+  narr:Narrative_2 narr:theme    ?theme .
+  narr:Narrative_2 narr:direction ?dir .
+  narr:Narrative_2 dct:source    ?src .
+  narr:Narrative_2 skos:broader  ?broader .
+  narr:Narrative_2 skos:note     ?note .
+}
+INSERT {
+  narr:Narrative_2
+      narr:theme     "Product capability lags use-case taxonomy; GTM motions are unconnected" ;
+      narr:direction "Tension" ;
+      dct:source     narr:Sample_1 ;
+      skos:broader   narr:StrategyOverview ;
+      skos:note      "Current build covers Solo only, partially. Two GTM motions (enterprise consulting vs. consumer/viral SMS) are documented at different levels of priority and remain structurally unconnected despite sharing the same underlying primitives." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+}
+WHERE {
+  narr:Narrative_2 narr:theme ?theme .
+  OPTIONAL { narr:Narrative_2 narr:direction ?dir . }
+  OPTIONAL { narr:Narrative_2 dct:source    ?src . }
+  OPTIONAL { narr:Narrative_2 skos:broader  ?broader . }
+  OPTIONAL { narr:Narrative_2 skos:note     ?note . }
+} ;
+
+# =============================================================================
+# BLOCK 9 — UPDATE: narr:Narrative_3 theme and direction
+# =============================================================================
+
+DELETE {
+  narr:Narrative_3 narr:theme    ?theme .
+  narr:Narrative_3 narr:direction ?dir .
+  narr:Narrative_3 dct:source    ?src .
+  narr:Narrative_3 skos:broader  ?broader .
+  narr:Narrative_3 skos:note     ?note .
+}
+INSERT {
+  narr:Narrative_3
+      narr:theme     "msg/* conversational layer as shared infrastructure for both motions" ;
+      narr:direction "Positive" ;
+      dct:source     narr:Sample_1 ;
+      skos:broader   narr:NarrativeDrivenRoadmap ;
+      skos:note      "Building the msg/* layer (branch management, reviewer assignment, interview-to-memory, conversational review/approval, notification on merge) serves enterprise (Scarlet as consulting tool) and consumer (self-serve) simultaneously." ;
+      prov:wasGeneratedBy narr:Tx_20260219T015742Z .
+}
+WHERE {
+  narr:Narrative_3 narr:theme ?theme .
+  OPTIONAL { narr:Narrative_3 narr:direction ?dir . }
+  OPTIONAL { narr:Narrative_3 dct:source    ?src . }
+  OPTIONAL { narr:Narrative_3 skos:broader  ?broader . }
+  OPTIONAL { narr:Narrative_3 skos:note     ?note . }
+}

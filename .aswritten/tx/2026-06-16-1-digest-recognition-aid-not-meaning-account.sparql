@@ -1,0 +1,220 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  narr:Tx_20260616T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-16T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# The digest is a recognition aid over a lossless store" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_DigestRecognitionAid_20260616,
+      narr:Narrative_DigestAsRecognitionAid,
+      narr:Narrative_RecognitionPrecedesCreation,
+      narr:Narrative_StatelessDedupCursor,
+      narr:Claim_IndexNeverGatesStore,
+      narr:Claim_AbsenceIsNoRecognizedAssociation,
+      narr:Claim_ExpansionIsSteering,
+      narr:Claim_MultiplicityInVariation,
+      narr:Obs_ThemeIsInterpretiveQuote,
+      narr:Obs_RecognitionPrecedesCreationQuote,
+      narr:Obs_StatelessDedupDesign,
+      narr:StyleMetrics_DigestRecognitionAid,
+      narr:StyleObs_EpistemologicalRegister,
+      narr:StyleObs_AntithesisStructure,
+      narr:StyleObs_VerbatimBlockquote .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260616T120000Z {
+
+    narr:Sample_DigestRecognitionAid_20260616 a narr:Sample ;
+      dct:title "The digest is a recognition aid over a lossless store; the index never gates the store" ;
+      dct:created "2026-06-15"^^xsd:date ;
+      narr:inputLength 6842 .
+
+    narr:Narrative_DigestAsRecognitionAid a narr:Narrative ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:prefLabel "Digest as Recognition Aid Over Lossless Store" ;
+      skos:note "The digest accelerates the recognized path to raw material; it does not host meaning itself. Compression-is-the-only-projection applies: compress the handle, never destroy the material. The interpretive theme is acceptable only because the novel reading is always one expand away. Nothing is foreclosed; the recognized path is just faster." ;
+      narr:theme "The digest is a lossy index over a lossless store; the index never gates the store; it accelerates the recognized path without foreclosing novel readings" .
+
+    narr:Narrative_RecognitionPrecedesCreation a narr:Narrative ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Recognition Precedes Creation" ;
+      skos:note "If we find raw material through an old association before we can be creative with it, then the index was never the place the new reading would happen. It happens in the mind, downstream, once you are holding the material. The digest feeds creativity; it does not host it." ;
+      narr:theme "Recognition (old association) is the retrieval-shaped part; creative reading is the steering/perspective part and lives in the mind on expanded material" .
+
+    narr:Narrative_StatelessDedupCursor a narr:Narrative ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:TechnicalExplainers ;
+      skos:prefLabel "Stateless Deduplicating Cursor for Expand" ;
+      skos:note "expand(want, have) returns want minus have. Every response hands back a served manifest the agent forwards verbatim on the next call. Reliability comes from the return carrying the manifest forward, not from trusting agent memory. Same principle as guidance-in-the-tool-surface-not-the-prompt. Effect: union of all expands serves each node once; pulling the whole graph converges to approximately 1x the graph; over-navigation bounded at 1x rather than 3x." ;
+      narr:theme "expand becomes a stateless deduplicating cursor: expand(want, have) returns want minus have; the served manifest travels in the return, not in agent memory" .
+
+    narr:Claim_IndexNeverGatesStore a narr:Claim ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:note "The index must never gate the store. Steering requires compression but compression via fixed themes is exactly the reductionism the discourse-act ontology exists to refuse. A claim is not about something; it is available to be read as many things. The digest does not have to anticipate the novel reading. It has to get you close enough via an old association that you expand and encounter the material." ;
+      narr:aboutNode narr:Narrative_DigestAsRecognitionAid ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_DigestAsRecognitionAid .
+
+    narr:Claim_AbsenceIsNoRecognizedAssociation a narr:Claim ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:note "Absence is no recognized association, never nothing here. Targeted grounding may trust recognized-absence; creative exploration deliberately distrusts it and expands past the recognized. Creative reading costs expansion by design. A cheap legible-absence is dangerous precisely because the encounters it lets you skip are where novelty would have struck. Mitigation: honesty about scope (recognition aid, never account of meaning) and the always-reachable store." ;
+      narr:aboutNode narr:Narrative_DigestAsRecognitionAid ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_DigestAsRecognitionAid .
+
+    narr:Claim_ExpansionIsSteering a narr:Claim ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:note "Expansion is steering, not just quoting. Expanding a subtree you genuinely lean on is the product working: you get the trajectory and variance, not just a verbatim quote. The bad case is expanding to discover whether anything is there; the good case is expanding onto material you have already decided is relevant. Route to the subtree, not the child." ;
+      narr:aboutNode narr:Narrative_DigestAsRecognitionAid ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_DigestAsRecognitionAid .
+
+    narr:Claim_MultiplicityInVariation a narr:Claim ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:note "Multiplicity lives in variation, not a theme label. The digest already refuses single-theme reduction via the variation block: it surfaces reads as X, and as Y, and the road not taken. That is the anti-reductionist mechanism and it stays load-bearing." ;
+      narr:aboutNode narr:Narrative_DigestAsRecognitionAid ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_DigestAsRecognitionAid .
+
+    narr:Obs_ThemeIsInterpretiveQuote a narr:Observation ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:DesignTradeoffs ;
+      skos:note "Scarlet's verbatim articulation of the theme-is-interpretive trap and the anti-reductionist resolution." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DigestRecognitionAid_20260616 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1180 ;
+          oa:end 1420
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the problem becomes that theme is interpretive - ie claims can be read different ways, and reducing a claim to a single theme is exactly the kind of reductionism" ;
+          oa:prefix "On the proposal to give each node a coverage signature, Scarlet identified the trap: " ;
+          oa:suffix " that steering and statements about statements attempts to avoid."
+        ]
+      ] .
+
+    narr:Obs_RecognitionPrecedesCreationQuote a narr:Observation ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "Scarlet's verbatim resolution: recognition through old association precedes creative reading." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DigestRecognitionAid_20260616 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1480 ;
+          oa:end 1600
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Will you find the raw material? Maybe yes, and maybe we always find it through an old association in our minds before we can be creative with it." ;
+          oa:prefix "And then the resolution, in her own observation about cognition: " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:Obs_StatelessDedupDesign a narr:Observation ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:TechnicalExplainers ;
+      skos:note "Scarlet chose stateless dedup over server-side session tracking to keep the read path a pure function (ZDR-pure, no session store, composable). The reliability comes from the return carrying the manifest forward, not from trusting the agent's memory." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DigestRecognitionAid_20260616 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4200 ;
+          oa:end 4500
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "expand(want, have) returns want \\ have, and every response hands back a served manifest the agent forwards verbatim on the next call" ;
+          oa:prefix "expand becomes a stateless deduplicating cursor: " ;
+          oa:suffix ". Scarlet chose this over server-side session tracking"
+        ]
+      ] .
+
+    narr:StyleMetrics_DigestRecognitionAid a narr:StyleMetrics ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Philosophical-analytical register with embedded verbatim blockquotes from Scarlet. Mixed: structured markdown with H2 section headers (memo genre) vs. first-person blockquoted speech. Antithesis-heavy structure (recognition vs. creation, index vs. store, recognized-absence vs. nothing-here, bad-expand vs. good-expand). Active voice dominant in editorial prose. Jargon density moderate: product terms (expand, digest, variation block, ZDR-pure, served manifest) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier." ;
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.09"^^xsd:decimal .
+
+    narr:StyleObs_EpistemologicalRegister a narr:StyleObservation ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:ToneAuthoritative ;
+      skos:note "The memory operates in an unusually high epistemological register for a product design session: recognition, creativity, association, and projection are used as precise technical terms, not metaphors. This is the idiolect of someone who has internalized the anti-reductionism principle as a design constraint." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DigestRecognitionAid_20260616 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2100 ;
+          oa:end 2350
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Recognition precedes creation. If we find raw material through an old association before we can be creative with it, then the index was never the place the new reading would happen" ;
+          oa:prefix "" ;
+          oa:suffix " - it happens in the mind, downstream"
+        ]
+      ] .
+
+    narr:StyleObs_AntithesisStructure a narr:StyleObservation ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:Antithesis ;
+      skos:note "The document is structured around a series of antitheses that each resolve in the same direction: lossy index vs. lossless store (store wins), recognized-absence vs. nothing-here (nothing-here is wrong), bad-expand vs. good-expand (good-expand is onto material already decided relevant). Each antithesis is a design constraint." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DigestRecognitionAid_20260616 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 600 ;
+          oa:end 820
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The digest is a lossy index over a lossless store, and the index never gates the store" ;
+          oa:prefix "What makes the interpretive index safe rather than a betrayal of the anti-reductionism is structural: " ;
+          oa:suffix ". Compression-is-the-only-projection"
+        ]
+      ] .
+
+    narr:StyleObs_VerbatimBlockquote a narr:StyleObservation ;
+      dct:source narr:Sample_DigestRecognitionAid_20260616 ;
+      skos:broader narr:SpeakerIdiolects ;
+      skos:note "Scarlet's quoted speech in this memory is unusually precise and aphoristic compared to other session memos. The two blockquotes function as axioms the rest of the document derives from, rather than as supporting evidence. This is a rhetorical structure borrowed from philosophical argument." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DigestRecognitionAid_20260616 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1180 ;
+          oa:end 1600
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the problem becomes that theme is interpretive" ;
+          oa:prefix "Scarlet identified the trap: " ;
+          oa:suffix " - ie claims can be read different ways"
+        ]
+      ] .
+
+  }
+}

@@ -1,0 +1,347 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260715T210000Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-15T21:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# The value-proposition logic: the context server and the five questions" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_ContextServerFiveQuestions_20260610,
+      narr:Narrative_CEOContextServerReframe,
+      narr:Narrative_FiveQuestionDiscoveryFramework,
+      narr:Narrative_TranscriptDemotionFrictionNotValue,
+      narr:Narrative_QuantificationStagedHonestly,
+      narr:Claim_CEOUnpaidSecondJob,
+      narr:Claim_ContextServerRhymesReachability,
+      narr:Claim_BottleneckBeyondIndividuals,
+      narr:Claim_FiveQDiscoveryFramework,
+      narr:Claim_DisqualificationRule,
+      narr:Claim_TranscriptDemotedFrictionStory,
+      narr:Claim_AnalyticsReportsEnterpriseCustomerShapeOnly,
+      narr:Claim_UnderstandingNeverSells,
+      narr:Claim_QuantificationOneMetricPerEngagement,
+      narr:Claim_ScarletBestPitchVerdict,
+      narr:Claim_TonyPainFirstContinuity,
+      narr:Obs_CEOContextServerQuote,
+      narr:Obs_BottleneckProcessesQuote,
+      narr:Obs_ScarletVerdictQuote,
+      narr:Obs_TonyPainFirstQuote,
+      narr:StyleObs_ContextServerMetaphor,
+      narr:StyleObs_FiveQuestionCadence,
+      narr:StyleObs_CapabilityLedRejection,
+      narr:StyleMetrics_ContextServerFiveQuestions .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260715T210000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────────────
+    narr:Sample_ContextServerFiveQuestions_20260610
+      a narr:Sample ;
+      dct:title "The value-proposition logic: the context server and the five questions" ;
+      dct:created "2026-06-10"^^xsd:date ;
+      dct:description "Part 4 of the consulting-engagement session record (June 10-12, 2026). Scarlet Dame working session with Claude. Covers the rejection of capability-led pitch, the CEO-as-context-server reframe, the five-question discovery framework, three demotions (transcripts, analytics, understanding), staged quantification, and continuity to January 8 deck / Tony pain-first feedback." ;
+      narr:inputLength 3821 ;
+      narr:styleProfile "<https://aswritten.ai/narrative#Antithesis> <https://aswritten.ai/narrative#Metaphor> <https://aswritten.ai/narrative#RuleOfThree> <https://aswritten.ai/narrative#ShortPunchyCadence> <https://aswritten.ai/narrative#SpeakerIdiolects>" .
+
+    # ── NARRATIVES ───────────────────────────────────────────────────────────
+
+    # S2: CEO as context server — new top-level reframe
+    narr:Narrative_CEOContextServerReframe
+
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "The CEO's Unpaid Second Job: Context Server" ;
+      skos:note "The answer that landed when Scarlet rejected the capability-led pitch: no role goes away — what goes away is the CEO's unpaid second job as the company's context server. Every 'got a sec,' every deck review, every on-strategy check, every new hire and agency and AI session loaded by hand from the one head where the judgment lives. Invisible as a role because it's a tax distributed across the most expensive calendar in the company; countable as interruptions, review loops, and decision latency. Rhymes with the keystone promise 'reachability without interruptibility' — the same interruption inversion seen from the organization's side." ;
+      narr:theme "The product eliminates the CEO's invisible unpaid second job as the company's context server — a tax distributed across the most expensive calendar in the company, countable as interruptions, review loops, and decision latency" ;
+      narr:supports narr:Narrative_ReachabilityWithoutInterruptibility .
+
+    # S4: Five-question discovery framework
+    narr:Narrative_FiveQuestionDiscoveryFramework
+
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:SolutionArchetypes ;
+      skos:prefLabel "Five-Question Discovery Framework (Call One Structure)" ;
+      skos:note "The five-question discovery framework doubles as the structure of call one: (1) Whose hours are the constraint — what questions can only you answer; which decisions wait for the next meeting? (2) Which recurring output bottlenecks on that person — what did you keep producing that you resented? (3) What is the most recent incident of context failing to transfer? (4) Which existing budget line does this raid? (5) What single number moves, and how will we both watch it? Disqualification rule: no answers to questions two and three means friendly or pass, not buyer." ;
+      narr:theme "A five-question discovery framework that doubles as the structure of call one, with a disqualification rule: no answers to Q2 and Q3 means friendly or pass, not buyer" .
+
+    # S5: Three demotions narrative
+    narr:Narrative_TranscriptDemotionFrictionNotValue
+
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Three Demotions: Transcripts, Analytics, Understanding" ;
+      skos:note "Three demotions from the June 10 session: (1) The transcript 'gold mine' is a friction story, not a value story — the market priced transcripts at roughly [amount]per seat; they are inert. (2) Introspective analytics reports are the deliverable for the decision-drift segment specifically (the the enterprise customer shape), not universal. (3) Understanding never sells — outputs do. This refines rather than contradicts the April 16 transcript bootstrapping insight: transcripts lead the onramp; pain leads the value story." ;
+      narr:theme "Three demotions: transcripts are a friction story not a value story; analytics reports are the enterprise customer-shape-specific not universal; understanding never sells — outputs do" .
+
+    # S6: Quantification staging
+    narr:Narrative_QuantificationStagedHonestly
+
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:MetricsMonitoring ;
+      skos:prefLabel "Staged Quantification: One Metric Per Engagement" ;
+      skos:note "Quantification is staged honestly: one metric per engagement, instrumented in the calibration readouts; friendlies produce the first real numbers; engagement one's number is engagement two's pitch." ;
+      narr:theme "Quantification is staged honestly — one metric per engagement; friendlies produce the first real numbers; engagement one's number is engagement two's pitch" .
+
+    # ── CLAIMS ───────────────────────────────────────────────────────────────
+
+    # S2: CEO unpaid second job
+    narr:Claim_CEOUnpaidSecondJob
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "The answer that landed: no role goes away — what goes away is the CEO's unpaid second job as the company's context server. Every 'got a sec,' every deck review, every on-strategy check, every new hire and agency and AI session loaded by hand from the one head where the judgment lives. Invisible as a role because it's a tax distributed across the most expensive calendar in the company; countable as interruptions, review loops, and decision latency." ;
+      narr:aboutNode narr:Narrative_CEOContextServerReframe ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_CEOContextServerReframe .
+
+    # S2: Rhymes with reachability
+    narr:Claim_ContextServerRhymesReachability
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "The context-server pain rhymes with the keystone promise already in the graph, 'reachability without interruptibility' (Tony check-in, April 2026) — the same interruption inversion, seen from the organization's side." ;
+      narr:aboutNode narr:Narrative_ReachabilityWithoutInterruptibility ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_CEOContextServerReframe .
+
+    # S3: Bottleneck beyond individuals
+    narr:Claim_BottleneckBeyondIndividuals
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "Scarlet extended the bottleneck past individuals: 'it's not just people's heads; it's processes heads, right? Like ARB... We're looking for the bottlenecks and processes that are happening via conversation.' Budget reality: new categories raid existing lines (agencies, the AI initiative, enablement, the offsite) rather than creating new ones." ;
+      narr:aboutNode narr:Narrative_CEOContextServerReframe ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_FiveQuestionDiscoveryFramework .
+
+    # S4: Five-question framework claim
+    narr:Claim_FiveQDiscoveryFramework
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "The five-question discovery framework doubles as the structure of call one. Q1: whose hours are the constraint — what questions can only you answer; which decisions wait for the next meeting? Q2: which recurring output bottlenecks on that person — what did you keep producing that you resented? Q3: what is the most recent incident of context failing to transfer? Q4: which existing budget line does this raid? Q5: what single number moves, and how will we both watch it?" ;
+      narr:aboutNode narr:Narrative_FiveQuestionDiscoveryFramework ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_SellTheProcessPreCaseStudy .
+
+    # S4: Disqualification rule
+    narr:Claim_DisqualificationRule
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "Disqualification rule: no answers to questions two and three means friendly or pass, not buyer." ;
+      narr:aboutNode narr:Narrative_FiveQuestionDiscoveryFramework ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_EnterpriseShapePrimaryFocus .
+
+    # S5: Transcript demotion
+    narr:Claim_TranscriptDemotedFrictionStory
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "The transcript 'gold mine' is a friction story, not a value story — the market priced transcripts at roughly [amount]per seat; they are inert. Transcripts lead the onramp; pain leads the value story. This refines rather than contradicts the April 16 'transcript bootstrapping underplayed' insight." ;
+      narr:aboutNode narr:Narrative_TranscriptDemotionFrictionNotValue ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_TranscriptBootstrappingUnderplayed .
+
+    # S5: Analytics reports demotion
+    narr:Claim_AnalyticsReportsEnterpriseCustomerShapeOnly
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "Introspective analytics reports are the deliverable for the decision-drift segment specifically (the the enterprise customer shape), not universal. They are not a general value story." ;
+      narr:aboutNode narr:Narrative_TranscriptDemotionFrictionNotValue ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    # S5: Understanding never sells
+    narr:Claim_UnderstandingNeverSells
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "Understanding never sells — outputs do. This is the third demotion from the June 10 session, refining the value story away from comprehension and toward deliverable outputs." ;
+      narr:aboutNode narr:Narrative_TranscriptDemotionFrictionNotValue ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    # S6: One metric per engagement
+    narr:Claim_QuantificationOneMetricPerEngagement
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "Quantification is staged honestly: one metric per engagement, instrumented in the calibration readouts; friendlies produce the first real numbers; engagement one's number is engagement two's pitch." ;
+      narr:aboutNode narr:Narrative_QuantificationStagedHonestly ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ConsultingIsMeUsingProduct .
+
+    # S7: Scarlet's verdict
+    narr:Claim_ScarletBestPitchVerdict
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "Scarlet's verdict, June 10: 'I think this is by far the best pitch and articulation of the product value we've ever had.' This marks the context-server framing as the highest-conviction pitch crystallization to date." ;
+      narr:aboutNode narr:Narrative_CEOContextServerReframe ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    # S8: Continuity to January 8 / Tony pain-first
+    narr:Claim_TonyPainFirstContinuity
+      a narr:Claim ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:note "The context-server framing systematizes the January 8 deck decision driven by Tony's pain-first feedback. Tony's words then — 'people have no fucking clue what to do when they join a company' and 'just not having to stop what I'm doing to tell somebody something all the fucking time. Yeah, I'm in... I don't care what it costs' — are the context-server pain in the buyer's own voice, already in the perspective." ;
+      narr:aboutNode narr:Narrative_CEOContextServerReframe ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_InterviewForcingFunction .
+
+    # ── OBSERVATIONS ─────────────────────────────────────────────────────────
+
+    narr:Obs_CEOContextServerQuote
+      a narr:Observation ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "Scarlet's canonical articulation of the context-server pain — the founding evidence for Narrative_CEOContextServerReframe." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 497 ;
+        oa:end 697
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "no role goes away — what goes away is the CEO's unpaid second job as the company's context server" ;
+        oa:prefix "The answer that landed: " ;
+        oa:suffix ". Every \"got a sec,\"" 
+      ] .
+
+    narr:Obs_BottleneckProcessesQuote
+      a narr:Observation ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:FrictionFailure ;
+      skos:note "Scarlet extending the bottleneck beyond individuals to processes — the founding evidence for Claim_BottleneckBeyondIndividuals." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1098 ;
+        oa:end 1210
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "it's not just people's heads; it's processes heads, right? Like ARB" ;
+        oa:prefix "Scarlet extended the bottleneck past individuals: \"" ;
+        oa:suffix "... We're looking for the bottlenecks"
+      ] .
+
+    narr:Obs_ScarletVerdictQuote
+      a narr:Observation ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:Quotes ;
+      skos:note "Scarlet's verdict on June 10 — the highest-conviction pitch validation statement in the perspective." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2680 ;
+        oa:end 2770
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I think this is by far the best pitch and articulation of the product value we've ever had." ;
+        oa:prefix "Scarlet's verdict, June 10: \"" ;
+        oa:suffix "\""
+      ] .
+
+    narr:Obs_TonyPainFirstQuote
+      a narr:Observation ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:Quotes ;
+      skos:note "Tony's pain-first words from January 8 — the context-server pain in the buyer's own voice, already in the perspective." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2820 ;
+        oa:end 2980
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "just not having to stop what I'm doing to tell somebody something all the fucking time. Yeah, I'm in... I don't care what it costs" ;
+        oa:prefix "Tony's words then — 'people have no fucking clue what to do when they join a company' and '" ;
+        oa:suffix "' — are the context-server pain"
+      ] .
+
+    # ── STYLE OBSERVATIONS ───────────────────────────────────────────────────
+
+    narr:StyleObs_ContextServerMetaphor
+      a narr:StyleObservation ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:Metaphor ;
+      skos:note "'Context server' is a technical metaphor applied to a human role — the CEO as infrastructure. Characteristic of Scarlet's idiom: borrowing engineering vocabulary to make invisible labor legible." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ContextServerFiveQuestions_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 497 ;
+          oa:end 580
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the CEO's unpaid second job as the company's context server" ;
+          oa:prefix "what goes away is " ;
+          oa:suffix ". Every"
+        ]
+      ] .
+
+    narr:StyleObs_FiveQuestionCadence
+      a narr:StyleObservation ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:RuleOfThree ;
+      skos:note "The five-question framework uses a numbered list with parallel interrogative structure — each question pairs a diagnostic axis with a concrete observable. Consistent with Scarlet's session-memo idiolect of structured enumeration at conviction peaks." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ContextServerFiveQuestions_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1320 ;
+          oa:end 1480
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "whose hours are the constraint — what questions can only you answer; which decisions wait for the next meeting?" ;
+          oa:prefix "One: " ;
+          oa:suffix " Two:"
+        ]
+      ] .
+
+    narr:StyleObs_CapabilityLedRejection
+      a narr:StyleObservation ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:ToneDirectPersonal ;
+      skos:note "The memory opens with Scarlet's direct rejection of the accumulated pitch as 'capability-led' — a pattern of naming the failure mode before articulating the correction. Characteristic of the session-memo register: diagnosis precedes prescription." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ContextServerFiveQuestions_20260610 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 320 ;
+          oa:end 430
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "people buy stuff because they think it's required to build the thing, right?" ;
+          oa:prefix "On June 10 Scarlet rejected the accumulated pitch as capability-led:\n\n> " ;
+          oa:suffix " ... which role in the business"
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────────────────
+
+    narr:StyleMetrics_ContextServerFiveQuestions
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_ContextServerFiveQuestions_20260610 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo register with embedded verbatim blockquotes from Scarlet. Mixed register: analytical editorial prose (authoritative, structured) vs. first-person conversational in blockquoted speech. Antithesis-heavy structure (capability-led vs. pain-led, friction story vs. value story, understanding vs. outputs). Active voice dominant in editorial sections. Jargon density low-moderate — product terms (context server, calibration readouts, the enterprise customer shape) used without definition, implying internal audience. Numbered list structure for the five-question framework. Short punchy declaratives at conviction peaks ('Understanding never sells — outputs do.'). Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal .
+
+  }
+}

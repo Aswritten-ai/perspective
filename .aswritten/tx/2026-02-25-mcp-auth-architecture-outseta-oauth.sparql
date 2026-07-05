@@ -1,0 +1,157 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# ============================================================
+# OPERATION 1 — INSERT DATA (added triples)
+# ============================================================
+INSERT DATA {
+
+  # --- New Actors ---
+  narr:Actor_Claude a narr:Actor ;
+      skos:prefLabel "Claude" ;
+      skos:note "AI collaborator working through MCP proxy auth architecture with Scarlet." ;
+      .
+
+  narr:Actor_Aswritten a narr:Actor ;
+      skos:prefLabel "aswritten" ;
+      skos:note "Organization managing identity, repos, and the MCP proxy infrastructure." ;
+      .
+
+  # --- Narratives ---
+  narr:Narrative_GitHubIsInfraNotIdentity a narr:Narrative ;
+
+      narr:theme "GitHub is infrastructure, not identity; Outseta owns identity and billing" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "The decisive architectural choice: GitHub OAuth was rejected in favour of Outseta because GitHub is one of many source integrations, not the identity layer. Users who never touch GitHub still get the same proxy, tools, and auth." ;
+      .
+
+  narr:Narrative_AdaptiveToolsUX a narr:Narrative ;
+
+      narr:theme "Single MCP endpoint with context-driven adaptive tools eliminates per-repo server config UX friction" ;
+      skos:broader narr:ProductOverview ;
+      skos:note "Replacing /mcp/{owner}/{repo} with a single /mcp endpoint whose tool set adapts to user state (no repos, repos connected, repo selected) is the core UX improvement." ;
+      .
+
+  narr:Narrative_ManagedRepoPerUser a narr:Narrative ;
+
+      narr:theme "Every user gets an owner/repo managed entirely by aswritten — the repo is invisible infrastructure" ;
+      skos:broader narr:SystemTopology ;
+      skos:note "Even users who never see GitHub have a repo backing their collective memory. The abstraction is complete." ;
+      .
+
+  # --- New Claims ---
+  narr:Claim_SMSIsProduct a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:aboutNode narr:Narrative_GitHubIsInfraNotIdentity ;
+      narr:assertsStatement "The SMS framing is actually a product. The git/MCP system is infrastructure." ;
+      narr:supports narr:PositioningThesis ;
+      .
+
+  narr:Claim_OutsetaOwnsIdentity a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:aboutNode narr:Narrative_GitHubIsInfraNotIdentity ;
+      narr:assertsStatement "Outseta owns identity and billing. GitHub is a connected source, not the identity layer." ;
+      narr:supports narr:NarrativeAnchor ;
+      .
+
+  narr:Claim_AdaptiveToolsOverMultiServer a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:aboutNode narr:Narrative_AdaptiveToolsUX ;
+      narr:assertsStatement "A single /mcp endpoint with adaptive tools is superior UX to separate MCP server configs per repo." ;
+      narr:supports narr:ProductOverview ;
+      .
+
+  narr:Obs_AdaptiveToolStates a narr:Observation ;
+      skos:broader narr:Flows ;
+
+      skos:note "Three-state adaptive tool model: no repos → setup tools; repos connected, none selected → management + switch-repo; repo selected → full suite." ;
+      .
+
+  narr:Obs_ArchitecturalModel a narr:Observation ;
+      skos:broader narr:SystemTopology ;
+
+      skos:note "Canonical five-layer architectural model: Identity (Outseta), Auth (JWT), Sources (integrations), Storage (one repo per memory), Credentials (Datomic internal API), Transport (single /mcp adaptive)." ;
+      .
+
+  # --- Style Observations ---
+  narr:StyleObs_DirectQuote_NeverSeeGitHub a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+
+      skos:related narr:NarrativeAnchor ;
+      skos:note "First-person direct quote from Scarlet; decisive, unhedged, future-oriented. Sets identity architecture in one sentence." ;
+      rdf:value true ;
+      .
+
+  narr:StyleObs_DirectQuote_UXIsShit a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+
+      skos:related narr:RegisterFormality ;
+      skos:note "Unfiltered register; profanity used for emphasis. Signals low-ceremony internal communication style and high conviction about UX problem." ;
+      rdf:value true ;
+      .
+
+  narr:StyleObs_DirectQuote_ManagedByUs a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+
+      skos:related narr:KeyPhrases ;
+      skos:note "Inclusive 'us' signals ownership and agency. Concise declarative framing of managed infrastructure abstraction." ;
+      rdf:value true ;
+      .
+
+  narr:StyleObs_BrandNameBacktick a narr:StyleObservation ;
+      skos:broader narr:BrandNameStylization ;
+
+      skos:related narr:NamingConventions ;
+      skos:note "Backtick formatting used for claim IDs, code paths, and function names. Consistent technical inline-code convention." ;
+      rdf:value true ;
+      .
+
+  narr:StyleObs_BulletParallelism a narr:StyleObservation ;
+      skos:broader narr:Parallelism ;
+
+      skos:related narr:GrammarSyntax ;
+      skos:note "Adaptive tool states expressed as parallel bold-label bullet structure: **State**: Consequence. Consistent grammatical form across three items." ;
+      rdf:value true ;
+      .
+
+  narr:StyleObs_ScopeHeaderStructure a narr:StyleObservation ;
+      skos:broader narr:CadenceRhythm ;
+
+      skos:related narr:FlowCoherence ;
+      skos:note "Scope section uses bold inline labels (In scope now / Next / Out of scope) as a three-part cadence — creates rhythm and clear sequencing without sub-headers." ;
+      rdf:value true ;
+      .
+
+  narr:StyleObs_CodeBlockArchDiagram a narr:StyleObservation ;
+      skos:broader narr:PunctuationTypography ;
+
+      skos:related narr:SystemTopology ;
+      skos:note "Fenced code block used for architectural model summary — columnar label:value alignment. Treats architecture as readable artifact, not prose." ;
+      rdf:value true ;
+      .
+
+  narr:StyleObs_EmDashCadence a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+
+      skos:related narr:CadenceRhythm ;
+      skos:note "Em-dash used to append punchy consequence clauses. Creates staccato rhythm; consequence lands hard after the dash." ;
+      rdf:value true ;
+      .
+
+  # --- Style Metrics ---
+  narr:StyleMetrics_MCP_Auth a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio "0.88"^^xsd:decimal ;
+      narr:JargonDensity "0.14"^^xsd:decimal ;
+      skos:note "High active voice ratio; technical jargon (Datomic, JWT, PAT, MCP, n8n) is domain-appropriate and consistently used. Average sentence length moderate; punctuated by short declarative sentences for emphasis. Three direct quotes in blockquote format elevate personal voice above ambient technical register." ;
+      .
+
+} 

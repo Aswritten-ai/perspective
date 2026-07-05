@@ -1,0 +1,124 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260518T140000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-18T14:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# Team Plan, ICP Refinement, Org Tier Value Prop — May 17-18, 2026" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      
+      
+      narr:Claim_ICPTwoSubsegmentPattern,
+      narr:Claim_ICPExcludesFortune500,
+      narr:Claim_OrgTierThreeCapabilities,
+      narr:Claim_PitchReframeAgentDeployment,
+      narr:Narrative_ICPRefinedTwoSubsegments,
+      narr:Narrative_OrgTierAgentDeploymentValue,
+      narr:Metrics_TeamPlanICPOrgTier_20260517,
+      narr:StyleObs_OrgTierAgentQuote .
+} ;
+
+# ── INSERT: New Claims
+INSERT DATA {
+  GRAPH narr:Tx_20260518T140000Z {
+
+    narr:Claim_ICPTwoSubsegmentPattern a narr:Claim ;
+
+      skos:note "ICP refined to two-subsegment shape — functional volume, not headcount. Subsegment 1: Enterprise SaaS vendor (the enterprise customer shape), 50-500 employees, [amount]-50M revenue, cross-team knowledge + ARB-style decisions + customer-facing AI, AI tooling line item [amount]-15K/mo. Subsegment 2: Successful professional practice (medical, legal, financial, consulting), 5-30 employees, [amount]-10M revenue, practitioner expertise scaling + client/patient vetting + compliance, professional services line item [amount]-10K/mo. Subsegment 3: Boutique consultancy/expert services firm, 5-50 employees, [amount]-20M revenue, knowledge work + client deliverables + expertise delegation, tooling + services mix [amount]-10K/mo. Common pattern: small operational footprint, real revenue, knowledge work as actual product, senior-expert-bottleneck pattern acute, compliance burden often present (HIPAA, attorney-client privilege, fiduciary duties)." ;
+      narr:aboutNode narr:Segmentation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ICPRefinedTwoSubsegments .
+
+    narr:Claim_ICPExcludesFortune500 a narr:Claim ;
+
+      skos:note "ICP explicitly excludes Fortune 500 buyers. Scarlet: 'Note that the enterprise customer is an enterprise vendor not a giant enterprise. And id prefer to work with that icp, 50-250 to maybe 500max employees. Which means they have budget but not huge existing line items for this stuff.' Fortune 500 buyers have established AI tooling budgets and committee-driven procurement; they shop Glean-class platforms ([amount]-[amount]/mo fully-loaded) which is a meaningful budget commit at their scale. Mid-market ICP doesn't have those existing line items." ;
+      narr:aboutNode narr:Segmentation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ICPRefinedTwoSubsegments .
+
+    narr:Claim_OrgTierThreeCapabilities a narr:Claim ;
+
+      skos:note "Org tier subscription includes three capabilities (not separately priced): (1) Internal sandboxed AI with observation — for AI-naive staff who can't be trusted with raw Claude/ChatGPT but need the perspective to do their work; lets non-power-users use AI without leaking IP, hallucinating to clients, or violating compliance; senior staff monitor + intervene via Front workspace. (2) External agent deployments on customer channels (SMS, email, Slack) — makes expert reachable without making them interruptible; transparent step-in/step-out via Front; citation provenance on every output; direct ROI examples: an early prospect's patient vetting agent, the enterprise customer's client-facing bot. (3) Enhanced Deployment Options (single-tenant, on-prem, HIPAA, etc.) — for regulated industries + companies with data sovereignty requirements; heightened infrastructure commitments + reduced SIC liability per MSA Schedule B. Scarlet: 'You also get agent deployments at org tier, not just EDOs. It unlocks the whole model of either internal and Ai naive staff getting sandboxed Ai you can monitor, and external clients/patients/partners getting access to deployed perspectives that you can transparently step in and out of convos.'" ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      .
+
+    narr:Claim_PitchReframeAgentDeployment a narr:Claim ;
+
+      skos:note "Pitch reframe from knowledge-management framing to agent-deployment framing. Old pitch: 'We install expert perspectives into AI tools.' New pitch: 'We make your expertise deployable. Internally — AI-naive staff get sandboxed AI you can monitor. Externally — clients and patients talk to agents that know what your experts know, cited and verifiable, with transparent human step-in. Either way, your expertise scales beyond your calendar.' Agent deployment story creates direct measurable ROI ('replaces 0.5 FTE of patient pre-screening' or 'handles 30% of routine client questions without our experts answering') — which lands harder than 'this makes AI better.'" ;
+      narr:aboutNode narr:NarrativeAnchor ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_OrgTierAgentDeploymentValue .
+  }
+} ;
+
+# ── INSERT: New Narratives
+INSERT DATA {
+  GRAPH narr:Tx_20260518T140000Z {
+
+    narr:Narrative_ICPRefinedTwoSubsegments a narr:Narrative ;
+
+      skos:broader narr:Segmentation ;
+      skos:prefLabel "ICP Refined: Functional Volume Across Two Subsegments" ;
+      skos:note "ICP isn't headcount, it's functional volume. Same shape across enterprise SaaS vendors (50-500 employees, [amount]-50M) and successful professional practices (5-30 employees, [amount]-10M). Explicitly excludes Fortune 500. Extends Claim_CrossVerticalPattern [BOULDER] with customer-shape detail for mid-market focus. Extends Claim_EnterpriseCustomerShapeEngagementPattern [BOULDER] — consistent; ICP refinement adds professional-practice subsegment." ;
+      narr:theme "ICP is defined by functional volume and knowledge-work-as-product pattern, not headcount — same engagement shape applies to 5-person medical practice and 150-person consultancy" .
+
+    narr:Narrative_OrgTierAgentDeploymentValue a narr:Narrative ;
+
+      skos:broader narr:PackagingEntitlement ;
+      skos:prefLabel "Org Tier Value Prop: Three Capabilities, Not Just EDOs" ;
+      skos:note "Org tier is not just EDOs — it includes internal sandboxed AI with observation, external agent deployments on customer channels, and EDOs. Most Org customers will hit at least two of these together. Extends Claim_CurlewingStructureConfirmed [FOUNDATION] with full three-tier pricing + Org value prop. Pitch reframe centers on agent deployment ROI rather than knowledge management framing." ;
+      narr:theme "Org tier delivers three capabilities — sandboxed internal AI, external agent deployments, and EDOs — not just enhanced deployment options; agent deployment creates direct measurable ROI" .
+  }
+} ;
+
+# ── INSERT: StyleMetrics
+INSERT DATA {
+  GRAPH narr:Tx_20260518T140000Z {
+    narr:Metrics_TeamPlanICPOrgTier_20260517 a narr:StyleMetrics ;
+
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic session memo with embedded verbatim blockquotes from Scarlet. Mixed register: structured markdown with H2/H3 section headers and markdown tables (memo genre) vs. conversational first-person in blockquoted speech. Antithesis-heavy structure (sandboxed vs. external, [amount] vs. [amount], quarter-time vs. half-time, product-led vs. human-led). Active voice dominant in editorial prose. Jargon density moderate — financial terms (1099, equity vest, cliff, EDO, SAFE, SEL) and product terms (Org tier, Team tier, Expert tier, MCP) used without definition, implying internal audience. Sentence length elevated by blockquoted speech; prose sections are shorter and punchier. Consistent with Scarlet session-memo idiolect." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.11"^^xsd:decimal .
+  }
+} ;
+
+# ── INSERT: Style Observations
+INSERT DATA {
+  GRAPH narr:Tx_20260518T140000Z {
+
+    narr:StyleObs_OrgTierAgentQuote a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+
+      skos:note "Scarlet's direct-personal register: mid-session clarification delivered as a correction ('You also get agent deployments at org tier, not just EDOs'). Characteristic pattern of using 'not just X' to reframe a prior framing that was too narrow. Signals a product positioning correction, not a new feature announcement." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4821 ;
+          oa:end 5021
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "You also get agent deployments at org tier, not just EDOs" ;
+          oa:prefix "Scarlet's clarification mid-session:\n> \"" ;
+          oa:suffix ". It unlocks the whole model"
+        ]
+      ] .
+  }
+}

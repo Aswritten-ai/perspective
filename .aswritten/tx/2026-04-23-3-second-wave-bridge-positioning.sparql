@@ -1,0 +1,122 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260421T190000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-21T19:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-04-21-second-wave-bridge-positioning.md" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_SecondWaveBridge_20260421, narr:Narrative_SecondWaveBridge, narr:Claim_CustomerListAsAsset, narr:Claim_StakeInGroundStrategy, narr:Claim_SurviveToWin, narr:StyleMetrics_SecondWaveBridge .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260421T190000Z {
+    narr:Sample_SecondWaveBridge_20260421 a narr:Sample ;
+      dct:title "Second Wave Bridge Positioning" ;
+      dct:created "2026-04-21"^^xsd:date ;
+      narr:inputLength 3200 .
+
+    narr:Narrative_SecondWaveBridge a narr:Narrative ;
+      dct:source narr:Sample_SecondWaveBridge_20260421 ;
+      narr:theme "aswritten as the Bridge to the Second Wave" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "aswritten positions itself as the bridge between the First Wave of AI (learning/experimentation) and the Second Wave (enterprise platforms). It wins by filling the gaps and being consumed by Second Wave platforms that lack embedded enterprise customer history." .
+
+    narr:Claim_CustomerListAsAsset a narr:Claim ;
+      narr:aboutNode narr:ValueExchange ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_SecondWaveBridge_20260421 ;
+      skos:note "The customer list is the primary asset. Enterprise customers with aswritten embedded in their stack represent the core acquisition value for Second Wave platforms." .
+
+    narr:Claim_StakeInGroundStrategy a narr:Claim ;
+      narr:aboutNode narr:FocusSequencing ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_SecondWaveBridge_20260421 ;
+      skos:note "Strategy: Get a stake in the ground with one enterprise customer, then replicate that pattern as many times as possible to build a valuable list for the Second Wave." .
+
+    narr:Claim_SurviveToWin a narr:Claim ;
+      narr:aboutNode narr:TimingThesis ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_SecondWaveBridge_20260421 ;
+      skos:note "The survival thesis: In technology, the winner is the one who survives. Survival means constantly riding the waves until it is your time to be at the front." .
+
+    narr:StyleMetrics_SecondWaveBridge a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_SecondWaveBridge_20260421 ;
+      narr:AverageSentenceLength 16 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.08 ;
+      skos:note "Strategic and thesis-driven register. High use of metaphors (waves, bridges, stakes). Direct and authoritative tone." .
+
+    narr:StyleObs_WaveMetaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_SecondWaveBridge_20260421 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SecondWaveBridge_20260421 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 200 ; oa:end 400 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The exact same reaction you're seeing now with AI was the same reaction the world had for the Internet" ]
+      ] .
+
+    narr:StyleObs_BridgeMetaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_SecondWaveBridge_20260421 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SecondWaveBridge_20260421 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 600 ; oa:end 800 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "You're the bridge to that and the bridge to the gap that you get consumed by one of them." ]
+      ] .
+
+    narr:StyleObs_SurvivalTone a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_SecondWaveBridge_20260421 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SecondWaveBridge_20260421 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1500 ; oa:end 1700 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "If you can survive, you win. And what does survive mean? Well, it means that you have to constantly be riding the waves" ]
+      ] .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_CalmCompanyThesis skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260421T190000Z {
+    narr:Narrative_CalmCompanyThesis skos:note "The Calm Company thesis frames aswritten as an ambitious bootstrapped company. It is now extended by the Second Wave Bridge theory, which explains that exit value comes from being acquired by Second Wave platforms needing enterprise-embedded customer bases." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_CalmCompanyThesis skos:note ?oldNote .
+  }
+} ;
+
+DELETE {
+  GRAPH ?g {
+    narr:Claim_TwoYearWindowTiming skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260421T190000Z {
+    narr:Claim_TwoYearWindowTiming skos:note "Tony's 2-year window is the transition window from the First Wave to the Second Wave of AI. aswritten must use this time to build the bridge." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_TwoYearWindowTiming skos:note ?oldNote .
+  }
+}

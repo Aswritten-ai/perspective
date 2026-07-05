@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_OrganizationalChangeManual> {
+  <https://aswritten.ai/narrative#Digest_OrganizationalChangeManual> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#OrganizationalChangeManual> ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers field notes toward a manual for organizational change in AI adoption — the recurring claim being that the bottleneck is human, not technical. [Org change as core friction](narr:Obs_OrgChangeManagement) and the [worldview-propagation thesis](narr:Claim_WorldviewPropagation) frame the problem: decisions trickle through management layers, killing projects on orders '6 months ago from someone 14 layers above you'. Two countervailing mechanics appear. [Democratized knowledge collection](narr:Narrative_DemocratizedConsensus), echoed in [Scarlet's framing](narr:Obs_DemocratizedConsensus), pushes representation *bottom-up* to blunt political influence. Against the usual product reflex, the customer's chief architect's [friction-as-feature logic](narr:Narrative_AdoptionIncentiveFrictionAsFeature) (May 2026, with [verbatim witness](narr:Obs_CustomerArchitectFrictionFeatureQuote)) argues friction should be *retained* for the AI-resistant cohort because struggle is the forcing function for fluency. That sits in direct tension with the [onboarding-gap claim](narr:Narrative_OnboardingGap) that the cognitive friction between connection and first value is the core problem to remove. A structurally distinct [personal-recovery note](narr:Observation_FiveYearWait) sits here too — rebuilt foundations, 'clean and sober' — reading more as founder backstory than org-change doctrine.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_WorldviewPropagation> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AdoptionIncentiveFrictionAsFeature> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DemocratizedConsensus> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_OnboardingGap> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_DemocratizedConsensus> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectFrictionFeatureQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_OrgChangeManagement> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_FiveYearWait> ;
+    narr:keyPhrase [ narr:text "Lowering the barrier of adoption for them is actually a little bit counterproductive to me because I want them to actually start using AI tools" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomerArchitectFrictionFeatureQuote> ] ;
+    narr:keyPhrase [ narr:text "6 months ago from someone 14 layers above you" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_WorldviewPropagation> ] ;
+    narr:keyPhrase [ narr:text "The friction is cognitive, not technical." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_OnboardingGap> ] ;
+    narr:keyPhrase [ narr:text "Democratizing knowledge collection creates balanced organizational representation and reduces political influence" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_DemocratizedConsensus> ] ;
+    narr:keyPhrase [ narr:text "Got clean and sober." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_FiveYearWait> ] ;
+    narr:variation [ narr:text "Friction is the enemy vs. friction is the tool: onboarding-gap wants cognitive friction removed for first value, while the customer's chief architect's adoption logic deliberately keeps it as the forcing function for AI fluency." ; narr:over <https://aswritten.ai/narrative#Narrative_OnboardingGap> ; narr:over <https://aswritten.ai/narrative#Narrative_AdoptionIncentiveFrictionAsFeature> ; narr:over <https://aswritten.ai/narrative#Obs_CustomerArchitectFrictionFeatureQuote> ] ;
+    narr:variation [ narr:text "Direction-of-flow split: democratized consensus drives representation bottom-up to counter politics, while worldview-propagation wants faster top-down decision cascading." ; narr:over <https://aswritten.ai/narrative#Narrative_DemocratizedConsensus> ; narr:over <https://aswritten.ai/narrative#Claim_WorldviewPropagation> ] ;
+    narr:variation [ narr:text "Structural outlier: the five-year-wait recovery note is personal founder history, not an organizational-change mechanism — may not belong under this manual." ; narr:over <https://aswritten.ai/narrative#Observation_FiveYearWait> ] ;
+    narr:writer "claude (subscription)" .
+}

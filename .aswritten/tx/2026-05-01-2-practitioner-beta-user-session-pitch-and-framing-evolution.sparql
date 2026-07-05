@@ -1,0 +1,108 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance
+INSERT DATA {
+  narr:Tx_20260430T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-30T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-04-30-a practitioner beta user-session-pitch-artifacts.md" ;
+    narr:originRef "main@abc1234" ;
+    prov:generated narr:Sample_PitchArtifacts_20260430, narr:Narrative_PitchFrameEvolution, narr:Narrative_ProposalArtifactPractitioner, narr:Narrative_AIofPractitioner, narr:Narrative_CarfaxSubstackAnalogy, narr:Narrative_PractitionerPaymentReframed, narr:Claim_ProposalHeadlineFrame, narr:Claim_AvoidMatchingVetting, narr:Claim_AIPlusArtifacts, narr:Claim_ProposalRegulatorySafeguard, narr:StyleMetrics_PitchArtifacts_20260430 .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260430T120000Z {
+    narr:Sample_PitchArtifacts_20260430 a narr:Sample ;
+      dct:title "Pitch artifacts and value-frame evolution from the a practitioner beta user session" ;
+      dct:created "2026-04-30"^^xsd:date ;
+      narr:inputLength 14500 .
+
+    narr:Narrative_PitchFrameEvolution a narr:Narrative ;
+      dct:source narr:Sample_PitchArtifacts_20260430 ;
+      narr:theme "Value frame evolution from matching to proposal" ;
+      skos:note "Preserves the six-iteration framing evolution from the a practitioner beta user session, identifying 'proposal' as the lock-in frame and 'matching' as a pitch hazard." .
+
+    narr:Narrative_AIofPractitioner a narr:Narrative ;
+      dct:source narr:Sample_PitchArtifacts_20260430 ;
+      narr:theme "The product is an AI of the practitioner that produces proposals" ;
+      skos:note "The headline must include both the conversational nature (AI you can talk to) and the cited artifact production (proposals, intake)." .
+
+    narr:Narrative_CarfaxSubstackAnalogy a narr:Narrative ;
+      dct:source narr:Sample_PitchArtifacts_20260430 ;
+      skos:broader narr:Analogy ;
+      narr:theme "Carfax for patients, Substack for practitioners" ;
+      skos:note "The Carfax analogy is useful for opening pitches to explain information asymmetry and de-risking, but limited because aswritten synthesizes interpretation, not just facts." .
+
+    narr:Narrative_PractitionerPaymentReframed a narr:Narrative ;
+      dct:source narr:Sample_PitchArtifacts_20260430 ;
+      skos:broader narr:ValueExchange ;
+      narr:theme "Patient offers to pay for practitioner perspective" ;
+      skos:note "Rejects 'bounty' as cons-coded. Reframes as the patient initiating payment to engage with the practitioner's perspective." .
+
+    narr:Claim_ProposalHeadlineFrame a narr:Claim ;
+      narr:aboutNode narr:Narrative_ProposalArtifactPractitioner ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_PitchArtifacts_20260430 ;
+      skos:note "Use 'proposal' as the headline value frame. It is structurally accurate across expertise verticals and sidesteps regulatory edges." .
+
+    narr:Claim_AvoidMatchingVetting a narr:Claim ;
+      narr:aboutNode narr:Narrative_MatchingSearchReframe ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_PitchArtifacts_20260430 ;
+      skos:note "Never use 'matching' or 'vetting' as primary frames in pitch contexts. Matching lands the company in a 'graveyard category' of directory products." .
+
+    narr:Claim_AIPlusArtifacts a narr:Claim ;
+      narr:aboutNode narr:Narrative_AIofPractitioner ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_PitchArtifacts_20260430 ;
+      skos:note "The product is 'an AI of the practitioner that produces proposals on request' — both the conversation and the cited content production matter." .
+
+    narr:StyleMetrics_PitchArtifacts_20260430 a narr:StyleMetrics ;
+      dct:source narr:Sample_PitchArtifacts_20260430 ;
+      skos:broader narr:StyleMetrics ;
+      narr:AverageSentenceLength 17 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.09 .
+  }
+} ;
+
+# Update existing Proposal Artifact narrative with new pitch-specific context
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_ProposalArtifactPractitioner skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260430T120000Z {
+    narr:Narrative_ProposalArtifactPractitioner skos:note "The proposal artifact is the lock-in framing for the consumer healthcare use case. It is structurally accurate (engagement letters, fee proposals) and sidesteps regulatory edges by describing methodology rather than case-specific clinical decisions." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_ProposalArtifactPractitioner skos:note ?oldNote .
+  }
+} ;
+
+# Update Proposal Regulatory Safeguard claim with specific pitch hazard context
+DELETE {
+  GRAPH ?g {
+    narr:Claim_ProposalRegulatorySafeguard skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260430T120000Z {
+    narr:Claim_ProposalRegulatorySafeguard skos:note "Proposals describe how a practitioner runs an engagement, not specific clinical/legal/financial decisions for this case. This boundary keeps the product on the right side of regulatory edges." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_ProposalRegulatorySafeguard skos:note ?oldNote .
+  }
+}

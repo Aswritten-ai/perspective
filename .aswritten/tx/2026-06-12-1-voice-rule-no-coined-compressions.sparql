@@ -1,0 +1,158 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260612T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-12T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# Voice rule: keep Scarlet's conversational phrasing, not coined compressions" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_ScarletVoiceRule_20260612,
+      narr:Narrative_ConversationalPhrasingRule,
+      narr:Claim_NoCompressionToSlogan,
+      narr:Obs_ScarletRejectsAIPhrasing,
+      narr:StyleObs_ConversationalVsCompressed,
+      narr:StyleObs_ScarletCallTestCriterion,
+      narr:StyleObs_VerbatimPhrasingPolicy,
+      narr:Metrics_ScarletVoiceRule_20260612 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260612T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_ScarletVoiceRule_20260612
+      a narr:Sample ;
+      dct:title "Voice rule: keep Scarlet's conversational phrasing, not coined compressions" ;
+      dct:created "2026-06-12"^^xsd:date ;
+      narr:inputLength 762 ;
+      skos:note "Working session between Scarlet Dame and Claude on June 12, 2026. Establishes a durable voice rule: offering language, deck copy, and published material must keep Scarlet's conversational phrasing verbatim. Compressions that sound like slogans read as AI-generated and fail her outreach test." .
+
+    # ── Narrative ───────────────────────────────────────────────────────────
+    narr:Narrative_ConversationalPhrasingRule
+
+      dct:source narr:Sample_ScarletVoiceRule_20260612 ;
+      skos:broader narr:SpeakerIdiolects ;
+      skos:prefLabel "Keep Scarlet's Conversational Phrasing Verbatim — No Coined Compressions" ;
+      skos:note "Offering language, deck copy, and published material must preserve Scarlet's own conversational phrasing. Tighten grammar, not diction. Compressions that sound like slogans read as AI-generated and fail the test she applies to all outreach language: whether she can say it out loud on a call comfortably. Coined compressions — even accurate ones — are rejected if they sound like AI." ;
+      narr:theme "Scarlet's voice rule: conversational phrasing is preserved verbatim in all outreach material; coined compressions that sound like slogans are rejected as AI-generated" .
+
+    # ── Claim ───────────────────────────────────────────────────────────────
+    narr:Claim_NoCompressionToSlogan
+      a narr:Claim ;
+      dct:source narr:Sample_ScarletVoiceRule_20260612 ;
+      skos:note "Compressions of Scarlet's conversational descriptions into coined phrases or slogans are explicitly rejected. The specific example: her phrase 'it speaks to, references, and works from what was already said' was compressed to 'It speaks from the record.' Scarlet rejected the compression because it 'just sounds like AI.' The rule applies to offering language, deck copy, and published material. The test: can she say it out loud on a call comfortably?" ;
+      narr:aboutNode narr:Narrative_ConversationalPhrasingRule ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:IdiolectPhrasing .
+
+    # ── Observation (verbatim quote) ─────────────────────────────────────────
+    narr:Obs_ScarletRejectsAIPhrasing
+      a narr:Observation ;
+      dct:source narr:Sample_ScarletVoiceRule_20260612 ;
+      skos:broader narr:SpeakerIdiolects ;
+      skos:note "Scarlet's verbatim rejection of the coined compression 'speaks from the record' — the founding evidence for the conversational phrasing rule." ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 454 ;
+        oa:end 620
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I really don't like your term \"speaks from the record\" versus what I had. I had something much more conversational. \"Speaks from the record\" just sounds like AI." ;
+        oa:prefix "> " ;
+        oa:suffix "\n\nThe rule:"
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+
+    narr:StyleObs_ConversationalVsCompressed
+      a narr:StyleObservation ;
+      dct:source narr:Sample_ScarletVoiceRule_20260612 ;
+      skos:broader narr:IdiolectPhrasing ;
+      skos:note "Scarlet's idiolect favors multi-clause conversational descriptions over compressed coinages. The phrase 'it speaks to, references, and works from what was already said' is characteristic: three-verb enumeration, no nominalization, no slogan cadence. This is the positive exemplar of her preferred register." ;
+      rdf:value true ;
+      skos:related narr:SpeakerIdiolects ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletVoiceRule_20260612 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 270 ;
+          oa:end 340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "it speaks to, references, and works from what was already said" ;
+          oa:prefix "Scarlet\u2019s description of the product \u2014 \"" ;
+          oa:suffix "\" \u2014 into the coinage"
+        ]
+      ] .
+
+    narr:StyleObs_ScarletCallTestCriterion
+      a narr:StyleObservation ;
+      dct:source narr:Sample_ScarletVoiceRule_20260612 ;
+      skos:broader narr:ToneDirectPersonal ;
+      skos:note "Scarlet's test for outreach language is oral/conversational: 'whether she can say it out loud on a call comfortably.' This is a spoken-register criterion applied to written copy — language that cannot be spoken naturally on a sales call is disqualified, regardless of its written elegance." ;
+      rdf:value true ;
+      skos:related narr:EditorialRules ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletVoiceRule_20260612 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 720 ;
+          oa:end 762
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "whether she can say it out loud on a call comfortably" ;
+          oa:prefix "the test she applies to all outreach language \u2014 " ;
+          oa:suffix "."
+        ]
+      ] .
+
+    narr:StyleObs_VerbatimPhrasingPolicy
+      a narr:StyleObservation ;
+      dct:source narr:Sample_ScarletVoiceRule_20260612 ;
+      skos:broader narr:EditorialRules ;
+      skos:note "The editorial rule is asymmetric: grammar may be tightened but diction must not be changed. 'Tighten grammar, not diction.' This distinguishes copy-editing (permitted) from voice-editing (prohibited). Applies to offering language, deck copy, and published material." ;
+      rdf:value true ;
+      skos:related narr:BrandVoiceProfile ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ScarletVoiceRule_20260612 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 622 ;
+          oa:end 720
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Tighten grammar, not diction. Compressions that sound like slogans read as AI-generated" ;
+          oa:prefix "keep her conversational phrasing verbatim. " ;
+          oa:suffix " and fail the test"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+    narr:Metrics_ScarletVoiceRule_20260612
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_ScarletVoiceRule_20260612 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Short decision-memo register. Mixed: editorial prose in rule-statement sections; verbatim blockquote in Scarlet's first-person voice (run-on, emphatic repetition). Active voice dominant. Jargon density very low — no product terms. Sentence length moderate in prose sections; blockquote is a single compound sentence. Antithesis-heavy structure (conversational vs. coined, grammar vs. diction, her phrasing vs. AI phrasing)." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.85"^^xsd:decimal ;
+      narr:JargonDensity "0.02"^^xsd:decimal .
+
+  }
+}

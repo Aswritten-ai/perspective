@@ -1,0 +1,69 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_IdiolectPhrasing> {
+  <https://aswritten.ai/narrative#Digest_IdiolectPhrasing> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#IdiolectPhrasing> ;
+    narr:childCount "46"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub collects **idiolect and phrasing** observations — distinctive verbal signatures captured across transcripts, memos, and meeting notes. The dominant voice is Scarlet's: coined compounds like [compression anxiety](narr:StyleObs_10), technical metaphors borrowed from code — [Clojure framing of n8n](narr:StyleObs_ClojureIdiolect), [zombie env vars](narr:StyleObs_ZombieIdiolect), [bootload a worldview](narr:StyleObs_6) — and antithesis constructions like the [launching redefinition](narr:StyleObs_LaunchingDefinition). Conviction is marked two ways: formal taxonomy ([FOUNDATION / conviction labels](narr:StyleObs_7), [settled design decision](narr:StyleObs_SettledDecisionMarker)) and raw emphasis ([profanity intensifiers](narr:StyleObs_Tranche1_ProfanityIntensifier), [super super key](narr:StyleObs_SuperSuper), [That's gold affirmations](narr:StyleObs_FounderAffirmationPattern)). Positioning idioms recur for GTM: [competence and confidence](narr:StyleObs_CompetenceConfidencePhrase), [thin wrappers](narr:StyleObs_ThinWrapperIdiom), [the snapshot→living-module pitch](narr:StyleObs_PitchVerbatim). Crucially, not all voices here are Scarlet's — [a founder beta user's 'like' filler](narr:StyleObs_LikeFiller), [the customer's chief architect's numbers-first cadence](narr:StyleObs_CustomerArchitectNumbersFirst), [Tony's volume-logic and 'table sticks'](narr:StyleObservation_TonyDiction), and [a beta user from outside tech's 'on spec'](narr:StyleObs_OnSpecJargon) capture distinct speakers. No dates anchor the hub itself; individual observations span 2025-05 through 2026-05.""" ;
+    narr:covers <https://aswritten.ai/narrative#Obs_InsideJokeReference> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_10> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_6> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_AhaMoment> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BizarreIndustryIdiom> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TamarackReview_SelfReflexiveQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ClojureIdiolect> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ColloquialDirectness> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CompetenceConfidencePhrase> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_EnterpriseCustomerWeekOne_OTPRedirectChain> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_FeatureNotBug> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_FounderAffirmationPattern> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_HardCeiling> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_IdiolectPhrasing> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Idiolect_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_LaunchingDefinition> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_LikeFiller> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_MVPRedef_IdiolectPhrasing> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CustomerArchitectNumbersFirst> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_MindsetKeyPhrase> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NamePatternsWithoutPrescribing> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_NaturalEvolutionPhrasing> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OnSpecJargon> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OptimizationNotPrereq> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_PitchVerbatim> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RahRahIdiolect> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RunningAway> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SMB_DiscoveryQuestion> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ScarletProfanityAsEmphasis> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SelfHosted_ScarletQuoteIntegration> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SettledDecisionMarker> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SuperSuper> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OutsideTechBetaUserChannel_LoadBearing> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TeamVisionQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ThinWrapperIdiom> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Thingamabobs> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TonyIdiolect_Numbers> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Tranche1_ProfanityIntensifier> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TranscriptBootstrap_AssetFraming> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_UnfairAdvantage> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_VerbatimQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_WatcherAgentQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_WorldviewFraming> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ZombieIdiolect> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObservation_TonyDiction> ;
+    narr:keyPhrase [ narr:text "Launching = moving from being privately terrified about the quality of my product to being publicly terrified" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_LaunchingDefinition> ] ;
+    narr:keyPhrase [ narr:text "Your book is a snapshot. We'll turn it into a living AI module. Your expertise becomes installable, citable, and generates revenue through the marketplace." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_PitchVerbatim> ] ;
+    narr:keyPhrase [ narr:text "sit the fuck down at the finish line kind of pit" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Tranche1_ProfanityIntensifier> ] ;
+    narr:keyPhrase [ narr:text "Humans know secrets. Maybe AIs can be fed secrets, but they don't in general know secrets." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VerbatimQuote> ] ;
+    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_6> ] ;
+    narr:keyPhrase [ narr:text "table sticks" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObservation_TonyDiction> ] ;
+    narr:keyPhrase [ narr:text "Think about the numbers though, right? The numbers really work." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TonyIdiolect_Numbers> ] ;
+    narr:variation [ narr:text "Not all idiolect here is Scarlet's — distinct non-founder speakers are captured: a founder beta user (filler/hedging), the customer's chief architect (numbers-first), Tony (volume logic, 'table sticks' malapropism), a beta user from outside tech ('on spec')." ; narr:over <https://aswritten.ai/narrative#StyleObs_LikeFiller> ; narr:over <https://aswritten.ai/narrative#StyleObs_BizarreIndustryIdiom> ; narr:over <https://aswritten.ai/narrative#StyleObs_CustomerArchitectNumbersFirst> ; narr:over <https://aswritten.ai/narrative#StyleObs_TonyIdiolect_Numbers> ; narr:over <https://aswritten.ai/narrative#StyleObservation_TonyDiction> ; narr:over <https://aswritten.ai/narrative#StyleObs_OnSpecJargon> ] ;
+    narr:variation [ narr:text "A handful attach via skos:related rather than the dominant skos:broader — looser membership for jargon/idioms not core to a speaker's signature." ; narr:over <https://aswritten.ai/narrative#StyleObs_FeatureNotBug> ; narr:over <https://aswritten.ai/narrative#StyleObs_OnSpecJargon> ; narr:over <https://aswritten.ai/narrative#StyleObs_RahRahIdiolect> ; narr:over <https://aswritten.ai/narrative#StyleObs_RunningAway> ; narr:over <https://aswritten.ai/narrative#StyleObs_OutsideTechBetaUserChannel_LoadBearing> ] ;
+    narr:variation [ narr:text "Register splits sharply: raw colloquial/profane emphasis vs. formal conviction-taxonomy vocabulary — same author, opposite tonal poles." ; narr:over <https://aswritten.ai/narrative#StyleObs_ScarletProfanityAsEmphasis> ; narr:over <https://aswritten.ai/narrative#StyleObs_SuperSuper> ; narr:over <https://aswritten.ai/narrative#StyleObs_SettledDecisionMarker> ; narr:over <https://aswritten.ai/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "Two metaphor families coexist: technical/computational framing (Clojure, zombie var, bootload, navigates-vs-queries) vs. organic/biological framing (natural evolution, feeder)." ; narr:over <https://aswritten.ai/narrative#StyleObs_ClojureIdiolect> ; narr:over <https://aswritten.ai/narrative#StyleObs_ZombieIdiolect> ; narr:over <https://aswritten.ai/narrative#StyleObs_WorldviewFraming> ; narr:over <https://aswritten.ai/narrative#StyleObs_NaturalEvolutionPhrasing> ] ;
+    narr:variation [ narr:text "Some entries are meta-rules that enact themselves (methodology phrasing) rather than captured speech, e.g. 'Name patterns without prescribing.'" ; narr:over <https://aswritten.ai/narrative#StyleObs_NamePatternsWithoutPrescribing> ; narr:over <https://aswritten.ai/narrative#StyleObs_OptimizationNotPrereq> ] ;
+    narr:writer "claude (subscription)" .
+}

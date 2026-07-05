@@ -1,0 +1,408 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+
+# ============================================================================
+# TRANSACTION PROVENANCE
+# ============================================================================
+
+narr:Tx_20260128T173347Z a prov:Activity ;
+    prov:wasAssociatedWith <http://aswritten.ai/agent#v1.0> ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-01-28T17:33:47.603Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2025-11-05-nov-status-update-transcript.md" ;
+    sb:originRef "refs/heads/main" ;
+    rdfs:comment "Extraction of SIC collective memory project check-in covering opportunity, strategy, product, architecture, organization, proof, roadmap, style observations, and rubric assessments." .
+
+# ============================================================================
+# INSERT DATA TRANSACTION
+# ============================================================================
+
+INSERT DATA {
+
+# ============================================================================
+# SAMPLE NODE
+# ============================================================================
+
+narr:Sample_SIC_Checkin_20250129 a narr:Sample ;
+    dct:title "SIC Collective Memory Project Check-in: Land, Strategy, Product, GTM" ;
+    narr:inputLength 18742 ;
+    dct:created "2025-01-29T00:00:00Z"^^xsd:dateTime ;
+    skos:note "Comprehensive walkthrough of SIC/aswritten.ai architecture, product status, and roadmap." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+# ============================================================================
+# NARRATIVE ELEMENTS: OPPORTUNITY
+# ============================================================================
+
+narr:Narrative_SIC_Opportunity_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:Opportunity ;
+    narr:theme "AI context quality problem" ;
+    skos:definition "Creating high quality output with AI requires extensive context. Currently models are trying to do that with search." ;
+    skos:related narr:MarketContext ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_TimingThesis_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:TimingThesis ;
+    narr:theme "Prompt engineering maturity" ;
+    skos:definition "Common pattern in prompt engineering is to ask a model to create a plan before executing. Even better is to create multipart detailed specifications." ;
+    skos:related narr:TechnologiesSocialSystems ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_PrimaryActors_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:PrimaryActors ;
+    skos:definition "Programming literate entrepreneurs, designers, developers, consultants with Git and basic AI coding fluency." ;
+    skos:related narr:Segmentation ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+# ============================================================================
+# NARRATIVE ELEMENTS: STRATEGY
+# ============================================================================
+
+narr:Narrative_SIC_Mission_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:Mission ;
+    skos:definition "Extend software development rigor into strategy, content, and marketing product organizational operations." ;
+    skos:related narr:PositioningThesis ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_WhatIsIt_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:WhatIsIt ;
+    skos:definition "AI memory that is versionable, collaborative, branchable, so Git native, and narrative driven. Encodes style and conviction and other metrics." ;
+    skos:related narr:NarrativeAnchor ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_Tagline_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:Tagline ;
+    rdf:value "aswritten.ai — AI that tells you a story as written" ;
+    skos:note "Latin: sic (thus/as written) + .ai domain" ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_KeyPhrases_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:KeyPhrases ;
+    rdf:value "narrative source of truth, collective memory, storyTWIN, individuation pipeline, evolved variant, repackaged collective memories, collective memory marketplace" ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_WhatDoesItDo_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:WhatDoesItDo ;
+    skos:definition "Replaces brittle role prompts with deep narrative source of truth that can be clearly understood and operated on. Uses organizational metadata/configs to steer lightweight prompt execution." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_MoatLeverage_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:MoatLeverage ;
+    skos:definition "RDF-based narrative architecture with Git-native versioning, SHACL validation, and semantic diff operations. Marketplace of reusable perspective snapshots." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+# ============================================================================
+# NARRATIVE ELEMENTS: PRODUCT
+# ============================================================================
+
+narr:Narrative_SIC_ProductOverview_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:ProductOverview ;
+    skos:definition "Initial prototype in n8n with tools: aswritten/compile, collective memory/ontology, aswritten/extract, aswritten/diff, aswritten/tx, commit. Hosted at aswritten.ai with Open WebUI." ;
+    skos:related narr:ModulesCapabilities ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_Primitives_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:Primitives ;
+    skos:definition "RDF transactions (currently SPARQL, migrating to TriG named graphs), .aswritten directory hierarchy, .story files with YAML front matter, collective memory snapshots in Turtle." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_Behaviors_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:Behaviors ;
+    skos:definition "Compile (replay transactions to snapshot), Extract (RDF from input), Diff (semantic comparison), TX (generate transaction), Commit (append to Git), Evolve (operation on snapshot)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_Flows_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:Flows ;
+    skos:definition "Individuation pipeline: extract → diff → TX → user review → commit. Evolved variant: snapshot + message → transaction. Story generation: compile → template → model → output." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:Narrative_SIC_DataModelLifecycle_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:DataModelLifecycle ;
+    skos:definition "Append-only transaction log in .aswritten directories. Hierarchical compilation across ancestor directories. Immutable transaction files with provenance metadata." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+# ============================================================================
+# NARRATIVE ELEMENTS: ORGANIZATION
+# ============================================================================
+
+narr:Narrative_SIC_OrgByDomain_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:OrgByDomain ;
+    skos:definition "Synthetic Identity Co (SIC) is legal entity. aswritten.ai is user-facing brand. Collective memory is RDF narrative source of truth (internal). STORYBASE is capital-case internal identifier." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+# ============================================================================
+# NARRATIVE ELEMENTS: PROOF
+# ============================================================================
+
+narr:Narrative_SIC_CaseStudies_1 a narr:Narrative ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    skos:broader narr:CaseStudies ;
+    skos:definition "Planned demo for Crooked Media (Pod Save America): auto-ingest transcripts/show notes, generate updating stories, enable perspectival operations on podcast narrative." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+# ============================================================================
+# STYLE OBSERVATIONS
+# ============================================================================
+
+narr:StyleObs_BrandStylization_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SIC_Checkin_20250129 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1050 ;
+            oa:end 1062
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "aswritten.ai" ;
+            oa:prefix "top-level domain is " ;
+            oa:suffix "—A-S-W-R-I-T-T-E-N"
+        ]
+    ] ;
+    skos:note "Lowercase, no space, .ai TLD; consistent brand stylization throughout." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:StyleObs_StockPhrase_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SIC_Checkin_20250129 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1450 ;
+            oa:end 1475
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "narrative source of truth" ;
+            oa:prefix "start with this " ;
+            oa:suffix ", and use it to"
+        ]
+    ] ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Repeated canonical term; appears 8+ times as anchor concept." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:StyleObs_ActiveVoice_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VoiceActive ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    oa:hasBody narr:VoiceActive ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SIC_Checkin_20250129 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 1200 ;
+            oa:end 1285
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "creating high quality output with AI requires extensive context" ;
+            oa:prefix "problem framing is that " ;
+            oa:suffix ". Currently models are"
+        ]
+    ] ;
+    rdf:value true ;
+    skos:note "Strong active voice with gerund subject; direct problem statement." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:StyleObs_Jargon_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:JargonPolicy ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    oa:hasBody narr:JargonPolicy ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SIC_Checkin_20250129 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3850 ;
+            oa:end 3920
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "canonization and, you know, skolemization and that kind of stuff" ;
+            oa:prefix "things that we would like to do much more robustly like parsing RDF and " ;
+            oa:suffix ". But also, you know"
+        ]
+    ] ;
+    skos:note "Technical RDF terms used without definition; assumes domain fluency." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:StyleObs_Cadence_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SIC_Checkin_20250129 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 650 ;
+            oa:end 750
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "It's SIC. That stands for Synthetic Identity Co, which is the legal name." ;
+            oa:prefix "First, let's do some term disambiguation. " ;
+            oa:suffix " Synthetic Identity Co, which is not"
+        ]
+    ] ;
+    skos:note "Short declarative sentences; staccato rhythm for clarity." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:StyleObs_SecondPerson_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:SecondPerson ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    oa:hasBody narr:SecondPerson ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SIC_Checkin_20250129 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 5200 ;
+            oa:end 5260
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "you give it a link. It's parsed and that repo is the repo" ;
+            oa:prefix "ask you for a Git repo. So there's a section of the prompt and ask for the repo context as " ;
+            oa:suffix ", but also refs"
+        ]
+    ] ;
+    skos:note "Direct address to audience; conversational register." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:StyleObs_Formulaic_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Formulaicness ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    oa:hasBody narr:Formulaicness ;
+    oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SIC_Checkin_20250129 ;
+        oa:hasSelector [
+            a oa:TextPositionSelector ;
+            oa:start 3500 ;
+            oa:end 3580
+        ] ;
+        oa:hasSelector [
+            a oa:TextQuoteSelector ;
+            oa:exact "you know, there is no RDF database in the first place. So, you know" ;
+            oa:prefix "But also, " ;
+            oa:suffix ", there is no query"
+        ]
+    ] ;
+    rdf:value true ;
+    skos:note "Repeated filler 'you know' (appears 40+ times); conversational but reduces precision." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+# ============================================================================
+# STYLE METRICS
+# ============================================================================
+
+narr:StyleMetrics_SIC_1 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    narr:AverageSentenceLength 28.5 ;
+    narr:ActiveVoiceRatio 0.72 ;
+    narr:JargonDensity 0.15 ;
+    narr:TypeTokenRatio 0.42 ;
+    narr:Conciseness 0.65 ;
+    skos:note "High jargon density reflects technical domain. Moderate conciseness due to conversational fillers." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+# ============================================================================
+# RUBRIC ASSESSMENTS
+# ============================================================================
+
+narr:RubricAssess_Register_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    rdf:value 3.5 ;
+    skos:note "Conversational register with technical depth; second-person address; active voice dominant. Fillers reduce formality." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:RubricAssess_Phrasing_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    rdf:value 4.0 ;
+    skos:note "Strong idiolect with canonical terms (narrative source of truth, individuation pipeline, evolved variant). Domain verbs (compile, diff, skolemize)." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:RubricAssess_Cadence_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    rdf:value 3.0 ;
+    skos:note "Mixed cadence: short declaratives for definitions, long compound sentences for technical explanations. Conversational rhythm with pauses ('you know', 'right?')." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:RubricAssess_StrategicAlignment_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    rdf:value 4.5 ;
+    skos:note "Explicit mission, positioning, moat, and roadmap. Clear narrative anchor (Git-native AI memory). Strong alignment across Opportunity/Strategy/Product/Architecture." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:RubricAssess_Tailoring_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    rdf:value 4.0 ;
+    skos:note "Tailored to technical audience (Git, RDF, SPARQL, Docker Compose). Assumes programming literacy. Conversational tone suggests internal team context." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:RubricAssess_Resonance_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    rdf:value 3.5 ;
+    skos:note "Concrete examples (Crooked Media demo, NPR collective memory). Analogies to software development rigor. Could benefit from more customer stories." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:RubricAssess_Flow_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    rdf:value 3.0 ;
+    skos:note "Logical progression (terms → problem → product → architecture → roadmap). Some backtracking ('I forgot', 'let me step back'). Natural for spoken walkthrough." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:RubricAssess_Novelty_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    rdf:value 4.0 ;
+    skos:note "Novel framing: 'narrative source of truth', 'individuation pipeline', 'evolved variant', 'collective memory marketplace'. Distinct from generic AI memory/RAG positioning." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+narr:RubricAssess_Accuracy_1 a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_SIC_Checkin_20250129 ;
+    rdf:value 4.5 ;
+    skos:note "Precise technical references (n8n, Apache Jena Riot, Outseta, Helicone, Open Router). Accurate product state ('missing piece', 'to do'). No falsifiable claims detected." ;
+    prov:wasGeneratedBy narr:Tx_20260128T173347Z .
+
+}

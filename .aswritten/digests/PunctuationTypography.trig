@@ -1,0 +1,38 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_PunctuationTypography> {
+  <https://aswritten.ai/narrative#Digest_PunctuationTypography> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#PunctuationTypography> ;
+    narr:childCount "18"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub collects the document's punctuation and typographic devices. The dominant mark is the **em-dash**, used across children as a rhetorical pivot and payoff-amplifier ([assertion—correction cadence](narr:StyleObs_EmDashRhetoric), [claim—consequence amplifier](narr:StyleObs_DashAsAmplifier), [inline clarifying definitions](narr:StyleObs_EmDashDefinition), [pause-and-emphasis detail](narr:StyleObs_EmDash_1)), and as the essayistic signature of the pitch voice ([list-unpacking em-dashes](narr:StyleObs_5)). The **arrow (→)** appears as process-flow shorthand ([group-interview flow](narr:StyleObs_ArrowNotation)) and as directional framing with bold labels ([bold+arrow+claim](narr:StyleObs_BoldArrowFraming)). **Bold** ranges from conviction-stress ([substitutive 'replaces'](narr:StyleObs_SMB_BoldEmphasis), Mar 2026) to scannable navigation ([beat headers](narr:StyleObs_BoldBeats), [role-category labels](narr:StyleObs_BoldEmphasis)). Further devices: [italic contrastive stress](narr:StyleObs_ItalicsForEmphasis), [scare-quotes for category disruption](narr:StyleObs_ScareQuotes), [checkmark-emoji validation](narr:StyleObs_Checkmark_Validation), [fenced code-block architecture](narr:StyleObs_CodeBlockArchDiagram), [parenthetical term-glosses](narr:StyleObs_ParenthesisGloss), [all-caps 'IS' stress](narr:StyleObs_2), and [three-word declaratives / antithesis](narr:StyleObs_3).""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_2> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_3> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_5> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowNotation> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldArrowFraming> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldBeats> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldEmphasis> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldKeyPrinciple> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Checkmark_Validation> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_CodeBlockArchDiagram> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DashAsAmplifier> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_EmDashDefinition> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_EmDashRhetoric> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_EmDash_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ItalicsForEmphasis> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ParenthesisGloss> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SMB_BoldEmphasis> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ScareQuotes> ;
+    narr:keyPhrase [ narr:text "SMB **replaces** enterprise as the primary market focus" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SMB_BoldEmphasis> ] ;
+    narr:keyPhrase [ narr:text "✅ **Fills gap_demo_beat_sequence**: Three distinct beats" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Checkmark_Validation> ] ;
+    narr:keyPhrase [ narr:text "group interview → consensus → merge" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ArrowNotation> ] ;
+    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:keyPhrase [ narr:text "All-caps emphasis 'IS' used for rhetorical stress in a declarative positioning statement." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:variation [ narr:text "Two registers coexist: an essayistic prose voice (em-dash, antithesis, italics, metaphor) versus an analytical-markdown voice (checkmark emoji, fenced code blocks, bold nav labels, arrow notation) — the typography splits by document type, not one uniform style." ; narr:over <https://aswritten.ai/narrative#StyleObs_5> ; narr:over <https://aswritten.ai/narrative#StyleObs_EmDashRhetoric> ; narr:over <https://aswritten.ai/narrative#StyleObs_Checkmark_Validation> ; narr:over <https://aswritten.ai/narrative#StyleObs_CodeBlockArchDiagram> ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldEmphasis> ] ;
+    narr:variation [ narr:text "The em-dash carries divergent jobs under one mark: amplifier/payoff clause, inline definition append, and assertion→reframe pivot — not a single consistent function." ; narr:over <https://aswritten.ai/narrative#StyleObs_DashAsAmplifier> ; narr:over <https://aswritten.ai/narrative#StyleObs_EmDashDefinition> ; narr:over <https://aswritten.ai/narrative#StyleObs_EmDashRhetoric> ] ;
+    narr:variation [ narr:text "Bold likewise carries two unrelated weights: conviction/semantic stress (substitutive 'replaces') versus purely structural heading/navigation aid — same device, different intent." ; narr:over <https://aswritten.ai/narrative#StyleObs_SMB_BoldEmphasis> ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldEmphasis> ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldKeyPrinciple> ] ;
+    narr:variation [ narr:text "An orthographic brand rule sits among the rhetorical devices: 'aswritten' kept lowercase even at sentence start — a hard stylization rule, not a cadence choice." ; narr:over <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:writer "claude (subscription)" .
+}

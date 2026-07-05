@@ -1,0 +1,154 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260501T000000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-01T00:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-04-29-agent-simulation-research.md" ;
+    narr:originRef "research/agent-memory-architecture" ;
+    prov:generated
+      narr:Claim_AbstractionTriggerOpenQuestion ,
+      narr:Claim_DecayDepreciationWorkflowQuestion ,
+      narr:Claim_GatekeeperOrSalonQuestion ,
+      narr:Claim_AgentSimResearchPromotionCriteria ,
+      narr:StyleObs_AgentSim_Antithesis ,
+      narr:StyleObs_AgentSim_BlockquoteRegister ,
+      narr:StyleObs_AgentSim_ProvisionalFlag .
+} ;
+
+# ── Update: enrich Narrative_AgentMemoryArchitectureParallel ────────────────
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_AgentMemoryArchitectureParallel skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260501T000000Z {
+    narr:Narrative_AgentMemoryArchitectureParallel skos:note "Three roadmapped workstreams cluster more tightly than any single one captures alone — this clustering itself is the new structural contribution: (1) Recency-weighted retrieval ≈ narr:appliesAs temporality dimension (Park scores recency at retrieval time as exponential decay; aswritten uses structural ontology property); (2) Importance scoring ≈ conviction levels (Park's LLM-rated 1-10 at memory creation; aswritten uses notion/claim/decision/principle as discrete bands — same operation: score-on-write to control attention-on-read); (3) Reflection loop ≈ abstraction detection (Park's threshold-triggered procedural reflection; aswritten's task-176 targets the same behavior — empirically established March 25 that no tested LLM produces this in the extraction pipeline)." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_AgentMemoryArchitectureParallel skos:note ?oldNote .
+  }
+} ;
+
+# ── New entities (named graph) ───────────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260501T000000Z {
+
+    # Open question 1: abstraction detection trigger mechanism
+    narr:Claim_AbstractionTriggerOpenQuestion
+      a narr:Claim ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "Is Park's threshold-triggered reflection (sum-of-importance crosses threshold → run synthesis prompt → write back) the right mechanism for task-176's abstraction detection, or are there better triggers? Park's trigger is procedural; the aswritten alternative could be review-flow-driven — trigger abstraction proposals when human reviewers mark related claims, or when supersession patterns accrete. The choice has implications for how task-176 ships." ;
+
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Claim_ReflectionLoopTwoMechanisms .
+
+    # Open question 2: decay vs depreciation as one workflow or two
+    narr:Claim_DecayDepreciationWorkflowQuestion
+      a narr:Claim ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "Should aswritten implement automatic recency decay as a structural property in the compile tool, alongside human depreciation? Or are these two operations on different layers of the graph? The roadmap has both as notion-level. They may need to be designed as a single coherent workflow rather than two separate features — the question is whether decay surfaces candidates for human depreciation, or whether they operate on different layers of the graph entirely." ;
+      narr:aboutNode narr:Narrative_DecayVsDepreciationDistinction ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      .
+
+    # Open question 3: gatekeeper as product configuration
+    narr:Claim_GatekeeperOrSalonQuestion
+      a narr:Claim ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "Is the multi-role-with-gatekeeper pattern interesting enough to pursue as a product configuration (org-tier sub-agent panel for specific high-stakes decisions), or is it a generalization already covered by named perspectives + review? The Microsoft pattern challenges Narrative_NamedPerspectiveArchitecture — the existing architecture may not yet have a story for centralized ground-truth holding in multi-perspective deployments." ;
+      narr:aboutNode narr:Narrative_NamedPerspectiveArchitecture ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Claim_MultiRoleCoordinationGatekeeper .
+
+    # Promotion criteria for this research branch
+    narr:Claim_AgentSimResearchPromotionCriteria
+      a narr:Claim ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "This memory sits on research/agent-memory-architecture per Claim_ResearchBranchMethodologyDecision. Promotion to main happens by rewriting memories at an explicit decision point. The cluster matures into promotion when: (1) a position is taken on the abstraction-detection trigger mechanism (procedural threshold vs. review-flow-driven vs. hybrid); (2) the gatekeeper role is defined or rejected for the org-tier coordination plane; (3) the decay/depreciation relationship is resolved (single workflow vs. two features at different graph layers). Until then, this is exploratory cluster-framing." ;
+      narr:aboutNode narr:Narrative_ResearchBranchTemporalIsolation ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Claim_ResearchBranchMethodologyDecision .
+
+    # Style observation 1: antithesis-heavy structure
+    narr:StyleObs_AgentSim_Antithesis
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "antithesis-pairs dominate the structural logic: procedural vs. review-flow-driven, decay vs. depreciation, what transfers vs. what doesn't, Park's flat architecture vs. aswritten's human-driven depreciation" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3100 ;
+          oa:end 3280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Decay is automatic and temporal... Depreciation is human-driven and semantic" ;
+          oa:prefix "These are two different operations:\n\n- **" ;
+          oa:suffix ". Discrete, requires judgment"
+        ]
+      ] .
+
+    # Style observation 2: mixed register — blockquoted speech vs. editorial prose
+    narr:StyleObs_AgentSim_BlockquoteRegister
+      a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "mixed register: structured markdown H2 sections with bold numbered parallels (memo genre) vs. colloquial first-person in blockquoted speech from a collaborator's talk transcript; filler-heavy conversational speech contrasts with tight analytical prose" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 680 ;
+          oa:end 870
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "But as human beings we know that not all memories are created equal" ;
+          oa:prefix "> \"" ;
+          oa:suffix ". So, I'm not sure about you"
+        ]
+      ] .
+
+    # Style observation 3: provisional flag as safety rail idiom
+    narr:StyleObs_AgentSim_ProvisionalFlag
+      a narr:StyleObservation ;
+      skos:broader narr:BrandNameStylization ;
+      dct:source narr:Sample_AgentSimulationResearch_20260429 ;
+      skos:note "frontmatter carries 'branch: research/agent-memory-architecture' and 'status: draft' as a structural idiom — the provisional flag pattern documented in Claim_ProvisionalFlagSafetyRail; the document signals its own non-canonical status through metadata" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_AgentSimulationResearch_20260429 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 0 ;
+          oa:end 180
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "branch: research/agent-memory-architecture\nstatus: draft" ;
+          oa:prefix "date: 2026-04-30\nauthor: scarlet\nparticipants: [scarlet]\nsource: \"a collaborator (a collaborator)" ;
+          oa:suffix "\nreviewers:"
+        ]
+      ] .
+
+  }
+}

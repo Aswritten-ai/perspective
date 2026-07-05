@@ -1,0 +1,47 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260518T160000Z a prov:Activity ;
+    prov:generatedAtTime "2026-05-18T16:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "+15044353923" ;
+    narr:originPath ".aswritten/memories/2026-05-17-investor-pipeline-research.md" ;
+    narr:originRef "main@abc1234" ;
+    prov:generated     narr:Claim_AggregatorDataUnreliable, narr:StyleObs_ResearchAsymmetry, narr:Metrics_InvestorPipeline_20260517 .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260518T160000Z {
+
+    narr:Claim_AggregatorDataUnreliable a narr:Claim ;
+      narr:aboutNode narr:MarketContext ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+      skos:note "Aggregator data (Tracxn, VCSheet, Crunchbase) lags 1-3 years. Rule: always verify from primary source before recommending." .
+
+    narr:StyleObs_ResearchAsymmetry a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ oa:exact "surfaced an asymmetry" ]
+      ] ;
+      skos:note "Use of 'asymmetry' to describe research findings." .
+
+    narr:Metrics_InvestorPipeline_20260517 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 17 ;
+      narr:ActiveVoiceRatio 0.82 ;
+      narr:JargonDensity 0.10 ;
+      skos:note "Strategic pipeline memo with heavy list structure." .
+  }
+}

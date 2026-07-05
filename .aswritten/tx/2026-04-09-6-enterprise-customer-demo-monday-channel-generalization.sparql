@@ -1,0 +1,87 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260411T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-11T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-04-11-the enterprise customer-demo-prep.md" ;
+    narr:originRef "research/goal-directed-agents" ;
+    prov:generated  
+                   narr:Narrative_V0_ChannelAgnostic,
+                   narr:Narrative_ImplicitGoalForcingFunction,
+                   narr:Narrative_MCP_InstallationBarrier,
+                   narr:Claim_SourcePrivacyWedge,
+                   narr:StyleObs_Jargon_EnterpriseCustomer,
+                   narr:StyleObs_Tone_EnterpriseCustomer .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260411T120000Z {
+
+    narr:Narrative_V0_ChannelAgnostic a narr:Narrative ;
+
+      narr:theme "V0 primitive is channel-agnostic" ;
+      skos:note "Reframes V0 from SMS-specific to a channel-agnostic perspective-grounded agent fronted by Front." .
+
+    narr:Narrative_ImplicitGoalForcingFunction a narr:Narrative ;
+
+      narr:theme "Goal naming as product value" ;
+      skos:note "The act of naming a goal is a forcing function that surfaces unarticulated purpose, providing therapeutic/coaching value." .
+
+    narr:Narrative_MCP_InstallationBarrier a narr:Narrative ;
+
+      narr:theme "MCP installation as adoption barrier" ;
+      skos:note "Asking non-AI users to install MCP servers is a major lift; this makes consumer-facing surfaces (SMS/Email/Slack) the primary door." .
+
+    narr:Claim_SourcePrivacyWedge a narr:Claim ;
+
+      narr:aboutNode narr:Narrative_TrustContractWedge ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      skos:note "Curated perspective preserves source privacy in ways RAG cannot, providing a concrete competitive wedge." .
+
+    narr:StyleObs_Jargon_EnterpriseCustomer a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 3500 ; oa:end 3650 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "marginal cost of adding a second channel is near-zero because Front's unified inbox model" ]
+      ] .
+
+    narr:StyleObs_Tone_EnterpriseCustomer a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5000 ; oa:end 5150 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The share is the invariant; channels and coordination layer are what the Org tier buys." ]
+      ] .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_V0_SMS_DeepLink narr:theme ?oldTheme .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260411T120000Z {
+    narr:Narrative_V0_SMS_DeepLink narr:theme "V0 Scope: Channel-Agnostic Agent" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_V0_SMS_DeepLink narr:theme ?oldTheme .
+  }
+} 

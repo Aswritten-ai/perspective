@@ -1,0 +1,24 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_ScarceExpertFilterGoalGated> {
+  <https://aswritten.ai/narrative#Digest_Narrative_ScarceExpertFilterGoalGated> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_ScarceExpertFilterGoalGated> ;
+    narr:childCount "4"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub reframes a [60-day ICP drift as one instrument](narr:Claim_UnifiedInstrumentPattern) — enterprise→SMB→B2C→transcripts read not as different customers but as different deployments, 'one instrument, variable escalation targets by deployment context,' unifying an engineering manager at the customer's three use cases and the the enterprise customer/the customer's chief architect case (Apr 24). The [cross-vertical pattern](narr:Claim_CrossVerticalPattern) (Apr 30) generalizes the shape — architects, lawyers, therapists, advisors all share high-context expertise and asymmetric information — but warns compliance overhead is non-additive, so the sequencing is launch healthcare cash-pay first and defer therapy, insurance-billed care, and legal. The [practitioner's economics](narr:Claim_PractitionerEarnsConvertingMethodology) (Apr 30): convert unstructured methodology into a reusable, citable AI of themselves, set the rate, share revenue across surfaces — 'one asset, many surfaces' — with higher tiers adding observation and grounding-exhausted escalation. The [scope is drawn deliberately narrow](narr:Claim_NotTreatmentProxy) (Apr 24): not a treatment proxy or advice tool, but matching and vetting patients into the funnel, where even lossy answers beat Psychology Today's specialty lists.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CrossVerticalPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_NotTreatmentProxy> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PractitionerEarnsConvertingMethodology> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_UnifiedInstrumentPattern> ;
+    narr:keyPhrase [ narr:text "high-context expertise, low-cost-to-produce-perspective, high-cost-to-vet-via-conversation, asymmetric information" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CrossVerticalPattern> ] ;
+    narr:keyPhrase [ narr:text "Launch healthcare cash-pay first (cleanest regulatory). Defer therapy, insurance-billed care, and legal until the model is proven." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CrossVerticalPattern> ] ;
+    narr:keyPhrase [ narr:text "This is not necessarily a good tool to be a treatment proxy or to be giving advice." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_NotTreatmentProxy> ] ;
+    narr:keyPhrase [ narr:text "Even lossy answers beat Psychology Today's 'lists bipolar as specialty.'" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_NotTreatmentProxy> ] ;
+    narr:keyPhrase [ narr:text "One asset, many surfaces. One production process, one perspective, one ongoing rev share." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PractitionerEarnsConvertingMethodology> ] ;
+    narr:keyPhrase [ narr:text "One instrument, variable escalation targets by deployment context." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_UnifiedInstrumentPattern> ] ;
+    narr:variation [ narr:text "Scope tension: the surface is explicitly disclaimed as treatment/advice and confined to matching-and-vetting, yet the practitioner-economics child sells an 'AI of themselves' that 'handles initial conversations' — a richer deployment that pushes against the narrow framing." ; narr:over <https://aswritten.ai/narrative#Claim_NotTreatmentProxy> ; narr:over <https://aswritten.ai/narrative#Claim_PractitionerEarnsConvertingMethodology> ] ;
+    narr:variation [ narr:text "The verticals are not equivalent: compliance overhead is non-additive (therapy crisis-state risk, legal UPL, financial fiduciary weight), so therapy, insurance-billed care, and legal are explicitly roads deferred behind healthcare cash-pay." ; narr:over <https://aswritten.ai/narrative#Claim_CrossVerticalPattern> ] ;
+    narr:variation [ narr:text "Dated framing split: the unification thesis and the narrow not-a-proxy scope are earlier (Apr 24); the cross-vertical generalization and practitioner revenue model expand it later (Apr 30) — the instrument's reach is still widening, not settled." ; narr:over <https://aswritten.ai/narrative#Claim_UnifiedInstrumentPattern> ; narr:over <https://aswritten.ai/narrative#Claim_CrossVerticalPattern> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,95 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  narr:Tx_20260608T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-08T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "+15044353923" ;
+    narr:originPath ".aswritten/memories/the enterprise customer-pilot-cohort-analysis.md" ;
+    narr:originRef "main" ;
+    dct:title "the enterprise customer Pilot — Three-Week Cohort Analysis & the Composition Trap" ;
+    prov:generated
+      
+      
+      narr:Narrative_PerUserAdoptionAnalysis,
+      narr:Claim_PerUserMethodPrinciple,
+      narr:StyleObs_BoldEmphasis,
+      narr:StyleObs_RelationshipCadenceArtifact,
+      narr:StyleMetrics_EnterpriseCustomerPilot .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260608T120000Z {
+
+    narr:Narrative_PerUserAdoptionAnalysis a narr:Narrative ;
+
+      narr:theme "Pilot health requires per-user cohort analysis over time, not aggregate metrics" ;
+      skos:broader narr:AdoptionKPIs ;
+      skos:note "Aggregate metrics inherit the heaviest user's shape and hide whether a durable core of habitual users is forming and whether early-trial users are quietly attriting. The methodological principle: analyze per-user over time, never in aggregate." .
+
+    narr:Claim_PerUserMethodPrinciple a narr:Claim ;
+      narr:aboutNode narr:Narrative_PerUserAdoptionAnalysis ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+      skos:note "Methodological principle: analyze customer adoption per-user over time, never in aggregate. Aggregate metrics inherit the heaviest user's shape and hide durable-core formation and early-trial attrition." .
+
+    # ── Style Observations ───────────────────────────────────────
+    narr:StyleObs_BoldEmphasis a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+
+      skos:note "Bold used to mark analytical pivots and key corrections, signaling epistemic weight" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1090 ;
+          oa:end 1145
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Scarlet caught it as a composition artifact, not a behavior change" ;
+          oa:prefix "I framed that as the team maturing from reading to authoring. **" ;
+          oa:suffix ":**"
+        ]
+      ] .
+
+    narr:StyleObs_RelationshipCadenceArtifact a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+
+      skos:note "Coined term 'relationship-cadence artifact' to reframe a metrics report as a customer relationship tool — jargon that encodes strategic intent" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 820 ;
+          oa:end 870
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "relationship-cadence artifact" ;
+          oa:prefix "The report is deliberately a **" ;
+          oa:suffix "**: every customer check-in"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────
+    narr:StyleMetrics_EnterpriseCustomerPilot a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 24 ;
+      narr:ActiveVoiceRatio "0.78"^^xsd:decimal ;
+      narr:JargonDensity "0.12"^^xsd:decimal ;
+      skos:note "Analytical register with high active voice. Moderate jargon density driven by domain terms (MCP, ARB, p95, streamgraph, composition artifact). Sentence length varies: short punchy labels alternate with dense multi-clause analytical sentences." .
+
+  }
+}

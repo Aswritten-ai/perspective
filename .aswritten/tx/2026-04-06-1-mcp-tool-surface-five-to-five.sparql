@@ -1,0 +1,105 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260406T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-06T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-04-06-mcp-tool-surface.md" ;
+    narr:originRef "dev@b0811095" ;
+    prov:generated narr:Sample_MCPToolSurface_20260406, narr:Narrative_IntrospectAbsorbedScope, narr:Claim_FiveCoreMCPTools, narr:Claim_ScopeFunctionalityInIntrospect, narr:Claim_TriGOverJSON, narr:StyleObs_Antithesis_MCP, narr:StyleObs_Jargon_MCP, narr:StyleObs_Tone_MCP, narr:Metrics_MCPToolSurface .
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Claim_ScopeIsNewSeparateTool narr:hasConvictionLevel ?oldConviction .
+    narr:Claim_ScopeIsNewSeparateTool skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260406T120000Z {
+    narr:Claim_ScopeIsNewSeparateTool narr:hasConvictionLevel narr:Conviction_Notion ;
+      skos:note "SUPERSEDED: Scope is not a separate tool; its subgraph selection functionality was absorbed into introspect (task-183)." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Claim_ScopeIsNewSeparateTool narr:hasConvictionLevel ?oldConviction ;
+      skos:note ?oldNote .
+  }
+} ;
+
+# New Extractions
+INSERT DATA {
+  GRAPH narr:Tx_20260406T120000Z {
+    narr:Sample_MCPToolSurface_20260406 a narr:Sample ;
+      dct:title "MCP Tool Surface: Five Core Tools (scope removed)" ;
+      dct:created "2026-04-06"^^xsd:date ;
+      narr:inputLength 1850 .
+
+    narr:Narrative_IntrospectAbsorbedScope a narr:Narrative ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      narr:theme "Introspect absorbed scope's subgraph retrieval functionality" ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:note "Scope was removed as a standalone tool; its functionality is now a mode of introspect triggered by the focus parameter." .
+
+    narr:Claim_FiveCoreMCPTools a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      skos:note "The five user-facing MCP tools are: perspective, cite, introspect, remember, and review." .
+
+    narr:Claim_ScopeFunctionalityInIntrospect a narr:Claim ;
+      narr:aboutNode narr:Narrative_IntrospectAbsorbedScope ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      skos:note "When focus is provided, introspect returns selected_iris, subgraph (filtered TriG), existing_knowledge with provenance, gaps, and suggested questions." .
+
+    narr:Claim_TriGOverJSON a narr:Claim ;
+      narr:aboutNode narr:TechnicalExplainers ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      skos:note "Subgraph format is TriG, not structured JSON. JSON was 1.94x the token cost with no information gain." .
+
+    narr:StyleObs_Antithesis_MCP a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MCPToolSurface_20260406 ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "JSON was 1.94x the token cost with no information gain. LLMs parse TriG natively." ]
+      ] .
+
+    narr:StyleObs_Jargon_MCP a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MCPToolSurface_20260406 ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "subgraph (filtered TriG)" ]
+      ] .
+
+    narr:StyleObs_Tone_MCP a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MCPToolSurface_20260406 ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The collective memory claim Claim_ScopeIsNewSeparateTool and the \"Five-Tool Model\" framing are superseded." ]
+      ] .
+
+    narr:Metrics_MCPToolSurface a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_MCPToolSurface_20260406 ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.15 .
+  }
+}

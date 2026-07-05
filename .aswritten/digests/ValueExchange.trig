@@ -1,0 +1,44 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ValueExchange> {
+  <https://aswritten.ai/narrative#Digest_ValueExchange> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#ValueExchange> ;
+    narr:childCount "21"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the economics of who pays whom — and it does not settle into one answer. On the supply side, the [advisor model](narr:Claim_AdvisorAsHighCadenceExpert) frames experts as maintained on cadence \"for free,\" an hour or two [reviewing agent output](narr:Claim_AdvisorReviewsAgentOutput), with [Tony validating](narr:Obs_TonyValidationAdvisoryQuote) that senior people would say yes. But Scarlet's [ethics resolution](narr:Claim_PaymentResolvesEthicsQuestion) pushes the other way: maybe pay them, transforming extraction into compensation. On the demand side, the [referral/vetting economy](narr:Narrative_ReferrerGiftEconomy) is the most-argued region — the [trust-transfer mechanic](narr:Narrative_TrustTransferMechanic) makes a vet cheap because a practitioner beta user→patient and a practitioner beta user→PT edges already exist, so the [patient pays to vet](narr:Obs_ScarletVettingQuote) while the referrer stays in the gift economy. Monetization elsewhere [converts readers into authors](narr:Narrative_MonetizationAuthorConversion). Enterprise value sits in the [senior-expert bottleneck](narr:Observation_ValueExchange_1) and [undocumented knowledge extraction](narr:Narrative_KnowledgeExtractionBeachhead), entered via [side-door consulting](narr:Insight_SideDoorGTM). Pricing is dated and divergent — see variation. The [customer list](narr:Claim_CustomerListAsAsset) is named the primary asset.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AdvisorAsHighCadenceExpert> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AdvisorReviewsAgentOutput> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_BidirectionalCostMechanism> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CustomerListAsAsset> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PaymentResolvesEthicsQuestion> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PractitionerEconomicsFrame> ;
+    narr:covers <https://aswritten.ai/narrative#Insight_SideDoorGTM> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_KnowledgeExtractionBeachhead> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_MetricReframe> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_MonetizationAuthorConversion> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PostPilotSelfSufficiency> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PractitionerPaymentReframed> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PricingModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ReferrerGiftEconomy> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_RevenueModel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TrustTransferMechanic> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletReferralQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletVettingQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_TonyValidationAdvisoryQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_ValueExchange_1> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_WhatDoesItDo_1> ;
+    narr:keyPhrase [ narr:text "Maybe I pay them. Right. Like, but maybe I pay them. Not a lot." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PaymentResolvesEthicsQuestion> ] ;
+    narr:keyPhrase [ narr:text "He's happy to refer me, but doesn't have time to vet for me." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletReferralQuote> ] ;
+    narr:keyPhrase [ narr:text "Money in the referral loop degrades the trust capital that makes the referral valuable — the introducer's incentive is reach and perspective distribution, not a cash cut" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ReferrerGiftEconomy> ] ;
+    narr:keyPhrase [ narr:text "The real enterprise value is in the knowledge that doesn't exist in any system — the senior expert bottleneck." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_ValueExchange_1> ] ;
+    narr:keyPhrase [ narr:text "That a client can encounter and vet the full depth of a practitioner's perspective" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletVettingQuote> ] ;
+    narr:keyPhrase [ narr:text "You could get easily all the people you need who are really senior or insightful people or who have a skill in a certain area that you value to do that." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_TonyValidationAdvisoryQuote> ] ;
+    narr:variation [ narr:text "Advisors-for-free (cadence contribution) vs. pay-the-advisor to convert extraction into compensation — unreconciled (Jul 2025)." ; narr:over <https://aswritten.ai/narrative#Claim_AdvisorAsHighCadenceExpert> ; narr:over <https://aswritten.ai/narrative#Claim_PaymentResolvesEthicsQuestion> ] ;
+    narr:variation [ narr:text "Two distinct pricing skeletons coexist: [amount] pilot + [amount]/mo base + seats vs. [amount]-100K implementation + [amount]/user/mo usage — different numbers, not merged." ; narr:over <https://aswritten.ai/narrative#Narrative_PricingModel> ; narr:over <https://aswritten.ai/narrative#Narrative_RevenueModel> ] ;
+    narr:variation [ narr:text "Referrer cash-cut rejected as trust-degrading; the stronger positive incentive beyond 'reach' is an open question, none tested with a practitioner beta user (Apr 2026)." ; narr:over <https://aswritten.ai/narrative#Narrative_ReferrerGiftEconomy> ] ;
+    narr:variation [ narr:text "'Bounty' framing rejected as cons-coded; reframed as the patient initiating payment for the practitioner's perspective." ; narr:over <https://aswritten.ai/narrative#Narrative_PractitionerPaymentReframed> ] ;
+    narr:variation [ narr:text "Trust math splits cold-patient (zero pre-existing trust, vet does everything) from introducer-mediated (vet only verifies fit) — launch flow privileges the latter." ; narr:over <https://aswritten.ai/narrative#Narrative_TrustTransferMechanic> ] ;
+    narr:variation [ narr:text "Recipients never charged; only goal-holding senders pay — monetization is horizontal reader→author conversion, distinct from advisor and pilot revenue paths." ; narr:over <https://aswritten.ai/narrative#Narrative_MonetizationAuthorConversion> ; narr:over <https://aswritten.ai/narrative#Claim_BidirectionalCostMechanism> ] ;
+    narr:writer "claude (subscription)" .
+}

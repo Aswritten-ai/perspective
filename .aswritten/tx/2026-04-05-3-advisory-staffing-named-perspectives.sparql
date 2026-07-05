@@ -1,0 +1,302 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250714T180000Z a prov:Activity ;
+    prov:generatedAtTime "2025-07-14T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260331-advisory-staffing-named-perspectives" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Narrative_AdvisoryStaffingAlternativeToHiring,
+      narr:Narrative_NamedPerspectiveArchitecture,
+      narr:Narrative_LongTailPerspectiveAutomation,
+      narr:Narrative_PerspectiveDrivenDevelopmentInversion,
+      narr:Claim_AdvisorReviewsAgentOutput,
+      narr:Claim_NamedPerspectiveAsSubAgent,
+      narr:Claim_ConsentEthicsAdvisorRecording,
+      narr:Claim_PaymentResolvesEthicsQuestion,
+      narr:Claim_SeniorPeopleWouldSayYes,
+      narr:Claim_AIAgentLongTailInterviews,
+      narr:Claim_PerspectiveStartsDevelopment,
+      narr:Obs_AdvisoryStaffingModelQuote,
+      narr:Obs_NamedPerspectiveQuote,
+      narr:Obs_PerspectiveInversionQuote,
+      narr:Obs_TonyValidationAdvisoryQuote,
+      narr:StyleObs_ConversationalRegisterTonyScarlet,
+      narr:StyleObs_AntithesisUserToPerspective,
+      narr:StyleObs_TimestampedSpeakerAttribution,
+      narr:StyleMetrics_TonyScarletAdvisory .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20250714T180000Z {
+
+    # ── SECTION 1: The Staffing Model ────────────────────────────────────────
+
+    narr:Narrative_AdvisoryStaffingAlternativeToHiring a narr:Narrative ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:OperatingModelShifts ;
+      skos:prefLabel "Advisory Staffing as Structural Alternative to Hiring" ;
+      skos:note "Scarlet proposed a formalized advisory staffing model: pay advisors a monthly fee ([amount]–[amount]/month) for regular calls, decision review, and audit of their AI agent representation. The model replaces full-time employees with high-cadence expert advisors who also validate the AI agents built from their perspectives. Tony validated: senior, insightful people would not say no to [amount]/month for two calls. The economic logic: 10 advisors at [amount]/month = [amount] for 10 hours/month of the advisor's time, freeing them to be involved in 10 things without serious time commitment." ;
+      narr:theme "Paying advisors a monthly fee for calls plus AI agent audit replaces full-time hiring with a scalable, high-cadence expert network" .
+
+    narr:Claim_AdvisorReviewsAgentOutput a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Advisors in the model agree to: (1) regular calls, (2) review of decisions, (3) audit of the output of their AI agent representation. The advisor's role is not 50% of their time — it is an hour or two of answering questions, giving opinions, and reacting to what's happening." ;
+      narr:aboutNode narr:Narrative_AdvisoryStaffingAlternativeToHiring ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:ValueExchange .
+
+    narr:Claim_SeniorPeopleWouldSayYes a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Tony [35:24]: 'You could get easily all the people you need who are really senior or insightful people or who have a skill in a certain area that you value to do that. I can't imagine they would say no.' And [35:41]: 'And probably much more senior people than you could get otherwise.' The advisory model unlocks access to people who are unavailable for full-time roles but willing to engage on a cadence." ;
+      narr:aboutNode narr:Narrative_AdvisoryStaffingAlternativeToHiring ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:HiringPlan .
+
+    # ── SECTION 2: Named Perspective Architecture ─────────────────────────────
+
+    narr:Narrative_NamedPerspectiveArchitecture a narr:Narrative ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:prefLabel "Named Perspective Architecture: Advisors as Sub-Agents" ;
+      skos:note "Each advisor gets a named perspective — not flat memories in the org, but a distinct sub-perspective representing their particular take. Scarlet [29:45]: 'What if I create a role, an abstract role that is curated by each person I'm talking to. I could basically have a Tony perspective that it's like all of our conversations and there's the perspective at the root of the business and then there's this perspective that is sort of your particular take on it.' The architecture: a central organizational perspective (the ship Scarlet steers) with named sub-perspectives on the edges operating as sub-agents in planning and development. In any planning session for a task, the named perspective is consulted as if Tony himself were present." ;
+      narr:theme "Named advisor perspectives operate as sub-agents in planning — each advisor's accumulated conversations become a distinct perspective that can be consulted without the advisor being present" .
+
+    narr:Claim_NamedPerspectiveAsSubAgent a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet [30:41]: 'In the planning session for any particular task, like, I want to know what Tony thinks as Tony has represented, you know, your... And our sort of shared opinion over every call we've had.' The named perspective is not a flat memory dump — it is a curated sub-perspective that represents the advisor's particular take, distinct from the root organizational perspective. Sub-perspectives operate as sub-agents in automations and coding." ;
+      narr:aboutNode narr:Narrative_NamedPerspectiveArchitecture ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:SystemTopology .
+
+    narr:Claim_AdvisoryStaffingReplacesHiring a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet [31:20]: 'Instead of hiring, can I set up regular cadence meetings with all of the people that represent roles and perspectives that I need and then I create, you know, internal AI agents that represent those roles in all of the automations and coding that I'm doing?' This directly connects the named perspective architecture to the staffing model — the advisor cadence is the mechanism for keeping the AI agent representation current and audited." ;
+      narr:aboutNode narr:Narrative_NamedPerspectiveArchitecture ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_AdvisoryStaffingAlternativeToHiring .
+
+    # ── SECTION 3: Consent, Compensation, and Ethics ─────────────────────────
+
+    narr:Claim_ConsentEthicsAdvisorRecording a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet raised the ethics question directly: 'Am I allowed to just record and lift your opinions?' Tony: 'Yeah... I think you're allowed to do that. I think that's fine in a work context.' Both agreed this has limits — Tony raised the da Vinci analogy about fairness when extracting someone's brain into an AI agent. The resolution: payment. Tony [32:41]: 'Maybe you're on an interesting angle there though, right? It's like rather than hire someone, maybe you literally just pay them a fee to consult by coming into that. Right. And then the time commitment is in training.'" ;
+      narr:aboutNode narr:GovernanceSafetyTrust ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:GovernanceSafetyTrust .
+
+    narr:Claim_PaymentResolvesEthicsQuestion a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's resolution to the ethics question of lifting advisor opinions into AI agents: 'Maybe I pay them. Right. Like, but maybe I pay them. Not a lot.' Payment transforms the relationship from extraction to compensation — the advisor is not just a source being mined but a paid contributor whose time commitment is in training the AI agent that represents them." ;
+      narr:aboutNode narr:GovernanceSafetyTrust ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:ValueExchange .
+
+    # ── SECTION 4: Long-Tail Automation ──────────────────────────────────────
+
+    narr:Narrative_LongTailPerspectiveAutomation a narr:Narrative ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:TechnologiesSocialSystems ;
+      skos:prefLabel "Long-Tail Automation: AI Agents Farm Perspectives at Scale" ;
+      skos:note "Scarlet [33:38]: 'There's a lot of value in me doing this myself, for me being the one doing the interview now. But you could also automate this on the long tail. Right. You could basically farm the perspective and opinions of a very large number of people by having an AI agent call them.' Tony [34:06]: 'It waits until there's a timely input required or a number of inputs required and literally sets up a meeting with them and asks the questions and recalls the answers.' The long-tail model extends the advisory staffing concept to a much larger network — AI agents autonomously conduct interviews when input is needed, without requiring Scarlet to be present." ;
+      narr:theme "AI agents can autonomously farm perspectives from a large advisor network by scheduling interviews when timely input is required — scaling the advisory model beyond what any human interviewer could manage" .
+
+    narr:Claim_AIAgentLongTailInterviews a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "The long-tail automation model: an AI agent waits until a timely input is required, sets up a meeting with the relevant advisor, asks the questions, and recalls the answers. This extends the interview-based perspective farming from a manual, Scarlet-led process to an automated, scalable system. The human interviewer (Scarlet) provides value in the initial relationship and framing; the AI agent handles the ongoing cadence." ;
+      narr:aboutNode narr:Narrative_LongTailPerspectiveAutomation ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:TechnologiesSocialSystems .
+
+    # ── SECTION 5: Perspective-Driven Development Inversion ───────────────────
+
+    narr:Narrative_PerspectiveDrivenDevelopmentInversion a narr:Narrative ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:OperatingModelShifts ;
+      skos:prefLabel "Perspective-Driven Development Inversion: From User→AI to Perspective→User" ;
+      skos:note "Both Scarlet and Tony converged on inverting the current development model. Current model: user goes to Claude and says 'do this.' Inverted model: the perspective starts being the thing that does the development, and it comes back to the user asking 'I made something, what do you think?' Scarlet [01:04:07]: 'The perspective starts being the thing that's doing the development instead of you doing it.' Scarlet [01:05:07]: 'What if we could just at least invert the model right, where like, currently you're going to Claude and say, do this, and instead you could be sharing your perspective and it comes back to you and says, hey, I made something. What do you think?' Tony [01:05:22]: 'That's the thing that we need to change. Stop trying to get it to see the way that you see and start getting it to use you to give the perspective on what you see.'" ;
+      narr:theme "The development model inverts from user directing AI ('do this') to perspective directing development and returning to the user for reaction ('I made something, what do you think?')" .
+
+    narr:Claim_PerspectiveStartsDevelopment a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet [01:04:07]: 'The perspective starts being the thing that's doing the development instead of you doing it.' This is the culminating insight of the call — the named perspective architecture is not just a knowledge management tool but a development agent. The perspective, once sufficiently built, can initiate development work and return artifacts to the human for review rather than waiting for human direction." ;
+      narr:aboutNode narr:Narrative_PerspectiveDrivenDevelopmentInversion ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_ExecutionToStrategyShift .
+
+    narr:Claim_StopGettingItToSeeYourWay a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Tony [01:05:22]: 'That's the thing that we need to change. Stop trying to get it to see the way that you see and start getting it to use you to give the perspective on what you see.' This reframes the human-AI relationship: instead of the human trying to prompt the AI into their worldview, the human's perspective is installed into the AI and the AI uses that perspective to generate and return work for human reaction." ;
+      narr:aboutNode narr:Narrative_PerspectiveDrivenDevelopmentInversion ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_HumanDrivenDevelopmentPrinciple .
+
+    # ── OBSERVATIONS (grounded quotes) ───────────────────────────────────────
+
+    narr:Obs_AdvisoryStaffingModelQuote a narr:Observation ;
+      skos:broader narr:OperatingModelShifts ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's verbatim articulation of the advisory staffing model structure — monthly fee, call cadence, decision review, agent audit." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1020 ;
+          oa:end 1280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "So I want to pay you a monthly fee and I want to have, you know, either weekly or bi weekly or whatever" ;
+          oa:prefix "Scarlet [33:02]: \"" ;
+          oa:suffix ", depending on there's maybe different scales to this engagement."
+        ]
+      ] .
+
+    narr:Obs_NamedPerspectiveQuote a narr:Observation ;
+      skos:broader narr:ArchitectureOverview ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's canonical articulation of the named perspective architecture — the ship metaphor and sub-agent framing." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2180 ;
+          oa:end 2560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I want to have the ship in the middle that I'm actually steering and that I've pulled things that I'm sure about into and then all the sort of people on the edges" ;
+          oa:prefix "Scarlet [29:45]: \"" ;
+          oa:suffix " that basically operate like sub agents."
+        ]
+      ] .
+
+    narr:Obs_PerspectiveInversionQuote a narr:Observation ;
+      skos:broader narr:OperatingModelShifts ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Tony's canonical statement of the development inversion — stop trying to get AI to see your way, start using your perspective as the development driver." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5180 ;
+          oa:end 5380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Stop trying to get it to see the way that you see and start getting it to use you to give the perspective on what you see." ;
+          oa:prefix "Tony [01:05:22]: \"That's the thing that we need to change. " ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:Obs_TonyValidationAdvisoryQuote a narr:Observation ;
+      skos:broader narr:ValueExchange ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Tony's validation that senior people would not say no to the advisory model — the access unlock argument." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1680 ;
+          oa:end 1850
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "You could get easily all the people you need who are really senior or insightful people or who have a skill in a certain area that you value to do that." ;
+          oa:prefix "Tony [35:24]: \"" ;
+          oa:suffix " I can't imagine they would say no.\""
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ───────────────────────────────────────────────────
+
+    narr:StyleObs_ConversationalRegisterTonyScarlet a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Both speakers use heavily conversational register with filler words ('you know', 'like', 'right'), run-on sentences, and self-interruption. Scarlet's speech is longer and more architecturally structured; Tony's is shorter and more declarative. The transcript preserves raw spoken cadence including false starts." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1020 ;
+          oa:end 1280
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "So I want to pay you a monthly fee and I want to have, you know, either weekly or bi weekly or whatever, depending on there's maybe different scales" ;
+          oa:prefix "Scarlet [33:02]: \"" ;
+          oa:suffix " to this engagement."
+        ]
+      ] .
+
+    narr:StyleObs_AntithesisUserToPerspective a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "The development inversion section uses explicit antithesis structure: 'currently you're going to Claude and say, do this' vs. 'you could be sharing your perspective and it comes back to you and says, hey, I made something.' This before/after antithesis is the rhetorical device that carries the section's core insight." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5050 ;
+          oa:end 5250
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "currently you're going to Claude and say, do this, and instead you could be sharing your perspective and it comes back to you and says, hey, I made something. What do you think?" ;
+          oa:prefix "Scarlet [01:05:07]: \"What if we could just at least invert the model right, where like, " ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:StyleObs_TimestampedSpeakerAttribution a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "The memory uses a consistent citation convention: speaker name followed by timestamp in brackets (e.g., 'Scarlet [33:02]:', 'Tony [35:24]:') before each quoted passage. This is a transcript-derived citation format that provides temporal grounding for each claim." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 0 ;
+          oa:end 120
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Scarlet [33:02]:" ;
+          oa:prefix "**" ;
+          oa:suffix " \"So I want to pay you"
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────────────────
+
+    narr:StyleMetrics_TonyScarletAdvisory a narr:StyleMetrics ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Advisory staffing and named perspective sections of the Tony-Scarlet call. Conversational transcript register. Scarlet's quoted speech averages ~30 words per sentence with complex clause nesting; Tony's averages ~14 words with short declarative punches. Active voice dominant. Jargon density very low — 'sub-agent', 'perspective', 'AI agent' are the only domain terms. Antithesis-heavy in the development inversion section. Filler words ('you know', 'like', 'right') elevate informality. Timestamp citation convention throughout." ;
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.80"^^xsd:decimal ;
+      narr:JargonDensity "0.04"^^xsd:decimal .
+
+  }
+}

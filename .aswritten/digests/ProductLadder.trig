@@ -1,0 +1,31 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ProductLadder> {
+  <https://aswritten.ai/narrative#Digest_ProductLadder> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#ProductLadder> ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the product-and-go-to-market ladder. The commercial spine is the [four-phase core expansion track](narr:ExpansionTrack_Core): [a [amount] pilot gated on a live demo](narr:Narrative_PilotOffer), then [team license plus retainer](narr:ExpansionTrack_Core), multi-team rollout, and enterprise-wide adoption — targeting Product/Eng teams first. Beneath the pricing sits a product-shape argument: a [tool hierarchy of primitives vs composers](narr:Observation_ToolHierarchy) and the [Stories system removed entirely](narr:Claim_RemoveStoriesSystem) (functions migrated to on-demand skills, 2026-03-26). A parallel conceptual track reframes the offering as the [goal-directed agent primitive](narr:Narrative_GoalDirectedPrimitive), extended 2026-04-24 into a scarce-expert filter that gates escalation. Adoption evidence threads through: [branching resonated with a design collaborator's stated pain](narr:Observation_BranchingResonance) and [shared agent memory](narr:Narrative_SharedAgentMemory) maps to existing capabilities. A tactical [repo-transfer cost maneuver](narr:Claim_RepoTransferStrategy) and a [post-pilot self-sufficiency](narr:Narrative_PostPilotSelfSufficiency) promise round out the region.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RemoveStoriesSystem> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RepoTransferStrategy> ;
+    narr:covers <https://aswritten.ai/narrative#ExpansionTrack_Core> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_GoalDirectedPrimitive> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PilotOffer> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PostPilotSelfSufficiency> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SharedAgentMemory> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_BranchingResonance> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_ToolHierarchy> ;
+    narr:keyPhrase [ narr:text "Phase 1: Pilot ([amount]) — 2-3 experts, 2-4 weeks, live demo delivery gate." ; narr:phraseSource <https://aswritten.ai/narrative#ExpansionTrack_Core> ] ;
+    narr:keyPhrase [ narr:text "[amount]/mo base + [amount]-250/seat + [amount]-10K/mo services" ; narr:phraseSource <https://aswritten.ai/narrative#ExpansionTrack_Core> ] ;
+    narr:keyPhrase [ narr:text "perspective + goal + termination criteria + escalation criteria = a bounded autonomous agent." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_GoalDirectedPrimitive> ] ;
+    narr:keyPhrase [ narr:text "Entire Stories system removed; functions migrated to on-demand skills or direct TX returns." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_RemoveStoriesSystem> ] ;
+    narr:keyPhrase [ narr:text "full self-service capability with free tier." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_PostPilotSelfSufficiency> ] ;
+    narr:keyPhrase [ narr:text "You spend the next week trying to get back to where you were at the start and then fragments always remain." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_BranchingResonance> ] ;
+    narr:variation [ narr:text "Revenue tension: Phase 2 sells ongoing retainer + per-seat + monthly services, yet the post-pilot promise is full self-service with no ongoing dependency on day one." ; narr:over <https://aswritten.ai/narrative#ExpansionTrack_Core> ; narr:over <https://aswritten.ai/narrative#Narrative_PostPilotSelfSufficiency> ] ;
+    narr:variation [ narr:text "Two organizing frames compete: a phased commercial ladder (pilot→enterprise) vs a single goal-directed primitive that unifies all use cases through variable escalation targets." ; narr:over <https://aswritten.ai/narrative#ExpansionTrack_Core> ; narr:over <https://aswritten.ai/narrative#Narrative_GoalDirectedPrimitive> ] ;
+    narr:variation [ narr:text "Removal vs retention thread: the Stories system was removed outright, while compile is 'deprecated in practice but kept for utility' — deprecation handled inconsistently." ; narr:over <https://aswritten.ai/narrative#Claim_RemoveStoriesSystem> ; narr:over <https://aswritten.ai/narrative#Observation_ToolHierarchy> ] ;
+    narr:variation [ narr:text "Structural outlier: a mid-call repo-transfer maneuver to dodge org paid-seat consumption is a billing tactic, not part of the product/pricing ladder." ; narr:over <https://aswritten.ai/narrative#Claim_RepoTransferStrategy> ] ;
+    narr:variation [ narr:text "Framing split: user-pain/adoption evidence (branching resonance, shared memory) sits beside the commercial-phase pricing as an alternative justification for the same ladder." ; narr:over <https://aswritten.ai/narrative#Observation_BranchingResonance> ; narr:over <https://aswritten.ai/narrative#Narrative_SharedAgentMemory> ] ;
+    narr:writer "claude (subscription)" .
+}

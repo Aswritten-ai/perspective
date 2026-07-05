@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_NorthStarMetrics> {
+  <https://aswritten.ai/narrative#Digest_NorthStarMetrics> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#NorthStarMetrics> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the candidate \"north star\" signals — and they do not agree on one number. The strongest product claim insists [extraction quality is paramount](narr:Claim_ExtractionEvalsAboveLine), proposing eval data capture (Postgres table: memory text, TX output, claim count, timestamp; manual review at launch, judge workflow post-launch) and declaring it \"the most important part of the product, bar none\" (dated 2026-03-26, [echoed as an observation](narr:Obs_ExtractionEvalsQuote)). Against that, the [single business metric](narr:Narrative_KeyMetric) is named as Pilot-to-Full Conversion — the number separating a [amount] practice from a [amount]+ business. A separate [financial frame](narr:Obs_NorthStarMetrics) tracks the [amount] F&F raise, [amount] engagement price, and monthly burn. A measured [coverage reading](narr:Obs_CoverageMetric) (0.87, 13/15 claims, 2026-05-23) and a [weighting scheme](narr:Claim_9) for compile inputs round out the operational signals.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_9> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ExtractionEvalsAboveLine> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_KeyMetric> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CoverageMetric> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ExtractionEvalsQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_NorthStarMetrics> ;
+    narr:keyPhrase [ narr:text "the most important part of the product, bar none." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ExtractionEvalsAboveLine> ] ;
+    narr:keyPhrase [ narr:text "Single number that determines whether this is a [amount] consulting practice or a [amount]+ business." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_KeyMetric> ] ;
+    narr:keyPhrase [ narr:text "Pilot-to-Full Conversion" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_KeyMetric> ] ;
+    narr:keyPhrase [ narr:text "Cite tool returned 13 supported citations against 15 claims (coverage 0.87)" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CoverageMetric> ] ;
+    narr:keyPhrase [ narr:text "[amount] F&F raise target. [amount] per engagement price point." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_NorthStarMetrics> ] ;
+    narr:keyPhrase [ narr:text "continuous-valued, not binary" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_9> ] ;
+    narr:variation [ narr:text "The hub holds two rival north stars: product-quality (extraction evals, \"bar none\") vs. business outcome (Pilot-to-Full Conversion as THE single number) — neither is reconciled as primary." ; narr:over <https://aswritten.ai/narrative#Claim_ExtractionEvalsAboveLine> ; narr:over <https://aswritten.ai/narrative#Narrative_KeyMetric> ] ;
+    narr:variation [ narr:text "A third, financial framing (raise / price / burn / invisible debt) sits alongside as its own scorecard, distinct from both product and conversion metrics." ; narr:over <https://aswritten.ai/narrative#Obs_NorthStarMetrics> ] ;
+    narr:variation [ narr:text "Coverage (0.87) is a concrete measured output, but it's a citation-quality reading, not declared a north star — an operational signal that may be mistaken for the headline metric." ; narr:over <https://aswritten.ai/narrative#Obs_CoverageMetric> ] ;
+    narr:variation [ narr:text "The weighting claim insists on continuous-valued, not binary scoring — a methodological stance that pushes against any single yes/no metric." ; narr:over <https://aswritten.ai/narrative#Claim_9> ] ;
+    narr:writer "claude (subscription)" .
+}

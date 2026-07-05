@@ -1,0 +1,206 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260702T173437Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T17:34:37Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-07-02-14-ev-narrative-architecture-flocking-opens.md" ;
+    narr:originRef "dev" ;
+    dct:title "EV Application Narrative Architecture: Flocking Opens, Scanner Publishes, Deli Proves" ;
+    prov:generated
+      
+      
+      
+      
+      
+      
+      narr:Claim_CompilerSentenceMechanism,
+      narr:Claim_CollectiveMemoryFramingRetired,
+      narr:Obs_FlockingPieceVerbatim,
+      narr:Obs_CompilerSentenceQuote,
+      narr:Obs_FeatherArrowsClose,
+      narr:Obs_EVConsensusAnswerQuote,
+      narr:StyleObs_EVFlocking_FirstPerson,
+      narr:StyleObs_EVFlocking_ArrowMetaphor,
+      narr:StyleObs_EVFlocking_Anaphora,
+      narr:StyleMetrics_EVFlockingApplication .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T173437Z {
+
+    # ── Claim: Compiler Sentence as Mechanism Statement ─────────────────────
+    narr:Claim_CompilerSentenceMechanism a narr:Claim ;
+      narr:aboutNode narr:Narrative_NarrativeAsVector ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+
+      skos:note "'LLMs become not just a tool for conversation or coding, but a compiler that takes a narrative architecture and produces a synthetic individual whose every thought projects far further down the paths we set than we could tread alone.' Identified as the cleanest one-sentence statement of the mechanism yet written — extends the committed narrative-as-program and code-as-compilation threads and should survive every edit." .
+
+    # ── Claim: 'Collective Memory for AI' Framing Flagged ───────────────────
+    narr:Claim_CollectiveMemoryFramingRetired a narr:Claim ;
+      narr:aboutNode narr:Narrative_HowManyVoicesInSuperintelligence ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+
+      skos:note "Draft flag on the flocking piece: 'collective memory for AI' reaches for the retired framing — either swap to current language or mark it deliberately period-correct ('what I called it then'). Consistent with the existing graph note that 'memory' was explicitly retired for 'installable expertise.'" .
+
+    # ── Observation: Flocking Piece Verbatim Opening ────────────────────────
+    narr:Obs_FlockingPieceVerbatim a narr:Observation ;
+      skos:broader narr:Metaphor ;
+
+      skos:note "Verbatim opening of the flocking piece (primary source, Scarlet draft). Establishes the flocking origin story as the EV application opener." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3309 ; oa:end 3505
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I started programming the flocking of birds in 2012 where I saw that simple rules followed by each bird - to not collide with their fellows, to not stray too far, and to align with those near them" ;
+          oa:prefix "## Primary source — the flocking piece (Scarlet, draft, verbatim)\n\n" ;
+          oa:suffix " - produced incredibly complex and beautiful emergent behavior"
+        ]
+      ] .
+
+    # ── Observation: Compiler Sentence Quote ────────────────────────────────
+    narr:Obs_CompilerSentenceQuote a narr:Observation ;
+      skos:broader narr:Metaphor ;
+
+      skos:note "Identified in draft flags as the cleanest one-sentence mechanism statement yet written. Should survive every edit." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5769 ; oa:end 5911
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "LLMs become not just a tool for conversation or coding, but a compiler that takes a narrative architecture and produces a synthetic individual" ;
+          oa:prefix "\n\n" ;
+          oa:suffix " whose every thought projects far further down the paths we set"
+        ]
+      ] .
+
+    # ── Observation: Feather Our Arrows Close ───────────────────────────────
+    narr:Obs_FeatherArrowsClose a narr:Observation ;
+      skos:broader narr:RhetoricalDevices ;
+
+      skos:note "The closing metaphor of the flocking piece — archery/arrows as the productivity argument. Draft flag: the EV version should open out to the voices question rather than close on productivity." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6312 ; oa:end 6436
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I built aswritten to feather our arrows, that our first attempt may always let us fly further in the direction we're headed." ;
+          oa:prefix "I have seen the incredible productivity that LLMs have given us. But they have turned our starting line from the blank page to the complete and misguided draft. " ;
+          oa:suffix " That our work is to adjust our aim"
+        ]
+      ] .
+
+    # ── Observation: EV Consensus Answer Quote ──────────────────────────────
+    narr:Obs_EVConsensusAnswerQuote a narr:Observation ;
+      skos:broader narr:KeyPhrases ;
+
+      skos:note "The committed voices statement that answers EV's consensus-view prompt — the specific sentence that locks the EV application's answer to Cowen's 'start from a consensus you actually agree with' prompt." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1095 ; oa:end 1180
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I actually agree that AI is going to displace work... the question is how many voices" ;
+          oa:prefix "EV's consensus-view prompt (\"" ;
+          oa:suffix "\")"
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+    narr:StyleObs_EVFlocking_FirstPerson a narr:StyleObservation ;
+      skos:broader narr:FirstPerson ;
+
+      rdf:value true ;
+      skos:note "The flocking piece is written in sustained first-person singular throughout — 'I started,' 'I spent years,' 'I left Vouch,' 'I built aswritten.' Characteristic of Scarlet's founder-voice register: personal grounding as epistemic authority." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3309 ; oa:end 3360
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I started programming the flocking of birds in 2012" ;
+          oa:prefix "## Primary source — the flocking piece (Scarlet, draft, verbatim)\n\n" ;
+          oa:suffix " where I saw that simple rules"
+        ]
+      ] .
+
+    narr:StyleObs_EVFlocking_ArrowMetaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+
+      rdf:value true ;
+      skos:note "Archery/arrow metaphor closes the flocking piece: 'feather our arrows,' 'fly further in the direction we're headed,' 'adjust our aim,' 'all arrows find target.' Extends the steering-vector physics metaphor into a kinetic, directional image. Consistent with Scarlet's idiolect (StyleObs_5 archery/arrow metaphors already in graph)." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6333 ; oa:end 6502
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "feather our arrows, that our first attempt may always let us fly further in the direction we're headed. That our work is to adjust our aim so that all arrows find target" ;
+          oa:prefix "I built aswritten to " ;
+          oa:suffix ", not spend our time moving the ones that already missed."
+        ]
+      ] .
+
+    narr:StyleObs_EVFlocking_Anaphora a narr:StyleObservation ;
+      skos:broader narr:Anaphora ;
+
+      rdf:value true ;
+      skos:note "Anaphoric 'We' construction closes the piece: 'We too are compiled, from stories inherited and newly written.' 'Our work together, aswritten.' Shifts from 'I' (founder origin) to 'We' (collective) — the structural pivot from personal grounding to shared mission. The final line 'Our work together, aswritten.' is a fragment used as a declaration, maximum rhetorical finality." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6003 ; oa:end 6065
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "We too are compiled, from stories inherited and newly written." ;
+          oa:prefix "tread alone.\n\n" ;
+          oa:suffix " And it is the shifts that enrapture us"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+    narr:StyleMetrics_EVFlockingApplication a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.88"^^xsd:decimal ;
+      narr:JargonDensity "0.09"^^xsd:decimal ;
+      skos:note "Mixed register: strategic session memo (analytical, structured) framing a verbatim founder essay (first-person, lyrical). The flocking piece itself is active-voice dominant, medium sentence length with deliberate variation — short declaratives at conviction peaks ('Our work together, aswritten.'), longer compound sentences for mechanism explanation. Jargon density low — product terms (narrative architecture, steering vectors, compiler) used precisely but sparingly. The session-memo wrapper is more technical and uses internal vocabulary (scanner, deli story, SII, EV)." .
+
+  }
+}

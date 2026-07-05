@@ -1,0 +1,40 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_GovernanceSafetyTrust> {
+  <https://aswritten.ai/narrative#Digest_GovernanceSafetyTrust> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#GovernanceSafetyTrust> ;
+    narr:childCount "17"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the governance, safety, and trust commitments around organizational memory and perspective-grounded agents. The load-bearing thread is **consent**: Scarlet asked an advisor directly whether she may [record and lift opinions](narr:Claim_ConsentEthicsAdvisorRecording) (Jul 2025), resolving the ethics question via [payment as compensation rather than extraction](narr:Claim_PaymentResolvesEthicsQuestion). Access control runs parallel — a collaborator's 'will my comments end up in the next version?' opens a [transparent-RBAC and knowledge-scoping](narr:Claim_ConsentAttributionRBAC) design conversation (Mar 2026), distinguishing [hard segmentation from soft focus](narr:Narrative_HardVsSoftSegmentation) (Apr 2026), with [account/role enforcement](narr:Claim_AccountRoleEnforcementAfterThought) shipped later (May). Data integrity anchors the safety case: a [stale graph plus citations is worse than no citations](narr:Claim_StaleGraphCitationsWorse) (Mar 2026), mitigated by [user-owned repos](narr:Obs_UserOwnedRepo) as a sovereignty differentiator. Agent conduct is fenced by an [appropriateness gate](narr:Principle_AppropriatenessGate), [disclosure-by-default outreach](narr:Principle_DisclosureDefault), [principled escalation](narr:Observation_TrustContractPrincipledEscalation), and a [regulatory boundary](narr:Claim_ProposalRegulatorySafeguard) on proposals. [Vouch identity infrastructure](narr:Narrative_VouchIdentityForAgents) sits adjacent as agent-security tooling.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_3> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AccountRoleEnforcementAfterThought> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CoLocationMemory> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ConsentAttributionRBAC> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ConsentEthicsAdvisorRecording> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_HallucinationProblem> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PaymentResolvesEthicsQuestion> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ProposalRegulatorySafeguard> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StaleGraphCitationsWorse> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_HardVsSoftSegmentation> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_VouchIdentityForAgents> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_StaleGraphDanger> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_UserOwnedRepo> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_2> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_TrustContractPrincipledEscalation> ;
+    narr:covers <https://aswritten.ai/narrative#Principle_AppropriatenessGate> ;
+    narr:covers <https://aswritten.ai/narrative#Principle_DisclosureDefault> ;
+    narr:keyPhrase [ narr:text "Am I allowed to just record and lift your opinions?" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ConsentEthicsAdvisorRecording> ] ;
+    narr:keyPhrase [ narr:text "Payment transforms the relationship from extraction to compensation" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PaymentResolvesEthicsQuestion> ] ;
+    narr:keyPhrase [ narr:text "Can we have intelligent and transparent RBAC?" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ConsentAttributionRBAC> ] ;
+    narr:keyPhrase [ narr:text "stale graph + citations = worse than having no citations at all" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_StaleGraphCitationsWorse> ] ;
+    narr:keyPhrase [ narr:text "Directories / separate repos = hard segmentation" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_HardVsSoftSegmentation> ] ;
+    narr:keyPhrase [ narr:text "must refuse to act if the principal's principles forbid the action" ; narr:phraseSource <https://aswritten.ai/narrative#Principle_AppropriatenessGate> ] ;
+    narr:variation [ narr:text "Explicit dissent: the architecture can produce agreement an AI would not genuinely give, and the LLM cannot self-detect this narrative steering — steering without consent or detection." ; narr:over <https://aswritten.ai/narrative#Claim_3> ; narr:over <https://aswritten.ai/narrative#Observation_2> ] ;
+    narr:variation [ narr:text "Safety inversion: org memory is not strictly additive — a stale graph with citations is actively worse than generic AI with none." ; narr:over <https://aswritten.ai/narrative#Claim_StaleGraphCitationsWorse> ; narr:over <https://aswritten.ai/narrative#Obs_StaleGraphDanger> ] ;
+    narr:variation [ narr:text "Two incompatible isolation models coexist: hard segmentation (separate repos for proprietary clients) vs soft focus (one graph, compile-time role/temporal lenses) — chosen per relationship, not globally." ; narr:over <https://aswritten.ai/narrative#Narrative_HardVsSoftSegmentation> ; narr:over <https://aswritten.ai/narrative#Claim_ConsentAttributionRBAC> ] ;
+    narr:variation [ narr:text "Ethics resolved by payment, but both parties flagged this has limits (da Vinci 'extracting someone's brain' fairness concern) — the resolution is contested, not closed." ; narr:over <https://aswritten.ai/narrative#Claim_ConsentEthicsAdvisorRecording> ; narr:over <https://aswritten.ai/narrative#Claim_PaymentResolvesEthicsQuestion> ] ;
+    narr:variation [ narr:text "Open commercialization question: ship Vouch agent-identity tech as an open-source standard or sell it as an enterprise product — unresolved." ; narr:over <https://aswritten.ai/narrative#Narrative_VouchIdentityForAgents> ] ;
+    narr:variation [ narr:text "Role/account enforcement was an afterthought, not designed-in — surfaced only under a specific engagement and retrofitted in Phase 3." ; narr:over <https://aswritten.ai/narrative#Claim_AccountRoleEnforcementAfterThought> ] ;
+    narr:writer "claude (subscription)" .
+}

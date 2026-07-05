@@ -1,0 +1,513 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────────────────
+INSERT DATA {
+  narr:Tx_20260326T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-26T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-26-mvp-scoping-session.md" ;
+    narr:originRef "main" ;
+    dct:title "MVP Scoping Session: What Ships, What's Cut, and Why" ;
+    prov:generated
+      narr:Sample_MVPScopingSession_20260326,
+      narr:Narrative_FocusAsGoverningPrinciple,
+      narr:Narrative_SeparationProductVsOrgAutomation,
+      narr:Narrative_ExpertSingleStreamWorldview,
+      narr:Narrative_PlanGatedInstructions,
+      narr:Claim_StoriesRemoved,
+      narr:Claim_NotificationsRemoved,
+      narr:Claim_DiscoveriesRemoved,
+      narr:Claim_RefractRegistryRemoved,
+      narr:Claim_TXSummariesOnPRRemoved,
+      narr:Claim_MemoriesSourceToolRemoved,
+      narr:Claim_AdminTierEliminated,
+      narr:Claim_FeedbackHelpAboveLine,
+      narr:Claim_TeamPlanAtLaunch,
+      narr:Claim_ReviewToolThreeCases,
+      narr:Claim_CompileReturnsPlanGatedInstructions,
+      narr:Claim_FreeIsTrial,
+      narr:Claim_RefractBecomesLocalSkill,
+      narr:Claim_ChangelogStoryBecomesLocalSkill,
+      narr:Claim_BlogPostIdeasLocalSkill,
+      narr:Claim_GraphHealthLocalSkill,
+      narr:Obs_CoreThesisQuote1,
+      narr:Obs_CoreThesisQuote2,
+      narr:Obs_StoriesRemovalQuote,
+      narr:Obs_SeparationPrincipleQuote,
+      narr:Obs_NotificationsRemovalQuote,
+      narr:Obs_DiscoveriesRemovalQuote,
+      narr:Obs_RefractRegistryQuote,
+      narr:Obs_FeedbackHelpQuote,
+      narr:Obs_ExtractionEvalsQuote,
+      narr:Obs_ExpertSingleStreamQuote,
+      narr:Obs_ReviewToolQuote,
+      narr:Obs_UpgradePathQuote,
+      narr:StyleObs_OpinionatedWorkflow,
+      narr:StyleObs_AppleComparison,
+      narr:StyleObs_BulletedDecisionLists,
+      narr:StyleObs_DirectQuoteIntegration,
+      narr:StyleObs_TableTierStructure,
+      narr:StyleMetrics_MVPScopingSession .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260326T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────────────────
+    narr:Sample_MVPScopingSession_20260326 a narr:Sample ;
+      dct:title "MVP Scoping Session: What Ships, What's Cut, and Why" ;
+      dct:description "Walking voice memo → session with Scarlet reviewing above/below-the-line features for April 1 launch. Driven by synchronous extraction pipeline change (Mar 24)." ;
+      dct:created "2026-03-26"^^xsd:date ;
+      narr:inputLength 12847 .
+
+    # ── Narratives ──────────────────────────────────────────────────────────
+
+    narr:Narrative_FocusAsGoverningPrinciple a narr:Narrative ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      narr:theme "Radical product focus: bounded behaviors done extremely well" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "The governing principle for all MVP scoping decisions: the product does a bounded set of behaviors that perform a bounded set of tasks extremely well. Modeled on Apple's opinionated workflow, not Microsoft's everything-tool." .
+
+    narr:Narrative_SeparationProductVsOrgAutomation a narr:Narrative ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      narr:theme "Product features vs. org automation must be separated" ;
+      skos:broader narr:FocusSequencing ;
+      skos:note "A recurring insight throughout the session: capabilities useful for aswritten-ai the org (changelog, graph health, refract, blog post generation) are not product features. They become local Claude Code skills or scheduled crons. The product ships only the bounded set." .
+
+    narr:Narrative_ExpertSingleStreamWorldview a narr:Narrative ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      narr:theme "Expert plan uses single-stream worldview: no branching, no PRs" ;
+      skos:broader narr:OperatingModelShifts ;
+      skos:note "Major architectural decision: Expert tier memories save to main by default. Eliminates PRs, branches, merge-via-MCP, concurrent branch handling, rebase bugs. The remember→review→merge cycle becomes remember→get TX→optionally review→done." .
+
+    narr:Narrative_PlanGatedInstructions a narr:Narrative ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      narr:theme "Compile returns plan-gated instructions as the feature-gating mechanism" ;
+      skos:broader narr:PackagingEntitlement ;
+      skos:note "Feature gating across plans is implemented via compile returning different instruction sets based on authenticated plan level — not separate tool sets. Different prompts guide agent behavior per plan." .
+
+    # ── Claims: Hard Removes ─────────────────────────────────────────────────
+
+    narr:Claim_StoriesRemoved a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Entire Stories system removed from product. TX summaries now returned from synchronous remember; blog post ideas, changelog, graph health become on-demand local skills. Workflows to delete: stories-list, story-draft, story-write, story-backfill, story-narrate-diff. Strip story calls from tx-post-commit (keep PR comment)." .
+
+    narr:Claim_NotificationsRemoved a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Entire Notifications system removed. Synchronous remember eliminates primary notification use case. Secondary case (review requests) handled by GitHub natively. Workflows to delete: review-notify, msg-review-notify. Keep msg-send and front-webhook for feedback/help tool." .
+
+    narr:Claim_DiscoveriesRemoved a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Discoveries fully removed (not just disabled). Already disabled but artifacts remain. Full deletion required." .
+
+    narr:Claim_RefractRegistryRemoved a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Refract tool and Registry removed from product. Registry is just the docs folder. Refract becomes a local Claude Code skill. Workflows to delete: graph-refract, graph-scope (scope rolling into introspect). Remove from mcp-generic tool routing. Eliminates need to separate tools between org and everyone else — now one tool set for everyone." .
+
+    narr:Claim_TXSummariesOnPRRemoved a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "TX summaries on PR removed as auto-generated feature. Agent provides this from the returned transaction. PR comment mechanism in tx-post-commit kept — not hurting anything." .
+
+    narr:Claim_MemoriesSourceToolRemoved a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Memories/Source tool removed from product. Memories are just files in the repo — anyone with a coding agent can read them directly. Org-only skill at most." .
+
+    narr:Claim_AdminTierEliminated a narr:Claim ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Admin tier eliminated. Everything formerly admin-only (stories, register, refract, memories/source) is now either an org-repo Claude Code skill or 'read the files.' No separate admin tier needed. Ontology (raw access) moves to Team/Org tier." .
+
+    # ── Claims: What's Added / Elevated ─────────────────────────────────────
+
+    narr:Claim_FeedbackHelpAboveLine a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Feedback/Help tool above the line for MVP. MCP tool that sends user confirmation (phone or email) and forwards request text to Scarlet. Front stays active only for this. Primary churn-prevention mechanism — response within minutes from Scarlet personally." .
+
+    narr:Claim_TeamPlanAtLaunch a narr:Claim ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Team plan must be available at launch because collaboration prospects exist. Full automation (task-169 repo transfer) stays below the line but manual flow must work." .
+
+    # ── Claims: Architecture & UX ────────────────────────────────────────────
+
+    narr:Claim_ReviewToolThreeCases a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Review tool extended to three cases: (1) review PR (team/org) — review a set of transactions; (2) review a named transaction; (3) review arbitrary content. Cases 2 and 3 may be the same. Primary use case: passing a transaction or concept into review to fix wrong information in the worldview." .
+
+    narr:Claim_CompileReturnsPlanGatedInstructions a narr:Claim ;
+      narr:aboutNode narr:PackagingEntitlement ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Compile returns different instructions based on authenticated plan level. Remember tool exists at all plan levels but returns upgrade prompt on free plan. Free plan: compile, annotate, account tools, feedback/help. Expert: single-stream remember, review (arbitrary), introspect, share, init-repo, budget." .
+
+    narr:Claim_FreeIsTrial a narr:Claim ;
+      narr:aboutNode narr:ConversionPaths ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Free IS the trial. Direct link to upgrade page (not manage account → change plan). Post-upgrade instructions must be explicit. Require card at point of conversion. Don't constantly nag about upgrading. Agent must redirect back after upgrade — no dead-end flows." .
+
+    # ── Claims: Product → Skill Migration ───────────────────────────────────
+
+    narr:Claim_RefractBecomesLocalSkill a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Refract becomes a Claude Code skill (prompt-only, no n8n workflow). Reads recent TXs + snapshot + docs/ folder. Produces list of suggestions and focus areas for document update passes. Can run on cron if desired." .
+
+    narr:Claim_ChangelogStoryBecomesLocalSkill a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Changelog/Story becomes a Claude Code skill on cron. Reviews recent TXs and commits, contextualizes against snapshot, produces changelog entries or content suggestions. Scheduled weekly or after N transactions accumulate." .
+
+    narr:Claim_BlogPostIdeasLocalSkill a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Blog post ideas become a Claude Code skill invoked manually. Pulls recent TXs, contextualizes, suggests posts. Natural pipeline with /draft and /ghost." .
+
+    narr:Claim_GraphHealthLocalSkill a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Graph health report becomes a local skill producing output on demand or schedule. Currently a story draft that gets auto-generated." .
+
+    # ── Observations ────────────────────────────────────────────────────────
+
+    narr:Obs_CoreThesisQuote1 a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Scarlet's governing principle for all scoping decisions: focus on bounded behaviors done extremely well" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 393 ;
+        oa:end 560
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The most important thing right now is focus. And I don't mean my personal focus, I mean, the product doing the bounded set of behaviors" ;
+        oa:prefix "Scarlet articulated the governing principle for all scoping decisions:\n\n> \"" ;
+        oa:suffix " that perform the bounded set of tasks extremely well."
+      ] .
+
+    narr:Obs_CoreThesisQuote2 a narr:Observation ;
+      skos:broader narr:WhatItsNot ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Apple comparison: opinionated workflow, not a tool that does everything" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 620 ;
+        oa:end 780
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the goal here is an opinionated workflow that works really well. It is simple, beautiful, intuitive, but that has a lot of real science and complexity underneath the hood" ;
+        oa:prefix "> \"I think for me this has been obvious from the beginning... " ;
+        oa:suffix " that you don't have to know about."
+      ] .
+
+    narr:Obs_StoriesRemovalQuote a narr:Observation ;
+      skos:broader narr:FocusSequencing ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Clear decision to remove Stories entirely" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1010 ;
+        oa:end 1060
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I feel pretty clear we can remove stories entirely." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nReasoning:"
+      ] .
+
+    narr:Obs_SeparationPrincipleQuote a narr:Observation ;
+      skos:broader narr:OperatingModelShifts ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Core insight: conflating org automation with product features" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1490 ;
+        oa:end 1620
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I've been conflating processes that I could automate manually or for the org, with the product, and it's really important to separate those." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\n**Workflows to delete:"
+      ] .
+
+    narr:Obs_NotificationsRemovalQuote a narr:Observation ;
+      skos:broader narr:FocusSequencing ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Notifications removed because GitHub already handles review requests" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1870 ;
+        oa:end 1990
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I actually don't think the team does either... GitHub already has notifications if you want to add someone as a reviewer on a PR." ;
+        oa:prefix "> \"" ;
+        oa:suffix " And we can augment that if we want later."
+      ] .
+
+    narr:Obs_DiscoveriesRemovalQuote a narr:Observation ;
+      skos:broader narr:FocusSequencing ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Discoveries fully removed, not just disabled" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2120 ;
+        oa:end 2210
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I think we should remove discoveries entirely, not just disabled and not tested for my own repo." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nAlready disabled"
+      ] .
+
+    narr:Obs_RefractRegistryQuote a narr:Observation ;
+      skos:broader narr:FocusSequencing ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Refract and registry removed from product; refract becomes a local skill" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2310 ;
+        oa:end 2390
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Does this mean that refract and the registry can go away? Does refract become a skill in the repo?" ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nRegistry is just"
+      ] .
+
+    narr:Obs_FeedbackHelpQuote a narr:Observation ;
+      skos:broader narr:FeedbackLoops ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Feedback/help tool as primary churn-prevention mechanism" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3350 ;
+        oa:end 3530
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Feedback and reliability at this point is super super key, and it's the number one thing that might prevent churn." ;
+        oa:prefix "> \"" ;
+        oa:suffix " If someone has a problem, they get a response within a couple minutes"
+      ] .
+
+    narr:Obs_ExtractionEvalsQuote a narr:Observation ;
+      skos:broader narr:NorthStarMetrics ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Extraction quality declared the most important part of the product" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3720 ;
+        oa:end 3810
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The most important part of the product, bar none, is does it extract valuable information from the memories." ;
+        oa:prefix "> \"" ;
+        oa:suffix "\"\n\nDecision: Capture input/output"
+      ] .
+
+    narr:Obs_ExpertSingleStreamQuote a narr:Observation ;
+      skos:broader narr:OperatingModelShifts ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Expert plan: single-stream worldview, memories save to main by default" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4900 ;
+        oa:end 5080
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "For the expert plan... memories should get saved to main by default. You're not dealing with branching worldview... there is no multiple review." ;
+        oa:prefix "> \"" ;
+        oa:suffix " The user flow and interaction is single stream."
+      ] .
+
+    narr:Obs_ReviewToolQuote a narr:Observation ;
+      skos:broader narr:ModulesCapabilities ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Review tool extended to three cases" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5310 ;
+        oa:end 5460
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I think we can extend review to have three cases... existing case, review PR, which is really just review a set of transactions." ;
+        oa:prefix "> \"" ;
+        oa:suffix " The second case is review a named transaction."
+      ] .
+
+    narr:Obs_UpgradePathQuote a narr:Observation ;
+      skos:broader narr:ConversionPaths ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Upgrade path UX: agent must redirect back after upgrade" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6100 ;
+        oa:end 6260
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "One of the biggest annoyances I have with a lot of flow and AI products is that it doesn't redirect back, so there's no push from the agent." ;
+        oa:prefix "> \"" ;
+        oa:suffix " So there's no feedback for what you're gonna do next."
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────────────────
+
+    narr:StyleObs_OpinionatedWorkflow a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Apple analogy used to anchor product positioning: opinionated workflow vs. everything-tool" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPScopingSession_20260326 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 830 ;
+          oa:end 900
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "This is the Apple comparison she's made before — not Microsoft, not a tool that does everything. An opinionated workflow." ;
+          oa:prefix "that you don't have to know about. Unless you want to.\n\n" ;
+          oa:suffix "\n\n## Hard Removes"
+        ]
+      ] .
+
+    narr:StyleObs_AppleComparison a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Recurring Apple vs. Microsoft metaphor used to distinguish opinionated simplicity from feature sprawl" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPScopingSession_20260326 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 620 ;
+          oa:end 780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the goal here is an opinionated workflow that works really well. It is simple, beautiful, intuitive" ;
+          oa:prefix "> \"I think for me this has been obvious from the beginning... " ;
+          oa:suffix ", but that has a lot of real science and complexity underneath the hood"
+        ]
+      ] .
+
+    narr:StyleObs_BulletedDecisionLists a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Decisions rendered as bulleted lists with explicit workflow names to delete — authoritative, action-oriented register" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPScopingSession_20260326 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1500 ;
+          oa:end 1660
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**Workflows to delete:** stories-list, story-draft, story-write, story-backfill, story-narrate-diff." ;
+          oa:prefix "\n\n" ;
+          oa:suffix " Strip story calls from tx-post-commit"
+        ]
+      ] .
+
+    narr:StyleObs_DirectQuoteIntegration a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "First-person voice memos transcribed as block quotes integrated directly into structured decision document — hybrid voice-memo-to-spec register" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPScopingSession_20260326 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 393 ;
+          oa:end 560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The most important thing right now is focus. And I don't mean my personal focus" ;
+          oa:prefix "> \"" ;
+          oa:suffix ", I mean, the product doing the bounded set of behaviors"
+        ]
+      ] .
+
+    narr:StyleObs_TableTierStructure a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      skos:note "Markdown table used to formalize tier structure (Free/Expert/Team/Org) with price, core tools, GitHub access — signals decision finality" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPScopingSession_20260326 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 6400 ;
+          oa:end 6600
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "| **Free** | Free | compile, annotate, account tools, feedback/help | No |" ;
+          oa:prefix "| Tier | Price | Core Tools | GitHub? |\n|---|---|---|---|\n" ;
+          oa:suffix "\n| **Expert** | [amount]/mo |"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────────────────
+
+    narr:StyleMetrics_MVPScopingSession a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_MVPScopingSession_20260326 ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      narr:JargonDensity "0.21"^^xsd:decimal ;
+      skos:note "Hybrid register: first-person voice memo transcription embedded in structured decision document. High active voice ratio. Moderate jargon density (n8n, MCP, TX, cron, JVM, OOM, Postgres, Claude Code). Sentence length varies widely — short punchy directives ('Full deletion.', 'An opinionated workflow.') alongside longer explanatory clauses." .
+
+  }
+}

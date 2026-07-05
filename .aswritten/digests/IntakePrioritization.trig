@@ -1,0 +1,27 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_IntakePrioritization> {
+  <https://aswritten.ai/narrative#Digest_IntakePrioritization> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#IntakePrioritization> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the intake-and-prioritization mechanics of a content-production workflow. The spine is a [first-class In Review state](narr:Claim_InReviewFirstClassState) (witnessed 2026-06-12): a five-state flow where claiming-complete and verified are distinct, with a single queue serving both code (staging verifies) and content (Scarlet verifies). Two operational corrections govern scoping: [scope-domain-first from reviewer-chosen TX zones](narr:Claim_EyeChartScoping) (Correction 5), and a [four-step large-TX scale flow](narr:Claim_LargeTXScale) (Correction 4) — summary, zone ID, targeted shifts, fact review — echoed by an [observation restating that same flow](narr:Observation_TXScaleFlow). Backlog hygiene is set by [parking ~165 stale n8n-era tasks](narr:Claim_StaleTasksParkedNotCancelled) rather than cancelling them (2026-06-12). A structural [observation maps interview ordering to CLAUDE.md onboarding priority](narr:Obs_InterviewMapsToOnboarding). The children split by attachment: `supports` claims fix workflow facts, while `aboutNode` Corrections 4 and 5 narrate how scoping decisions get made.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_EyeChartScoping> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_InReviewFirstClassState> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_LargeTXScale> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StaleTasksParkedNotCancelled> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_InterviewMapsToOnboarding> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_TXScaleFlow> ;
+    narr:keyPhrase [ narr:text "To Do → In Progress → In Review → Done, plus Blocked" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_InReviewFirstClassState> ] ;
+    narr:keyPhrase [ narr:text "In Review = a session claims complete, nothing verified. Done = verified." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_InReviewFirstClassState> ] ;
+    narr:keyPhrase [ narr:text "The ~165 stale n8n-era tasks get archived as parked, not cancelled" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_StaleTasksParkedNotCancelled> ] ;
+    narr:keyPhrase [ narr:text "summary → zone identification → 2-4 targeted shifts in chosen zones → fact review catches the rest before merge" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_LargeTXScale> ] ;
+    narr:keyPhrase [ narr:text "Scope domain first from TX zones reviewer chose" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EyeChartScoping> ] ;
+    narr:keyPhrase [ narr:text "vision/mission → architecture/decisions → current priorities → team → recent decisions" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_InterviewMapsToOnboarding> ] ;
+    narr:variation [ narr:text "Parking the ~165 stale tasks is explicitly flagged as NOT a migration decision — consistent with the deferred Clojure migration, a road deliberately left open." ; narr:over <https://aswritten.ai/narrative#Claim_StaleTasksParkedNotCancelled> ] ;
+    narr:variation [ narr:text "One queue serves two verification regimes — code verified by staging vs content verified by Scarlet — a unified intake masking divergent done-criteria." ; narr:over <https://aswritten.ai/narrative#Claim_InReviewFirstClassState> ] ;
+    narr:variation [ narr:text "The scale flow appears twice with differing weight: a normative Correction (aboutNode) and a flatter restating observation (skos:broader) — same four steps, different authority." ; narr:over <https://aswritten.ai/narrative#Claim_LargeTXScale> ; narr:over <https://aswritten.ai/narrative#Observation_TXScaleFlow> ] ;
+    narr:variation [ narr:text "Scoping (Correction 5) leaves room to draft from worldview when no doc fits and to negotiate when scope is too broad or narrow — an escape hatch from the zone-first default." ; narr:over <https://aswritten.ai/narrative#Claim_EyeChartScoping> ] ;
+    narr:writer "claude (subscription)" .
+}

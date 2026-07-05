@@ -1,0 +1,112 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20250715T190000Z a prov:Activity ;
+    prov:generatedAtTime "2025-07-15T19:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "---\nreviewers:\n  - +15044353923\n---\n\n# Validation rigor: smokes prove the mechanism, only the pre-registered battery proves quality" ;
+    narr:originRef "main" ;
+    prov:generated
+      
+      
+      narr:Narrative_PreRegisteredEvalDiscipline,
+      narr:StyleObs_Antithesis_SmokesVsBattery,
+      narr:StyleObs_ImperativeVoice_HoldIt,
+      narr:StyleObs_FirstUserPositioning,
+      narr:StyleMetrics_ValidationRigor_20260616 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20250715T190000Z {
+
+    narr:Narrative_PreRegisteredEvalDiscipline a narr:Narrative ;
+
+      skos:broader narr:QualityReviewGates ;
+      skos:prefLabel "Pre-Registered Eval Battery as the Bar for Validated" ;
+      skos:note "Three operational rules for holding the eval discipline: (1) Pre-register the comparison before building, committed to git, so the bar cannot drift to fit the outcome. (2) Keep the baseline as a real control — do not collapse it prematurely by merging the change being measured against it. (3) Report the actual numbers in the task before the words 'at par' or 'ready.' If a metric falls short, iterate — do not narrate around it. aswritten is its own first user; the rigor of the evaluation is the product validation, the same discipline the product sells." ;
+      narr:theme "Pre-register before building, keep the baseline clean, report actual numbers — the eval discipline is the product validation" .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────────────
+    narr:StyleObs_Antithesis_SmokesVsBattery a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+
+      skos:note "Antithesis-heavy structure throughout: smokes vs. battery, mechanism vs. quality, appearance of being finished vs. the control mattering more. The core principle is stated as a paired antithesis: 'Smokes prove the mechanism; the battery proves quality.'" ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1020 ;
+          oa:end 1072
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Smokes prove the mechanism; the battery proves quality." ;
+          oa:prefix "## The principle\n\n" ;
+          oa:suffix " Never substitute one for the other"
+        ]
+      ] .
+
+    narr:StyleObs_ImperativeVoice_HoldIt a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+
+      skos:note "The 'How to hold it' section uses imperative voice throughout: 'Pre-register the comparison before building,' 'Keep the baseline as a real control,' 'Report the actual numbers,' 'If a metric falls short, iterate — don't narrate around it.' Authoritative, directive register with no hedging." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1430 ;
+          oa:end 1530
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If a metric falls short, iterate — don't narrate around it." ;
+          oa:prefix "Report the actual numbers in the task before the words \"at par\" or \"ready.\" " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:StyleObs_FirstUserPositioning a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+
+      skos:note "The phrase 'aswritten is its own first user' is a rhetorical anchor that grounds the eval discipline in product identity rather than process compliance. It elevates the principle from a rule to a founding thesis. Consistent with the idiolect pattern of grounding operational decisions in product philosophy." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1073 ;
+          oa:end 1200
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "aswritten is its own first user — the rigor of the evaluation is the product validation, the same discipline the product sells." ;
+          oa:prefix "" ;
+          oa:suffix " A pre-registered battery"
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────────────────
+    narr:StyleMetrics_ValidationRigor_20260616 a narr:StyleMetrics ;
+
+      skos:broader narr:StyleMetrics ;
+      skos:note "Structured retrospective memo with three H2 sections (What happened, The principle, How to hold it). Antithesis-heavy throughout (smokes vs. battery, mechanism vs. quality, appearance vs. control). Active voice dominant; imperative mood in How to hold it section. Jargon density low-moderate — product terms (smokes, battery, parity A/B, introspect gap-precision, token/OOM) used without definition, implying internal audience. Short punchy declaratives at principle peaks; longer analytical sentences in What happened section. Embedded blockquote from Scarlet elevates personal voice." ;
+      narr:AverageSentenceLength "18"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.84"^^xsd:decimal ;
+      narr:JargonDensity "0.08"^^xsd:decimal .
+
+  }
+}

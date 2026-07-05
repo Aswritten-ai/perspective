@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_DataIntegrationFlows> {
+  <https://aswritten.ai/narrative#Digest_DataIntegrationFlows> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#DataIntegrationFlows> ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the plumbing by which raw activity becomes queryable knowledge. On the execution side, the [webhook-mode attribution filter](narr:Claim_SubworkflowAttributionFilter) (Jan 17) draws the line between top-level proxy-dispatched tool calls and sub-workflow calls that must not be double-counted. The same week, [hand-correlating three data sources](narr:Narrative_ManualCorrelationAuditGap) for the enterprise customer metrics exposed a structural gap in the audit schema — surfacing a proposed `outcome_summary` JSONB column. On the knowledge side, [narrative extraction into RDF](narr:Obs_NarrativeOntologyExtraction) feeds a graph, and an [annotate function](narr:Observation_AnnotationQuote) maps AI claims back to collective memory like citations. [Personal-graph federation](narr:Narrative_PersonalGraphFederation) extends the flow outward — a personal repo acting as both filter and expander against the org repo, with an open introspection question. An [HTML-deliverables pattern](narr:Observation_HTMLDeliverables) sits at the client-facing edge. Together these span ingestion, attribution, audit, extraction, and federation — but they are stages spread across domains, not a single resolved pipeline.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SubworkflowAttributionFilter> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ManualCorrelationAuditGap> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PersonalGraphFederation> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_NarrativeOntologyExtraction> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_AnnotationQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_HTMLDeliverables> ;
+    narr:keyPhrase [ narr:text "Filter n8n executions to mode=webhook for top-level proxy-dispatched tool calls." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SubworkflowAttributionFilter> ] ;
+    narr:keyPhrase [ narr:text "Adding an outcome_summary JSONB column at audit-write time would collapse two days of investigation into a single SQL query." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ManualCorrelationAuditGap> ] ;
+    narr:keyPhrase [ narr:text "correlating three data sources by hand (n8n executions API, proxy Docker auth log, n8n execution detail)" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ManualCorrelationAuditGap> ] ;
+    narr:keyPhrase [ narr:text "does introspect take a vector of [& [owner repo]]?" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_PersonalGraphFederation> ] ;
+    narr:keyPhrase [ narr:text "analogous to research paper citations" ; narr:phraseSource <https://aswritten.ai/narrative#Observation_AnnotationQuote> ] ;
+    narr:variation [ narr:text "Audit-gap child is a critique, not a flow: manual correlation revealed the schema lacks per-call outcome metrics, proposing a write-time fix rather than describing current behavior." ; narr:over <https://aswritten.ai/narrative#Narrative_ManualCorrelationAuditGap> ] ;
+    narr:variation [ narr:text "Personal-graph federation carries an unresolved design question (does introspect take an [owner repo] vector?) — direction, not a settled mechanism." ; narr:over <https://aswritten.ai/narrative#Narrative_PersonalGraphFederation> ] ;
+    narr:variation [ narr:text "HTML deliverables is a domain outlier — client-facing output delivery, not internal data plumbing like the n8n/audit/extraction children." ; narr:over <https://aswritten.ai/narrative#Observation_HTMLDeliverables> ] ;
+    narr:variation [ narr:text "Two distinct registers coexist: low-level execution/audit instrumentation (n8n, Docker logs) vs. knowledge-graph semantics (RDF extraction, annotation-as-citation, federation)." ; narr:over <https://aswritten.ai/narrative#Claim_SubworkflowAttributionFilter> ; narr:over <https://aswritten.ai/narrative#Obs_NarrativeOntologyExtraction> ; narr:over <https://aswritten.ai/narrative#Observation_AnnotationQuote> ] ;
+    narr:writer "claude (subscription)" .
+}

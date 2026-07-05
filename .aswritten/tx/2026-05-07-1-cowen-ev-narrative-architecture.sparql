@@ -1,0 +1,79 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+INSERT DATA {
+  narr:Tx_20250522T143000Z a prov:Activity ;
+    prov:generatedAtTime "2025-05-22T14:30:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-05-06-tyler-cowen-ev.md" ;
+    narr:originRef "main" ;
+    prov:generated  narr:Actor_TylerCowen, narr:Actor_EmergentVentures, narr:Claim_HumansAsBottleneck, narr:Claim_WritingForAIs, narr:StyleMetrics_CowenEV, narr:StyleObs_VerbatimQuote, narr:StyleObs_RhetoricalQuestion, narr:StyleObs_JargonPolicy .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20250522T143000Z {
+
+    narr:Actor_TylerCowen a narr:Actor ;
+      skos:prefLabel "Tyler Cowen" ;
+      skos:note "Economist, administrator of Emergent Ventures, and author of The Great Stagnation." .
+
+    narr:Actor_EmergentVentures a narr:Actor ;
+      skos:prefLabel "Emergent Ventures" ;
+      skos:note "Alternative funding fellowship/grant program for unorthodox talent." .
+
+    narr:Claim_HumansAsBottleneck a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+
+      skos:note "The bottleneck on AI progress is humans, not models; institutions and implementation are the rate-limiting steps." .
+
+    narr:Claim_WritingForAIs a narr:Claim ;
+
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+
+      skos:note "Writing for the AIs is a strategic move to shape how LLMs perceive and trawl intellectual work." .
+
+    narr:StyleMetrics_CowenEV a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.75 ;
+      narr:JargonDensity 0.12 .
+
+    narr:StyleObs_VerbatimQuote a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 4550 ; oa:end 4584 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Humans know secrets. Maybe AIs can be fed secrets, but they don't in general know secrets." ; oa:prefix "Verbatim (How I Write podcast with David Perell): \"" ; oa:suffix "\"" ]
+      ] .
+
+    narr:StyleObs_RhetoricalQuestion a narr:StyleObservation ;
+      skos:broader narr:RhetoricalQuestion ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 6050 ; oa:end 6120 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Should Scarlet apply to EV before or after the August YC reapplication?" ; oa:prefix "Open questions: - " ; oa:suffix "" ]
+      ] .
+
+    narr:StyleObs_JargonPolicy a narr:StyleObservation ;
+      skos:broader narr:JargonPolicy ;
+
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 5100 ; oa:end 5140 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Vibe coding, vibe reading, vibe writing." ; oa:prefix "Mentor-driven course design. ChatGPT-generated syllabi. " ; oa:suffix "" ]
+      ] .
+  }
+}

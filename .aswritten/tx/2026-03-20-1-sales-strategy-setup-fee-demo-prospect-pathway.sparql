@@ -1,0 +1,249 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260319T235900Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-19T23:59:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-19-sales-strategy-setup-fee-a demo-call prospect-pathway.md" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_SetupFeeDemoProspectPathway_20260319,
+      narr:Narrative_SetupFeeAsConversionService,
+      narr:Narrative_DemoProspectTwoStepSalesPath,
+      narr:Narrative_CatalogueInternalMarketplace,
+      narr:Claim_WeDoItConversionModel,
+      narr:Claim_TheyDoItConversionModel,
+      narr:Claim_OrgTierCatalogueSetup,
+      narr:Claim_DemoProspectStep1PublisherTier,
+      narr:Claim_DemoProspectStep2OrgTier,
+      narr:Obs_ScarletSetupFeeQuote,
+      narr:Obs_ScarletRevenueModelQuote,
+      narr:Obs_ScarletDemoProspectPathwayQuote,
+      narr:StyleObs_SetupFeeAntithesis,
+      narr:StyleObs_PitchVerbatim,
+      narr:StyleObs_TwoStepCadence .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260319T235900Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────────────
+    narr:Sample_SetupFeeDemoProspectPathway_20260319
+      a narr:Sample ;
+      dct:title "Sales Strategy: Setup Fee Model and a demo-call prospect's Sales Pathway (2026-03-19)" ;
+      dct:created "2026-03-19"^^xsd:date ;
+      dct:description "End-of-day extension of the strategy session. Scarlet identified that the 'expertise on demand' reframe creates a natural professional service layer: converting static expertise into the AI-native distribution format. Covers two conversion models (we-do-it vs self-service), the [amount] org-tier catalogue setup, and a demo-call prospect's two-step sales path from individual asset conversion to organizational catalogue." ;
+      narr:inputLength 2847 .
+
+    # ── NARRATIVES ──────────────────────────────────────────────────────────
+
+    narr:Narrative_SetupFeeAsConversionService
+
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:broader narr:PackagingPricing ;
+      skos:prefLabel "Setup Fee Reframed as Conversion Service, Not an Onboarding Tax" ;
+      skos:note "The 'expertise on demand' reframe creates a natural professional service at the publisher tier. The setup fee is not called a setup fee — it IS the core value proposition of the conversion service: turning a static book, course, training, or consulting package into the AI-native distribution format. Two models: (1) We do it — extraction, module build, curation, hand-off of living installable module; revenue = upfront conversion fee + ongoing marketplace percentage. (2) They do it — expert creates module themselves using remember/review tools; revenue = marketplace percentage only. Both models are viable and can coexist." ;
+      narr:theme "The setup fee is the conversion service — turning static expertise into an installable AI module is the core value proposition, not an onboarding cost" .
+
+    narr:Narrative_DemoProspectTwoStepSalesPath
+
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:broader narr:OperatingModelShifts ;
+      skos:prefLabel "a demo-call prospect's Two-Step Sales Path: Individual Asset → Publisher, Then Org Catalogue → Organization" ;
+      skos:note "Step 1: Target experts and small businesses with a single distributable asset (book, course, consulting methodology). Pitch: 'Your book is a snapshot. We'll turn it into a living AI module. Your expertise becomes installable, citable, and generates revenue through the marketplace.' Close: Publisher tier ([amount]/mo) + conversion fee + marketplace revenue share. Step 2: Upsell to Organization tier. Trigger: 'You've published one module. Now imagine every role in your organization has one.' Close: Organization tier ([amount]/mo + [amount] setup) + on-prem add-ons. Scarlet: 'There's a clear pathway for a demo-call prospect to go after both individuals and small businesses who can package a single book or asset and also to convert them and larger orgs to the org plan.'" ;
+      narr:theme "a demo-call prospect has a clean two-step sales path: individual asset conversion to Publisher tier, then upsell to Organization tier via the catalogue concept" .
+
+    narr:Narrative_CatalogueInternalMarketplace
+
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:broader narr:NamingConventions ;
+      skos:prefLabel "'Catalogue' as the Term for the Internal Organizational Expertise Marketplace" ;
+      skos:note "Scarlet proposed calling the internal marketplace of organizational expertise a 'catalogue.' The [amount] organization-tier setup creates the initial roles and packages that populate this internal catalogue. The catalogue is the scoped engagement version of the conversion service at enterprise scale — not a global marketplace but an org-owned internal marketplace of expertise modules." ;
+      narr:theme "The organization tier's internal marketplace is a 'catalogue' — a curated set of installable expertise modules scoped to the org" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────────────────
+
+    narr:Claim_WeDoItConversionModel
+      a narr:Claim ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:note "Professional conversion model: aswritten takes the expert's book, course, training materials, or consulting package; runs extraction; builds the module; curates the perspective; hands them a living, installable, citable module ready for distribution. Revenue model: upfront conversion fee + ongoing marketplace percentage. This is the high-touch, high-value path." ;
+      narr:aboutNode narr:Narrative_SetupFeeAsConversionService ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PackagingPricing .
+
+    narr:Claim_TheyDoItConversionModel
+      a narr:Claim ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:note "Self-service conversion model: the expert creates the module themselves using the remember/review tools. aswritten provides the platform and extraction pipeline. Revenue model: marketplace percentage only — no upfront conversion fee. Scarlet: 'They could create one without our help, then it's definitely percentage, but we could also charge a fee to do the work. I think both is viable.'" ;
+      narr:aboutNode narr:Narrative_SetupFeeAsConversionService ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:PackagingPricing .
+
+    narr:Claim_OrgTierCatalogueSetup
+      a narr:Claim ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:note "The [amount] organization-tier setup fee creates the initial roles and packages that populate the internal catalogue — the org's internal marketplace of expertise. This is the scoped engagement version of the conversion service at enterprise scale. The catalogue concept is the enterprise-facing articulation of the organization tier's value." ;
+      narr:aboutNode narr:Narrative_CatalogueInternalMarketplace ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_NewTierStructure_20260319 .
+
+    narr:Claim_DemoProspectStep1PublisherTier
+      a narr:Claim ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:note "a demo-call prospect's Step 1 target: experts and small businesses with a single distributable asset (book, course, consulting methodology). The pitch is approachable, bounded, and delivers clear value: 'Your book is a snapshot. We'll turn it into a living AI module. Your expertise becomes installable, citable, and generates revenue through the marketplace.' Close: Publisher tier ([amount]/mo) + conversion fee + marketplace revenue share." ;
+      narr:aboutNode narr:Narrative_DemoProspectTwoStepSalesPath ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_DirectVsInfluenceSales .
+
+    narr:Claim_DemoProspectStep2OrgTier
+      a narr:Claim ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:note "a demo-call prospect's Step 2 target: larger orgs or publishers who want multiple modules or an internal expertise marketplace. Upsell trigger: 'You've published one module. Now imagine every role in your organization has one.' Close: Organization tier ([amount]/mo + [amount] setup) + on-prem add-ons as applicable. The compliance, on-prem, and data sovereignty hooks all apply at this tier." ;
+      narr:aboutNode narr:Narrative_DemoProspectTwoStepSalesPath ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_DirectVsInfluenceSales .
+
+    # ── OBSERVATIONS (grounded quotes) ──────────────────────────────────────
+
+    narr:Obs_ScarletSetupFeeQuote
+      a narr:Observation ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:broader narr:PackagingPricing ;
+      skos:note "Scarlet's verbatim articulation of the setup fee as conversion service for single/small team publishers." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 441 ;
+          oa:end 641
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "For single/small team publishers and experts the setup fee would be us turning their book or course or training or consulting package into the AI-native distribution format" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix " which sets them up to then sell it through AI.\""
+        ]
+      ] .
+
+    narr:Obs_ScarletRevenueModelQuote
+      a narr:Observation ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:broader narr:PackagingPricing ;
+      skos:note "Scarlet's articulation of the dual revenue model — upfront fee and/or percentage — and the viability of both." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1198 ;
+          oa:end 1378
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The question is do we charge that fee up front or as a percentage of sales or both? They could create one without our help, then it's definitely percentage" ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix ", but we could also charge a fee to do the work. I think both is viable.\""
+        ]
+      ] .
+
+    narr:Obs_ScarletDemoProspectPathwayQuote
+      a narr:Observation ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:broader narr:OperatingModelShifts ;
+      skos:note "Scarlet's summary of a demo-call prospect's two-step sales pathway covering both individual/SMB and org-tier targets." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2448 ;
+          oa:end 2620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "There's a clear pathway for a demo-call prospect to go after both individuals and small businesses who can package a single book or asset and also to convert them and larger orgs to the org plan." ;
+          oa:prefix "Scarlet: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────────────
+
+    narr:StyleObs_SetupFeeAntithesis
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:note "Antithesis structure: 'We do it' vs 'They do it' — the two conversion models are presented as a clean binary that frames the pricing decision. This is a recurring Scarlet pattern: compress a strategic choice into two named poles." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 700 ;
+          oa:end 780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "1. We do it (professional conversion):" ;
+          oa:prefix "### Two conversion models:\n\n**" ;
+          oa:suffix "\n- We take their book"
+        ]
+      ] .
+
+    narr:StyleObs_PitchVerbatim
+      a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:note "The pitch line 'Your book is a snapshot. We'll turn it into a living AI module.' is a crystallized two-beat cadence: diagnosis (snapshot = static) then solution (living module = dynamic). Matches the 'book is a snapshot; module is alive' pattern already in collective memory." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1620 ;
+          oa:end 1720
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Your book is a snapshot. We'll turn it into a living AI module. Your expertise becomes installable, citable, and generates revenue through the marketplace." ;
+          oa:prefix "Pitch: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    narr:StyleObs_TwoStepCadence
+      a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+      skos:note "The upsell trigger line uses a short punchy cadence with a pivot: 'You've published one module. Now imagine every role in your organization has one.' The period-then-pivot is a Scarlet rhetorical signature — close a fact, open a vision." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SetupFeeDemoProspectPathway_20260319 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2100 ;
+          oa:end 2175
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "You've published one module. Now imagine every role in your organization has one." ;
+          oa:prefix "Upsell trigger: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+  }
+}

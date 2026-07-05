@@ -1,0 +1,239 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260408T170000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-08T17:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "research/goal-directed-agents" ;
+    narr:originRef "research/goal-directed-agents" ;
+    dct:title "Research Branch Methodology: Temporal Isolation, Canon-Too-Soon Drift, Roadmap Ontology (Memory E of 5)" ;
+    prov:generated
+      narr:Sample_ResearchBranchMethodology_20260408,
+      narr:Narrative_CanonTooSoonDrift,
+      narr:Narrative_ResearchBranchTemporalIsolation,
+      narr:Narrative_ConvictionStackTemporalityGap,
+      narr:Narrative_TextForTopicPrecedent,
+      narr:Claim_NarrAppliesAsOntologyExtension,
+      narr:Claim_ResearchBranchMethodologyDecision,
+      narr:Claim_ProvisionalFlagSafetyRail,
+      narr:Claim_PromotionByRewriting,
+      narr:Obs_ScarletTextForTopicQuote,
+      narr:Obs_ScarletNotRightTimeQuote,
+      narr:Obs_ScarletBranchAtRootQuote,
+      narr:StyleObs_AntithesisConvictionTemporality,
+      narr:StyleObs_ProvisionalFlagVoice,
+      narr:Metrics_ResearchBranchMethodology_20260408 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260408T170000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────
+    narr:Sample_ResearchBranchMethodology_20260408
+      a narr:Sample ;
+      dct:title "Research Branch Methodology: Temporal Isolation, Canon-Too-Soon Drift, and Roadmap Ontology (Memory E of 5, 2026-04-08)" ;
+      dct:created "2026-04-08"^^xsd:date ;
+      dct:description "Meta-note explaining why the research/goal-directed-agents branch exists. Documents the conviction-stack temporality gap, the canon-too-soon drift pattern (with text-for-topic as precedent), the proposed narr:appliesAs ontology extension (deferred as near-future notion), and the branch-as-temporal-isolation workaround currently in use. Provisional — from research/goal-directed-agents exploration branch, not yet promoted to main." ;
+      narr:inputLength 7200 .
+
+    # ── NARRATIVES ───────────────────────────────────────────────
+
+    narr:Narrative_ConvictionStackTemporalityGap
+
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:broader narr:ArchitectureOverview ;
+      skos:prefLabel "The Conviction Stack Has No Temporality Axis" ;
+      skos:note "The current conviction stack (notion → claim → decision → principle) measures how settled a claim is but has no axis for when a claim applies. A claim can reach decision-level conviction while still being premature in temporality — it shapes belief but not today's shipping work. The flat conviction scale cannot represent this distinction, which is what produces canon-too-soon drift." ;
+      narr:theme "The conviction stack measures how settled a claim is but not when it applies — this missing temporality axis is the structural cause of canon-too-soon drift" .
+
+    narr:Narrative_CanonTooSoonDrift
+
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:broader narr:RiskGuardrails ;
+      skos:prefLabel "Canon-Too-Soon Drift: When Decision-Level Conviction Lands Before Roadmap-Level Applicability" ;
+      skos:note "Pattern: a claim reaches decision-level conviction (the team believes it) while still being premature in temporality (it does not yet shape today's shipping work). When such claims land in main's extraction, they leak into sales materials, landing page copy, and beta-user orientation — creating conflicts between what a demo-call prospect says and what the current product does. The phone-number precedent: 'the whole product is a phone number' became canon-in-conviction but canon-soon in temporality, requiring active steering away once it leaked into a demo-call prospect-facing materials." ;
+      narr:theme "Canon-too-soon drift occurs when decision-level conviction claims land in main before they are roadmap-applicable, forcing active steering away from correct-but-premature beliefs" .
+
+    narr:Narrative_ResearchBranchTemporalIsolation
+
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:broader narr:ProcessPolicyUpdates ;
+      skos:prefLabel "Research Branch as Temporal Isolation via Versioning" ;
+      skos:note "The research/goal-directed-agents branch functions as temporal isolation via versioning rather than via ontology. Mechanism: branch at root (not call/scarlet-… session-scoped, but research/… long-lived multi-session); main stays untouched and compiles canonical-current state; exploration matures over multiple sessions; explicit promotion decision point where Scarlet rewrites memories into main's voice at the moment of decision (not cherry-picking commits or merging the branch); every memory on the branch carries a provisional flag as a cheap safety rail. This is the workaround for the missing narr:appliesAs ontology property." ;
+      narr:theme "A long-lived research branch at root uses versioning to simulate the temporality axis the ontology does not yet have — exploration matures separately from main until an explicit promotion decision point" .
+
+    narr:Narrative_TextForTopicPrecedent
+
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:broader narr:CaseStudies ;
+      skos:prefLabel "Text-for-Topic as First Instance of the Research Branch Methodology" ;
+      skos:note "The text-for-topic exploration is the first documented instance of this methodology: the SMS-first vision matured on its own branch over months before being rewritten into main as the 'the product is a phone number' direction. Goal-directed agents is the second instance. The pattern has now been used twice, making it a candidate for promotion to principle-level at a future session." ;
+      narr:theme "Text-for-topic matured on its own branch before rewrite to main — the first instance of the research branch methodology, now being repeated with goal-directed agents" .
+
+    # ── CLAIMS ───────────────────────────────────────────────────
+
+    narr:Claim_NarrAppliesAsOntologyExtension
+      a narr:Claim ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:note "A new ontology property — narr:appliesAs — with values like current | nearFuture | exploration | speculative would solve the temporality gap structurally. Compile would filter by temporality as well as conviction: default worldview layer includes only current-applicability claims; worldview:roadmap pulls in near-future claims; worldview:all includes exploration-level claims. This is captured as a near-future notion — genuinely good idea, deliberately deferred. Introducing it mid-launch would break extraction tests, require tooling updates, propagate through compile layers, touch SHACL schemas, and steal a week from April 9 launch-critical work." ;
+      narr:aboutNode narr:ArchitectureOverview ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_ConvictionStackTemporalityGap .
+
+    narr:Claim_ResearchBranchMethodologyDecision
+      a narr:Claim ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:note "The research branch methodology is decision-level (actually in use, twice now) and a candidate for principle-level at a future promotion decision point. When an exploration is substantial enough to reshape main's direction but not yet settled enough to merge, run it on a dedicated research branch at root, let it mature through multiple sessions, and promote by rewriting memories at an explicit decision point. Branch-at-root is boring and works. Boring-and-works beats clever-and-risky at launch." ;
+      narr:aboutNode narr:Narrative_ResearchBranchTemporalIsolation ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:ProcessPolicyUpdates .
+
+    narr:Claim_ProvisionalFlagSafetyRail
+      a narr:Claim ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:note "Every memory on the research branch carries a provisional flag (opening line or frontmatter field: 'Provisional — from research/goal-directed-agents exploration branch, not yet promoted to main'). If any memory accidentally leaks into main's compile via bug, accidental merge, or misconfigured tool call, the flag reveals the drift immediately. This is a cheap safety rail against canon-too-soon drift." ;
+      narr:aboutNode narr:Narrative_CanonTooSoonDrift ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ResearchBranchTemporalIsolation .
+
+    narr:Claim_PromotionByRewriting
+      a narr:Claim ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:note "Promotion is rewriting memories into main's voice and structure at the moment of decision — not cherry-picking commits or merging the branch. The research branch becomes a source of raw material, not a merge target. This matches the pattern text-for-topic used to mature into canon." ;
+      narr:aboutNode narr:Narrative_ResearchBranchTemporalIsolation ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:ChangeManagement .
+
+    # ── OBSERVATIONS ─────────────────────────────────────────────
+
+    narr:Obs_ScarletTextForTopicQuote
+      a narr:Observation ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:broader narr:FeedbackLoops ;
+      skos:note "Scarlet's verbatim articulation of the text-for-topic precedent and the canon-too-soon drift mechanism — the founding rationale for the research branch methodology." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ResearchBranchMethodology_20260408 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 476 ;
+          oa:end 900
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "This feels like a similar moment to the text for topic moment" ;
+          oa:prefix "" ;
+          oa:suffix ", where there is still a current direction for what launch means"
+        ]
+      ] .
+
+    narr:Obs_ScarletNotRightTimeQuote
+      a narr:Observation ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:broader narr:ProcessPolicyUpdates ;
+      skos:note "Scarlet's explicit rejection of ontology and repo structure experiments mid-launch — the rationale for deferring narr:appliesAs." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ResearchBranchMethodology_20260408 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3820 ;
+          oa:end 3900
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "this isn't the right time for ontology and repo structure experiments." ;
+          oa:prefix "Scarlet: " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:Obs_ScarletBranchAtRootQuote
+      a narr:Observation ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:broader narr:ProcessPolicyUpdates ;
+      skos:note "Scarlet's decision to use branch-at-root over subdirectory scoping — the boring-and-works principle applied to temporal isolation." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ResearchBranchMethodology_20260408 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4900 ;
+          oa:end 5020
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "But actually I think we should just do a branch at root, this isn't the right time for ontology and repo structure experiments." ;
+          oa:prefix "Scarlet: " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ───────────────────────────────────────
+
+    narr:StyleObs_AntithesisConvictionTemporality
+      a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:note "Sustained antithesis between conviction (how settled) and temporality (when applicable) — the structural spine of the entire document. Pairs like 'canon-in-conviction but canon-soon in temporality' and 'decision-level conviction / roadmap-level applicability' repeat across sections." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ResearchBranchMethodology_20260408 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1200 ;
+          oa:end 1380
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "canon-in-conviction but canon-soon in temporality" ;
+          oa:prefix "The product is a phone number\" was " ;
+          oa:suffix " — it required active steering away"
+        ]
+      ] .
+
+    narr:StyleObs_ProvisionalFlagVoice
+      a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:note "The document opens and closes with explicit provisional framing ('Provisional — from research/goal-directed-agents exploration branch, not yet promoted to main'). This meta-register — a document that announces its own epistemic status — is a distinctive stylistic feature of the research branch methodology. The provisional flag is both content and form." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_ResearchBranchMethodology_20260408 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 120 ;
+          oa:end 240
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Provisional — from research/goal-directed-agents exploration branch, not yet promoted to main." ;
+          oa:prefix "*" ;
+          oa:suffix " Memory E of 5"
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────
+
+    narr:Metrics_ResearchBranchMethodology_20260408
+      a narr:StyleMetrics ;
+      dct:source narr:Sample_ResearchBranchMethodology_20260408 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Strategic meta-memo register. Mixed: analytical prose in section headers and argument sections; verbatim Scarlet blockquotes in first person (run-on, stream-of-consciousness). Antithesis-heavy structure (conviction vs. temporality, boring-and-works vs. clever-and-risky, notion vs. decision). Bold labels create scannable decision-memo layer. Active voice dominant. Jargon density moderate — product terms (compile, SHACL, narr:appliesAs, worldview:roadmap) used without definition, implying internal audience. Sentence length elevated by blockquotes; prose sections are shorter and punchier." ;
+      narr:AverageSentenceLength "19"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.83"^^xsd:decimal ;
+      narr:JargonDensity "0.10"^^xsd:decimal .
+
+  }
+}

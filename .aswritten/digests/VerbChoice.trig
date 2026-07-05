@@ -1,0 +1,35 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_VerbChoice> {
+  <https://aswritten.ai/narrative#Digest_VerbChoice> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#VerbChoice> ;
+    narr:childCount "14"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers observations about how verbs do work in aswritten's prose. The dominant note is **active, direct, first-person declarative** — [\"sold a dream\"](narr:StyleObs_5), [\"built\" and \"feather\"](narr:StyleObs_8) the archery metaphor, [\"shifts\"](narr:StyleObs_Verb_1) as outcome-oriented phrasing. A second cluster is **domain-precise verbs chosen to draw distinctions**: [\"extract\" reserved for the creation layer vs. \"retrieve\" for competitors](narr:StyleObs_VerbChoice_Extract), [\"navigates\" vs. \"queries\"](narr:StyleObs_7) to separate LLM associativity from formal query, [\"onboards\"](narr:StyleObs_Onboards) and [\"translates\"](narr:StyleObs_TranslatesFeedback) as concrete agent actions. A third strand is **imperative mood**: [\"fix the delivery before closing more\"](narr:StyleObs_FixDelivery), [\"Don't give them an out\"](narr:StyleObs_DontGiveThemAnOut), [\"let go of Markdown\"](narr:StyleObs_LetGoMarkdown), and [imperative/second-person technical steps](narr:StyleObs_ImperativeTechnical). The [ops-persona quote](narr:StyleObs_OpsPersonaQuote) quantifies pain with a concrete verb. Running against the grain (20250714): a [decision to prioritize a noun-based primitive over a verb-based action](narr:StyleObs_VerbDecision).""" ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_5> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_8> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ActiveVoice_1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DontGiveThemAnOut> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_FixDelivery> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ImperativeTechnical> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_LetGoMarkdown> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Onboards> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_OpsPersonaQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_TranslatesFeedback> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_VerbChoice_Extract> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_VerbDecision> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_Verb_1> ;
+    narr:keyPhrase [ narr:text "I sold a dream" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_5> ] ;
+    narr:keyPhrase [ narr:text "The model translates feedback into triple modifications." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TranslatesFeedback> ] ;
+    narr:keyPhrase [ narr:text "The issue with perspective is it's not a verb. You can't perspective the perspective." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VerbDecision> ] ;
+    narr:keyPhrase [ narr:text "If pilots aren't converting, fix the delivery before closing more" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_FixDelivery> ] ;
+    narr:keyPhrase [ narr:text "Don't give them an out before they need one." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_DontGiveThemAnOut> ] ;
+    narr:keyPhrase [ narr:text "We're making 75 decisions a day." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_OpsPersonaQuote> ] ;
+    narr:variation [ narr:text "The mainline celebrates active verbs, but the dated (20250714) design decision rejects verbs entirely — prioritizing a noun-based primitive because 'you can't perspective the perspective.'" ; narr:over <https://aswritten.ai/narrative#StyleObs_VerbDecision> ] ;
+    narr:variation [ narr:text "Some verbs are chosen contrastively to mark a distinction (extract≠retrieve, navigates≠queries) — not for force but for semantic precision." ; narr:over <https://aswritten.ai/narrative#StyleObs_VerbChoice_Extract> ; narr:over <https://aswritten.ai/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "Imperative-mood instruction (fix, don't, let go) sits beside declarative active voice — two distinct registers under one hub." ; narr:over <https://aswritten.ai/narrative#StyleObs_FixDelivery> ; narr:over <https://aswritten.ai/narrative#StyleObs_DontGiveThemAnOut> ; narr:over <https://aswritten.ai/narrative#StyleObs_LetGoMarkdown> ; narr:over <https://aswritten.ai/narrative#StyleObs_ImperativeTechnical> ] ;
+    narr:variation [ narr:text "Metaphorical/psychological verbs (feather, escape valve, 'let go of Markdown') contrast with flat concrete domain verbs (onboards, translates)." ; narr:over <https://aswritten.ai/narrative#StyleObs_8> ; narr:over <https://aswritten.ai/narrative#StyleObs_LetGoMarkdown> ; narr:over <https://aswritten.ai/narrative#StyleObs_Onboards> ; narr:over <https://aswritten.ai/narrative#StyleObs_TranslatesFeedback> ] ;
+    narr:writer "claude (subscription)" .
+}

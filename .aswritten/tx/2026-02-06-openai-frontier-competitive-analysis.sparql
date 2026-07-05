@@ -1,0 +1,386 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <http://storytwin.com/schema#>
+PREFIX storytwin: <http://storytwin.com/ns#>
+
+# Transaction-level provenance
+INSERT DATA {
+  narr:Tx_20260206T161644Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    prov:generatedAtTime "2026-02-06T16:16:44.051Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2026-02-06-openai-frontier-competitive-analysis.md" ;
+    sb:originRef "main" ;
+    prov:used "anthropic/claude-sonnet-4.5" .
+
+  # Sample entity
+  narr:Sample_OpenAI_Frontier_Analysis a narr:Sample ;
+    dct:title "OpenAI Frontier Launch — Competitive Analysis & Positioning Implications" ;
+    narr:inputLength 6847 ;
+    dct:created "2026-02-05"^^xsd:date ;
+    skos:note "Competitive analysis of OpenAI Frontier launch and implications for aswritten.ai positioning" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Observations - Competitive Landscape
+  narr:Observation_CompetitiveLandscape_1 a narr:Observation ;
+    skos:broader narr:CompetitiveLandscape ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "OpenAI Frontier as Agent Orchestration Platform" ;
+    rdf:value "OpenAI Frontier is an enterprise agent orchestration platform with shared business context, agent memory, multi-vendor support, and performance evaluation capabilities." ;
+    skos:note "Launched Feb 5, 2026; initial customers include Intuit, State Farm, Thermo Fisher, Uber, Oracle, HP" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  narr:Observation_CompetitiveLandscape_2 a narr:Observation ;
+    skos:broader narr:CompetitiveLandscape ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "Enterprise Agent Platform Landscape" ;
+    rdf:value "Competitive landscape includes OpenAI Frontier, Anthropic Cowork, Microsoft Agent 365, Salesforce Agentforce, Google Gemini Enterprise, and Glean Agents—all focused on agent orchestration/deployment rather than knowledge extraction." ;
+    skos:note "All platforms solve agent orchestration, not upstream knowledge extraction" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Observations - Timing Thesis
+  narr:Observation_TimingThesis_1 a narr:Observation ;
+    skos:broader narr:TimingThesis ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "AI Context Fragmentation Crisis Validated" ;
+    rdf:value "OpenAI's investment in Frontier validates that AI context fragmentation has reached crisis level, confirming aswritten's timing thesis." ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_OpenAI_Frontier_Analysis ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1523 ;
+        oa:end 1678
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The collective memory's `TimingThesis_AIContextFragmentation` — that AI context fragmentation has reached crisis — is now a thesis OpenAI is spending" ;
+        oa:prefix "Frontier validates several core aswritten.ai positioning elements documented in collective memory:\n\n- **Timing thesis confirmed**: " ;
+        oa:suffix " enterprise sales resources to address. The category is becoming legible."
+      ]
+    ] .
+
+  # Observations - Inflection Points
+  narr:Observation_InflectionPoints_1 a narr:Observation ;
+    skos:broader narr:InflectionPoints ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "Enterprise Budget Reallocation to AI-Native Platforms" ;
+    rdf:value "Fortune 500 adoption of Frontier and SaaS stock selloff signal enterprise budgets actively reallocating toward AI-native platforms." ;
+    skos:note "SaaS stocks (Salesforce, ServiceNow, Workday, SAP) sold off on AI agent disintermediation fears" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Observations - Signals
+  narr:Observation_Signals_1 a narr:Observation ;
+    skos:broader narr:Signals ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "AI Coworker Framing Dominance" ;
+    rdf:value "OpenAI pushing 'AI coworker' as dominant frame over 'AI agent'—category language evolution signal." ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_OpenAI_Frontier_Analysis ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2125 ;
+        oa:end 2237
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "**\"AI coworker\" framing**: OpenAI is pushing \"AI coworker\" as the dominant frame over \"AI agent\"" ;
+        oa:prefix "validates aswritten's git-native, agent-agnostic architecture via MCP protocol.\n- " ;
+        oa:suffix " — worth monitoring for category language evolution."
+      ]
+    ] .
+
+  # Observations - Primary Actors
+  narr:Observation_PrimaryActors_1 a narr:Observation ;
+    skos:broader narr:PrimaryActors ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "Fortune 500 Enterprise Buyers" ;
+    rdf:value "Fortune 500 companies (Intuit, State Farm, Uber) are primary actors committing budgets to AI agent infrastructure." ;
+    skos:note "Signals massive enterprise budgets opening for AI agent infrastructure" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Observations - Value Exchange
+  narr:Observation_ValueExchange_1 a narr:Observation ;
+    skos:broader narr:ValueExchange ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "Senior Expert Bottleneck Value" ;
+    rdf:value "Real enterprise value is in knowledge that doesn't exist in systems—the senior expert bottleneck that aswritten addresses." ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_OpenAI_Frontier_Analysis ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3372 ;
+        oa:end 3514
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The real enterprise value is in the knowledge that doesn't exist in any system — the senior expert bottleneck." ;
+        oa:prefix "these platforms can only connect agents to data that already exists in systems. " ;
+        oa:suffix " This framing resonates directionally but is not yet adopted"
+      ]
+    ] .
+
+  # Claims - Positioning
+  narr:Claim_Positioning_1 a narr:Claim ;
+    narr:aboutNode narr:PositioningThesis ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    rdf:value "aswritten positions upstream of agent platforms (Frontier, Cowork, Agent 365) by extracting undocumented knowledge into organizational worldview." ;
+    narr:supports narr:PositioningThesis ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:note "Provisional positioning; requires further validation and refinement" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_OpenAI_Frontier_Analysis ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3628 ;
+        oa:end 3832
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "**Frontier = plumbing to existing data. aswritten = extraction and versioning of undocumented knowledge into organizational worldview.**" ;
+        oa:prefix "the accumulation of tacit organizational methodology over time.\n\nThe framing: " ;
+        oa:suffix "\n\n### Strategic Positioning Implications"
+      ]
+    ] .
+
+  # Claims - Differentiation
+  narr:Claim_Differentiation_1 a narr:Claim ;
+    narr:aboutNode narr:MoatLeverage ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    rdf:value "aswritten's git-native, version-controlled worldview with full provenance tracking differentiates from Frontier's runtime data access layer." ;
+    narr:supports narr:MoatLeverage ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    narr:evidencedBy narr:Evidence_Scarlet_Quote ;
+    skos:note "Core differentiation validated by Scarlet's articulation of worldview vs. skill distinction" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  narr:Evidence_Scarlet_Quote a narr:Evidence ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    rdf:value "A skill is limited context and a set of instructions... We're talking about worldview and an entirety of process and methodology and code that sets the framing for the way a skill executes." ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_OpenAI_Frontier_Analysis ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2912 ;
+        oa:end 3104
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "A skill is limited context and a set of instructions... We're talking about worldview and an entirety of process and methodology and code that sets the framing for the way a skill executes." ;
+        oa:prefix "worldview with full provenance tracking. The distinction Scarlet articulated applies precisely: \"" ;
+        oa:suffix "\"\n\n3. **Institutional knowledge preservation**:"
+      ]
+    ] .
+
+  narr:Claim_Differentiation_2 a narr:Claim ;
+    narr:aboutNode narr:MoatLeverage ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    rdf:value "aswritten solves upstream knowledge extraction problem that agent platforms (Frontier, Cowork, etc.) do not address." ;
+    narr:supports narr:MoatLeverage ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    narr:evidencedBy narr:Evidence_CustomerArchitect_Quote ;
+    skos:note "Validated by customer intent signal from the customer's chief architect" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  narr:Evidence_CustomerArchitect_Quote a narr:Evidence ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    rdf:value "If AI could interview me and store it in memory, and then our sales guy could just ask the memory and get back an answer based on the interview — that'll be worth a lot of money." ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_OpenAI_Frontier_Analysis ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2582 ;
+        oa:end 2765
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "If AI could interview me and store it in memory, and then our sales guy could just ask the memory and get back an answer based on the interview — that'll be worth a lot of money." ;
+        oa:prefix "capability that converted the customer's chief architect from advisory posture to product intent: \"" ;
+        oa:suffix "\"\n\n2. **Version-controlled worldview**:"
+      ]
+    ] .
+
+  # Observations - Key Phrases
+  narr:Observation_KeyPhrases_1 a narr:Observation, narr:StyleObservation ;
+    skos:broader narr:KeyPhrases ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "Worldview Layer Terminology" ;
+    rdf:value "aswritten's vocabulary—'collective memory,' 'worldview layer,' 'knowledge extraction'—differentiates while speaking to same buyer pain as OpenAI's 'semantic layer' and 'shared business context'." ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_OpenAI_Frontier_Analysis ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4857 ;
+        oa:end 5107
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten's vocabulary — \"collective memory,\" \"worldview layer,\" \"knowledge extraction\" — differentiates clearly while speaking to the same buyer pain." ;
+        oa:prefix "The press coverage consistently uses \"AI coworkers,\" \"semantic layer,\" and \"shared business context.\" " ;
+        oa:suffix " The challenge is ensuring aswritten's language connects to the now-mainstream framing"
+      ]
+    ] ;
+    oa:hasBody narr:TerminologyControl .
+
+  # Observations - What Does It Do
+  narr:Observation_WhatDoesItDo_1 a narr:Observation ;
+    skos:broader narr:WhatDoesItDo ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "Upstream Knowledge Extraction Value Proposition" ;
+    rdf:value "aswritten extracts undocumented knowledge locked in senior experts' heads through conversational AI interviews, creating version-controlled organizational worldview." ;
+    skos:related narr:ValueExchange ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Observations - Problem Context
+  narr:Observation_ProblemContext_1 a narr:Observation ;
+    skos:broader narr:ProblemContext ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "Knowledge Locked in Expert Heads" ;
+    rdf:value "Frontier assumes knowledge already exists in systems; aswritten solves upstream problem of extracting undocumented knowledge locked in senior experts' heads." ;
+    skos:note "Three gaps Frontier doesn't address: knowledge extraction, version-controlled worldview, institutional knowledge preservation" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Observations - Approach Pattern
+  narr:Observation_ApproachPattern_1 a narr:Observation ;
+    skos:broader narr:ApproachPattern ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "Conversational AI Interview for Knowledge Extraction" ;
+    rdf:value "aswritten uses conversational AI interviews to extract expert knowledge, storing it in git-native collective memory accessible to agents." ;
+    skos:related narr:Primitives ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Observations - Case Results
+  narr:Observation_CaseResults_1 a narr:Observation ;
+    skos:broader narr:CaseResults ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:prefLabel "Complementary vs. Competitive Positioning" ;
+    rdf:value "At current stage, Frontier is complementary: aswritten for knowledge extraction and worldview management, Frontier for agent deployment." ;
+    skos:note "Risk to monitor: if OpenAI deepens agent memory into organizational memory, competitive overlap increases" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Claims - Market Validation
+  narr:Claim_MarketValidation_1 a narr:Claim ;
+    narr:aboutNode narr:TimingThesis ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    rdf:value "Shared organizational context for AI agents is now validated as enterprise requirement by OpenAI's Frontier investment." ;
+    narr:supports narr:TimingThesis ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:note "Multiple validation signals: OpenAI's semantic layer, Anthropic Cowork expansion, Fortune 500 adoption" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  narr:ConvictionAggregate_MarketValidation a narr:ConvictionAggregate ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    narr:individuationCount 3 ;
+    narr:convictionScore 0.85 ;
+    narr:distanceToNarrative 1 ;
+    narr:computedAt "2026-02-05T00:00:00Z"^^xsd:dateTime ;
+    skos:note "High conviction based on: (1) OpenAI Frontier launch, (2) Anthropic Cowork expansion, (3) Fortune 500 adoption signals" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Claims - YC Application
+  narr:Claim_YC_Application_1 a narr:Claim ;
+    narr:aboutNode narr:StrategyOverview ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    rdf:value "Frontier launch strengthens YC application 'Why now?' narrative with concrete same-week validation of AI agent shared context need." ;
+    narr:supports narr:StrategyOverview ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    skos:note "Strengthens three YC narrative elements: timing, differentiation, market size signals" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Style Observations
+  narr:StyleObservation_BrandName_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_OpenAI_Frontier_Analysis ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1432 ;
+        oa:end 1445
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "aswritten.ai" ;
+        oa:prefix "Frontier validates several core " ;
+        oa:suffix " positioning elements documented in collective memory"
+      ]
+    ] ;
+    oa:hasBody narr:BrandNameStylization ;
+    rdf:value true ;
+    skos:note "Lowercase brand stylization with .ai TLD" .
+
+  narr:StyleObservation_Analogy_1 a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_OpenAI_Frontier_Analysis ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3582 ;
+        oa:end 3632
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Frontier = plumbing to existing data" ;
+        oa:prefix "The framing: **" ;
+        oa:suffix ". aswritten = extraction and versioning of undocumented knowledge"
+      ]
+    ] ;
+    oa:hasBody narr:Analogy ;
+    rdf:value true ;
+    skos:note "Plumbing metaphor for data integration layer" .
+
+  narr:StyleObservation_Cadence_1 a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    rdf:value true ;
+    skos:note "Analysis uses short, declarative sentences with strong verbs (validates, signals, confirms); frequent use of em-dashes for emphasis" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Rubric Assessments
+  narr:RubricAssessment_Register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    rdf:value 4.0 ;
+    skos:note "Professional/analytical register appropriate for competitive analysis; active voice dominant; concise phrasing" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  narr:RubricAssessment_StrategicAlignment a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    rdf:value 5.0 ;
+    skos:note "Directly advances core positioning thesis; connects market signals to narrative anchor; validates timing thesis and differentiation" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+
+  # Style Metrics
+  narr:StyleMetrics_1 a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_OpenAI_Frontier_Analysis ;
+    narr:AverageSentenceLength 22 ;
+    narr:ActiveVoiceRatio 0.78 ;
+    narr:ReadabilityScores "Flesch-Kincaid Grade Level: 12.5" ;
+    skos:note "Professional analytical style with moderate sentence complexity" ;
+    prov:wasGeneratedBy narr:Tx_20260206T161644Z .
+}

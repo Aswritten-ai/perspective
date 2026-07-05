@@ -1,0 +1,109 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+INSERT DATA {
+  narr:Tx_20260326T140000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-26T14:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-03-26-mvp-scoping.md" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_MVPScoping_20260326, narr:Actor_Scarlet_Dame, narr:Narrative_OpinionatedWorkflowFocus, narr:Claim_RemoveStoriesSystem, narr:Claim_RemoveNotificationsSystem, narr:Claim_RemoveDiscoveries, narr:Claim_RemoveRefractProduct, narr:Claim_FeedbackHelpAboveLine, narr:Claim_SingleStreamExpertWorldview, narr:StyleObservation_AppleComparison, narr:StyleObservation_BoundedSetPhrasing, narr:StyleObservation_DirectImperative, narr:StyleMetrics_MVPScoping .
+} ;
+
+INSERT DATA {
+  GRAPH narr:Tx_20260326T140000Z {
+    narr:Sample_MVPScoping_20260326 a narr:Sample ;
+      dct:title "MVP Scoping Session: What Ships, What's Cut, and Why" ;
+      narr:inputLength 7200 .
+
+    narr:Actor_Scarlet_Dame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "Founder and lead reviewer" .
+
+    narr:Narrative_OpinionatedWorkflowFocus a narr:Narrative ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      narr:theme "Opinionated Workflow Focus" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "The governing principle is a bounded set of behaviors performing tasks extremely well, likened to Apple's philosophy." .
+
+    narr:Claim_RemoveStoriesSystem a narr:Claim ;
+      narr:aboutNode narr:ProductLadder ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      skos:note "Entire Stories system removed; functions migrated to on-demand skills or direct TX returns." .
+
+    narr:Claim_RemoveNotificationsSystem a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      skos:note "Notifications system removed; synchronous remember eliminates primary use case." .
+
+    narr:Claim_RemoveDiscoveries a narr:Claim ;
+      narr:aboutNode narr:ModulesCapabilities ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      skos:note "Discoveries fully removed from product, not just disabled." .
+
+    narr:Claim_RemoveRefractProduct a narr:Claim ;
+      narr:aboutNode narr:SolutionArchetypes ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      skos:note "Refract and Registry removed as product features; migrated to local org skills." .
+
+    narr:Claim_FeedbackHelpAboveLine a narr:Claim ;
+      narr:aboutNode narr:CoreWorkflows ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      skos:note "Feedback/Help tool is essential for churn prevention and reliability." .
+
+    narr:Claim_SingleStreamExpertWorldview a narr:Claim ;
+      narr:aboutNode narr:OperatingModelShifts ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      skos:note "Expert plan uses a single-stream worldview, eliminating PR/branch complexity." .
+
+    narr:StyleObservation_AppleComparison a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPScoping_20260326 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 650 ; oa:end 750 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "This is the Apple comparison she's made before — not Microsoft, not a tool that does everything." ]
+      ] .
+
+    narr:StyleObservation_BoundedSetPhrasing a narr:StyleObservation ;
+      skos:broader narr:TerminologyControl ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPScoping_20260326 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 450 ; oa:end 550 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "the product doing the bounded set of behaviors that perform the bounded set of tasks extremely well" ]
+      ] .
+
+    narr:StyleObservation_DirectImperative a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_MVPScoping_20260326 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1050 ; oa:end 1100 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "I feel pretty clear we can remove stories entirely." ]
+      ] .
+
+    narr:StyleMetrics_MVPScoping a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_MVPScoping_20260326 ;
+      narr:AverageSentenceLength 18 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.12 ;
+      skos:note "Direct, decisive, and strategic register with high active voice ratio." .
+  }
+}

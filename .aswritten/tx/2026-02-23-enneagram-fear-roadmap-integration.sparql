@@ -1,0 +1,185 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+
+  narr:Tx_20260223_enneagram a prov:Activity ;
+      prov:wasAssociatedWith <https://aswritten.ai/agents/aswritten.ai> ;
+      prov:wasAttributedTo   <https://aswritten.ai/actors/n8n.aswritten.ai> ;
+      prov:generatedAtTime   "2026-02-23T22:49:19.150Z"^^xsd:dateTime ;
+      sb:originPath          ".aswritten/memories/2026-02-23-enneagram-fear-roadmap-integration.md" ;
+      sb:originRef           "main" ;
+      sb:model               "anthropic/claude-sonnet-4.6" .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — Actors
+# =============================================================
+INSERT DATA {
+
+  narr:Actor_Claude a narr:Actor ;
+      skos:prefLabel "Claude" ;
+      skos:note "AI interlocutor (Opus 4.6 desktop/terminal); conducted fear excavation and analysis" ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — Narratives
+# =============================================================
+INSERT DATA {
+
+  narr:Narrative_InfrastructureVsProduct a narr:Narrative ;
+      dct:source narr:Sample_1 ;
+      narr:theme "Infrastructure vs Product: SMS as the product layer" ;
+      skos:note "The git/MCP system is infrastructure. SMS framing (Solo through War Room) is a product. Scarlet is open to SMS finding market fit even if it feels reductive of the full vision." ;
+      narr:direction "Positive" ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — Claims
+# =============================================================
+INSERT DATA {
+
+  narr:Claim_SMSIsProduct a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:aboutNode narr:Narrative_InfrastructureVsProduct ;
+      narr:supports narr:Narrative_InfrastructureVsProduct ;
+      skos:note "The SMS framing (text for topic / Salon) is actually a product. The git/MCP system is infrastructure. These are distinct layers." ;
+      dct:source narr:Sample_1 ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — Observations
+# =============================================================
+INSERT DATA {
+
+  narr:Obs_WorldviewEngine a narr:Observation ;
+      skos:broader narr:Vision ;
+      dct:source narr:Sample_1 ;
+      skos:note "Scarlet's core product framing: the worldview engine / narrative engine. SMS is something you can do with it." ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+
+  narr:Obs_AIAsShip a narr:Observation ;
+      skos:broader narr:Vision ;
+      dct:source narr:Sample_1 ;
+      skos:note "Scarlet's product moment articulation: AI as ship, human as guide holding the tiller. Core metaphor for the product vision." ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+
+  narr:Obs_FundraisingStory a narr:Observation ;
+      skos:broader narr:CoreNarratives ;
+      dct:source narr:Sample_1 ;
+      skos:note "Scarlet's articulated fundraising narrative arc: 15 years expertise → 2019/LLMs → personal/org narrative → automation → 6 months infrastructure → demo → investment ask." ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — Style Observations
+# =============================================================
+INSERT DATA {
+
+} ;
+
+# =============================================================
+# UPDATED TRIPLES — narr:Sample_1 (new facets)
+# =============================================================
+DELETE {
+  narr:Sample_1 dct:title ?title .
+}
+INSERT {
+  narr:Sample_1
+      dct:title "Enneagram Fear Profile and Roadmap Integration — Scarlet Dame" ;
+      narr:inputLength 7842 ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+}
+WHERE {
+  OPTIONAL { narr:Sample_1 dct:title ?title . }
+} ;
+
+# =============================================================
+# UPDATED TRIPLES — narr:Actor_ScarletDame (enneagram note)
+# =============================================================
+DELETE {
+  narr:Actor_ScarletDame skos:note ?note .
+}
+INSERT {
+  narr:Actor_ScarletDame
+      skos:note "Founder (she/her); Enneagram 4-3-8 power center; subject of fear profile and roadmap" ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+}
+WHERE {
+  OPTIONAL { narr:Actor_ScarletDame skos:note ?note . }
+} ;
+
+# =============================================================
+# UPDATED TRIPLES — narr:Actor_MichaelSlaby (new note facet)
+# =============================================================
+DELETE {
+  narr:Actor_MichaelSlaby skos:note ?note .
+}
+INSERT {
+  narr:Actor_MichaelSlaby
+      skos:note "Harmony Labs; offered job to Scarlet in 2019 after she convinced him of the problem" ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+}
+WHERE {
+  OPTIONAL { narr:Actor_MichaelSlaby skos:note ?note . }
+} ;
+
+# =============================================================
+# UPDATED TRIPLES — narr:Actor_FounderBetaUser_2 (new note facet)
+# =============================================================
+DELETE {
+  narr:Actor_FounderBetaUser_2 skos:note ?note .
+}
+INSERT {
+  narr:Actor_FounderBetaUser_2
+      skos:note "Beta user/client; currently unpaid engagement; Scarlet identified treating him as less worthy due to free status" ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+}
+WHERE {
+  OPTIONAL { narr:Actor_FounderBetaUser_2 skos:note ?note . }
+} ;
+
+# =============================================================
+# UPDATED TRIPLES — narr:StyleMetrics_Sample1 (updated metrics)
+# =============================================================
+DELETE {
+  narr:StyleMetrics_Sample1
+      dct:source ?src ;
+      narr:AverageSentenceLength ?asl ;
+      narr:ActiveVoiceRatio ?avr ;
+      narr:JargonDensity ?jd ;
+      skos:note ?note .
+}
+INSERT {
+  narr:StyleMetrics_Sample1
+      dct:source narr:Sample_1 ;
+      narr:AverageSentenceLength "14"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.88"^^xsd:decimal ;
+      narr:JargonDensity "0.06"^^xsd:decimal ;
+      skos:note "High active voice ratio; short punchy sentences alternate with longer analytical ones; metaphor density high (gravitational, current, slots, foot cut off, armor, ship/tiller); second-person direct address used for emotional confrontation; anaphoric list structures for narrative momentum; single-word sentences for maximum compression." ;
+      prov:wasGeneratedBy narr:Tx_20260223_enneagram .
+}
+WHERE {
+  OPTIONAL { narr:StyleMetrics_Sample1 dct:source ?src . }
+  OPTIONAL { narr:StyleMetrics_Sample1 narr:AverageSentenceLength ?asl . }
+  OPTIONAL { narr:StyleMetrics_Sample1 narr:ActiveVoiceRatio ?avr . }
+  OPTIONAL { narr:StyleMetrics_Sample1 narr:JargonDensity ?jd . }
+  OPTIONAL { narr:StyleMetrics_Sample1 skos:note ?note . }
+}

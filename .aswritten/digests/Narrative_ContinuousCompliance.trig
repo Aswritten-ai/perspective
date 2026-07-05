@@ -1,0 +1,19 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_ContinuousCompliance> {
+  <https://aswritten.ai/narrative#Digest_Narrative_ContinuousCompliance> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_ContinuousCompliance> ;
+    narr:childCount "3"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub frames a move from snapshot-based to continuous compliance. The mainline diagnoses the problem — [point-in-time snapshots go stale](narr:Claim_StaleChecks): current practice leans on outdated checks that don't reflect real-time status, yet audit policies accept them as compliant. The proposed answer is [a collaborator's cryptographic living record](narr:Claim_PipitCryptographic), using selective disclosure and cryptographic proofs to maintain an ongoing compliance record without the enterprise storing sensitive personal data. Against that supporting pair sits a challenge from the field: in a [live demo gap analysis](narr:Claim_UnsubstantiatedPitch), Aswritten surfaced six claims in a collaborator's own pitch with zero substantiated in the collective knowledge graph — at once demonstrating the gap-analysis value proposition and casting doubt on a collaborator's substantiation. The region thus spans the stale-snapshot problem, a cryptographic-proof remedy, and an evidence gap in that remedy's own pitch. No dates are attached, so no trajectory or landing is asserted here.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_StaleChecks> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_UnsubstantiatedPitch> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PipitCryptographic> ;
+    narr:keyPhrase [ narr:text "audit policies accept stale checks as compliant" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_StaleChecks> ] ;
+    narr:keyPhrase [ narr:text "selective disclosure and cryptographic proofs to create a living compliance record without the enterprise storing sensitive personal data" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PipitCryptographic> ] ;
+    narr:keyPhrase [ narr:text "six claims in a collaborator's pitch with zero substantiated in the organization's collective knowledge graph" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_UnsubstantiatedPitch> ] ;
+    narr:variation [ narr:text "a collaborator is both the proposed remedy and the subject of the challenge — its pitch had six claims with zero substantiated in the knowledge graph, so support for the cryptographic approach and doubt about it sit side by side." ; narr:over <https://aswritten.ai/narrative#Claim_PipitCryptographic> ; narr:over <https://aswritten.ai/narrative#Claim_UnsubstantiatedPitch> ] ;
+    narr:variation [ narr:text "The demo finding does double duty: it illustrates Aswritten's gap-analysis value proposition while undercutting the very vendor whose continuous-compliance model the hub advances." ; narr:over <https://aswritten.ai/narrative#Claim_UnsubstantiatedPitch> ] ;
+    narr:writer "claude (subscription)" .
+}

@@ -1,0 +1,160 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260416T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-16T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260416-session-reflection" ;
+    narr:originRef "main" ;
+    dct:title "Session Reflection: March 19 – April 14, 2026 — Launch Flight Control Arc" ;
+    prov:generated
+      narr:Sample_SessionReflection_20260416,
+      narr:Narrative_LaunchFlightControlArc,
+      narr:Narrative_QuestionReframe_MVPToUnlocked,
+      narr:Claim_DesignCollaboratorReturnedForOwnPerspective,
+      narr:Claim_ModularSynthesizerDynamic,
+      narr:Claim_CorrectionsMoreValuableThanHypotheses_Reflection,
+      narr:StyleObs_IntelligenceVsPerspective,
+      narr:StyleObs_LaunchingDefinition,
+      narr:StyleObs_ItsPeopleNow,
+      narr:Metrics_SessionReflection_20260416 .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260416T120000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────
+    narr:Sample_SessionReflection_20260416 a narr:Sample ;
+      dct:title "Session Reflection: March 19 – April 14, 2026 (Launch Flight Control)" ;
+      dct:created "2026-04-16"^^xsd:date ;
+      dct:description "Closing reflection on the 'launch flight control' session spanning March 19 strategy session through launch and first week of production. Captures trajectory of perspective shifts across 58+ transactions and 28 days. Participants: Scarlet Dame (founder), Claude (AI coworker)." ;
+      narr:inputLength 5821 .
+
+    # ── DOCUMENT-LEVEL NARRATIVE: The 28-day arc ────────────────
+    narr:Narrative_LaunchFlightControlArc a narr:Narrative ;
+      dct:source narr:Sample_SessionReflection_20260416 ;
+      skos:broader narr:Milestones ;
+      skos:prefLabel "The Launch Flight Control Arc: March 19 – April 14, 2026" ;
+      skos:note "In 28 days, the product went from a strategic question ('what is the minimum viable product?') to a live production system with a paying enterprise customer, a PE board expressing portfolio-wide interest, and the practice of interview-driven growth underway. The product got smaller and sharper; the space it opened got enormous. 58+ transactions, 24 tools reduced to 7, 73+ E2E tests, 17+ documents written or substantially revised." ;
+      narr:theme "A 28-day arc from 'what is the minimum viable product?' to 'what did we just make possible?' — the product shrank and sharpened while the space it opened became enormous" .
+
+    # ── DEEPEST SHIFT: Question reframe ─────────────────────────
+    narr:Narrative_QuestionReframe_MVPToUnlocked a narr:Narrative ;
+      dct:source narr:Sample_SessionReflection_20260416 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "From 'What Is the MVP?' to 'What Did We Just Make Possible?'" ;
+      skos:note "On March 19, the question was 'what is the minimum viable product?' By April 14, the question was 'what did we just make possible?' — installable expertise, perspectives that outlive the people who created them, AI that cites the humans it learned from, experts whose reach scales without their time scaling. The product did not get bigger; it got smaller and sharper. The space it opens got enormous." ;
+      narr:theme "The deepest shift of the 28-day arc: the question moved from scarcity (what is the minimum?) to abundance (what did we just unlock?)" .
+
+    # ── CLAIM: a design collaborator returned for real product work ─────────────
+    narr:Claim_DesignCollaboratorReturnedForOwnPerspective a narr:Claim ;
+      dct:source narr:Sample_SessionReflection_20260416 ;
+      skos:note "a design collaborator returned for his own perspective — not as a favor, but as real product work. This validated the interview-driven growth model: the first marketplace perspective was created by someone who had previously only been an advisor." ;
+      narr:aboutNode narr:Actor_DesignCollaborator ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_PodcastInterviewSalesMotion .
+
+    # ── CLAIM: Modular synthesizer dynamic ──────────────────────
+    narr:Claim_ModularSynthesizerDynamic a narr:Claim ;
+      dct:source narr:Sample_SessionReflection_20260416 ;
+      skos:note "Scarlet's description of the session pattern dynamic: 'guiding the synthesizer but there's an emergent behavior that takes something deeply true for me and makes it far more realized than I could have made myself.' Scarlet's corrections to AI hypotheses were consistently more valuable than the hypotheses themselves." ;
+      narr:aboutNode narr:Narrative_InterviewBeforeSynthesis ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_InterviewSaveDraftAnnotatePattern .
+
+    # ── CLAIM: Corrections more valuable (reflection-level) ──────
+    narr:Claim_CorrectionsMoreValuableThanHypotheses_Reflection a narr:Claim ;
+      dct:source narr:Sample_SessionReflection_20260416 ;
+      skos:note "Reflection-level confirmation across 58+ transactions: Scarlet's corrections to AI hypotheses were consistently more valuable than the hypotheses themselves. The interview-driven session pattern — interview the founder, save decisions as memories, draft documents grounded in the perspective, annotate to verify grounding, iterate — was documented as replicable and is now the core operating model." ;
+      narr:aboutNode narr:Narrative_InterviewSaveDraftAnnotatePattern ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_InterviewBeforeSynthesis .
+
+    # ── STYLE OBSERVATIONS ───────────────────────────────────────
+
+    # Style Obs 1: Antithesis — "Intelligence is quick, perspective is hard won"
+    narr:StyleObs_IntelligenceVsPerspective a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_SessionReflection_20260416 ;
+      skos:note "Antithesis: two-beat declarative contrasting speed of intelligence with difficulty of perspective. Characteristic Scarlet idiolect — short, punchy, aphoristic." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SessionReflection_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4812 ;
+          oa:end 4856
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Intelligence is quick, perspective is hard won." ;
+          oa:prefix "On the product: " ;
+          oa:suffix "\n\nOn the business shape:"
+        ]
+      ] .
+
+    # Style Obs 2: Idiolect — "Launching = moving from being privately terrified..."
+    narr:StyleObs_LaunchingDefinition a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_SessionReflection_20260416 ;
+      skos:note "Scarlet's idiolect: redefines 'launching' through a personal emotional lens using parallel structure (privately terrified / publicly terrified). Self-deprecating humor as rhetorical device. Characteristic of her voice — honest, direct, slightly absurdist." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SessionReflection_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4960 ;
+          oa:end 5060
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Launching = moving from being privately terrified about the quality of my product to being publicly terrified" ;
+          oa:prefix "On launching: \"" ;
+          oa:suffix " about the quality"
+        ]
+      ] .
+
+    # Style Obs 3: Short punchy cadence — "It's about people now."
+    narr:StyleObs_ItsPeopleNow a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_SessionReflection_20260416 ;
+      skos:note "Four-word declarative closing the document. Characteristic Scarlet cadence: after a long analytical arc, a short punchy sentence lands the emotional truth. The brevity is the point — it signals conviction at the Foundation level." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_SessionReflection_20260416 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 5090 ;
+          oa:end 5112
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "It's about people now." ;
+          oa:prefix "On what matters: \"" ;
+          oa:suffix "\""
+        ]
+      ] .
+
+    # ── STYLE METRICS ────────────────────────────────────────────
+    narr:Metrics_SessionReflection_20260416 a narr:StyleMetrics ;
+      dct:source narr:Sample_SessionReflection_20260416 ;
+      skos:broader narr:StyleMetrics ;
+      skos:note "Retrospective reflection format. Mixed register: structured markdown with H2/H3 section headers (analytical memo genre) and embedded verbatim Scarlet quotes in first person (personal voice). Antithesis-heavy structure (product-out vs. installable expertise, smaller vs. enormous, private vs. public). Short punchy declaratives at emotional peaks; longer analytical sentences in trajectory sections. Active voice dominant. Jargon density low — product terms (transactions, E2E tests, perspectives) used without definition, implying internal audience. The four closing quotes function as conviction anchors, each under 25 words." ;
+      narr:AverageSentenceLength "17"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.85"^^xsd:decimal ;
+      narr:JargonDensity "0.07"^^xsd:decimal .
+
+  }
+}

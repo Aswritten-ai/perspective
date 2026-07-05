@@ -1,0 +1,26 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_ExpertiseOnDemandReframe> {
+  <https://aswritten.ai/narrative#Digest_Narrative_ExpertiseOnDemandReframe> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_ExpertiseOnDemandReframe> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub reframes the product from an ambient worldview compiled at session start to [expertise invoked at the moment of need](narr:Claim_AmbientVsOnDemandBehavior) — working, hitting a gap, invoking aswritten mid-task, installing the relevant module, continuing with citations. The crystallized [core value proposition](narr:Claim_CoreValuePropInstallExpertise) (3/19): install expertise into your AI and verify where it comes from. By 3/23 (a design collaborator session) Scarlet dropped the 'memory' word entirely for 'installable expertise,' arguing the foundation is capability, not intelligence. Modules carry [perspectives, not just information](narr:Claim_PerspectiveNotInformation) — the difference between a human expert and an AI. The 3/22 update maps the [Knowledge Packager archetype](narr:Archetype_KnowledgePackager) to the Delegator trigger (the customer's chief architect, 'I wish we could clone me'), Publisher/Org tier [amount]-[amount]/month. A later 4/16 note flags that [voice memos and call transcripts](narr:Claim_VoiceMemosAndTranscriptsPrimaryInputs) — Scarlet's own primary inputs — are downplayed in the pitch.""" ;
+    narr:covers <https://aswritten.ai/narrative#Archetype_KnowledgePackager> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AmbientVsOnDemandBehavior> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CoreValuePropInstallExpertise> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_PerspectiveNotInformation> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_VoiceMemosAndTranscriptsPrimaryInputs> ;
+    narr:keyPhrase [ narr:text "A way to install expertise into your AI and verify where it's coming from." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CoreValuePropInstallExpertise> ] ;
+    narr:keyPhrase [ narr:text "I've let go of the memory word sort of entirely and I'm now calling it installable expertise." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CoreValuePropInstallExpertise> ] ;
+    narr:keyPhrase [ narr:text "That's the trigger for searching for the appropriate module." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AmbientVsOnDemandBehavior> ] ;
+    narr:keyPhrase [ narr:text "I wish we could clone me." ; narr:phraseSource <https://aswritten.ai/narrative#Archetype_KnowledgePackager> ] ;
+    narr:keyPhrase [ narr:text "Stop being the bottleneck. Install your expertise so your team can work without you. Verify through citations." ; narr:phraseSource <https://aswritten.ai/narrative#Archetype_KnowledgePackager> ] ;
+    narr:keyPhrase [ narr:text "more information does not solve your problem" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CoreValuePropInstallExpertise> ] ;
+    narr:variation [ narr:text "The reframe demotes the original organizational use case (compile worldview at session start) to a special configuration of on-demand invocation, not the default behavior." ; narr:over <https://aswritten.ai/narrative#Claim_AmbientVsOnDemandBehavior> ] ;
+    narr:variation [ narr:text "Superseded framing: 'memory' was dropped for 'installable expertise' on 3/23 — someone may still reach for the prior memory positioning." ; narr:over <https://aswritten.ai/narrative#Claim_CoreValuePropInstallExpertise> ] ;
+    narr:variation [ narr:text "The proposed Sales-as-Delivery flow remains untested — an early prospect never received his pre-populated repo because the a practitioner beta user follow-up was deferred." ; narr:over <https://aswritten.ai/narrative#Archetype_KnowledgePackager> ] ;
+    narr:variation [ narr:text "Gap between actual and communicated usage: voice memos and transcripts are Scarlet's own primary inputs yet are not pitched as the default pattern (4/16, latest claim)." ; narr:over <https://aswritten.ai/narrative#Claim_VoiceMemosAndTranscriptsPrimaryInputs> ] ;
+    narr:writer "claude (subscription)" .
+}

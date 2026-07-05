@@ -1,0 +1,68 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_OperatingModelShifts> {
+  <https://aswritten.ai/narrative#Digest_OperatingModelShifts> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#OperatingModelShifts> ;
+    narr:childCount "43"^^xsd:integer ;
+    narr:generatedFrom "c354f003fe2a54a8d5d3268a64e6f8923cccb163" ;
+    narr:narration """The hub traces a multi-front shift in how work, staffing, and AI systems are organized. In Jul 2025, Scarlet and Tony framed two interlocking moves: [advisory staffing as a structural alternative to hiring](narr:https://aswritten.ai/narrative#Narrative_AdvisoryStaffingAlternativeToHiring) — monthly fees ([amount]–[amount]) replacing headcount — and [perspective-driven development inversion](narr:https://aswritten.ai/narrative#Narrative_PerspectiveDrivenDevelopmentInversion), where the AI draws on the expert's perspective rather than the expert directing the AI. Tony's [execution-to-strategy reframe](narr:https://aswritten.ai/narrative#Narrative_ExecutionToStrategyShift) (Apr 2026) extended this: AI restored IC status, making curation and strategy the scarce resource. By Mar 2026, the sales motion had split into [a demo-call prospect direct sales and Tony influence sales](narr:https://aswritten.ai/narrative#Narrative_DirectVsInfluenceSales), with [a demo-call prospect's two-step individual-asset-to-org path](narr:https://aswritten.ai/narrative#Narrative_DemoProspectTwoStepSalesPath) and a [trigger-gated equity partnership](narr:https://aswritten.ai/narrative#Narrative_DemoProspectSalesPartnership) under active pitch. [Calibration calls were reframed as billable staff-work](narr:https://aswritten.ai/narrative#Narrative_CalibrationAsStaffWork) (Jul 2025), resolving the free-conversation problem. On the technical side, Mar–Jul 2026 produced a cascade of architectural decisions: [Expert single-stream worldview](narr:https://aswritten.ai/narrative#Narrative_ExpertSingleStreamWorldview) eliminating branching, [Core Protocol vs. Internal Operations separation](narr:https://aswritten.ai/narrative#Narrative_SeparationPrincipleProtocolVsOps), [session lifetime decoupled from verification latency](narr:https://aswritten.ai/narrative#Narrative_SessionDecouplingPattern), [Fable/Opus session-boundary routing](narr:https://aswritten.ai/narrative#Narrative_FableOpusSessionBoundaryRouting), and [protocol enrollment over command](narr:https://aswritten.ai/narrative#Narrative_ProtocolEnrollmentOverCommand). Internal compensation was calibrated to company maturity via [the alignment principle](narr:https://aswritten.ai/narrative#Narrative_InternalCompensationAlignmentPrinciple) (May 2026), and the [team bottleneck reframe](narr:https://aswritten.ai/narrative#Narrative_TeamBottleneckReframe) dissolved the solo-founder framing as traction emerged.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_AdvisoryStaffingEconomics> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_CapacityTieringAttention> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_InternalCompensationCalibrated> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_OutcomeBasedModel> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SessionDecoupling> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_SingleStreamExpertWorldview> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AdvisoryStaffingAlternativeToHiring> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AltitudeSwitchingCognitiveCost> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ArchitectImplementerSplit> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_BusinessModelPivot> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CalibrationAsStaffWork> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DemoProspectSalesPartnership> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DemoProspectTwoStepSalesPath> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DirectVsInfluenceSales> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EmergenceVsTemplate> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EnterpriseCustomerTeamTrialCTOBacked> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ExecutionToStrategyShift> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ExpertSingleStreamWorldview> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_FableOpusSessionBoundaryRouting> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_FableScarcityOpusAbundance> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_InternalCompensationAlignmentPrinciple> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_MemoriesAsCollaborativeNarrative> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EnterpriseProspectInfluenceSales> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_PerspectiveDrivenDevelopmentInversion> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ProtocolEnrollmentOverCommand> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SeparationPrincipleProtocolVsOps> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SessionDecouplingPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TeamBottleneckReframe> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_AdvisoryStaffingModelQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ExpertSingleStreamQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_FableUsageShape_20260703> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_GraphPlacementDecision> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_MemoryExtractPurification> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectCTODirectiveQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_PerspectiveInversionQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletDemoProspectPathwayQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletExecutionStrategyQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletFableEnergyQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_SeparationPrincipleQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_TonyBuffer> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_TonyExperienceAsAsset> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_AugmentFirst> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_ManagedCareQuote> ;
+    narr:keyPhrase [ narr:text "Monthly fee range: [amount]–[amount]/month." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AdvisoryStaffingEconomics> ] ;
+    narr:keyPhrase [ narr:text "roughly 1.5 concurrent engagements means attention tiering" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CapacityTieringAttention> ] ;
+    narr:keyPhrase [ narr:text "group freelance with a license to aswritten" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_InternalCompensationCalibrated> ] ;
+    narr:keyPhrase [ narr:text "Stop trying to get it to see the way that you see and start getting it to use you to give the perspective on what you see." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_PerspectiveInversionQuote> ] ;
+    narr:keyPhrase [ narr:text "If we can stop the work being about my actual execution in a terminal and start it being about my curation of a perspective that is then used by somebody else." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletExecutionStrategyQuote> ] ;
+    narr:keyPhrase [ narr:text "There's a clear pathway for a demo-call prospect to go after both individuals and small businesses who can package a single book or asset and also to convert them and larger orgs to the org plan." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletDemoProspectPathwayQuote> ] ;
+    narr:keyPhrase [ narr:text "when you're pulling these people in, get them to adopt AI the way you use it" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomerArchitectCTODirectiveQuote> ] ;
+    narr:keyPhrase [ narr:text "What's the biggest asset of a lot of the people you're talking about? Right. Us included. It's the experience and the strategy that we can bring." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_TonyExperienceAsAsset> ] ;
+    narr:variation [ narr:text "Advisory staffing logic (replace hiring with expert networks) sits in tension with the team bottleneck reframe, which names specific unfillable gaps requiring actual hires — the two staffing logics pull in opposite directions." ; narr:over <https://aswritten.ai/narrative#Narrative_AdvisoryStaffingAlternativeToHiring> ; narr:over <https://aswritten.ai/narrative#Narrative_TeamBottleneckReframe> ] ;
+    narr:variation [ narr:text "Template vs. emergence: an advisor pushed twice for structured templates; the customer's CTO and the customer's chief architect pushed back for process-discovered structure — a product gap (system should generate templates from decisions) was identified but not resolved." ; narr:over <https://aswritten.ai/narrative#Narrative_EmergenceVsTemplate> ] ;
+    narr:variation [ narr:text "Protocol command register vs. enrollment: the commanding grammar of prior protocols earns model resistance over time; the enrollment-over-command principle is a direct correction of the existing protocol's tone." ; narr:over <https://aswritten.ai/narrative#Narrative_ProtocolEnrollmentOverCommand> ; narr:over <https://aswritten.ai/narrative#Narrative_SeparationPrincipleProtocolVsOps> ] ;
+    narr:variation [ narr:text "Fable scarcity vs. Opus abundance reframes the cost model: the budget-relevant resource is Fable alone (weekly-credit-rationed, availability-limited by outage), while Opus is effectively free at the margin — the architect/implementer split is partly a cost-management response, not only a quality pattern." ; narr:over <https://aswritten.ai/narrative#Narrative_FableScarcityOpusAbundance> ; narr:over <https://aswritten.ai/narrative#Narrative_ArchitectImplementerSplit> ] ;
+    narr:variation [ narr:text "Altitude-switching cognitive cost (building vs. vision-pitch is harder than project-switching) surfaces a personal operating constraint that the advisory and sales model shifts do not yet structurally address." ; narr:over <https://aswritten.ai/narrative#Narrative_AltitudeSwitchingCognitiveCost> ] ;
+    narr:variation [ narr:text "a collaborator's B2C→B2B outcome-based pivot and an early prospect's managed-care framing represent a parallel operating model shift in a client context — related logic but a distinct domain with no direct bridge to the aswritten staffing or sales architecture." ; narr:over <https://aswritten.ai/narrative#Narrative_BusinessModelPivot> ; narr:over <https://aswritten.ai/narrative#Claim_OutcomeBasedModel> ] ;
+    narr:writer "anthropic/claude-sonnet-4.6" .
+}

@@ -1,0 +1,116 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Transaction Provenance
+INSERT DATA {
+  narr:Tx_20260323T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-23T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/2026-03-23-design-collaborator-podcast-sales-motion-demo-launch.md" ;
+    narr:originRef "main" ;
+    prov:generated narr:Sample_DesignCollaboratorReview_20260323, narr:Actor_DesignCollaborator_2, narr:Narrative_ActivationGapClosed, narr:Narrative_BrandMaturitySignal, narr:Claim_SMSFormatHonesty, narr:Claim_ExpectationSettingUX, narr:Claim_VisualLanguageInfrastructure, narr:StyleObs_DesignCollaborator_Metaphor, narr:StyleObs_DesignCollaborator_Directness, narr:StyleObs_DesignCollaborator_RhetoricalContrast, narr:Metrics_DesignCollaboratorReview .
+} ;
+
+# Extracted Entities
+INSERT DATA {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Sample_DesignCollaboratorReview_20260323 a narr:Sample ;
+      dct:title "a design collaborator Review: Agent Demo, Landing Page, and Brand Maturity" ;
+      dct:created "2026-03-23"^^xsd:date ;
+      narr:inputLength 3200 .
+
+    narr:Actor_DesignCollaborator_2 a narr:Actor ;
+      skos:prefLabel "a design collaborator" ;
+      skos:note "Brand designer and reviewer; provided feedback on agent deployment layer and visual identity." .
+
+    narr:Narrative_ActivationGapClosed a narr:Narrative ;
+      dct:source narr:Sample_DesignCollaboratorReview_20260323 ;
+      skos:broader narr:FrictionFailure ;
+      narr:theme "The agent deployment layer closes the activation gap by providing a concrete application for the technology." ;
+      skos:note "a design collaborator noted that while the technology was 'cool', users didn't know what to do with it until the deployment layer provided a demonstrable example." .
+
+    narr:Narrative_BrandMaturitySignal a narr:Narrative ;
+      dct:source narr:Sample_DesignCollaboratorReview_20260323 ;
+      skos:broader narr:PositioningThesis ;
+      narr:theme "Restrained color palettes and sedate tones signal maturity and credibility early in a startup's lifecycle." ;
+      skos:note "The use of taupe and a restrained palette provides an 'authority' that contrasts with the 'shouting' typical of early-stage startups." .
+
+    narr:Claim_SMSFormatHonesty a narr:Claim ;
+      dct:source narr:Sample_DesignCollaboratorReview_20260323 ;
+      narr:aboutNode narr:Interfaces ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      skos:note "The SMS format makes AI personalization feel honest rather than fake because it removes the 'bot' mental frame associated with chat boxes." .
+
+    narr:Claim_ExpectationSettingUX a narr:Claim ;
+      dct:source narr:Sample_DesignCollaboratorReview_20260323 ;
+      narr:aboutNode narr:LandingPages ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      skos:note "User actions on landing pages must be preceded by explicit expectation setting (e.g., 'We'll text you...')." .
+
+    narr:Claim_VisualLanguageInfrastructure a narr:Claim ;
+      dct:source narr:Sample_DesignCollaboratorReview_20260323 ;
+      narr:aboutNode narr:NarrativeAnchor ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      skos:note "Simple geometric shapes (circles and lines) represent the 'infrastructure' layer of the technology receding into the background." .
+
+    narr:StyleObs_DesignCollaborator_Metaphor a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_DesignCollaboratorReview_20260323 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorReview_20260323 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1850 ; oa:end 1950 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "It gives you a framework, a structure, infrastructure. That's what the technology is doing in the background." ]
+      ] .
+
+    narr:StyleObs_DesignCollaborator_Directness a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_DesignCollaboratorReview_20260323 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorReview_20260323 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1050 ; oa:end 1150 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "The power is in the chat. I wouldn't fold it out into other pages." ]
+      ] .
+
+    narr:StyleObs_DesignCollaborator_RhetoricalContrast a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_DesignCollaboratorReview_20260323 ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DesignCollaboratorReview_20260323 ;
+        oa:hasSelector [ a oa:TextPositionSelector ; oa:start 1450 ; oa:end 1550 ] ;
+        oa:hasSelector [ a oa:TextQuoteSelector ; oa:exact "Most startups shout. You've already moved to a mature thing." ]
+      ] .
+
+    narr:Metrics_DesignCollaboratorReview a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_DesignCollaboratorReview_20260323 ;
+      narr:AverageSentenceLength 14 ;
+      narr:ActiveVoiceRatio 0.85 ;
+      narr:JargonDensity 0.05 .
+  }
+} ;
+
+# Updates to existing entities
+DELETE {
+  GRAPH ?g {
+    narr:Narrative_ActivationGap skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260323T120000Z {
+    narr:Narrative_ActivationGap skos:note "The activation gap is the distance between understanding a concept and knowing how to use it. a design collaborator confirmed the agent deployment layer closes this gap by providing a demonstrable application." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Narrative_ActivationGap skos:note ?oldNote .
+  }
+}

@@ -1,0 +1,381 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+
+INSERT DATA {
+
+  narr:Transaction_20260220 a prov:Activity ;
+      prov:wasAssociatedWith <https://aswritten.ai/agents/aswritten.ai> ;
+      prov:wasAttributedTo   <https://n8n.aswritten.ai> ;
+      prov:generatedAtTime   "2026-02-20T19:40:30.500Z"^^xsd:dateTime ;
+      sb:originPath          ".aswritten/memories/2026-02-20-founder-beta-user-onboarding-call.md" ;
+      sb:originRef           "main" .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — NEW ACTORS
+# =============================================================
+
+INSERT DATA {
+
+  narr:Actor_ScarletDame a narr:Actor ;
+      skos:prefLabel "Scarlet Dame" ;
+      skos:note "aswritten team; conducted live onboarding walkthrough with a founder beta user on Feb 20, 2026; provided guidance on memory bootstrapping, onboarding sequencing, and product architecture." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Actor_Birch a narr:Actor ;
+      skos:prefLabel "a collaborator" ;
+      skos:note "a founder beta user's prior company (purplefish.com); staffing AI product; hit adoption wall due to organizational change management challenges." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Actor_Cedar a narr:Actor ;
+      skos:prefLabel "factoryfactory.ai" ;
+      skos:note "a founder beta user's new open-source project; plans to integrate aswritten MCP server; backed by VC funding." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — NEW NARRATIVES
+# =============================================================
+
+INSERT DATA {
+
+  narr:Narrative_OnboardingGap a narr:Narrative ;
+      dct:source narr:Sample_1 ;
+      narr:theme "The gap between technical connection and first value is the core onboarding problem" ;
+      skos:broader narr:OrganizationalChangeManual ;
+      skos:note "Even sophisticated technical founders need live guidance to understand what to do first. The friction is cognitive, not technical." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Narrative_MemoryAsSourceOfTruth a narr:Narrative ;
+      dct:source narr:Sample_1 ;
+      narr:theme "Transactions and memories are the source of truth; generated docs are transient and regenerable" ;
+      skos:broader narr:Architecture ;
+      skos:note "a founder beta user's key moment of understanding: the .aswritten directory is the only durable artifact; docs folder is generated and disposable." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Narrative_ChatFirstCodeLater a narr:Narrative ;
+      dct:source narr:Sample_1 ;
+      narr:theme "Chat-first adoption path: populate worldview before coding" ;
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      skos:note "Even dev-focused users should treat aswritten as a chat session first, not a coding session. First value is worldview population." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Narrative_ConvictionDecay a narr:Narrative ;
+      dct:source narr:Sample_1 ;
+      narr:theme "Conviction should decay over time when claims are not reinforced" ;
+      skos:broader narr:Conviction ;
+      skos:note "a founder beta user's spaced-repetition framing: claims mentioned once and not reinforced should lose conviction weight. Maps to graph-level temporal analysis." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Narrative_DemocratizedConsensus a narr:Narrative ;
+      dct:source narr:Sample_1 ;
+      narr:theme "Democratizing knowledge collection creates balanced organizational representation and reduces political influence" ;
+      skos:broader narr:OrganizationalChangeManual ;
+      skos:note "a founder beta user's insight on political dynamics: people avoid decisions to avoid accountability. Equal-footing knowledge collection counters this." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Narrative_StaffingAIAdoptionWall a narr:Narrative ;
+      dct:source narr:Sample_1 ;
+      narr:theme "AI that works too well can create internal organizational conflict, blocking adoption" ;
+      skos:broader narr:FrictionFailure ;
+      skos:note "a collaborator: recruiter hit quota in a week, started poaching colleagues' candidates. Org change management was the blocker, not the technology." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Narrative_VoiceMemoAsInput a narr:Narrative ;
+      dct:source narr:Sample_1 ;
+      narr:theme "Long rambling voice memos are high-quality memory input for the extraction pipeline" ;
+      skos:broader narr:Product ;
+      skos:note "Both Scarlet and a founder beta user converge on voice memo as a validated input format. More material is not a problem — richer input benefits extraction." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — NEW CLAIMS
+# =============================================================
+
+INSERT DATA {
+
+  narr:Claim_OnboardingModeHighestLeverage a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:aboutNode narr:Narrative_OnboardingGap ;
+      narr:supports narr:NarrativeDrivenRoadmap ;
+      skos:note "Onboarding mode is the highest-leverage product gap for beta. Technical infrastructure works; cognitive bootstrapping does not." ;
+      dct:source narr:Sample_1 ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Claim_FiveQuestionsEveryUserAsks a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:aboutNode narr:Narrative_OnboardingGap ;
+      narr:supports narr:EnablementTraining ;
+      skos:note "Every beta user will ask: (1) How do I bootstrap? (2) What makes a good memory? (3) How do I know it's working? (4) What should I do first? (5) Should I worry about PRs?" ;
+      dct:source narr:Sample_1 ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Claim_PlanningIsBottleneck a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:aboutNode narr:Narrative_ChatFirstCodeLater ;
+      narr:supports narr:PositioningThesis ;
+      skos:note "a founder beta user validates Feb 5 thesis: planning is the obvious next thing. Understanding the codebase is the key use case for dev-focused users." ;
+      dct:source narr:Sample_1 ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Claim_ConvictionDecayFeatureRequest a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:aboutNode narr:Narrative_ConvictionDecay ;
+      narr:supports narr:Conviction ;
+      skos:note "Conviction decay / spaced repetition is a feature request worth tracking. Claims not reinforced over time should lose conviction weight in the graph." ;
+      dct:source narr:Sample_1 ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Claim_CodexCompatibilityMatters a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:aboutNode narr:Actor_Cedar ;
+      narr:supports narr:InteroperabilityStandards ;
+      skos:note "a founder beta user prefers Codex to Claude Code. MCP compliance is the correct abstraction layer, but testing with Codex users should be in scope." ;
+      dct:source narr:Sample_1 ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Claim_MoreMaterialNotAProblem a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:aboutNode narr:Narrative_VoiceMemoAsInput ;
+      narr:supports narr:Product ;
+      skos:note "Unlike a deck where you want one clean statement per screen, the extraction pipeline benefits from richer input. More material is not a problem." ;
+      dct:source narr:Sample_1 ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Claim_BezosMemoCulture a narr:Claim ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:aboutNode narr:Narrative_MemoryAsSourceOfTruth ;
+      narr:supports narr:NarrativeAnchor ;
+      skos:note "a founder beta user draws parallel to Amazon's six-page memo culture: writing forces clarity, PR review ensures engagement. Maps directly to memory review flow." ;
+      dct:source narr:Sample_1 ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — NEW OBSERVATIONS
+# =============================================================
+
+INSERT DATA {
+
+  narr:Obs_OrgChangeManagement a narr:Observation ;
+      skos:broader narr:OrganizationalChangeManual ;
+      dct:source narr:Sample_1 ;
+      skos:note "a founder beta user identifies organizational change management as the core friction in staffing AI adoption — not the technology itself." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Obs_TransactionSourceOfTruth a narr:Observation ;
+      skos:broader narr:Architecture ;
+      dct:source narr:Sample_1 ;
+      skos:note "a founder beta user's key moment of understanding: the transaction/memory graph is the durable source of truth; docs are transient." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Obs_BootstrappingGuidance a narr:Observation ;
+      skos:broader narr:EnablementTraining ;
+      dct:source narr:Sample_1 ;
+      skos:note "Scarlet's live onboarding guidance on what to ingest first — the content that should be automated in an onboarding mode." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Obs_ConvictionDecayQuestion a narr:Observation ;
+      skos:broader narr:Conviction ;
+      dct:source narr:Sample_1 ;
+      skos:note "a founder beta user's spaced-repetition framing for conviction decay — a feature request for temporal graph analysis." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Obs_PlanningBottleneck a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_1 ;
+      skos:note "a founder beta user validates the planning-as-bottleneck thesis from the Feb 5 discovery call." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Obs_DemocratizedConsensus a narr:Observation ;
+      skos:broader narr:OrganizationalChangeManual ;
+      dct:source narr:Sample_1 ;
+      skos:note "Scarlet's framing of knowledge democratization as a counter to political influence in organizational decision-making." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:Obs_ChatNotCodingSession a narr:Observation ;
+      skos:broader narr:EnablementTraining ;
+      dct:source narr:Sample_1 ;
+      skos:note "Scarlet's guidance on first-use framing: treat aswritten as a chat session, not a coding session." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+} ;
+
+# =============================================================
+# ADDED TRIPLES — NEW STYLE OBSERVATIONS
+# =============================================================
+
+INSERT DATA {
+
+  narr:StyleObs_BizarreIndustryIdiom a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_1 ;
+      skos:related narr:KeyPhrases ;
+      rdf:value true ;
+      skos:note "Colloquial hedging idiom; a founder beta user's informal spoken register preserved verbatim in call notes." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:StyleObs_ClaudeCodexComparison a narr:StyleObservation ;
+      skos:broader narr:Simile ;
+      dct:source narr:Sample_1 ;
+      skos:related narr:KeyPhrases ;
+      rdf:value true ;
+      skos:note "Comparative preference statement with casual qualifier 'I liked... better'; reveals pragmatic tool-switching rationale." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:StyleObs_MCPConnectedImmediately a narr:StyleObservation ;
+      skos:broader narr:ShortPunchyCadence ;
+      dct:source narr:Sample_1 ;
+      skos:related narr:Tagline ;
+      rdf:value true ;
+      skos:note "Staccato three-step sequence with em-dash connectors; mirrors technical precision and immediacy of the onboarding success." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:StyleObs_GapBetweenConnectedAndValue a narr:StyleObservation ;
+      skos:broader narr:Antithesis ;
+      dct:source narr:Sample_1 ;
+      skos:related narr:NarrativeAnchor ;
+      rdf:value true ;
+      skos:note "Rhetorical antithesis framing the core product problem as a gap between two named states; bold emphasis amplifies the tension." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:StyleObs_CognitiveFrictionList a narr:StyleObservation ;
+      skos:broader narr:Parallelism ;
+      dct:source narr:Sample_1 ;
+      skos:related narr:KeyPhrases ;
+      rdf:value true ;
+      skos:note "Parallel bullet structure with bold lead-ins; each friction point follows 'problem statement + elaboration' pattern for scannable analysis." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:StyleObs_ReligionAnalogy a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_1 ;
+      skos:related narr:ResonanceUse ;
+      rdf:value true ;
+      skos:note "Scarlet uses 'religion' as a metaphor for the graph becoming a living analytical system — high-conviction, evocative framing." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:StyleObs_BoldBulletLeadins a narr:StyleObservation ;
+      skos:broader narr:AICompanyizationCase ;
+      dct:source narr:Sample_1 ;
+      skos:related narr:KeyPhrases ;
+      rdf:value true ;
+      skos:note "Consistent use of bold markdown for section headers and bullet lead-ins; creates visual hierarchy and scannable structure throughout the document." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+  narr:StyleObs_TimestampedQuotes a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_1 ;
+      skos:related narr:Proof ;
+      rdf:value true ;
+      skos:note "Inline timestamp citations in [MM:SS] format appended to speaker-attributed quotes; functions as a lightweight call-recording reference convention." ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+
+} ;
+
+# =============================================================
+# UPDATED TRIPLES — narr:Sample_1
+# Prior: multi-valued dct:title, dct:created, narr:inputLength, skos:note, narr:styleProfile
+#        representing multiple merged sessions.
+# New:   single session — a founder beta user beta onboarding call, Feb 20 2026.
+# =============================================================
+
+DELETE {
+  narr:Sample_1 dct:title ?title .
+}
+INSERT {
+  narr:Sample_1 dct:title "a founder beta user — Beta Onboarding Call & Onboarding Mode Discovery" .
+}
+WHERE {
+  narr:Sample_1 dct:title ?title .
+} ;
+
+DELETE {
+  narr:Sample_1 narr:inputLength ?len .
+}
+INSERT {
+  narr:Sample_1 narr:inputLength "6847"^^xsd:integer .
+}
+WHERE {
+  OPTIONAL { narr:Sample_1 narr:inputLength ?len . }
+} ;
+
+DELETE {
+  narr:Sample_1 prov:wasGeneratedBy ?tx .
+}
+INSERT {
+  narr:Sample_1 a narr:Sample ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+}
+WHERE {
+  OPTIONAL { narr:Sample_1 prov:wasGeneratedBy ?tx . }
+} ;
+
+# =============================================================
+# UPDATED TRIPLES — narr:StyleMetrics_Sample1
+# Prior: narr:AverageSentenceLength "18.2"^^xsd:decimal,
+#        narr:ActiveVoiceRatio "0.82"^^xsd:decimal,
+#        skos:note about 432 sentences, 82% active voice.
+# New:   narr:AverageSentenceLength "22"^^xsd:integer,
+#        same ActiveVoiceRatio, new narr:JargonDensity "0.09"^^xsd:decimal,
+#        updated skos:note describing field-notes style.
+# =============================================================
+
+DELETE {
+  narr:StyleMetrics_Sample1 narr:AverageSentenceLength ?asl .
+}
+INSERT {
+  narr:StyleMetrics_Sample1 narr:AverageSentenceLength "22"^^xsd:integer .
+}
+WHERE {
+  OPTIONAL { narr:StyleMetrics_Sample1 narr:AverageSentenceLength ?asl . }
+} ;
+
+DELETE {
+  narr:StyleMetrics_Sample1 narr:JargonDensity ?jd .
+}
+INSERT {
+  narr:StyleMetrics_Sample1 narr:JargonDensity "0.09"^^xsd:decimal .
+}
+WHERE {
+  OPTIONAL { narr:StyleMetrics_Sample1 narr:JargonDensity ?jd . }
+} ;
+
+DELETE {
+  narr:StyleMetrics_Sample1 skos:note ?note .
+}
+INSERT {
+  narr:StyleMetrics_Sample1 skos:note "Document mixes analytical prose (longer sentences, ~28 words avg in analysis sections) with staccato bullet lists (~8 words avg). Active voice dominates. Moderate technical jargon (MCP, PRs, PAT, n8n, CLAUDE.md). Timestamped verbatim quotes interspersed throughout. Tone is observational and strategic — field notes style with editorial synthesis." .
+}
+WHERE {
+  OPTIONAL { narr:StyleMetrics_Sample1 skos:note ?note . }
+} ;
+
+DELETE {
+  narr:StyleMetrics_Sample1 prov:wasGeneratedBy ?tx .
+}
+INSERT {
+  narr:StyleMetrics_Sample1 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_1 ;
+      narr:ActiveVoiceRatio "0.82"^^xsd:decimal ;
+      prov:wasGeneratedBy narr:Transaction_20260220 .
+}
+WHERE {
+  OPTIONAL { narr:StyleMetrics_Sample1 prov:wasGeneratedBy ?tx . }
+}

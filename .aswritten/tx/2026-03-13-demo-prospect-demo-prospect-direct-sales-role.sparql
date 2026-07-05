@@ -1,0 +1,225 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260311T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-03-11T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath ".aswritten/memories/demo-prospect-direct-sales-role.md" ;
+    narr:originRef "main" ;
+    dct:title "Extraction: a demo-call prospect Direct Sales Role and Material Priorities" ;
+    prov:generated
+      
+      
+      
+      
+      narr:Narrative_DirectVsInfluenceSales,
+      narr:Narrative_SMBPivot,
+      narr:Narrative_PreReadDeckConcept,
+      narr:Narrative_ValueDemonstrationGap,
+      narr:Claim_PreReadDeckRequest,
+      narr:Claim_TighterOnboarding,
+      narr:Claim_SalesGuideRequest,
+      narr:Claim_ValueDemoPrerequisite,
+      narr:Claim_SMBBusinessPlan,
+      narr:Claim_LandingPageMismatch,
+      narr:Claim_ShowDontTell,
+      narr:Obs_DemoProspectMaterialPriorities,
+      narr:Obs_AgentsCiteMemories,
+      narr:StyleObs_McDonaldPictureMenu,
+      narr:StyleObs_ShowDontTell,
+      narr:StyleObs_TableStructure .
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260311T120000Z {
+
+    # ── NARRATIVES ──────────────────────────────────────────────
+    narr:Narrative_DirectVsInfluenceSales a narr:Narrative ;
+
+      skos:broader narr:OperatingModelShifts ;
+      skos:note "a demo-call prospect does direct sales (face-to-face with executives, needs pre-read and demo materials); Tony does influence sales (warm intros, one-sheet as leave-behind). Explicit division of labor: opening doors vs. providing depth. a demo-call prospect is active and giving direct feedback; Tony is playing it by ear on deeper involvement." ;
+      narr:theme "Two-track sales motion: influence sales (Tony) and direct sales (a demo-call prospect) require different materials and engagement models" .
+
+    narr:Narrative_SMBPivot a narr:Narrative ;
+
+      skos:broader narr:Segmentation ;
+      skos:note "a demo-call prospect's business plan targets SMB — described as a bigger market than devs. The business plan a demo-call prospect takes to prospects needs to reflect the SMB pivot. Prior targeting was developer-first (PLG motion per ADR-002)." ;
+      narr:theme "SMB is a larger addressable market than developers; business plan and materials must reflect this pivot" .
+
+    narr:Narrative_PreReadDeckConcept a narr:Narrative ;
+
+      skos:broader narr:SalesDecks ;
+      skos:note "a demo-call prospect's request: a visual-first deck executives can absorb before a call. Not a pitch deck — a pre-read that makes the meeting productive from minute one. a demo-call prospect's framing: 'Explain like I'm five for executives, McDonald picture menu.'" ;
+      narr:theme "Pre-read deck as executive-facing visual primer that makes the sales meeting productive from minute one" .
+
+    narr:Narrative_ValueDemonstrationGap a narr:Narrative ;
+
+      skos:broader narr:Proof ;
+      skos:note "a demo-call prospect's core feedback: the product needs to show how aswritten influences AI behavior. Agents should cite which memories shaped their recommendations. This is the 'value demonstration' problem (task-145). Without visible proof of influence, the sales conversation stalls at 'trust me, it works.'" ;
+      narr:theme "Visible proof that aswritten changes how AI works is a prerequisite for raising bigger money and closing enterprise sales" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────
+    narr:Claim_PreReadDeckRequest a narr:Claim ;
+
+      narr:aboutNode narr:SalesDecks ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_DirectVsInfluenceSales ;
+      skos:note "a demo-call prospect requests a pre-read deck: visual-first, executive-accessible, not a pitch deck. Framed as 'McDonald picture menu.' Makes meeting productive from minute one." .
+
+    narr:Claim_TighterOnboarding a narr:Claim ;
+
+      narr:aboutNode narr:EnablementTraining ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_DirectVsInfluenceSales ;
+      skos:note "a demo-call prospect requests clearer separation of what are docs vs AI, and the aswritten help repo. New users should not have to figure out which parts are documentation and which are AI-driven." .
+
+    narr:Claim_SalesGuideRequest a narr:Claim ;
+
+      narr:aboutNode narr:SalesDecks ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_DirectVsInfluenceSales ;
+      skos:note "a demo-call prospect needs a written sales guide plus aswritten module repo — a playbook he can reference and share during direct sales conversations." .
+
+    narr:Claim_ValueDemoPrerequisite a narr:Claim ;
+
+      narr:aboutNode narr:Narrative_ValueDemonstrationGap ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Proof ;
+      skos:note "Clear, visible proof that aswritten changes how AI works is a prerequisite for raising bigger money. a demo-call prospect's framing: 'Show, don't tell.' Agents should cite which memories shaped their recommendations (task-145)." .
+
+    narr:Claim_SMBBusinessPlan a narr:Claim ;
+
+      narr:aboutNode narr:Narrative_SMBPivot ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Segmentation ;
+      skos:note "The business plan a demo-call prospect takes to prospects needs to reflect the SMB pivot. SMB is a bigger market than devs. Current business plan does not match the sales conversation a demo-call prospect is having." .
+
+    narr:Claim_LandingPageMismatch a narr:Claim ;
+
+      narr:aboutNode narr:LandingPages ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      skos:note "Current aswritten.ai landing page does not match the sales conversation a demo-call prospect is having with prospects. Needs updating to reflect current positioning and SMB pivot." .
+
+    narr:Claim_ShowDontTell a narr:Claim ;
+
+      narr:aboutNode narr:Narrative_ValueDemonstrationGap ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_ValueDemonstrationGap ;
+      skos:note "Without visible proof of influence, the sales conversation stalls at 'trust me, it works.' a demo-call prospect's core feedback: show how aswritten influences AI behavior; agents should cite which memories shaped their recommendations." .
+
+    # ── OBSERVATIONS ────────────────────────────────────────────
+    narr:Obs_DemoProspectMaterialPriorities a narr:Observation ;
+
+      skos:broader narr:NarrativeDrivenRoadmap ;
+      skos:note "a demo-call prospect's six material priorities in order: (1) pre-read deck, (2) tighter onboarding, (3) sales guide, (4) demonstration of value, (5) updated business plan (SMB), (6) updated landing page. These are a demo-call prospect's direct feedback driving material priorities." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 178 ;
+          oa:end 620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "a demo-call prospect's feedback drives material priorities. His requests, in his words" ;
+          oa:prefix "## What a demo-call prospect Needs\n\n" ;
+          oa:suffix ":\n\n1. **Pre-read deck**"
+        ]
+      ] .
+
+    narr:Obs_AgentsCiteMemories a narr:Observation ;
+
+      skos:broader narr:Differentiators ;
+      skos:note "a demo-call prospect's core insight: agents should cite which memories shaped their recommendations. This is the value demonstration problem (task-145). The product needs to show how aswritten influences AI behavior — visible proof of influence is the prerequisite for raising bigger money." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1620 ;
+          oa:end 1847
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Agents should cite which memories shaped their recommendations." ;
+          oa:prefix "a demo-call prospect's core feedback: the product needs to show how aswritten influences AI behavior. " ;
+          oa:suffix " This is the \"value demonstration\" problem"
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────
+    narr:StyleObs_McDonaldPictureMenu a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+
+      skos:note "Verbatim analogy from a demo-call prospect: 'McDonald picture menu' as shorthand for a visual-first, executive-accessible pre-read deck. Idiomatic, colloquial, highly concrete. Signals a demo-call prospect's direct, no-jargon communication style." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 270 ;
+          oa:end 340
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Explain like I'm five for executives, McDonald picture menu." ;
+          oa:prefix "**Pre-read deck** — \"" ;
+          oa:suffix "\" A visual-first deck"
+        ]
+      ] .
+
+    narr:StyleObs_ShowDontTell a narr:StyleObservation ;
+      skos:broader narr:ToneDirectPersonal ;
+
+      skos:note "'Show, don't tell' used as a rhetorical imperative anchoring the value demonstration section. Short, punchy, aphoristic cadence. Functions as both a product requirement and a sales principle." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 760 ;
+          oa:end 780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "\"Show, don't tell.\"" ;
+          oa:prefix "prerequisite for raising bigger money. " ;
+          oa:suffix "\n5. **Updated business plan**"
+        ]
+      ] .
+
+    narr:StyleObs_TableStructure a narr:StyleObservation ;
+      skos:broader narr:InformationArchitecture ;
+
+      skos:note "Comparison table used to contrast Tony vs. a demo-call prospect across four dimensions (Style, Materials, Engagement, First target). Structured markdown table as rhetorical device for parallel contrast. Consistent with prior aswritten document style (e.g., Sample_BetaStrategyReframe, Sample_TwoCallSalesMotion)." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1040 ;
+          oa:end 1400
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "| | Tony | a demo-call prospect |" ;
+          oa:prefix "## How a demo-call prospect Differs from Tony\n\n" ;
+          oa:suffix "\n|---|---|---|"
+        ]
+      ] .
+
+  }
+}

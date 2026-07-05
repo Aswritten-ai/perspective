@@ -1,0 +1,341 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# Transaction provenance (default graph)
+INSERT DATA {
+  narr:Tx_20260401T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-04-01T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "inline-message-20260331-human-driven-dev" ;
+    narr:originRef "main" ;
+    prov:generated
+      narr:Sample_TonyScarletCall_20260331,
+      narr:Narrative_HumanDrivenDevelopmentPrinciple,
+      narr:Narrative_LeanStartupUpdatedForAI,
+      narr:Narrative_AIActionTrap,
+      narr:Narrative_InterviewForcingFunction,
+      narr:Narrative_ExecutionToStrategyShift,
+      narr:Claim_AllDevMustBeHumanConnected,
+      narr:Claim_LeanStartupRepoAsGuardrail,
+      narr:Claim_AIAlwaysSaysYes,
+      narr:Claim_InterviewPutsYouInHumanMode,
+      narr:Claim_AIRestoredICStatus,
+      narr:Obs_ScarletHumanDrivenQuote,
+      narr:Obs_ScarletLeanStartupQuote,
+      narr:Obs_TonyAITrapQuote,
+      narr:Obs_ScarletInterviewSalesMotionQuote,
+      narr:Obs_ScarletExecutionStrategyQuote,
+      narr:Obs_TonyExperienceAsAsset,
+      narr:StyleObs_ScarletProfanityAsEmphasis,
+      narr:StyleObs_LeanStartupAnalogy,
+      narr:StyleObs_RunOnVoiceMemoRegister,
+      narr:Metrics_TonyScarletCall_20260331 .
+} ;
+
+# Update narr:Actor_TechCollaborator with new context from memory
+DELETE {
+  GRAPH ?g {
+    narr:Actor_TechCollaborator skos:note ?oldNote .
+  }
+}
+INSERT {
+  GRAPH narr:Tx_20260401T120000Z {
+    narr:Actor_TechCollaborator skos:note "Former Vouch chief architect; working on a collaborator with Tony Maley. Co-author with Tony Maley of a Lean Startup books repo used as a reference to prevent overthinking and over-engineering before talking to customers." .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    narr:Actor_TechCollaborator skos:note ?oldNote .
+  }
+} ;
+
+# Extracted entities (named graph)
+INSERT DATA {
+  GRAPH narr:Tx_20260401T120000Z {
+
+    # ── SAMPLE ──────────────────────────────────────────────────────────────
+    narr:Sample_TonyScarletCall_20260331 a narr:Sample ;
+      dct:title "Tony-Scarlet Call: Human-Driven Development as Forcing Function (March 31, 2026)" ;
+      dct:created "2026-03-31"^^xsd:date ;
+      dct:description "Call between Scarlet Dame and Anthony Maley covering the principle that all software development must be directly connected to specific humans and their needs, the AI-specific trap of infinite scope, the interview sales motion as a forcing function for human-driven development, and the execution-to-strategy shift caused by AI restoring IC status." ;
+      narr:inputLength 2847 .
+
+    # ── NARRATIVES ──────────────────────────────────────────────────────────
+
+    narr:Narrative_HumanDrivenDevelopmentPrinciple a narr:Narrative ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:FocusSequencing ;
+      skos:prefLabel "All Software Development Must Be Directly About People and Their Needs" ;
+      skos:note "Scarlet articulated a foundational principle: all software development must be directly connected to specific humans and their needs, or the infinite scope of AI-assisted building becomes pathological. Without this constraint, a builder can walk out on an ever-extending limb — building entire products for days without any human anchor. This is the AI-era update to the Lean Startup's core insight." ;
+      narr:theme "Without a direct human connection, AI-assisted development has no natural stopping point — the scope is infinite and the limb keeps extending" .
+
+    narr:Narrative_LeanStartupUpdatedForAI a narr:Narrative ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:PositioningThesis ;
+      skos:prefLabel "Lean Startup Updated for AI: Start with Humans, Work Back" ;
+      skos:note "Scarlet reframes the Lean Startup's test-first principle for the AI era. The original insight was: test or you build in the back room and miss customer needs. The AI-era update is stronger: you must start with the humans and work back from there, not just test eventually. Tony and a technical collaborator operationalized this by putting Lean Startup books into their working repo as a reference to prevent overthinking and over-engineering before talking to anyone." ;
+      narr:theme "The Lean Startup's test-first principle upgrades to humans-first in the AI era — start with the person, work back to the feature, never the reverse" .
+
+    narr:Narrative_AIActionTrap a narr:Narrative ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:FrictionFailure ;
+      skos:prefLabel "The AI Action Trap: Every Response Prompts Another Action, Answer Is Always Yes" ;
+      skos:note "Tony named the mechanism that makes AI-assisted development pathological without human grounding: by the very nature of AI tools, every single response prompts another action. And while that is good for token consumption, it is not good for humans — because if the prompt is 'do you want me to do that? do you want me to make that happen?' the answer is always yes. This creates an infinite loop of building without human validation." ;
+      narr:theme "AI tools create an action loop where every response prompts another action and the answer is always yes — without human grounding, this loop has no natural exit" .
+
+    narr:Narrative_InterviewForcingFunction a narr:Narrative ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:SalesDecks ;
+      skos:prefLabel "Interview Sales Motion as Forcing Function for Human-Driven Development" ;
+      skos:note "Scarlet connected the human-driven development principle directly to the interview-first sales motion. The interview puts her brain into human mode: the result of the interview is the start of the prospect's perspective (free), and if they want to add memories, shift the perspective, or share with their team, they upgrade to paid. Features become reactionary to actual people instead of the opposite. Without this forcing function, Scarlet risks losing the plot entirely." ;
+      narr:theme "The interview-first sales motion is a forcing function that keeps development human-driven — features become reactionary to actual people, not the reverse" .
+
+    narr:Narrative_ExecutionToStrategyShift a narr:Narrative ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:broader narr:OperatingModelShifts ;
+      skos:prefLabel "AI Restored IC Status: The Real Work Is Curation and Strategy, Not Execution" ;
+      skos:note "Scarlet identified that AI has made everyone individual contributors again — the execution work (terminal, coding) is now cheap and fast, but the real shift is getting back to strategy and curation. The goal is to stop the work being about actual execution in a terminal and start it being about curating a perspective that is then used by somebody else. Tony validated: the biggest asset of experienced people is the experience and strategy they bring, not their execution capacity." ;
+      narr:theme "AI has restored IC status for everyone — the real competitive advantage is now strategy and curation, not execution capacity" .
+
+    # ── CLAIMS ──────────────────────────────────────────────────────────────
+
+    narr:Claim_AllDevMustBeHumanConnected a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's foundational principle from the March 31 call: all software development must now be directly about people and the thing that they need. Without this constraint, there is no end to the limb you can walk yourself out on — you can build an entire product for days and days with AI assistance and never connect it to a human need." ;
+      narr:aboutNode narr:Narrative_HumanDrivenDevelopmentPrinciple ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:FocusSequencing .
+
+    narr:Claim_LeanStartupRepoAsGuardrail a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Tony and a technical collaborator put the Lean Startup books into the repo they're working on and use them as a reference to keep on track — specifically to prevent overthinking and over-engineering before actually talking to anyone about anything. This is a concrete operationalization of the humans-first principle as a guardrail in the development workflow." ;
+      narr:aboutNode narr:Narrative_LeanStartupUpdatedForAI ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_HumanDrivenDevelopmentPrinciple .
+
+    narr:Claim_AIAlwaysSaysYes a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Tony's diagnosis of the AI action trap: by the very nature of AI tools, every single response prompts another action. While this is good for token consumption, it is not good for humans — because if the prompt is 'do you want me to do that? do you want me to make that happen?' the answer is always yes. This is the mechanism that makes human grounding a prerequisite, not an option." ;
+      narr:aboutNode narr:Narrative_AIActionTrap ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_HumanDrivenDevelopmentPrinciple .
+
+    narr:Claim_InterviewPutsYouInHumanMode a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's insight: the interview sales motion puts her brain into human mode. The sales motion becomes: do an interview with an actual human, the result of the interview is the start of their perspective (free), and if they want to add memories, shift the perspective, or share with their team, they upgrade to paid. This puts features in a reactionary position to actual people instead of the opposite. Without doing this soon, Scarlet risks losing the plot." ;
+      narr:aboutNode narr:Narrative_InterviewForcingFunction ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_PodcastInterviewSalesMotion .
+
+    narr:Claim_AIRestoredICStatus a narr:Claim ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's observation: AI has made everyone individual contributors again. The shift she thought she had made in her career — from execution to strategy — has been undone by AI making execution cheap. The real work now is getting back to strategy and curation of a perspective that is then used by somebody else. Tony validated: the biggest asset of experienced people is the experience and strategy they bring." ;
+      narr:aboutNode narr:Narrative_ExecutionToStrategyShift ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_B2CPivot .
+
+    # ── OBSERVATIONS (grounded quotes) ──────────────────────────────────────
+
+    narr:Obs_ScarletHumanDrivenQuote a narr:Observation ;
+      skos:broader narr:FocusSequencing ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's foundational statement of the human-driven development principle." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 287 ;
+          oa:end 430
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "I need all software development to be directly about people and the thing that they need. Or else there is no end to the limb that you can walk yourself out on." ;
+          oa:prefix "The thing that I'm realizing is " ;
+          oa:suffix " Like I can just like I can build an entire product for days and days."
+        ]
+      ] .
+
+    narr:Obs_ScarletLeanStartupQuote a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's reframe of the Lean Startup principle for the AI era — humans-first, not just test-first." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 560 ;
+          oa:end 750
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "we have to start with the humans and then work back from there or else you kind of lose the fucking plot and lose your mind." ;
+          oa:prefix "I think in this instance it's actually more like " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:Obs_TonyAITrapQuote a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Tony's diagnosis of the AI action trap mechanism — every response prompts another action, answer is always yes." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1120 ;
+          oa:end 1310
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "every single response prompts another action, right? And while that's good for token consumption, it's not good for humans because if the prompt is, do you want me to do that?" ;
+          oa:prefix "By the very nature of the AI tools, we've got " ;
+          oa:suffix " Do you want me just to make that happen? The answer is always yes."
+        ]
+      ] .
+
+    narr:Obs_ScarletInterviewSalesMotionQuote a narr:Observation ;
+      skos:broader narr:SalesDecks ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's articulation of the interview sales motion as a forcing function for human-driven development, with the free/paid split." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1420 ;
+          oa:end 1620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "The sales motion becomes. I do an interview with an actual human and the result of the interview is the start of your perspective and you get to be able to read from that for free." ;
+          oa:prefix "" ;
+          oa:suffix " And if you want to add additional memories to it and shift the perspective or share it with your team or whatever else, you have to upgrade to a paid account."
+        ]
+      ] .
+
+    narr:Obs_ScarletExecutionStrategyQuote a narr:Observation ;
+      skos:broader narr:OperatingModelShifts ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet's articulation of the execution-to-strategy shift and how AI has restored IC status for everyone." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1780 ;
+          oa:end 1980
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If we can stop the work being about my actual execution in a terminal and start it being about my curation of a perspective that is then used by somebody else." ;
+          oa:prefix "" ;
+          oa:suffix " That's the shift between execution and strategy that I thought I made successfully in my career."
+        ]
+      ] .
+
+    narr:Obs_TonyExperienceAsAsset a narr:Observation ;
+      skos:broader narr:OperatingModelShifts ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Tony's validation that experience and strategy are the real assets in the AI era, not execution capacity." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2050 ;
+          oa:end 2150
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "What's the biggest asset of a lot of the people you're talking about? Right. Us included. It's the experience and the strategy that we can bring." ;
+          oa:prefix "" ;
+          oa:suffix ""
+        ]
+      ] .
+
+    # ── STYLE OBSERVATIONS ──────────────────────────────────────────────────
+
+    narr:StyleObs_ScarletProfanityAsEmphasis a narr:StyleObservation ;
+      skos:broader narr:IdiolectPhrasing ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet uses profanity ('fucking') as a rhetorical intensifier at moments of maximum conviction — 'lose the fucking plot' signals that this is not a mild concern but an existential one. Consistent with her idiolect pattern across other memories." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 695 ;
+          oa:end 740
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you kind of lose the fucking plot and lose your mind." ;
+          oa:prefix "we have to start with the humans and then work back from there or else " ;
+          oa:suffix ""
+        ]
+      ] .
+
+    narr:StyleObs_LeanStartupAnalogy a narr:StyleObservation ;
+      skos:broader narr:Analogy ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Scarlet uses the Lean Startup as an analogy to ground her AI-era principle — 'if you know the Lean Startup... his whole thing is like we have to test.' The analogy is used to validate the principle by reference to established methodology, then immediately extended beyond it. This is a characteristic rhetorical move: cite the known, then assert the upgrade." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 430 ;
+          oa:end 560
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "If you know the Lean Startup... his whole thing is like we have to test or else we end up, you know, building this whole product in the back room that doesn't actually meet anyone's needs." ;
+          oa:prefix "" ;
+          oa:suffix " And you know, like, sure, obviously we need to test"
+        ]
+      ] .
+
+    narr:StyleObs_RunOnVoiceMemoRegister a narr:StyleObservation ;
+      skos:broader narr:SpeakerIdiolects ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Both speakers use run-on, filler-heavy speech ('like', 'you know', 'right') characteristic of voice memo / live call transcription. Scarlet's quoted speech is longer and more analytical; Tony's is shorter and more declarative. The register is conversational-strategic: informal surface, high-conviction content." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_TonyScarletCall_20260331 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1620 ;
+          oa:end 1780
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "And that puts my brain into human mode and then features as reactionary to actual people instead of the opposite. And if I don't do that soon, I'm going to lose it." ;
+          oa:prefix "" ;
+          oa:suffix ""
+        ]
+      ] .
+
+    # ── STYLE METRICS ───────────────────────────────────────────────────────
+
+    narr:Metrics_TonyScarletCall_20260331 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_TonyScarletCall_20260331 ;
+      skos:note "Live call transcript register. Both speakers use conversational, filler-heavy speech with run-on sentences. Scarlet's quoted speech is longer and more analytical (~28 words avg); Tony's is shorter and more declarative (~14 words avg). Active voice dominant in both speakers. Jargon density low — Lean Startup, product market fit, token consumption are the only domain terms. Profanity used by Scarlet as rhetorical intensifier at conviction peaks. Antithesis-heavy structure (execution vs. strategy, humans-first vs. features-first, free vs. paid)." ;
+      narr:AverageSentenceLength "20"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.80"^^xsd:decimal ;
+      narr:JargonDensity "0.06"^^xsd:decimal .
+
+  }
+}

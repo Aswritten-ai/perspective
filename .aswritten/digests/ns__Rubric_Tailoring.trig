@@ -1,0 +1,35 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ns__Rubric_Tailoring> {
+  <https://aswritten.ai/narrative#Digest_ns__Rubric_Tailoring> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/ns/narrative#Rubric_Tailoring> ;
+    narr:childCount "13"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers per-document **audience-tailoring assessments** scored against the rubric. The dominant axis is *who the writing speaks to*. Several documents are read as [technically tailored](narr:Assess_Tailoring_cm) — code examples, type signatures, assumed domain knowledge — with [Git/RDF/SPARQL framings](narr:RubricAssess_Tailoring_1) and [developer-centric metaphors](narr:RubricAssess_tailoring) recurring. A parallel cluster scores *explicit multi-persona segmentation*: the [collective-memory doc spans coordinators, sales execs, educators](narr:Assess_Tailoring_collective_memory), one [codifies an 'audience segmentation' section](narr:RubricAssess_Tailoring), and the [Jan-7 assessment praises seven distinct role personas](narr:RubricAssess_Tailoring_20260107) as exceptional. A third strand reads enterprise/executive fit: the [the customer's chief architect pitch tailored to CFO/CTO/CEO](narr:Assessment_Tailoring_CustomerArchitect), [GTM champion profiles](narr:RubricAssess_Tailoring_GTM), and a [CEO/strategist audience shift](narr:Assessment_Tailoring_IPCrisis). Assessments range from \"exceptional\" down to \"implied but not segmented,\" most appending a concrete improvement.""" ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assess_Tailoring_cm> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assess_Tailoring_collective_memory> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assess_Tailoring_rebrand> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Tailoring_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Tailoring_IPCrisis> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Tailoring_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_20260107> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_ADR001> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_ADR002> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_GTM> ;
+    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_tailoring> ;
+    narr:keyPhrase [ narr:text "seven distinct role personas (VC, CEO, Strategy, Sales, Product, Architecture, Design, Engineering)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_20260107> ] ;
+    narr:keyPhrase [ narr:text "the customer's chief architect's 30-second pitch is a model of audience fit." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Tailoring_CustomerArchitect> ] ;
+    narr:keyPhrase [ narr:text "acknowledges developer-first tension" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Tailoring_IPCrisis> ] ;
+    narr:keyPhrase [ narr:text "Explicitly segments audiences: decision makers (pain), procurement (ROI), VCs (transparency), end users (workflow)." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring> ] ;
+    narr:keyPhrase [ narr:text "Metaphor 'at the cursor' signals developer context." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Tailoring_1> ] ;
+    narr:keyPhrase [ narr:text "would need translation for external stakeholders" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_ADR001> ] ;
+    narr:variation [ narr:text "Single technical-audience fit vs. broad multi-persona segmentation — the rubric rewards both, but they pull opposite directions (deep domain assumptions vs. accessibility)." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Tailoring_cm> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_1> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_20260107> ; narr:over <https://aswritten.ai/ns/narrative#Assess_Tailoring_collective_memory> ] ;
+    narr:variation [ narr:text "Developer-first framing explicitly flagged as in tension with an executive/strategic audience shift." ; narr:over <https://aswritten.ai/ns/narrative#Assessment_Tailoring_IPCrisis> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_ADR002> ] ;
+    narr:variation [ narr:text "Internal-only tailoring that 'would need translation' for external stakeholders — a noted accessibility ceiling, not a strength." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_ADR001> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_1> ] ;
+    narr:variation [ narr:text "Several assessments downgrade for unrealized potential: 'could add more persona-specific sections' / 'could strengthen with persona-specific examples.'" ; narr:over <https://aswritten.ai/ns/narrative#Assess_Tailoring_rebrand> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_tailoring> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring> ] ;
+    narr:variation [ narr:text "Audience implied but not explicitly segmented — the low end of the scoring range vs. the 'exceptional' seven-persona high end." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Tailoring_20260107> ] ;
+    narr:writer "claude (subscription)" .
+}

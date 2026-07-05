@@ -1,0 +1,209 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────
+INSERT DATA {
+  narr:Tx_20260702T151209Z a prov:Activity ;
+    prov:generatedAtTime "2026-07-02T15:12:09Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "n8n.aswritten.ai" ;
+    narr:originPath "2026-07-02-1-discovery-tool-gtm-wedge" ;
+    narr:originRef "dev" ;
+    dct:title "Discovery-Tool Wedge: Candidate GTM Focus (Jul 2 synthesis)" ;
+    prov:generated
+      narr:Sample_DiscoveryToolWedge_20260702,
+      narr:Claim_DiscoveryWedgeCandidateNotCommitted,
+      narr:Claim_TonyCallUnresolvedEnterpriseB2C,
+      narr:Claim_DiscoveryWedgeComfortZoneCaveat,
+      narr:Claim_PractitionerICPBridge,
+      narr:StyleObs_DiscoveryWedge_CaveatEmbedded,
+      narr:StyleObs_DiscoveryWedge_VerbatimBlockquote,
+      narr:StyleObs_DiscoveryWedge_MetaphorRaven,
+      narr:StyleMetrics_DiscoveryToolWedge_20260702 .
+} ;
+
+# ── New entities (named graph) ───────────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260702T151209Z {
+
+    # ── Sample ──────────────────────────────────────────────────
+    narr:Sample_DiscoveryToolWedge_20260702 a narr:Sample ;
+      dct:title "The Discovery-Tool Wedge: aswritten as Evidence-Backed Consulting Discovery (Candidate GTM Focus)" ;
+      dct:created "2026-07-02"^^xsd:date ;
+      narr:inputLength 5263 ;
+      skos:note "Jul 2 synthesis memo capturing the discovery-tool wedge as a candidate GTM focus. Companion to Sample_DiscoveryConsultant_20260630. Adds Tony call outcome (unresolved), explicit conviction framing (Notion/candidate), comfort-zone caveat, and practitioner-ICP bridge framing." .
+
+    # ── Claim: wedge is candidate-level, not a committed decision ─
+    narr:Claim_DiscoveryWedgeCandidateNotCommitted a narr:Claim ;
+      narr:aboutNode narr:Narrative_DiscoveryToolGTMWedge ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_DiscoveryToolGTMWedge ;
+      dct:source narr:Sample_DiscoveryToolWedge_20260702 ;
+      skos:note "The discovery-tool wedge is explicitly recorded as a strong candidate, not a committed go-to-market. Conviction: claim / candidate — NOT a settled decision. The enterprise-vs-B2C split remains open as of Jul 2 2026." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryToolWedge_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 166 ; oa:end 221
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Conviction: claim / candidate — NOT a settled decision." ;
+          oa:prefix "**Captured:** 2026-07-02. **" ;
+          oa:suffix " This positioning surfaced"
+        ]
+      ] .
+
+    # ── Claim: Tony call (~Jul 1) did NOT resolve enterprise-vs-B2C ─
+    narr:Claim_TonyCallUnresolvedEnterpriseB2C a narr:Claim ;
+      narr:aboutNode narr:Narrative_TierContinuumNotDistinctMarkets ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:challenges narr:Narrative_TierContinuumNotDistinctMarkets ;
+      dct:source narr:Sample_DiscoveryToolWedge_20260702 ;
+      skos:note "A ~Jul 1 call with Tony (per Scarlet; no recording) did not reach a clear conclusion on the broader enterprise-vs-B2C focus. The decision on whether the discovery wedge becomes the committed near-term focus is explicitly deferred. The enterprise-vs-B2C question remains open as of Jul 2 2026." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryToolWedge_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 218 ;
+          oa:end 430
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "a ~Jul 1 call with Tony which (per Scarlet; there was no recording) did not reach a clear conclusion on the broader enterprise-vs-B2C focus" ;
+          oa:prefix "surfaced in the Jun 30 a consultant who ran enterprise discovery engagements for fifteen years call and was carried into " ;
+          oa:suffix ". It is recorded here"
+        ]
+      ] .
+
+    # ── Claim: comfort-zone caveat — product-led vs. consultancy reversion ─
+    narr:Claim_DiscoveryWedgeComfortZoneCaveat a narr:Claim ;
+      narr:aboutNode narr:Narrative_DiscoveryToolGTMWedge ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:challenges narr:Narrative_DiscoveryToolGTMWedge ;
+      dct:source narr:Sample_DiscoveryToolWedge_20260702 ;
+      skos:note "Scarlet's own caveat: the discovery wedge is attractive partly because it is her comfort zone — going into organizations doing business and narrative strategy is what she did before aswritten. The open question: is discovery-as-wedge a product-led GTM, or a reversion to being a consultancy? This is a live tension, not a resolved one." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryToolWedge_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4420 ;
+          oa:end 4700
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the discovery wedge is attractive partly because it is Scarlet's comfort zone" ;
+          oa:prefix "The discovery wedge is attractive partly because it is Scarlet's **comfort zone**" ;
+          oa:suffix " — going into organizations"
+        ]
+      ] .
+
+    # ── Claim: practitioner-ICP as bridge between enterprise and B2C ─
+    narr:Claim_PractitionerICPBridge a narr:Claim ;
+      narr:aboutNode narr:Narrative_TierContinuumNotDistinctMarkets ;
+      narr:hasConvictionLevel narr:Conviction_Notion ;
+      narr:supports narr:Narrative_TierContinuumNotDistinctMarkets ;
+      narr:supports narr:Narrative_DiscoveryToolGTMWedge ;
+      dct:source narr:Sample_DiscoveryToolWedge_20260702 ;
+      skos:note "The discovery wedge sits in the same ICP as a design collaborator's 'deliver an AI perspective instead of a deck' idea — the practitioner whose process is their product (customer-profile #2). This is a potential bridge between the enterprise and B2C poles rather than a commitment to either. The discovery wedge may resolve the enterprise-vs-B2C tension by targeting the practitioner-ICP that spans both." ;
+      oa:hasSelector [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryToolWedge_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 4700 ;
+          oa:end 4970
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the practitioner whose process is their product (customer-profile #2), which is a potential bridge between the enterprise and B2C poles rather than a commitment to either" ;
+          oa:prefix "a design collaborator's \"deliver an AI perspective instead of a deck\" idea — " ;
+          oa:suffix ".\n\n## Status"
+        ]
+      ] .
+
+    # ── Style Observations ───────────────────────────────────────
+
+    # SO1: Embedded caveat / epistemic hedge as structural device
+    narr:StyleObs_DiscoveryWedge_CaveatEmbedded a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+      dct:source narr:Sample_DiscoveryToolWedge_20260702 ;
+      rdf:value true ;
+      skos:note "Conviction status is embedded in the document header as a bolded caveat, not buried in body text. Characteristic of Scarlet's memo idiom: epistemic state declared upfront before the argument is made." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryToolWedge_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 164 ; oa:end 223
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "**Conviction: claim / candidate — NOT a settled decision.**" ;
+          oa:prefix "**Captured:** 2026-07-02. " ;
+          oa:suffix " This positioning surfaced"
+        ]
+      ] .
+
+    # SO2: Verbatim block-quote as evidentiary anchor
+    narr:StyleObs_DiscoveryWedge_VerbatimBlockquote a narr:StyleObservation ;
+      skos:broader narr:ToneAuthoritative ;
+      dct:source narr:Sample_DiscoveryToolWedge_20260702 ;
+      rdf:value true ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's pitch is rendered as a verbatim block-quote with named attribution ('Bob, the previous senior developer'). The quote carries the evidentiary weight of the GTM claim — the argument is made through the witness's voice, not the author's summary. Consistent with the document's provenance-as-differentiator thesis." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryToolWedge_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1443 ; oa:end 1544
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you'd not just get the transcript, and you wouldn't be getting \"oh, Claude thinks you should do this\"" ;
+          oa:prefix "> " ;
+          oa:suffix " — which would be terrible"
+        ]
+      ] .
+
+    # SO3: Metaphor — "clip the wings of the raven"
+    narr:StyleObs_DiscoveryWedge_MetaphorRaven a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_DiscoveryToolWedge_20260702 ;
+      rdf:value true ;
+      skos:note "'You don't want to clip the wings of the raven — it won't fly if you do that.' a consultant who ran enterprise discovery engagements for fifteen years's metaphor for the risk of over-focusing a general platform. The raven is the product; clipping wings = restricting too early. Rendered verbatim in the document, functioning as the rhetorical anchor for the focus-without-amputation argument." ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryToolWedge_20260702 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 2680 ;
+          oa:end 2760
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "you don't want to clip the wings of the raven — it won't fly if you do that" ;
+          oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years: \"" ;
+          oa:suffix "\")"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────
+    narr:StyleMetrics_DiscoveryToolWedge_20260702 a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_DiscoveryToolWedge_20260702 ;
+      narr:AverageSentenceLength 22 ;
+      narr:ActiveVoiceRatio "0.78"^^xsd:decimal ;
+      narr:JargonDensity "0.09"^^xsd:decimal ;
+      skos:note "Strategic memo register. Mixed structure: H2-sectioned analytical prose with embedded verbatim block-quotes. Active voice dominant in editorial sections; passive voice in status/caveat framing ('is recorded here', 'is deferred'). Jargon density low-moderate — product terms (provenance, discovery, wedge, ICP) used without definition, implying internal audience. Epistemic hedges ('candidate', 'NOT a settled decision', 'open question') are structural, not incidental. Sentence length varies: short declaratives at conviction peaks, longer compound sentences in reasoning sections." .
+
+  }
+}

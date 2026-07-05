@@ -1,0 +1,283 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb:   <https://aswritten.ai/sb#>
+
+# =============================================================
+# TRANSACTION PROVENANCE
+# =============================================================
+INSERT DATA {
+  narr:Tx_20260310T151535Z a prov:Activity ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo   "n8n.aswritten.ai" ;
+    prov:generatedAtTime   "2026-03-10T15:15:35.753Z"^^xsd:dateTime ;
+    sb:originPath          ".aswritten/memories/2026-03-10-two-call-sales-motion-read-path-demo.md" ;
+    sb:originRef           "main" ;
+    prov:generated         narr:Sample_TwoCallSalesMotion ,
+                           narr:Actor_Poplar ,
+                           narr:Narrative_ReadPathFirst ,
+                           narr:Narrative_DelegationAsValue ,
+                           narr:Narrative_MemoryAsCollaboration ,
+                           narr:Claim_SalesMotionIsDelivery ,
+                           narr:Claim_NotProductDemoButConsulting ,
+                           narr:Claim_ReadPathStable ,
+                           narr:Claim_MemorySaveIsMostConfusing ,
+                           narr:Claim_GapHonestyIsCounterIntuitive ,
+                           narr:Claim_DeckOnlyIfDoorOpens ,
+                           narr:Observation_Beat1_ColdDelegation ,
+                           narr:Observation_Beat2_CitationLayer ,
+                           narr:Observation_Beat3_GapHonesty ,
+                           narr:Observation_TwoCallStructure ,
+                           narr:Observation_WritePathOffline ,
+                           narr:Observation_RememberAsConcept ,
+                           narr:StyleObs_BoldBeats ,
+                           narr:StyleObs_ParenthesisGloss ,
+                           narr:StyleObs_CounterIntuitivelyPowerful ,
+                           narr:StyleObs_DashAsAmplifier ,
+                           narr:StyleObs_ShortPunchySentence ,
+                           narr:StyleObs_ScarletVerbatimQuotes ,
+                           narr:StyleObs_ReadWritePathAntithesis ,
+                           narr:StyleObs_ItalicsForEmphasis ,
+                           narr:StyleObs_BlockquoteForScript ,
+                           narr:StyleObs_OpenQuestionsSection  ,
+                           narr:Claim_AnnotateIsWholePitch .
+};
+
+# =============================================================
+# ADDED TRIPLES — INSERT DATA
+# =============================================================
+INSERT DATA {
+
+  # --- Sample ---
+  narr:Sample_TwoCallSalesMotion a narr:Sample ;
+    dct:title "Two-Call Sales Motion: Read-Path Demo + Consultative Interview" ;
+    narr:inputLength 5021 ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  # --- Actors ---
+  narr:Actor_Poplar a narr:Actor ;
+    skos:prefLabel "Prospect" ;
+    skos:note "Potential customer; may be CEO, CTO, or Ops persona. Evaluates aswritten's collective memory product during sales calls." ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  # --- Narratives ---
+  narr:Narrative_ReadPathFirst a narr:Narrative ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    narr:theme "Demonstrate the product at full maturity (read path) before showing how it is built (write path)" ;
+    skos:note "The core strategic reframe: the old demo showed the fragile write path live; the new demo shows the stable read path against a mature graph, deferring write-path complexity to offline work between calls." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Narrative_DelegationAsValue a narr:Narrative ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    narr:theme "The value of collective memory is delegation — enabling someone who knows nothing about your business to do work that would normally require your most senior person" ;
+    skos:note "All three demo beats (cold delegation, citation layer, gap honesty) connect to this single thread. Output quality, citations, and epistemic integrity are all facets of delegation." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Narrative_MemoryAsCollaboration a narr:Narrative ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    narr:theme "Remember is collaboration — across teams and across chats — not a save action" ;
+    skos:note "Scarlet's reframe: the memory save is the most confusing part for prospects; the value is upfront in compile/annotate/introspect. Remember is introduced as a concept, not a live feature, on call one." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  # --- Claims ---
+  narr:Claim_SalesMotionIsDelivery a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_SalesIsDelivery ;
+    skos:note "The sales motion and product delivery are the same thing — but the delivery happens across two calls, not compressed into one." ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Claim_NotProductDemoButConsulting a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_ReadPathFirst ;
+    skos:note "Explicitly not a product demo but a consulting engagement session — call one's interview phase." ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Claim_ReadPathStable a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Narrative_ReadPathFirst ;
+    skos:note "The read path (compile, annotate, introspect) consists of stable, rehearsable operations. The write path has too many moving parts to reliably demonstrate live with unknown content." ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Claim_MemorySaveIsMostConfusing a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Boulder ;
+    narr:aboutNode narr:Narrative_MemoryAsCollaboration ;
+    skos:note "Scarlet may overfocus on the memory save as the moment of value when it is actually the most confusing part for prospects. The value is upfront in compile/annotate/introspect." ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Claim_GapHonestyIsCounterIntuitive a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Narrative_DelegationAsValue ;
+    skos:note "Asking the AI something it does not know and having it identify the gap and who to ask is counterintuitively powerful — it demonstrates epistemic integrity." ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Claim_DeckOnlyIfDoorOpens a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Stake ;
+    narr:aboutNode narr:Narrative_ReadPathFirst ;
+    skos:note "The sales deck appears only if the conversation naturally opens that door during the consultative interview phase of call one." ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  # --- Observations ---
+  narr:Observation_Beat1_ColdDelegation a narr:Observation ;
+    skos:broader narr:WhatDoesItDo ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Beat 1: Cold delegation. Ask the AI to do real work that would normally require an hour of briefing. The prospect evaluates output quality directly. The AI did not need briefing because it already has the worldview." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Observation_Beat2_CitationLayer a narr:Observation ;
+    skos:broader narr:WhatDoesItDo ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Beat 2: Citation layer (annotate). Shown as a quality attribute of the work product, not a separate feature. Claims trace to specific conversations and decisions, not hallucination." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Observation_Beat3_GapHonesty a narr:Observation ;
+    skos:broader narr:WhatDoesItDo ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Beat 3: Gap honesty (introspect). Ask the AI something it does not know. It tells you what is missing and who to ask. Demonstrates epistemic integrity." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Observation_TwoCallStructure a narr:Observation ;
+    skos:broader narr:CoreWorkflows ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Two-call structure: Call 1 = read-path demo on own org + consultative interview. Between calls = write path offline. Call 2 = read-path demo on prospect's org." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Observation_WritePathOffline a narr:Observation ;
+    skos:broader narr:CoreWorkflows ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Between calls: Scarlet ingests the call transcript into the prospect's repo, runs extraction, sets up examples based on their actual workflow. Bugs are private. No time pressure." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:Observation_RememberAsConcept a narr:Observation ;
+    skos:broader narr:WhatDoesItDo ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Remember is introduced on call one as a concept, not a live feature. The framing bridges the demo to the next call." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  # --- Style Observations ---
+  narr:StyleObs_BoldBeats a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:related narr:WhatDoesItDo ;
+    skos:note "Bold headers used to name and anchor each demo beat as a standalone concept (Cold delegation, Citation layer, Gap honesty). Creates scannable structure and reinforces memorability." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:StyleObs_ParenthesisGloss a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Parenthetical glosses immediately follow technical terms to anchor them: 'annotate', 'introspect', 'remember'. Pattern: **Term (verb).** — names the beat, then glosses the product feature." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:StyleObs_CounterIntuitivelyPowerful a narr:StyleObservation ;
+    skos:broader narr:RhetoricalDevices ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Adverb 'counterintuitively' used as a rhetorical signal to pre-empt objection and reframe a weakness (the AI admitting ignorance) as a strength (epistemic integrity)." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:StyleObs_DashAsAmplifier a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Em-dash used repeatedly as an amplifier/clarifier after a claim, delivering the payoff clause. Pattern: [claim] — [consequence or reframe]. Drives cadence and emphasis." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:StyleObs_ShortPunchySentence a narr:StyleObservation ;
+    skos:broader narr:ShortPunchyCadence ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Single-sentence paragraphs used for maximum impact at key insight moments. 'The system knows what it doesn't know.' and 'Bugs are private.' are examples of this staccato technique." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:StyleObs_ScarletVerbatimQuotes a narr:StyleObservation ;
+    skos:broader narr:SpeakerIdiolects ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Scarlet's direct speech is quoted verbatim in lowercase, preserving her idiolect (no capitalization, run-on phrasing). This signals authenticity and distinguishes her voice from the document author's voice." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:StyleObs_ReadWritePathAntithesis a narr:StyleObservation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:related narr:KeyPhrases ;
+    rdf:value true ;
+    skos:note "Read path vs write path is the central antithesis structuring the entire document. Stable/rehearsable vs fragile/moving-parts. Mature graph vs live ingestion. The contrast is repeated and amplified throughout." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:StyleObs_ItalicsForEmphasis a narr:StyleObservation ;
+    skos:broader narr:PunctuationTypography ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Italics used for contrastive stress on key words within sentences, particularly to mark the reframe: 'better' demo, 'work' with AI, 'you'." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:StyleObs_BlockquoteForScript a narr:StyleObservation ;
+    skos:broader narr:RegisterFormality ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:related narr:KeyPhrases ;
+    skos:note "Blockquote used to present the scripted 'remember' handoff line, visually separating it as a deliverable speech act rather than analysis. Signals this is ready-to-use language." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  narr:StyleObs_OpenQuestionsSection a narr:StyleObservation ;
+    skos:broader narr:FlowCoherence ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note "Dedicated 'Open Questions' section signals epistemic honesty and invites collaboration. Mirrors the 'gap honesty' beat in the demo itself — the document practices what it preaches." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+  # --- New Claim (from updated_triples) ---
+  narr:Claim_AnnotateIsWholePitch a narr:Claim ;
+    narr:hasConvictionLevel narr:Conviction_Foundation ;
+    narr:aboutNode narr:Narrative_DelegationAsValue ;
+    skos:note "Before/after annotate on the same text is the whole pitch in one visual — Beat 2 of the demo." ;
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+
+};
+
+# --- Actor_Aswritten: add new source and product-description note ---
+DELETE {
+  narr:Actor_Aswritten
+    dct:source ?aswrittenSource ;
+    skos:note  ?aswrittenNote .
+}
+INSERT {
+  narr:Actor_Aswritten
+    dct:source narr:Sample_TwoCallSalesMotion ;
+    skos:note  "The product/company. Provides collective memory infrastructure: compile, annotate, introspect, remember." ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+}
+WHERE {
+  narr:Actor_Aswritten a narr:Actor .
+  OPTIONAL { narr:Actor_Aswritten dct:source ?aswrittenSource . }
+  OPTIONAL { narr:Actor_Aswritten skos:note  ?aswrittenNote . }
+};
+
+# --- Claim_CallIsFirstMemory: update aboutNode and refine note ---
+DELETE {
+  narr:Claim_CallIsFirstMemory
+    narr:aboutNode ?aboutNode ;
+    skos:note      ?note ;
+    dct:source     ?src .
+}
+INSERT {
+  narr:Claim_CallIsFirstMemory
+    narr:aboutNode narr:Narrative_SalesIsDelivery ;
+    skos:note      "The call IS the first memory — call one produces raw material; the gap between calls is where aswritten does its work." ;
+    dct:source     narr:Sample_TwoCallSalesMotion ;
+    prov:wasGeneratedBy narr:Tx_20260310T151535Z .
+}
+WHERE {
+  narr:Claim_CallIsFirstMemory a narr:Claim .
+  OPTIONAL { narr:Claim_CallIsFirstMemory narr:aboutNode ?aboutNode . }
+  OPTIONAL { narr:Claim_CallIsFirstMemory skos:note      ?note . }
+  OPTIONAL { narr:Claim_CallIsFirstMemory dct:source     ?src . }
+}

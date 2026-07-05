@@ -1,0 +1,45 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_ExpansionPathway> {
+  <https://aswritten.ai/narrative#Digest_ExpansionPathway> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#ExpansionPathway> ;
+    narr:childCount "22"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers how aswritten grows from a common entry — a [[amount] pilot](narr:ExpansionTrack_Core) — into divergent tracks: [Core for Product/Eng](narr:ExpansionTrack_Core), [Enterprise on-prem/compliance](narr:ExpansionTrack_Enterprise), and [Executive/board](narr:ExpansionTrack_Executive), with track selected by buyer persona ([three tracks](narr:Narrative_ExpansionTracks); [staged sequence](narr:Narrative_ExpansionPath)). Supply-side bootstrapping runs alongside: [three network strategies](narr:Narrative_NetworkBootstrapStrategies) (curate, partner, task-specific modules) and the [interview content flywheel](narr:Narrative_ContentFlywheel) that doubles as supply, marketing, and demo. Distribution is reframed over Mar 22-23 as [supplier-side push, not buyer browsing](narr:Narrative_SupplierSideDistribution), with modules as the [AI-age publishing answer](narr:Narrative_ContentDistributionAIAge). Upsell mechanics appear as [two upgrade drivers](narr:Narrative_TwoUpgradeDrivers) (want vs. need), the [team→org tier path](narr:Narrative_OrganizationTierUpsellPath), and [contract tiers](narr:Narrative_ContractTiers). Two channel multipliers: the [the enterprise customer→a private-equity firm PE portfolio](narr:Narrative_EnterpriseCustomerPEPortfolioOpportunity) play (Apr 14) and [self-hosting unlocking new products](narr:Narrative_SelfHostingEnablesNewProducts) (Mar 31). Influence-first sales and forward-shareable gifting round out the motions.""" ;
+    narr:covers <https://aswritten.ai/narrative#Claim_NetworkProblemStrategies> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ReferralOnlyGrowthRisk> ;
+    narr:covers <https://aswritten.ai/narrative#ExpansionTrack_Core> ;
+    narr:covers <https://aswritten.ai/narrative#ExpansionTrack_Enterprise> ;
+    narr:covers <https://aswritten.ai/narrative#ExpansionTrack_Executive> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CompoundingValue> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContentDistributionAIAge> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContentFlywheel> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContractTiers> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EnterpriseCustomerPEPortfolioOpportunity> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ExpansionPath> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ExpansionTracks> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ForwardShareableGifting> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_InfluenceSales> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_NetworkBootstrapStrategies> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_OrganizationTierUpsellPath> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SelfHostingEnablesNewProducts> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SupplierSideDistribution> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_TwoUpgradeDrivers> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ContentCreatorPublishingQuestion> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_OrgTierPath> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_PrepackagedContentGoal> ;
+    narr:keyPhrase [ narr:text "your book is a snapshot, your module is alive" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_NetworkProblemStrategies> ] ;
+    narr:keyPhrase [ narr:text "I don't want to paint myself in a corner where like the only expansion pathway over the next however many years is like progressive referral based, you know, person to person, like high touch sales." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ReferralOnlyGrowthRisk> ] ;
+    narr:keyPhrase [ narr:text "If the pilot at the enterprise customer is successful there's definitely potential to have a conversation with them about other opportunities across their portfolio." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_EnterpriseCustomerPEPortfolioOpportunity> ] ;
+    narr:keyPhrase [ narr:text "I could build out the marketplace by basically creating a podcast where I interview people about their business and perspective, and each of those things gets packaged into an installable expertise and they're just available." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ContentFlywheel> ] ;
+    narr:keyPhrase [ narr:text "The expert is not coming to a marketplace to browse." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SupplierSideDistribution> ] ;
+    narr:keyPhrase [ narr:text "Think about when it switches from team to enterprise. I think that happens reasonably quickly." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_OrganizationTierUpsellPath> ] ;
+    narr:variation [ narr:text "Referral/high-touch sales is framed not as a pathway but as the biggest risk — a competitor with a better sales process could undercut it; the process-sale pipeline is the hedge." ; narr:over <https://aswritten.ai/narrative#Claim_ReferralOnlyGrowthRisk> ] ;
+    narr:variation [ narr:text "The marketplace concept itself was reversed (Mar 22-23): from buyer-side browsing to supplier-side distribution — possibly no marketplace at launch, just a share/install flow." ; narr:over <https://aswritten.ai/narrative#Narrative_SupplierSideDistribution> ; narr:over <https://aswritten.ai/narrative#Narrative_ContentDistributionAIAge> ] ;
+    narr:variation [ narr:text "Distribution model is not uniform: an engineering manager at the customer and accountants distribute to their networks (Trigger 2), but a beta user from outside tech does not distribute at all — she uses it herself daily (Trigger 1)." ; narr:over <https://aswritten.ai/narrative#Narrative_ContentDistributionAIAge> ; narr:over <https://aswritten.ai/narrative#Observation_PrepackagedContentGoal> ] ;
+    narr:variation [ narr:text "Tier upgrades decouple size from need: a 2-person healthcare practice may require Professional for HIPAA while a 50-person tech company may not — requirements-driven, not value-driven." ; narr:over <https://aswritten.ai/narrative#Narrative_TwoUpgradeDrivers> ] ;
+    narr:variation [ narr:text "Self-hosting is reframed as more than cost reduction — fixed server cost unlocks a different product surface (SMS inference, always-on full-perspective agents, eval at scale) otherwise cost-prohibitive." ; narr:over <https://aswritten.ai/narrative#Narrative_SelfHostingEnablesNewProducts> ] ;
+    narr:variation [ narr:text "Expansion may be a channel/portfolio play rather than per-customer: one the enterprise customer pilot becomes a dozen-company PE rollout via a single AI-enablement champion at a private-equity firm." ; narr:over <https://aswritten.ai/narrative#Narrative_EnterpriseCustomerPEPortfolioOpportunity> ] ;
+    narr:writer "claude (subscription)" .
+}

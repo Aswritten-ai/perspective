@@ -1,0 +1,692 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+# ── Transaction provenance (default graph) ──────────────────────
+INSERT DATA {
+  narr:Tx_20260604T120000Z a prov:Activity ;
+    prov:generatedAtTime "2026-06-04T12:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith "aswritten.ai" ;
+    prov:wasAttributedTo "[email]" ;
+    narr:originPath ".aswritten/memories/2026-06-04-discovery-consultant-call.md" ;
+    narr:originRef "main@HEAD" ;
+    dct:title "First Call with a consultant who ran enterprise discovery engagements for fifteen years — Independent Architectural Convergence on SPARQL/RDF Org Knowledge Graphs" ;
+    prov:generated
+      narr:Sample_DiscoveryConsultantCall_20260604,
+      narr:Narrative_ArtifactsLoseTheWhy,
+      narr:Narrative_InformationVsPerspective,
+      narr:Narrative_WhiteSpaceCollapse,
+      narr:Narrative_OntologyAsSpeechActs,
+      narr:Narrative_AntiHallucinationViaCitation,
+      narr:Narrative_AppendOnlyConvictionLog,
+      narr:Narrative_SPARQLUpdateAsLogPrimitive,
+      narr:Narrative_ProcessorNotStore,
+      narr:Narrative_FilteringDivergenceABAC,
+      narr:Narrative_RDFOverDatomicRegret,
+      narr:Narrative_EverythingHasAConversation,
+      narr:Narrative_ContextHemorrhage,
+      narr:Narrative_DiscoveryConsultantThreeFramings,
+      narr:Narrative_QuantifiedOrganization,
+      narr:Narrative_NeurosymbolicKGLLM,
+      narr:Narrative_RepricingHumanTime,
+      narr:Narrative_DinosaursVsAINatives,
+      narr:Narrative_SalesAsHardPart,
+      narr:Claim_PeerValidationArchitecture,
+      narr:Claim_ICPMidMarketSoftware,
+      narr:Claim_ICPBespokeConsultancies,
+      narr:Claim_ICPIndividualWhales,
+      narr:Obs_ArtifactsLoseWhy,
+      narr:Obs_InformationVsPerspective,
+      narr:Obs_WhiteSpaceCollapse,
+      narr:Obs_OntologyAsSpeechActs,
+      narr:Obs_AntiHallucination,
+      narr:Obs_IngestDiscussion,
+      narr:Obs_AppendOnlyLog,
+      narr:Obs_SPARQLUpdateChoice,
+      narr:Obs_RDFMotherTongue,
+      narr:Obs_DatabaseConsistency,
+      narr:Obs_ProcessorNotStore,
+      narr:Obs_DiscoveryConsultantPlayback,
+      narr:Obs_ABACFiltering,
+      narr:Obs_GraphWalkerCompile,
+      narr:Obs_RDFDatomicRegret,
+      narr:Obs_GreenButtonJIRA,
+      narr:Obs_ContextHemorrhage,
+      narr:Obs_MeetingsThrowaway,
+      narr:Obs_IRILeaves,
+      narr:Obs_QuantifiedOrg,
+      narr:Obs_RepricingHumanTime,
+      narr:Obs_SalesHardPart,
+      narr:Obs_EnterpriseCustomerARB,
+      narr:StyleObs_VerbatimQuoteHeavy,
+      narr:StyleObs_MetaphorWhiteSpace,
+      narr:StyleObs_ParentheticalAsides,
+      narr:StyleObs_FirstPersonNarration,
+      narr:StyleMetrics_DiscoveryConsultantCall .
+} ;
+
+# ── Extracted entities (named graph) ────────────────────────────
+INSERT DATA {
+  GRAPH narr:Tx_20260604T120000Z {
+
+    # ── Sample ──────────────────────────────────────────────────
+    narr:Sample_DiscoveryConsultantCall_20260604 a narr:Sample ;
+      dct:title "First Call with a consultant who ran enterprise discovery engagements for fifteen years — Independent Architectural Convergence on SPARQL/RDF Org Knowledge Graphs" ;
+      dct:created "2026-06-04"^^xsd:date ;
+      narr:inputLength "8247"^^xsd:integer ;
+      skos:note "Session notes from first call between Scarlet and a consultant who ran enterprise discovery engagements for fifteen years, 2026-06-04 11:00 AM. Second call scheduled June 18 with cofounder Patrick." .
+
+    # ── S2: Core thesis — artifacts lose the *why* ───────────────
+    narr:Narrative_ArtifactsLoseTheWhy a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Artifacts lose the reasoning behind their creation" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "Scarlet's central framing: existing code/content does not capture the reason behind why it exists. Artifacts are downstream of a decision-making process and always miss the mark some, with assumptions made by coding agents or humans coming into projects." .
+
+    narr:Obs_ArtifactsLoseWhy a narr:Observation ;
+      skos:broader narr:WhatIsIt ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Scarlet's verbatim articulation of the core thesis" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 614 ;
+        oa:end 872
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the existing code or content does not capture the reason behind why that exists in the first place... we have the artifact that is downstream of a decision making process" ;
+        oa:prefix "Scarlet's central framing — the reason aswritten exists:\n\n> " ;
+        oa:suffix " and it always, one, misses the mark some" 
+      ] .
+
+    # ── S2: Information vs. perspective ─────────────────────────
+    narr:Narrative_InformationVsPerspective a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Information is the artifact; perspective is the why behind it" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "The distinction Scarlet returned to at the end: information = code; perspective = why it was done or not done. The goal is to encode opinion/perspective into the graph so agents think with that perspective." .
+
+    narr:Obs_InformationVsPerspective a narr:Observation ;
+      skos:broader narr:KeyPhrases ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Scarlet's information vs. perspective distinction" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1050 ;
+        oa:end 1290
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Information is just the code and perspective is why that was done, why it wasn't done. The difference between those two things" ;
+        oa:prefix "> " ;
+        oa:suffix "... when the established canonical opinion about Clojure datomic is stupid"
+      ] .
+
+    # ── S2: White-space-collapse metaphor ───────────────────────
+    narr:Narrative_WhiteSpaceCollapse a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Organizational perspective collapses the white space of LLM output toward the right answer" ;
+      skos:broader narr:NarrativeAnchor ;
+      skos:note "Metaphor: generic prompt gives average-of-internet answer. Adding Clojure principles narrows it. Adding full organizational perspective collapses all white space to the correct answer." .
+
+    narr:Obs_WhiteSpaceCollapse a narr:Observation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "White-space-collapse metaphor for organizational perspective steering LLM output" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1340 ;
+        oa:end 1570
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "If you say, give me a database system, it gives you the average of the Internet database system. If you say, give me a database system using Clojure principles, that white space gets a little smaller" ;
+        oa:prefix "> " ;
+        oa:suffix " and it gives you datomic"
+      ] .
+
+    # ── S3: Ontology = actors + speech acts + documents ──────────
+    narr:Narrative_OntologyAsSpeechActs a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Ontology modeled as actors, speech acts, and documents — not facts and entities" ;
+      skos:broader narr:DataModelLifecycle ;
+      skos:note "Scarlet's ontology approach: relationships between actors and speech acts and the documents they did them in. This yields full provenance naturally." .
+
+    narr:Obs_OntologyAsSpeechActs a narr:Observation ;
+      skos:broader narr:DataModelLifecycle ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Scarlet's verbatim description of her ontology modeling approach" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1680 ;
+        oa:end 1870
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the way I approached ontology modeling is actually not as a relationship between facts and organizations, it's actually between actors and speech acts. And then the documents that they did them in." ;
+        oa:prefix "> " ;
+        oa:suffix " And because of that... you do get full provenance."
+      ] .
+
+    narr:Narrative_AntiHallucinationViaCitation a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Anti-hallucination enforced by requiring LLM to cite every claim with provenance" ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      skos:note "Design goal: LLM must cite every claim as it works, with footnotes attributing statements to named actors in named conversations." .
+
+    narr:Obs_AntiHallucination a narr:Observation ;
+      skos:broader narr:GovernanceSafetyTrust ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Anti-hallucination via citation requirement" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1900 ;
+        oa:end 2040
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I want the LLM to cite every claim as it works and say... give me a footnote that says Scarlet said this in conversation with a consultant who ran enterprise discovery engagements for fifteen years on June 4" ;
+        oa:prefix "> " ;
+        oa:suffix ", where they talked about such and such."
+      ] .
+
+    narr:Obs_IngestDiscussion a narr:Observation ;
+      skos:broader narr:DataIntegrationFlows ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Ingest the discussion around artifacts, not just the raw content" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2060 ;
+        oa:end 2180
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "what I want to ingest is not just the raw content, but the discussion around it... the dense reasoning about why." ;
+        oa:prefix "> " ;
+        oa:suffix "\n\nAppend-only log"
+      ] .
+
+    narr:Narrative_AppendOnlyConvictionLog a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Append-only log enables conviction-over-time queries across claims and actors" ;
+      skos:broader narr:DataModelLifecycle ;
+      skos:note "The append-only log structure enables queries like: how has my opinion on X changed over time? Returns claims from memories traced to actors with conviction trajectory." .
+
+    narr:Obs_AppendOnlyLog a narr:Observation ;
+      skos:broader narr:DataModelLifecycle ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Conviction-over-time query capability from append-only log" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2200 ;
+        oa:end 2430
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "How has my opinion on whether we structured the code base in components changed over time? And it can give me — here are these eight claims coming from these four memories that trace to these three actors" ;
+        oa:prefix "> " ;
+        oa:suffix " that state XYZ and it has changed in conviction in this way."
+      ] .
+
+    # ── S4: Architectural convergence ───────────────────────────
+    narr:Narrative_SPARQLUpdateAsLogPrimitive a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "SPARQL Update as the log primitive — independently chosen by both Scarlet and a consultant who ran enterprise discovery engagements for fifteen years" ;
+      skos:broader narr:SystemTopology ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years independently chose SPARQL Update as the log primitive for the same reasons as Scarlet. RDF is the LLM's native tongue (67% of websites use schema.org). This is the strongest peer-validation of aswritten's core technical bet." .
+
+    narr:Obs_SPARQLUpdateChoice a narr:Observation ;
+      skos:broader narr:SystemTopology ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's unprompted convergence on SPARQL Update as log primitive" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2620 ;
+        oa:end 2790
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I'm all in on this. Let's just choose something. I think that thing for me is SPARQL Update because it hit that sweet spot... Then you put it in a log. As we know, it's just a sequence of functions." ;
+        oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years, unprompted:\n\n> " ;
+        oa:suffix "\n\nScarlet: \"That's what I've chosen too.\""
+      ] .
+
+    narr:Obs_RDFMotherTongue a narr:Observation ;
+      skos:broader narr:InteroperabilityStandards ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's rationale: RDF is the LLM's native tongue" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2840 ;
+        oa:end 2940
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the LLMs just — it is their mother tongue... 67% of all websites have got this stuff in... schema.org." ;
+        oa:prefix "> " ;
+        oa:suffix "\n\nAnd the transaction-function"
+      ] .
+
+    narr:Obs_DatabaseConsistency a narr:Observation ;
+      skos:broader narr:ReliabilityResilience ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Datomic transactor lineage: database consistency as audit-log property" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2960 ;
+        oa:end 3130
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "database consistency is such a useful property... If you want to do anything with a really audit log where you can say we only knew this and then we made this decision and we approved the loan" ;
+        oa:prefix "> " ;
+        oa:suffix "... It allows you to be very strong on what you can say about the past."
+      ] .
+
+    narr:Narrative_ProcessorNotStore a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "aswritten is a processor, not a data store — enabling zero data retention for high-compliance environments" ;
+      skos:broader narr:MoatLeverage ;
+      skos:note "The entire knowledge graph is stored as SPARQL in the customer repo. aswritten's role is processor, never store. Technical moat is the process to turn arbitrary data into tagged/extracted/compiled form, not data custody." .
+
+    narr:Obs_ProcessorNotStore a narr:Observation ;
+      skos:broader narr:MoatLeverage ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Scarlet's articulation of processor-not-store positioning and zero data retention" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3200 ;
+        oa:end 3480
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The entire knowledge graph is stored as SPARQL in the customer repo as just a sequence of transactions... my role as the platform becomes as processor, never as store. And so I can actually run the entire platform as zero data retention" ;
+        oa:prefix "> " ;
+        oa:suffix " for high compliance, high trust environments"
+      ] .
+
+    narr:Obs_DiscoveryConsultantPlayback a narr:Observation ;
+      skos:broader narr:MoatLeverage ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years played back the processor-not-store framing exactly, adding the two-pipe model and trial/exit narrative" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3530 ;
+        oa:end 3700
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "You're a processor, not a data store... I have two pipes. I have a pipe I send you and a pipe that I get back... I can trial it, I can get value from it and I can turn it off... not locked into it." ;
+        oa:prefix "a consultant who ran enterprise discovery engagements for fifteen years played it back exactly:\n\n> " ;
+        oa:suffix "\n\n**Filtering:"
+      ] .
+
+    narr:Narrative_FilteringDivergenceABAC a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Productive divergence: a consultant who ran enterprise discovery engagements for fifteen years uses named-graph ABAC filtering; Scarlet uses graph-walker compile" ;
+      skos:broader narr:SecurityPrivacyModel ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years: two-query ABAC — first query returns allowed graphs (sandbox/jail), second runs SPARQL on filtered set. Scarlet: graph-walker in compile function drops subtrees as it replays the log. Both then drop filtered graph into LLM context as steering." .
+
+    narr:Obs_ABACFiltering a narr:Observation ;
+      skos:broader narr:SecurityPrivacyModel ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's named-graph ABAC filtering mechanism" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3750 ;
+        oa:end 3980
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "a query is two queries. You send a request in. The first query is what graphs is this user allowed to find?... attribute based access control... the result of that query is that you get a set of graphs back" ;
+        oa:prefix "> " ;
+        oa:suffix ", which is your filtered database."
+      ] .
+
+    narr:Obs_GraphWalkerCompile a narr:Observation ;
+      skos:broader narr:SecurityPrivacyModel ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Scarlet's graph-walker compile approach and a consultant who ran enterprise discovery engagements for fifteen years's big takeaway" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4050 ;
+        oa:end 4180
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "That's a big takeaway for me. I haven't really considered that before." ;
+        oa:prefix "Scarlet's payoff, which a consultant who ran enterprise discovery engagements for fifteen years flagged as his big takeaway:\n\n> " ;
+        oa:suffix "\n\n**RDF-over-Datomic regret"
+      ] .
+
+    narr:Narrative_RDFOverDatomicRegret a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Shared regret: Rich Hickey was close to making Clojure/Datomic web-native RDF but stopped short" ;
+      skos:broader narr:DesignTradeoffs ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years and Scarlet share the view that Datomic's parallel universe was a missed opportunity. If Datomic had RDF standardization with its ergonomics, it would have been a wonderful intersection." .
+
+    narr:Obs_RDFDatomicRegret a narr:Observation ;
+      skos:broader narr:DesignTradeoffs ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's verbatim expression of RDF-over-Datomic regret" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4230 ;
+        oa:end 4460
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Rich was so close to just making Clojure a web native RDF... I just wish that he had gone that extra mile and made all of his identifiers links... creating this parallel universe was a missed opportunity" ;
+        oa:prefix "> " ;
+        oa:suffix "... if we had the ergonomics of datomic but the standardization of RDF"
+      ] .
+
+    # ── S5: a consultant who ran enterprise discovery engagements for fifteen years's product DNA ────────────────────────────────
+    narr:Narrative_EverythingHasAConversation a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Everything is a URI with a conversation attached — the Tim Berners-Lee dream applied to organizational records" ;
+      skos:broader narr:SocioTechnicalTouchpoints ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's product DNA: every record is a URI; IANA 'about' relation attaches a conversation to every record with access control. The green-button/JIRA problem: ticket says 'make button green' but carries no record of why." .
+
+    narr:Obs_GreenButtonJIRA a narr:Observation ;
+      skos:broader narr:ProblemContext ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's green-button/JIRA problem as illustration of context loss" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4600 ;
+        oa:end 4720
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "you are hemorrhaging context by not allowing people to converse about [things] in the website... there isn't something in the website when you're approving a holiday to have that conversation there and then about that thing." ;
+        oa:prefix "> " ;
+        oa:suffix "\n\nAnd meetings run without structure:"
+      ] .
+
+    narr:Narrative_ContextHemorrhage a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Organizations hemorrhage context by not enabling conversation at the point of record" ;
+      skos:broader narr:FrictionFailure ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's frustration: context hemorrhage from not allowing conversation at the point of action. Meetings run without structure — decisions made, actions taken, minutes thrown away." .
+
+    narr:Obs_ContextHemorrhage a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years on meetings as context hemorrhage" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4760 ;
+        oa:end 4890
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "decisions were made, actions were taken, minutes were made, but they were thrown away... very sloppy and very shoddy way of running a business." ;
+        oa:prefix "And meetings run without structure: *\"" ;
+        oa:suffix "\"*"
+      ] .
+
+    narr:Obs_MeetingsThrowaway a narr:Observation ;
+      skos:broader narr:FrictionFailure ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "IRI-expansion-at-the-leaves as stated-but-unbuilt design goal for aswritten" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4930 ;
+        oa:end 5090
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I haven't done that kind of association with our IRIs at the leaves for any piece of content that spills out of the graph yet. But that was always one of the stated design goals." ;
+        oa:prefix "> " ;
+        oa:suffix "\n\n## a consultant who ran enterprise discovery engagements for fifteen years's three framings"
+      ] .
+
+    narr:Obs_IRILeaves a narr:Observation ;
+      skos:broader narr:DesignTradeoffs ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "IRI-expansion-at-the-leaves: stated design goal, not yet built" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 4930 ;
+        oa:end 5090
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "I haven't done that kind of association with our IRIs at the leaves for any piece of content that spills out of the graph yet. But that was always one of the stated design goals." ;
+        oa:prefix "> " ;
+        oa:suffix "\n\n## a consultant who ran enterprise discovery engagements for fifteen years's three framings"
+      ] .
+
+    # ── S6: a consultant who ran enterprise discovery engagements for fifteen years's three framings ────────────────────────────
+    narr:Narrative_DiscoveryConsultantThreeFramings a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "a consultant who ran enterprise discovery engagements for fifteen years's three framings of the aswritten/knowledge-graph overlap" ;
+      skos:broader narr:CompetitiveLandscape ;
+      skos:note "1) Third Bridge-style expert transcripts → vectorize → extract entities/facts/predictions with provenance → KG (baseline; aswritten is beyond this). 2) Mono-repo of everything (articles + all code) so LLM has full context. 3) Compliance client information hierarchy: charter → board policies → standards → assets → evidence." .
+
+    # ── S7: Strategic resonances ─────────────────────────────────
+    narr:Narrative_QuantifiedOrganization a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "The quantified/reified organization as an introspectable asset with value over time" ;
+      skos:broader narr:PositioningThesis ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years: the whole organization has a value and becomes introspectable. Scarlet: something you could give to a VC so they can understand their portfolio and how it changes by introspecting on ideological change within the organization." .
+
+    narr:Obs_QuantifiedOrg a narr:Observation ;
+      skos:broader narr:PositioningThesis ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Scarlet's VC portfolio introspection framing" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5500 ;
+        oa:end 5650
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "give to a venture capitalist... so they can understand their portfolio and how it changes... by introspecting on ideological change within the organization." ;
+        oa:prefix "Scarlet: something you could *\"" ;
+        oa:suffix "\"*"
+      ] .
+
+    narr:Narrative_NeurosymbolicKGLLM a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Neurosymbolic marriage of knowledge graphs and LLMs as shared community framing" ;
+      skos:broader narr:TechnologiesSocialSystems ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years attended NY knowledge-graph conference, speaks in Colorado next week, is in the data-centric community around Dave McComb / Semantic Arts (Software Wasteland)." .
+
+    narr:Narrative_RepricingHumanTime a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Human time will be repriced upward as AI scales — meetings and transcripts become more valuable" ;
+      skos:broader narr:TrendForecasting ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's thesis: value of human time will be appreciated; meetings become more valuable; anything that adds value to transcripts and augments them is a good place to start because that market will grow." .
+
+    narr:Obs_RepricingHumanTime a narr:Observation ;
+      skos:broader narr:TrendForecasting ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's repricing-of-human-time thesis" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 5750 ;
+        oa:end 5920
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "the value of human time is going to be appreciated... meetings are going to become more valuable... anything that can add value to those transcripts and augment them — that's a good place to start" ;
+        oa:prefix "*\"" ;
+        oa:suffix ", because that market is going to grow.\""
+      ] .
+
+    narr:Narrative_DinosaursVsAINatives a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Old companies are dinosaurs facing an asteroid; AI-native startups will move Amazon-fast" ;
+      skos:broader narr:TimingThesis ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years's framing: old companies are an asteroid on its way — hard to convert. AI-native startups will move Amazon-fast. Implies ICP focus on AI-native orgs over legacy enterprise conversion." .
+
+    # ── S8: Sales as the hard part ───────────────────────────────
+    narr:Narrative_SalesAsHardPart a narr:Narrative ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:theme "Sales is the hardest part: the value proposition is technically oriented but buyers are not" ;
+      skos:broader narr:RiskGuardrails ;
+      skos:note "Scarlet named sales as the hardest part. The concept is technically oriented; the people consuming organizational value (KPIs, OKRs) are not technically located. Long-winded technical explanation is tricky to sell." .
+
+    narr:Obs_SalesHardPart a narr:Observation ;
+      skos:broader narr:RiskGuardrails ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Scarlet's verbatim statement on sales as the hardest part" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6050 ;
+        oa:end 6290
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "The hardest part of this though is frankly sales... you get it top to bottom... but that kind of concept is such a technically oriented perspective... the people that are actually consuming organizational value and the metrics and KPIs, OKRs... are not technically located" ;
+        oa:prefix "> " ;
+        oa:suffix " within these organizations."
+      ] .
+
+    # ── S9: ICP profiles ─────────────────────────────────────────
+    narr:Claim_ICPMidMarketSoftware a narr:Claim ;
+      narr:aboutNode narr:Segmentation ;
+      narr:hasConvictionLevel narr:Conviction_Boulder ;
+      narr:supports narr:Narrative_SalesAsHardPart ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "ICP Profile 1 (currently working): mid-market, enterprise-facing software companies, ~20–250 (maybe 500) people. JUXT and Vouch cited as fitting this persona. Shape and customer they're serving matters more than size." .
+
+    narr:Claim_ICPBespokeConsultancies a narr:Claim ;
+      narr:aboutNode narr:Segmentation ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_SalesAsHardPart ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "ICP Profile 2: smaller practitioners / bespoke consultancies — architect or lawyer's office — where their process is really their product and they have segmented worldviews for different clients." .
+
+    narr:Claim_ICPIndividualWhales a narr:Claim ;
+      narr:aboutNode narr:Segmentation ;
+      narr:hasConvictionLevel narr:Conviction_Stake ;
+      narr:supports narr:Narrative_SalesAsHardPart ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "ICP Profile 3: individuals / 'whales' — high-net-worth or famous authors — people that have their own worldview they're curating. Scarlet and a consultant who ran enterprise discovery engagements for fifteen years both fall under this." .
+
+    narr:Obs_EnterpriseCustomerARB a narr:Observation ;
+      skos:broader narr:CaseContext ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "the enterprise customer ARB use case: after ingesting the ARB, anyone can ask their AI a question, get an answer that cites the architect" ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 6700 ;
+        oa:end 6870
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "become organizational partners able to navigate the needs of that process." ;
+        oa:prefix "Scarlet's goal: agents that *\"" ;
+        oa:suffix "\"*"
+      ] .
+
+    # ── Peer validation claim ────────────────────────────────────
+    narr:Claim_PeerValidationArchitecture a narr:Claim ;
+      narr:aboutNode narr:Narrative_SPARQLUpdateAsLogPrimitive ;
+      narr:hasConvictionLevel narr:Conviction_Foundation ;
+      narr:supports narr:Narrative_SPARQLUpdateAsLogPrimitive ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "a consultant who ran enterprise discovery engagements for fifteen years independently arrived at nearly the same architecture as aswritten. This call is the strongest peer-validation of the core technical bets to date. a consultant who ran enterprise discovery engagements for fifteen years chose SPARQL Update unprompted; Scarlet had already chosen it." .
+
+    narr:StyleObs_VerbatimQuoteHeavy a narr:StyleObservation ;
+      skos:broader narr:CitationConventions ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Document is structured around extended verbatim block-quotes from both speakers, formatted with Markdown '>' blockquote syntax. Quotes are long, unedited, and carry technical specificity. Parenthetical asides in italics provide session-sourced context." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCall_20260604 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 614 ;
+          oa:end 872
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "the existing code or content does not capture the reason behind why that exists in the first place" ;
+          oa:prefix "> " ;
+          oa:suffix "... we have the artifact that is downstream"
+        ]
+      ] .
+
+    narr:StyleObs_MetaphorWhiteSpace a narr:StyleObservation ;
+      skos:broader narr:Metaphor ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "White-space-collapse is the document's most vivid rhetorical metaphor: LLM output space narrows as organizational perspective is added. Concrete, spatial, and technically grounded." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCall_20260604 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 1340 ;
+          oa:end 1570
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "all the white space collapses to here." ;
+          oa:prefix "but if you give it an organizational perspective that has all of this backfilled perspective... " ;
+          oa:suffix "\n\n## Ontology"
+        ]
+      ] .
+
+    narr:StyleObs_ParentheticalAsides a narr:StyleObservation ;
+      skos:broader narr:RegisterFormality ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Frequent use of parenthetical asides in italics to flag session-sourced context, uncertainty, or meta-commentary not stated in transcript. Signals epistemic care about source reliability." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCall_20260604 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 310 ;
+          oa:end 620
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "Session-sourced, not stated in the transcript and Scarlet noted the transcript was unclear on this" ;
+          oa:prefix "*(" ;
+          oa:suffix ": a consultant who ran enterprise discovery engagements for fifteen years left JUXT last fall"
+        ]
+      ] .
+
+    narr:StyleObs_FirstPersonNarration a narr:StyleObservation ;
+      skos:broader narr:FirstPerson ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      skos:note "Scarlet's quoted passages are consistently first-person, direct, and technically assertive. a consultant who ran enterprise discovery engagements for fifteen years's quotes mirror this register. The document voice is third-person analytical framing around first-person technical testimony." ;
+      rdf:value true ;
+      oa:hasTarget [
+        a oa:SpecificResource ;
+        oa:hasSource narr:Sample_DiscoveryConsultantCall_20260604 ;
+        oa:hasSelector [
+          a oa:TextPositionSelector ;
+          oa:start 3200 ;
+          oa:end 3480
+        ] ;
+        oa:hasSelector [
+          a oa:TextQuoteSelector ;
+          oa:exact "my role as the platform becomes as processor, never as store. And so I can actually run the entire platform as zero data retention" ;
+          oa:prefix "The entire knowledge graph is stored as SPARQL in the customer repo as just a sequence of transactions... " ;
+          oa:suffix " for high compliance"
+        ]
+      ] .
+
+    # ── Style Metrics ────────────────────────────────────────────
+    narr:StyleMetrics_DiscoveryConsultantCall a narr:StyleMetrics ;
+      skos:broader narr:StyleMetrics ;
+      dct:source narr:Sample_DiscoveryConsultantCall_20260604 ;
+      narr:AverageSentenceLength "22"^^xsd:integer ;
+      narr:ActiveVoiceRatio "0.72"^^xsd:decimal ;
+      narr:JargonDensity "0.18"^^xsd:decimal ;
+      skos:note "High jargon density (SPARQL, RDF, ABAC, IRI, Datomic, XTDB, ARQ). Active voice dominant in direct quotes; passive voice appears in analytical framing sections. Long sentences in block quotes due to spoken-language transcription patterns." .
+
+  }
+}

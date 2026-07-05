@@ -1,0 +1,422 @@
+PREFIX narr: <https://aswritten.ai/ns/narrative#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sb: <https://aswritten.ai/sb#>
+PREFIX storytwin: <https://aswritten.ai/narrative#>
+
+# ============================================================
+# Transaction-level Provenance
+# ============================================================
+INSERT DATA {
+  narr:Tx_20261228T192226Z a prov:Activity ;
+    prov:wasAssociatedWith <https://aswritten.ai/agent/aswritten.ai> ;
+    prov:wasAttributedTo <https://aswritten.ai/agent/n8n.aswritten.ai> ;
+    prov:generatedAtTime "2026-01-28T19:22:26.931Z"^^xsd:dateTime ;
+    sb:originPath ".aswritten/memories/2025-12-16-living-organizational-worldview.md" ;
+    sb:originRef "main" ;
+    storytwin:model "anthropic/claude-sonnet-4.5" ;
+    prov:generated narr:Sample_collective_memory_cvp,
+                   narr:Narrative_collective_memory_mission,
+                   narr:Narrative_collective_memory_vision,
+                   narr:Narrative_collective_memory_tagline,
+                   narr:Narrative_positioning,
+                   narr:Narrative_moat,
+                   narr:Narrative_timing,
+                   narr:StyleObs_tagline_hook,
+                   narr:StyleObs_brand_name,
+                   narr:StyleObs_metaphor_living,
+                   narr:StyleObs_analogy_git,
+                   narr:StyleObs_anaphora_all,
+                   narr:StyleObs_antithesis_not_is,
+                   narr:StyleObs_verb_compile,
+                   narr:StyleObs_rule_of_three,
+                   narr:StyleObs_second_person,
+                   narr:StyleObs_stock_phrase_source_of_truth,
+                   narr:StyleMetrics_collective_memory_cvp,
+                   narr:RubricAssess_register,
+                   narr:RubricAssess_phrasing,
+                   narr:RubricAssess_cadence,
+                   narr:RubricAssess_strategic_alignment,
+                   narr:RubricAssess_tailoring,
+                   narr:RubricAssess_resonance,
+                   narr:RubricAssess_flow,
+                   narr:RubricAssess_novelty,
+                   narr:RubricAssess_accuracy .
+}
+;
+
+# ============================================================
+# Extracted Narrative Data
+# ============================================================
+INSERT DATA {
+  # Sample Node
+  narr:Sample_collective_memory_cvp a narr:Sample ;
+    dct:title "Shared Worldview: collective memory's Core Value Proposition" ;
+    narr:inputLength 4247 ;
+    dct:created "2025-01-XX"^^xsd:date ;
+    skos:note "Strategic document defining collective memory's value proposition and differentiation" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  # Narrative Elements
+  narr:Narrative_collective_memory_mission a  narr:Mission ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    narr:theme "Organizational worldview as executable strategy" ;
+    skos:broader narr:Mission ;
+    rdf:value "Create a living organizational worldview that evolves through intentional memory-saving and branches like code" ;
+    skos:note "Core mission: transform organizational memory into version-controlled, queryable narrative architecture" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:Narrative_collective_memory_vision a  narr:Vision ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    narr:theme "Universal AI alignment through shared worldview" ;
+    skos:broader narr:Vision ;
+    rdf:value "Your entire organization talks to AI that thinks like your company thinks" ;
+    skos:note "Future state: all AI agents across organization operate from same narrative source of truth" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:Narrative_collective_memory_tagline a  narr:Tagline ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    skos:broader narr:Tagline ;
+    rdf:value "Your entire organization talks to AI that thinks like your company thinks." ;
+    skos:note "7-word hook encapsulating the promise" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:Narrative_positioning a  narr:PositioningThesis ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    narr:theme "Git-native narrative evolution" ;
+    skos:broader narr:PositioningThesis ;
+    rdf:value "NOT three separate AI tools for three personas; IS one worldview that unifies how AI assists everyone in the organization" ;
+    skos:note "Differentiation: unified worldview vs. isolated AI tools" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:Narrative_moat a  narr:MoatLeverage ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    narr:theme "Version-controlled organizational narrative" ;
+    skos:broader narr:MoatLeverage ;
+    rdf:value "Git as the version control system for organizational narrative itself" ;
+    skos:note "Compounding advantage: narrative branches, PRs, and merges as strategic decisions" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:Narrative_timing a  narr:TimingThesis ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    narr:theme "AI agent proliferation creates alignment gap" ;
+    skos:broader narr:TimingThesis ;
+    rdf:value "AI agents are proliferating; each operates in isolation with brittle personas and scattered context; strategy-execution gaps cost startups millions" ;
+    skos:note "Why now: convergence of AI agent adoption and organizational context fragmentation" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  # Style Observations
+  narr:StyleObs_tagline_hook a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Tagline ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:ShortPunchyCadence ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3663 ;
+        oa:end 3730
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "Your entire organization talks to AI that thinks like your company thinks." ;
+        oa:prefix "### The Hook\n\n\"" ;
+        oa:suffix "\"\n\nWhen you save"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "7-word tagline; direct second-person; active voice; punchy cadence" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:StyleObs_brand_name a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:BrandNameStylization ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:BrandNameStylization ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 0 ;
+        oa:end 18
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "collective memory" ;
+        oa:prefix "" ;
+        oa:suffix "'s Core Value"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Brand name: lowercase, two words; consistent throughout document" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:StyleObs_metaphor_living a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Metaphor ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:Metaphor ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 67 ;
+        oa:end 103
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "living organizational worldview" ;
+        oa:prefix "## The " ;
+        oa:suffix "\n\ncollective memory"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Metaphor: worldview as living organism; reinforces evolution/growth theme" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:StyleObs_analogy_git a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Analogy ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:Analogy ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 105 ;
+        oa:end 197
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "collective memory creates a living organizational worldview that evolves through intentional memory-saving and branches like code" ;
+        oa:prefix "Worldview\n\n" ;
+        oa:suffix ".\n\n### How It"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Analogy: organizational narrative branches like code; core differentiation" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:StyleObs_anaphora_all a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Anaphora ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:Anaphora ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 3732 ;
+        oa:end 3900
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "All automatically. All from the same source of truth. All version-controlled with Git." ;
+        oa:prefix "onboarding docs\n\n" ;
+        oa:suffix ""
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Anaphora: repeated 'All' for emphasis; triadic structure; punchy rhythm" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:StyleObs_antithesis_not_is a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:Antithesis ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:Antithesis ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 2663 ;
+        oa:end 2768
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "**NOT**: Three separate AI tools for three personas\n**IS**: One worldview that unifies how AI assists everyone" ;
+        oa:prefix "Differentiation\n\n" ;
+        oa:suffix " in the organization"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Antithesis: NOT/IS structure; clarifies differentiation; repeated 3x in section" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:StyleObs_verb_compile a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:VerbChoice ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:VerbChoice ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 299 ;
+        oa:end 306
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "compile" ;
+        oa:prefix "memories " ;
+        oa:suffix " into organizational"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Power verb: 'compile' evokes code/technical precision; reinforces git metaphor" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:StyleObs_rule_of_three a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:RuleOfThree ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:RuleOfThree ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 1773 ;
+        oa:end 1856
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "**1. AI-Assisted Development**\n**2. Executive Assistance**\n**3. Content Generation**" ;
+        oa:prefix "Pillars (Unified by Same Worldview)\n\n" ;
+        oa:suffix "\n\n**1. AI-Assisted"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Triadic structure: three pillars; memorable and balanced" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:StyleObs_second_person a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:SecondPerson ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:SecondPerson ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 199 ;
+        oa:end 206
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "As you work" ;
+        oa:prefix "### How It Works\n\n**Intentional Memory → Compiled Worldview**\n- " ;
+        oa:suffix ", you intentionally"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Direct second-person address; conversational and engaging" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:StyleObs_stock_phrase_source_of_truth a narr:StyleObservation, oa:Annotation ;
+    skos:broader narr:StockPhrases ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    oa:hasBody narr:StockPhrases ;
+    oa:hasTarget [
+      a oa:SpecificResource ;
+      oa:hasSource narr:Sample_collective_memory_cvp ;
+      oa:hasSelector [
+        a oa:TextPositionSelector ;
+        oa:start 449 ;
+        oa:end 465
+      ] ;
+      oa:hasSelector [
+        a oa:TextQuoteSelector ;
+        oa:exact "source of truth" ;
+        oa:prefix "worldview is the " ;
+        oa:suffix " that informs all"
+      ]
+    ] ;
+    rdf:value true ;
+    skos:note "Stock phrase: 'source of truth' repeated 3x; key concept anchor" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  # Style Metrics
+  narr:StyleMetrics_collective_memory_cvp a narr:StyleMetrics ;
+    skos:broader narr:StyleMetrics ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    narr:AverageSentenceLength 18.5 ;
+    narr:ActiveVoiceRatio 0.85 ;
+    narr:Conciseness 0.78 ;
+    skos:note "High active voice ratio; short sentences; concise phrasing; punchy cadence" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  # Rubric Assessments
+  narr:RubricAssess_register a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Register ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    rdf:value 4.5 ;
+    skos:note "Direct, conversational register; second-person address; active voice; technical precision without jargon" ;
+    skos:related narr:StyleObs_second_person ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:RubricAssess_phrasing a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Phrasing ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    rdf:value 4.0 ;
+    skos:note "Strong domain verbs ('compile', 'branches'); stock phrases ('source of truth'); clear key phrases ('living organizational worldview')" ;
+    skos:related narr:StyleObs_verb_compile, narr:StyleObs_stock_phrase_source_of_truth ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:RubricAssess_cadence a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Cadence ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    rdf:value 4.5 ;
+    skos:note "Short, punchy sentences; triadic structures; anaphora for emphasis; varied rhythm" ;
+    skos:related narr:StyleObs_anaphora_all, narr:StyleObs_rule_of_three ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:RubricAssess_strategic_alignment a narr:RubricAssessment ;
+    skos:broader narr:Rubric_StrategicAlignment ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    rdf:value 5.0 ;
+    skos:note "Explicit mission, vision, positioning, moat, and timing thesis; clear differentiation; unified narrative" ;
+    skos:related narr:Narrative_collective_memory_mission, narr:Narrative_positioning ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:RubricAssess_tailoring a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Tailoring ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    rdf:value 4.0 ;
+    skos:note "Addresses multiple personas (developer, PM, CEO, sales); three pillars map to audiences; could deepen persona-specific examples" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:RubricAssess_resonance a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Resonance ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    rdf:value 4.5 ;
+    skos:note "Strong analogies (git branches, code compilation); metaphors (living worldview); concrete examples (sales guy, PM, developer scenarios)" ;
+    skos:related narr:StyleObs_analogy_git, narr:StyleObs_metaphor_living ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:RubricAssess_flow a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Flow ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    rdf:value 4.0 ;
+    skos:note "Clear section structure; natural transitions; some formulaic scaffolding (NOT/IS pattern); overall coherent progression" ;
+    skos:related narr:StyleObs_antithesis_not_is ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:RubricAssess_novelty a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Novelty ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    rdf:value 4.0 ;
+    skos:note "Fresh framing (git for narrative); distinctive brand voice; some stock phrases ('source of truth'); overall original positioning" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+
+  narr:RubricAssess_accuracy a narr:RubricAssessment ;
+    skos:broader narr:Rubric_Accuracy ;
+    dct:source narr:Sample_collective_memory_cvp ;
+    rdf:value 4.0 ;
+    skos:note "Consistent brand name; clear claims; no citations needed for strategic document; factual accuracy maintained" ;
+    prov:wasGeneratedBy narr:Tx_20261228T192226Z .
+}

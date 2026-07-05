@@ -1,0 +1,55 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_SolutionArchetypes> {
+  <https://aswritten.ai/narrative#Digest_SolutionArchetypes> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#SolutionArchetypes> ;
+    narr:childCount "33"^^xsd:integer ;
+    narr:generatedFrom "d1b09a828565de86" ;
+    narr:narration """This hub gathers the **solution archetypes** aswritten sells against — demo scripts, use-case taxonomies, and live deal playbooks. The cleanest three-way frame is the use-case trio: [governing a human team](narr:Narrative_UseCase1GoverningHumanTeam) (ARB, leadership), [agentic steering](narr:Narrative_UseCase2AgenticSteering) at one-model and whole-ecosystem scale, and [steering the shared process across engagements](narr:Narrative_UseCase3SharedProcessSteering) (20260526). A parallel [collaboration-shape taxonomy](narr:Narrative_CollaborationTaxonomy) (Individual→Self/Team/Many, Team→Many) is flagged as missing from the strategy doc. Concrete demos cluster around the enterprise customer: [QA onboarding](narr:SolutionArchetype_QAOnboarding) (the customer's chief architect's 'killer sales demo'), [CEO knowledge transfer](narr:SolutionArchetype_CEOKnowledgeTransfer), [code quality through business context](narr:SolutionArchetype_CodeQualityThroughContext), and the 60-second [YC value-loop flow](narr:Archetype_YCDemoFlow). The [ARB pilot](narr:Narrative_EnterpriseCustomerARBPilotUseCase) ('have an AI replace me at ARB') became a [three-phase POC→Pilot→Scale proposal](narr:Narrative_EnterpriseCustomerEngagementProposal) (20260414), backed by sales-motion claims: [sponsor≠champion](narr:Narrative_SponsorVsChampionPlaybook) and [POC/MSA in parallel](narr:Narrative_POCMSAParallelism) (Tony, 20260421). Consulting reframes the [deck as derived artifact](narr:Narrative_ConsultingModuleDeliverable); [extraction scope](narr:Narrative_ExtractionScopeOrgWorldview) reframes 'domain' as organizational worldview (20260317). Healthcare adds the [proposal artifact](narr:Narrative_ProposalArtifactPractitioner) lock-in (20260430).""" ;
+    narr:covers <https://aswritten.ai/narrative#Archetype_YCDemoFlow> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ConsultingDeliveryAsModule> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_ExtractionScopeOrgWorldview> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_QAOnboardingKillerDemo> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RemoveRefractProduct> ;
+    narr:covers <https://aswritten.ai/narrative#Claim_RepoTransferStrategy> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ARBUseCaseTaxonomy> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_BulkIngestionValidMethod> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_CollaborationTaxonomy> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ConsultingModuleDeliverable> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EnterpriseCustomerARBPilotUseCase> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_EnterpriseCustomerEngagementProposal> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ExtractionScopeOrgWorldview> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_POCMSAParallelism> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ProposalArtifactPractitioner> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_SponsorVsChampionPlaybook> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ThreePartSeedingPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_UseCase1GoverningHumanTeam> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_UseCase2AgenticSteering> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_UseCase3SharedProcessSteering> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CollaborationTaxonomyList> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_DeckIsArtifact> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ExtractionScopeQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerEngManagerUseCasesQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletProposalQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletTopicAnalysisQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_SolutionArchetype> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_UseCase1Quote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_UseCase2AgenticScalesQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_UseCase3Quote> ;
+    narr:covers <https://aswritten.ai/narrative#SolutionArchetype_CEOKnowledgeTransfer> ;
+    narr:covers <https://aswritten.ai/narrative#SolutionArchetype_CodeQualityThroughContext> ;
+    narr:covers <https://aswritten.ai/narrative#SolutionArchetype_QAOnboarding> ;
+    narr:keyPhrase [ narr:text "The deck is a derived artifact; the real value is the perspective shift." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_DeckIsArtifact> ] ;
+    narr:keyPhrase [ narr:text "have an AI replace me at ARB." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_EnterpriseCustomerARBPilotUseCase> ] ;
+    narr:keyPhrase [ narr:text "the killer sales demo" ; narr:phraseSource <https://aswritten.ai/narrative#SolutionArchetype_QAOnboarding> ] ;
+    narr:keyPhrase [ narr:text "you need to make it as easy as possible for your sponsor to do what you need them to do." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SponsorVsChampionPlaybook> ] ;
+    narr:keyPhrase [ narr:text "it's steering the entire ecosystem and process around technical development, which is functionally the same thing as ARB" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_UseCase2AgenticScalesQuote> ] ;
+    narr:keyPhrase [ narr:text "19 of 24 claims grounded with full provenance (79% coverage)" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_EnterpriseCustomerEngagementProposal> ] ;
+    narr:variation [ narr:text "Direct flip on onboarding method: the Three-Part Seeding pattern 'explicitly rejects direct historical ingestion as a trap' (20260501), but a later correction declares bulk transcript ingestion via AI summarization a valid, advised method — the anti-pattern framing was 'overplayed' (20260521)." ; narr:over <https://aswritten.ai/narrative#Narrative_ThreePartSeedingPattern> ; narr:over <https://aswritten.ai/narrative#Narrative_BulkIngestionValidMethod> ] ;
+    narr:variation [ narr:text "Use Case 2 (agentic steering) is self-flagged as 'currently underrepresented' in aswritten's materials — a gap the taxonomy is meant to correct, not a settled archetype." ; narr:over <https://aswritten.ai/narrative#Narrative_UseCase2AgenticSteering> ] ;
+    narr:variation [ narr:text "'Domain' framing is explicitly corrected to 'organizational worldview' — domain implies siloing, worldview implies integration; a deliberate reframe of how extraction scope is described." ; narr:over <https://aswritten.ai/narrative#Narrative_ExtractionScopeOrgWorldview> ; narr:over <https://aswritten.ai/narrative#Claim_ExtractionScopeOrgWorldview> ] ;
+    narr:variation [ narr:text "Product-surface retraction outlier: Refract and Registry removed as product features and migrated to local org skills (20260326) — a structurally distinct claim about what is NOT a product." ; narr:over <https://aswritten.ai/narrative#Claim_RemoveRefractProduct> ] ;
+    narr:variation [ narr:text "The original Solo/Parallel/Hub/Salon/Teams archetype set is superseded — the Salon is reclassified as the collaborative-review behavior, not a standalone archetype; someone may still reach for the old taxonomy." ; narr:over <https://aswritten.ai/narrative#Narrative_CollaborationTaxonomy> ; narr:over <https://aswritten.ai/narrative#Obs_CollaborationTaxonomyList> ] ;
+    narr:writer "claude (subscription)" .
+}
