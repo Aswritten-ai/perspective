@@ -4,7 +4,7 @@
 > knowledge graph of discourse acts — who said what, when, and what they made
 > of it — materialized from the company's own use of its product.
 
-Live install for MCP-capable agents: call aswritten_perspective with id "customer-architecture-demo-enterprise-a21e" against https://aswritten.ai's MCP endpoint — see https://docs.aswritten.ai for setup.
+Live install for MCP-capable agents: call aswritten_perspective with id "customer-architecture-demo-enterprise-c1cb" against https://aswritten.ai's MCP endpoint — see https://docs.aswritten.ai for setup.
 
 ## Areas
 - [ActorIncentiveAnalysis](hub-ActorIncentiveAnalysis.html): This hub maps the actors around the product and what each one wants. The buyer question is answered concretely in the VC
