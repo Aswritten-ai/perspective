@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EnablementTraining — The aswritten perspective</title>
+<meta name="description" content="This hub gathers the enablement/onboarding thinking for aswritten's beta. The framing is top-down: CTO the customer's CTO told the customer's chief ar">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › EnablementTraining</p>
+<h1>EnablementTraining</h1>
+<p class="sub">11 nodes in this area of the perspective</p>
+<p>This hub gathers the enablement/onboarding thinking for aswritten's beta. The framing is top-down: [CTO the customer's CTO told the customer's chief architect to get new members using AI as the customer's chief architect does] (<a class="cite" href="entities.html#Claim_CTODirectiveTopDownCover">Claim_CTODirectiveTopDownCover</a>) (Mar 17), removing the internal-adoption barrier. A recurring design input is [the five questions every beta user asks] (<a class="cite" href="entities.html#Claim_FiveQuestionsEveryUserAsks">Claim_FiveQuestionsEveryUserAsks</a>) — bootstrap, good memory, knowing it works, what to do first, PR worries. Tony's [technical-user separation principle] (<a class="cite" href="entities.html#Claim_TechnicalUserSeparationPrinciple">Claim_TechnicalUserSeparationPrinciple</a>) (Mar 17) anchors the guidance: start a fresh project, keep aswritten away from existing repos. Earlier, [a demo-call prospect asked for clearer docs-vs-AI separation] (<a class="cite" href="entities.html#Claim_TighterOnboarding">Claim_TighterOnboarding</a>) (Mar 11), and [Scarlet committed to the enterprise customer-facing setup docs] (<a class="cite" href="entities.html#Claim_SetupDocsCommitment">Claim_SetupDocsCommitment</a>) (May 5). First-use guidance frames it as [a chat, not a coding session] (<a class="cite" href="entities.html#Obs_ChatNotCodingSession">Obs_ChatNotCodingSession</a>), with [live bootstrapping guidance] (<a class="cite" href="entities.html#Obs_BootstrappingGuidance">Obs_BootstrappingGuidance</a>) earmarked for an automated onboarding mode. A key conceptual distinction runs through it: [human onboarding increases coverage, not product effectiveness] (<a class="cite" href="entities.html#Narrative_OnboardingEffectivenessVsCoverage">Narrative_OnboardingEffectivenessVsCoverage</a>) (Mar 13).</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>the best thing for technical users with existing AI workflows is to have a completely new project that hasn't started any repos</div><div class="card"><span class="k">verbatim</span><br>The best thing is to have a completely new thing that haven't started any repos for or anything and then don't let it touch anything else. Keep them separate.</div><div class="card"><span class="k">verbatim</span><br>(1) How do I bootstrap? (2) What makes a good memory? (3) How do I know it's working? (4) What should I do first? (5) Should I worry about PRs?</div><div class="card"><span class="k">verbatim</span><br>Importantly, this doesn't increase the effectiveness of the product, but it increases the amount of knowledge that the product is able to deploy on the org's behalf while doing tasks.</div><div class="card"><span class="k">verbatim</span><br>claude-prepend.md — the file scaffolded into beta user repos — was reduced to 4 lines</div><div class="card"><span class="k">verbatim</span><br>The dedicated human onboarding adds knowledge COVERAGE, not product EFFECTIVENESS — it is intentional optimization, not a requirement; narrative steering works fast with minimal input.</div><div class="card"><span class="k">verbatim</span><br>A regression cuts against the mainline: claude-prepend.md was slimmed to 4 lines, leaving beta users almost no protocol and a context-free 'See ASWRITTEN.md' directive — later restored from commit 6a8f320a.</div><div class="card"><span class="k">verbatim</span><br>Two different senses of 'separation': a demo-call prospect wants docs-vs-AI legibility, while Tony/aswritten want fresh-project isolation from existing repos — overlapping word, distinct asks.</div><div class="card"><span class="k">verbatim</span><br>Structural outlier: a beta user from outside tech's experiential games building teacher empathy for excluded students is a non-software 'training' sense, unrelated to aswritten onboarding.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Claim</span> <strong>Claim_FiveQuestionsEveryUserAsks</strong><br>Every beta user will ask: (1) How do I bootstrap? (2) What makes a good memory? (3) How do I know it's working? (4) What should I do first? (5) Should I worry about PRs?</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_TechnicalUserSeparationPrinciple</strong><br>Tony's insight: the best thing for technical users with existing AI workflows is to have a completely new project that hasn't started any repos, and then don't let it touch anything else. Keep them separate. The more involved people are, th</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_TighterOnboarding</strong><br>a demo-call prospect requests clearer separation of what are docs vs AI, and the aswritten help repo. New users should not have to figure out which parts are documentation and which are AI-driven.</div>
+<div class="entity"><span class="t"></span> <strong>Narrative_OnboardingEffectivenessVsCoverage</strong><br>Onboarding: Effectiveness vs. Coverage — A Key Distinction</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_BootstrappingGuidance</strong><br>Scarlet's live onboarding guidance on what to ingest first — the content that should be automated in an onboarding mode.</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_ChatNotCodingSession</strong><br>Scarlet's guidance on first-use framing: treat aswritten as a chat session, not a coding session.</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_SeparationSolutionQuote</strong><br>Tony's prescribed solution for technical user adoption — start completely fresh, keep aswritten separate from existing repos.</div><p class="sub">4 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

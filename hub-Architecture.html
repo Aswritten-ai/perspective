@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture — The aswritten perspective</title>
+<meta name="description" content="The Architecture hub frames an organization's worldview as the single source of truth from which everything else is rendered. The mainline is a compil">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › Architecture</p>
+<h1>Architecture</h1>
+<p class="sub">7 nodes in this area of the perspective</p>
+<p>The Architecture hub frames an organization's worldview as the single source of truth from which everything else is rendered. The mainline is a compilation model: [worldview as source, outputs as compiled targets] (<a class="cite" href="entities.html#Narrative_CompilationTargets">Narrative_CompilationTargets</a>) treats content, apps, and code as renders from worldview state. This rests on a [Git-centric repo of record] (<a class="cite" href="entities.html#Narrative_RepoAsSourceOfTruth">Narrative_RepoAsSourceOfTruth</a>) — content committed before extraction, GitHub Actions for async processing, append-only transactions — and is made legible by [branchable worldview] (<a class="cite" href="entities.html#Narrative_BranchingWorldview">Narrative_BranchingWorldview</a>), where direction changes are explicit, reviewable, testable like code. Two feedback/interface mechanisms sit alongside: [telltales as drift detectors] (<a class="cite" href="entities.html#Narrative_Telltales">Narrative_Telltales</a>), recompiled stories that surface worldview drift, and a [dual chat/Discourse interface] (<a class="cite" href="entities.html#Narrative_TwoInterfaceModel">Narrative_TwoInterfaceModel</a>) splitting fast iteration from async collaboration. The motivating premise is the [white-space argument] (<a class="cite" href="entities.html#Narrative_WhiteSpace">Narrative_WhiteSpace</a>): absent an explicit worldview, AI agents default to their training distribution, so worldview engineering prevents drift — and the payoff named is [agents that code with business strategy] (<a class="cite" href="entities.html#ValueProp_4">ValueProp_4</a>).</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>Content, apps, code as renders from worldview; functional transformation from worldview state to outputs</div><div class="card"><span class="k">verbatim</span><br>All content committed to Git before extraction; GitHub Actions handle async processing; append-only transactions</div><div class="card"><span class="k">verbatim</span><br>Automatically recompiled stories serve as sensitive instruments for detecting worldview drift.</div><div class="card"><span class="k">verbatim</span><br>Without organizational worldview, AI agents default to training distribution; worldview engineering prevents drift.</div><div class="card"><span class="k">verbatim</span><br>Worldview becomes branchable like code; direction changes are explicit, reviewable, testable.</div><div class="card"><span class="k">verbatim</span><br>Coding agents that understand business strategy while implementing</div><div class="card"><span class="k">verbatim</span><br>Two children attach as skos:related rather than broader (branching, white-space) plus ValueProp_4 — motivating premises and value claims, not structural components; they justify the architecture rather than constitute it.</div><div class="card"><span class="k">verbatim</span><br>Telltales and the dual interface are runtime/feedback concerns (drift detection, human collaboration workflow) sitting beside the build-time compilation pipeline — a distinct layer that could be read as observability rather than core architecture.</div><div class="card"><span class="k">verbatim</span><br>The compile-everything-from-worldview thesis and the append-only Git-of-record thesis both claim source-of-truth status; whether worldview or the repo is the true ground is left implicit.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Narrative</span> <strong>Narrative_BranchingWorldview</strong><br>Version-Controlled Worldview Evolution</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_CompilationTargets</strong><br>Content, apps, code as renders from worldview; functional transformation from worldview state to outputs</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_RepoAsSourceOfTruth</strong><br>Git-centric architecture</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_Telltales</strong><br>Telltales as Worldview Drift Detectors</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_TwoInterfaceModel</strong><br>Dual interface architecture</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_WhiteSpace</strong><br>AI Fills Unspecified Space with Training Defaults</div><p class="sub">1 further node is not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DataIntegrationFlows — The aswritten perspective</title>
+<meta name="description" content="This hub gathers the plumbing by which raw activity becomes queryable knowledge. On the execution side, the webhook-mode attribution filter (Jan 17) d">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › DataIntegrationFlows</p>
+<h1>DataIntegrationFlows</h1>
+<p class="sub">6 nodes in this area of the perspective</p>
+<p>This hub gathers the plumbing by which raw activity becomes queryable knowledge. On the execution side, the [webhook-mode attribution filter] (<a class="cite" href="entities.html#Claim_SubworkflowAttributionFilter">Claim_SubworkflowAttributionFilter</a>) (Jan 17) draws the line between top-level proxy-dispatched tool calls and sub-workflow calls that must not be double-counted. The same week, [hand-correlating three data sources] (<a class="cite" href="entities.html#Narrative_ManualCorrelationAuditGap">Narrative_ManualCorrelationAuditGap</a>) for the enterprise customer metrics exposed a structural gap in the audit schema — surfacing a proposed <code>outcome_summary</code> JSONB column. On the knowledge side, [narrative extraction into RDF] (<a class="cite" href="entities.html#Obs_NarrativeOntologyExtraction">Obs_NarrativeOntologyExtraction</a>) feeds a graph, and an [annotate function] (<a class="cite" href="entities.html#Observation_AnnotationQuote">Observation_AnnotationQuote</a>) maps AI claims back to collective memory like citations. [Personal-graph federation] (<a class="cite" href="entities.html#Narrative_PersonalGraphFederation">Narrative_PersonalGraphFederation</a>) extends the flow outward — a personal repo acting as both filter and expander against the org repo, with an open introspection question. An [HTML-deliverables pattern] (<a class="cite" href="entities.html#Observation_HTMLDeliverables">Observation_HTMLDeliverables</a>) sits at the client-facing edge. Together these span ingestion, attribution, audit, extraction, and federation — but they are stages spread across domains, not a single resolved pipeline.</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>Filter n8n executions to mode=webhook for top-level proxy-dispatched tool calls.</div><div class="card"><span class="k">verbatim</span><br>Adding an outcome_summary JSONB column at audit-write time would collapse two days of investigation into a single SQL query.</div><div class="card"><span class="k">verbatim</span><br>correlating three data sources by hand (n8n executions API, proxy Docker auth log, n8n execution detail)</div><div class="card"><span class="k">verbatim</span><br>does introspect take a vector of [&amp; [owner repo]]?</div><div class="card"><span class="k">verbatim</span><br>analogous to research paper citations</div><div class="card"><span class="k">verbatim</span><br>Audit-gap child is a critique, not a flow: manual correlation revealed the schema lacks per-call outcome metrics, proposing a write-time fix rather than describing current behavior.</div><div class="card"><span class="k">verbatim</span><br>Personal-graph federation carries an unresolved design question (does introspect take an [owner repo] vector?) — direction, not a settled mechanism.</div><div class="card"><span class="k">verbatim</span><br>HTML deliverables is a domain outlier — client-facing output delivery, not internal data plumbing like the n8n/audit/extraction children.</div><div class="card"><span class="k">verbatim</span><br>Two distinct registers coexist: low-level execution/audit instrumentation (n8n, Docker logs) vs. knowledge-graph semantics (RDF extraction, annotation-as-citation, federation).</div>
+<h2>In this area</h2><div class="entity"><span class="t">Narrative</span> <strong>Narrative_PersonalGraphFederation</strong><br>Personal graphs federated with org repos act as both filter and expander on worldview changes</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_NarrativeOntologyExtraction</strong><br>Scarlet's tool extracts narratives from raw transcripts into an RDF knowledge graph using a narrative architecture ontology.</div><p class="sub">4 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

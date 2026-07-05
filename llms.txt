@@ -1,0 +1,157 @@
+# The aswritten perspective
+
+> The machine-readable public perspective of aswritten.ai: an organizational
+> knowledge graph of discourse acts — who said what, when, and what they made
+> of it — materialized from the company's own use of its product.
+
+Live install for MCP-capable agents: call aswritten_perspective with id "customer-architecture-demo-enterprise-a21e" against https://aswritten.ai's MCP endpoint — see https://docs.aswritten.ai for setup.
+
+## Areas
+- [ActorIncentiveAnalysis](hub-ActorIncentiveAnalysis.html): This hub maps the actors around the product and what each one wants. The buyer question is answered concretely in the VC
+- [Architecture](hub-Architecture.html): The Architecture hub frames an organization's worldview as the single source of truth from which everything else is rend
+- [ArchitectureOverview](hub-ArchitectureOverview.html): The architecture rests on a few settled primitives: phone number as sole identity (no accounts, no OAuth), one repo per 
+- [AudienceFrames](hub-AudienceFrames.html): This hub gathers how the pitch and fundraising materials get reframed per audience. The structural spine is that every s
+- [Behaviors](hub-Behaviors.html): This hub gathers the system behaviors of a git-native memory product — both the low-level operations and the user-facing
+- [CallToAction](hub-CallToAction.html): This hub gathers how the fundraise should *land* with prospective investors — the concrete ask and the path to becoming 
+- [CaseStudies](hub-CaseStudies.html): This hub gathers case studies meant to demonstrate worldview compilation in action. Three are framed as direct compariso
+- [ChangeManagement](hub-ChangeManagement.html): This hub gathers how change flows through aswritten's repo-native operations — across handoffs, research promotion, revi
+- [CompetitiveLandscape](hub-CompetitiveLandscape.html): This hub positions aswritten against everyone adjacent by a single axis: rivals do orchestration or retrieval of what's 
+- [CompliancePosture](hub-CompliancePosture.html): This hub gathers how aswritten frames compliance — as both a revenue lever and an adoption gate. The mainline reads comp
+- [Conviction](hub-Conviction.html): This hub gathers the conviction construct: the epistemic settledness of organizational knowledge, formalized as a Notion
+- [CoreNarratives](hub-CoreNarratives.html): This hub gathers aswritten.ai's positioning narratives around one thesis: the next bottleneck is missing organizational 
+- [CoreWorkflows](hub-CoreWorkflows.html): This hub gathers the operational patterns aswritten runs on. The flagship is the session-to-document arc: Interview → Sa
+- [DataIntegrationFlows](hub-DataIntegrationFlows.html): This hub gathers the plumbing by which raw activity becomes queryable knowledge. On the execution side, the webhook-mode
+- [DataModelLifecycle](hub-DataModelLifecycle.html): This hub gathers the architectural design of a data-model lifecycle built on Git. The spine is an append-only, Git-centr
+- [DesignTradeoffs](hub-DesignTradeoffs.html): This hub gathers the recurring design tensions in the system's architecture and vocabulary. A foundational pair is frame
+- [Differentiators](hub-Differentiators.html): This hub gathers what makes aswritten distinct from generic AI. The most-cited enterprise hook is cross-repo, cross-plat
+- [EnablementTraining](hub-EnablementTraining.html): This hub gathers the enablement/onboarding thinking for aswritten's beta. The framing is top-down: CTO the customer's CT
+- [ExpansionPathway](hub-ExpansionPathway.html): This hub gathers how aswritten grows from a common entry — a [[amount] pilot] — into divergent tracks: Core for Product/
+- [FeedbackLoops](hub-FeedbackLoops.html): This hub gathers the mechanics of how feedback enters and reshapes the product and its knowledge. Two loops sit at the c
+- [Flows](hub-Flows.html): This hub gathers the process flows of the system — how knowledge gets in, how it gets out, and how the loop closes. On c
+- [FocusSequencing](hub-FocusSequencing.html): This hub gathers competing go-to-market sequencing theses — how to enter, what to prove first, and when to expand. One m
+- [FrictionFailure](hub-FrictionFailure.html): A friction/failure region spanning where AI-accelerated work, sales, onboarding, and internal process all bind. The recu
+- [GovernanceSafetyTrust](hub-GovernanceSafetyTrust.html): This hub gathers two distinct registers of governance, safety, and trust. The conceptual register frames AI through AI i
+- [HiringPlan](hub-HiringPlan.html): This hub holds the company's staffing arc, rooted in a solo-founder capacity ceiling — \"Solo founder maxes out at ~1.5 
+- [InflectionPoints](hub-InflectionPoints.html): A mixed hub gathering the moments Scarlet flagged as inflections — strategic, market, and tactical. The dominant frame i
+- [IntakePrioritization](hub-IntakePrioritization.html): This hub gathers the intake-and-prioritization mechanics of a content-production workflow. The spine is a first-class In
+- [KPIsSuccess](hub-KPIsSuccess.html): This hub gathers aswritten's success metrics across two horizons. The long-horizon KPI is an acquisition-sized exit Scar
+- [LeadingIndicators](hub-LeadingIndicators.html): This hub gathers the leading-indicator signals tracked from early customer use. The dominant thesis (Jan 17): the cite +
+- [MarketContext](hub-MarketContext.html): This hub gathers the framings of the market problem the venture addresses, all circling a single root — AI tooling starv
+- [Milestones](hub-Milestones.html): This hub gathers product and partnership milestones across spring 2026. The mainline is aswritten's own launch: a beta a
+- [Mission](hub-Mission.html): The Mission hub centers on building collective memory as infrastructure — explicitly \"infrastructure, not tool\" — that
+- [MoatLeverage](hub-MoatLeverage.html): This hub gathers the claim that AsWritten's defensibility and its reach are the same asset: a Git-native narrative archi
+- [ModulesCapabilities](hub-ModulesCapabilities.html): This hub gathers the product's tool surface and capability decisions, mostly dated March–May 2026. The dominant arc is a
+- [Narrative_1](hub-Narrative_1.html): This hub holds the thesis that identity follows narrative architecture — that steering a narrative shapes what an AI bec
+- [Narrative_AIContextValidation](hub-Narrative_AIContextValidation.html): This hub gathers the case for AI context validation as a distinct value proposition. The throughline: Aswritten as conte
+- [Narrative_B2CPivot](hub-Narrative_B2CPivot.html): This hub holds aswritten's reframing of its primary market. On Mar 17, Scarlet and Tony independently converged on B2C o
+- [Narrative_BoundedDomainFidelityArgument](hub-Narrative_BoundedDomainFidelityArgument.html): Argues that expertise modules are higher fidelity than org memory because courses, books, and consulting deliverables ar
+- [Narrative_CategoryCuratedExpertiseInstallation](hub-Narrative_CategoryCuratedExpertiseInstallation.html): The category began as 'curated expertise installation' (Strategy Doc V1), then narrowed: in Mar Scarlet dropped 'curated
+- [Narrative_ClojureOwnsLogic](hub-Narrative_ClojureOwnsLogic.html): This hub argues the orchestration logic belongs in Clojure, with the build-vs-wrap boundary drawn explicitly. The event-
+- [Narrative_ContinuousCompliance](hub-Narrative_ContinuousCompliance.html): This hub frames a move from snapshot-based to continuous compliance. The mainline diagnoses the problem — point-in-time 
+- [Narrative_EnterpriseShapePrimaryFocus](hub-Narrative_EnterpriseShapePrimaryFocus.html): On 2026-04-21 Scarlet applied Tony's additive-vs-incremental test to her funnel and tentatively named the the enterprise
+- [Narrative_ExpertiseOnDemandReframe](hub-Narrative_ExpertiseOnDemandReframe.html): This hub reframes the product from an ambient worldview compiled at session start to expertise invoked at the moment of 
+- [Narrative_OrgWorldview](hub-Narrative_OrgWorldview.html): This hub gathers the org's account of how aswritten builds its understanding of a client. Two foundation-level children 
+- [Narrative_PerspectiveOnSpec](hub-Narrative_PerspectiveOnSpec.html): This hub gathers the April thesis that a perspective built *on spec* — before any prospect interview — is itself the pit
+- [Narrative_PerspectiveVsInformation](hub-Narrative_PerspectiveVsInformation.html): This hub argues the load-bearing distinction for modules versus RAG: modules deliver *perspective*, not information. The
+- [Narrative_SalesAsDelivery](hub-Narrative_SalesAsDelivery.html): This hub holds the thesis that the sales motion and product delivery are one thing — Demo 1 *is* the sale, and every cal
+- [Narrative_SeparationPrincipleProductVsOrg](hub-Narrative_SeparationPrincipleProductVsOrg.html): This hub gathers a single dated demolition pass (Mar 2026) enacting one principle: collapse the product/org split by eli
+- [Narrative_ThreePartSeedingPattern](hub-Narrative_ThreePartSeedingPattern.html): A three-step onboarding playbook for seeding aswritten.ai from historical recordings, articulated around the enterprise 
+- [Narrative_TranscriptBootstrappingUnderplayed](hub-Narrative_TranscriptBootstrappingUnderplayed.html): This hub argues transcript bootstrapping is aswritten's strongest underused onramp — and that the company keeps failing 
+- [Narrative_UserFacingVsInternalLanguageSplit](hub-Narrative_UserFacingVsInternalLanguageSplit.html): This hub holds the deliberate two-layer language split: human words on the user-facing surface, engineering metaphor und
+- [NarrativeAnchor](hub-NarrativeAnchor.html): This hub gathers the meanings of *narrative* at the center of aswritten.ai. The substantive core casts narrative as the 
+- [NarrativeDrivenRoadmap](hub-NarrativeDrivenRoadmap.html): This roadmap hub braids two strands. The go-to-market strand reframes positioning from consulting-first toward a \"train
+- [NorthStarMetrics](hub-NorthStarMetrics.html): This hub gathers the candidate \"north star\" signals — and they do not agree on one number. The strongest product claim
+- [OperatingModelShifts](hub-OperatingModelShifts.html): The hub traces a multi-front shift in how work, staffing, and AI systems are organized. In Jul 2025, Scarlet and Tony fr
+- [Opportunity](hub-Opportunity.html): The opportunity is framed through three distinct problem lenses, none crowned. The strategy-execution disconnect casts i
+- [OrganizationalChangeManual](hub-OrganizationalChangeManual.html): This hub gathers field notes toward a manual for organizational change in AI adoption — the recurring claim being that t
+- [Outcomes](hub-Outcomes.html): This hub gathers the claimed outcomes of the product, dominated by a quantified ROI stack for a 10-person team: onboardi
+- [OutcomesProof](hub-OutcomesProof.html): OutcomesProof gathers heterogeneous evidence that the system delivers value. Commercially, the live-demo delivery gate t
+- [PackagingEntitlement](hub-PackagingEntitlement.html): This hub gathers how product access is packaged and what clients forfeit. The mainline, settled 2026-02-11, is a no-free
+- [PackagingPricing](hub-PackagingPricing.html): Pricing evolved through repeated reframing. Feb per-repo pricing ([amount]/mo, 10 seats) gave way to a March three-tier 
+- [PersonasJTBD](hub-PersonasJTBD.html): This hub holds aswritten's persona/JTBD model, which has migrated over time. An original four-archetype scheme — Knowled
+- [PositioningThesis](hub-PositioningThesis.html): This hub gathers how aswritten.ai positions itself, narrating an evolution rather than a settled label. The mainline ref
+- [PrimaryActors](hub-PrimaryActors.html): This hub gathers the cast of who the product is *for* and *with* — and the children do not agree on a single primary act
+- [Primitives](hub-Primitives.html): This hub gathers the write primitives and structural definitions underlying the aswritten knowledge graph. The keystone 
+- [Process](hub-Process.html): A June 12 process-redesign session whose stated aim was \"I would like to improve the mess\", structured as correcting f
+- [ProcessPolicyUpdates](hub-ProcessPolicyUpdates.html): This hub collects process and policy decisions across the pipeline, CI, branching, and protocol placement. The earliest 
+- [Product](hub-Product.html): This hub gathers Scarlet's product lineage and the through-line connecting it: extracting narrative from data to steer o
+- [ProductLadder](hub-ProductLadder.html): This hub gathers the product-and-go-to-market ladder. The commercial spine is the four-phase core expansion track: [a [a
+- [ProductOverview](hub-ProductOverview.html): The ProductOverview hub gathers the shape of the aswritten product across UX, architecture, packaging, pricing, and tool
+- [Proof](hub-Proof.html): The proof hub tracks how aswritten demonstrates that it changes AI behavior — across sales pitch, technical verification
+- [QualityReviewGates](hub-QualityReviewGates.html): This hub spans the review, evaluation, and verification disciplines that gate knowledge quality. The review protocol clu
+- [Quotes](hub-Quotes.html): This hub collects the verbatim record — direct quotes and attributed observations — that anchor the aswritten narrative 
+- [RiskGuardrails](hub-RiskGuardrails.html): This hub gathers the risks and guardrails threaded through Aswritten's company narrative — product, sales, hiring, capit
+- [RoleTopology](hub-RoleTopology.html): This hub gathers how aswritten models *who occupies what* in an organization. The mainline distinction is firm and dated
+- [SalesDecks](hub-SalesDecks.html): This hub gathers the evolving sales-materials and sales-motion thinking. a demo-call prospect's early ask (Mar 11) was c
+- [ScalabilityPerformance](hub-ScalabilityPerformance.html): This hub gathers the scalability and performance work, dominated by a dated infra trajectory. In Mar (26th), memory reba
+- [SecurityPrivacyModel](hub-SecurityPrivacyModel.html): The hub gathers how secrets, identity, and compliance are handled. The spine is credential hygiene: the target credentia
+- [Segmentation](hub-Segmentation.html): This hub gathers competing cuts at *who the customer is*. The quantitative spine is a dev-shop ICP — [5-150 people, [amo
+- [Signals](hub-Signals.html): A mixed gather of market, product, and self-observation signals — no single arc, several distinct registers. The stronge
+- [SolutionArchetypes](hub-SolutionArchetypes.html): This hub gathers the solution archetypes and target use cases the product addresses, mostly via `skos:broader`. The unif
+- [StackOverview](hub-StackOverview.html): This hub gathers the As Written / Scarlet Dame technical-and-conceptual stack across two registers. The conceptual mainl
+- [Strategy](hub-Strategy.html): This hub gathers the strategic thesis that narrative is an organizational operating system — a framework embedding narra
+- [StrategyOverview](hub-StrategyOverview.html): This hub gathers the strategy behind the strategic rebrand from storyBASE/witness to aswritten.ai, plus the foundational
+- [SystemTopology](hub-SystemTopology.html): This hub gathers how aswritten's system is structured across infrastructure, tooling, and perspective. The mainline is a
+- [TechnicalExplainers](hub-TechnicalExplainers.html): This hub gathers material on how technical concepts get *explained* — both a design decision and the deck/communication 
+- [TechnologiesSocialSystems](hub-TechnologiesSocialSystems.html): This hub gathers the technical and conceptual scaffolding behind treating organizations as steerable systems. The intell
+- [TimingThesis](hub-TimingThesis.html): This hub gathers the \"why now\" arguments for the venture, running along two distinct rails. The first is IP leakage as
+- [ValueExchange](hub-ValueExchange.html): This hub gathers how value is exchanged and articulated around the collective-memory product. The pivotal moment is a re
+- [Vision](hub-Vision.html): Scarlet's Vision holds a steering-vector thesis as its through-line: language, narrative, and meaning act as steering ve
+- [WhatDoesItDo](hub-WhatDoesItDo.html): This hub answers \"what does it do\" in two registers that pull in different directions. The product spine: As Written i
+- [WhatIsIt](hub-WhatIsIt.html): This hub answers \"what is the product?\" and its mainline, dated April 28 2026, is positive-identity: the product is cu
+- [WhatItsNot](hub-WhatItsNot.html): This hub collects the positioning negatives — what aswritten is *not*. The load-bearing boundary is search vs. aswritten
+
+## Voice & style
+- [AICompanyizationCase](hub-AICompanyizationCase.html): This hub gathers observations about capitalization and typographic emphasis as authorial style signals. The dominant pat
+- [Analogy](hub-Analogy.html): This hub gathers the analogies and metaphors the narrative reaches for to make AI-collective-memory legible, spanning se
+- [Anaphora](hub-Anaphora.html): This hub gathers style observations of anaphora — repeated clause-initial structure used for emphasis, rhythm, and memor
+- [Antithesis](hub-Antithesis.html): This hub gathers uses of antithesis as a recurring rhetorical pattern across the aswritten.ai narrative and pitch. Most 
+- [BrandNameStylization](hub-BrandNameStylization.html): This hub gathers observations about orthographic and brand stylization across aswritten's documents. The dominant patter
+- [CadenceRhythm](hub-CadenceRhythm.html): This hub gathers the document's cadence and rhythm devices. The dominant engine is the rule of three: a git-native triad
+- [Calibration](hub-Calibration.html): Calibration gathers how aswritten validates its own quality — the recurring frame is optometric. The optometrist model a
+- [CitationConventions](hub-CitationConventions.html): This hub collects observations about how spoken and written evidence is cited across the perspective's documents. The do
+- [FlowCoherence](hub-FlowCoherence.html): This hub gathers style observations of a single first-person analytical document, narrating its voice and architecture r
+- [GrammarSyntax](hub-GrammarSyntax.html): Grammar and syntax observations of Scarlet's writing converge on a few load-bearing habits. Voice is overwhelmingly acti
+- [IdiolectPhrasing](hub-IdiolectPhrasing.html): This hub gathers idiolect and register observations across speakers. Tony's voice dominates the enthusiasm register: mil
+- [InformationArchitecture](hub-InformationArchitecture.html): This hub gathers Scarlet/aswritten style and information-architecture observations — how the documents physically encode
+- [JargonPolicy](hub-JargonPolicy.html): This hub collects observations about jargon policy across the corpus — how technical, domain-specific, and product vocab
+- [KeyPhrases](hub-KeyPhrases.html): This hub collects the canonical vocabulary of the pitch for collective memory — the anchor term, repeated 20+ times and 
+- [Metaphor](hub-Metaphor.html): This hub gathers the document's figurative language across two registers. Empowerment/control metaphors dominate: narrat
+- [NamingConventions](hub-NamingConventions.html): This hub gathers the project's naming and positioning conventions, which cohere around two devices. First, a consistent 
+- [NarrativePillars](hub-NarrativePillars.html): This hub gathers two unlike strands under one roof. The bulk is a cluster of style observations on how strategic prose i
+- [Parallelism](hub-Parallelism.html): This hub gathers observations of parallelism as a recurring stylistic device across an AI-native strategy/pitch document
+- [PlainLanguage](hub-PlainLanguage.html): This hub gathers observations of Scarlet's plain-language style across founder-facing documents. The dominant thread is 
+- [ProblemStakes](hub-ProblemStakes.html): This hub frames the stakes of the problem the pitch addresses, and across its children one rhetorical move dominates: op
+- [PunctuationTypography](hub-PunctuationTypography.html): This hub collects the document's punctuation and typographic devices. The dominant mark is the em-dash, used across chil
+- [RegisterFormality](hub-RegisterFormality.html): This hub collects observations about register and formality across the corpus. The dominant pattern is mixed register: s
+- [ResonanceUse](hub-ResonanceUse.html): This hub gathers how *resonant framing* gets used — the rhetorical and structural devices that make dense thinking land.
+- [RhetoricalDevices](hub-RhetoricalDevices.html): This hub gathers observed rhetorical devices in the source document, spanning structure, contrast, metaphor, and repetit
+- [RhetoricalQuestion](hub-RhetoricalQuestion.html): This hub collects style observations on the rhetorical question as a recurring device across the org's writing. The domi
+- [Rubric_Accuracy](hub-Rubric_Accuracy.html): This hub gathers accuracy assessments across the corpus's document types — memos, pitch decks, ADRs, call notes, and col
+- [Rubric_Cadence](hub-Rubric_Cadence.html): This hub gathers per-document cadence assessments under one rubric dimension — how rhythm, sentence-length variation, an
+- [Rubric_Flow](hub-Rubric_Flow.html): This hub gathers rubric assessments of *flow* — logical progression, transitions, and structural coherence — across a wi
+- [Rubric_Novelty](hub-Rubric_Novelty.html): This hub gathers per-artifact novelty assessments scored under one rubric — each child judges how original a given docum
+- [Rubric_Phrasing](hub-Rubric_Phrasing.html): This hub gathers per-document/per-transcript phrasing assessments from a writing rubric. The dominant finding repeats ac
+- [Rubric_Register](hub-Rubric_Register.html): This hub collects per-document register assessments under one rubric dimension across the corpus. The dominant reading i
+- [Rubric_Resonance](hub-Rubric_Resonance.html): This hub collects rubric assessments of resonance — how well each document, claim, or rebrand lands emotionally and memo
+- [Rubric_StrategicAlignment](hub-Rubric_StrategicAlignment.html): This hub gathers strategic-alignment rubric assessments across the corpus, and the dominant reading is striking uniformi
+- [Rubric_Tailoring](hub-Rubric_Tailoring.html): This hub gathers per-document audience-tailoring assessments scored against the rubric. The dominant axis is *who the wr
+- [RuleOfThree](hub-RuleOfThree.html): This hub gathers observations of the document's recurring rule-of-three rhetoric — triadic parallelism used for emphasis
+- [SecondPerson](hub-SecondPerson.html): This hub gathers style observations on second-person and direct address across aswritten's documents. The mainline is a 
+- [ShortPunchyCadence](hub-ShortPunchyCadence.html): This hub gathers style observations on a recurring short, punchy cadence across the founder's speech and writing. The do
+- [Simile](hub-Simile.html): This hub collects the figurative devices the speaker reaches for — predominantly similes and conceptual metaphors drawn 
+- [SpeakerIdiolects](hub-SpeakerIdiolects.html): This hub collects observations about how individual speakers sound — their idiolects, register markers, and the editoria
+- [StockPhrases](hub-StockPhrases.html): This hub gathers recurring stock phrases observed in the speaker's style, spanning several registers. The dominant ancho
+- [StyleMetrics](hub-StyleMetrics.html): This hub gathers per-document style and readability metrics across the org's corpus, computed on the same axes: active-v
+- [Tagline](hub-Tagline.html): This hub gathers the candidate taglines and brand-voice observations for aswritten.ai, whose name puns Latin *sic* (as w
+- [TerminologyControl](hub-TerminologyControl.html): This hub gathers the project's controlled vocabulary — the terms AsWritten/a collaborator insists on and the stylization
+- [ToneAuthoritative](hub-ToneAuthoritative.html): This hub gathers observations of an authoritative register running through aswritten's documents. The mechanics recur: p
+- [ToneDirectPersonal](hub-ToneDirectPersonal.html): This hub gathers stylistic observations about a direct, second-person, personal voice running through the product's mark
+- [ToneVoice](hub-ToneVoice.html): This hub gathers observations of a single brand voice across registers. The dominant mode is confident and agent-centere
+- [VerbChoice](hub-VerbChoice.html): This hub gathers style observations on verb choice across aswritten.ai's pitch and messaging. The dominant pattern is a 
+- [VoiceActive](hub-VoiceActive.html): This hub gathers style observations of an active, agentive voice across the company's writing. The dominant pattern is f
+
+## Reference
+- [Entity index](entities.html): every published node with attribution
+- [aswritten.ai](https://aswritten.ai): the product
+- [docs.aswritten.ai](https://docs.aswritten.ai): protocol and setup

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SystemTopology — The aswritten perspective</title>
+<meta name="description" content="This hub gathers how aswritten's system is structured across infrastructure, tooling, and perspective. The mainline is a layered infrastructure accoun">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › SystemTopology</p>
+<h1>SystemTopology</h1>
+<p class="sub">10 nodes in this area of the perspective</p>
+<p>This hub gathers how aswritten's system is structured across infrastructure, tooling, and perspective. The mainline is a layered infrastructure account: the [canonical architectural model] (<a class="cite" href="entities.html#Obs_ArchitecturalModel">Obs_ArchitecturalModel</a>) names Identity, Auth, Sources, Storage, Credentials, and Transport, with [every user backed by a managed repo] (<a class="cite" href="entities.html#Narrative_ManagedRepoPerUser">Narrative_ManagedRepoPerUser</a>) as invisible infrastructure. Workflow and folder structure map onto this — a [folder taxonomy] (<a class="cite" href="entities.html#Obs_FolderTaxonomy">Obs_FolderTaxonomy</a>) of Entrypoints/Flows/LLM/Repo/Comms and a [six-workflow taxonomy] (<a class="cite" href="entities.html#Obs_WorkflowTaxonomy">Obs_WorkflowTaxonomy</a>) separating side-effecting Flows from pure functions. The agent-facing surface is the [three-tool architecture] (<a class="cite" href="entities.html#Obs_ThreeToolArchitecture">Obs_ThreeToolArchitecture</a>): compile, introspect, scope. Forward-looking, a [triple-store convergence thesis] (<a class="cite" href="entities.html#Narrative_TripleStoreConvergence">Narrative_TripleStoreConvergence</a>) argues OOM, compile reliability, and production-scale context are one problem solvable by Jena/Fuseki or DreamDB-inspired storage. Distinct from all the plumbing, the [named-perspective-as-sub-agent claim] (<a class="cite" href="entities.html#Claim_NamedPerspectiveAsSubAgent">Claim_NamedPerspectiveAsSubAgent</a>) (dated 2025-07-14) holds that an advisor's curated take operates as its own sub-agent. Two style observations debate where the architecture's canonical statement actually lives — code block versus markdown table.</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>Identity (Outseta), Auth (JWT), Sources (integrations), Storage (one repo per memory), Credentials (Datomic internal API), Transport (single /mcp adaptive).</div><div class="card"><span class="k">verbatim</span><br>compile (session bootstrap, full org context, compressed snapshot), introspect (analytical, gaps/tensions/questions), scope (content retrieval, full-depth subgraph for arbitrary focus).</div><div class="card"><span class="k">verbatim</span><br>Every user gets an owner/repo managed entirely by aswritten — the repo is invisible infrastructure</div><div class="card"><span class="k">verbatim</span><br>A triple store architecture converges three distinct problems into one solution</div><div class="card"><span class="k">verbatim</span><br>it is a curated sub-perspective that represents the advisor's particular take, distinct from the root organizational perspective</div><div class="card"><span class="k">verbatim</span><br>Folder taxonomy maps to architectural roles: Entrypoints, Flows, LLM workflows, Repo, Comms.</div><div class="card"><span class="k">verbatim</span><br>Storage substrate is unsettled: the canonical model commits to GitHub repos plus a Datomic internal API, while the convergence thesis proposes a Jena/Fuseki or DreamDB-inspired triple store — different foundations coexisting.</div><div class="card"><span class="k">verbatim</span><br>The named-perspective-as-sub-agent claim is a structural outlier — it concerns perspective/agent semantics, not the infrastructure layering that dominates the rest of the hub.</div><div class="card"><span class="k">verbatim</span><br>Two competing claims about where the architecture's definitive statement lives — a fenced code block versus a markdown table, each asserted as 'not the prose.'</div><div class="card"><span class="k">verbatim</span><br>The model is labeled 'five-layer' but enumerates six roles (Identity, Auth, Sources, Storage, Credentials, Transport) — an unreconciled count discrepancy.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Claim</span> <strong>Claim_NamedPerspectiveAsSubAgent</strong><br>Scarlet [30:41]: 'In the planning session for any particular task, like, I want to know what Tony thinks as Tony has represented, you know, your... And our sort of shared opinion over every call we've had.' The named perspective is not a fl</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_ManagedRepoPerUser</strong><br>Every user gets an owner/repo managed entirely by aswritten — the repo is invisible infrastructure</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_ArchitecturalModel</strong><br>Canonical five-layer architectural model: Identity (Outseta), Auth (JWT), Sources (integrations), Storage (one repo per memory), Credentials (Datomic internal API), Transport (single /mcp adaptive).</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_FolderTaxonomy</strong><br>Folder taxonomy maps to architectural roles: Entrypoints, Flows, LLM workflows, Repo, Comms.</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_ThreeToolArchitecture</strong><br>Three-tool architecture: compile (session bootstrap, full org context, compressed snapshot), introspect (analytical, gaps/tensions/questions), scope (content retrieval, full-depth subgraph for arbitrary focus).</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_WorkflowTaxonomy</strong><br>Six new workflows created across four architectural roles: Flows (orchestration with side effects at edges), LLM Pure Functions (no side effects), Comms (external communication), Entrypoints (webhook normalization).</div>
+<div class="entity"><span class="t">StyleObservation</span> <strong>StyleObs_CodeBlockArchDiagram</strong><br>Fenced code block used for architectural model summary — columnar label:value alignment. Treats architecture as readable artifact, not prose.</div>
+<div class="entity"><span class="t">StyleObservation</span> <strong>StyleObs_TableDrivenArchitecture</strong><br>Markdown tables used to crystallize architecture decisions: the three-tool table (Tool | Purpose | Returns) is the definitive statement of the architecture, not the prose.</div><p class="sub">2 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

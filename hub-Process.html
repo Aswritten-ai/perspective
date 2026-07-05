@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Process — The aswritten perspective</title>
+<meta name="description" content="A June 12 process-redesign session whose stated aim was \"I would like to improve the mess\", structured as correcting five March-8 misunderstandings ">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › Process</p>
+<h1>Process</h1>
+<p class="sub">19 nodes in this area of the perspective</p>
+<p>A June 12 process-redesign session whose stated aim was [\"I would like to improve the mess\"] (<a class="cite" href="entities.html#Obs_ClosingIntentQuote">Obs_ClosingIntentQuote</a>), structured as [correcting five March-8 misunderstandings before any building] (<a class="cite" href="entities.html#Narrative_CorrectBeforeBuilding">Narrative_CorrectBeforeBuilding</a>). The spine: [the repo is canonical] (<a class="cite" href="entities.html#Obs_RepoSourceOfTruthQuote">Obs_RepoSourceOfTruthQuote</a>), [inverting the prior Notion-canonical / Backlog-journal rule] (<a class="cite" href="entities.html#Narrative_RepoAsSourceOfTruth_PM">Narrative_RepoAsSourceOfTruth_PM</a>), with [Backlog kept as the work-state registry] (<a class="cite" href="entities.html#Claim_RepoCanonicalWorkState">Claim_RepoCanonicalWorkState</a>) for its [repo integration and commit-carrying context dumps] (<a class="cite" href="entities.html#Obs_BacklogRationaleQuote">Obs_BacklogRationaleQuote</a>). Consequences cascade: [the CRM migrates into the repo] (<a class="cite" href="entities.html#Claim_CRMMigratesIntoRepo">Claim_CRMMigratesIntoRepo</a>) as the last Notion dependency, and [the North Star is revived as tactical hub] (<a class="cite" href="entities.html#Claim_NorthStarRevived">Claim_NorthStarRevived</a>) under a 7-day staleness cadence. Hard engineering invariants are restated — [rebasing is never appropriate] (<a class="cite" href="entities.html#Narrative_NeverRebase">Narrative_NeverRebase</a>) and [only dev branch hits dev infrastructure] (<a class="cite" href="entities.html#Claim_DevBranchOnly">Claim_DevBranchOnly</a>). A parallel thread designs the [iterative review process] (<a class="cite" href="entities.html#Narrative_ReviewProcess">Narrative_ReviewProcess</a>): [handoffs are never documents] (<a class="cite" href="entities.html#Claim_HandoffsNeverDocuments">Claim_HandoffsNeverDocuments</a>), [review is strongly offered, not mandatory] (<a class="cite" href="entities.html#Claim_ReviewInstructionsNotBlocking">Claim_ReviewInstructionsNotBlocking</a>), and [transparency is necessary but insufficient] (<a class="cite" href="entities.html#Claim_2">Claim_2</a>).</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>I think the source of truth is the documents committed to the repo.</div><div class="card"><span class="k">verbatim</span><br>backlog is great for integration into the repo and the fact that it carries commits and can be just dumped into context without having to do individual MCP calls — I really liked that.</div><div class="card"><span class="k">verbatim</span><br>I would like to improve the mess.</div><div class="card"><span class="k">verbatim</span><br>Transparency as mitigation is necessary but insufficient</div><div class="card"><span class="k">verbatim</span><br>Review is strongly offered, not mandatory.</div><div class="card"><span class="k">verbatim</span><br>Rebasing is never appropriate: rewrites history, requires force push, breaks droplet clone, n8n git, deploy actions, and session tracking.</div><div class="card"><span class="k">verbatim</span><br>North Star revived, but the Notion Milestone→Project→Sprint hierarchy was deliberately NOT rebuilt and /sprint is retired — a road explicitly not taken.</div><div class="card"><span class="k">verbatim</span><br>~165 stale n8n-era tasks are parked, not cancelled — explicitly framed as NOT a migration decision, leaving the Clojure migration deferred and open.</div><div class="card"><span class="k">verbatim</span><br>Notification is a transaction side effect, not a review mechanism — teammates get notified regardless of whether the author reviewed; pushes against treating review as a gate.</div><div class="card"><span class="k">verbatim</span><br>Review is offered but non-blocking — declining does not block future work, qualifying any reading of review as mandatory process.</div><div class="card"><span class="k">verbatim</span><br>Transparency-as-mitigation is marked necessary but insufficient — an internal qualifier against over-trusting the two-stage refraction pipeline.</div><div class="card"><span class="k">verbatim</span><br>Outlier: the customer's chief architect's vibe-coding experiment (46 of 112 bugs auto-fixed, hallucinated behavior when tickets lacked clear expected behavior) sits as related context, not part of the process spine.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Claim</span> <strong>Claim_NotificationTransactionSideEffect</strong><br>Notification fires when transactions land, triggered by tx/post-commit. It is not part of the review flow. It already works. Not being redesigned. Teammates get notified when new knowledge is extracted regardless of whether the author has r</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_ReviewInstructionsNotBlocking</strong><br>The review_instructions in remember's return should explicitly not block future work if the user declines review. Scarlet: 'We don't want to bombard the user with a giant block of text at the back end. We want a clear summary of the shift a</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_CorrectBeforeBuilding</strong><br>Foundational misunderstandings must be corrected before any building begins</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_ReviewProcess</strong><br>Iterative review process design requires establishing baseline before introducing shifts, labeling intent explicitly, and managing scale through chunked comparisons.</div><p class="sub">15 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

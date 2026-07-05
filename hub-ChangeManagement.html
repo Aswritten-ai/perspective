@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChangeManagement — The aswritten perspective</title>
+<meta name="description" content="This hub gathers how change flows through aswritten's repo-native operations — across handoffs, research promotion, review rounds, and branch policy. ">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › ChangeManagement</p>
+<h1>ChangeManagement</h1>
+<p class="sub">7 nodes in this area of the perspective</p>
+<p>This hub gathers how change flows through aswritten's repo-native operations — across handoffs, research promotion, review rounds, and branch policy. On process: [handoffs are never documents] (<a class="cite" href="entities.html#Claim_HandoffsNeverDocuments">Claim_HandoffsNeverDocuments</a>) (Jun 2026), living in task notes and the ledger, with the 811-line launch-plan blob as the named failure mode. On research-to-canon, [promotion is rewriting, not merging] (<a class="cite" href="entities.html#Claim_PromotionByRewriting">Claim_PromotionByRewriting</a>) (Apr 2026): the research branch is raw material, not a merge target. Review mechanics recur twice — [the corrections-vs-merge semantics] (<a class="cite" href="entities.html#Claim_ReviewMemorySemantics">Claim_ReviewMemorySemantics</a>) and [the same flow as narrative] (<a class="cite" href="entities.html#Narrative_ReviewMemoryFlow">Narrative_ReviewMemoryFlow</a>) — both holding that corrections take at least two rounds. Branch policy is [git merge into dev, never rebase] (<a class="cite" href="entities.html#Obs_GitMergePolicy">Obs_GitMergePolicy</a>), with squashing flagged as problematic. The [Notion retirement narrative] (<a class="cite" href="entities.html#Narrative_NotionRetirement">Narrative_NotionRetirement</a>) (Jun 2026) makes explicit a long-abandoned tool's formal end, the first Organization-domain memory, with [Scarlet's Mar 2026 merge-constraint quote] (<a class="cite" href="entities.html#Observation_ScarletDevMergeQuote">Observation_ScarletDevMergeQuote</a>) marking an in-flight pause on new pushes.</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>Handoffs are never documents.</div><div class="card"><span class="k">verbatim</span><br>Promotion is rewriting memories into main's voice and structure at the moment of decision — not cherry-picking commits or merging the branch.</div><div class="card"><span class="k">verbatim</span><br>A review with corrections always takes at least two rounds.</div><div class="card"><span class="k">verbatim</span><br>Use git merge main to pull changes into dev; never rebase.</div><div class="card"><span class="k">verbatim</span><br>CRM migration (task-268) is the last Notion dependency.</div><div class="card"><span class="k">verbatim</span><br>I'm trying to get all of this stuff merged from dev domain, but we're not doing any new pushes.</div><div class="card"><span class="k">verbatim</span><br>Two opposed change-flow models coexist: research changes are rewritten into canon (never merged), while dev changes are pulled in via git merge — promotion vs merge are deliberately different mechanisms.</div><div class="card"><span class="k">verbatim</span><br>Notion retirement is asserted as complete yet qualified: CRM migration (task-268) is still an open dependency, so 'fully retired' is aspirational, not finished.</div><div class="card"><span class="k">verbatim</span><br>Scarlet's Mar 2026 quote signals a freeze — merging from dev is in scope but no new pushes — a temporal constraint that sits against the otherwise forward-moving merge/promotion process.</div><div class="card"><span class="k">verbatim</span><br>Review semantics appear in duplicate (a Claim and a Narrative carrying the same corrections-vs-merge rule), one tagged aboutNode rather than broader — possible redundancy or a node-level vs narrative-level distinction.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Claim</span> <strong>Claim_PromotionByRewriting</strong><br>Promotion is rewriting memories into main's voice and structure at the moment of decision — not cherry-picking commits or merging the branch. The research branch becomes a source of raw material, not a merge target. This matches the pattern</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_ReviewMemorySemantics</strong><br>Correction 7: Save memory = corrections exist, ends round, PR updates. Merge = no corrections needed, closes PR. A review with corrections always takes at least two rounds.</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_ReviewMemoryFlow</strong><br>Saving a review memory ends a round and triggers extraction; merge signals no corrections needed and closes the PR — corrections always require at least two rounds.</div><p class="sub">4 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

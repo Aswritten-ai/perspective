@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecurityPrivacyModel — The aswritten perspective</title>
+<meta name="description" content="The hub gathers how secrets, identity, and compliance are handled. The spine is credential hygiene: the target credential-vault design removes rewrite">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › SecurityPrivacyModel</p>
+<h1>SecurityPrivacyModel</h1>
+<p class="sub">9 nodes in this area of the perspective</p>
+<p>The hub gathers how secrets, identity, and compliance are handled. The spine is credential hygiene: the [target credential-vault design] (<a class="cite" href="entities.html#Narrative_CredentialVault">Narrative_CredentialVault</a>) removes rewrite.clj injection so [credentials never ride the MCP body] (<a class="cite" href="entities.html#Claim_CredentialsNeverInMCPBody">Claim_CredentialsNeverInMCPBody</a>) and are fetched from an internal-only Datomic-backed API, with the [internal endpoint reachable only on the Docker network] (<a class="cite" href="entities.html#Obs_InternalCredentialEndpoint">Obs_InternalCredentialEndpoint</a>), not exposed through Caddy. Operationally this was exercised by the [stale-credential cleanup in dev n8n] (<a class="cite" href="entities.html#Claim_CredentialCleanup">Claim_CredentialCleanup</a>) on 26 Mar. Compliance is the commercial frame: [GDPR/sovereignty/ISO act as adoption gates] (<a class="cite" href="entities.html#Narrative_EnterpriseComplianceGate">Narrative_EnterpriseComplianceGate</a>), [local non-internet AI satisfies HIPAA and VIP privacy] (<a class="cite" href="entities.html#Narrative_LocalAI">Narrative_LocalAI</a>), and [client data-ownership] (<a class="cite" href="entities.html#Narrative_DataOwnership">Narrative_DataOwnership</a>) (licensed base ontology, work-for-hire deliverables, repo under client org) removes lock-in. Two strands remain unsettled: the [BYOK OpenRouter-only limit] (<a class="cite" href="entities.html#Narrative_BYOKOpenRouterLimit">Narrative_BYOKOpenRouterLimit</a>) (Mar 17) and the [Vouch.io agent-identity bet] (<a class="cite" href="entities.html#Narrative_VouchIdentityForAgents">Narrative_VouchIdentityForAgents</a>).</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>Credentials must never travel through the MCP message body; they are fetched by n8n from an internal-only Datomic-backed API.</div><div class="card"><span class="k">verbatim</span><br>Internal credential endpoint only reachable on Docker network, not exposed through Caddy — key security boundary.</div><div class="card"><span class="k">verbatim</span><br>Target design removes rewrite.clj credential injection; n8n calls back to an internal-only endpoint for secrets, enabling instant rotation and true multi-tenancy.</div><div class="card"><span class="k">verbatim</span><br>Current BYOK (bring your own key) only accepts OpenRouter API keys.</div><div class="card"><span class="k">verbatim</span><br>Local, non-internet-connected AI infrastructure is required for HIPAA compliance and VIP client privacy</div><div class="card"><span class="k">verbatim</span><br>Base ontology framework is licensed, not sold.</div><div class="card"><span class="k">verbatim</span><br>BYOK accepts only OpenRouter keys; Azure/Copilot enterprise customers can't plug in, routing compliance buyers to on-prem/Professional rather than BYOK — a known unresolved gap.</div><div class="card"><span class="k">verbatim</span><br>Vouch.io agent-identity infrastructure is validated tech but strategically undecided: open-source it as a standard, or sell as an enterprise product.</div><div class="card"><span class="k">verbatim</span><br>Ownership is split, not clean: deliverables and custom ontology are client-owned work-for-hire, but the base ontology framework is licensed (not sold) — a retained-vendor-IP boundary inside a no-lock-in pitch.</div><div class="card"><span class="k">verbatim</span><br>Credential security is partly aspirational vs shipped: the vault design (remove rewrite.clj injection, instant rotation, true multi-tenancy) is a target, while the dev cleanup is the realized state.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Narrative</span> <strong>Narrative_BYOKOpenRouterLimit</strong><br>BYOK Limitation: OpenRouter Only, Azure/Copilot Gap</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_DataOwnership</strong><br>Client owns memories, transactions, custom ontology extensions; base ontology licensed; repo under client org from day one</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_EnterpriseComplianceGate</strong><br>Enterprise compliance as adoption gate</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_VouchIdentityForAgents</strong><br>Vouch.io Identity Infrastructure for Agent Security</div><p class="sub">5 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

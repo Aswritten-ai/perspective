@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScalabilityPerformance — The aswritten perspective</title>
+<meta name="description" content="This hub gathers the scalability and performance work, dominated by a dated infra trajectory. In Mar (26th), memory rebalancing addressed the transact">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › ScalabilityPerformance</p>
+<h1>ScalabilityPerformance</h1>
+<p class="sub">7 nodes in this area of the perspective</p>
+<p>This hub gathers the [scalability and performance] (<a class="cite" href="entities.html#Narrative_PostgresSnapshotCache">Narrative_PostgresSnapshotCache</a>) work, dominated by a dated infra trajectory. In Mar (26th), [memory rebalancing] (<a class="cite" href="entities.html#Claim_MemoryRebalancing">Claim_MemoryRebalancing</a>) addressed the transactor as primary OOM culprit (4 kills at 768MB). By Mar 31 the [Postgres snapshot cache] (<a class="cite" href="entities.html#Narrative_PostgresSnapshotCache">Narrative_PostgresSnapshotCache</a>) migration replaced GitHub-hosted files, resolving [concurrent-compile OOM crashes] (<a class="cite" href="entities.html#Claim_ConcurrentCompileOOMFix">Claim_ConcurrentCompileOOMFix</a>) at the 3.5GB container limit, with [cache HITs now ~500ms] (<a class="cite" href="entities.html#Obs_CachePerformance">Obs_CachePerformance</a>). But the same date logs a still-open [256K context wall] (<a class="cite" href="entities.html#Obs_256KContextWall">Obs_256KContextWall</a>) for the canonical repo. Most recently (May 16), [memory-commit latency] (<a class="cite" href="entities.html#Claim_MemoryCommitLatencyFriction">Claim_MemoryCommitLatencyFriction</a>) surfaced as the acute friction — 3-5min median, 16% error rate, flagged a renewal risk. Sitting apart from the technical thread is an organizational scalability claim: [assistant-led revenue] (<a class="cite" href="entities.html#Claim_AssistantLedRevenue">Claim_AssistantLedRevenue</a>), decoupling growth from an engineering manager at the customer's hours. The infra OOM problems are largely resolved; latency and context limits remain live.</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>OOM crashes at the 3.5GB container limit caused by concurrent compiles reading 7MB JSON payloads</div><div class="card"><span class="k">verbatim</span><br>Cache HITs now take ~500ms via Postgres read, bypassing the GitHub API entirely.</div><div class="card"><span class="k">verbatim</span><br>transactor 2GB, n8n 3.5GB (3GB heap), aswritten proxy 1.5GB</div><div class="card"><span class="k">verbatim</span><br>the most acute UX issue in the product right now and would be a real renewal-risk if it stays this way</div><div class="card"><span class="k">verbatim</span><br>the 256k token limit is an issue for the canonical repo currently, but we need to consider how to compress or do passes to prune stale stuff from the snapshot anyway</div><div class="card"><span class="k">verbatim</span><br>Revenue growth is decoupled from an engineering manager at the customer's hours by using assistants to execute treatment plans</div><div class="card"><span class="k">verbatim</span><br>Infra OOM is fixed but UX latency is not: the most recent claim (May 16) flags memory-commit latency at 3-5min/16% errors as an acute renewal risk, not promised externally yet — a regression in user-felt performance even as crashes resolved.</div><div class="card"><span class="k">verbatim</span><br>Road not yet taken: the 256K context wall on the canonical repo remains an open constraint after the Postgres cache solved OOM — compression/pruning of stale snapshot data is acknowledged but unbuilt.</div><div class="card"><span class="k">verbatim</span><br>Structural outlier: assistant-led revenue is organizational/business scalability (decoupling growth from an engineering manager at the customer's hours), distinct in kind from all the technical memory/cache/latency children under this hub.</div>
+
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

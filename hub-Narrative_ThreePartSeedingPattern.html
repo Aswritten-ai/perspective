@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Narrative ThreePartSeedingPattern — The aswritten perspective</title>
+<meta name="description" content="A three-step onboarding playbook for seeding aswritten.ai from historical recordings, articulated around the enterprise customer's ARB transcripts (Ma">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › Narrative ThreePartSeedingPattern</p>
+<h1>Narrative ThreePartSeedingPattern</h1>
+<p class="sub">8 nodes in this area of the perspective</p>
+<p>A three-step onboarding playbook for seeding aswritten.ai from historical recordings, articulated around the enterprise customer's ARB transcripts (May 2026). [Step 1: code-base review] (<a class="cite" href="entities.html#Claim_CodeBaseReviewStep1">Claim_CodeBaseReviewStep1</a>) runs Claude/Copilot CLI over the code with structured questions, persisting a paragraph per workflow to memory. [Step 2: topic analysis] (<a class="cite" href="entities.html#Claim_TopicAnalysisStep2">Claim_TopicAnalysisStep2</a>) surfaces what a corpus covers and its open questions, then scopes memories — but [requires a domain expert] (<a class="cite" href="entities.html#Claim_UserDomainCommentaryRequired">Claim_UserDomainCommentaryRequired</a>) (at the enterprise customer, only the customer's chief architect) to annotate, or seeding goes sparse or wrong. [Step 3: ongoing iteration] (<a class="cite" href="entities.html#Claim_OngoingIterationStep3">Claim_OngoingIterationStep3</a>) treats each new transcript as a diagnostic, with a 30-minute voice memo filling gaps. The pattern is pitched as an Enterprise playbook that [generalizes beyond the enterprise customer] (<a class="cite" href="entities.html#Claim_OnboardingMethodologyGeneralizes">Claim_OnboardingMethodologyGeneralizes</a>) without new tooling, while [Step 2 itself] (<a class="cite" href="entities.html#Claim_TopicAnalysisPlatformFeature">Claim_TopicAnalysisPlatformFeature</a>) is flagged as a future Platform feature. Note a dated reframing: a [May 21 claim validates bulk AI summarization] (<a class="cite" href="entities.html#Claim_BulkIngestionViaAISummarizationValid">Claim_BulkIngestionViaAISummarizationValid</a>) — what the customer's chief architect did — as effective, retracting the earlier 'failure' framing, and [ranks three ingestion methods] (<a class="cite" href="entities.html#Claim_ThreeRankedIngestionMethods">Claim_ThreeRankedIngestionMethods</a>) with a reconciliation-based hybrid as best.</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>read the code base, understand what the core pre-built workflows are and write a paragraph about each one and persist that paragraph to collective memory</div><div class="card"><span class="k">verbatim</span><br>The transcript is the diagnostic, not the memory.</div><div class="card"><span class="k">verbatim</span><br>Dump the transcript into aswritten and over the course of a couple weeks or even a couple months, you'll converge on having pretty much everything covered.</div><div class="card"><span class="k">verbatim</span><br>The 'we discovered it by failing' framing was a bad AI artifact; they did not fail.</div><div class="card"><span class="k">verbatim</span><br>Method 3 is best but depends on the reconciliation tool, which is not yet built.</div><div class="card"><span class="k">verbatim</span><br>Without that, the seeding will produce sparse or wrong knowledge.</div><div class="card"><span class="k">verbatim</span><br>Dated reversal: May 1 framing treats direct historical ingestion as an anti-pattern to avoid (and possibly block via UX), but May 21 declares bulk AI summarization valid and effective, superseding Foundation Claim_DirectIngestionIsTrap.</div><div class="card"><span class="k">verbatim</span><br>The stated-best ingestion method (batched + human reconciliation pass) is aspirational — it depends on a reconciliation tool that does not yet exist; only methods 1 and 2 are actually available.</div><div class="card"><span class="k">verbatim</span><br>The whole methodology is gated on a hard precondition: a customer domain expert who can validate the topic analysis. At the enterprise customer that is a single person (the customer's chief architect); without such a reviewer the pattern degrades to sparse or wrong knowledge.</div><div class="card"><span class="k">verbatim</span><br>Tension between 'no new tooling needed, just sequence existing capabilities' (generalizable playbook) and the claims that Step 2 should become a Platform feature and that the best method needs an unbuilt reconciliation tool.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Claim</span> <strong>Claim_BulkIngestionViaAISummarizationValid</strong><br>Bulk historical ingestion via AI summarization is a valid and effective onboarding method. Scarlet explicitly advised the customer's chief architect to use it for the enterprise customer's ARB transcripts because it would be faster than pro</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_CodeBaseReviewStep1</strong><br>Step 1 of the three-part seeding pattern: use Claude / Copilot CLI connected to aswritten.ai to read the code base with structured questions ('read the code base, understand what the core pre-built workflows are and write a paragraph about </div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_OnboardingMethodologyGeneralizes</strong><br>The three-part seeding methodology generalizes beyond the enterprise customer: any domain expertise codified in historical recordings (sales calls, customer interviews, OKR retrospectives) is a candidate for the same pattern. This is a stat</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_OngoingIterationStep3</strong><br>Step 3 of the three-part seeding pattern: as ARB meetings happen, ingest each transcript with active review. The transcript is the diagnostic, not the memory. When the system fails to answer a question well, the user does a 30-minute voice </div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_ThreeRankedIngestionMethods</strong><br>Three bulk ingestion methods ranked: (1) Full summarization across the set — what the customer's chief architect did, effective; (2) Per-transcript memory-by-memory ingestion — slow and overwhelming; (3) Target method — batched ingestion fo</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_TopicAnalysisPlatformFeature</strong><br>The topic analysis step (Step 2) is currently entirely operator-driven and is a high-value activity that could become a Platform feature. The anti-pattern (direct historical ingestion) should be reflected in onboarding documentation and pos</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_TopicAnalysisStep2</strong><br>Step 2 of the three-part seeding pattern: rather than ingesting six months of ARB transcripts directly, use Claude to perform a topic analysis across the corpus — 'what are these talking about? what are the open questions? what are frequent</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_UserDomainCommentaryRequired</strong><br>The methodology assumes the customer has domain experts who can review and annotate the topic analysis output. The user — not aswritten.ai staff — provides the architectural commentary at Step 2. Without that, the seeding will produce spars</div><p class="sub">Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

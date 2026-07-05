@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechnicalExplainers — The aswritten perspective</title>
+<meta name="description" content="This hub gathers material on how technical concepts get *explained* — both a design decision and the deck/communication choices around it. The load-be">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › TechnicalExplainers</p>
+<h1>TechnicalExplainers</h1>
+<p class="sub">5 nodes in this area of the perspective</p>
+<p>This hub gathers material on how technical concepts get *explained* — both a design decision and the deck/communication choices around it. The load-bearing decision is to [bundle Snapshot and Ontology into one State type] (<a class="cite" href="entities.html#Decision_StateAbstraction">Decision_StateAbstraction</a>), justified as simplifying tool signatures, enforcing synchronization, and enabling session-level caching. Around it sit two deck-revision notes that flag where explanations currently fall short: [adding a context-window management explanation] (<a class="cite" href="entities.html#DeckUpdate_ContextWindowMgmt">DeckUpdate_ContextWindowMgmt</a>) via layered compilation (layer0/1/2/3) to answer a metadata-heavy-docs concern, and [clarifying propagation mechanics] (<a class="cite" href="entities.html#DeckUpdate_PropagationMechanics">DeckUpdate_PropagationMechanics</a>) through the git submodule hierarchy, presently left vague. Two style observations annotate register rather than content: one notes the [colloquial 'hand waving'] (<a class="cite" href="entities.html#StyleObs_HandWaving">StyleObs_HandWaving</a>) metaphor as a vagueness signal, the other flags [domain jargon like 'context windows'] (<a class="cite" href="entities.html#StyleObs_Jargon">StyleObs_Jargon</a>) as presupposing a technical audience. The region is about explanation quality — what to simplify, what is under-specified, and the informal-vs-technical register the explanations adopt.</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>Simplifies tool signatures, enforces synchronization, enables session-level caching, maps to Standard Context Tier (15K tokens)</div><div class="card"><span class="k">verbatim</span><br>One parameter instead of two; ontology always matches snapshot version; compile once, use many times</div><div class="card"><span class="k">verbatim</span><br>Add brief context window management explanation (layered compilation: layer0/1/2/3) to address metadata-heavy docs concern</div><div class="card"><span class="k">verbatim</span><br>Clarify propagation mechanics (git submodule hierarchy); currently hand-waved as 'all materials update automatically'</div><div class="card"><span class="k">verbatim</span><br>it's great to like do hand waving and go oh, it'll propagate and it does this and it does that</div><div class="card"><span class="k">verbatim</span><br>how do you manage context windows, especially in large docs?</div><div class="card"><span class="k">verbatim</span><br>Register pulls two opposite ways: jargon ('context windows') assumes a technical audience while 'hand waving' signals over-vague under-explanation — the explainers are simultaneously too technical and too loose.</div><div class="card"><span class="k">verbatim</span><br>Two explanations are flagged as currently inadequate (propagation hand-waved as 'updates automatically'; context-window mgmt needs adding), in tension with the decision child's confident simplification claims.</div><div class="card"><span class="k">verbatim</span><br>These are mixed-kind children — a settled design decision, two open to-do revisions, and two meta style observations — not a single coherent argument.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Observation</span> <strong>DeckUpdate_ContextWindowMgmt</strong><br>Add brief context window management explanation (layered compilation: layer0/1/2/3) to address metadata-heavy docs concern</div>
+<div class="entity"><span class="t">Observation</span> <strong>DeckUpdate_PropagationMechanics</strong><br>Clarify propagation mechanics (git submodule hierarchy); currently hand-waved as 'all materials update automatically'</div>
+<div class="entity"><span class="t">StyleObservation</span> <strong>StyleObs_HandWaving</strong><br>it's great to like do hand waving and go oh, it'll propagate and it does this and it does that</div>
+<div class="entity"><span class="t">StyleObservation</span> <strong>StyleObs_Jargon</strong><br>how do you manage context windows, especially in large docs?</div><p class="sub">1 further node is not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

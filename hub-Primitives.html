@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primitives — The aswritten perspective</title>
+<meta name="description" content="This hub gathers the write primitives and structural definitions underlying the aswritten knowledge graph. The keystone design, articulated on 2026070">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › Primitives</p>
+<h1>Primitives</h1>
+<p class="sub">12 nodes in this area of the perspective</p>
+<p>This hub gathers the write primitives and structural definitions underlying the aswritten knowledge graph. The keystone design, articulated on 20260701, is the [content/commentary split](<a class="cite" href="entities.html#https">https</a>://aswritten.ai/narrative#Narrative_ContentCommentarySplit): per-message integration is the content layer; reconciliation is the authored commentary layer. That split is already reflected in the read model but had not yet been implemented in the write practice at the time of recording. Alongside it, [reconciliation as a set transaction](<a class="cite" href="entities.html#https">https</a>://aswritten.ai/narrative#Narrative_ReconciliationAsSetTransaction) defines reconciliation structurally as a transaction about a set of prior transactions or nodes — the legibility differentiator that surfaces the referent set explicitly to the user. The [resolve tool](<a class="cite" href="entities.html#https">https</a>://aswritten.ai/narrative#Narrative_ResolveToolInverseOfCite) is the inverse of cite: it finds the nodes commentary is about, runs once per pipeline run, and binds each reconciliation to its own subset. Source is append-only; all merge and supersession live in the reconciliation layer. A structurally distinct child, dated 20260704, introduces the [rich transcription format](<a class="cite" href="entities.html#https">https</a>://aswritten.ai/narrative#Narrative_RichTranscriptionFormat) with a per-span acoustic signal sidecar. [Shared agent memory](<a class="cite" href="entities.html#https">https</a>://aswritten.ai/narrative#Narrative_SharedAgentMemory) and [conversational AI interview extraction](<a class="cite" href="entities.html#https">https</a>://aswritten.ai/narrative#Observation_ApproachPattern_1) appear as related but thinner entries. Three claim children — covering refract, scope, and TX-as-prompt definitions — are named but carry no content yet.</p>
+<h2>Sub-areas</h2><ul class="hublist"><li><a href="hub-Narrative_ContentCommentarySplit.html"><strong>Narrative ContentCommentarySplit</strong></a> <span class="n">5 nodes</span><br>The hub frames a structural distinction between two layers: per-message primary source material transacted individually as it happens, and authored reconciliation as commentary wri…</li></ul>
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>per-message integration captures primary source material (content layer); reconciliation is authored commentary about a referent set of previously extracted nodes (commentary layer)</div><div class="card"><span class="k">verbatim</span><br>This is a write primitive that is read-implemented but not yet written.</div><div class="card"><span class="k">verbatim</span><br>Disambiguate, never permission — the prompt rule.</div><div class="card"><span class="k">verbatim</span><br>Source is append-only and never deduplicated; all dedup/merge/supersession lives in the reconciliation layer.</div><div class="card"><span class="k">verbatim</span><br>Resolve once per pipeline run; bind each reconciliation statement to its own subset of the resolved set</div><div class="card"><span class="k">verbatim</span><br>The signal sidecar carries per-span acoustic features (f0_hz, db, rate_wps, pitch_z, energy_z, conf, pause_s).</div><div class="card"><span class="k">verbatim</span><br>The content/commentary split is read-implemented but not yet written as of 20260701 — a live asymmetry between the read model and write practice, not a resolved design.</div><div class="card"><span class="k">verbatim</span><br>Whole-set citation 'bleeds at read time' — binding a reconciliation to the full resolved set rather than its own subset is an explicit anti-pattern, creating a tension between resolve-once efficiency and per-statement precision.</div><div class="card"><span class="k">verbatim</span><br>The rich transcription format (acoustic sidecar, delivery annotations) is structurally distinct from the write-primitive cluster — it concerns capture fidelity, not graph write semantics, and may belong to a different thematic region.</div><div class="card"><span class="k">verbatim</span><br>Three named claim children (RefractDefinition, ScopeDefinition, TXIsPrompt) carry no content — their definitions are structurally present but unwitnessed, leaving core vocabulary terms opaque in this hub.</div><div class="card"><span class="k">verbatim</span><br>Shared agent memory is proposed (Tony/Scarlet exchange) but undated and thin — it may represent an aspirational direction rather than an implemented primitive, unlike the 20260701 write-primitive cluster.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Claim</span> <strong>Claim_RefractDefinition</strong><br>refract takes a document and a TX (or arbitrary prompt) and returns focus areas for shifts in the document; it is change detection + focus generation, not content retrieval</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_ScopeDefinition</strong><br>scope takes arbitrary focus + context (both free text); the text defines the scope; no keywords, no predefined domain buckets</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_TXIsPrompt</strong><br>A TX is really just a structured description of a change; refract can accept an arbitrary prompt as the change description</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_ReconciliationAsSetTransaction</strong><br>Reconciliation is a transaction about a set of transactions or nodes — the design of correction and commentary about the past</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_SharedAgentMemory</strong><br>Shared Agent Memory (Hub-and-Spoke Model)</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_ContentCommentaryKeystoneQuote</strong><br>Scarlet's articulation of the content/commentary keystone</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_ReconciliationSetTransactionQuote</strong><br>Scarlet's definition of reconciliation as a transaction about a set</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_ScarletGoalDefinition</strong><br>Is part of what we're missing here is the agent + perspective having a goal?</div>
+<div class="entity"><span class="t">Observation</span> <strong>Observation_ApproachPattern_1</strong><br>Conversational AI Interview for Knowledge Extraction</div><p class="sub">2 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

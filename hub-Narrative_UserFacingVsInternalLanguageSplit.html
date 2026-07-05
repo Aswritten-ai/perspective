@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Narrative UserFacingVsInternalLanguageSplit — The aswritten perspective</title>
+<meta name="description" content="This hub holds the deliberate two-layer language split: human words on the user-facing surface, engineering metaphor underneath. The surface thesis is">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › Narrative UserFacingVsInternalLanguageSplit</p>
+<h1>Narrative UserFacingVsInternalLanguageSplit</h1>
+<p class="sub">5 nodes in this area of the perspective</p>
+<p>This hub holds the deliberate two-layer language split: human words on the user-facing surface, engineering metaphor underneath. The surface thesis is that the [full tool surface reads as plain speech] (<a class="cite" href="entities.html#Claim_FullToolSurfaceHumanWords">Claim_FullToolSurfaceHumanWords</a>) — perspective, cite, remember, forget, review, introspect, share — and that [the naming IS the GitHub abstraction completing] (<a class="cite" href="entities.html#Claim_GitHubAbstractionComplete">Claim_GitHubAbstractionComplete</a>): Free/Expert users never see 'compile from repo' or 'load from share bundle'. Yet the split is principled, not erasure: on the code side [the 'compile' term is retained] (<a class="cite" href="entities.html#Claim_InternalCompileTermCorrect">Claim_InternalCompileTermCorrect</a>) because the n8n workflow literally compiles memories plus transactions into a worldview snapshot. The same surface-vs-internal logic drives two later refinements (Mar 2026): with 'consult' no longer a tool name, [the word was freed] (<a class="cite" href="entities.html#Claim_ConsultTermFreed">Claim_ConsultTermFreed</a>) and dropped from glossary guidance, and [the user-facing parameter was renamed] (<a class="cite" href="entities.html#Claim_IDParamRename">Claim_IDParamRename</a>) from perspective='share-id' to a generic id='share-id', while the proxy still strips it before forwarding. The framing was set Jul 2025 and has been firming through Mar 2026 as naming decisions land against it.</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>Every tool name is a word a non-technical person would use in conversation.</div><div class="card"><span class="k">verbatim</span><br>The abstraction is complete when the language doesn't leak implementation.</div><div class="card"><span class="k">verbatim</span><br>The engineering metaphor is correct for the engineering layer.</div><div class="card"><span class="k">verbatim</span><br>The word is no longer reserved terminology.</div><div class="card"><span class="k">verbatim</span><br>perspective(id='acupuncture-an early prospect-gotham-an engineering manager at the customer-f50e')</div><div class="card"><span class="k">verbatim</span><br>The split is not 'hide all implementation' — 'compile' is deliberately kept on the code side where the engineering metaphor is literally accurate, against the surface rule that language must not leak implementation.</div><div class="card"><span class="k">verbatim</span><br>The Jul 2025 framing is principle; the Mar 2026 children are downstream applications (consult freed, id param rename) — read them as consequences, not restatements, of the split.</div><div class="card"><span class="k">verbatim</span><br>The id-param rename goes further than hiding implementation: it drops the domain word 'perspective' as the parameter name in favor of a generic 'id', a tension with making every surface term a meaningful human word.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Claim</span> <strong>Claim_ConsultTermFreed</strong><br>With 'consult' no longer a tool name, it was freed as a general word. The 'avoid: Consult' note was removed from the Leaders/executives audience guidance in the glossary. The word is no longer reserved terminology.</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_FullToolSurfaceHumanWords</strong><br>Full tool surface: perspective, cite, remember, forget, review, introspect, share. Every tool name is a word a non-technical person would use in conversation.</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_GitHubAbstractionComplete</strong><br>The tool naming IS the GitHub abstraction completing. Free/Expert users don't see 'compile from repo' or 'load from share bundle.' They see 'perspective'. The abstraction is complete when the language doesn't leak implementation.</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_InternalCompileTermCorrect</strong><br>On the code side, 'compile' is retained. The n8n workflow literally compiles memories + transactions into a worldview snapshot. The engineering metaphor is correct for the engineering layer.</div><p class="sub">1 further node is not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

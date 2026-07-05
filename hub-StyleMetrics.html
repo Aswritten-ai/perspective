@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StyleMetrics — The aswritten perspective</title>
+<meta name="description" content="This hub gathers per-document style and readability metrics across the org's corpus, computed on the same axes: active-voice ratio, jargon density, le">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › StyleMetrics</p>
+<h1>StyleMetrics</h1>
+<p class="sub">17 nodes in this area of the perspective</p>
+<p>This hub gathers per-document style and readability metrics across the org's corpus, computed on the same axes: active-voice ratio, jargon density, lexical diversity (TTR), sentence-length variance, and — where given — Flesch-Kincaid grade. The dominant profile is consistent: high active voice, domain-appropriate-but-explained jargon, varied sentence length, strong lexical diversity. FK grades cluster college-level, spanning the conversational [the customer's chief architect transcript at 10.2] (<a class="cite" href="entities.html#Metrics_CustomerArchitect">Metrics_CustomerArchitect</a>) and [deck-editing notes near 10] (<a class="cite" href="entities.html#StyleMetrics_DeckEditing">StyleMetrics_DeckEditing</a>) up through the [B2B pitch at 11.2] (<a class="cite" href="entities.html#Metrics_1">Metrics_1</a>) and the denser [ADR] (<a class="cite" href="entities.html#Metrics_ADR001">Metrics_ADR001</a>) / [IP-crisis strategy docs at 12.4] (<a class="cite" href="entities.html#Metrics_IPCrisis">Metrics_IPCrisis</a>). Register splits by document type: technical architecture pieces ([collective-memory addendum] (<a class="cite" href="entities.html#Metrics_cm_addendum">Metrics_cm_addendum</a>), [arch] (<a class="cite" href="entities.html#Metrics_collective_memory_arch">Metrics_collective_memory_arch</a>), [SIC] (<a class="cite" href="entities.html#StyleMetrics_SIC_1">StyleMetrics_SIC_1</a>)) run high jargon density; pitch, GTM, CVP, and rebrand material lean concise and accessible. Many entries are qualitative-only; only a subset carry numeric FK. The corpus is not uniform on cadence or sentence length — see the variation below.</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>Flesch-Kincaid Grade Level: 11.2 (college-level, appropriate for B2B pitch)</div><div class="card"><span class="k">verbatim</span><br>Flesch-Kincaid Grade Level: 10.2</div><div class="card"><span class="k">verbatim</span><br>Flesch-Kincaid Grade: 12.4</div><div class="card"><span class="k">verbatim</span><br>80 sentences, avg 42.8 words/sentence; 78% active voice; high lexical diversity (TTR 0.62)</div><div class="card"><span class="k">verbatim</span><br>High active voice ratio; short sentences; concise phrasing; punchy cadence</div><div class="card"><span class="k">verbatim</span><br>High jargon density appropriate for technical architecture document; active voice dominant; varied vocabulary</div><div class="card"><span class="k">verbatim</span><br>Sentence length is a real outlier: the founder reflection runs avg 42.8 words/sentence against the corpus norm of short-to-medium phrasing.</div><div class="card"><span class="k">verbatim</span><br>Cadence splits sharply — punchy short sentences (CVP) versus long explanatory clauses (founder reflection, deck editing's analytical sentences).</div><div class="card"><span class="k">verbatim</span><br>Jargon density is contested by document type: high in technical-architecture docs, deliberately low (8% terms) in the founder reflection.</div><div class="card"><span class="k">verbatim</span><br>Conversational/transcript-derived registers carry caveats (estimated metrics, conversational fillers reducing conciseness) that the polished documents don't.</div><div class="card"><span class="k">verbatim</span><br>Comparability gap: roughly half the entries report a numeric Flesch-Kincaid grade, half are qualitative-only, so cross-document FK ranking is incomplete.</div>
+<h2>In this area</h2><div class="entity"><span class="t">StyleMetrics</span> <strong>Metrics_1</strong><br>High active voice ratio; moderate jargon density appropriate for technical audience.</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>Metrics_ADR001</strong><br>Flesch-Kincaid Grade: 12.4</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>Metrics_ADR002</strong><br>Flesch-Kincaid Grade Level: 11.2</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>Metrics_cm_addendum</strong><br>High jargon density appropriate for technical architecture document; active voice dominant; varied vocabulary</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>Metrics_collective_memory_arch</strong><br>High jargon density appropriate for technical architecture document; strong active voice usage</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>Metrics_CustomerArchitect</strong><br>Flesch-Kincaid Grade Level: 10.2</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>Metrics_IPCrisis</strong><br>Flesch-Kincaid Grade: 12.4</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>StyleMetrics_AIOrg</strong><br>Metrics computed on full text. Moderate sentence length; high active voice; controlled jargon density; good lexical diversity (TTR).</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>StyleMetrics_collective_memory_cvp</strong><br>High active voice ratio; short sentences; concise phrasing; punchy cadence</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>StyleMetrics_DeckEditing</strong><br>Flesch-Kincaid Grade Level: ~10 (college-level but accessible)</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>StyleMetrics_founder_reflection</strong><br>Metrics computed from input: 80 sentences, avg 42.8 words/sentence; 78% active voice; high lexical diversity (TTR 0.62); moderate rhythm variance; low jargon density (8% domain-specific terms).</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>StyleMetrics_GTM</strong><br>High active-voice ratio, moderate jargon density (technical terms defined in context), short-to-medium sentence length for clarity.</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>StyleMetrics_InfraAdvisor</strong><br>Metrics estimated from transcript; conversational register with moderate technical density; active voice dominant in recommendations</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>StyleMetrics_Sample</strong><br>High active voice, moderate jargon (domain-appropriate), strong conciseness, good lexical diversity.</div>
+<div class="entity"><span class="t">StyleMetrics</span> <strong>StyleMetrics_SIC_1</strong><br>High jargon density reflects technical domain. Moderate conciseness due to conversational fillers.</div><p class="sub">2 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

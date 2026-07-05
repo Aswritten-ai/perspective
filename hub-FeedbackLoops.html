@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FeedbackLoops — The aswritten perspective</title>
+<meta name="description" content="This hub gathers the mechanics of how feedback enters and reshapes the product and its knowledge. Two loops sit at the center: the review/memory cycle">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › FeedbackLoops</p>
+<h1>FeedbackLoops</h1>
+<p class="sub">15 nodes in this area of the perspective</p>
+<p>This hub gathers the mechanics of how feedback enters and reshapes the product and its knowledge. Two loops sit at the center: the [review/memory cycle] (<a class="cite" href="entities.html#Claim_ReviewMemorySemantics">Claim_ReviewMemorySemantics</a>) where save-memory ends a round and a corrected review always takes at least two, and the [five-step annotate→document→save→re-annotate loop] (<a class="cite" href="entities.html#Observation_FeedbackLoop">Observation_FeedbackLoop</a>). [Convergence is framed as asymptotic] (<a class="cite" href="entities.html#Obs_ConvergenceAsymptotic">Obs_ConvergenceAsymptotic</a>) accumulation of evidence, not a binary threshold. On process, the [real-time per-section loop] (<a class="cite" href="entities.html#Narrative_RealTimeFeedbackLoop">Narrative_RealTimeFeedbackLoop</a>) (Mar 19) is held as superior to batch review — errors caught before they compound. Beta is reframed: the [friction-lab thesis] (<a class="cite" href="entities.html#Narrative_BetaAsFrictionLab">Narrative_BetaAsFrictionLab</a>) (Mar 13) insists testers exist to surface blockers to value, not to convert. A dense run of Scarlet corrections (Mar 19) sharpens product framing: [expertise at moment of need not ambient] (<a class="cite" href="entities.html#Obs_AmbientBehaviorCorrection">Obs_AmbientBehaviorCorrection</a>), [perspective vs local RAG] (<a class="cite" href="entities.html#Obs_CustomGPTCorrection">Obs_CustomGPTCorrection</a>), [expanding experts not replacing] (<a class="cite" href="entities.html#Obs_ExpertReachCorrection">Obs_ExpertReachCorrection</a>), and [the Tinkerer barrier] (<a class="cite" href="entities.html#Obs_TinkererBarrierCorrection">Obs_TinkererBarrierCorrection</a>). Later: [a beta user from outside tech as most prolific tester] (<a class="cite" href="entities.html#Obs_ScarletBetaTesterQuote">Obs_ScarletBetaTesterQuote</a>) (Apr 23), the [text-for-topic precedent] (<a class="cite" href="entities.html#Obs_ScarletTextForTopicQuote">Obs_ScarletTextForTopicQuote</a>) (Apr 8), and the [feedback/help tool as churn prevention] (<a class="cite" href="entities.html#Obs_FeedbackHelpQuote">Obs_FeedbackHelpQuote</a>) (Mar 26).</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>The product behavior is expertise at the moment of need, not ambient</div><div class="card"><span class="k">verbatim</span><br>Custom GPTs don't provide perspective — they're just local RAG</div><div class="card"><span class="k">verbatim</span><br>We're not replacing experts — we're expanding their reach</div><div class="card"><span class="k">verbatim</span><br>The Tinkerer doesn't activate fastest — their existing solution is a barrier</div><div class="card"><span class="k">verbatim</span><br>The vast majority of her feedback is verbal and I just implement. She's the single most prolific beta tester and has had more feedback than anyone.</div><div class="card"><span class="k">verbatim</span><br>This feels like a similar moment to the text for topic moment</div><div class="card"><span class="k">verbatim</span><br>Beta is explicitly NOT a sales funnel — 7 testers but only 2 daily power users; the digest's own honesty about the gap pushes against any conversion narrative.</div><div class="card"><span class="k">verbatim</span><br>Convergence as asymptotic accumulation directly rejects a binary done/not-done threshold for organizational knowledge.</div><div class="card"><span class="k">verbatim</span><br>The Tinkerer correction overturns the AI's hypothesis: an existing solution is a barrier, not an accelerant — an outlier on adoption speed.</div><div class="card"><span class="k">verbatim</span><br>Real-time per-section feedback is asserted over batch review — a process road-not-taken, justified by error non-compounding rather than convention.</div><div class="card"><span class="k">verbatim</span><br>The text-for-topic precedent flags a 'canon-too-soon' drift risk — feedback captured prematurely becomes wrongly authoritative.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Claim</span> <strong>Claim_ReviewMemorySemantics</strong><br>Correction 7: Save memory = corrections exist, ends round, PR updates. Merge = no corrections needed, closes PR. A review with corrections always takes at least two rounds.</div>
+<div class="entity"><span class="t"></span> <strong>Narrative_RealTimeFeedbackLoop</strong><br>Real-Time Feedback Loop: Read and React as Each Section Is Written</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_AmbientBehaviorCorrection</strong><br>Scarlet's correction establishing the on-demand vs. ambient distinction for product behavior.</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_ConvergenceAsymptotic</strong><br>Convergence is asymptotic accumulation of review evidence, not a binary threshold. More honest to how organizational knowledge actually works.</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_CustomGPTCorrection</strong><br>Scarlet's correction distinguishing Custom GPTs from aswritten's perspective-based approach.</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_ExpertReachCorrection</strong><br>Scarlet's correction reframing the expert relationship — expansion not replacement.</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_FeedbackHelpQuote</strong><br>Feedback/help tool as primary churn-prevention mechanism</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_ScarletTextForTopicQuote</strong><br>Scarlet's verbatim articulation of the text-for-topic precedent and the canon-too-soon drift mechanism — the founding rationale for the research branch methodology.</div>
+<div class="entity"><span class="t">Observation</span> <strong>Obs_TinkererBarrierCorrection</strong><br>Scarlet's correction to the AI's hypothesis about the Tinkerer archetype — their existing solution is a barrier, not an accelerant to adoption.</div>
+<div class="entity"><span class="t">Observation</span> <strong>Observation_FeedbackLoop</strong><br>Five-step feedback loop: annotate surfaces unsupported claims → agent offers to document → user provides knowledge → memory saved, extraction runs → re-annotate confirms shift.</div>
+<div class="entity"><span class="t">StyleObservation</span> <strong>StyleObs_OpenQuestions</strong><br>Open Questions section uses direct rhetorical questions to surface unresolved design decisions — each question is a bounded scope</div><p class="sub">4 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

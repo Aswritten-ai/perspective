@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Narrative NamedPerspectiveArchitecture — The aswritten perspective</title>
+<meta name="description" content="The architecture's founding move (Jul 2025): a named perspective is not a flat memory dump but a curated sub-perspective representing one advisor's ta">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › <a href="hub-ArchitectureOverview.html">ArchitectureOverview</a> › Narrative NamedPerspectiveArchitecture</p>
+<h1>Narrative NamedPerspectiveArchitecture</h1>
+<p class="sub">6 nodes in this area of the perspective</p>
+<p>The architecture's founding move (Jul 2025): a named perspective is not a flat memory dump but a [curated sub-perspective representing one advisor's take] (<a class="cite" href="entities.html#Claim_NamedPerspectiveAsSubAgent">Claim_NamedPerspectiveAsSubAgent</a>), distinct from the root org perspective and operable as a sub-agent in automations and code. Scarlet frames this as a [staffing model that substitutes for hiring] (<a class="cite" href="entities.html#Claim_AdvisoryStaffingReplacesHiring">Claim_AdvisoryStaffingReplacesHiring</a>) — advisor cadence meetings keep the agent representation current and audited. A later clarification (Apr 2026) insists the [advisor role is additive, not exclusive] (<a class="cite" href="entities.html#Claim_AdvisorDualRole_BothNotEither">Claim_AdvisorDualRole_BothNotEither</a>): Tony's enterprise-pipeline role coexists with his advisory-as-perspective role — both, not either/or. Two open threads pull against the mainline: the [Microsoft multi-role gatekeeper pattern] (<a class="cite" href="entities.html#Claim_MultiRoleCoordinationGatekeeper">Claim_MultiRoleCoordinationGatekeeper</a>) (May 2025) flags a centralized ground-truth holder the current architecture lacks, [reopened May 2026 as a product-config question] (<a class="cite" href="entities.html#Claim_GatekeeperOrSalonQuestion">Claim_GatekeeperOrSalonQuestion</a>); and [agentic steering as Use Case 2] (<a class="cite" href="entities.html#Narrative_UseCase2AgenticSteering">Narrative_UseCase2AgenticSteering</a>) (May 2026) — steering one model vs. the whole agentic ecosystem, grounded in the factoryfactory.ai briefing — is named as underrepresented and needing foregrounding.</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>it is a curated sub-perspective that represents the advisor's particular take, distinct from the root organizational perspective. Sub-perspectives operate as sub-agents in automations and coding.</div><div class="card"><span class="k">verbatim</span><br>Instead of hiring, can I set up regular cadence meetings with all of the people that represent roles and perspectives that I need and then I create, you know, internal AI agents that represent those roles in all of the automations and coding that I'm doing?</div><div class="card"><span class="k">verbatim</span><br>The model is both, not either/or.</div><div class="card"><span class="k">verbatim</span><br>The Microsoft gatekeeper pattern suggests a centralized ground-truth holding mechanism missing from current named-perspective architecture.</div><div class="card"><span class="k">verbatim</span><br>factoryfactory builds the Agent Expert Systems orchestration loop; aswritten is the memory the loop runs on.</div><div class="card"><span class="k">verbatim</span><br>Explicit challenge: the Microsoft multi-role gatekeeper pattern says the architecture has no story for centralized ground-truth holding in multi-perspective deployments — open since May 2025, reframed May 2026 as a possible org-tier product config vs. already-covered-by-review.</div><div class="card"><span class="k">verbatim</span><br>Road not yet foregrounded: agentic steering (one model vs. the whole agentic ecosystem) is flagged as currently underrepresented in aswritten's materials despite being where the product dogfoods itself.</div><div class="card"><span class="k">verbatim</span><br>Corrective against a mutually-exclusive reading: advisor-as-perspective and advisor-as-lead-generator are meant to coexist (both/and), not compete.</div>
+<h2>In this area</h2><div class="entity"><span class="t">Claim</span> <strong>Claim_AdvisoryStaffingReplacesHiring</strong><br>Scarlet [31:20]: 'Instead of hiring, can I set up regular cadence meetings with all of the people that represent roles and perspectives that I need and then I create, you know, internal AI agents that represent those roles in all of the aut</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_GatekeeperOrSalonQuestion</strong><br>Is the multi-role-with-gatekeeper pattern interesting enough to pursue as a product configuration (org-tier sub-agent panel for specific high-stakes decisions), or is it a generalization already covered by named perspectives + review? The M</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_MultiRoleCoordinationGatekeeper</strong><br>The Microsoft gatekeeper pattern suggests a centralized ground-truth holding mechanism missing from current named-perspective architecture.</div>
+<div class="entity"><span class="t">Claim</span> <strong>Claim_NamedPerspectiveAsSubAgent</strong><br>Scarlet [30:41]: 'In the planning session for any particular task, like, I want to know what Tony thinks as Tony has represented, you know, your... And our sort of shared opinion over every call we've had.' The named perspective is not a fl</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_UseCase2AgenticSteering</strong><br>Use Case 2: Agentic Steering (Currently Underrepresented)</div><p class="sub">1 further node is not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>

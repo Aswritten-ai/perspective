@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DataModelLifecycle — The aswritten perspective</title>
+<meta name="description" content="This hub gathers the architectural design of a data-model lifecycle built on Git. The spine is an append-only, Git-centric transaction model — content">
+<style>
+:root { --gold: #b8963e; --ink: #1c1c1c; --paper: #fdfcf9; --muted: #6b6b6b; --card: #f6f1e6; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e8e5df; --paper: #16150f; --muted: #a09a8c; --card: #221f16; } }
+* { box-sizing: border-box; }
+body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--paper);
+  max-width: 46em; margin: 0 auto; padding: 2rem 1.2rem 4rem; line-height: 1.65; }
+header.mast { border-bottom: 3px solid var(--gold); padding-bottom: 1rem; margin-bottom: 2rem; }
+.brand { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; }
+.brand a { color: inherit; text-decoration: none; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.sub { color: var(--muted); font-size: .95rem; margin: 0; }
+.crumb { font-family: Helvetica, Arial, sans-serif; font-size: .8rem; margin: 0 0 .8rem; }
+.crumb a { color: var(--gold); text-decoration: none; }
+a { color: inherit; }
+a.cite { color: var(--gold); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: .85em; }
+a.cite:hover { text-decoration: underline; }
+blockquote { border-left: 3px solid var(--gold); margin: 1em 0; padding: .1em 0 .1em 1em; color: var(--muted); }
+.card { border: 1px solid var(--card); border-left: 3px solid var(--gold); border-radius: 6px;
+  background: var(--card); padding: .7rem 1rem; margin: .6rem 0; }
+.card .k { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: .1em; }
+.hublist { list-style: none; padding: 0; }
+.hublist li { margin: .9rem 0; }
+.hublist .n { color: var(--muted); font-size: .85rem; font-family: Helvetica, Arial, sans-serif; }
+.install { border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.4rem 0; background: var(--card); }
+.install code { display: block; background: transparent; border-left: 3px solid var(--gold);
+  padding: .4rem .8rem; margin-top: .6rem; font-size: .85rem; overflow-x: auto; white-space: pre; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+footer { margin-top: 3rem; border-top: 1px solid var(--card); padding-top: 1rem;
+  color: var(--muted); font-size: .85rem; }
+.entity { padding: .5rem 0; border-bottom: 1px solid var(--card); font-size: .92rem; }
+.entity .t { font-family: Helvetica, Arial, sans-serif; font-size: .75rem; color: var(--gold); }
+</style></head><body>
+<header class="mast"><p class="brand"><a href="index.html">aswritten.ai · public perspective</a></p></header>
+
+<p class="crumb"><a href="index.html">Perspective</a> › DataModelLifecycle</p>
+<h1>DataModelLifecycle</h1>
+<p class="sub">8 nodes in this area of the perspective</p>
+<p>This hub gathers the architectural design of a data-model lifecycle built on Git. The spine is an append-only, [Git-centric transaction model] (<a class="cite" href="entities.html#Narrative_RepoAsSourceOfTruth">Narrative_RepoAsSourceOfTruth</a>) — content committed before extraction, async processing via Actions — realized as an [append-only transaction log in .aswritten directories] (<a class="cite" href="entities.html#Narrative_SIC_DataModelLifecycle_1">Narrative_SIC_DataModelLifecycle_1</a>) with hierarchical compilation across ancestor directories. Social structure maps onto the filesystem: [Discourse category→folder, thread→subfolder, post→transaction] (<a class="cite" href="entities.html#Obs_CategoryMapping">Obs_CategoryMapping</a>). Several type decisions firm up the schema: [Memory decomposed into Message/Provenance/File] (<a class="cite" href="entities.html#Decision_MemoryDecomp">Decision_MemoryDecomp</a>) to kill duplicate provenance, [Snapshot+Ontology bundled into one State type] (<a class="cite" href="entities.html#Decision_StateAbstraction">Decision_StateAbstraction</a>) for caching and synchronization, and a [batch of six open questions resolved] (<a class="cite" href="entities.html#Decision_ResolvedQuestions">Decision_ResolvedQuestions</a>). Above the engineering sits a generative framing — [worldview as source of truth, everything else a compiled target] (<a class="cite" href="entities.html#Narrative_CompilationTargets">Narrative_CompilationTargets</a>) — and a philosophical sibling, [AI identity as resonant body] (<a class="cite" href="entities.html#Concept_AIIdentity">Concept_AIIdentity</a>).</p>
+
+<h2>Witness phrases</h2><div class="card"><span class="k">verbatim</span><br>Message = content + author; Provenance = attribution metadata; File = storage details separate from content semantics</div><div class="card"><span class="k">verbatim</span><br>Simplifies tool signatures, enforces synchronization, enables session-level caching, maps to Standard Context Tier (15K tokens)</div><div class="card"><span class="k">verbatim</span><br>All content committed to Git before extraction; GitHub Actions handle async processing; append-only transactions</div><div class="card"><span class="k">verbatim</span><br>Append-only transaction log in .aswritten directories. Hierarchical compilation across ancestor directories. Immutable transaction files with provenance metadata.</div><div class="card"><span class="k">verbatim</span><br>Everything becomes a compiled target; worldview is source of truth</div><div class="card"><span class="k">verbatim</span><br>Two competing 'source of truth' framings sit side by side: the worldview/ontology state vs. the Git repo as the committed ground truth.</div><div class="card"><span class="k">verbatim</span><br>State-vs-Snapshot tension: bundling them into one type buys caching and sync but removes the ability to vary them independently in tool signatures.</div><div class="card"><span class="k">verbatim</span><br>AI-identity-as-resonant-body is a philosophical outlier among otherwise concrete schema/storage decisions — only loosely (skos:related) attached.</div><div class="card"><span class="k">verbatim</span><br>ResolvedQuestions declares six issues closed, yet the underlying decisions (memory decomposition, state bundling) remain individually expandable — 'resolved' frames but does not erase the trade-offs.</div>
+<h2>In this area</h2><div class="entity"><span class="t">skos:Concept</span> <strong>Concept_AIIdentity</strong><br>AI Identity as Resonant Body</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_CompilationTargets</strong><br>Content, apps, code as renders from worldview; functional transformation from worldview state to outputs</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_RepoAsSourceOfTruth</strong><br>Git-centric architecture</div>
+<div class="entity"><span class="t">Narrative</span> <strong>Narrative_SIC_DataModelLifecycle_1</strong><br>Append-only transaction log in .aswritten directories. Hierarchical compilation across ancestor directories. Immutable transaction files with provenance metadata.</div>
+<div class="entity"><span class="t">StyleObservation</span> <strong>Obs_CategoryMapping</strong><br>**Category Mapping**:\n- Each Discourse category = folder in repo\n- Each thread = subfolder\n- Each post = transaction in thread folder</div><p class="sub">3 further nodes are not published in the public projection. Each node links from the <a href="entities.html">entity index</a>.</p>
+
+<footer>Materialized from aswritten's own knowledge graph — every page is generated from witnessed, dated,
+attributed organizational discourse. Names of customers and collaborators are anonymized; the reasoning is real.
+Install it in your own AI: perspective id <code>customer-architecture-demo-enterprise-a21e</code>.
+<br><a href="https://aswritten.ai">aswritten.ai</a> · <a href="https://docs.aswritten.ai">docs</a> · <a href="llms.txt">llms.txt</a></footer>
+</body></html>
