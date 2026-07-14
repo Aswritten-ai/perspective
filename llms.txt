@@ -42,7 +42,6 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Mission](hub-Mission.html): The Mission hub centers on building collective memory as infrastructure — explicitly \"infrastructure, not tool\" — that
 - [MoatLeverage](hub-MoatLeverage.html): This hub gathers the claim that AsWritten's defensibility and its reach are the same asset: a Git-native narrative archi
 - [ModulesCapabilities](hub-ModulesCapabilities.html): This hub gathers the product's tool surface and capability decisions, mostly dated March–May 2026. The dominant arc is a
-- [Narrative_1](hub-Narrative_1.html): This hub holds the thesis that identity follows narrative architecture — that steering a narrative shapes what an AI bec
 - [Narrative_AIContextValidation](hub-Narrative_AIContextValidation.html): This hub gathers the case for AI context validation as a distinct value proposition. The throughline: Aswritten as conte
 - [Narrative_B2CPivot](hub-Narrative_B2CPivot.html): The strategic trajectory of aswritten has moved from a binary B2B/B2C choice toward a unified model where the individual
 - [Narrative_BoundedDomainFidelityArgument](hub-Narrative_BoundedDomainFidelityArgument.html): The argument for bounded-domain fidelity posits that expertise modules—courses, books, and consulting deliverables—offer
@@ -118,6 +117,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [KeyPhrases](hub-KeyPhrases.html): This hub catalogs the core lexicon and rhetorical architecture defining the collective memory pitch. The discourse is an
 - [Metaphor](hub-Metaphor.html): This hub gathers the document's figurative language across two registers. Empowerment/control metaphors dominate: narrat
 - [NamingConventions](hub-NamingConventions.html): This hub gathers the project's naming and positioning conventions, which cohere around two devices. First, a consistent 
+- [Narrative_1](hub-Narrative_1.html): The origin of this architecture is anchored in the 2012 study of flocking-particle systems, where narrative operates lik
 - [NarrativePillars](hub-NarrativePillars.html): This hub gathers two unlike strands under one roof. The bulk is a cluster of style observations on how strategic prose i
 - [Parallelism](hub-Parallelism.html): This hub tracks the deployment of parallelism as a rhetorical and structural device within AI-native strategic documenta
 - [PlainLanguage](hub-PlainLanguage.html): This hub gathers observations of Scarlet's plain-language style across founder-facing documents. The dominant thread is 
