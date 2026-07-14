@@ -1,0 +1,154 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-1",
+    "regions" : [ "past", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "Finding recorded 2026-07-14 while instrumenting the multipass extraction engine (task-437).",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "A dated, specific finding is presented as an actual completed event.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-2",
+    "regions" : [ "past", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "On a measured dev run, 57% of the wall clock (575 of 1,002 seconds) was time with no LLM call in flight",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "Measured durations anchor attention to a particular completed run and its actual state.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-3",
+    "regions" : [ "past", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "The three inter-stage gaps were navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "Named stages and exact durations construe actual recorded events concretely.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-4",
+    "regions" : [ "past", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "The largest contributor identified and reproduced: a self-invalidating graph cache.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The cache behavior is presented as an identified and reproduced actual cause.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-5",
+    "regions" : [ "present", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "The engine's graph service keys its corpus cache on owner, repo, ref, and the .aswritten tree sha.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The sentence states the current concrete mechanism of a named service.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-6",
+    "regions" : [ "past", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "Both the consult prefetch and the navigator's post-agent reads were building the graph against the run's own work branch.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "Specific reads and a branch are described as an actual prior operation.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-7",
+    "regions" : [ "past", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "the source-spur step commits the document and its source transaction to that same work branch mid-run, moving the tree sha",
+      "kind" : "plain-signal"
+    }, {
+      "quote" : "the navigator's read missed the warm cache and rebuilt the entire 64,000-quad corpus",
+      "kind" : "intensifier"
+    } ],
+    "why" : "A specific mid-run commit and its concrete cache rebuild are narrated as actual events.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-8",
+    "regions" : [ "past", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "Scarlet's ruling: \"the base ref is correct.\"",
+      "kind" : "framing-move"
+    } ],
+    "why" : "A named person's specific ruling is presented as a settled act and proposition.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-9",
+    "regions" : [ "present", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "the base ref is correct.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The declarative utterance settles a current state concerning a specific artifact.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-10",
+    "regions" : [ "present", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "The consult and navigate reads now read the base ref the run was cut from",
+      "kind" : "plain-signal"
+    }, {
+      "quote" : "not the run's own freshly-committed work branch",
+      "kind" : "framing-move"
+    } ],
+    "why" : "The contrast describes the current concrete read behavior after the change.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-11",
+    "regions" : [ "present", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "The navigator consults the prior perspective; the document under extraction reaches the engine through pass one",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "Named components and a specific document path are described as the current architecture.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-12",
+    "regions" : [ "present", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "Both reads now share one warm graph and the run's own commit can no longer invalidate it.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The current shared cache state and its settled protection are stated concretely.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-13",
+    "regions" : [ "present", "abstract" ],
+    "evidence" : [ {
+      "quote" : "The dead time is also coupled to the prompt cache.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The sentence states a current relationship at the level of system behavior rather than a single event.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-14",
+    "regions" : [ "future", "irrealis", "abstract" ],
+    "evidence" : [ {
+      "quote" : "a slightly slower document would let the cached prefix evaporate between passes and silently revert the cost",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "A hypothetical slower document introduces a possible future failure pattern at an abstract system level.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-15",
+    "regions" : [ "past", "realis", "concrete" ],
+    "evidence" : [ {
+      "quote" : "Scarlet approved the one-hour cache TTL",
+      "kind" : "performed-act"
+    } ],
+    "why" : "Approval of a specific configuration is presented as a completed act.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-16",
+    "regions" : [ "present", "realis", "abstract" ],
+    "evidence" : [ {
+      "quote" : "The remaining inter-stage time is GitHub-IO and n8n-navigator-round-trip bound.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The sentence characterizes the current residual latency as a system-level constraint.",
+    "reported" : false
+  } ],
+  "unmarked" : [ ]
+}
