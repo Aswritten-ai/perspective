@@ -114,7 +114,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [GrammarSyntax](hub-GrammarSyntax.html): Grammar and syntax observations of Scarlet's writing converge on a few load-bearing habits. Voice is overwhelmingly acti
 - [IdiolectPhrasing](hub-IdiolectPhrasing.html): This hub gathers idiolect and register observations across speakers. Tony's voice dominates the enthusiasm register: mil
 - [InformationArchitecture](hub-InformationArchitecture.html): This hub gathers Scarlet/aswritten style and information-architecture observations — how the documents physically encode
-- [JargonPolicy](hub-JargonPolicy.html): This hub collects observations about jargon policy across the corpus — how technical, domain-specific, and product vocab
+- [JargonPolicy](hub-JargonPolicy.html): This hub tracks the evolution of jargon policy, oscillating between internal-audience density and explicit terminology c
 - [KeyPhrases](hub-KeyPhrases.html): This hub catalogs the core lexicon and rhetorical architecture defining the collective memory pitch. The discourse is an
 - [Metaphor](hub-Metaphor.html): This hub gathers the document's figurative language across two registers. Empowerment/control metaphors dominate: narrat
 - [NamingConventions](hub-NamingConventions.html): This hub gathers the project's naming and positioning conventions, which cohere around two devices. First, a consistent 
