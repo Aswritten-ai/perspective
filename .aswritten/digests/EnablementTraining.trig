@@ -4,28 +4,20 @@
 GRAPH <https://aswritten.ai/narrative#Digest_EnablementTraining> {
   <https://aswritten.ai/narrative#Digest_EnablementTraining> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#EnablementTraining> ;
-    narr:childCount "11"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers the enablement/onboarding thinking for aswritten's beta. The framing is top-down: [CTO the customer's CTO told the customer's chief architect to get new members using AI as the customer's chief architect does](narr:Claim_CTODirectiveTopDownCover) (Mar 17), removing the internal-adoption barrier. A recurring design input is [the five questions every beta user asks](narr:Claim_FiveQuestionsEveryUserAsks) — bootstrap, good memory, knowing it works, what to do first, PR worries. Tony's [technical-user separation principle](narr:Claim_TechnicalUserSeparationPrinciple) (Mar 17) anchors the guidance: start a fresh project, keep aswritten away from existing repos. Earlier, [a demo-call prospect asked for clearer docs-vs-AI separation](narr:Claim_TighterOnboarding) (Mar 11), and [Scarlet committed to the enterprise customer-facing setup docs](narr:Claim_SetupDocsCommitment) (May 5). First-use guidance frames it as [a chat, not a coding session](narr:Obs_ChatNotCodingSession), with [live bootstrapping guidance](narr:Obs_BootstrappingGuidance) earmarked for an automated onboarding mode. A key conceptual distinction runs through it: [human onboarding increases coverage, not product effectiveness](narr:Narrative_OnboardingEffectivenessVsCoverage) (Mar 13).""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_CTODirectiveTopDownCover> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_FiveQuestionsEveryUserAsks> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_SetupDocsCommitment> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_TechnicalUserSeparationPrinciple> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_TighterOnboarding> ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "15a9ba14f7af89866bae862f87d18f5cf1419f87" ;
+    narr:narration """This hub consolidates enablement and onboarding strategies for the aswritten beta, centering on the tension between user-led discovery and structured separation. Guidance is anchored by [Tony's technical-user separation principle](narr:Position_TechnicalUserSeparationPrinciple) (Mar 17), which mandates that users initiate fresh projects to avoid conflict with existing repositories—a stance reinforced by [his specific implementation advice](narr:Obs_SeparationSolutionQuote). This focus on isolation emerged partly from [prospect feedback](narr:Position_TighterOnboarding) (Mar 11) requesting clearer distinctions between documentation and AI-driven workflows. The onboarding experience is further shaped by [five recurring user questions](narr:Position_FiveQuestionsEveryUserAsks) and [Scarlet's first-use framing](narr:Obs_ChatNotCodingSession), which encourages treating the tool as a conversational partner rather than a traditional coding environment. Underlying these tactical choices is a conceptual distinction: [human-led onboarding](narr:Narrative_OnboardingEffectivenessVsCoverage) (Mar 13) is framed as a method to increase knowledge coverage rather than inherent product effectiveness, with [live bootstrapping guidance](narr:Obs_BootstrappingGuidance) serving as a precursor to future automated onboarding modes.""" ;
     narr:covers <https://aswritten.ai/narrative#Narrative_OnboardingEffectivenessVsCoverage> ;
     narr:covers <https://aswritten.ai/narrative#Obs_BootstrappingGuidance> ;
     narr:covers <https://aswritten.ai/narrative#Obs_ChatNotCodingSession> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ClaudePrePendSlimmed> ;
     narr:covers <https://aswritten.ai/narrative#Obs_SeparationSolutionQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Observation_ExperientialTraining> ;
-    narr:keyPhrase [ narr:text "the best thing for technical users with existing AI workflows is to have a completely new project that hasn't started any repos" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_TechnicalUserSeparationPrinciple> ] ;
+    narr:covers <https://aswritten.ai/narrative#Position_FiveQuestionsEveryUserAsks> ;
+    narr:covers <https://aswritten.ai/narrative#Position_TechnicalUserSeparationPrinciple> ;
+    narr:covers <https://aswritten.ai/narrative#Position_TighterOnboarding> ;
     narr:keyPhrase [ narr:text "The best thing is to have a completely new thing that haven't started any repos for or anything and then don't let it touch anything else. Keep them separate." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_SeparationSolutionQuote> ] ;
-    narr:keyPhrase [ narr:text "(1) How do I bootstrap? (2) What makes a good memory? (3) How do I know it's working? (4) What should I do first? (5) Should I worry about PRs?" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_FiveQuestionsEveryUserAsks> ] ;
-    narr:keyPhrase [ narr:text "Importantly, this doesn't increase the effectiveness of the product, but it increases the amount of knowledge that the product is able to deploy on the org's behalf while doing tasks." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_OnboardingEffectivenessVsCoverage> ] ;
-    narr:keyPhrase [ narr:text "claude-prepend.md — the file scaffolded into beta user repos — was reduced to 4 lines" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ClaudePrePendSlimmed> ] ;
-    narr:variation [ narr:text "The dedicated human onboarding adds knowledge COVERAGE, not product EFFECTIVENESS — it is intentional optimization, not a requirement; narrative steering works fast with minimal input." ; narr:over <https://aswritten.ai/narrative#Narrative_OnboardingEffectivenessVsCoverage> ] ;
-    narr:variation [ narr:text "A regression cuts against the mainline: claude-prepend.md was slimmed to 4 lines, leaving beta users almost no protocol and a context-free 'See ASWRITTEN.md' directive — later restored from commit 6a8f320a." ; narr:over <https://aswritten.ai/narrative#Obs_ClaudePrePendSlimmed> ] ;
-    narr:variation [ narr:text "Two different senses of 'separation': a demo-call prospect wants docs-vs-AI legibility, while Tony/aswritten want fresh-project isolation from existing repos — overlapping word, distinct asks." ; narr:over <https://aswritten.ai/narrative#Claim_TighterOnboarding> ; narr:over <https://aswritten.ai/narrative#Claim_TechnicalUserSeparationPrinciple> ] ;
-    narr:variation [ narr:text "Structural outlier: a beta user from outside tech's experiential games building teacher empathy for excluded students is a non-software 'training' sense, unrelated to aswritten onboarding." ; narr:over <https://aswritten.ai/narrative#Observation_ExperientialTraining> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Human onboarding increases knowledge coverage, not product effectiveness" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_OnboardingEffectivenessVsCoverage> ] ;
+    narr:keyPhrase [ narr:text "The more involved people are, the more they need separation from their own chaos." ; narr:phraseSource <https://aswritten.ai/narrative#Position_TechnicalUserSeparationPrinciple> ] ;
+    narr:variation [ narr:text "The necessity of manual onboarding is framed as an optimization phase, not a permanent requirement for product utility." ; narr:over <https://aswritten.ai/narrative#Narrative_OnboardingEffectivenessVsCoverage> ] ;
+    narr:variation [ narr:text "User demand for clearer documentation-vs-AI separation highlights a potential friction point in current self-serve onboarding." ; narr:over <https://aswritten.ai/narrative#Position_TighterOnboarding> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
