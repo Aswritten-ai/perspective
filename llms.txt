@@ -24,7 +24,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [DataIntegrationFlows](hub-DataIntegrationFlows.html): This hub gathers the plumbing by which raw activity becomes queryable knowledge. On the execution side, the webhook-mode
 - [DataModelLifecycle](hub-DataModelLifecycle.html): This hub gathers the architectural design of a data-model lifecycle built on Git. The spine is an append-only, Git-centr
 - [DesignTradeoffs](hub-DesignTradeoffs.html): This hub gathers recurring design tensions across vocabulary, architecture, and memory boundaries. A foundational struct
-- [Differentiators](hub-Differentiators.html): This hub tracks the evolving definition of aswritten’s competitive moat, moving from feature-based differentiators to a 
+- [Differentiators](hub-Differentiators.html): The competitive positioning of aswritten has evolved from feature-based differentiation toward a focus on decision archa
 - [EnablementTraining](hub-EnablementTraining.html): This hub gathers the enablement/onboarding thinking for aswritten's beta. The framing is top-down: CTO the customer's CT
 - [ExpansionPathway](hub-ExpansionPathway.html): The growth of aswritten centers on a supplier-side distribution model, where experts push installable modules to their n
 - [FeedbackLoops](hub-FeedbackLoops.html): This hub gathers the mechanics of how feedback enters and reshapes the product and its knowledge. Two structural loops a
