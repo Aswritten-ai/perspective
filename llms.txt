@@ -53,7 +53,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Narrative_OrgWorldview](hub-Narrative_OrgWorldview.html): This hub gathers the org's account of how aswritten builds its understanding of a client. Two foundation-level children 
 - [Narrative_PerspectiveOnSpec](hub-Narrative_PerspectiveOnSpec.html): This hub gathers the April thesis that a perspective built *on spec* — before any prospect interview — is itself the pit
 - [Narrative_PerspectiveVsInformation](hub-Narrative_PerspectiveVsInformation.html): This hub argues the load-bearing distinction for modules versus RAG: modules deliver *perspective*, not information. The
-- [Narrative_SalesAsDelivery](hub-Narrative_SalesAsDelivery.html): This hub holds the thesis that the sales motion and product delivery are one thing — Demo 1 *is* the sale, and every cal
+- [Narrative_SalesAsDelivery](hub-Narrative_SalesAsDelivery.html): The core thesis that sales motion and product delivery are identical has evolved from a tactical principle into a codifi
 - [Narrative_SeparationPrincipleProductVsOrg](hub-Narrative_SeparationPrincipleProductVsOrg.html): This hub gathers a single dated demolition pass (Mar 2026) enacting one principle: collapse the product/org split by eli
 - [Narrative_ThreePartSeedingPattern](hub-Narrative_ThreePartSeedingPattern.html): A three-step onboarding playbook for seeding aswritten.ai from historical recordings, articulated around the enterprise 
 - [Narrative_TranscriptBootstrappingUnderplayed](hub-Narrative_TranscriptBootstrappingUnderplayed.html): This hub tracks the argument that transcript bootstrapping is aswritten's strongest underused onramp — and that the comp
