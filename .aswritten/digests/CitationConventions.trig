@@ -4,18 +4,15 @@
 GRAPH <https://aswritten.ai/narrative#Digest_CitationConventions> {
   <https://aswritten.ai/narrative#Digest_CitationConventions> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#CitationConventions> ;
-    narr:childCount "17"^^xsd:integer ;
-    narr:generatedFrom "b6a9d4d918338cfce5a392033500736cbdfb157d" ;
-    narr:narration """This hub collects observations about how spoken and written evidence is cited across the perspective's documents. The dominant pattern is [timestamp-anchored speaker attribution](narr:StyleObs_TimestampedSpeakerAttribution) — speaker name followed by a bracketed position in the recording — attested as early as 2025-07-14 and recurring across multiple call-note documents through April–July 2026. Format varies: [MM:SS inline](narr:StyleObs_ConversationalTimestamps) is the most common form, [HH:MM:SS](narr:StyleObs_DavidNolen_TimestampCitations) appears in at least one session, and [trailing attribution](narr:StyleObs_TimestampAttribution) (\"— a collaborator [12:45]\") is also observed. The shared logic across variants is [anchoring claims to verifiable moments](narr:StyleObs_TimestampCitation) in a source recording. Alongside timestamps, [verbatim blockquote](narr:StyleObs_CutoverBlockquoteEvidence) functions as a distinct evidentiary register — used for decisions, directives, and taxonomies where [the precision matters](narr:StyleObs_VerbatimPrecision). The [two-register structure](narr:StyleObs_NicheBlockquoteVerbatim) (verbatim evidence + editorial gloss) is noted as a recurring document shape. A third, structurally distinct convention — [backtick-wrapped IRIs](narr:StyleObs_NotNegotiationFloor) for inline cross-referencing of graph entities — is characterized as a Scarlet idiolect separate from both timestamp and blockquote patterns.""" ;
+    narr:childCount "13"^^xsd:integer ;
+    narr:generatedFrom "acd63666a2004ed05daca54d6d2dda67ca510c10" ;
+    narr:narration """This hub documents the evolving citation conventions used to ground claims in source material. The primary evidentiary register relies on [timestamp-anchored speaker attribution](narr:StyleObs_TimestampedSpeakerAttribution), which provides temporal provenance for spoken evidence. While [MM:SS](narr:StyleObs_ConversationalTimestamps) remains the standard, variations including [HH:MM:SS](narr:StyleObs_DavidNolen_TimestampCitations) and [inline grounding](narr:StyleObs_TimestampGrounding) are employed to maintain traceability. Parallel to these temporal markers, the perspective utilizes a [two-register document structure](narr:StyleObs_NicheBlockquoteVerbatim) that separates [verbatim blockquote](narr:StyleObs_ThreeUseCases_VerbatimBlock) evidence from editorial synthesis. This structure is driven by the requirement that [precision matters](narr:StyleObs_VerbatimPrecision) when capturing technical or taxonomic claims. A distinct, non-temporal convention involves [backtick-wrapped IRIs](narr:StyleObs_NotNegotiationFloor), which function as an idiolect for cross-referencing internal graph entities. Together, these methods ensure that claims are either anchored to a specific moment in a recording or explicitly demarcated as authoritative verbatim content.""" ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ConversationalTimestamps> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_CutoverBlockquoteEvidence> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_DavidNolen_TimestampCitations> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_EnterpriseShape_TimestampCitation> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_NicheBlockquoteVerbatim> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_NotNegotiationFloor> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ThreeUseCases_VerbatimBlock> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_TimestampAttribution> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_TimestampCitation> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TimestampGrounding> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TimestampedQuotes> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TimestampedSpeakerAttribution> ;
@@ -23,19 +20,12 @@ GRAPH <https://aswritten.ai/narrative#Digest_CitationConventions> {
     narr:covers <https://aswritten.ai/narrative#StyleObs_VerbatimAttribution> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_VerbatimPrecision> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_VerbatimQuoteHeavy> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_VerificationDoctrineBlockquote> ;
-    narr:keyPhrase [ narr:text "Timestamp citation convention [MM:SS] used throughout to anchor verbatim quotes to call recording positions" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ConversationalTimestamps> ] ;
+    narr:keyPhrase [ narr:text "Scarlet [33:02]:" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TimestampedSpeakerAttribution> ] ;
     narr:keyPhrase [ narr:text "preserved verbatim because the precision matters" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VerbatimPrecision> ] ;
-    narr:keyPhrase [ narr:text "a transcript citation convention that anchors claims to verifiable moments" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TimestampCitation> ] ;
-    narr:keyPhrase [ narr:text "two-register document: analytical frame + verbatim evidence" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_NicheBlockquoteVerbatim> ] ;
-    narr:keyPhrase [ narr:text "The blockquote format signals these are not paraphrases but binding decisions" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VerificationDoctrineBlockquote> ] ;
-    narr:keyPhrase [ narr:text "the fact that it has dates… the date thing is awesome" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_DavidNolen_TimestampCitations> ] ;
     narr:keyPhrase [ narr:text "`Claim_10xGapIntentional`" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_NotNegotiationFloor> ] ;
-    narr:keyPhrase [ narr:text "please submit test memories and iterate against dev" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VerificationDoctrineBlockquote> ] ;
-    narr:variation [ narr:text "Timestamp format is not uniform: MM:SS dominates, but HH:MM:SS appears in at least one session and trailing post-quote attribution in another — the convention is consistent in intent but not in form." ; narr:over <https://aswritten.ai/narrative#StyleObs_ConversationalTimestamps> ; narr:over <https://aswritten.ai/narrative#StyleObs_DavidNolen_TimestampCitations> ; narr:over <https://aswritten.ai/narrative#StyleObs_TimestampAttribution> ] ;
-    narr:variation [ narr:text "Blockquote carries two distinct weights: conversational evidence (run-on, informal speech) in some documents vs. binding directive or authorization in others — same syntax, different epistemic status." ; narr:over <https://aswritten.ai/narrative#StyleObs_NicheBlockquoteVerbatim> ; narr:over <https://aswritten.ai/narrative#StyleObs_VerificationDoctrineBlockquote> ; narr:over <https://aswritten.ai/narrative#StyleObs_CutoverBlockquoteEvidence> ] ;
-    narr:variation [ narr:text "Backtick-IRI cross-referencing is a structurally distinct third convention — neither timestamp nor blockquote — and is characterized as a Scarlet idiolect rather than a shared document standard." ; narr:over <https://aswritten.ai/narrative#StyleObs_NotNegotiationFloor> ] ;
-    narr:variation [ narr:text "VerbatimPrecision states an explicit normative doctrine ('the precision matters') rather than describing a pattern — it is a prescriptive claim sitting among otherwise descriptive style observations." ; narr:over <https://aswritten.ai/narrative#StyleObs_VerbatimPrecision> ] ;
-    narr:variation [ narr:text "VerbatimAttribution and VerbatimQuoteHeavy carry no timestamps at all — verbatim evidence without temporal grounding, which sits in tension with the timestamp-as-provenance logic dominant elsewhere." ; narr:over <https://aswritten.ai/narrative#StyleObs_VerbatimAttribution> ; narr:over <https://aswritten.ai/narrative#StyleObs_VerbatimQuoteHeavy> ] ;
-    narr:writer "anthropic/claude-sonnet-4.6" .
+    narr:keyPhrase [ narr:text "Tony [12:10]: \"You've got something that most people don't get and that's a sponsor." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TonyTimestampCitation_CustomerArchitectSponsor> ] ;
+    narr:keyPhrase [ narr:text "> I was thinking about those as different use cases:" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ThreeUseCases_VerbatimBlock> ] ;
+    narr:variation [ narr:text "Temporal precision varies between [MM:SS] and [HH:MM:SS] formats." ; narr:over <https://aswritten.ai/narrative#StyleObs_ConversationalTimestamps> ; narr:over <https://aswritten.ai/narrative#StyleObs_DavidNolen_TimestampCitations> ] ;
+    narr:variation [ narr:text "Backtick-wrapped IRIs serve as a structural idiolect distinct from evidentiary citation." ; narr:over <https://aswritten.ai/narrative#StyleObs_NotNegotiationFloor> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
