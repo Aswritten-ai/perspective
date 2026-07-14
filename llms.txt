@@ -111,7 +111,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Calibration](hub-Calibration.html): Calibration gathers how aswritten validates its own quality — the recurring frame is optometric. The optometrist model a
 - [CitationConventions](hub-CitationConventions.html): This hub documents the evolving citation conventions used to ground claims in source material. The primary evidentiary r
 - [FlowCoherence](hub-FlowCoherence.html): This hub gathers style observations of a single first-person analytical document, narrating its voice and architecture r
-- [GrammarSyntax](hub-GrammarSyntax.html): Grammar and syntax observations of Scarlet's writing converge on a few load-bearing habits. Voice is overwhelmingly acti
+- [GrammarSyntax](hub-GrammarSyntax.html): Scarlet’s writing is defined by a rigorous, active-voice architecture that prioritizes scannability and procedural clari
 - [IdiolectPhrasing](hub-IdiolectPhrasing.html): This hub gathers idiolect and register observations across speakers. Tony's voice dominates the enthusiasm register: mil
 - [InformationArchitecture](hub-InformationArchitecture.html): This hub tracks the evolution of Scarlet/aswritten's information architecture and stylistic idiolect. The core thesis re
 - [JargonPolicy](hub-JargonPolicy.html): This hub tracks the evolution of jargon policy, oscillating between internal-audience density and explicit terminology c
