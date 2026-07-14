@@ -88,7 +88,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [SecurityPrivacyModel](hub-SecurityPrivacyModel.html): The hub gathers how secrets, identity, and compliance are handled. The spine is credential hygiene: the target credentia
 - [Segmentation](hub-Segmentation.html): This hub gathers competing cuts at *who the customer is*. The quantitative spine is a dev-shop ICP — [5-150 people, [amo
 - [Signals](hub-Signals.html): A mixed gather of market, product, and self-observation signals — no single arc, several distinct registers. The stronge
-- [SolutionArchetypes](hub-SolutionArchetypes.html): This hub gathers the solution archetypes and target use cases the product addresses, mostly via `skos:broader`. The unif
+- [SolutionArchetypes](hub-SolutionArchetypes.html): This hub gathers solution archetypes and target use cases organized around a compiled organizational worldview that down
 - [StackOverview](hub-StackOverview.html): This hub gathers the As Written / Scarlet Dame technical-and-conceptual stack across two registers. The conceptual mainl
 - [Strategy](hub-Strategy.html): This hub gathers the strategic thesis that narrative is an organizational operating system — a framework embedding narra
 - [StrategyOverview](hub-StrategyOverview.html): This hub gathers the strategy behind the strategic rebrand from storyBASE/witness to aswritten.ai, plus the foundational
