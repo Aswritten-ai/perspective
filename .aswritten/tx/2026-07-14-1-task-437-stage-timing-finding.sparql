@@ -1,0 +1,323 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX aswr: <https://aswritten.ai/aswr#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  aswr:Tx_20260714T174905Z a prov:Activity ;
+      prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime ;
+      prov:wasAssociatedWith "aswritten.ai" ;
+      prov:wasAttributedTo "scarlet@aswritten.ai" ;
+      aswr:draftedBy "claude-opus-4-8" ;
+      aswr:perspective "Aswritten-ai/perspective@main" ;
+      aswr:pipelinePin "afcb0b73bb42" ;
+      aswr:originPath ".aswritten/memories/2026-07-14-1-task-437-stage-timing-finding.md" ;
+      dct:title "Multipass source extraction: The extraction engine's inter-stage dead time and the self-invalidating graph cache" ;
+      prov:generated narr:Sample_1Task437StageTimingFinding, narr:Expr_1Task437StageTimingFinding_1, narr:Expr_1Task437StageTimingFinding_2, narr:Expr_1Task437StageTimingFinding_3, narr:Expr_1Task437StageTimingFinding_4, narr:Expr_1Task437StageTimingFinding_5, narr:Expr_1Task437StageTimingFinding_6, narr:Expr_1Task437StageTimingFinding_7, narr:Expr_1Task437StageTimingFinding_8, narr:Expr_1Task437StageTimingFinding_9, narr:Expr_1Task437StageTimingFinding_10, narr:Expr_1Task437StageTimingFinding_11, narr:Expr_1Task437StageTimingFinding_12, narr:Expr_1Task437StageTimingFinding_13, narr:Expr_1Task437StageTimingFinding_14, narr:Expr_1Task437StageTimingFinding_15, narr:Expr_1Task437StageTimingFinding_16 .
+} ;
+INSERT DATA {
+  GRAPH aswr:Tx_20260714T174905Z {
+    narr:Sample_1Task437StageTimingFinding a narr:Sample ;
+        dct:title "The extraction engine's inter-stage dead time and the self-invalidating graph cache" ;
+        dct:created "2026-07-14"^^xsd:date ;
+        aswr:originPath ".aswritten/memories/2026-07-14-1-task-437-stage-timing-finding.md" ;
+        aswr:submittedBy narr:Actor_ScarletDame ;
+        aswr:account narr:Actor_ScarletDame .
+
+    narr:Expr_1Task437StageTimingFinding_1 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "instrumenting the multipass extraction engine, task-437" ;
+        skos:note "editorial narration by the memo's composer" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Finding recorded 2026-07-14 while instrumenting the multipass extraction engine (task-437)." ;
+                oa:prefix "elf-invalidating graph cache\n\n" ;
+                oa:suffix " On a measured dev run, 57% of" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "149"^^xsd:integer ;
+                oa:end "240"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_2 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "On a measured dev run, 57% of the wall clock (575 of 1,002 seconds) was time with no LLM call in flight — the judgment chain sat idle between passes." ;
+                oa:prefix "extraction engine (task-437). " ;
+                oa:suffix " The three inter-stage gaps we" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "241"^^xsd:integer ;
+                oa:end "390"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_3 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The three inter-stage gaps were navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds." ;
+                oa:prefix "hain sat idle between passes. " ;
+                oa:suffix "\n\nThe largest contributor iden" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "391"^^xsd:integer ;
+                oa:end "536"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_4 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The largest contributor identified and reproduced: a self-invalidating graph cache." ;
+                oa:prefix "to-narrative at 130 seconds.\n\n" ;
+                oa:suffix " The engine's graph service ke" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "538"^^xsd:integer ;
+                oa:end "621"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_5 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The engine's graph service keys its corpus cache on owner, repo, ref, and the .aswritten tree sha." ;
+                oa:prefix "elf-invalidating graph cache. " ;
+                oa:suffix " Both the consult prefetch and" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "622"^^xsd:integer ;
+                oa:end "720"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_6 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Both the consult prefetch and the navigator's post-agent reads were building the graph against the run's own work branch." ;
+                oa:prefix " and the .aswritten tree sha. " ;
+                oa:suffix " But the source-spur step comm" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "721"^^xsd:integer ;
+                oa:end "842"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_7 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "But the source-spur step commits the document and its source transaction to that same work branch mid-run, moving the tree sha — so the navigator's read missed the warm cache and rebuilt the entire 64,000-quad corpus for exactly the one transaction the run had just written." ;
+                oa:prefix "st the run's own work branch. " ;
+                oa:suffix "\n\nScarlet's ruling: \"the base " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "843"^^xsd:integer ;
+                oa:end "1117"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_8 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "framing sentence introducing the quote; the quote itself is segmented separately" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Scarlet's ruling: \"the base ref is correct.\"" ;
+                oa:prefix "on the run had just written.\n\n" ;
+                oa:suffix " The consult and navigate read" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1119"^^xsd:integer ;
+                oa:end "1163"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_9 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "declarative" ;
+        skos:note "direct quote claimed verbatim by the composer" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "the base ref is correct." ;
+                oa:prefix " written.\n\nScarlet's ruling: \"" ;
+                oa:suffix "\" The consult and navigate rea" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1138"^^xsd:integer ;
+                oa:end "1162"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_10 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        narr:principal narr:Actor_ScarletDame ;
+        skos:note "direct restatement of Scarlet's ruling just quoted above; principal attaches per precedence rule" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The consult and navigate reads now read the base ref the run was cut from, not the run's own freshly-committed work branch." ;
+                oa:prefix "g: \"the base ref is correct.\" " ;
+                oa:suffix " The navigator consults the pr" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1164"^^xsd:integer ;
+                oa:end "1287"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_11 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The navigator consults the prior perspective; the document under extraction reaches the engine through pass one, never through these reads." ;
+                oa:prefix "reshly-committed work branch. " ;
+                oa:suffix " Both reads now share one warm" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1288"^^xsd:integer ;
+                oa:end "1427"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_12 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        narr:principal narr:Actor_ScarletDame ;
+        skos:note "continuation of the restated ruling's consequence" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Both reads now share one warm graph and the run's own commit can no longer invalidate it." ;
+                oa:prefix "e, never through these reads. " ;
+                oa:suffix "\n\nThe dead time is also couple" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1428"^^xsd:integer ;
+                oa:end "1517"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_13 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The dead time is also coupled to the prompt cache." ;
+                oa:prefix "can no longer invalidate it.\n\n" ;
+                oa:suffix " Anthropic's default ephemeral" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1519"^^xsd:integer ;
+                oa:end "1569"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_14 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Anthropic's default ephemeral cache lives five minutes, and the 336-second gap already exceeds it — so a slightly slower document would let the cached prefix evaporate between passes and silently revert the cost with no error." ;
+                oa:prefix " coupled to the prompt cache. " ;
+                oa:suffix " Scarlet approved the one-hour" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1570"^^xsd:integer ;
+                oa:end "1796"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_15 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        narr:principal narr:Actor_ScarletDame ;
+        skos:note "reports Scarlet's approval decision; paraphrase attributing the decision to Scarlet as principal" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Scarlet approved the one-hour cache TTL to decouple the cache win from the dead time." ;
+                oa:prefix "evert the cost with no error. " ;
+                oa:suffix " The remaining inter-stage tim" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1797"^^xsd:integer ;
+                oa:end "1882"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_16 a narr:Expression ;
+        narr:actor narr:Actor_Claude ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_Claude ;
+        narr:author narr:Actor_Claude ;
+        skos:note "editorial narration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1Task437StageTimingFinding ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The remaining inter-stage time is GitHub-IO and n8n-navigator-round-trip bound." ;
+                oa:prefix "cache win from the dead time. " ;
+                oa:suffix "" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1883"^^xsd:integer ;
+                oa:end "1962"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    narr:Actor_Claude a narr:AIActor .
+
+    aswr:Run_20260714T174905Z_actors a prov:Activity ;
+        aswr:runPass "actors" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/actors.json" ;
+        dct:isPartOf aswr:Tx_20260714T174905Z ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174905Z_pass1 a prov:Activity ;
+        aswr:runPass "pass1" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/pass1.json" ;
+        prov:generated narr:Sample_1Task437StageTimingFinding, narr:Expr_1Task437StageTimingFinding_1, narr:Expr_1Task437StageTimingFinding_2, narr:Expr_1Task437StageTimingFinding_3, narr:Expr_1Task437StageTimingFinding_4, narr:Expr_1Task437StageTimingFinding_5, narr:Expr_1Task437StageTimingFinding_6, narr:Expr_1Task437StageTimingFinding_7, narr:Expr_1Task437StageTimingFinding_8, narr:Expr_1Task437StageTimingFinding_9, narr:Expr_1Task437StageTimingFinding_10, narr:Expr_1Task437StageTimingFinding_11, narr:Expr_1Task437StageTimingFinding_12, narr:Expr_1Task437StageTimingFinding_13, narr:Expr_1Task437StageTimingFinding_14, narr:Expr_1Task437StageTimingFinding_15, narr:Expr_1Task437StageTimingFinding_16 ;
+        dct:isPartOf aswr:Tx_20260714T174905Z ;
+        prov:generatedAtTime "2026-07-14T17:49:05Z"^^xsd:dateTime .
+  }
+}
