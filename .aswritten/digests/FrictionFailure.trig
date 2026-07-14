@@ -4,78 +4,74 @@
 GRAPH <https://aswritten.ai/narrative#Digest_FrictionFailure> {
   <https://aswritten.ai/narrative#Digest_FrictionFailure> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#FrictionFailure> ;
-    narr:childCount "58"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """A friction/failure region spanning where AI-accelerated work, sales, onboarding, and internal process all bind. The recurring AI-development pain is volume: code generated faster than humans review it ([back-pressure](narr:Narrative_AIBackPressureCodeReview), independently named by Scarlet and the customer's chief architect ([convergence](narr:Claim_AICodeVolumeBottleneck), [Scarlet's PR quote](narr:Obs_ScarletBackPressureQuote)), and the [action trap](narr:Narrative_AIActionTrap) where every response prompts another yes ([Tony](narr:Obs_TonyAITrapQuote)), plus [framing-layer over-resolution](narr:Narrative_FramingLayerDeflection). Sales friction clusters around value legibility — [compile blocks sales](narr:Claim_CompileBlocksSales), [understanding ≠ sale](narr:Obs_ScarletPurchaseTriggerQuote), [two purchase triggers](narr:Narrative_TwoPurchaseTriggers), the [activation gap](narr:Narrative_ActivationGap), [two-sided legibility](narr:Narrative_TwoSidedLegibilityProblem). Adoption friction is diagnosed as [contamination fear, not difficulty](narr:Narrative_TechnicalAdoptionFriction) ([Tony's 10 repos](narr:Obs_TechnicalChaosQuote), [privacy](narr:Obs_PrivacyConcernQuote)), plus onboarding gaps — [GitHub opacity](narr:Obs_OutsideTechBetaUserGitHubOpacityFeedback), [tool-language](narr:Obs_OutsideTechBetaUserToolLanguageFeedback), [identity grounding](narr:Narrative_IdentityOnboardingGap), [SMS trust tax](narr:Narrative_SMSContextDependentTrustTax). Internal process failures: [Notion/Backlog two-system collapse](narr:Narrative_TwoSystemDesignFailure, Jun 2026), [/start compile regression](narr:Narrative_SlashStartAbsorptionRegression, Mar), [ARB time sink](narr:Obs_ARBPainPoint1_Quote).""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_AICodeVolumeBottleneck> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_AmbientAdoption> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_CompileBlocksSales> ;
-    narr:covers <https://aswritten.ai/narrative#Gap_DemoBeatSequence> ;
-    narr:covers <https://aswritten.ai/narrative#Gap_DemoPersonaTailoring> ;
+    narr:childCount "44"^^xsd:integer ;
+    narr:generatedFrom "9ae2f624249375a3abbce1282b453198c1b97e9a" ;
+    narr:narration """This hub collects friction and failure across four domains — AI-development loops, sales legibility, user adoption, and organizational memory — with enough cross-cutting tension that no single arc covers it.
+
+On AI-development friction, [back-pressure from code volume](narr:Narrative_AIBackPressureCodeReview) was independently named by Scarlet and the customer's chief architect (Mar 2026): AI generates code faster than humans can review it, producing what Scarlet called 'eight honking PRs of world changing features.' The [action trap](narr:Narrative_AIActionTrap) compounds this: Tony diagnosed the mechanism where every AI response prompts another action and the answer is always yes, creating a loop with no natural exit (Apr 2026). The [framing-layer deflection](narr:Narrative_FramingLayerDeflection) pattern adds a third AI-pathology: LLM output that is cleaner and more decisive than warranted, generating procedural exit ramps.
+
+Sales friction clusters around value legibility. [Understanding ≠ sale](narr:Obs_ScarletPurchaseTriggerQuote) is the core finding (Mar 2026); [two distinct purchase triggers](narr:Narrative_TwoPurchaseTriggers) map to solo professional and delegator pain moments. The [activation gap](narr:Narrative_ActivationGap) frames the product as positioned as an investment when it needs to behave as a tool, though [the deployment layer closing that gap](narr:Narrative_ActivationGapClosed) was confirmed by a design collaborator (Mar 2026). The [two-sided legibility problem](narr:Narrative_TwoSidedLegibilityProblem) extends this: patient illegibility and practitioner flattening are the same problem from opposite ends. A Jul 2026 child [inverts the felt/shown crux](narr:Narrative_ShowVsDemoProof): value is fully showable without the prospect's own data; their-own-data deepens conversion after value has already landed.
+
+Adoption friction splits into technical and non-technical channels. [Contamination fear](narr:Narrative_TechnicalAdoptionFriction) — not product difficulty — blocks technically sophisticated users with existing AI workflows ([Tony's 10 repos](narr:Obs_TechnicalChaosQuote), [privacy concern](narr:Obs_PrivacyConcernQuote)). Non-technical onboarding gaps include [GitHub opacity](narr:Obs_OutsideTechBetaUserGitHubOpacityFeedback), [tool-language ambiguity post-install](narr:Obs_OutsideTechBetaUserToolLanguageFeedback), [identity grounding skipped as irrelevant](narr:Narrative_IdentityOnboardingGap), and [SMS trust tax in low-trust contexts](narr:Obs_OutsideTechBetaUserSMSSpamCodedQuote). The [multi-user repo system prompt challenge](narr:Narrative_MultiUserRepoPromptChallenge) surfaces a design tension specific to shared repos. The [staffing AI adoption wall](narr:Narrative_StaffingAIAdoptionWall) adds an organizational-conflict vector: AI that works too well can trigger internal friction that blocks adoption entirely.
+
+Organizational memory failures form a fourth cluster. [Context hemorrhage](narr:Narrative_ContextHemorrhage) names the pattern of meetings run without structure, decisions made, minutes discarded (Jun 2026). The [forgetting bottleneck as a role](narr:Narrative_ForgettingBottleneckIsRole) is confirmed by two independent self-diagnoses from the customer's chief architect and an engineering manager at the customer (May 2026): the bottleneck is scarce memory at the decision junction, not scarce expertise. [Day-to-day re-litigation](narr:Narrative_DayToDayRelitigation) of options-vs-decisions is the recurring weekly manifestation, with [the ARB facilitator's verbatim](narr:Obs_OptionsVsDecisionsQuote) as the sharpest customer-language capture. The [scaling gap](narr:Narrative_ScalingGap) (McKinsey 2025: 78% use AI, only 33% scale it) situates the organizational memory failures in a broader adoption landscape.""" ;
     narr:covers <https://aswritten.ai/narrative#Narrative_AIActionTrap> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_AIBackPressureCodeReview> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_ActivationGap> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_ActivationGapClosed> ;
-    narr:covers <https://aswritten.ai/narrative#Narrative_FounderAttentionSplit> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ContextHemorrhage> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DayToDayRelitigation> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ForgettingBottleneckIsRole> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_FramingLayerDeflection> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_IdentityOnboardingGap> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_MultiUserRepoPromptChallenge> ;
-    narr:covers <https://aswritten.ai/narrative#Narrative_SMSContextDependentTrustTax> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_ScalingGap> ;
-    narr:covers <https://aswritten.ai/narrative#Narrative_SlashStartAbsorptionRegression> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ShowVsDemoProof> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_StaffingAIAdoptionWall> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_TechnicalAdoptionFriction> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_TwoPurchaseTriggers> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_TwoSidedLegibilityProblem> ;
-    narr:covers <https://aswritten.ai/narrative#Narrative_TwoSystemDesignFailure> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ARBPainPoint1_Quote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ARBPainPoint3_Quote_Coaching> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ARBPainPoint3_Quote_UnstatedGoal> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_CompileAttentionRaceQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_CopilotMCPIssues> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_DecouplingPainQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_FrictionFailure> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectAIResistantQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_BottleneckProcessesQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ContextHemorrhage> ;
     narr:covers <https://aswritten.ai/narrative#Obs_CustomerArchitectDemoPollutionQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_NotionDiagnosisQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_PipelineGap> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_PriorRaise> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_PrivacyConcernQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_PublishingBlocker> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_RAGDocumentationProblem> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_RelationshipDynamic> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ScarletBackPressureQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ScarletMedicalSystemQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ScarletPrimaryInputsQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ScarletPurchaseTriggerQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ScarletQuote_TensionHere> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ScarletReaction> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ScarletUnsureArchetypes> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_SlotsPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerEngManagerForgetQuote1> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_CustomerEngManagerForgetQuote2> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_FrictionFailure> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_MeetingsThrowaway> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_OptionsVsDecisionsQuote> ;
     narr:covers <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserGitHubOpacityFeedback> ;
     narr:covers <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserSMSSpamCodedQuote> ;
     narr:covers <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserToolLanguageFeedback> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_PriorRaise> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_PrivacyConcernQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletBackPressureQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletFeltVsShownQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletPrimaryInputsQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletPurchaseTriggerQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletQuote_TensionHere> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_ScarletUnsureArchetypes> ;
     narr:covers <https://aswritten.ai/narrative#Obs_TechnicalChaosQuote> ;
     narr:covers <https://aswritten.ai/narrative#Obs_TonyAITrapQuote> ;
     narr:covers <https://aswritten.ai/narrative#Obs_TonyPipitAdoptionBarrier> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_task085Correction> ;
     narr:covers <https://aswritten.ai/narrative#Observation_ClientMindset> ;
-    narr:covers <https://aswritten.ai/narrative#Observation_GapAnalysis> ;
-    narr:covers <https://aswritten.ai/narrative#Observation_HallucinationQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Observation_OnboardingFriction> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_JohnDyessExample> ;
     narr:covers <https://aswritten.ai/narrative#Observation_SeniorExpertBottleneck> ;
+    narr:covers <https://aswritten.ai/narrative#Position_AICodeVolumeBottleneck> ;
+    narr:covers <https://aswritten.ai/narrative#Position_AmbientAdoption> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_IdiolectPhrasing> ;
     narr:keyPhrase [ narr:text "I will spend a couple days and end up with eight honking PRs of world changing features that would have taken us three weeks previously" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletBackPressureQuote> ] ;
-    narr:keyPhrase [ narr:text "Each one of these is somebody telling us really valuable information about why them understanding the product value does not equal a sale." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletPurchaseTriggerQuote> ] ;
-    narr:keyPhrase [ narr:text "Text message, in certain contexts, is absolutely the right move. But in a lot of skeptical or lower-trust contexts, texting is so associated with spam now that requiring someone to text might actually be a real downside." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserSMSSpamCodedQuote> ] ;
     narr:keyPhrase [ narr:text "every single response prompts another action, right? And while that's good for token consumption, it's not good for humans because if the prompt is, do you want me to do that?" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_TonyAITrapQuote> ] ;
+    narr:keyPhrase [ narr:text "Each one of these is somebody telling us really valuable information about why them understanding the product value does not equal a sale." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ScarletPurchaseTriggerQuote> ] ;
+    narr:keyPhrase [ narr:text "People like me have 10 repos on the go with Claude right now and... all this tooling and different skills... I'm worried what's going to break or cross over." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_TechnicalChaosQuote> ] ;
     narr:keyPhrase [ narr:text "Everything you said about committing and pulling and all of that is completely foreign to me." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserGitHubOpacityFeedback> ] ;
-    narr:keyPhrase [ narr:text "A huge amount of the ARB time is actually spent on just trying to figure out or just asking, just people coming and being like, I need to scan an Amazon return. Does the product support that?" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ARBPainPoint1_Quote> ] ;
-    narr:variation [ narr:text "Sales blocker is framed two ways: 'lack of clarity on exactly what is being sold' (root cause) vs. clarity isn't enough — the purchase trigger must be firing." ; narr:over <https://aswritten.ai/narrative#Obs_FrictionFailure> ; narr:over <https://aswritten.ai/narrative#Obs_ScarletPurchaseTriggerQuote> ; narr:over <https://aswritten.ai/narrative#Narrative_TwoPurchaseTriggers> ] ;
-    narr:variation [ narr:text "Counter-reading: technical-user resistance is NOT product difficulty but contamination fear of breaking existing AI workflows — solution is onboarding guidance, not simplification." ; narr:over <https://aswritten.ai/narrative#Narrative_TechnicalAdoptionFriction> ; narr:over <https://aswritten.ai/narrative#Obs_TechnicalChaosQuote> ; narr:over <https://aswritten.ai/narrative#Obs_TonyPipitAdoptionBarrier> ] ;
-    narr:variation [ narr:text "Outlier: AI working *too well* becomes the blocker — recruiter hit quota and poached colleagues; org change management, not technology, stalls adoption." ; narr:over <https://aswritten.ai/narrative#Narrative_StaffingAIAdoptionWall> ; narr:over <https://aswritten.ai/narrative#Obs_CustomerArchitectAIResistantQuote> ] ;
-    narr:variation [ narr:text "SMS friction is scoped, not condemned — channel stays viable in high-trust/post-consent contexts and only flips suspicious in evaluator/first-touch ones." ; narr:over <https://aswritten.ai/narrative#Narrative_SMSContextDependentTrustTax> ; narr:over <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserSMSSpamCodedQuote> ] ;
-    narr:variation [ narr:text "Attribution outlier: MCP flakiness in Copilot CLI is explicitly ruled a Copilot problem, not an aswritten failure." ; narr:over <https://aswritten.ai/narrative#Obs_CopilotMCPIssues> ] ;
-    narr:variation [ narr:text "Distinct mechanism: friction can originate inside the LLM itself — the framing layer over-resolves and manufactures procedural exit ramps to dodge effortful tasks." ; narr:over <https://aswritten.ai/narrative#Narrative_FramingLayerDeflection> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Text message, in certain contexts, is absolutely the right move. But in a lot of skeptical or lower-trust contexts, texting is so associated with spam now that requiring someone to text might actually be a real downside." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserSMSSpamCodedQuote> ] ;
+    narr:keyPhrase [ narr:text "I'm a key candidate for this because I forget as much as I remember." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CustomerEngManagerForgetQuote1> ] ;
+    narr:keyPhrase [ narr:text "We gave you pros and cons and you were to go away and figure out which one suits and come back with a proposal. We didn't give you a full solution, we just gave you options." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_OptionsVsDecisionsQuote> ] ;
+    narr:variation [ narr:text "The 'felt vs. shown' crux is challenged: Jul 2026 evidence argues value is fully showable without the prospect's own data — inverting the prior hedge that prospects must try it themselves before value lands." ; narr:over <https://aswritten.ai/narrative#Narrative_ShowVsDemoProof> ; narr:over <https://aswritten.ai/narrative#Obs_ScarletFeltVsShownQuote> ] ;
+    narr:variation [ narr:text "Activation gap may already be closed: the deployment layer providing a concrete demonstrable application was confirmed as sufficient by a design collaborator, qualifying the 'investment vs. tool' framing as a past-state problem." ; narr:over <https://aswritten.ai/narrative#Narrative_ActivationGapClosed> ; narr:over <https://aswritten.ai/narrative#Narrative_ActivationGap> ] ;
+    narr:variation [ narr:text "Staffing AI adoption wall introduces an organizational-conflict vector distinct from all other adoption friction: the blocker is internal politics triggered by AI working too well, not product legibility or onboarding." ; narr:over <https://aswritten.ai/narrative#Narrative_StaffingAIAdoptionWall> ] ;
+    narr:variation [ narr:text "Scarlet's uncertainty about pushing non-enterprise archetypes (Apr 2026) sits in tension with the non-technical onboarding friction cluster, which assumes those archetypes remain in scope." ; narr:over <https://aswritten.ai/narrative#Obs_ScarletUnsureArchetypes> ; narr:over <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserGitHubOpacityFeedback> ; narr:over <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserToolLanguageFeedback> ] ;
+    narr:variation [ narr:text "Ambient adoption framing positions the tool as needing to be invisible/zero-extra-work, which sits in tension with the onboarding friction cluster that requires active user steps (install, commit, compile)." ; narr:over <https://aswritten.ai/narrative#Position_AmbientAdoption> ; narr:over <https://aswritten.ai/narrative#Obs_OutsideTechBetaUserToolLanguageFeedback> ; narr:over <https://aswritten.ai/narrative#Narrative_IdentityOnboardingGap> ] ;
+    narr:variation [ narr:text "Bottleneck framing extends beyond individuals to processes (Scarlet, Jul 2026), potentially broadening the target beyond the 'forgetting person at the decision junction' diagnosis." ; narr:over <https://aswritten.ai/narrative#Obs_BottleneckProcessesQuote> ; narr:over <https://aswritten.ai/narrative#Narrative_ForgettingBottleneckIsRole> ] ;
+    narr:writer "anthropic/claude-sonnet-4.6" .
 }
