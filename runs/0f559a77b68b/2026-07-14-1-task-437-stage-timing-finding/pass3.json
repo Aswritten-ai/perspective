@@ -1,0 +1,59 @@
+{
+  "reconciliations" : [ {
+    "segment_ids" : [ "src-6", "src-7" ],
+    "note" : "Both the consult prefetch and the navigator's post-agent reads were building the graph against the run's own work branch. But the source-spur step commits the document and its source transaction to that same work branch mid-run, moving the tree sha — so the navigator's read missed the warm cache and rebuilt the entire 64,000-quad corpus for exactly the one transaction the run had just written.",
+    "targets" : [ "ArchitectureOverview" ],
+    "referents" : [ {
+      "ref" : "Narrative_NavigationReplacesEmbeddedSnapshot",
+      "relation" : "extends"
+    } ],
+    "principal" : "session"
+  }, {
+    "segment_ids" : [ "src-11" ],
+    "note" : "The navigator consults the prior perspective; the document under extraction reaches the engine through pass one, never through these reads.",
+    "targets" : [ "ArchitectureOverview" ],
+    "referents" : [ {
+      "ref" : "Narrative_NavigationReplacesEmbeddedSnapshot",
+      "relation" : "extends"
+    } ],
+    "principal" : "session"
+  } ],
+  "standalone" : [ {
+    "segment_id" : "src-1",
+    "why" : "verdict new — administrative framing statement (task/date), no prior in the perspective it plausibly matches."
+  }, {
+    "segment_id" : "src-2",
+    "why" : "verdict new — raw measurement (wall-clock idle percentage) unreferenced by pass 2; no graph node it extends."
+  }, {
+    "segment_id" : "src-3",
+    "why" : "verdict new — raw measurement (inter-stage gap timings) unreferenced by pass 2; nothing to reconcile against."
+  }, {
+    "segment_id" : "src-4",
+    "why" : "verdict new — names the finding's headline but pass 2 found no plausible prior match; stands as fresh witnessed commentary."
+  }, {
+    "segment_id" : "src-5",
+    "why" : "verdict new — mechanism description (cache key composition) left unreferenced by pass 2 despite thematic proximity to src-6/7."
+  }, {
+    "segment_id" : "src-8",
+    "why" : "verdict new — model's framing sentence introducing Scarlet's quote; unreferenced by pass 2, no graph node it concerns."
+  }, {
+    "segment_id" : "src-10",
+    "why" : "verdict new — describes the post-fix read behavior but pass 2 recorded no confident referent for it; footing names Scarlet as principal but there is no referent to reconcile against."
+  }, {
+    "segment_id" : "src-12",
+    "why" : "verdict new — states the fix's outcome (shared warm graph) but pass 2 found no plausible prior match; nothing to reconcile."
+  }, {
+    "segment_id" : "src-13",
+    "why" : "verdict new — introduces a separate topic (prompt-cache coupling) with no prior match found by pass 2."
+  }, {
+    "segment_id" : "src-14",
+    "why" : "verdict new — elaborates the prompt-cache TTL risk; unreferenced by pass 2, no graph node it extends."
+  }, {
+    "segment_id" : "src-15",
+    "why" : "verdict new — reports Scarlet's TTL approval, but pass 2 found no referent; without a bound node there is nothing to reconcile."
+  }, {
+    "segment_id" : "src-16",
+    "why" : "verdict new — closing observation on remaining dead time; unreferenced by pass 2, stands as fresh witnessed commentary."
+  } ],
+  "held" : [ ]
+}
