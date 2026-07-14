@@ -4,31 +4,32 @@
 GRAPH <https://aswritten.ai/narrative#Digest_RhetoricalQuestion> {
   <https://aswritten.ai/narrative#Digest_RhetoricalQuestion> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#RhetoricalQuestion> ;
-    narr:childCount "14"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub collects style observations on the rhetorical question as a recurring device across the org's writing. The dominant pattern is the **opening hook**: a question that universalizes a fear or pain before the pivot — the [hallucination-fear hook](narr:StyleObs_RhetoricalQuestion), the [trust-binary opener](narr:StyleObs_RhetoricalHook), and the [shared-pain second-person open](narr:StyleObs_RhetoricalQ_1) all run problem-agitate-solve cadence. A distinct branch uses questions as **epistemic reframing** rather than persuasion: the [lens-not-facts antithesis](narr:StyleObs_NotFacts), the [optometrist 'A or B?' idiom](narr:StyleObs_BetterThroughAOrB), and [is-this-the-right-road](narr:StyleObs_RhetoricalQ). A third branch turns questions into **conviction/scope boundaries** — the [falsifiable closing hypothesis](narr:StyleObs_11), the [guardrails open question](narr:StyleObs_7), and the [Open Questions section](narr:StyleObs_OpenQuestions). Idiomatic, British-inflected voice ([How mad is that?](narr:StyleObs_HowMadRhetQ)) and implicit section-header questions ([Why YC](narr:StyleObs_WhyYC), [Key Insight](narr:StyleObs_KeyInsightCallout)) round out the span.""" ;
+    narr:childCount "17"^^xsd:integer ;
+    narr:generatedFrom "0d6d01a1169a11e6c11248b8e2509fa7d2d1f4c5" ;
+    narr:narration """This hub tracks the rhetorical question as a primary structural and persuasive device. The [opening hook](narr:StyleObs_RhetoricalQuestion) remains a standard, universalizing fear or pain to anchor the reader before a pivot. Increasingly, however, the device has shifted toward [epistemic reframing](narr:StyleObs_NotFacts), where questions replace factual assertions to guide the reader's perspective ([Better through A or B?](narr:StyleObs_BetterThroughAOrB)). A significant trajectory involves using questions to [stage binary choices](narr:StyleObs_DesignCollaboratorCall_RhetoricalQuestion) or [build ownership dilemmas](narr:StyleObs_SII_RhetoricalQuestionOwnership), escalating stakes from the practical to the existential. Structurally, the device has matured into [entire deck architectures](narr:StyleObs_QuestionFirstRhetoric) where questions dictate the flow of discovery, and [bounded scope markers](narr:StyleObs_OpenQuestions) that define the limits of a project. Whether through [British-inflected asides](narr:StyleObs_HowMadRhetQ) or [falsifiable hypotheses](narr:StyleObs_11), the rhetorical question functions less as a query and more as a simulation of the reader's own internal inquiry.""" ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_11> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BetterThroughAOrB> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrokenSyncQuote> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_DesignCollaboratorCall_RhetoricalQuestion> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_HowMadRhetQ> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_KeyInsightCallout> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_NotFacts> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_OpenQuestions> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_QuestionFirstRhetoric> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_RhetoricalHook> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_RhetoricalQ> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_RhetoricalQ_1> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_RhetoricalQuestion> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_RhetoricalQuestionAsFramingDevice> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SII_RhetoricalQuestionOwnership> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_WhatIfYouShow> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_WhyYC> ;
     narr:keyPhrase [ narr:text "You don't ask \"is this triple true?\" — you ask \"does viewing through this lens produce the right output?\"" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_NotFacts> ] ;
-    narr:keyPhrase [ narr:text "Should Scarlet apply to EV before or after the August YC reapplication?" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RhetoricalQuestion> ] ;
+    narr:keyPhrase [ narr:text "it's how many voices in super intelligence are there going to be?" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_RhetoricalQuestionAsFramingDevice> ] ;
+    narr:keyPhrase [ narr:text "Next call, I'll show you this conversation — turned into the beginning of your perspective." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_QuestionFirstRhetoric> ] ;
+    narr:keyPhrase [ narr:text "What is invasive in the world of AI? What is necessary, both for oour own health, freedom, and happiness" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SII_RhetoricalQuestionOwnership> ] ;
     narr:keyPhrase [ narr:text "This is my life's work." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_7> ] ;
-    narr:keyPhrase [ narr:text "Why YC" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_WhyYC> ] ;
-    narr:variation [ narr:text "Persuasion vs. epistemics: some questions are emotional sales hooks, others argue a methodology shift (truth → lens-output) and aren't trying to persuade at all." ; narr:over <https://aswritten.ai/narrative#StyleObs_RhetoricalHook> ; narr:over <https://aswritten.ai/narrative#StyleObs_NotFacts> ; narr:over <https://aswritten.ai/narrative#StyleObs_BetterThroughAOrB> ] ;
-    narr:variation [ narr:text "Question-as-test-hypothesis: a sub-cluster uses the rhetorical question as a falsifiable objective or conviction-boundary marker, not a reader hook." ; narr:over <https://aswritten.ai/narrative#StyleObs_11> ; narr:over <https://aswritten.ai/narrative#StyleObs_7> ; narr:over <https://aswritten.ai/narrative#StyleObs_OpenQuestions> ] ;
-    narr:variation [ narr:text "Implicit questions: section headers ('Why YC', 'Key Insight') function as rhetorical questions structurally without literal interrogative form." ; narr:over <https://aswritten.ai/narrative#StyleObs_WhyYC> ; narr:over <https://aswritten.ai/narrative#StyleObs_KeyInsightCallout> ] ;
-    narr:variation [ narr:text "Tonal outlier: British-inflected self-interrogation ('How mad is that?') prioritizes authenticity/reader-alignment over the polished hook cadence." ; narr:over <https://aswritten.ai/narrative#StyleObs_HowMadRhetQ> ] ;
-    narr:variation [ narr:text "Self-flagged as non-claim: the hallucination-fear opener is annotated as the only 'unsupported' item — a rhetorical device explicitly marked as not a factual assertion." ; narr:over <https://aswritten.ai/narrative#StyleObs_RhetoricalQuestion> ] ;
-    narr:writer "claude (subscription)" .
+    narr:variation [ narr:text "Questions as structural boundary markers vs. questions as emotional hooks." ; narr:over <https://aswritten.ai/narrative#StyleObs_OpenQuestions> ; narr:over <https://aswritten.ai/narrative#StyleObs_RhetoricalHook> ] ;
+    narr:variation [ narr:text "The use of rhetorical questions to simulate reader doubt vs. the use of them to dictate the author's conviction." ; narr:over <https://aswritten.ai/narrative#StyleObs_7> ; narr:over <https://aswritten.ai/narrative#StyleObs_11> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
