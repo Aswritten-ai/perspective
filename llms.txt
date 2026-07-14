@@ -93,7 +93,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [StrategyOverview](hub-StrategyOverview.html): This hub gathers the strategy behind the strategic rebrand from storyBASE/witness to aswritten.ai, plus the foundational
 - [SystemTopology](hub-SystemTopology.html): This hub gathers how aswritten's system is structured across infrastructure, tooling, and perspective. The mainline is a
 - [TechnicalExplainers](hub-TechnicalExplainers.html): This hub gathers material on how technical concepts get *explained* — both a design decision and the deck/communication 
-- [TechnologiesSocialSystems](hub-TechnologiesSocialSystems.html): This hub gathers the technical and conceptual scaffolding behind treating organizations as steerable systems. The intell
+- [TechnologiesSocialSystems](hub-TechnologiesSocialSystems.html): This hub tracks the evolution of organizations as steerable, generative systems. The conceptual foundation rests on floc
 - [TimingThesis](hub-TimingThesis.html): This hub gathers the \"why now\" arguments for the venture, running along two distinct rails. The first is IP leakage as
 - [ValueExchange](hub-ValueExchange.html): This hub gathers how value is exchanged and articulated around the collective-memory product. The pivotal moment is a re
 - [Vision](hub-Vision.html): Scarlet's Vision holds a steering-vector thesis as its through-line: language, narrative, and meaning act as steering ve
