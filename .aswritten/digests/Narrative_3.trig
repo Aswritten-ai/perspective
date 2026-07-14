@@ -4,24 +4,20 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Narrative_3> {
   <https://aswritten.ai/narrative#Digest_Narrative_3> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Narrative_3> ;
-    narr:childCount "7"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub holds the thesis that transparency, while necessary, does not by itself defuse narrative steering. The load-bearing move is the [concerning corollary that an LLM cannot self-detect its own steering](narr:Claim_3) — self-transparency fails because the [telltales are mixed metaphors and the refraction check stays inside the optometrist frame](narr:Claim_3) it is meant to test. The proposed external instrument is the [eye chart: a fixed-format document exercising key claims and relationships](narr:Claim_8), constant while the lens changes, possibly varying per ontology domain. Surrounding children are `skos:related` context rather than support: the [4-5 creative-technical boundary](narr:Narrative_4), a [strategic-alignment rubric assessment](narr:RubricAssess_StrategicAlignment), and two style-observation sets ([software/hardware framing](narr:StyleObs_3), [Matrix skill-download analogy](narr:StyleObs_4)) that supply the substrate metaphor — 'narrative architecture installed onto hardware' — underlying the steering claim. Note the supports/related split: only Claim_3 and Claim_8 directly argue the thesis; the rest orbit it.""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_3> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_8> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_StatementIndex> ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "75095ac1d69196914bb4f5d010de7d57a4acd0ce" ;
+    narr:narration """This hub explores the intersection of [narrative as software](narr:Narrative_4) and the technical constraints of AI steering. The core thesis posits that narrative architecture functions as a program installed onto model hardware, a concept supported by the [eye chart instrument](narr:Position_8)—a fixed-format document designed to maintain consistency while the underlying lens changes. This architecture is not merely descriptive; it is a [strategic vector](narr:RubricAssess_StrategicAlignment) that maps intellectual through-lines from generative systems to collective memory. The substrate metaphor is further elaborated through [typographic and rhetorical style observations](narr:StyleObs_3) that treat narrative as a deployable, versioned asset, and [Matrix-inspired skill-download analogies](narr:StyleObs_4) that frame the AI coworker as a programmable entity. While the hub focuses on the mechanics of this installation, the tension remains between the prescriptive, commanding cadence of the narrative deployment and the underlying fluidity of the models themselves.""" ;
     narr:covers <https://aswritten.ai/narrative#Narrative_4> ;
+    narr:covers <https://aswritten.ai/narrative#Position_8> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_3> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_4> ;
-    narr:keyPhrase [ narr:text "Concerning corollary: LLM cannot self-detect narrative steering" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_3> ] ;
-    narr:keyPhrase [ narr:text "Telltales mixed metaphors; refraction check stays within the optometrist frame" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_3> ] ;
-    narr:keyPhrase [ narr:text "Eye chart = fixed-format document exercising key claims and relationships; lens changes, eye chart stays constant; may vary per top-level ontology domain" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_8> ] ;
-    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_3> ] ;
     narr:keyPhrase [ narr:text "I treated the models themselves like a computer, and a narrative architecture - an interconnected web of narratives that define a way of thinking - like a program that can be installed onto their hardware." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_3> ] ;
-    narr:variation [ narr:text "Internal vs external mitigation: self-detection is declared impossible, so the burden shifts entirely onto an external fixed instrument (the eye chart) — the two supporting claims pull in opposite directions on where mitigation can live." ; narr:over <https://aswritten.ai/narrative#Claim_3> ; narr:over <https://aswritten.ai/narrative#Claim_8> ] ;
-    narr:variation [ narr:text "The refraction check is self-limiting — it 'stays within the optometrist frame,' meaning the diagnostic may share the blind spot it audits." ; narr:over <https://aswritten.ai/narrative#Claim_3> ] ;
-    narr:variation [ narr:text "Most children are skos:related, not narr:supports — the 4-5 boundary, strategic-alignment rubric, and style observations are orbiting context that could be mistaken for argument but do not bear on the transparency thesis." ; narr:over <https://aswritten.ai/narrative#Narrative_4> ; narr:over <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment> ; narr:over <https://aswritten.ai/narrative#StyleObs_3> ; narr:over <https://aswritten.ai/narrative#StyleObs_4> ] ;
-    narr:variation [ narr:text "Claim_StatementIndex attaches via narr:aboutNode with no content — a structural pointer rather than an evidentiary child." ; narr:over <https://aswritten.ai/narrative#Claim_StatementIndex> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:keyPhrase [ narr:text "A bit like the \"I know kung fu\" skill downloads in the Matrix" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_4> ] ;
+    narr:keyPhrase [ narr:text "Version, collaborate, manipulate, review, deploy perspective—treating narrative like software." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_4> ] ;
+    narr:keyPhrase [ narr:text "Eye chart = fixed-format document exercising key claims and relationships; lens changes, eye chart stays constant" ; narr:phraseSource <https://aswritten.ai/narrative#Position_8> ] ;
+    narr:variation [ narr:text "The tension between prescriptive, imperative command structures and the fluid, conversational 'founder voice' register." ; narr:over <https://aswritten.ai/narrative#StyleObs_3> ; narr:over <https://aswritten.ai/narrative#StyleObs_4> ] ;
+    narr:variation [ narr:text "The potential for 'narrative as vector' to be interpreted as either a rigid product constraint or a flexible strategic framework." ; narr:over <https://aswritten.ai/narrative#RubricAssess_StrategicAlignment> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
