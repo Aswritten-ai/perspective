@@ -94,7 +94,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [SystemTopology](hub-SystemTopology.html): This hub gathers how aswritten's system is structured across infrastructure, tooling, and perspective. The mainline is a
 - [TechnicalExplainers](hub-TechnicalExplainers.html): This hub gathers material on how technical concepts get *explained* — both a design decision and the deck/communication 
 - [TechnologiesSocialSystems](hub-TechnologiesSocialSystems.html): This hub tracks the evolution of organizations as steerable, generative systems. The conceptual foundation rests on floc
-- [TimingThesis](hub-TimingThesis.html): This hub gathers the \"why now\" arguments for the venture, running along two distinct rails. The first is IP leakage as
+- [TimingThesis](hub-TimingThesis.html): The timing thesis for the venture is currently structured around three primary drivers of urgency. The first is an exist
 - [ValueExchange](hub-ValueExchange.html): This hub gathers how value is exchanged and articulated around the collective-memory product. The pivotal moment is a re
 - [Vision](hub-Vision.html): Scarlet's Vision holds a steering-vector thesis as its through-line: language, narrative, and meaning act as steering ve
 - [WhatDoesItDo](hub-WhatDoesItDo.html): This hub maps the functional and rhetorical architecture of As Written, a git-native organizational memory tool designed
