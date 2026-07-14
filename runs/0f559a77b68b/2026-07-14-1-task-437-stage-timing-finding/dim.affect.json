@@ -1,0 +1,41 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-8",
+    "regions" : [ "calm-positive" ],
+    "evidence" : [ {
+      "quote" : "Scarlet's ruling: \"the base ref is correct.\"",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The ruling is settled and approving rather than energized.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-9",
+    "regions" : [ "calm-positive" ],
+    "evidence" : [ {
+      "quote" : "the base ref is correct.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "A concise declarative confirmation carries settled approval.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-12",
+    "regions" : [ "calm-positive" ],
+    "evidence" : [ {
+      "quote" : "Both reads now share one warm graph and the run's own commit can no longer invalidate it.",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "“warm” and “can no longer” perform reassuring resolution.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-15",
+    "regions" : [ "calm-positive" ],
+    "evidence" : [ {
+      "quote" : "Scarlet approved the one-hour cache TTL to decouple the cache win from the dead time.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "“approved” presents settled satisfaction with the remedy.",
+    "reported" : true
+  } ],
+  "mints" : [ ],
+  "unmarked" : [ "src-1", "src-2", "src-3", "src-4", "src-5", "src-6", "src-7", "src-10", "src-11", "src-13", "src-14", "src-16" ]
+}
