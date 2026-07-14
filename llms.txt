@@ -110,7 +110,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [BrandNameStylization](hub-BrandNameStylization.html): This hub tracks the orthographic and brand identity of aswritten, defined primarily by a lowercase brand name with .ai T
 - [CadenceRhythm](hub-CadenceRhythm.html): This hub gathers the document's cadence and rhythm devices. The dominant engine is the rule of three: a git-native triad
 - [CitationConventions](hub-CitationConventions.html): This hub documents the evolving citation conventions used to ground claims in source material. The primary evidentiary r
-- [FlowCoherence](hub-FlowCoherence.html): This hub gathers style observations of a single first-person analytical document, narrating its voice and architecture r
+- [FlowCoherence](hub-FlowCoherence.html): This hub catalogs the stylistic architecture of a single analytical document, focusing on how its personal-narrative voi
 - [GrammarSyntax](hub-GrammarSyntax.html): Scarlet’s writing is defined by a rigorous, active-voice architecture that prioritizes scannability and procedural clari
 - [IdiolectPhrasing](hub-IdiolectPhrasing.html): This hub gathers idiolect and register observations across speakers. Tony's voice dominates the enthusiasm register: mil
 - [InformationArchitecture](hub-InformationArchitecture.html): This hub tracks the evolution of Scarlet/aswritten's information architecture and stylistic idiolect. The core thesis re
