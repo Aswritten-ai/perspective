@@ -4,26 +4,20 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__RuleOfThree> {
   <https://aswritten.ai/narrative#Digest_ns__RuleOfThree> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#RuleOfThree> ;
-    narr:childCount "9"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers observations of the document's recurring [rule-of-three rhetoric](narr:StyleObs_rule_of_three) — triadic parallelism used for emphasis and memorability across a product pitch. The cleanest exemplars: the three product pillars [AI-Assisted Development / Executive Assistance / Content Generation](narr:StyleObs_RuleOfThree_UseCases), the [git-native triad](narr:Observation_GitNativeTriad) with parallel -able suffixes, and the [escalating-severity triad](narr:StyleObs_RuleOfThree) (supercharged → dumb → useless). The pattern also drives [audience lists](narr:StyleObs_4), [verb triads at the cursor](narr:StyleObs_10), and [parallel noun-phrase cadence](narr:StyleObs_cadence_1). Several observations note the device's purpose is scannable rhythm and a value prop deliverable in under thirty seconds. Note the mix of triad *types*: balanced/parallel (pillars, audiences), escalating (severity), and suffix-parallel (git). Not every instance is strictly three — and one child records a different compression pattern entirely.""" ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "a54cfb87d3d67a65e4a145ad8ec7d518b1b6f938" ;
+    narr:narration """This hub tracks the document's reliance on [triadic rhetorical structures](narr:StyleObs_rule_of_three) to anchor complex value propositions. The pattern manifests as a tool for cognitive efficiency, appearing in [product pillar definitions](narr:StyleObs_RuleOfThree_UseCases) and [technical feature sets](narr:Observation_GitNativeTriad) that leverage parallel suffixes for memorability. Beyond simple lists, the device is used to [frame developer-centric workflows](narr:StyleObs_10) at critical decision points. While the rule of three serves as a primary cadence, the document occasionally [stretches the rhythm](narr:StyleObs_6) to accommodate more complex, five-item taxonomies, suggesting that the triadic form is a baseline rather than a rigid constraint. The most aggressive application of the pattern remains the [escalating-severity triad](narr:StyleObs_RuleOfThree), which uses the structure to contrast the utility of AI across different seniority levels.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_10> ;
-    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_4> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_6> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree_UseCases> ;
-    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TimeMetrics> ;
-    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_cadence_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_rule_of_three> ;
     narr:keyPhrase [ narr:text "git native, i.e. versionable, branchable, reviewable" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ] ;
-    narr:keyPhrase [ narr:text "Senior people have supercharged AIs. Junior people have dumb AIs. New hires have useless AIs." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree> ] ;
-    narr:keyPhrase [ narr:text "new hires, clients, and investors" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_4> ] ;
     narr:keyPhrase [ narr:text "explicit, reviewable, and testable" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_10> ] ;
+    narr:keyPhrase [ narr:text "Senior people have supercharged AIs. Junior people have dumb AIs. New hires have useless AIs." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree> ] ;
     narr:keyPhrase [ narr:text "positioning, offering, product, teams, and process" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_6> ] ;
-    narr:variation [ narr:text "Outlier — not a triad: five parallel clauses, the rule-of-three 'extended for completeness' (positioning, offering, product, teams, and process)." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_6> ] ;
-    narr:variation [ narr:text "Different device entirely: a before→after compression pattern (days → 15 minutes), not parallel triadic structure." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TimeMetrics> ] ;
-    narr:variation [ narr:text "Structurally distinct attachment — joined via skos:related, not broader; parallel noun phrases without verbs." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_cadence_1> ] ;
-    narr:variation [ narr:text "Triad mechanism varies: escalating severity and -able suffix parallelism sit alongside the flat balanced lists." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree> ; narr:over <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ] ;
-    narr:writer "claude (subscription)" .
+    narr:variation [ narr:text "The pattern is not strictly limited to three items, as seen in the expansion to five-item lists." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_6> ] ;
+    narr:variation [ narr:text "The rhetorical intent shifts from balanced categorization to escalating, comparative critique." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_RuleOfThree> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
