@@ -1,0 +1,21 @@
+{
+  "bindings" : [ {
+    "name" : "claude-opus-4-8",
+    "verdict" : "bind",
+    "target" : "Actor_Claude",
+    "label" : null,
+    "why" : "AI model identifier drafted_by field, matches existing [AI]-marked Claude actor used as interlocutor in this envelope's authoring context."
+  }, {
+    "name" : "Scarlet",
+    "verdict" : "bind",
+    "target" : "Actor_ScarletDame",
+    "label" : null,
+    "why" : "Bare first name in envelope submitted by scarlet@aswritten.ai; founder of aswritten.ai, unambiguous given single Scarlet identity context; binds to the general Scarlet Dame founder actor rather than a session-specific variant."
+  }, {
+    "name" : "scarlet@aswritten.ai",
+    "verdict" : "bind",
+    "target" : "Actor_ScarletDame",
+    "label" : null,
+    "why" : "Email address matches submitted_by/account for Scarlet Dame, founder of aswritten.ai."
+  } ]
+}
