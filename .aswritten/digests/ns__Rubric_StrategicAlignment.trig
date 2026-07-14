@@ -4,32 +4,25 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__Rubric_StrategicAlignment> {
   <https://aswritten.ai/narrative#Digest_ns__Rubric_StrategicAlignment> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#Rubric_StrategicAlignment> ;
-    narr:childCount "13"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers strategic-alignment rubric assessments across the corpus, and the dominant reading is striking uniformity of praise: documents repeatedly score as [exemplary strategic coherence](narr:RubricAssess_StrategicAlignment), with several judged to *be* the strategy rather than merely align to it — [the document IS the strategy](narr:RubricAssess_StrategicAlignment), [worldview as product](narr:Assessment_StrategicAlignment_IPCrisis), and a [positioning thesis tied to every section](narr:RubricAssess_StrategicAlignment_GTM). Recurring anchors are the [Git-native AI memory narrative](narr:RubricAssess_StrategicAlignment_1), mission/vision/positioning/moat, and explicit ties to ADRs ([ADR-001](narr:RubricAssess_Strategy_ADR001), [ADR-002](narr:Assessment_StrategicAlignment_IPCrisis), [ADR-003/005](narr:RubricAssess_StrategicAlignment_ADR002)). The frame shifts from ['tool' to 'infrastructure'](narr:Assessment_Strategy_1), with [network effects as moat](narr:RubricAssess_Strategy_20260107) and [advisor-led GTM](narr:RubricAssess_StrategicAlignment_GTM). Distinct threads sit beneath the consensus: an explicit [rebrand/positioning shift](narr:Assess_Strategy_rebrand), [architecture-domain alignment](narr:Assess_Strategy_cm), and [narrative-architecture principles](narr:Assess_Strategy_collective_memory).""" ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "d92b5bf1d3fa0acc00b2984c7ff8b90425d35306" ;
+    narr:narration """This hub aggregates strategic-alignment assessments, where the prevailing consensus identifies a [high degree of strategic coherence](narr:RubricAssess_StrategicAlignment) across the corpus. Documents are frequently characterized as being the strategy itself rather than mere artifacts of it, with [positioning theses](narr:RubricAssess_StrategicAlignment_GTM) and [mission-vision anchors](narr:RubricAssess_strategic_alignment) serving as the primary connective tissue. The narrative is consistently reinforced through [Git-native AI memory](narr:RubricAssess_StrategicAlignment_1) and [narrative architecture principles](narr:Assess_Strategy_collective_memory), which prioritize auditability and provenance. Strategic execution is further validated through [ADR-based decision rationales](narr:RubricAssess_Strategy_ADR001) and [IP-crisis-driven positioning](narr:Assessment_StrategicAlignment_IPCrisis). While the dominant thread emphasizes a unified, narrative-driven roadmap, assessments also highlight the [operationalization of these principles](narr:RubricAssess_StrategicAlignment_GTM) into specific GTM and architecture domains. The thematic span extends from [high-level worldview-as-product claims](narr:RubricAssess_StrategicAlignment) to granular [architecture-domain alignment](narr:Assess_Strategy_cm) and [customer-architect value exchange](narr:Assessment_StrategicAlignment_CustomerArchitect).""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Strategy_cm> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Strategy_collective_memory> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assess_Strategy_rebrand> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_StrategicAlignment_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assessment_StrategicAlignment_CustomerArchitect> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Strategy_1> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_StrategicAlignment_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment_ADR002> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment_GTM> ;
-    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Strategy_20260107> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Strategy_ADR001> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_strategic_alignment> ;
-    narr:keyPhrase [ narr:text "shifts from 'tool' to 'infrastructure'" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Strategy_1> ] ;
-    narr:keyPhrase [ narr:text "worldview-as-product aligns with platform positioning; IP protection moat" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_StrategicAlignment_IPCrisis> ] ;
-    narr:keyPhrase [ narr:text "Exceptional alignment: document IS the strategy" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment> ] ;
-    narr:keyPhrase [ narr:text "Clear narrative anchor (Git-native AI memory)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment_1> ] ;
-    narr:keyPhrase [ narr:text "network effects = moat" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Strategy_20260107> ] ;
-    narr:keyPhrase [ narr:text "accessibility (non-technical users), provenance (Git as source of truth), collaboration (two-interface model), auditability (append-only transactions)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Strategy_collective_memory> ] ;
-    narr:variation [ narr:text "Not all praise — one assessment surfaces gaps (DevOps, security) that the strategy doesn't yet cover." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment> ] ;
-    narr:variation [ narr:text "An explicit positioning/rebrand shift with migration plan, distinct from the documents that merely restate the existing thesis." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Strategy_rebrand> ; narr:over <https://aswritten.ai/ns/narrative#Assessment_StrategicAlignment_IPCrisis> ] ;
-    narr:variation [ narr:text "Some children align on the Architecture/implementation axis (phases, sequencing, team responsibilities) rather than positioning/GTM." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Strategy_cm> ; narr:over <https://aswritten.ai/ns/narrative#Assess_Strategy_collective_memory> ] ;
-    narr:variation [ narr:text "the customer's chief architect's assessment centers actor incentives and product-market fit, a lens absent from the mission/moat-focused mainline." ; narr:over <https://aswritten.ai/ns/narrative#Assessment_StrategicAlignment_CustomerArchitect> ] ;
-    narr:variation [ narr:text "Uniformly high scores across all children risk being a flatness of the rubric itself — no dissent or failing grade appears anywhere." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_strategic_alignment> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Strategy_ADR001> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Exemplary strategic coherence." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment> ] ;
+    narr:keyPhrase [ narr:text "document IS the strategy." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment> ] ;
+    narr:keyPhrase [ narr:text "Git-native AI memory" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment_1> ] ;
+    narr:keyPhrase [ narr:text "narrative architecture principles: accessibility (non-technical users), provenance (Git as source of truth)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Strategy_collective_memory> ] ;
+    narr:keyPhrase [ narr:text "Directly surfaces positioning thesis, value exchange model, actor incentives" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_StrategicAlignment_CustomerArchitect> ] ;
+    narr:variation [ narr:text "Some assessments identify specific gaps in DevOps and security that challenge the current narrative architecture." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment> ] ;
+    narr:variation [ narr:text "Tension exists between high-level 'worldview' positioning and the practical requirements of architecture-domain sequencing." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Strategy_cm> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_StrategicAlignment> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
