@@ -4,24 +4,19 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__NarrativeDrivenRoadmap> {
   <https://aswritten.ai/narrative#Digest_ns__NarrativeDrivenRoadmap> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#NarrativeDrivenRoadmap> ;
-    narr:childCount "7"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This roadmap hub braids two strands. The **go-to-market** strand reframes positioning from consulting-first toward a [\"train the trainers → here's the solution\" sequence](narr:DeckUpdate_GTMFraming), which [an infrastructure advisor validated as a high-touch approach stressing upfront revenue to survive to scale](narr:Narrative_GTMValidation), and stages execution as a [three-phase beta: content → people → process](narr:Narrative_ThreePhaseBeta). A [5-step rebrand migration plan](narr:MigrationPlan_Rebrand) sits alongside. The **technical** strand carries a long [SIC implementation sequence](narr:Narrative_SIC_Roadmap_1) — Docker Compose, SHACL validation, TriG named graphs, collective-memory marketplace, cost pass-through billing — and a tighter [prioritized next-steps list](narr:Obs_NextSteps) (transaction dedup, bulk transform, Discourse→GitHub pipeline). A [colloquial register observation](narr:StyleObs_Colloquial) flags the candid voice underneath the revenue framing. The two strands are not yet stitched into one execution order; the digest holds them parallel.""" ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "edec6ecf368de81ea6c9cd8d7d6e6a6e296730f8" ;
+    narr:narration """This roadmap hub continues to braid GTM strategy with technical implementation, though the focus has sharpened on the [train-the-trainers sequence](narr:DeckUpdate_GTMFraming) as the primary vehicle for early-stage viability. The [GTM validation](narr:Narrative_GTMValidation) reinforces this as a necessary pivot from pure consulting toward an upfront-revenue model, operationalized through a [three-phase beta](narr:Narrative_ThreePhaseBeta) that moves from content proof to process integration. The [technical implementation](narr:Obs_NextSteps) remains distinct, focusing on specific transactional and pipeline tooling rather than the broader architectural roadmap previously discussed. A [candid, colloquial register](narr:StyleObs_Colloquial) persists as the underlying tone, framing the commercial necessity of the roadmap with directness.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#DeckUpdate_GTMFraming> ;
-    narr:covers <https://aswritten.ai/ns/narrative#MigrationPlan_Rebrand> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_GTMValidation> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_Roadmap_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_ThreePhaseBeta> ;
     narr:covers <https://aswritten.ai/ns/narrative#Obs_NextSteps> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Position_GTMSequence> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Colloquial> ;
     narr:keyPhrase [ narr:text "train the trainers → here's the solution" ; narr:phraseSource <https://aswritten.ai/ns/narrative#DeckUpdate_GTMFraming> ] ;
-    narr:keyPhrase [ narr:text "emphasized need for upfront revenue to survive to scale" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_GTMValidation> ] ;
-    narr:keyPhrase [ narr:text "Phase 1: Run content as proof. Phase 2: Add people to process. Phase 3: Show the process to organizational partners." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_ThreePhaseBeta> ] ;
-    narr:keyPhrase [ narr:text "Migrate n8n to Docker Compose." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_SIC_Roadmap_1> ] ;
     narr:keyPhrase [ narr:text "Well let's be honest. You want the money up front. That too." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Colloquial> ] ;
-    narr:variation [ narr:text "GTM framing shifts away from 'current consulting-first language' toward train-the-trainers — a deliberate repositioning, not a settled label." ; narr:over <https://aswritten.ai/ns/narrative#DeckUpdate_GTMFraming> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_GTMValidation> ] ;
-    narr:variation [ narr:text "Tension between needing upfront revenue to survive now versus building toward scale — survival-first candor vs scale ambition." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_GTMValidation> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Colloquial> ] ;
-    narr:variation [ narr:text "Two distinct roadmap axes under one hub: a broad technical buildout vs a short prioritized next-steps shortlist — they imply different sequencing." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_Roadmap_1> ; narr:over <https://aswritten.ai/ns/narrative#Obs_NextSteps> ] ;
-    narr:variation [ narr:text "GTM/narrative strand and technical strand are gathered together but never explicitly reconciled into one execution order." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_ThreePhaseBeta> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_Roadmap_1> ; narr:over <https://aswritten.ai/ns/narrative#MigrationPlan_Rebrand> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "1. Implement `story/group-txs` (transaction deduplication logic)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Obs_NextSteps> ] ;
+    narr:variation [ narr:text "The technical roadmap has narrowed from a broad infrastructure vision to a specific, three-item tactical queue." ; narr:over <https://aswritten.ai/ns/narrative#Obs_NextSteps> ] ;
+    narr:variation [ narr:text "The colloquial tone introduces a tension between professional 'train the trainer' framing and raw, blunt commercial honesty." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Colloquial> ; narr:over <https://aswritten.ai/ns/narrative#DeckUpdate_GTMFraming> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
