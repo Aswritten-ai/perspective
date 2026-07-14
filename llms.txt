@@ -130,7 +130,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Rubric_Accuracy](hub-Rubric_Accuracy.html): This hub gathers accuracy assessments across the corpus's document types — memos, pitch decks, ADRs, call notes, and col
 - [Rubric_Cadence](hub-Rubric_Cadence.html): This hub gathers per-document cadence assessments under one rubric dimension — how rhythm, sentence-length variation, an
 - [Rubric_Flow](hub-Rubric_Flow.html): This hub gathers rubric assessments of *flow* — logical progression, transitions, and structural coherence — across a wi
-- [Rubric_Novelty](hub-Rubric_Novelty.html): This hub gathers per-artifact novelty assessments scored under one rubric — each child judges how original a given docum
+- [Rubric_Novelty](hub-Rubric_Novelty.html): This hub aggregates novelty assessments evaluating the originality of framing, terminology, and metaphors across organiz
 - [Rubric_Phrasing](hub-Rubric_Phrasing.html): This hub gathers per-document/per-transcript phrasing assessments from a writing rubric. The dominant finding repeats ac
 - [Rubric_Register](hub-Rubric_Register.html): This hub collects per-document register assessments under one rubric dimension across the corpus. The dominant reading i
 - [Rubric_Resonance](hub-Rubric_Resonance.html): This hub collects rubric assessments of resonance — how well each document, claim, or rebrand lands emotionally and memo
