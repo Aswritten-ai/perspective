@@ -18,7 +18,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [CompetitiveLandscape](hub-CompetitiveLandscape.html): This hub positions aswritten against everyone adjacent by a single axis: rivals do orchestration or retrieval of what's 
 - [CompliancePosture](hub-CompliancePosture.html): This hub gathers how aswritten frames compliance — as both a revenue lever and an adoption gate. The mainline reads comp
 - [Conviction](hub-Conviction.html): This hub gathers the conviction construct: the epistemic settledness of organizational knowledge, formalized as a Notion
-- [CoreNarratives](hub-CoreNarratives.html): This hub gathers aswritten.ai's positioning narratives around one thesis: the next bottleneck is missing organizational 
+- [CoreNarratives](hub-CoreNarratives.html): This hub tracks the evolution of aswritten.ai’s competitive positioning, anchored by the thesis that the next bottleneck
 - [CoreWorkflows](hub-CoreWorkflows.html): This hub gathers the operational patterns aswritten runs on. The flagship is the session-to-document arc: Interview → Sa
 - [DataIntegrationFlows](hub-DataIntegrationFlows.html): This hub gathers the plumbing by which raw activity becomes queryable knowledge. On the execution side, the webhook-mode
 - [DataModelLifecycle](hub-DataModelLifecycle.html): This hub gathers the architectural design of a data-model lifecycle built on Git. The spine is an append-only, Git-centr
