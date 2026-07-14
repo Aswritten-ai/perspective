@@ -1,0 +1,51 @@
+@prefix narr: <https://aswritten.ai/narrative#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+GRAPH <https://aswritten.ai/narrative#Digest_Narrative_AttendanceGrantsAccess> {
+  <https://aswritten.ai/narrative#Digest_Narrative_AttendanceGrantsAccess> a narr:Digest ;
+    narr:digestOf <https://aswritten.ai/narrative#Narrative_AttendanceGrantsAccess> ;
+    narr:childCount "32"^^xsd:integer ;
+    narr:generatedFrom "53f9889402ea2f13767fd3e09126d25cd1181a86" ;
+    narr:narration """The July 14 session established a [unified access model](narr:Expr_1MvpV2ConcisionOneProductRulings_110) for the MVP, centering on attendance as the primary membership primitive. The team moved away from fragmented, multi-tier access paths in favor of a [simplified collaborator-plus-explicit-share structure](narr:Expr_1MvpV2ConcisionOneProductRulings_48). Under this ruling, [attendance grants page access](narr:Expr_1MvpV2ConcisionOneProductRulings_107), and cross-memory navigation is resolved by checking access to the target call. While [digest narrations are provisionally visible](narr:Expr_1MvpV2ConcisionOneProductRulings_109) as abstractions of the source, the team acknowledged this remains a [point of tension](narr:Expr_1MvpV2ConcisionOneProductRulings_111) regarding data leakage. The discussion also touched on [future-state subagent perspectives](narr:Expr_1MvpV2ConcisionOneProductRulings_50) and the necessity of [CTA placeholders for orphaned nodes](narr:Expr_1MvpV2ConcisionOneProductRulings_37), while deferring more granular [stripped or tiered sharing](narr:Expr_1MvpV2ConcisionOneProductRulings_121) to V2 work.""" ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_100> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_101> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_107> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_108> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_109> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_110> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_111> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_119> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_120> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_121> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_138> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_139> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_34> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_35> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_36> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_37> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_38> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_39> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_4> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_40> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_41> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_42> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_47> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_48> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_49> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_50> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_51> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_52> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_53> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_97> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_98> ;
+    narr:covers <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_99> ;
+    narr:keyPhrase [ narr:text "Attendance is the membership primitive; cross-links resolve only with access to the target call; digest narrations of connected nodes are provisionally visible because the digest is the abstraction, not the source." ; narr:phraseSource <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_110> ] ;
+    narr:keyPhrase [ narr:text "Access falls out of navigation semantics — attendance grants the page." ; narr:phraseSource <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_107> ] ;
+    narr:keyPhrase [ narr:text "stripped/anonymized/actor-scoped/tiered shares become v2 work." ; narr:phraseSource <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_121> ] ;
+    narr:keyPhrase [ narr:text "The flagged counterpoint for the deeper pass: digest narrations embed verbatim witness excerpts, which weakens \"not showing the source.\"" ; narr:phraseSource <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_111> ] ;
+    narr:keyPhrase [ narr:text "full depth for now, it's explicit share and this is a demo. only send it to people i want to see full depth" ; narr:phraseSource <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_120> ] ;
+    narr:variation [ narr:text "The concern that verbatim excerpts in digests undermine the 'abstraction' defense of access control." ; narr:over <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_111> ] ;
+    narr:variation [ narr:text "The tension between 'full depth' demo sharing and the desire for stripped/anonymized access." ; narr:over <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_120> ; narr:over <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_121> ] ;
+    narr:variation [ narr:text "The proposal to treat orphaned nodes as CTA placeholders rather than just empty states." ; narr:over <https://aswritten.ai/narrative#Expr_1MvpV2ConcisionOneProductRulings_37> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
+}

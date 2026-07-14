@@ -1,0 +1,185 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX aswr: <https://aswritten.ai/aswr#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  aswr:Tx_20260714T213830Z a prov:Activity ;
+      prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime ;
+      prov:wasAssociatedWith "aswritten.ai" ;
+      prov:wasAttributedTo "scarlet@aswritten.ai" ;
+      aswr:draftedBy "claude-fable-5" ;
+      aswr:perspective "Aswritten-ai/perspective@main" ;
+      aswr:pipelinePin "afcb0b73bb42" ;
+      dct:title "Multipass reconciliations: 1MvpV2ConcisionOneProductRulings" ;
+      prov:generated narr:Recon_1MvpV2ConcisionOneProductRulings_1, narr:Recon_1MvpV2ConcisionOneProductRulings_2, narr:Demoted_1MvpV2ConcisionOneProductRulings_3, narr:Demoted_1MvpV2ConcisionOneProductRulings_4, narr:Demoted_1MvpV2ConcisionOneProductRulings_5, narr:Demoted_1MvpV2ConcisionOneProductRulings_6, narr:Demoted_1MvpV2ConcisionOneProductRulings_7, narr:Demoted_1MvpV2ConcisionOneProductRulings_8, narr:Demoted_1MvpV2ConcisionOneProductRulings_9, narr:Demoted_1MvpV2ConcisionOneProductRulings_10, narr:Demoted_1MvpV2ConcisionOneProductRulings_11, narr:Demoted_1MvpV2ConcisionOneProductRulings_12, narr:Demoted_1MvpV2ConcisionOneProductRulings_13, narr:Demoted_1MvpV2ConcisionOneProductRulings_14, narr:Demoted_1MvpV2ConcisionOneProductRulings_15, narr:Demoted_1MvpV2ConcisionOneProductRulings_16, narr:Demoted_1MvpV2ConcisionOneProductRulings_17 .
+} ;
+INSERT DATA {
+  GRAPH aswr:Tx_20260714T213830Z {
+    narr:Recon_1MvpV2ConcisionOneProductRulings_1 a narr:Reconciliation ;
+        oa:hasTarget narr:FocusSequencing ;
+        narr:principal narr:Actor_Session ;
+        skos:note "This is the second time she has made this exact move — the March 19 MVP redefinition (install–compile–cite–remember–review as core; Refraction, Registry, marketplace deferred) was MVP v1's version of it, and the July 11 MVP-cut decision record was its immediate predecessor. Second run of the Mar 19 MVP scope decision, amending the Jul 11 MVP-cut record — the strip-down move is becoming aswritten's recurring discipline." ;
+        narr:extends narr:Narrative_MVPScopeDecision ;
+        dct:source narr:Expr_1MvpV2ConcisionOneProductRulings_2 ;
+        dct:source narr:Expr_1MvpV2ConcisionOneProductRulings_132 ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Recon_1MvpV2ConcisionOneProductRulings_2 a narr:Reconciliation ;
+        oa:hasTarget narr:ArchitectureOverview ;
+        narr:principal narr:Actor_Session ;
+        skos:note "The headline settlement: **the live surface is not a second product or an experiment — it is the MVP product's front end that was never built.** She opens by settling the unification question the typed notes raised, slowly and deliberately:" ;
+        narr:extends narr:Expr_1MvpV2ConcisionOneProductRulings_65 ;
+        dct:source narr:Expr_1MvpV2ConcisionOneProductRulings_5 ;
+        dct:source narr:Expr_1MvpV2ConcisionOneProductRulings_64 ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_3 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_66 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_4 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_69 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_5 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_71 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_72 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_74 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_76 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_77 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_6 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_133 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_6 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_79 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_80 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_81 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_83 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_85 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_7 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_88 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_89 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_90 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_8 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_102 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_103 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_105 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_106 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_134 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_9 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_107 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_108 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_110 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_111 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_138 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_10 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_112 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_114 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_11 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_115 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_116 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_118 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_119 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_121 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_12 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_122 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_124 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_13 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_125 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_126 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_127 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_128 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_129 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_130 ;
+        skos:note "session principal but segments [\"src-125\"] carry an explicit human principal" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_14 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_135 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_92 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_94 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_96 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_15 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_100 ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_98 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_16 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_137 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Demoted_1MvpV2ConcisionOneProductRulings_17 a narr:DemotedReconciliation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_136 ;
+        skos:note "principal \"Scarlet Dame\" is not the envelope's human (scarlet@aswritten.ai) or 'session'" ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213830Z_pass2 a prov:Activity ;
+        aswr:runPass "pass2" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/pass2.json" ;
+        dct:isPartOf aswr:Tx_20260714T213830Z ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213830Z_pass3 a prov:Activity ;
+        aswr:runPass "pass3" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/pass3.json" ;
+        prov:generated narr:Recon_1MvpV2ConcisionOneProductRulings_1, narr:Recon_1MvpV2ConcisionOneProductRulings_2, narr:Demoted_1MvpV2ConcisionOneProductRulings_3, narr:Demoted_1MvpV2ConcisionOneProductRulings_4, narr:Demoted_1MvpV2ConcisionOneProductRulings_5, narr:Demoted_1MvpV2ConcisionOneProductRulings_6, narr:Demoted_1MvpV2ConcisionOneProductRulings_7, narr:Demoted_1MvpV2ConcisionOneProductRulings_8, narr:Demoted_1MvpV2ConcisionOneProductRulings_9, narr:Demoted_1MvpV2ConcisionOneProductRulings_10, narr:Demoted_1MvpV2ConcisionOneProductRulings_11, narr:Demoted_1MvpV2ConcisionOneProductRulings_12, narr:Demoted_1MvpV2ConcisionOneProductRulings_13, narr:Demoted_1MvpV2ConcisionOneProductRulings_14, narr:Demoted_1MvpV2ConcisionOneProductRulings_15, narr:Demoted_1MvpV2ConcisionOneProductRulings_16, narr:Demoted_1MvpV2ConcisionOneProductRulings_17 ;
+        dct:isPartOf aswr:Tx_20260714T213830Z ;
+        prov:generatedAtTime "2026-07-14T21:38:30Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_74 narr:see narr:Narrative_DigestAsRecognitionAid .
+    narr:Expr_1MvpV2ConcisionOneProductRulings_105 narr:see narr:Observation_Pipeline .
+    narr:Expr_1MvpV2ConcisionOneProductRulings_110 narr:see narr:Narrative_DigestAsRecognitionAid .
+  }
+}

@@ -1,0 +1,2473 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX aswr: <https://aswritten.ai/aswr#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  aswr:Tx_20260714T213828Z a prov:Activity ;
+      prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime ;
+      prov:wasAssociatedWith "aswritten.ai" ;
+      prov:wasAttributedTo "scarlet@aswritten.ai" ;
+      aswr:draftedBy "claude-fable-5" ;
+      aswr:perspective "Aswritten-ai/perspective@main" ;
+      aswr:pipelinePin "afcb0b73bb42" ;
+      aswr:originPath ".aswritten/memories/2026-07-14-1-mvp-v2-concision-one-product-rulings.md" ;
+      dct:title "Multipass source extraction: MVP v2 Concision: One Product, the Front End That Was Never Built — and the Six Rulings That Followed" ;
+      prov:generated narr:Sample_1MvpV2ConcisionOneProductRulings, narr:Expr_1MvpV2ConcisionOneProductRulings_1, narr:Expr_1MvpV2ConcisionOneProductRulings_2, narr:Expr_1MvpV2ConcisionOneProductRulings_3, narr:Expr_1MvpV2ConcisionOneProductRulings_4, narr:Expr_1MvpV2ConcisionOneProductRulings_5, narr:Expr_1MvpV2ConcisionOneProductRulings_6, narr:Expr_1MvpV2ConcisionOneProductRulings_7, narr:Expr_1MvpV2ConcisionOneProductRulings_8, narr:Expr_1MvpV2ConcisionOneProductRulings_9, narr:Expr_1MvpV2ConcisionOneProductRulings_10, narr:Expr_1MvpV2ConcisionOneProductRulings_11, narr:Expr_1MvpV2ConcisionOneProductRulings_12, narr:Expr_1MvpV2ConcisionOneProductRulings_13, narr:Expr_1MvpV2ConcisionOneProductRulings_14, narr:Expr_1MvpV2ConcisionOneProductRulings_15, narr:Expr_1MvpV2ConcisionOneProductRulings_16, narr:Expr_1MvpV2ConcisionOneProductRulings_17, narr:Expr_1MvpV2ConcisionOneProductRulings_18, narr:Expr_1MvpV2ConcisionOneProductRulings_19, narr:Expr_1MvpV2ConcisionOneProductRulings_20, narr:Expr_1MvpV2ConcisionOneProductRulings_21, narr:Expr_1MvpV2ConcisionOneProductRulings_22, narr:Expr_1MvpV2ConcisionOneProductRulings_23, narr:Expr_1MvpV2ConcisionOneProductRulings_24, narr:Expr_1MvpV2ConcisionOneProductRulings_25, narr:Expr_1MvpV2ConcisionOneProductRulings_26, narr:Expr_1MvpV2ConcisionOneProductRulings_27, narr:Expr_1MvpV2ConcisionOneProductRulings_28, narr:Expr_1MvpV2ConcisionOneProductRulings_29, narr:Expr_1MvpV2ConcisionOneProductRulings_30, narr:Expr_1MvpV2ConcisionOneProductRulings_31, narr:Expr_1MvpV2ConcisionOneProductRulings_32, narr:Expr_1MvpV2ConcisionOneProductRulings_33, narr:Expr_1MvpV2ConcisionOneProductRulings_34, narr:Expr_1MvpV2ConcisionOneProductRulings_35, narr:Expr_1MvpV2ConcisionOneProductRulings_36, narr:Expr_1MvpV2ConcisionOneProductRulings_37, narr:Expr_1MvpV2ConcisionOneProductRulings_38, narr:Expr_1MvpV2ConcisionOneProductRulings_39, narr:Expr_1MvpV2ConcisionOneProductRulings_40, narr:Expr_1MvpV2ConcisionOneProductRulings_41, narr:Expr_1MvpV2ConcisionOneProductRulings_42, narr:Expr_1MvpV2ConcisionOneProductRulings_43, narr:Expr_1MvpV2ConcisionOneProductRulings_44, narr:Expr_1MvpV2ConcisionOneProductRulings_45, narr:Expr_1MvpV2ConcisionOneProductRulings_47, narr:Expr_1MvpV2ConcisionOneProductRulings_48, narr:Expr_1MvpV2ConcisionOneProductRulings_49, narr:Expr_1MvpV2ConcisionOneProductRulings_50, narr:Expr_1MvpV2ConcisionOneProductRulings_51, narr:Expr_1MvpV2ConcisionOneProductRulings_52, narr:Expr_1MvpV2ConcisionOneProductRulings_53, narr:Expr_1MvpV2ConcisionOneProductRulings_54, narr:Expr_1MvpV2ConcisionOneProductRulings_55, narr:Expr_1MvpV2ConcisionOneProductRulings_56, narr:Expr_1MvpV2ConcisionOneProductRulings_57, narr:Expr_1MvpV2ConcisionOneProductRulings_58, narr:Expr_1MvpV2ConcisionOneProductRulings_59, narr:Expr_1MvpV2ConcisionOneProductRulings_60, narr:Expr_1MvpV2ConcisionOneProductRulings_61, narr:Expr_1MvpV2ConcisionOneProductRulings_62, narr:Expr_1MvpV2ConcisionOneProductRulings_63, narr:Expr_1MvpV2ConcisionOneProductRulings_64, narr:Expr_1MvpV2ConcisionOneProductRulings_65, narr:Expr_1MvpV2ConcisionOneProductRulings_66, narr:Expr_1MvpV2ConcisionOneProductRulings_67, narr:Expr_1MvpV2ConcisionOneProductRulings_68, narr:Expr_1MvpV2ConcisionOneProductRulings_69, narr:Expr_1MvpV2ConcisionOneProductRulings_70, narr:Expr_1MvpV2ConcisionOneProductRulings_71, narr:Expr_1MvpV2ConcisionOneProductRulings_72, narr:Expr_1MvpV2ConcisionOneProductRulings_73, narr:Expr_1MvpV2ConcisionOneProductRulings_74, narr:Expr_1MvpV2ConcisionOneProductRulings_75, narr:Expr_1MvpV2ConcisionOneProductRulings_76, narr:Expr_1MvpV2ConcisionOneProductRulings_77, narr:Expr_1MvpV2ConcisionOneProductRulings_78, narr:Expr_1MvpV2ConcisionOneProductRulings_79, narr:Expr_1MvpV2ConcisionOneProductRulings_80, narr:Expr_1MvpV2ConcisionOneProductRulings_81, narr:Expr_1MvpV2ConcisionOneProductRulings_82, narr:Expr_1MvpV2ConcisionOneProductRulings_83, narr:Expr_1MvpV2ConcisionOneProductRulings_84, narr:Expr_1MvpV2ConcisionOneProductRulings_85, narr:Expr_1MvpV2ConcisionOneProductRulings_86, narr:Expr_1MvpV2ConcisionOneProductRulings_87, narr:Expr_1MvpV2ConcisionOneProductRulings_88, narr:Expr_1MvpV2ConcisionOneProductRulings_89, narr:Expr_1MvpV2ConcisionOneProductRulings_90, narr:Expr_1MvpV2ConcisionOneProductRulings_91, narr:Expr_1MvpV2ConcisionOneProductRulings_92, narr:Expr_1MvpV2ConcisionOneProductRulings_93, narr:Expr_1MvpV2ConcisionOneProductRulings_94, narr:Expr_1MvpV2ConcisionOneProductRulings_95, narr:Expr_1MvpV2ConcisionOneProductRulings_96, narr:Expr_1MvpV2ConcisionOneProductRulings_97, narr:Expr_1MvpV2ConcisionOneProductRulings_98, narr:Expr_1MvpV2ConcisionOneProductRulings_99, narr:Expr_1MvpV2ConcisionOneProductRulings_100, narr:Expr_1MvpV2ConcisionOneProductRulings_101, narr:Expr_1MvpV2ConcisionOneProductRulings_102, narr:Expr_1MvpV2ConcisionOneProductRulings_103, narr:Expr_1MvpV2ConcisionOneProductRulings_104, narr:Expr_1MvpV2ConcisionOneProductRulings_105, narr:Expr_1MvpV2ConcisionOneProductRulings_106, narr:Expr_1MvpV2ConcisionOneProductRulings_107, narr:Expr_1MvpV2ConcisionOneProductRulings_108, narr:Expr_1MvpV2ConcisionOneProductRulings_109, narr:Expr_1MvpV2ConcisionOneProductRulings_110, narr:Expr_1MvpV2ConcisionOneProductRulings_111, narr:Expr_1MvpV2ConcisionOneProductRulings_112, narr:Expr_1MvpV2ConcisionOneProductRulings_113, narr:Expr_1MvpV2ConcisionOneProductRulings_114, narr:Expr_1MvpV2ConcisionOneProductRulings_115, narr:Expr_1MvpV2ConcisionOneProductRulings_116, narr:Expr_1MvpV2ConcisionOneProductRulings_117, narr:Expr_1MvpV2ConcisionOneProductRulings_118, narr:Expr_1MvpV2ConcisionOneProductRulings_119, narr:Expr_1MvpV2ConcisionOneProductRulings_120, narr:Expr_1MvpV2ConcisionOneProductRulings_121, narr:Expr_1MvpV2ConcisionOneProductRulings_122, narr:Expr_1MvpV2ConcisionOneProductRulings_123, narr:Expr_1MvpV2ConcisionOneProductRulings_124, narr:Expr_1MvpV2ConcisionOneProductRulings_125, narr:Expr_1MvpV2ConcisionOneProductRulings_126, narr:Expr_1MvpV2ConcisionOneProductRulings_127, narr:Expr_1MvpV2ConcisionOneProductRulings_128, narr:Expr_1MvpV2ConcisionOneProductRulings_129, narr:Expr_1MvpV2ConcisionOneProductRulings_130, narr:Expr_1MvpV2ConcisionOneProductRulings_131, narr:Expr_1MvpV2ConcisionOneProductRulings_132, narr:Expr_1MvpV2ConcisionOneProductRulings_133, narr:Expr_1MvpV2ConcisionOneProductRulings_134, narr:Expr_1MvpV2ConcisionOneProductRulings_135, narr:Expr_1MvpV2ConcisionOneProductRulings_136, narr:Expr_1MvpV2ConcisionOneProductRulings_137, narr:Expr_1MvpV2ConcisionOneProductRulings_138, narr:Expr_1MvpV2ConcisionOneProductRulings_139, narr:Expr_1MvpV2ConcisionOneProductRulings_140, narr:Expr_1MvpV2ConcisionOneProductRulings_141, narr:Expr_1MvpV2ConcisionOneProductRulings_142, narr:Actor_ClaudeFable5, narr:Actor_Session .
+} ;
+INSERT DATA {
+  GRAPH aswr:Tx_20260714T213828Z {
+    narr:Sample_1MvpV2ConcisionOneProductRulings a narr:Sample ;
+        dct:title "MVP v2 Concision: One Product, the Front End That Was Never Built — and the Six Rulings That Followed" ;
+        dct:created "2026-07-14"^^xsd:date ;
+        aswr:originPath ".aswritten/memories/2026-07-14-1-mvp-v2-concision-one-product-rulings.md" ;
+        aswr:submittedBy narr:Actor_ScarletDame ;
+        aswr:account narr:Actor_ScarletDame .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_1 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Context section, framing the day's work" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "With the live surface (feed + extraction theatre), transcription integrations, and comms experiments all sketched, Scarlet called the next phase: strip everything down to core moments and roadmap the rest." ;
+                oa:prefix "d at the bottom.\n\n## Context\n\n" ;
+                oa:suffix " This is the second time she h" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "809"^^xsd:integer ;
+                oa:end "1014"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_2 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Context section, comparing to past MVP decisions" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "This is the second time she has made this exact move — the March 19 MVP redefinition (install–compile–cite–remember–review as core; Refraction, Registry, marketplace deferred) was MVP v1's version of it, and the July 11 MVP-cut decision record was its immediate predecessor." ;
+                oa:prefix "moments and roadmap the rest. " ;
+                oa:suffix " What distinguishes this day: " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1015"^^xsd:integer ;
+                oa:end "1289"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_3 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Context section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "What distinguishes this day: the memo's questions did not stay open." ;
+                oa:prefix "as its immediate predecessor. " ;
+                oa:suffix " By evening, the working sessi" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1290"^^xsd:integer ;
+                oa:end "1358"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_4 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Context section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "By evening, the working session had produced rulings on the extraction architecture, the access model, the design-system discipline, and the demo scope — several of them amending the July 11 record." ;
+                oa:prefix " questions did not stay open. " ;
+                oa:suffix "\n\nThe headline settlement: **t" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1359"^^xsd:integer ;
+                oa:end "1557"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_5 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "declarative" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Context section, headline settlement" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The headline settlement: **the live surface is not a second product or an experiment — it is the MVP product's front end that was never built.**" ;
+                oa:prefix "amending the July 11 record.\n\n" ;
+                oa:suffix " And the theatre's design ques" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1559"^^xsd:integer ;
+                oa:end "1703"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_6 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Context section, headline settlement" ;
+        skos:note "Restates Scarlet's own explicit language from the memo (\"I think that's a really elegant way to do that\") — principal Scarlet, not session, per the restatement precedence rule." ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "And the theatre's design question resolved into something she found genuinely elegant: **the theatre becomes the graph viewer**, with resolution layers (expressions → positions → narratives → strata) instead of a separate explore-graph feature." ;
+                oa:prefix "t end that was never built.** " ;
+                oa:suffix "\n\n## The typed notes (verbatim" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1704"^^xsd:integer ;
+                oa:end "1948"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_7 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The work now is to take all of the experimentation and features we've sketched and to strip things down to core moments and roadmap the rest." ;
+                oa:prefix "ped notes (verbatim, #sic)\n\n> " ;
+                oa:suffix "\n>\n> Metaphor: we're designing" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "1989"^^xsd:integer ;
+                oa:end "2130"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_8 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Metaphor: we're designing a new building and we don't need the whole thing designed to construction members in CAD, we need to create a set of renders that make the experience of the space vivid (and in those renders, there should be gorgeous lighting, ghosted artifacts of life, appliances, furniture, etc)." ;
+                oa:prefix "nts and roadmap the rest.\n>\n> " ;
+                oa:suffix "\n>\n> We need to define the pro" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "2135"^^xsd:integer ;
+                oa:end "2443"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_9 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "We need to define the product value for our target actors (both archetypal and specific humans we're talking to) as well as the product strategy." ;
+                oa:prefix "liances, furniture, etc).\n>\n> " ;
+                oa:suffix "\n>\n> We need to clearly unify " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "2448"^^xsd:integer ;
+                oa:end "2593"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_10 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "We need to clearly unify this with the past mcp only product, these are not two products, they are two surfaces of one system." ;
+                oa:prefix " as the product strategy.\n>\n> " ;
+                oa:suffix "\n>\n> Same with the codebase (c" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "2598"^^xsd:integer ;
+                oa:end "2724"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_11 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Same with the codebase (clj, n8n, sneaky python), the new transcription integration, extraction theatre, etc are not a separate codebase, they are extensions of a single product." ;
+                oa:prefix "o surfaces of one system.\n>\n> " ;
+                oa:suffix "\n>\n> The product does not need" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "2729"^^xsd:integer ;
+                oa:end "2907"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_12 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The product does not need to be finished for demos." ;
+                oa:prefix "ions of a single product.\n>\n> " ;
+                oa:suffix " Both for YC (recorded and liv" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "2912"^^xsd:integer ;
+                oa:end "2963"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_13 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Both for YC (recorded and live) and sales." ;
+                oa:prefix "eed to be finished for demos. " ;
+                oa:suffix " More important than finished " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "2964"^^xsd:integer ;
+                oa:end "3006"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_14 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "More important than finished is clear, smooth, functional, valuable." ;
+                oa:prefix "recorded and live) and sales. " ;
+                oa:suffix "\n>\n> ---\n>\n> Simplify.\n>\n> ---" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3007"^^xsd:integer ;
+                oa:end "3075"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_15 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Simplify." ;
+                oa:prefix "tional, valuable.\n>\n> ---\n>\n> " ;
+                oa:suffix "\n>\n> --- beta\n>\n> Teams integr" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3088"^^xsd:integer ;
+                oa:end "3097"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_16 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, beta gating list" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Teams integration gates Escher, our actual paying client" ;
+                oa:prefix "\n> Simplify.\n>\n> --- beta\n>\n> " ;
+                oa:suffix "\n>\n> Zoom gates Taylor testing" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3115"^^xsd:integer ;
+                oa:end "3171"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_17 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, beta gating list" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Zoom gates Taylor testing, our most active beta tester" ;
+                oa:prefix " our actual paying client\n>\n> " ;
+                oa:suffix "\n>\n> Google meet gates our org" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3176"^^xsd:integer ;
+                oa:end "3230"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_18 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, beta gating list" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Google meet gates our org's secondary transcription path and the last org suite surface." ;
+                oa:prefix "r most active beta tester\n>\n> " ;
+                oa:suffix "\n>\n> Otter and other transcrip" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3235"^^xsd:integer ;
+                oa:end "3323"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_19 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, beta gating list" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Otter and other transcription tools gate individual developer/entrepreneur testing/adoption" ;
+                oa:prefix "e last org suite surface.\n>\n> " ;
+                oa:suffix "\n>\n> Generic webhook\n>\n> --- c" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3328"^^xsd:integer ;
+                oa:end "3419"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_20 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, comms/notifications" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "All notifications and agent messages must be proxies through front." ;
+                oa:prefix " --- comms/notificiations\n>\n> " ;
+                oa:suffix "\n>\n> This is part of the enter" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3473"^^xsd:integer ;
+                oa:end "3540"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_21 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, comms/notifications" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "This is part of the enterprise sell - you have an immediate open channel to your meeting attendees where they clarify their intent and you can speak back and it'd all captured to the perspective" ;
+                oa:prefix "be proxies through front.\n>\n> " ;
+                oa:suffix "\n>\n> One GitHub org = front in" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3545"^^xsd:integer ;
+                oa:end "3739"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_22 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, comms/notifications" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "One GitHub org = front inbox" ;
+                oa:prefix "ptured to the perspective\n>\n> " ;
+                oa:suffix "\n> Repo is switchable. Not one" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3744"^^xsd:integer ;
+                oa:end "3772"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_23 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, comms/notifications" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Repo is switchable. Not one repo per inbox (connected number/email/etc). Repo/ref is inferred from convo ie if you just received a notification about a call, your reply assumes that call's ref unless you say otherwise." ;
+                oa:prefix "ne GitHub org = front inbox\n> " ;
+                oa:suffix "\n>\n> Can we programmatically c" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3775"^^xsd:integer ;
+                oa:end "3993"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_24 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, comms/notifications" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Can we programmatically create frontapp inboxes?" ;
+                oa:prefix "unless you say otherwise.\n>\n> " ;
+                oa:suffix " We can certainly have unique " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "3998"^^xsd:integer ;
+                oa:end "4046"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_25 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, comms/notifications" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "We can certainly have unique GitHub-org@aswritten.ai or maybe org+[org]@." ;
+                oa:prefix "ally create frontapp inboxes? " ;
+                oa:suffix " Slack and other webhook chann" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4047"^^xsd:integer ;
+                oa:end "4120"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_26 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, comms/notifications" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Slack and other webhook channels are easy." ;
+                oa:prefix "itten.ai or maybe org+[org]@. " ;
+                oa:suffix " SMS is an enterprise/premium " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4121"^^xsd:integer ;
+                oa:end "4163"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_27 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, comms/notifications" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "SMS is an enterprise/premium and US only feature." ;
+                oa:prefix "er webhook channels are easy. " ;
+                oa:suffix " Other channels possible.\n>\n> " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4164"^^xsd:integer ;
+                oa:end "4213"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_28 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, comms/notifications" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Other channels possible." ;
+                oa:prefix "/premium and US only feature. " ;
+                oa:suffix "\n>\n> Step in/out flow\n>\n> --- " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4214"^^xsd:integer ;
+                oa:end "4238"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_29 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Feed is required." ;
+                oa:prefix "p in/out flow\n>\n> --- MVP\n>\n> " ;
+                oa:suffix " With what filters etc?\n>\n> Th" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4276"^^xsd:integer ;
+                oa:end "4293"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_30 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "With what filters etc?" ;
+                oa:prefix "--- MVP\n>\n> Feed is required. " ;
+                oa:suffix "\n>\n> Theatre must feel like a " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4294"^^xsd:integer ;
+                oa:end "4316"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_31 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Theatre must feel like a chat flow with annotations that if removed would not move the chat bubbles or leave empty space." ;
+                oa:prefix "d. With what filters etc?\n>\n> " ;
+                oa:suffix "\n>\n> To this end, is it correc" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4321"^^xsd:integer ;
+                oa:end "4442"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_32 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "To this end, is it correct that we're creating a \"memory\" from the transcript and extracting that or should we be extracting the entire transcript?" ;
+                oa:prefix "les or leave empty space.\n>\n> " ;
+                oa:suffix " What's the difference? Tradeo" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4447"^^xsd:integer ;
+                oa:end "4594"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_33 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "What's the difference? Tradeoff? Value?" ;
+                oa:prefix "acting the entire transcript? " ;
+                oa:suffix "\n>\n> Sending a message to the " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4595"^^xsd:integer ;
+                oa:end "4634"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_34 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Sending a message to the theatre is answered by an agent that authenticates your logged in user, checks if you can read from the perspective (collaborator) then loads perspective (navigate) at the ref for the memory then responds." ;
+                oa:prefix "ference? Tradeoff? Value?\n>\n> " ;
+                oa:suffix " Note this perspective read at" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4639"^^xsd:integer ;
+                oa:end "4869"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_35 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Note this perspective read at the consistent prefix (focus is last) needs to cache across multiple replies." ;
+                oa:prefix "for the memory then responds. " ;
+                oa:suffix " If you aren't a collaborator," ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4870"^^xsd:integer ;
+                oa:end "4977"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_36 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "If you aren't a collaborator, loads a perspective that is just the memory." ;
+                oa:prefix "ache across multiple replies. " ;
+                oa:suffix " Orphaned nodes are a feature " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "4978"^^xsd:integer ;
+                oa:end "5052"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_37 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Orphaned nodes are a feature and their connections should be rendered as CTA placeholders that need design." ;
+                oa:prefix "tive that is just the memory. " ;
+                oa:suffix "\n>\n> For mvp, can we do collab" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5053"^^xsd:integer ;
+                oa:end "5160"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_38 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "For mvp, can we do collaborator only?" ;
+                oa:prefix "holders that need design.\n>\n> " ;
+                oa:suffix " Or did we already decide this" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5165"^^xsd:integer ;
+                oa:end "5202"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_39 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Or did we already decide this?" ;
+                oa:prefix " can we do collaborator only? " ;
+                oa:suffix " I thought I decided that eith" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5203"^^xsd:integer ;
+                oa:end "5233"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_40 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "I thought I decided that either collaborator only or public/explicit share (email or public link)." ;
+                oa:prefix "r did we already decide this? " ;
+                oa:suffix " Does share get the full persp" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5234"^^xsd:integer ;
+                oa:end "5332"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_41 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Does share get the full perspective?" ;
+                oa:prefix "share (email or public link). " ;
+                oa:suffix "\n>\n> Drop explore graph?\n>\n> W" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5333"^^xsd:integer ;
+                oa:end "5369"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_42 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Drop explore graph?" ;
+                oa:prefix "get the full perspective?\n>\n> " ;
+                oa:suffix "\n>\n> What value are the dimens" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5374"^^xsd:integer ;
+                oa:end "5393"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_43 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "What value are the dimensional runs providing?" ;
+                oa:prefix "?\n>\n> Drop explore graph?\n>\n> " ;
+                oa:suffix " Do they actually influence th" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5398"^^xsd:integer ;
+                oa:end "5444"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_44 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, MVP section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Do they actually influence the position/narrative/strata extraction or the reader?" ;
+                oa:prefix "e dimensional runs providing? " ;
+                oa:suffix "\n>\n> --- access\n>\n> Biggest op" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5445"^^xsd:integer ;
+                oa:end "5527"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_45 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, access section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Biggest open user flow x value x complexity x mvp x roadmap question" ;
+                oa:prefix "he reader?\n>\n> --- access\n>\n> " ;
+                oa:suffix "\n>\n> What does admin, collabor" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5547"^^xsd:integer ;
+                oa:end "5615"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_47 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, access section" ;
+        skos:note "Phrased as a statement but functions as a question per the notes' register" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "What is actually required for demos and which phase of sales process." ;
+                oa:prefix " View feed\n> View theatre\n>\n> " ;
+                oa:suffix "\n>\n> Only full perspective, co" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5792"^^xsd:integer ;
+                oa:end "5861"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_48 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, access section" ;
+        skos:note "COMPOSITE: proposes a simplification and reasons through its acceptability in one continuous move" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Only full perspective, collaborator only + explicit share would hugely simplify and also meet YC demo needs (give them a public link, note they can read our whole org's history which in that case should be fine? That's a feature, no? We want them to be able to see depth)" ;
+                oa:prefix "h phase of sales process.\n>\n> " ;
+                oa:suffix "\n>\n> Note the per authed actor" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "5866"^^xsd:integer ;
+                oa:end "6137"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_49 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, access section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Note the per authed actor perspective filter is also related to loading perspectives for a single actor/role in the org." ;
+                oa:prefix " to be able to see depth)\n>\n> " ;
+                oa:suffix " If I wanted to do the long ta" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "6142"^^xsd:integer ;
+                oa:end "6262"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_50 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, access section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "If I wanted to do the long talked about subagent per advisor setup, I want them to load a perspective based on their input and what it's effected." ;
+                oa:prefix "single actor/role in the org. " ;
+                oa:suffix " Maybe as simple as the calls " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "6263"^^xsd:integer ;
+                oa:end "6409"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_51 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, access section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Maybe as simple as the calls they've been on?" ;
+                oa:prefix "input and what it's effected. " ;
+                oa:suffix " But better would be the posit" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "6410"^^xsd:integer ;
+                oa:end "6455"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_52 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, access section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "But better would be the positions/narratives/strata their expressions have influenced." ;
+                oa:prefix "as the calls they've been on? " ;
+                oa:suffix " Plus enough connected baselin" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "6456"^^xsd:integer ;
+                oa:end "6542"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_53 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, access section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Plus enough connected baseline context?" ;
+                oa:prefix " expressions have influenced. " ;
+                oa:suffix " Also related to this is the v" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "6543"^^xsd:integer ;
+                oa:end "6582"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_54 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, access section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Also related to this is the voice profiles." ;
+                oa:prefix "h connected baseline context? " ;
+                oa:suffix "\n>\n> --- feed QA\n>\n> --- theat" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "6583"^^xsd:integer ;
+                oa:end "6626"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_55 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, theatre QA" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Can reactions and a/b questions feel like responses from a system actor with a design language?" ;
+                oa:prefix "eed QA\n>\n> --- theatre QA\n>\n> " ;
+                oa:suffix " So it always feels like a con" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "6666"^^xsd:integer ;
+                oa:end "6761"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_56 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, theatre QA" ;
+        skos:note "COMPOSITE: one continuous train of design reasoning; trailing stray 'q' preserved verbatim" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "So it always feels like a conversation and we can display minimal dimensional annotations below (move to an icon language?) + on desktop pass results in the gutter (where does this go on mobile, maybe visible on select only? Could be icons on the gutter side? Need mocks for this)q" ;
+                oa:prefix "actor with a design language? " ;
+                oa:suffix "\n>\n> Gaps between messages, do" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "6762"^^xsd:integer ;
+                oa:end "7043"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_57 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, theatre QA" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Gaps between messages, doesn't read like a conversation." ;
+                oa:prefix "de? Need mocks for this)q\n>\n> " ;
+                oa:suffix " We need to move commentary, e" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "7048"^^xsd:integer ;
+                oa:end "7104"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_58 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, theatre QA" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "We need to move commentary, etc to the gutters." ;
+                oa:prefix "n't read like a conversation. " ;
+                oa:suffix "\n>\n> Ask/add note -> always ju" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "7105"^^xsd:integer ;
+                oa:end "7152"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_59 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, theatre QA" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Ask/add note -> always just \"send\"" ;
+                oa:prefix "tary, etc to the gutters.\n>\n> " ;
+                oa:suffix "\n>\n> --- theatre mobile QA\n>\n>" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "7157"^^xsd:integer ;
+                oa:end "7191"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_60 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, theatre mobile QA" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Pass status is at the top, needs a designed home." ;
+                oa:prefix ">\n> --- theatre mobile QA\n>\n> " ;
+                oa:suffix "\n>\n> Filters are hidden\n>\n> Bi" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "7222"^^xsd:integer ;
+                oa:end "7271"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_61 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, theatre mobile QA" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Filters are hidden" ;
+                oa:prefix "p, needs a designed home.\n>\n> " ;
+                oa:suffix "\n>\n> Big bags between messages" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "7276"^^xsd:integer ;
+                oa:end "7294"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_62 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, theatre mobile QA" ;
+        skos:note "#sic: 'bags' likely 'gaps'; 'does read' likely 'doesn't read' — verbatim per typed-notes marking" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Big bags between messages, does read like a conversation" ;
+                oa:prefix "e.\n>\n> Filters are hidden\n>\n> " ;
+                oa:suffix "\n>\n> --- personal workflow\n>\n>" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "7299"^^xsd:integer ;
+                oa:end "7355"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_63 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "expressive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Typed working notes, personal workflow" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "I really want to be able to message an agent somewhere (email is fine, discord would be convenient, sms is fine but I often have long notes) with written notes and voice memos (both at the same time)" ;
+                oa:prefix ">\n> --- personal workflow\n>\n> " ;
+                oa:suffix "\n\n## The voice memo addendum\n\n" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "7386"^^xsd:integer ;
+                oa:end "7585"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_64 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo addendum framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "She opens by settling the unification question the typed notes raised, slowly and deliberately:" ;
+                oa:prefix "ont end that was never built\n\n" ;
+                oa:suffix "\n\n> I think this is one produc" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "7669"^^xsd:integer ;
+                oa:end "7764"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_65 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "declarative" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, one product / front end that was never built" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "I think this is one product, it's not an experiment at the existing MVP product. This is the MVP product, this is the front end that was never built." ;
+                oa:prefix ", slowly and deliberately:\n\n> " ;
+                oa:suffix "\n— [01:03–01:28 | delivery: sl" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "7768"^^xsd:integer ;
+                oa:end "7917"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_66 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo addendum framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "That immediately resolves an open question: can you start a new conversation in this web thing?" ;
+                oa:prefix "a foundation, not exploring]\n\n" ;
+                oa:suffix " \"I'd say, arguably, no, right" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "8038"^^xsd:integer ;
+                oa:end "8133"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_67 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, answering whether new conversations can be started" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "\"I'd say, arguably, no, right?\"" ;
+                oa:prefix "nversation in this web thing? " ;
+                oa:suffix "\n\n> What we're doing is not pr" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "8134"^^xsd:integer ;
+                oa:end "8165"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_68 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, one product / front end that was never built" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "What we're doing is not providing a home for conversation with AI. We're providing a home for perspective and the integration feed for calls and conversations and notes and all of these things that change organizational and thus AI perspective." ;
+                oa:prefix "say, arguably, no, right?\"\n\n> " ;
+                oa:suffix "\n— [02:11–02:45 | delivery: me" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "8169"^^xsd:integer ;
+                oa:end "8413"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_69 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo addendum framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The upload affordance narrows accordingly: upload conversations — a transcript, or notes atop a conversation — not generalized notes." ;
+                oa:prefix "ured, settling into fluency]\n\n" ;
+                oa:suffix " \"We're always expecting prima" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "8475"^^xsd:integer ;
+                oa:end "8608"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_70 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, upload affordance narrowing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "\"We're always expecting primary source quotes from a specific person, either with interspersed commentary or just a raw transcript.\"" ;
+                oa:prefix "tion — not generalized notes. " ;
+                oa:suffix "\n\n### Memory vs. whole transcr" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "8609"^^xsd:integer ;
+                oa:end "8741"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_71 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, memory vs whole transcript framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The typed notes asked whether extracting a framed \"memory\" is still right versus extracting the entire transcript." ;
+                oa:prefix "nt that reframed the theatre\n\n" ;
+                oa:suffix " Walking, she argues both side" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "8817"^^xsd:integer ;
+                oa:end "8931"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_72 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, memory vs whole transcript framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Walking, she argues both sides:" ;
+                oa:prefix "acting the entire transcript. " ;
+                oa:suffix "\n\n> I'd argue that there is va" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "8932"^^xsd:integer ;
+                oa:end "8963"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_73 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, memory vs whole transcript, first side" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "I'd argue that there is value in the framed primary source material because it is a huge noise reduction. It also saves us a lot of tokens, but it saves a lot of noise for the org." ;
+                oa:prefix "ng, she argues both sides:\n\n> " ;
+                oa:suffix "\n— [04:13–04:30 | delivery: fl" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "8967"^^xsd:integer ;
+                oa:end "9147"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_74 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, memory vs whole transcript framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Then the counter, landing on the product's own core claim:" ;
+                oa:prefix "ry: fluent, building energy]\n\n" ;
+                oa:suffix "\n\n> Although at the danger tha" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "9201"^^xsd:integer ;
+                oa:end "9259"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_75 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, memory vs whole transcript, counter side" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Although at the danger that there is this initial single judgment of an LLM that does this filter and summary process, where we're also arguing that the entire value of the product is that it doesn't do summary until read time, right? So then why are we doing all this filter, this arbitrary filter set on our infrastructure?" ;
+                oa:prefix " product's own core claim:\n\n> " ;
+                oa:suffix "\n— [04:31–05:03 | delivery: en" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "9263"^^xsd:integer ;
+                oa:end "9588"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_76 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, memory vs whole transcript resolution" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Her resolution distinguishes venue: a memory written interactively with Claude, where the user approves the summary, is in essence first primary source material, and captures interstitial decisions that wouldn't survive as quotes." ;
+                oa:prefix "ntire value of the product\"]\n\n" ;
+                oa:suffix " But the logic turned structur" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "9679"^^xsd:integer ;
+                oa:end "9909"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_77 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, memory vs whole transcript resolution" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "But the logic turned structural:" ;
+                oa:prefix "t wouldn't survive as quotes. " ;
+                oa:suffix "\n\n> That AI summary is really " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "9910"^^xsd:integer ;
+                oa:end "9942"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_78 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, pivot sentence" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "That AI summary is really a position where we've now dropped at least potentially some of the statements that support it." ;
+                oa:prefix "e logic turned structural:\n\n> " ;
+                oa:suffix "\n— [06:02–06:14 | delivery: fl" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "9946"^^xsd:integer ;
+                oa:end "10067"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_79 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, resolution layers design" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Messages in the theatre have **resolution layers**: at first resolution, every single quote from the call, no summary, no filter." ;
+                oa:prefix "ph viewer: resolution layers\n\n" ;
+                oa:suffix " At second resolution, only po" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "10198"^^xsd:integer ;
+                oa:end "10327"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_80 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, resolution layers design" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "At second resolution, only positions — each expandable to the expressions that support it, footnotes beneath." ;
+                oa:prefix " call, no summary, no filter. " ;
+                oa:suffix " Then a narrative layer where " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "10328"^^xsd:integer ;
+                oa:end "10437"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_81 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, resolution layers design" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Then a narrative layer where positions are the footnotes, and strata above." ;
+                oa:prefix "upport it, footnotes beneath. " ;
+                oa:suffix "\n\n> While looking at the expre" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "10438"^^xsd:integer ;
+                oa:end "10513"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_82 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, resolution layers, fidelity claim" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "While looking at the expressions layer, drop all expressions that don't support a position. That's basically the filter that we want. And in that summary layer, that's the correct fidelity. That is what we would mean by \"this isn't important.\"" ;
+                oa:prefix "otnotes, and strata above.\n\n> " ;
+                oa:suffix "\n— [07:47–08:16 | delivery: pi" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "10517"^^xsd:integer ;
+                oa:end "10760"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_83 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, layer navigation UI" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The UI becomes layer navigation — an icon that steps an expression up a layer, collapsing siblings under their position, repeating up to strata, so different parts of the graph sit expanded at different levels." ;
+                oa:prefix "+0.9σ on the fidelity claim]\n\n" ;
+                oa:suffix " And the prosodic peak of the " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "10834"^^xsd:integer ;
+                oa:end "11044"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_84 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "expressive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, prosodic peak" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "And then the actual theater becomes the graph viewer like that. I think that's a really elegant way to do that. I like that a lot." ;
+                oa:prefix "c peak of the entire memo:\n\n> " ;
+                oa:suffix "\n— [11:35–11:44 | delivery: th" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "11090"^^xsd:integer ;
+                oa:end "11220"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_85 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, explore graph question resolved" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "This answers the typed notes' \"Drop explore graph?\" — yes, structurally:" ;
+                oa:prefix " isn't a train announcement]\n\n" ;
+                oa:suffix "\n\n> I like this message-based " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "11395"^^xsd:integer ;
+                oa:end "11467"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_86 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, message-based graph browser" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "I like this message-based graph browser. I think it's much more effective and much more in line with what the digest really is. Right. That if you click up to position, you see the digest for that position with its footnoted children that we already have in that context, rendered in that context." ;
+                oa:prefix "aph?\" — yes, structurally:\n\n> " ;
+                oa:suffix "\n— [14:01–14:14 | delivery: th" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "11471"^^xsd:integer ;
+                oa:end "11768"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_87 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "declarative" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, MVP cut: flocking viewer and voice profiles" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "That leaves, I think, one big simplification for MVP: the flocking graph viewer and voice profiles are not included. Not included in the product itself. But we can include them in a one-off produced and brand-styled artifact slash fully comped and live page that I can show as the demo." ;
+                oa:prefix "e profiles → demo artifact\n\n> " ;
+                oa:suffix "\n— [12:09–12:52 | delivery: st" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "11925"^^xsd:integer ;
+                oa:end "12211"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_88 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, demo page description" ;
+        skos:note "COMPOSITE: editorial description with embedded quote and metaphor callback" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The demo page shows the arc of narrative change, actor conviction, sentiment and conceptual narrative analysis over time — \"and in there we can show the flocking cause it's fun\" — the typed notes' architectural-renders metaphor executed: vivid renders, not CAD." ;
+                oa:prefix "y: steady planning register]\n\n" ;
+                oa:suffix "\n\n### MVP surface, integration" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "12266"^^xsd:integer ;
+                oa:end "12527"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_89 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, MVP surface and integrations" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The MVP UI surface is the feed — viewing calls, connecting integrations — plus the theatre, no overlay, with reactions, A/B-style clarifications, and response commentary." ;
+                oa:prefix "tions, and the cost pressure\n\n" ;
+                oa:suffix " Demo shows email and text for" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "12583"^^xsd:integer ;
+                oa:end "12753"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_90 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, MVP surface and integrations" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Demo shows email and text for real; Teams/Slack as a this-is-possible button." ;
+                oa:prefix "ons, and response commentary. " ;
+                oa:suffix " \"Those integrations are requi" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "12754"^^xsd:integer ;
+                oa:end "12831"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_91 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, MVP surface and integrations" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "\"Those integrations are required for MVP, but not for demo.\"" ;
+                oa:prefix "as a this-is-possible button. " ;
+                oa:suffix " [16:25]\n\nThe cost pressure, n" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "12832"^^xsd:integer ;
+                oa:end "12892"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_92 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, cost pressure framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The cost pressure, named as product-shaping:" ;
+                oa:prefix ", but not for demo.\" [16:25]\n\n" ;
+                oa:suffix "\n\n> So there's a pressure we k" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "12902"^^xsd:integer ;
+                oa:end "12946"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_93 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, cost pressure" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "So there's a pressure we keep coming back to around cost. This product changes a lot if we can get extraction costs down enough. If we can get extraction costs down enough that you can actually converse with the thing and we can do every-message extraction, right? But for that to happen, you know, we need to be in the cents or tens of cents per message." ;
+                oa:prefix " named as product-shaping:\n\n> " ;
+                oa:suffix "\n— [17:42–19:05 | delivery: su" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "12950"^^xsd:integer ;
+                oa:end "13305"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_94 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, cost levers framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Levers: bring extraction cost down, control the number of extractions, and change whose keys it runs on:" ;
+                oa:prefix "This product changes a lot\"]\n\n" ;
+                oa:suffix "\n\n> If we move our org's extra" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "13435"^^xsd:integer ;
+                oa:end "13539"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_95 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, cost levers" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "If we move our org's extraction into our subscription keys, that changes our cost profile hugely. Maybe that means we can eat user cost as a loss leader in a way that is significant and very different than what we have been doing." ;
+                oa:prefix "nge whose keys it runs on:\n\n> " ;
+                oa:suffix "\n— [19:48–20:09 | delivery: qu" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "13543"^^xsd:integer ;
+                oa:end "13773"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_96 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, shared backend architecture" ;
+        skos:note "COMPOSITE: architecture description with embedded quote and in-session confirmation" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Two chat experiences share one backend: the theatre reply (loads the perspective, navigates from the ref of the extractor call, responds with message history; prompt caching must hold across replies; \"probably doesn't need to be a frontier model, it should be fast. Maybe Luna?\" — confirmed in-session as GPT-5.6 Luna, OpenAI's fast tier) and the post-extraction notification to all participants carrying the clarification questions." ;
+                oa:prefix "inking-through; long pauses]\n\n" ;
+                oa:suffix "\n\n### Access: the edge case is" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "13840"^^xsd:integer ;
+                oa:end "14273"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_97 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "question" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, access section" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "If you are an admin, collaborator, obviously you can see the whole experience and the perspective. But if you are a new participant who is not a repo collaborator, which is a common situation — what do you receive? And what do you ever see? How much is it going to be?" ;
+                oa:prefix "ge case is the common case\n\n> " ;
+                oa:suffix "\n— [24:25–25:07]\n\nOn the just-" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "14323"^^xsd:integer ;
+                oa:end "14591"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_98 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        skos:note "COMPOSITE: editorial framing embedding a direct quote" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "On the just-the-memory fallback her typed notes sketched, she pushed back on her own sketch — \"I just don't think that a single memory is good\" — and landed on collapsing the fork into one code path:" ;
+                oa:prefix "going to be?\n— [24:25–25:07]\n\n" ;
+                oa:suffix "\n\n> Maybe that actually does b" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "14609"^^xsd:integer ;
+                oa:end "14808"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_99 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, single-path access resolution" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Maybe that actually does become a single path, right? Where it now is: resolve the branch, and then return the memories that that user has access to, and then compile. And, however, does that work in the world of digest? You know, when we were doing the compile every time, you could rebuild a different view." ;
+                oa:prefix "e fork into one code path:\n\n> " ;
+                oa:suffix "\n— [25:47–26:26 | delivery: fl" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "14812"^^xsd:integer ;
+                oa:end "15121"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_100 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, demo access plan" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "For the demo: one access level; Wizard-of-Oz or talk-tracked versions for the rest." ;
+                oa:prefix "est question is the residue]\n\n" ;
+                oa:suffix " \"What's required for MVP that" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "15230"^^xsd:integer ;
+                oa:end "15313"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_101 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Voice memo, demo access plan" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "\"What's required for MVP that our actual clients, i.e. Escher, could use.\"" ;
+                oa:prefix "racked versions for the rest. " ;
+                oa:suffix " [26:52]\n\n## The same-day ruli" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "15314"^^xsd:integer ;
+                oa:end "15388"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_102 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings section framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The memo's questions went to a design working session the same day." ;
+                oa:prefix "026-07-14 afternoon/evening)\n\n" ;
+                oa:suffix " Scarlet ruled:\n\n**1. The extr" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "15471"^^xsd:integer ;
+                oa:end "15538"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_103 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "declarative" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 1" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "**1. The extraction fork — extract the whole transcript; the memory becomes a generated view.**" ;
+                oa:prefix "the same day. Scarlet ruled:\n\n" ;
+                oa:suffix " Her words: \"If a memory becom" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "15555"^^xsd:integer ;
+                oa:end "15650"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_104 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day working session, ruling 1" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "If a memory becomes a generated view, which is already what it is anyway, I'm pretty sure about this: we want to extract the whole transcript, but then we want to display something that is often more intelligent than just the transcript as the starting point. We may start with the positions that show the transcript as the footnotes, the expressions pulled from the transcript as the footnotes, with a timeline scrubber like ticks visible in the gutter (so that you have that feeling of what things are spanning)." ;
+                oa:prefix "generated view.** Her words: \"" ;
+                oa:suffix "\" The transcript is the commit" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "15663"^^xsd:integer ;
+                oa:end "16177"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_105 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 1 elaboration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The transcript is the committed source; extraction reads all of it; the PR review surface is the generated view (positions + claimed expressions, composed at read time); the default display is the positions layer with a timeline scrubber in the gutter." ;
+                oa:prefix "f what things are spanning).\" " ;
+                oa:suffix " The venue distinction stands:" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "16179"^^xsd:integer ;
+                oa:end "16431"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_106 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 1 elaboration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The venue distinction stands: interactive user-approved memories remain committed sources." ;
+                oa:prefix "eline scrubber in the gutter. " ;
+                oa:suffix "\n\n**2. Access falls out of nav" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "16432"^^xsd:integer ;
+                oa:end "16522"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_107 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "declarative" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 2" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "**2. Access falls out of navigation semantics — attendance grants the page.**" ;
+                oa:prefix "es remain committed sources.\n\n" ;
+                oa:suffix " Reacting to the proposal that" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "16524"^^xsd:integer ;
+                oa:end "16601"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_108 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 2 framing" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Reacting to the proposal that following a cross-memory link opens that node's home memory's theatre:" ;
+                oa:prefix "attendance grants the page.** " ;
+                oa:suffix " \"that's hot. yes, that. And t" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "16602"^^xsd:integer ;
+                oa:end "16702"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_109 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "declarative" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day working session, ruling 2" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "that's hot. yes, that. And this is actually the solution to the access problem we've been trying to figure out. The answer is: if you were in the call, you can see the page, and if you click on a node that is linking out beyond the call, you can see it if you have access to that call. All the digest narrations that your current call connects to: this is the real question — that should be okay, right, because they are not actually showing the source? They're showing the summary of what is abstracted from the source that this is also supporting — which, to me, means that's a big question that we need to consider through a bunch of different surfaces in the task about access. For now, we're going to say it's fine." ;
+                oa:prefix "ode's home memory's theatre: \"" ;
+                oa:suffix "\" Attendance is the membership" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "16704"^^xsd:integer ;
+                oa:end "17424"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_110 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 2 elaboration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Attendance is the membership primitive; cross-links resolve only with access to the target call; digest narrations of connected nodes are provisionally visible because the digest is the abstraction, not the source." ;
+                oa:prefix "e're going to say it's fine.\" " ;
+                oa:suffix " The flagged counterpoint for " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "17426"^^xsd:integer ;
+                oa:end "17640"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_111 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 2 flagged counterpoint" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The flagged counterpoint for the deeper pass: digest narrations embed verbatim witness excerpts, which weakens \"not showing the source.\"" ;
+                oa:prefix " abstraction, not the source. " ;
+                oa:suffix "\n\n**3. Styleguide-first compon" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "17641"^^xsd:integer ;
+                oa:end "17777"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_112 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "declarative" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 3" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "**3. Styleguide-first component discipline.**" ;
+                oa:prefix "ns \"not showing the source.\"\n\n" ;
+                oa:suffix " \"The wireframes page should b" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "17779"^^xsd:integer ;
+                oa:end "17824"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_113 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day working session, ruling 3" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "\"The wireframes page should be built with the styleguide components, and if you need missing components or layouts, they should be added and reviewed in the styleguide first and then reused.\"" ;
+                oa:prefix "first component discipline.** " ;
+                oa:suffix " The pipeline for design work " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "17825"^^xsd:integer ;
+                oa:end "18016"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_114 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 3 elaboration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The pipeline for design work is: artifact mock (fast iteration) → styleguide component (reviewed) → wireframes/product." ;
+                oa:prefix "guide first and then reused.\" " ;
+                oa:suffix "\n\n**4. Two amendments to the J" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18017"^^xsd:integer ;
+                oa:end "18136"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_115 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "declarative" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 4" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "**4. Two amendments to the July 11 MVP-cut record.**" ;
+                oa:prefix "iewed) → wireframes/product.\n\n" ;
+                oa:suffix " Voice profiles and the flocki" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18138"^^xsd:integer ;
+                oa:end "18190"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_116 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 4" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Voice profiles and the flocking viewer move out of the product:" ;
+                oa:prefix "the July 11 MVP-cut record.** " ;
+                oa:suffix " \"profiles + flocking + arc as" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18191"^^xsd:integer ;
+                oa:end "18254"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_117 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "declarative" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day working session, ruling 4" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "\"profiles + flocking + arc as wizard of oz static but interactive page in product skin for demo. v2 roadmapped in product\"" ;
+                oa:prefix "ewer move out of the product: " ;
+                oa:suffix " — superseding the July 11 \"vo" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18255"^^xsd:integer ;
+                oa:end "18377"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_118 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 4 elaboration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "superseding the July 11 \"voice-profile fullscreen IN, v1-thin\" ruling." ;
+                oa:prefix ". v2 roadmapped in product\" — " ;
+                oa:suffix " And demo-era explicit shares " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18380"^^xsd:integer ;
+                oa:end "18450"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_119 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 4" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "And demo-era explicit shares are full depth, not stripped:" ;
+                oa:prefix "llscreen IN, v1-thin\" ruling. " ;
+                oa:suffix " \"full depth for now, it's exp" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18451"^^xsd:integer ;
+                oa:end "18509"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_120 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "declarative" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day working session, ruling 4" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "\"full depth for now, it's explicit share and this is a demo. only send it to people i want to see full depth\"" ;
+                oa:prefix "are full depth, not stripped: " ;
+                oa:suffix " — stripped/anonymized/actor-s" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18510"^^xsd:integer ;
+                oa:end "18619"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_121 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 4 elaboration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "stripped/anonymized/actor-scoped/tiered shares become v2 work." ;
+                oa:prefix "e i want to see full depth\" — " ;
+                oa:suffix "\n\n**5. Teams jumps the integra" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18622"^^xsd:integer ;
+                oa:end "18684"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_122 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "declarative" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 5" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "**5. Teams jumps the integration queue.**" ;
+                oa:prefix "iered shares become v2 work.\n\n" ;
+                oa:suffix " \"Teams does need to jump the " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18686"^^xsd:integer ;
+                oa:end "18727"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_123 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "directive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day working session, ruling 5" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "\"Teams does need to jump the queue, for sure. I'd like to get that done before Fable moves off subscription, so this week.\"" ;
+                oa:prefix "umps the integration queue.** " ;
+                oa:suffix " Teams gates Escher, the actua" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18728"^^xsd:integer ;
+                oa:end "18851"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_124 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 5 elaboration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Teams gates Escher, the actual paying client; the July 11 record had only named Zoom+Meet as the post-window integrations." ;
+                oa:prefix " subscription, so this week.\" " ;
+                oa:suffix "\n\n**6. The conversation surfac" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18852"^^xsd:integer ;
+                oa:end "18974"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_125 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "declarative" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_ScarletDame ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 6" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "**6. The conversation surface's design language.**" ;
+                oa:prefix "he post-window integrations.\n\n" ;
+                oa:suffix " Expressions must carry actors" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "18976"^^xsd:integer ;
+                oa:end "19026"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_126 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 6 elaboration" ;
+        skos:note "COMPOSITE: single design-language ruling described across multiple clauses" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Expressions must carry actors; the viewer's messages sit right, everyone else left; dimensional annotations collapse behind a glyph so the theatre still feels like a conversation (\"annotations that if removed would not move the chat bubbles\"); and for how narratives claim interspersed statements, gutter rails — solid where a narrative claims a statement, dotted where it passes through an interruption, parallel rails for overlap, bubbles never colored — reusing the same color vocabulary as the timeline ticks." ;
+                oa:prefix " surface's design language.** " ;
+                oa:suffix " On seeing the everything-inte" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "19027"^^xsd:integer ;
+                oa:end "19540"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_127 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "declarative" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:principal narr:Actor_Session ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, ruling 6 elaboration" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "On seeing the everything-interspersed comp built from the session's own conversation, and the narrated digest under each position title with node-links: the direction ratified; comps are the next step." ;
+                oa:prefix "bulary as the timeline ticks. " ;
+                oa:suffix "\n\n**One empirical finding grou" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "19541"^^xsd:integer ;
+                oa:end "19742"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_128 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, empirical finding" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "One empirical finding grounded the design:** analysis of the newest multipass extractions (offsets content-verified) showed positions are 100% contiguous blocks — but by construction, not by nature: the extractor gives each expression exactly one position in document order." ;
+                oa:prefix "; comps are the next step.\n\n**" ;
+                oa:suffix " The genuine interleaving live" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "19746"^^xsd:integer ;
+                oa:end "20020"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_129 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, empirical finding" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The genuine interleaving lives at the narrative grain (~32% of narratives split and resume across a document)." ;
+                oa:prefix "e position in document order. " ;
+                oa:suffix " The whole-transcript ruling w" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "20021"^^xsd:integer ;
+                oa:end "20131"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_130 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day rulings, empirical finding" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The whole-transcript ruling will likely loosen position contiguity, so the rails design supports spread and overlap anyway — exactly Scarlet's instinct:" ;
+                oa:prefix "nd resume across a document). " ;
+                oa:suffix " \"we definitely want and need " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "20132"^^xsd:integer ;
+                oa:end "20284"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_131 a narr:Expression ;
+        narr:actor narr:Actor_ScarletDame ;
+        narr:act "assertive" ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Same-day working session, empirical finding" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "\"we definitely want and need to support things spread out over the document.\"" ;
+                oa:prefix "— exactly Scarlet's instinct: " ;
+                oa:suffix "\n\n## Connections to existing k" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "20285"^^xsd:integer ;
+                oa:end "20362"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_132 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Connections to existing knowledge" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Second run of the Mar 19 MVP scope decision, amending the Jul 11 MVP-cut record — the strip-down move is becoming aswritten's recurring discipline." ;
+                oa:prefix "ions to existing knowledge\n\n- " ;
+                oa:suffix "\n- The resolution-layers theat" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "20404"^^xsd:integer ;
+                oa:end "20551"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_133 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Connections to existing knowledge" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The resolution-layers theatre is the digest made visible: consistent with digest-as-recognition-aid and navigation-replaces-embedded-snapshot." ;
+                oa:prefix "ten's recurring discipline.\n- " ;
+                oa:suffix "\n- The extraction ruling resol" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "20554"^^xsd:integer ;
+                oa:end "20696"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_134 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Connections to existing knowledge" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The extraction ruling resolves the memory-vs-transcript tension by venue: user-approved summaries on their infrastructure are primary source; unilateral filtering on ours is replaced by read-time layers — \"no summary until read time\" applied to the pipeline itself." ;
+                oa:prefix "replaces-embedded-snapshot.\n- " ;
+                oa:suffix "\n- The cents-per-message targe" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "20699"^^xsd:integer ;
+                oa:end "20964"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_135 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Connections to existing knowledge" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The cents-per-message target extends the Jul 12 extraction-cost policy from debugging guardrail to product-shaping constraint." ;
+                oa:prefix "ied to the pipeline itself.\n- " ;
+                oa:suffix "\n- The beta gating list operat" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "20967"^^xsd:integer ;
+                oa:end "21093"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_136 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Connections to existing knowledge" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The beta gating list operationalizes the Jun 9 ingestion-protocol finding (the user's own access is the access; Otter's API is enterprise-gated)." ;
+                oa:prefix "product-shaping constraint.\n- " ;
+                oa:suffix "\n- Front as the notification p" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "21096"^^xsd:integer ;
+                oa:end "21241"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_137 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Connections to existing knowledge" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Front as the notification proxy extends the Org-tier three-capabilities position into the MVP notification path." ;
+                oa:prefix "s API is enterprise-gated).\n- " ;
+                oa:suffix "\n- The attendance-based access" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "21244"^^xsd:integer ;
+                oa:end "21356"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_138 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Connections to existing knowledge" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "The attendance-based access ruling ratifies the attended-projection convergence from the clearance design work — attendance-scoped visibility is append-only-safe." ;
+                oa:prefix " the MVP notification path.\n- " ;
+                oa:suffix "\n\n## Open questions carried fo" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "21359"^^xsd:integer ;
+                oa:end "21521"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_139 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Open questions carried forward" ;
+        skos:note "COMPOSITE: enumerated list of open questions carried forward, closing with an embedded quote" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Feed filters for MVP; the digest-excerpt-leak question across access surfaces; whether the layer toggle is a zoom preset over an always-grouped everything-view; dimensional runs' measurable value (extraction vs reader); the loss-leader pricing analysis with real cost numbers; programmatic Front inbox creation; the personal capture channel (notes + voice memos to an agent — \"I do that all the time\")." ;
+                oa:prefix "en questions carried forward\n\n" ;
+                oa:suffix "\n\n## Transcription corrections" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "21558"^^xsd:integer ;
+                oa:end "21960"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_140 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Transcription corrections applied" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Local pipeline (whisper.cpp + parselmouth prosody); three repetition loops broken by re-chunking at 18:16 and 25:05 — the loop failure mode itself is now build input for the transcription-surface hardening work." ;
+                oa:prefix "cription corrections applied\n\n" ;
+                oa:suffix " Notable normalizations: \"eat " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "22000"^^xsd:integer ;
+                oa:end "22211"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_141 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Transcription corrections applied" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "Notable normalizations: \"eat user cost of a wassiller\" → \"as a loss leader\" (p=0.15); \"not a reasonable collaborator\" → \"not a repo collaborator\" (p=0.22); \"AV style clarifications\" → \"A/B-style clarifications\" (typed notes say \"a/b questions\"); \"Maybe Luna?\" resolved in-session to GPT-5.6 Luna." ;
+                oa:prefix "ption-surface hardening work. " ;
+                oa:suffix " SEPTA platform announcements " ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "22212"^^xsd:integer ;
+                oa:end "22508"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_142 a narr:Expression ;
+        narr:actor narr:Actor_ClaudeFable5 ;
+        narr:act "assertive" ;
+        narr:animator narr:Actor_ClaudeFable5 ;
+        narr:author narr:Actor_ClaudeFable5 ;
+        narr:circumstanceDate "2026-07-14"^^xsd:date ;
+        narr:context "Transcription corrections applied" ;
+        oa:hasTarget [ a oa:SpecificResource ;
+            oa:hasSource narr:Sample_1MvpV2ConcisionOneProductRulings ;
+            oa:hasSelector [ a oa:TextQuoteSelector ;
+                oa:exact "SEPTA platform announcements excluded; the prosody baseline is outdoor-walk audio, so delivery annotations are relative to an elevated noise floor." ;
+                oa:prefix "d in-session to GPT-5.6 Luna. " ;
+                oa:suffix "\n\n<details>\n<summary>Signal si" ] ;
+            oa:hasSelector [ a oa:TextPositionSelector ;
+                oa:start "22509"^^xsd:integer ;
+                oa:end "22656"^^xsd:integer ] ] ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    narr:Actor_ClaudeFable5 a narr:Actor ;
+        skos:prefLabel "claude-fable-5" .
+
+    narr:Actor_Session a narr:Actor ;
+        skos:prefLabel "session" .
+
+    narr:Actor_Session a narr:AIActor .
+
+    aswr:Run_20260714T213828Z_actors a prov:Activity ;
+        aswr:runPass "actors" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/actors.json" ;
+        prov:generated narr:Actor_ClaudeFable5, narr:Actor_Session ;
+        dct:isPartOf aswr:Tx_20260714T213828Z ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213828Z_pass1 a prov:Activity ;
+        aswr:runPass "pass1" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/pass1.json" ;
+        prov:generated narr:Sample_1MvpV2ConcisionOneProductRulings, narr:Expr_1MvpV2ConcisionOneProductRulings_1, narr:Expr_1MvpV2ConcisionOneProductRulings_2, narr:Expr_1MvpV2ConcisionOneProductRulings_3, narr:Expr_1MvpV2ConcisionOneProductRulings_4, narr:Expr_1MvpV2ConcisionOneProductRulings_5, narr:Expr_1MvpV2ConcisionOneProductRulings_6, narr:Expr_1MvpV2ConcisionOneProductRulings_7, narr:Expr_1MvpV2ConcisionOneProductRulings_8, narr:Expr_1MvpV2ConcisionOneProductRulings_9, narr:Expr_1MvpV2ConcisionOneProductRulings_10, narr:Expr_1MvpV2ConcisionOneProductRulings_11, narr:Expr_1MvpV2ConcisionOneProductRulings_12, narr:Expr_1MvpV2ConcisionOneProductRulings_13, narr:Expr_1MvpV2ConcisionOneProductRulings_14, narr:Expr_1MvpV2ConcisionOneProductRulings_15, narr:Expr_1MvpV2ConcisionOneProductRulings_16, narr:Expr_1MvpV2ConcisionOneProductRulings_17, narr:Expr_1MvpV2ConcisionOneProductRulings_18, narr:Expr_1MvpV2ConcisionOneProductRulings_19, narr:Expr_1MvpV2ConcisionOneProductRulings_20, narr:Expr_1MvpV2ConcisionOneProductRulings_21, narr:Expr_1MvpV2ConcisionOneProductRulings_22, narr:Expr_1MvpV2ConcisionOneProductRulings_23, narr:Expr_1MvpV2ConcisionOneProductRulings_24, narr:Expr_1MvpV2ConcisionOneProductRulings_25, narr:Expr_1MvpV2ConcisionOneProductRulings_26, narr:Expr_1MvpV2ConcisionOneProductRulings_27, narr:Expr_1MvpV2ConcisionOneProductRulings_28, narr:Expr_1MvpV2ConcisionOneProductRulings_29, narr:Expr_1MvpV2ConcisionOneProductRulings_30, narr:Expr_1MvpV2ConcisionOneProductRulings_31, narr:Expr_1MvpV2ConcisionOneProductRulings_32, narr:Expr_1MvpV2ConcisionOneProductRulings_33, narr:Expr_1MvpV2ConcisionOneProductRulings_34, narr:Expr_1MvpV2ConcisionOneProductRulings_35, narr:Expr_1MvpV2ConcisionOneProductRulings_36, narr:Expr_1MvpV2ConcisionOneProductRulings_37, narr:Expr_1MvpV2ConcisionOneProductRulings_38, narr:Expr_1MvpV2ConcisionOneProductRulings_39, narr:Expr_1MvpV2ConcisionOneProductRulings_40, narr:Expr_1MvpV2ConcisionOneProductRulings_41, narr:Expr_1MvpV2ConcisionOneProductRulings_42, narr:Expr_1MvpV2ConcisionOneProductRulings_43, narr:Expr_1MvpV2ConcisionOneProductRulings_44, narr:Expr_1MvpV2ConcisionOneProductRulings_45, narr:Expr_1MvpV2ConcisionOneProductRulings_47, narr:Expr_1MvpV2ConcisionOneProductRulings_48, narr:Expr_1MvpV2ConcisionOneProductRulings_49, narr:Expr_1MvpV2ConcisionOneProductRulings_50, narr:Expr_1MvpV2ConcisionOneProductRulings_51, narr:Expr_1MvpV2ConcisionOneProductRulings_52, narr:Expr_1MvpV2ConcisionOneProductRulings_53, narr:Expr_1MvpV2ConcisionOneProductRulings_54, narr:Expr_1MvpV2ConcisionOneProductRulings_55, narr:Expr_1MvpV2ConcisionOneProductRulings_56, narr:Expr_1MvpV2ConcisionOneProductRulings_57, narr:Expr_1MvpV2ConcisionOneProductRulings_58, narr:Expr_1MvpV2ConcisionOneProductRulings_59, narr:Expr_1MvpV2ConcisionOneProductRulings_60, narr:Expr_1MvpV2ConcisionOneProductRulings_61, narr:Expr_1MvpV2ConcisionOneProductRulings_62, narr:Expr_1MvpV2ConcisionOneProductRulings_63, narr:Expr_1MvpV2ConcisionOneProductRulings_64, narr:Expr_1MvpV2ConcisionOneProductRulings_65, narr:Expr_1MvpV2ConcisionOneProductRulings_66, narr:Expr_1MvpV2ConcisionOneProductRulings_67, narr:Expr_1MvpV2ConcisionOneProductRulings_68, narr:Expr_1MvpV2ConcisionOneProductRulings_69, narr:Expr_1MvpV2ConcisionOneProductRulings_70, narr:Expr_1MvpV2ConcisionOneProductRulings_71, narr:Expr_1MvpV2ConcisionOneProductRulings_72, narr:Expr_1MvpV2ConcisionOneProductRulings_73, narr:Expr_1MvpV2ConcisionOneProductRulings_74, narr:Expr_1MvpV2ConcisionOneProductRulings_75, narr:Expr_1MvpV2ConcisionOneProductRulings_76, narr:Expr_1MvpV2ConcisionOneProductRulings_77, narr:Expr_1MvpV2ConcisionOneProductRulings_78, narr:Expr_1MvpV2ConcisionOneProductRulings_79, narr:Expr_1MvpV2ConcisionOneProductRulings_80, narr:Expr_1MvpV2ConcisionOneProductRulings_81, narr:Expr_1MvpV2ConcisionOneProductRulings_82, narr:Expr_1MvpV2ConcisionOneProductRulings_83, narr:Expr_1MvpV2ConcisionOneProductRulings_84, narr:Expr_1MvpV2ConcisionOneProductRulings_85, narr:Expr_1MvpV2ConcisionOneProductRulings_86, narr:Expr_1MvpV2ConcisionOneProductRulings_87, narr:Expr_1MvpV2ConcisionOneProductRulings_88, narr:Expr_1MvpV2ConcisionOneProductRulings_89, narr:Expr_1MvpV2ConcisionOneProductRulings_90, narr:Expr_1MvpV2ConcisionOneProductRulings_91, narr:Expr_1MvpV2ConcisionOneProductRulings_92, narr:Expr_1MvpV2ConcisionOneProductRulings_93, narr:Expr_1MvpV2ConcisionOneProductRulings_94, narr:Expr_1MvpV2ConcisionOneProductRulings_95, narr:Expr_1MvpV2ConcisionOneProductRulings_96, narr:Expr_1MvpV2ConcisionOneProductRulings_97, narr:Expr_1MvpV2ConcisionOneProductRulings_98, narr:Expr_1MvpV2ConcisionOneProductRulings_99, narr:Expr_1MvpV2ConcisionOneProductRulings_100, narr:Expr_1MvpV2ConcisionOneProductRulings_101, narr:Expr_1MvpV2ConcisionOneProductRulings_102, narr:Expr_1MvpV2ConcisionOneProductRulings_103, narr:Expr_1MvpV2ConcisionOneProductRulings_104, narr:Expr_1MvpV2ConcisionOneProductRulings_105, narr:Expr_1MvpV2ConcisionOneProductRulings_106, narr:Expr_1MvpV2ConcisionOneProductRulings_107, narr:Expr_1MvpV2ConcisionOneProductRulings_108, narr:Expr_1MvpV2ConcisionOneProductRulings_109, narr:Expr_1MvpV2ConcisionOneProductRulings_110, narr:Expr_1MvpV2ConcisionOneProductRulings_111, narr:Expr_1MvpV2ConcisionOneProductRulings_112, narr:Expr_1MvpV2ConcisionOneProductRulings_113, narr:Expr_1MvpV2ConcisionOneProductRulings_114, narr:Expr_1MvpV2ConcisionOneProductRulings_115, narr:Expr_1MvpV2ConcisionOneProductRulings_116, narr:Expr_1MvpV2ConcisionOneProductRulings_117, narr:Expr_1MvpV2ConcisionOneProductRulings_118, narr:Expr_1MvpV2ConcisionOneProductRulings_119, narr:Expr_1MvpV2ConcisionOneProductRulings_120, narr:Expr_1MvpV2ConcisionOneProductRulings_121, narr:Expr_1MvpV2ConcisionOneProductRulings_122, narr:Expr_1MvpV2ConcisionOneProductRulings_123, narr:Expr_1MvpV2ConcisionOneProductRulings_124, narr:Expr_1MvpV2ConcisionOneProductRulings_125, narr:Expr_1MvpV2ConcisionOneProductRulings_126, narr:Expr_1MvpV2ConcisionOneProductRulings_127, narr:Expr_1MvpV2ConcisionOneProductRulings_128, narr:Expr_1MvpV2ConcisionOneProductRulings_129, narr:Expr_1MvpV2ConcisionOneProductRulings_130, narr:Expr_1MvpV2ConcisionOneProductRulings_131, narr:Expr_1MvpV2ConcisionOneProductRulings_132, narr:Expr_1MvpV2ConcisionOneProductRulings_133, narr:Expr_1MvpV2ConcisionOneProductRulings_134, narr:Expr_1MvpV2ConcisionOneProductRulings_135, narr:Expr_1MvpV2ConcisionOneProductRulings_136, narr:Expr_1MvpV2ConcisionOneProductRulings_137, narr:Expr_1MvpV2ConcisionOneProductRulings_138, narr:Expr_1MvpV2ConcisionOneProductRulings_139, narr:Expr_1MvpV2ConcisionOneProductRulings_140, narr:Expr_1MvpV2ConcisionOneProductRulings_141, narr:Expr_1MvpV2ConcisionOneProductRulings_142 ;
+        dct:isPartOf aswr:Tx_20260714T213828Z ;
+        prov:generatedAtTime "2026-07-14T21:38:28Z"^^xsd:dateTime .
+  }
+}
