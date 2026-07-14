@@ -127,7 +127,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [ResonanceUse](hub-ResonanceUse.html): This hub gathers how *resonant framing* gets used — the rhetorical and structural devices that make dense thinking land.
 - [RhetoricalDevices](hub-RhetoricalDevices.html): This hub gathers observed rhetorical devices in the source document, spanning structure, contrast, metaphor, and repetit
 - [RhetoricalQuestion](hub-RhetoricalQuestion.html): This hub tracks the rhetorical question as a primary structural and persuasive device. The opening hook remains a standa
-- [Rubric_Accuracy](hub-Rubric_Accuracy.html): This hub gathers accuracy assessments across the corpus's document types — memos, pitch decks, ADRs, call notes, and col
+- [Rubric_Accuracy](hub-Rubric_Accuracy.html): This hub tracks accuracy assessments across the corpus, evaluating factual precision, named-entity integrity, and citati
 - [Rubric_Cadence](hub-Rubric_Cadence.html): This hub gathers per-document cadence assessments under one rubric dimension — how rhythm, sentence-length variation, an
 - [Rubric_Flow](hub-Rubric_Flow.html): This hub catalogs rubric assessments of *flow*, evaluating how logical progression and structural coherence manifest acr
 - [Rubric_Novelty](hub-Rubric_Novelty.html): This hub aggregates novelty assessments evaluating the originality of framing, terminology, and metaphors across organiz
