@@ -119,7 +119,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Metaphor](hub-Metaphor.html): This hub gathers the document's figurative language across two registers. Empowerment/control metaphors dominate: narrat
 - [NamingConventions](hub-NamingConventions.html): This hub gathers the project's naming and positioning conventions, which cohere around two devices. First, a consistent 
 - [NarrativePillars](hub-NarrativePillars.html): This hub gathers two unlike strands under one roof. The bulk is a cluster of style observations on how strategic prose i
-- [Parallelism](hub-Parallelism.html): This hub gathers observations of parallelism as a recurring stylistic device across an AI-native strategy/pitch document
+- [Parallelism](hub-Parallelism.html): This hub tracks the deployment of parallelism as a rhetorical and structural device within AI-native strategic documenta
 - [PlainLanguage](hub-PlainLanguage.html): This hub gathers observations of Scarlet's plain-language style across founder-facing documents. The dominant thread is 
 - [ProblemStakes](hub-ProblemStakes.html): This hub frames the stakes of the problem the pitch addresses, and across its children one rhetorical move dominates: op
 - [PunctuationTypography](hub-PunctuationTypography.html): This hub catalogs the typographic and punctuation conventions defining the project's prose architecture. The em-dash has
