@@ -22,7 +22,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [CoreNarratives](hub-CoreNarratives.html): This hub tracks the evolution of aswritten.ai’s competitive positioning, anchored by the thesis that the next bottleneck
 - [CoreWorkflows](hub-CoreWorkflows.html): This hub gathers the operational patterns aswritten runs on. The flagship is the session-to-document arc: Interview → Sa
 - [DataIntegrationFlows](hub-DataIntegrationFlows.html): This hub gathers the plumbing by which raw activity becomes queryable knowledge. On the execution side, the webhook-mode
-- [DataModelLifecycle](hub-DataModelLifecycle.html): This hub gathers the architectural design of a data-model lifecycle built on Git. The spine is an append-only, Git-centr
+- [DataModelLifecycle](hub-DataModelLifecycle.html): This hub tracks the architectural evolution of a Git-based data-model lifecycle, where the repository serves as the prim
 - [DesignTradeoffs](hub-DesignTradeoffs.html): This hub gathers recurring design tensions across vocabulary, architecture, and memory boundaries. A foundational struct
 - [Differentiators](hub-Differentiators.html): The competitive positioning of aswritten has evolved from feature-based differentiation toward a focus on decision archa
 - [EnablementTraining](hub-EnablementTraining.html): This hub consolidates enablement and onboarding strategies for the aswritten beta, centering on the tension between user
