@@ -46,7 +46,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Narrative_AIContextValidation](hub-Narrative_AIContextValidation.html): This hub gathers the case for AI context validation as a distinct value proposition. The throughline: Aswritten as conte
 - [Narrative_B2CPivot](hub-Narrative_B2CPivot.html): The strategic trajectory of aswritten has moved from a binary B2B/B2C choice toward a unified model where the individual
 - [Narrative_BoundedDomainFidelityArgument](hub-Narrative_BoundedDomainFidelityArgument.html): Argues that expertise modules are higher fidelity than org memory because courses, books, and consulting deliverables ar
-- [Narrative_CategoryCuratedExpertiseInstallation](hub-Narrative_CategoryCuratedExpertiseInstallation.html): The category began as 'curated expertise installation' (Strategy Doc V1), then narrowed: in Mar Scarlet dropped 'curated
+- [Narrative_CategoryCuratedExpertiseInstallation](hub-Narrative_CategoryCuratedExpertiseInstallation.html): The category of Expertise Installation has undergone a series of refinements since March 2026, moving from a focus on me
 - [Narrative_ClojureOwnsLogic](hub-Narrative_ClojureOwnsLogic.html): This hub argues the orchestration logic belongs in Clojure, with the build-vs-wrap boundary drawn explicitly. The event-
 - [Narrative_ContinuousCompliance](hub-Narrative_ContinuousCompliance.html): This hub frames a move from snapshot-based to continuous compliance. The mainline diagnoses the problem — point-in-time 
 - [Narrative_EnterpriseShapePrimaryFocus](hub-Narrative_EnterpriseShapePrimaryFocus.html): The search for a primary sales focus has shifted toward the enterprise customer-shape as a tentative priority, defined n
