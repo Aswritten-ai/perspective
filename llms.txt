@@ -67,7 +67,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Outcomes](hub-Outcomes.html): This hub gathers the claimed outcomes of the product, dominated by a quantified ROI stack for a 10-person team: onboardi
 - [OutcomesProof](hub-OutcomesProof.html): OutcomesProof gathers heterogeneous evidence that the system delivers value. Commercially, the live-demo delivery gate t
 - [PackagingEntitlement](hub-PackagingEntitlement.html): This hub gathers how product access is packaged and what clients forfeit. The mainline, settled 2026-02-11, is a no-free
-- [PackagingPricing](hub-PackagingPricing.html): Pricing evolved through repeated reframing. Feb per-repo pricing ([amount]/mo, 10 seats) gave way to a March three-tier 
+- [PackagingPricing](hub-PackagingPricing.html): Pricing strategy has moved from flat per-repo models toward a multi-tier structure that distinguishes between self-serve
 - [PersonasJTBD](hub-PersonasJTBD.html): This hub holds aswritten's persona/JTBD model, which has migrated over time. An original four-archetype scheme — Knowled
 - [PositioningThesis](hub-PositioningThesis.html): This hub gathers how aswritten.ai positions itself, narrating an evolution rather than a settled label. The mainline ref
 - [PrimaryActors](hub-PrimaryActors.html): This hub gathers the cast of who the product is *for* and *with* — and the children do not agree on a single primary act
