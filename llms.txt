@@ -76,7 +76,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [ProcessPolicyUpdates](hub-ProcessPolicyUpdates.html): This hub collects process and policy decisions across the pipeline, CI, branching, and protocol placement. The earliest 
 - [Product](hub-Product.html): This hub gathers Scarlet's product lineage and the through-line connecting it: extracting narrative from data to steer o
 - [ProductLadder](hub-ProductLadder.html): This hub gathers the product-and-go-to-market ladder. The commercial spine is the four-phase core expansion track: [a [a
-- [ProductOverview](hub-ProductOverview.html): The ProductOverview hub gathers the shape of the aswritten product across UX, architecture, packaging, pricing, and tool
+- [ProductOverview](hub-ProductOverview.html): The product trajectory has shifted from a focus on adaptive architectural infrastructure toward an immersive, consumer-f
 - [Proof](hub-Proof.html): The proof hub tracks how aswritten demonstrates that it changes AI behavior — across sales pitch, technical verification
 - [QualityReviewGates](hub-QualityReviewGates.html): This hub spans the review, evaluation, and verification disciplines that gate knowledge quality. The review protocol clu
 - [Quotes](hub-Quotes.html): This hub is the verbatim record of the aswritten narrative — direct speech and attributed observations spanning January 
