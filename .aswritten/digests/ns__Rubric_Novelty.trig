@@ -4,30 +4,25 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__Rubric_Novelty> {
   <https://aswritten.ai/narrative#Digest_ns__Rubric_Novelty> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#Rubric_Novelty> ;
-    narr:childCount "13"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers per-artifact **novelty assessments** scored under one rubric — each child judges how original a given document's framing, terminology, and metaphors are. The dominant verdict across children is *high novelty*: assessors repeatedly credit [fresh conceptual framing and coined terms](narr:RubricAssess_Novelty) ('narrative architecture,' 'steering vector,' 'worldview as executable strategy'), [the collective-memory positioning](narr:Assess_Novelty_collective_memory) (Git-as-narrative-log, Memory-vs-Transaction), the [IP-crisis framing](narr:Assessment_Novelty_IPCrisis) ('cultivation trap,' 'context squishing'), and [brand/metaphor distinctiveness](narr:Assessment_Novelty_1) (aswritten.ai, cursor). The [ADR002 worldview-layer pitch](narr:RubricAssess_Novelty_ADR002) and [GTM 'IP as code' voice](narr:RubricAssess_Novelty_GTM) are similarly praised for avoiding SaaS clichés. Recurringly, assessors temper the score by flagging residual boilerplate — domain-standard verbs, value-prop scaffolding, biweekly-cadence deliverables. Across children the pattern is consistent rather than dated/evolving: original framing credited, stock phrasing noted as the offsetting cost. No reconciliation Expression is present, so no single artifact is crowned most novel.""" ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "0f78cc1ecdee00454a5d56aaf014fbc235702780" ;
+    narr:narration """This hub aggregates [novelty assessments](narr:RubricAssess_Novelty) evaluating the originality of framing, terminology, and metaphors across organizational artifacts. The thematic span consistently highlights a departure from generic SaaS and AI-hype language, favoring [fresh conceptual architectures](narr:RubricAssess_Novelty) like 'worldview as executable strategy' and 'narrative source of truth'. Assessors frequently contrast this [distinctive positioning](narr:RubricAssess_Novelty_1) with the [technical-narrative integration](narr:Assess_Novelty_collective_memory) of Git-as-log, noting how [IP-centric framings](narr:Assessment_Novelty_IPCrisis) ('cultivation trap', 'context squishing') avoid common domain boilerplate. While [ADR-specific assessments](narr:RubricAssess_Novelty_ADR002) acknowledge the necessity of conventional formats, they praise the avoidance of generic 'AI memory' labels in favor of 'worldview layer' terminology. Across the board, the [GTM voice](narr:RubricAssess_Novelty_GTM) and [expert-bottleneck framing](narr:Assessment_Novelty_CustomerArchitect) are credited for their high type-token ratio, though assessors consistently flag residual 'stock' phrasing—such as 'source of truth' or 'pilot-to-expand'—as the necessary cost of maintaining clarity within these novel structures.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Novelty_cm> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Novelty_collective_memory> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assess_Novelty_rebrand> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Novelty_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Novelty_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assessment_Novelty_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Novelty_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Novelty> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_20260107> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_ADR001> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_ADR002> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_GTM> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_novelty> ;
-    narr:keyPhrase [ narr:text "Novel integration pattern (two-step save); creative use of Git as narrative log" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Novelty_collective_memory> ] ;
-    narr:keyPhrase [ narr:text "novel terminology (compilation targets, cultivation trap, context squishing)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Novelty_IPCrisis> ] ;
-    narr:keyPhrase [ narr:text "'worldview as executable strategy', 'telltales for drift detection', 'review worldview deltas not outputs'" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Novelty> ] ;
-    narr:keyPhrase [ narr:text "'[amount] mistake' quantifies pain memorably" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_ADR002> ] ;
-    narr:keyPhrase [ narr:text "Standard ADR format (expected); business language conventional; 'collaborative worldview layer' phrase somewhat novel" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_ADR001> ] ;
-    narr:variation [ narr:text "One assessment scores low-novelty-by-design: the ADR's standard format and conventional business language are judged appropriate, not a flaw — the rubric bends to genre." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_ADR001> ] ;
-    narr:variation [ narr:text "Nearly every child qualifies its high score with residual boilerplate — generic verbs, value props, Before/After, biweekly cadence, 'source of truth' — the offsetting cost against originality." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Novelty_rebrand> ; narr:over <https://aswritten.ai/ns/narrative#Assessment_Novelty_1> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_novelty> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_20260107> ] ;
-    narr:variation [ narr:text "A subset credits novelty to visual/structural form rather than language — Mermaid diagrams, two-step save pattern — distinct from the terminology-driven assessments." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Novelty_cm> ; narr:over <https://aswritten.ai/ns/narrative#Assess_Novelty_collective_memory> ] ;
-    narr:variation [ narr:text "'You can't' impossibility framing and the 'AI-context rich/poor' divide are flagged as distinctly original rhetorical moves, a different novelty axis than coined nouns." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Novelty> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "worldview as executable strategy" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Novelty> ] ;
+    narr:keyPhrase [ narr:text "IP crisis vs developer convenience" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Novelty_IPCrisis> ] ;
+    narr:keyPhrase [ narr:text "narrative source of truth" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_1> ] ;
+    narr:keyPhrase [ narr:text "senior expert bottleneck" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Novelty_CustomerArchitect> ] ;
+    narr:keyPhrase [ narr:text "Worldview layer" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_ADR002> ] ;
+    narr:variation [ narr:text "ADR documentation is explicitly noted for its reliance on conventional business language, contrasting with the high-novelty creative artifacts." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Novelty_ADR001> ] ;
+    narr:variation [ narr:text "Some assessments identify a tension between 'fresh metaphors' and the inclusion of domain-standard phrases like 'pain-first' or 'four pillars'." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Novelty> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
