@@ -4,24 +4,19 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__ActorIncentiveAnalysis> {
   <https://aswritten.ai/narrative#Digest_ns__ActorIncentiveAnalysis> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#ActorIncentiveAnalysis> ;
-    narr:childCount "6"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub maps the actors around the product and what each one wants. The buyer question is answered concretely in the [VC-channel go-to-market map](narr:Narrative_VCChannel) — Primary = CEO/founder, Champion = Strategy/CTO, Channel = VCs/advisors — with VCs incentivized by portfolio visibility, faster board prep, and cross-portfolio learning. Incentive framings range from operational upside to threat-level: the [existential IP-crisis narrative](narr:Narrative_IPCrisis) reframes adoption from developer convenience to a board-level business risk, while [non-technical accessibility](narr:Narrative_NonTechnicalAccessibility) and [Day-1 new-hire productivity](narr:ValueProp_1) carry the convenience/onboarding upside. Two children push against dominant framings rather than extend them: the [premise-mismatch insight](narr:Insight_PremiseMismatch) argues the 'AI memory lock-in' thesis doesn't land for enterprises, and the [no-network-problem observation](narr:Observation_NoNetworkProblem) denies any network-effect gating. No dates are attached, so no trajectory or landing is asserted.""" ;
+    narr:childCount "5"^^xsd:integer ;
+    narr:generatedFrom "1b434cab34da902f011f336d58c17845e024c47d" ;
+    narr:narration """This hub maps the incentive structures surrounding product adoption, centering on the [VC-channel go-to-market map](narr:Narrative_VCChannel) which identifies the CEO as the primary buyer and VCs as the key distribution channel. The value proposition oscillates between two poles: the [existential IP-crisis narrative](narr:Narrative_IPCrisis) frames adoption as a defensive necessity to mitigate board-level business risks, while [non-technical accessibility](narr:Narrative_NonTechnicalAccessibility) emphasizes the democratization of complex data through conversational interfaces. Tension persists regarding the product's fundamental market fit: the [premise-mismatch insight](narr:Insight_PremiseMismatch) challenges the 'AI memory lock-in' thesis by asserting that enterprise knowledge remains human-centric, while the [no-network-problem observation](narr:Observation_NoNetworkProblem) reframes the value proposition from a network-effect dependency to one of incremental, individual utility.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Insight_PremiseMismatch> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_NonTechnicalAccessibility> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_VCChannel> ;
     narr:covers <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ;
-    narr:covers <https://aswritten.ai/ns/narrative#ValueProp_1> ;
     narr:keyPhrase [ narr:text "Primary = CEO/founder, Champion = Strategy/CTO, Channel = VCs/advisors" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_VCChannel> ] ;
-    narr:keyPhrase [ narr:text "VCs get better portfolio visibility (queryable, not just reported), faster board prep, cross-portfolio learning" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_VCChannel> ] ;
-    narr:keyPhrase [ narr:text "Every employee tells state secrets to AI; models lift IP into training data; existential business risk" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_IPCrisis> ] ;
-    narr:keyPhrase [ narr:text "Knowledge is locked in people's heads, not AI conversations." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Insight_PremiseMismatch> ] ;
+    narr:keyPhrase [ narr:text "Paradigm shift from developer convenience to threat-level business problem" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_IPCrisis> ] ;
     narr:keyPhrase [ narr:text "There is actually no network problem here. This is just as useful for one person, but it is even more useful for two people" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ] ;
-    narr:keyPhrase [ narr:text "Day 1 productivity for new hires" ; narr:phraseSource <https://aswritten.ai/ns/narrative#ValueProp_1> ] ;
-    narr:variation [ narr:text "Premise dissent: the 'AI memory lock-in' framing is said NOT to resonate for enterprises, because knowledge is locked in people's heads, not in AI conversations." ; narr:over <https://aswritten.ai/ns/narrative#Insight_PremiseMismatch> ] ;
-    narr:variation [ narr:text "Denies network effects as a driver — value is asserted for a single user, only incrementally more for two, so adoption incentives can't lean on a network-problem story." ; narr:over <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ] ;
-    narr:variation [ narr:text "Incentive register splits hard: existential IP-threat to leadership vs. low-friction convenience (zero-code access, new-hire onboarding) — different actors pulled by opposite framings." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_IPCrisis> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_NonTechnicalAccessibility> ; narr:over <https://aswritten.ai/ns/narrative#ValueProp_1> ] ;
-    narr:variation [ narr:text "Buyer vs. channel tension: the economic buyer is CEO/founder, but VCs/advisors are positioned as the introducing channel with their own distinct incentives." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_VCChannel> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Knowledge is locked in people's heads, not AI conversations." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Insight_PremiseMismatch> ] ;
+    narr:variation [ narr:text "The 'AI memory lock-in' thesis is fundamentally misaligned with current enterprise knowledge structures." ; narr:over <https://aswritten.ai/ns/narrative#Insight_PremiseMismatch> ] ;
+    narr:variation [ narr:text "Value is derived from incremental utility rather than network-effect gating." ; narr:over <https://aswritten.ai/ns/narrative#Observation_NoNetworkProblem> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
