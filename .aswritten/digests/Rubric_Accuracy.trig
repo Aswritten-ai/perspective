@@ -4,35 +4,25 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Rubric_Accuracy> {
   <https://aswritten.ai/narrative#Digest_Rubric_Accuracy> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Rubric_Accuracy> ;
-    narr:childCount "16"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers per-artifact [accuracy assessments](narr:RubricAssess_Accuracy) across the org's documents, memos, and transcripts. The dominant finding is uniform high factual rigor: assessments repeatedly cite [specific dates, names, and prices](narr:RubricAssess_Accuracy_GTM), [direct quotes with timestamps](narr:Rubric_Accuracy_FounderBetaUser), and [verifiable named entities](narr:Rubric_Accuracy_CustomerArchitect). Several reward transparency about uncertainty — [open questions flagged](narr:Rubric_Accuracy_PilotPlan) and [explicit corrections](narr:Rubric_Accuracy_ScarletDame). The [TAM/revenue assessment](narr:Assess_Accuracy_RevenueModelTAM) checks the math (1.27M × 0.78 ≈ [amount]) but flags that no revenue claim is accurate absent a signed contract. The recurring deduction across the set is citation discipline — claims judged sound but [lacking formal citations](narr:RubricAssess_Accuracy), with attribution often only implicit via context headers. Genre conditions the standard: a [manifesto](narr:RubricAssess_Accuracy) is held to permit citationless factual claims where a strategic memo is not.""" ;
-    narr:covers <https://aswritten.ai/narrative#Assess_Accuracy_RevModel> ;
-    narr:covers <https://aswritten.ai/narrative#Assess_Accuracy_RevenueModelTAM> ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "17228b65fed9b2c2a8c4073564fbaa73bcfb9926" ;
+    narr:narration """This hub tracks [factual accuracy assessments](narr:RubricAssess_Accuracy) across the organization's documentation, ranging from strategic memos to technical manifestos. The corpus demonstrates a consistent standard of rigor, characterized by [verifiable named entities](narr:Rubric_Accuracy_CustomerArchitect), [precise temporal markers](narr:Rubric_Accuracy_YC_Call), and [explicit revenue or pricing figures](narr:Rubric_Accuracy_FounderBetaUser). Assessments frequently highlight the use of [direct quotes with timestamps](narr:Rubric_Accuracy_FounderBetaUser) and [context-based attribution](narr:Rubric_Assess_Accuracy) as primary evidence of reliability. While factual errors are largely absent, a recurring theme is the tension between formal citation requirements and genre-specific norms; for instance, [manifesto-style documents](narr:RubricAssess_Accuracy) are often granted latitude for citationless claims that would be flagged in a [strategic GTM memo](narr:RubricAssess_Accuracy_GTM). Transparency remains a key metric, with [open questions](narr:Rubric_Accuracy_PilotPlan) and [explicit corrections](narr:Rubric_Accuracy_ScarletDame) serving as indicators of high-quality, self-aware documentation.""" ;
     narr:covers <https://aswritten.ai/narrative#Assessment_Accuracy_YC> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Accuracy> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Accuracy_GTM> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Accuracy_Sample1> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Accuracy_TXReview> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Accuracy_WeeklyCall> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssessment_Accuracy> ;
-    narr:covers <https://aswritten.ai/narrative#Rubric_Accuracy_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Accuracy_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Accuracy_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Accuracy_PilotPlan> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Accuracy_ScarletDame> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Accuracy_YCDemoBeats> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Accuracy_YC_Call> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Assess_Accuracy> ;
+    narr:keyPhrase [ narr:text "60 markdown files, 46/112 bugs, 3x cost differential" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Accuracy_CustomerArchitect> ] ;
+    narr:keyPhrase [ narr:text "Do NOT list Cognitect" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Accuracy_ScarletDame> ] ;
     narr:keyPhrase [ narr:text "one point deducted for lack of formal citations where external claims are made" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Accuracy> ] ;
-    narr:keyPhrase [ narr:text "No citations provided; manifesto genre permits this." ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Accuracy> ] ;
-    narr:keyPhrase [ narr:text "No revenue claim accurate (no signed contract)." ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Accuracy_RevenueModelTAM> ] ;
-    narr:keyPhrase [ narr:text "Explicit correction of 'Populous' to 'Populace'" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Accuracy_Sample1> ] ;
-    narr:keyPhrase [ narr:text "Direct quotes attributed. No unsupported claims." ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Accuracy_CustomerArchitect> ] ;
-    narr:keyPhrase [ narr:text "no false claims detected" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Accuracy_PilotPlan> ] ;
-    narr:variation [ narr:text "Citation discipline is the recurring deduction: claims judged sound but lacking formal citations, attribution often only implicit via context headers." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Accuracy> ; narr:over <https://aswritten.ai/narrative#Assessment_Accuracy_YC> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Accuracy_WeeklyCall> ] ;
-    narr:variation [ narr:text "Genre changes the standard — a manifesto is excused for citationless claims that a strategic memo would be docked for." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Accuracy> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Accuracy_GTM> ] ;
-    narr:variation [ narr:text "Accuracy is decoupled from verifiability of business claims: math checks out but revenue is ruled inaccurate absent a signed contract." ; narr:over <https://aswritten.ai/narrative#Assess_Accuracy_RevenueModelTAM> ; narr:over <https://aswritten.ai/narrative#Assess_Accuracy_RevModel> ] ;
-    narr:variation [ narr:text "Minor mechanical errors are noted even amid high rigor (typo 'simples rules')." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Accuracy> ] ;
-    narr:variation [ narr:text "One assessment (TX review) carries no content — an empty slot in the otherwise populated set." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Accuracy_TXReview> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "timing constraints (60s, 20s per beat) are precise" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Accuracy_YCDemoBeats> ] ;
+    narr:keyPhrase [ narr:text "6 users → 12 next week, ~68 minutes, 3 years ago" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Accuracy_YC_Call> ] ;
+    narr:variation [ narr:text "Genre-based leniency: manifestos are permitted citationless claims that trigger deductions in formal strategic documents." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Accuracy> ] ;
+    narr:variation [ narr:text "Explicit correction vs. implicit attribution: some documents are penalized for lacking formal citations despite high factual precision." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Accuracy> ; narr:over <https://aswritten.ai/narrative#Rubric_Accuracy_CustomerArchitect> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
