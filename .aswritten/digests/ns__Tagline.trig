@@ -4,29 +4,25 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__Tagline> {
   <https://aswritten.ai/narrative#Digest_ns__Tagline> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#Tagline> ;
-    narr:childCount "11"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers the candidate taglines and brand-voice observations for [aswritten.ai](narr:Narrative_SIC_Tagline_1), whose name puns Latin *sic* (as written) onto the .ai domain. Several distinct positioning bets sit side by side rather than resolving to one line. The longest is a [7-word second-person hook](narr:Narrative_collective_memory_tagline) — \"AI that thinks like your company thinks\" — echoed in [tagline-hook style notes](narr:StyleObs_tagline_hook). Competing short handles include [category-first \"Collective memory for AI\"](narr:Tagline_1) (noted as used 3x in a two-sentence pitch), the [\"Worldview layer for AI agents\"](narr:Tagline_ADR002) 5-word handle from ADR002, and an [outcome/lifecycle framing](narr:Tagline_2) spanning day-one to exit. Brand voice recurs across observations: the [organization-as-organism metaphor](narr:StyleObs_1) (DNA/phenotype), [git-parallel verbs and emphatic repetition](narr:StyleObs_5), [consistent lowercase .ai stylization](narr:StyleObs_BrandName), and [Tony's pain-first register](narr:StyleObs_TonyPainFirst) reframing cost as a measure, not the problem. No human reconciliation selects a winning tagline; the candidates remain open.""" ;
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "595acc1071f8245cbf28c5d76e62d744b56898a9" ;
+    narr:narration """This hub gathers candidate taglines and brand-voice observations for [aswritten.ai](narr:Narrative_SIC_Tagline_1), whose name puns Latin *sic* (as written) onto the .ai domain. The positioning candidates sit side by side without resolving. The longest is a [7-word second-person hook](narr:Narrative_collective_memory_tagline) — \"AI that thinks like your company thinks\" — whose cadence and direct address are separately noted in [tagline-hook style observations](narr:StyleObs_tagline_hook). A shorter competing handle, the [\"Worldview layer for AI agents\"](narr:Tagline_ADR002) 5-word formulation from ADR002, encodes the same promise at higher compression. Brand-voice observations cluster around recurring devices: the [organization-as-organism metaphor](narr:StyleObs_1) (DNA/phenotype), [emphatic repetition and short declarative clauses](narr:StyleObs_5), [consistent lowercase .ai stylization](narr:StyleObs_BrandName), and [Tony's pain-first register](narr:StyleObs_TonyPainFirst) reframing cost as a measure rather than the problem itself. No human reconciliation selects a winning tagline; the candidates remain open.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_Tagline_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_collective_memory_tagline> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_5> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_BrandName> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_TonyPainFirst> ;
-    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_brandname_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_tagline_hook> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Tagline_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Tagline_2> ;
     narr:covers <https://aswritten.ai/ns/narrative#Tagline_ADR002> ;
     narr:keyPhrase [ narr:text "Your entire organization talks to AI that thinks like your company thinks." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_collective_memory_tagline> ] ;
-    narr:keyPhrase [ narr:text "Collective memory for AI" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Tagline_1> ] ;
     narr:keyPhrase [ narr:text "Worldview layer for AI agents" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Tagline_ADR002> ] ;
-    narr:keyPhrase [ narr:text "Day one-through-exit institutional knowledge" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Tagline_2> ] ;
-    narr:keyPhrase [ narr:text "aswritten.ai — AI that tells you a story as written" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_SIC_Tagline_1> ] ;
-    narr:keyPhrase [ narr:text "Cost isn't the problem, actually. It's a way to measure the problem." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_TonyPainFirst> ] ;
-    narr:variation [ narr:text "Four competing tagline framings coexist with no chosen winner: category-first 'Collective memory for AI' vs. technical 'Worldview layer for AI agents' vs. lifecycle 'Day one-through-exit' vs. the long 7-word conversational hook." ; narr:over <https://aswritten.ai/ns/narrative#Tagline_1> ; narr:over <https://aswritten.ai/ns/narrative#Tagline_ADR002> ; narr:over <https://aswritten.ai/ns/narrative#Tagline_2> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_collective_memory_tagline> ] ;
-    narr:variation [ narr:text "Two naming logics pull apart: the punning brand-etymology line ('sic / as written, tells you a story') vs. the functional product-promise taglines." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_Tagline_1> ; narr:over <https://aswritten.ai/ns/narrative#Tagline_1> ] ;
-    narr:variation [ narr:text "Tony's pain-first register dissents from cost-led pitching — cost is a way to measure the problem, not the problem — cutting against outcome/ROI framings." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TonyPainFirst> ] ;
-    narr:variation [ narr:text "Brand voice itself spans registers: extended biological metaphor (org-as-organism, DNA/phenotype) vs. concrete git-parallel verbs (notices/draft/commit/review/update)." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_5> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "the treatment of an organization as an AI organism, right? Whose DNA, if you will, is expressed" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_1> ] ;
+    narr:keyPhrase [ narr:text "You're making the point you're going straight to the cost. But that's not the problem. Cost isn't the problem, actually. It's a way to measure the problem." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_TonyPainFirst> ] ;
+    narr:keyPhrase [ narr:text "how do you shift positioning, offering, product, teams, and process" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_5> ] ;
+    narr:keyPhrase [ narr:text "aswritten.ai" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_BrandName> ] ;
+    narr:variation [ narr:text "7-word second-person hook vs. 5-word category handle: the longer \"thinks like your company thinks\" bets on empathy/mirroring; the shorter \"Worldview layer for AI agents\" bets on technical precision — different audiences, different registers." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_collective_memory_tagline> ; narr:over <https://aswritten.ai/ns/narrative#Tagline_ADR002> ] ;
+    narr:variation [ narr:text "Name-as-tagline reading: the brand name itself (Latin sic + .ai) carries a self-contained promise — \"AI that tells you a story as written\" — which competes with all explicit tagline candidates as the primary hook." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_Tagline_1> ] ;
+    narr:variation [ narr:text "Pain-first register vs. metaphor-first register: Tony's direct cost-reframe grounds the pitch in operational friction, while the organism/DNA metaphor elevates it to identity — these pull the brand voice in different tonal directions." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_TonyPainFirst> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_1> ] ;
+    narr:writer "anthropic/claude-sonnet-4.6" .
 }
