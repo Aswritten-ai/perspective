@@ -4,40 +4,30 @@
 GRAPH <https://aswritten.ai/narrative#Digest_InformationArchitecture> {
   <https://aswritten.ai/narrative#Digest_InformationArchitecture> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#InformationArchitecture> ;
-    narr:childCount "21"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers Scarlet/aswritten **style and information-architecture observations** — how the documents physically encode argument. The dominant claim across children is that *structure carries the thesis*: markdown tables are treated as the canonical statement, not the prose ([three-tool table as definition](narr:StyleObs_TableDrivenArchitecture), [Tool|Question|Input|Output matrix](narr:StyleObs_FiveToolTable), [tiered-inference table](narr:StyleObs_SelfHosted_TableStructure), [acquirer/range tables](narr:StyleObs_TableHeavyStructure)). Lists do the same work — [Priority-labeled planning memos](narr:StyleObs_DirectListFormat), [What-changed/didn't bullets](narr:StyleObs_BulletedDecisionFormat_Distillation), [parallel design-implication lists](narr:StyleObs_TemporalityValidation_BulletedDesignImplications). Bold inline anchors recur as scannable navigation within flowing prose ([the-frame anchors](narr:StyleObs_BoldSectionHeaders), [≈ mapping headers](narr:StyleObs_AgentSim_BoldHeaders)), and [numbered claim-IRI taxonomies](narr:StyleObs_ARB_TaxonomicStructure) supply cross-referencing convention. Dates span Mar 2025–May 2026; the pattern is consistent across the idiolect, not evolving toward a verdict.""" ;
+    narr:childCount "15"^^xsd:integer ;
+    narr:generatedFrom "9de5dccd26d7232e6cf77fd376286b471cd85c02" ;
+    narr:narration """This hub tracks the evolution of Scarlet/aswritten's [information architecture](narr:StyleObs_TableDrivenArchitecture) and stylistic idiolect. The core thesis remains that structure is the primary vehicle for argument, with [markdown tables](narr:StyleObs_TableHeavyStructure) serving as the canonical definition of architecture rather than prose. This pattern has expanded from internal strategy memos to the [landing page itself](narr:Position_LandingPageContentCommentaryIA), where the product's own epistemic structure—primary source material paired with brief commentary—is mirrored in the page's design. The idiolect relies heavily on [scannable inline anchors](narr:StyleObs_BoldSectionHeaders) and [parallel bulleted lists](narr:StyleObs_TemporalityValidation_BulletedDesignImplications) to signal transitions from observation to requirement. Recent entries show a shift toward [self-demonstrating design](narr:Narrative_LandingPageEpistemicArchitecture), where the document's physical layout acts as a proof of the concept it describes, utilizing [bold headers](narr:StyleObs_AgentSim_BoldHeaders) and [antithetical phrasing](narr:StyleObs_9) to sharpen architectural distinctions.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_LandingPageEpistemicArchitecture> ;
+    narr:covers <https://aswritten.ai/narrative#Position_LandingPageContentCommentaryIA> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_9> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_ARB_TaxonomicStructure> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_ActionItemList> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_AgentSim_BoldHeaders> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_AntiPatternListStructure> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BoldEmphasis> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BoldSectionHeaders> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BulletedDecisionFormat_Distillation> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BulletedLaunchList> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_DirectListFormat> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_FiveToolTable> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_FundraisingBriefReview_BulletedStaleness> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_PipelineRings> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_SelfHosted_TableStructure> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TableDrivenArchitecture> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TableForClarity> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TableHeavyStructure> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TableStructure> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TableStructure_BDF> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_TableTimeline> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TemporalityValidation_BulletedDesignImplications> ;
-    narr:keyPhrase [ narr:text "structure IS the argument" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_DirectListFormat> ] ;
-    narr:keyPhrase [ narr:text "the definitive statement of the architecture, not the prose" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TableDrivenArchitecture> ] ;
-    narr:keyPhrase [ narr:text "Markdown table used as canonical architecture definition: Tool | Question | Input | Output — four-column single-responsibility matrix" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_FiveToolTable> ] ;
+    narr:keyPhrase [ narr:text "**1. Recency-weighted retrieval ≈ temporality dimension.**" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AgentSim_BoldHeaders> ] ;
+    narr:keyPhrase [ narr:text "Memories need an explicit speculative/aspirational/now/historical marker" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TemporalityValidation_BulletedDesignImplications> ] ;
+    narr:keyPhrase [ narr:text "| Acquirer | Why they'd buy | Likely range |" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TableHeavyStructure> ] ;
     narr:keyPhrase [ narr:text "This is my life's work." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_9> ] ;
-    narr:keyPhrase [ narr:text "Pipeline organized in 9 rings." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_PipelineRings> ] ;
-    narr:variation [ narr:text "StyleObs_9 documents a first-person narrative voice (antithesis, active constructions, 'This is my life's work') — a prose-register concern distinct from the structural-formatting mainline." ; narr:over <https://aswritten.ai/narrative#StyleObs_9> ] ;
-    narr:variation [ narr:text "Not all-structure: documents shift register by section — strategic prose for funding, checklist for launch, table for timeline — so 'structure is the argument' is qualified, not absolute." ; narr:over <https://aswritten.ai/narrative#StyleObs_BulletedLaunchList> ; narr:over <https://aswritten.ai/narrative#StyleObs_9> ] ;
-    narr:variation [ narr:text "PipelineRings uses a concentric-ring spatial metaphor for organization — a structural outlier against the table/list scaffolding everything else relies on." ; narr:over <https://aswritten.ai/narrative#StyleObs_PipelineRings> ] ;
-    narr:variation [ narr:text "Attachment split: StyleObs_9 and BoldEmphasis attach via skos:related; every other child via skos:broader — a structurally distinct grouping worth noting." ; narr:over <https://aswritten.ai/narrative#StyleObs_9> ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldEmphasis> ] ;
-    narr:variation [ narr:text "ARB_TaxonomicStructure goes beyond formatting to a cross-referencing convention (backtick claim IRIs, numbered pain-point taxonomy) and flags a brand-new domain seed not yet in the perspective." ; narr:over <https://aswritten.ai/narrative#StyleObs_ARB_TaxonomicStructure> ] ;
-    narr:variation [ narr:text "ActionItemList is contentless (quote only, no observation body) — a thin child that may not support recognition on its own." ; narr:over <https://aswritten.ai/narrative#StyleObs_ActionItemList> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Scarlet caught it as a composition artifact, not a behavior change" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BoldEmphasis> ] ;
+    narr:variation [ narr:text "The use of tables as a 'canonical' definition is occasionally contrasted with prose-heavy 'gift round' sections that prioritize narrative flow." ; narr:over <https://aswritten.ai/narrative#StyleObs_BulletedLaunchList> ] ;
+    narr:variation [ narr:text "Bold emphasis is used not just for navigation, but as an epistemic marker to signal analytical pivots and corrections." ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldEmphasis> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
