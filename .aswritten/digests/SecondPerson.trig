@@ -4,25 +4,22 @@
 GRAPH <https://aswritten.ai/narrative#Digest_SecondPerson> {
   <https://aswritten.ai/narrative#Digest_SecondPerson> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#SecondPerson> ;
-    narr:childCount "8"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers style observations on **second-person and direct address** across aswritten's documents. The mainline is a consistent conversational [second-person register](narr:StyleObs_SecondPerson) — \"you/your\" keeping every sentence in the prospect's frame, including a possessive section header (\"Your Investment\") that hands the reader a stake. The same [you/your throughout](narr:StyleObs_DirectAddress_1) appears in guidance. Two distinct *uses* of second person sit side by side: an [emotional, confrontational register](narr:StyleObs_DirectSecondPerson) (\"You fear you're not enough\") and a [technical imperative](narr:StyleObs_ImperativeTechnical) where SQL and numbered steps assume reader competence. Imperative mood recurs — [\"Do NOT list as a client.\"](narr:StyleObs_DirectAddress) and the [\"Imagine\" prompt](narr:StyleObs_SharedMemoryQuote). Register is deliberately hybrid: one document [alternates formal structure with lowercase brain-dump voice](narr:StyleObs_8).""" ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "cd27a427e8b5dccd6e96a8785b97649df2b5b02c" ;
+    narr:narration """This hub tracks the evolution of aswritten’s [conversational second-person register](narr:StyleObs_SecondPerson), which functions as a primary mechanism for maintaining prospect-centric framing. The style consistently employs [you/your throughout](narr:StyleObs_DirectAddress_1) to establish personal stake, notably in section headers like 'Your Investment'. This address shifts across three distinct modes: a [technical imperative](narr:StyleObs_ImperativeTechnical) that assumes reader competence through SQL and numbered steps, a [shared-memory prompt](narr:StyleObs_SharedMemoryQuote) using the 'Imagine' imperative, and an [authoritative, unhedged declaration](narr:StyleObs_DirectAddress) that mirrors pitch-deck voice. Recent observations highlight a [hybrid structural approach](narr:StyleObs_8), where bolded canonical terminology and explicit negation patterns—such as 'not quality control'—are used to define scope through antithesis. While the second-person 'you' remains the dominant anchor, the narrative voice occasionally pivots to [first-person plural](narr:StyleObs_SecondPerson_Directive) to signal team alignment, particularly when defining what the system is intentionally excluding.""" ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_8> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_DirectAddress> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_DirectAddress_1> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_DirectSecondPerson> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ImperativeTechnical> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_SecondPerson> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_SecondPerson_Directive> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_SharedMemoryQuote> ;
     narr:keyPhrase [ narr:text "Do NOT list as a client." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_DirectAddress> ] ;
-    narr:keyPhrase [ narr:text "Direct second-person address in quoted analysis: 'You fear you're not enough. She fears she's too much.' Creates intimacy and confrontation simultaneously." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_DirectSecondPerson> ] ;
-    narr:keyPhrase [ narr:text "I built aswritten to feather our arrows" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_8> ] ;
     narr:keyPhrase [ narr:text "Imagine if [the agents] had shared memory or topics and you could say, Scarlet's bot, Tony's bot, a collaborator's bot — we're all friends. Here's shared memory." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SharedMemoryQuote> ] ;
+    narr:keyPhrase [ narr:text "I'd start with adding a couple just general documents about what you're doing" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SecondPerson> ] ;
     narr:keyPhrase [ narr:text "**What we're NOT showing** (to keep" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SecondPerson_Directive> ] ;
-    narr:variation [ narr:text "Not all children are second-person: one uses first-person plural 'we' for team alignment, sitting under a SecondPerson hub." ; narr:over <https://aswritten.ai/narrative#StyleObs_SecondPerson_Directive> ] ;
-    narr:variation [ narr:text "Two opposing functions of 'you': emotional intimacy/confrontation vs cold technical imperative assuming competence." ; narr:over <https://aswritten.ai/narrative#StyleObs_DirectSecondPerson> ; narr:over <https://aswritten.ai/narrative#StyleObs_ImperativeTechnical> ] ;
-    narr:variation [ narr:text "Register is split, not uniform — formal structured sections vs informal lowercase brain-dump voice within a single document." ; narr:over <https://aswritten.ai/narrative#StyleObs_8> ] ;
-    narr:variation [ narr:text "Some 'direct' framing is first-person declaration (investor/pitch voice), not second-person address." ; narr:over <https://aswritten.ai/narrative#StyleObs_DirectAddress> ; narr:over <https://aswritten.ai/narrative#StyleObs_8> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "this isn't a hypothetical failure mode, it's the default state" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_8> ] ;
+    narr:variation [ narr:text "The shift from second-person address to first-person plural 'we' introduces a collective team voice that competes with the individual prospect-centric frame." ; narr:over <https://aswritten.ai/narrative#StyleObs_SecondPerson_Directive> ] ;
+    narr:variation [ narr:text "The use of 'antithetical definition' (negation) creates a boundary-setting style that contrasts with the otherwise inviting, imperative tone." ; narr:over <https://aswritten.ai/narrative#StyleObs_8> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
