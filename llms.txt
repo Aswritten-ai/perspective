@@ -52,7 +52,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Narrative_EnterpriseShapePrimaryFocus](hub-Narrative_EnterpriseShapePrimaryFocus.html): The search for a primary sales focus has shifted toward the enterprise customer-shape as a tentative priority, defined n
 - [Narrative_ExpertiseOnDemandReframe](hub-Narrative_ExpertiseOnDemandReframe.html): This hub reframes the product from an ambient worldview compiled at session start to expertise invoked at the moment of 
 - [Narrative_OrgWorldview](hub-Narrative_OrgWorldview.html): This hub gathers the org's account of how aswritten builds its understanding of a client. Two foundation-level children 
-- [Narrative_PerspectiveOnSpec](hub-Narrative_PerspectiveOnSpec.html): This hub gathers the thesis that a perspective built *on spec* — before any prospect interview — is itself the pitch. Th
+- [Narrative_PerspectiveOnSpec](hub-Narrative_PerspectiveOnSpec.html): This hub explores the thesis that a perspective built *on spec* functions as the primary sales instrument. The core thro
 - [Narrative_PerspectiveVsInformation](hub-Narrative_PerspectiveVsInformation.html): This hub centers on the thesis that modules deliver curated perspective rather than mere information, distinguishing exp
 - [Narrative_SalesAsDelivery](hub-Narrative_SalesAsDelivery.html): The core thesis that sales motion and product delivery are identical has evolved from a tactical principle into a codifi
 - [Narrative_SeparationPrincipleProductVsOrg](hub-Narrative_SeparationPrincipleProductVsOrg.html): This hub gathers a single dated demolition pass (Mar 2026) enacting one principle: collapse the product/org split by eli
