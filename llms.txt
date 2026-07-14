@@ -71,7 +71,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [PackagingPricing](hub-PackagingPricing.html): Pricing strategy has moved from flat per-repo models toward a multi-tier structure that distinguishes between self-serve
 - [PersonasJTBD](hub-PersonasJTBD.html): The persona and Job-to-be-Done (JTBD) model has evolved from a four-archetype set—Knowledge Packager, Trust Seeker, Tink
 - [PositioningThesis](hub-PositioningThesis.html): This hub tracks the evolution of aswritten.ai’s strategic identity, centering on the shift from a tool-based narrative t
-- [PrimaryActors](hub-PrimaryActors.html): This hub gathers the cast of who the product is *for* and *with* — and the children do not agree on a single primary act
+- [PrimaryActors](hub-PrimaryActors.html): This hub maintains the evolving definition of the product's primary actors, mapping the tension between individual techn
 - [Primitives](hub-Primitives.html): This hub defines the core structural primitives of the aswritten knowledge graph, centered on the content/commentary spl
 - [Process](hub-Process.html): A June 12 process-redesign session whose stated aim was \"I would like to improve the mess\", structured as correcting f
 - [ProcessPolicyUpdates](hub-ProcessPolicyUpdates.html): This hub tracks the evolution of process and policy, centering on the perspective-vs-implementation boundary established
