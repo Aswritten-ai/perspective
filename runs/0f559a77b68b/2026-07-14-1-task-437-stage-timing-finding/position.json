@@ -1,0 +1,30 @@
+{
+  "positions" : [ {
+    "name" : "MeasuringInterStageDeadTime",
+    "frame" : "How much of the extraction engine's wall clock is inter-stage dead time, and where does it concentrate across the pipeline?",
+    "members" : [ "src-1", "src-2", "src-3" ],
+    "why" : "src-1 frames the finding as coming from instrumenting the multipass engine; src-2 quantifies the aggregate share of wall clock with no LLM call in flight; src-3 breaks that aggregate into the three specific inter-stage gaps (navigate-to-resolve, resolve-to-position, position-to-narrative). Read together they establish the empirical baseline the rest of the investigation (cache bug, fix, TTL) responds to — a diagnostic scoping move, not yet a cause or a remedy.",
+    "under" : [ "Narrative_NavigationReplacesEmbeddedSnapshot" ]
+  }, {
+    "name" : "SelfInvalidatingGraphCacheDiagnosis",
+    "frame" : "What causes the corpus graph cache to invalidate itself against the very transaction the run just wrote?",
+    "members" : [ "src-4", "src-5", "src-6", "src-7" ],
+    "why" : "src-4 names the self-invalidating cache as the largest contributor to the dead time; src-5 specifies the cache key (owner, repo, ref, tree sha); src-6 identifies that both the consult prefetch and the navigator's post-agent reads were resolving that key against the run's own work branch; src-7 traces the causal chain to completion — the source-spur commit moves the tree sha mid-run, so the navigator's read misses the warm cache and rebuilds the full 64,000-quad corpus for one transaction. Read as a single causal account building toward the bug's mechanism, held prior to any fix.",
+    "under" : [ "Narrative_NavigationReplacesEmbeddedSnapshot" ]
+  }, {
+    "name" : "BaseRefOverWorkBranchFix",
+    "frame" : "Should the engine's consult and navigate reads resolve against the run's own work branch, or against the base ref the run was cut from?",
+    "members" : [ "src-8", "src-9", "src-10", "src-11", "src-12" ],
+    "why" : "src-8 reports Scarlet's ruling and src-9 is that ruling verbatim ('the base ref is correct'); src-10 states the resulting implementation — reads now target the base ref, not the run's own freshly-committed branch; src-11 draws the boundary of that fix, clarifying that the document under extraction still reaches the engine only through pass one, never through these reads; src-12 states the consequence — one warm graph shared by both reads, immune to the run's own commit. Read together as the decision-and-consequence arc that answers the diagnosis in the prior group.",
+    "under" : [ "Narrative_NavigationReplacesEmbeddedSnapshot" ]
+  }, {
+    "name" : "PromptCacheTTLDecoupling",
+    "frame" : "How does inter-stage dead time interact with Anthropic's prompt-cache TTL, and what TTL keeps the cache win independent of that dead time?",
+    "members" : [ "src-13", "src-14", "src-15" ],
+    "why" : "src-13 asserts the coupling between the dead time and the prompt cache; src-14 quantifies the exposure — the default five-minute ephemeral cache is already shorter than the measured 336-second gap, risking a silent, error-free cost reversion on a slightly slower document; src-15 records Scarlet's approval of a one-hour TTL specifically to decouple the cache win from the dead time. Read as one arc from exposure to approved remedy, distinct from the graph-cache fix above though triggered by the same underlying dead-time finding.",
+    "under" : [ "Narrative_NavigationReplacesEmbeddedSnapshot" ]
+  } ],
+  "attaches" : [ ],
+  "position_revisions" : [ ],
+  "ungrouped" : [ "src-16" ]
+}
