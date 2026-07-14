@@ -1,0 +1,32 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-8",
+    "regions" : [ "autonomy" ],
+    "evidence" : [ {
+      "quote" : "Scarlet's ruling: \"the base ref is correct.\"",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The ruling affirms the selected reference as the correct basis, carrying a self-directed choice.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-9",
+    "regions" : [ "autonomy" ],
+    "evidence" : [ {
+      "quote" : "the base ref is correct.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The declarative ruling directly asserts the chosen basis as correct.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-15",
+    "regions" : [ "autonomy" ],
+    "evidence" : [ {
+      "quote" : "Scarlet approved the one-hour cache TTL",
+      "kind" : "performed-act"
+    } ],
+    "why" : "Approval records Scarlet's own authorization of the selected operating cadence.",
+    "reported" : true
+  } ],
+  "mints" : [ ],
+  "unmarked" : [ "src-1", "src-2", "src-3", "src-4", "src-5", "src-6", "src-7", "src-10", "src-11", "src-12", "src-13", "src-14", "src-16" ]
+}
