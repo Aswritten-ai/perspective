@@ -106,7 +106,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [AICompanyizationCase](hub-AICompanyizationCase.html): This hub tracks the interplay between typographic rigor and authorial voice. The architecture of the text relies on ALL-
 - [Analogy](hub-Analogy.html): This hub gathers the analogies and metaphors the narrative reaches for to make AI-collective-memory legible, spanning se
 - [Anaphora](hub-Anaphora.html): This hub gathers style observations of anaphora — repeated clause-initial structure deployed for emphasis, rhythm, and m
-- [Antithesis](hub-Antithesis.html): This hub gathers uses of antithesis as a recurring rhetorical pattern across the aswritten.ai narrative and pitch. Most 
+- [Antithesis](hub-Antithesis.html): This hub catalogs the use of antithesis as a primary rhetorical engine within the aswritten.ai narrative. The children d
 - [BrandNameStylization](hub-BrandNameStylization.html): This hub tracks the orthographic and brand identity of aswritten, defined primarily by a lowercase brand name with .ai T
 - [CadenceRhythm](hub-CadenceRhythm.html): This hub gathers the document's cadence and rhythm devices. The dominant engine is the rule of three: a git-native triad
 - [CitationConventions](hub-CitationConventions.html): This hub documents the evolving citation conventions used to ground claims in source material. The primary evidentiary r
