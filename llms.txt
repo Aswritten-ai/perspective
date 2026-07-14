@@ -109,7 +109,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [BrandNameStylization](hub-BrandNameStylization.html): This hub gathers observations about orthographic and brand stylization across aswritten's documents. The dominant patter
 - [CadenceRhythm](hub-CadenceRhythm.html): This hub gathers the document's cadence and rhythm devices. The dominant engine is the rule of three: a git-native triad
 - [Calibration](hub-Calibration.html): Calibration gathers how aswritten validates its own quality — the recurring frame is optometric. The optometrist model a
-- [CitationConventions](hub-CitationConventions.html): This hub collects observations about how spoken and written evidence is cited across the perspective's documents. The do
+- [CitationConventions](hub-CitationConventions.html): This hub documents the evolving citation conventions used to ground claims in source material. The primary evidentiary r
 - [FlowCoherence](hub-FlowCoherence.html): This hub gathers style observations of a single first-person analytical document, narrating its voice and architecture r
 - [GrammarSyntax](hub-GrammarSyntax.html): Grammar and syntax observations of Scarlet's writing converge on a few load-bearing habits. Voice is overwhelmingly acti
 - [IdiolectPhrasing](hub-IdiolectPhrasing.html): This hub gathers idiolect and register observations across speakers. Tony's voice dominates the enthusiasm register: mil
