@@ -61,7 +61,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [NarrativeAnchor](hub-NarrativeAnchor.html): This hub gathers the meanings of *narrative* at the center of aswritten.ai. The substantive core casts narrative as the 
 - [NarrativeDrivenRoadmap](hub-NarrativeDrivenRoadmap.html): This roadmap hub braids two strands. The go-to-market strand reframes positioning from consulting-first toward a \"train
 - [NorthStarMetrics](hub-NorthStarMetrics.html): This hub gathers the candidate \"north star\" signals — and they do not agree on one number. The strongest product claim
-- [OperatingModelShifts](hub-OperatingModelShifts.html): The hub traces a multi-front shift in how work, staffing, and AI systems are organized. In Jul 2025, Scarlet and Tony fr
+- [OperatingModelShifts](hub-OperatingModelShifts.html): The operating model has evolved from early structural experiments into a unified strategy of curation and expert-driven 
 - [Opportunity](hub-Opportunity.html): The opportunity is framed through three distinct problem lenses, none crowned. The strategy-execution disconnect casts i
 - [OrganizationalChangeManual](hub-OrganizationalChangeManual.html): This hub gathers field notes toward a manual for organizational change in AI adoption — the recurring claim being that t
 - [Outcomes](hub-Outcomes.html): This hub gathers the claimed outcomes of the product, dominated by a quantified ROI stack for a 10-person team: onboardi
