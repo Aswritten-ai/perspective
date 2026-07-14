@@ -102,7 +102,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [WhatItsNot](hub-WhatItsNot.html): This hub collects the positioning negatives — what aswritten is *not*. The load-bearing boundary is search vs. aswritten
 
 ## Voice & style
-- [AICompanyizationCase](hub-AICompanyizationCase.html): This hub gathers observations about capitalization and typographic emphasis as authorial style signals. The dominant pat
+- [AICompanyizationCase](hub-AICompanyizationCase.html): This hub tracks the interplay between typographic rigor and authorial voice. The architecture of the text relies on ALL-
 - [Analogy](hub-Analogy.html): This hub gathers the analogies and metaphors the narrative reaches for to make AI-collective-memory legible, spanning se
 - [Anaphora](hub-Anaphora.html): This hub gathers style observations of anaphora — repeated clause-initial structure deployed for emphasis, rhythm, and m
 - [Antithesis](hub-Antithesis.html): This hub gathers uses of antithesis as a recurring rhetorical pattern across the aswritten.ai narrative and pitch. Most 
