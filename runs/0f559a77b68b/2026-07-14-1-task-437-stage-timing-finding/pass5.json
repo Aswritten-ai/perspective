@@ -1,0 +1,39 @@
+{
+  "placements" : [ {
+    "lineage" : {
+      "relation" : "extends",
+      "target" : "Narrative_NavigationReplacesEmbeddedSnapshot"
+    },
+    "supporting_segments" : [ "src-1", "src-2", "src-3", "src-16" ],
+    "under" : [ "Narrative_NavigationReplacesEmbeddedSnapshot" ],
+    "why" : "The measurement finding (57% of wall clock is inter-stage dead time, broken into three named gaps) and the closing observation that the remaining time is IO/round-trip bound are facts in service of one durable subject future envelopes will keep feeding: dead time in this pipeline is a target to be measured and minimized, not fixed cost. No existing leaf names pipeline latency/dead-time as a subject — the closest is Narrative_NavigationReplacesEmbeddedSnapshot, whose own Position_NavigationDropsContextOrderOfMagnitude already treats per-call context/latency as an architectural lever ('the fix for the flakiness and the direction of the architecture were one decision'). This mint extends that performance thread into the extraction engine's own stage-to-stage timing, which nothing existing covers.",
+    "verdict" : "mint",
+    "leaf" : "Narrative_ExtractionEngineDeadTimeReduction",
+    "title" : "Extraction Pipeline Dead Time Is a Measurable, Reducible Target",
+    "theme" : "The time between LLM calls in the multipass extraction engine is dead time that should be measured stage-by-stage and driven toward its true floor, not accepted as fixed overhead.",
+    "consulted" : [ "ArchitectureOverview", "Narrative_NavigationReplacesEmbeddedSnapshot", "Position_NavigationDropsContextOrderOfMagnitude", "Narrative_ContextArch_3", "Narrative_LossyCompressionProblem", "SystemTopology" ]
+  }, {
+    "lineage" : {
+      "relation" : "extends",
+      "target" : "Narrative_NavigationReplacesEmbeddedSnapshot"
+    },
+    "supporting_segments" : [ "src-4", "src-5", "src-6", "src-7", "src-8", "src-9", "src-10", "src-11", "src-12" ],
+    "under" : [ "Narrative_NavigationReplacesEmbeddedSnapshot" ],
+    "why" : "src-4 through src-12 form one continuous causal-and-remedial arc — cache key shape, the bug (reads resolving against the run's own mutating work branch), the mechanism (source-spur commit moves the tree sha mid-run), Scarlet's ruling ('the base ref is correct'), the resulting fix, and its boundary (pass one still delivers the extracted document; these reads never do) and consequence (one shared warm graph immune to the run's own commit). This is a durable architectural principle about how cache keys must relate to mutable refs, not a one-time fact — future envelopes about other self-invalidating caches would plausibly feed this same leaf. Pass-2 already bound the navigator-read portions of this arc (src-6, src-7, src-11) to Narrative_NavigationReplacesEmbeddedSnapshot as extensions of the 2026-06-16 consumer-read decision; this leaf makes that operational detail — the specific ref/tree-sha keying mechanism and its fix — its own thematic home rather than overloading the digest-navigation narrative with cache-key mechanics it never previously carried.",
+    "verdict" : "mint",
+    "leaf" : "Narrative_StableRefCacheKeying",
+    "title" : "Cache Keys Must Resolve Against a Stable Ref, Not the Run's Own Mutating Branch",
+    "theme" : "A corpus graph cache keyed on ref and tree sha self-invalidates when a run's own reads resolve against the work branch it is actively committing to; keying those reads to the stable base ref instead removes the self-inflicted invalidation without changing what data the pipeline consumes.",
+    "consulted" : [ "ArchitectureOverview", "Narrative_NavigationReplacesEmbeddedSnapshot", "SystemTopology", "Narrative_GraphInMemoryStorage", "Narrative_ManagedRepoPerUser" ]
+  }, {
+    "verdict" : "mint",
+    "leaf" : "Narrative_PromptCacheTTLDecoupling",
+    "title" : "Prompt Cache TTL Must Outlast Pipeline Dead Time",
+    "theme" : "When a prompt cache's TTL is shorter than the pipeline's own inter-stage dead time, the cached prefix can evaporate between passes with no error, silently reverting the cost savings — the TTL must be set to outlast realistic dead-time gaps.",
+    "under" : [ "Narrative_ExtractionEngineDeadTimeReduction" ],
+    "supporting_segments" : [ "src-13", "src-14", "src-15" ],
+    "why" : "src-13 asserts the coupling between dead time and the prompt cache; src-14 quantifies the exposure (default five-minute ephemeral TTL already shorter than the measured 336-second gap, risking silent cost reversion); src-15 records the approved one-hour TTL that decouples the cache win from dead time. This is a distinct architectural principle from the cache-key fix (it concerns Anthropic's prompt cache, not the corpus graph cache) but is triggered by, and only intelligible against, the dead-time measurement established in this same envelope — so it sits under the freshly minted dead-time leaf rather than under the ref/branch cache-key leaf. No existing leaf addresses prompt-cache TTL at all; Narrative_PerspectiveResponseOrderedByVolatility's child Position_SortVsRankTensionResolved names 'prompt-caching optimization' only as a flagged missing specification, not as a resolved principle, so it is related but not an exact or even close container for this specific TTL-decoupling claim.",
+    "consulted" : [ "Narrative_NavigationReplacesEmbeddedSnapshot", "Narrative_PerspectiveResponseOrderedByVolatility", "Position_SortVsRankTensionResolved" ]
+  } ],
+  "unplaced" : [ ]
+}
