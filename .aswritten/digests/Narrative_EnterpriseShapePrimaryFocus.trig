@@ -4,26 +4,28 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Narrative_EnterpriseShapePrimaryFocus> {
   <https://aswritten.ai/narrative#Digest_Narrative_EnterpriseShapePrimaryFocus> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Narrative_EnterpriseShapePrimaryFocus> ;
-    narr:childCount "7"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """On 2026-04-21 Scarlet applied [Tony's additive-vs-incremental test](narr:Claim_EnterpriseShapeTentativePriority) to her funnel and tentatively named the the enterprise customer-shape as primary focus — explicitly Notion-level conviction, not a decision. The hub reframes [\"enterprise shape\"](narr:Claim_EnterpriseShapeEngagementPattern) as an engagement pattern (internal expert as bottleneck + stakeholder access), not org size — so a 5-person practice and a 150-person consultancy qualify alike. The corollary move: [expertise-distributor archetypes are deprioritized](narr:Claim_ExpertiseDistributorDeprioritized) to a secondary, keep-warm track until the primary track closes 2-3 deals. A [cohort question](narr:Claim_CohortDiagnosticForProspects) becomes a qualification diagnostic for deployment architecture. The framing carries its own check: [explicit validation and rejection criteria](narr:Claim_EnterpriseShapeValidationCriteria) gate promotion to decision, and an [earlier convergence-in-one-week finding](narr:Claim_EnterpriseCustomerARBConvergenceSpeed) (2025-07-15) is flagged as sample-of-one. Throughout, Scarlet keeps the [sponsor-not-champion risk](narr:Claim_SponsorNotChampionYouAreChampion) live — the customer's chief architect is an ally, not someone who'll ram it through.""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_CohortDiagnosticForProspects> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_EnterpriseShapeEngagementPattern> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_EnterpriseShapeTentativePriority> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_EnterpriseShapeValidationCriteria> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_EnterpriseCustomerARBConvergenceSpeed> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_ExpertiseDistributorDeprioritized> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_SponsorNotChampionYouAreChampion> ;
-    narr:keyPhrase [ narr:text "Conviction is tentative (Notion-level) — needs validation with 2-3 more the enterprise customer-shape prospects before moving to decision." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EnterpriseShapeTentativePriority> ] ;
-    narr:keyPhrase [ narr:text "if the only evidence is one pilot with a lukewarm champion (the customer's chief architect is sponsor, not champion), this may be rationalization." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EnterpriseShapeTentativePriority> ] ;
-    narr:keyPhrase [ narr:text "'Enterprise shape' should be read as the engagement pattern — internal expert as bottleneck + stakeholder access — rather than as enterprise-only org size." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EnterpriseShapeEngagementPattern> ] ;
-    narr:keyPhrase [ narr:text "Expertise-distributor archetypes (a beta user from outside tech, a founder beta user, a collaborator, an engineering manager at the customer-as-course-creator) are relatively incremental for their users and should be deprioritized as primary sales targets." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ExpertiseDistributorDeprioritized> ] ;
-    narr:keyPhrase [ narr:text "the customer's chief architect is interested, but he's not. He may be like ally, but I wouldn't say he's necessarily a champion." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_SponsorNotChampionYouAreChampion> ] ;
-    narr:keyPhrase [ narr:text "3+ the enterprise customer-shape prospects fail to convert via process sale within 90 days" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EnterpriseShapeValidationCriteria> ] ;
-    narr:keyPhrase [ narr:text "The cohort question is now a qualification diagnostic for deployment architecture decisions." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CohortDiagnosticForProspects> ] ;
-    narr:variation [ narr:text "The author flags her own focus as possibly rationalization — sample of one (the enterprise customer) plus a lukewarm sponsor, not a champion." ; narr:over <https://aswritten.ai/narrative#Claim_EnterpriseShapeTentativePriority> ; narr:over <https://aswritten.ai/narrative#Claim_SponsorNotChampionYouAreChampion> ] ;
-    narr:variation [ narr:text "Deprioritization is explicitly reversible: if 2+ expertise-distributor prospects convert at higher rates, the rejection criteria fire and the primary focus flips." ; narr:over <https://aswritten.ai/narrative#Claim_ExpertiseDistributorDeprioritized> ; narr:over <https://aswritten.ai/narrative#Claim_EnterpriseShapeValidationCriteria> ] ;
-    narr:variation [ narr:text "The cohort diagnostic can steer prospects away from this shape entirely — toward MCP for power users or chatbot for customer-facing/AI-skeptical staff." ; narr:over <https://aswritten.ai/narrative#Claim_CohortDiagnosticForProspects> ] ;
-    narr:variation [ narr:text "The most novel supporting evidence (one-week convergence) is dated 2025-07-15 and self-labeled sample-of-one, weaker than the 2026-04-21 framing it underwrites." ; narr:over <https://aswritten.ai/narrative#Claim_EnterpriseCustomerARBConvergenceSpeed> ] ;
-    narr:writer "claude (subscription)" .
+    narr:childCount "12"^^xsd:integer ;
+    narr:generatedFrom "4ee3dfa1b09322db9414ced26486e26d250bbe96" ;
+    narr:narration """The search for a primary sales focus has shifted toward the [enterprise customer-shape](narr:Position_EnterpriseShapeTentativePriority) as a tentative priority, defined not by organizational scale but by a specific [engagement pattern](narr:Position_EnterpriseShapeEngagementPattern) involving internal expertise bottlenecks and stakeholder access. This trajectory is currently gated by [explicit validation criteria](narr:Position_EnterpriseShapeValidationCriteria) to avoid over-indexing on a single pilot, while [expertise-distributor archetypes](narr:Position_ExpertiseDistributorDeprioritized) have been relegated to a secondary track. Recent refinements suggest that the [expert-as-bottleneck](narr:Position_ConvergenceBuyerIsPlural) narrative is more accurately a 'decision junction' story, where the buyer is plural and the core pain is [memory scarcity](narr:Position_SelfIDAsQualifyingSignal). A new, high-conviction [GTM wedge](narr:Narrative_DiscoveryToolGTMWedge) has emerged: positioning the tool as infrastructure for consulting discovery engagements, which offers a sellable focus without [clipping the wings](narr:Narrative_GeneralVsSellableTension) of the broader, general-purpose capability. Qualification is now sharpened by [deployment-specific diagnostics](narr:Position_CohortDiagnosticForProspects) and a [strict disqualification rule](narr:Position_DisqualificationRule) for non-buyers.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_DiscoveryToolGTMWedge> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_GeneralVsSellableTension> ;
+    narr:covers <https://aswritten.ai/narrative#Position_CohortDiagnosticForProspects> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ConvergenceBuyerIsPlural> ;
+    narr:covers <https://aswritten.ai/narrative#Position_DisqualificationRule> ;
+    narr:covers <https://aswritten.ai/narrative#Position_EnterpriseCustomerARBConvergenceSpeed> ;
+    narr:covers <https://aswritten.ai/narrative#Position_EnterpriseShapeEngagementPattern> ;
+    narr:covers <https://aswritten.ai/narrative#Position_EnterpriseShapeTentativePriority> ;
+    narr:covers <https://aswritten.ai/narrative#Position_EnterpriseShapeValidationCriteria> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ExpertiseDistributorDeprioritized> ;
+    narr:covers <https://aswritten.ai/narrative#Position_SelfIDAsQualifyingSignal> ;
+    narr:covers <https://aswritten.ai/narrative#Position_SponsorNotChampionYouAreChampion> ;
+    narr:keyPhrase [ narr:text "the bottleneck is not scarce expertise but scarce memory at the decision junction" ; narr:phraseSource <https://aswritten.ai/narrative#Position_ConvergenceBuyerIsPlural> ] ;
+    narr:keyPhrase [ narr:text "aswritten as the infrastructure for consulting discovery engagements" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_DiscoveryToolGTMWedge> ] ;
+    narr:keyPhrase [ narr:text "a sponsor is excited and aligned; a champion rams it through internally" ; narr:phraseSource <https://aswritten.ai/narrative#Position_SponsorNotChampionYouAreChampion> ] ;
+    narr:keyPhrase [ narr:text "no answers to questions two and three means friendly or pass, not buyer" ; narr:phraseSource <https://aswritten.ai/narrative#Position_DisqualificationRule> ] ;
+    narr:keyPhrase [ narr:text "you've got to package it in different wrapping paper for different industries" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_GeneralVsSellableTension> ] ;
+    narr:variation [ narr:text "The 'discovery tool' wedge provides a concrete sellable use case, but risks narrowing the product's general-purpose moat." ; narr:over <https://aswritten.ai/narrative#Narrative_DiscoveryToolGTMWedge> ; narr:over <https://aswritten.ai/narrative#Narrative_GeneralVsSellableTension> ] ;
+    narr:variation [ narr:text "The enterprise-shape focus remains tentative and potentially rationalized by a sample-of-one pilot." ; narr:over <https://aswritten.ai/narrative#Position_EnterpriseShapeTentativePriority> ; narr:over <https://aswritten.ai/narrative#Position_EnterpriseCustomerARBConvergenceSpeed> ] ;
+    narr:variation [ narr:text "The lack of an internal champion means the vendor must act as the project manager, or the deal risks stalling." ; narr:over <https://aswritten.ai/narrative#Position_SponsorNotChampionYouAreChampion> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
