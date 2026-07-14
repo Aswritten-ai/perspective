@@ -4,10 +4,11 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__Outcomes> {
   <https://aswritten.ai/narrative#Digest_ns__Outcomes> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#Outcomes> ;
-    narr:childCount "8"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers the claimed [outcomes](narr:Outcome_TotalValue) of the product, dominated by a quantified ROI stack for a 10-person team: [onboarding savings](narr:Outcome_OnboardingSavings) of [amount]/year, [knowledge-loss prevention](narr:Outcome_KnowledgeLossPrevention) of [amount]/year, and [tool-optimization gain](narr:Outcome_ToolOptimization) of [amount]/year, summing to a [[amount]+/year total](narr:Outcome_TotalValue) with payback framed as immediate. Alongside the dollar figures sit qualitative outcomes: [eliminating the strategy-execution gap](narr:Outcome_EliminateStrategyExecutionGap) (the \"[amount] mistake\"), and a [cascading-value mechanism](narr:Narrative_CascadingValue) where a single worldview commit regenerates all artifacts and \"any role's contribution immediately benefits all others.\" A [production-ready milestone](narr:Obs_ProductionReady) is asserted separately, and a [style observation](narr:StyleObs_3) about messaging sits at the edge under a related predicate rather than as an outcome.""" ;
+    narr:childCount "9"^^xsd:integer ;
+    narr:generatedFrom "07b8f68b0cb818a530cfe09048c16401a46acd3c" ;
+    narr:narration """This hub aggregates the projected [organizational outcomes](narr:Outcome_TotalValue) of the platform, structured around a [quantified ROI model](narr:Outcome_TotalValue) for a 10-person team. The financial narrative centers on [onboarding efficiencies](narr:Outcome_OnboardingSavings), [mitigating institutional knowledge loss](narr:Outcome_KnowledgeLossPrevention), and [optimizing tool-chain productivity](narr:Outcome_ToolOptimization). Beyond the balance sheet, the hub details qualitative structural shifts, specifically the [elimination of the strategy-execution gap](narr:Outcome_EliminateStrategyExecutionGap) and a [cascading value mechanism](narr:Narrative_CascadingValue) that posits real-time, bidirectional knowledge flow across roles. The technical readiness of these claims is anchored by an [explicit production-ready milestone](narr:Obs_ProductionReady), while the communication style relies on [dramatic temporal contrasts](narr:StyleObs_3) to illustrate the transformation from legacy workflows to rapid, iterative compilation.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_CascadingValue> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Narrative_Outcome_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#Obs_ProductionReady> ;
     narr:covers <https://aswritten.ai/ns/narrative#Outcome_EliminateStrategyExecutionGap> ;
     narr:covers <https://aswritten.ai/ns/narrative#Outcome_KnowledgeLossPrevention> ;
@@ -15,15 +16,12 @@ GRAPH <https://aswritten.ai/narrative#Digest_ns__Outcomes> {
     narr:covers <https://aswritten.ai/ns/narrative#Outcome_ToolOptimization> ;
     narr:covers <https://aswritten.ai/ns/narrative#Outcome_TotalValue> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_3> ;
-    narr:keyPhrase [ narr:text "5 new hires/year: [amount] saved in ramp time. Senior time freed: [amount]/year. Total: [amount]/year." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Outcome_OnboardingSavings> ] ;
-    narr:keyPhrase [ narr:text "Onboarding [amount] + Knowledge loss [amount] + Tool optimization [amount] = [amount]+/year." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Outcome_TotalValue> ] ;
-    narr:keyPhrase [ narr:text "Payback period: Immediate (first new hire or departure)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Outcome_TotalValue> ] ;
-    narr:keyPhrase [ narr:text "Eliminates the [amount] mistake in startups where engineering builds features customers don't want by ensuring same collective memory snapshot backs product, engineering, and marketing." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Outcome_EliminateStrategyExecutionGap> ] ;
-    narr:keyPhrase [ narr:text "No network problem, only network value; any role's contribution immediately benefits all others; real-time worldview compilation" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_CascadingValue> ] ;
+    narr:keyPhrase [ narr:text "multiple weeks → 15 min" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_3> ] ;
     narr:keyPhrase [ narr:text "**Production-Ready**: All schemas complete, tool chains validated, workflows coherent" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Obs_ProductionReady> ] ;
-    narr:variation [ narr:text "Quantified dollar outcomes vs. qualitative/uncountable claims — knowledge loss labels institutional preservation \"priceless,\" outside the ROI arithmetic." ; narr:over <https://aswritten.ai/ns/narrative#Outcome_KnowledgeLossPrevention> ; narr:over <https://aswritten.ai/ns/narrative#Outcome_TotalValue> ] ;
-    narr:variation [ narr:text "Cascading-value and strategy-gap outcomes are mechanism/risk-avoidance framings, not line items in the [amount] sum — a different kind of value claim." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_CascadingValue> ; narr:over <https://aswritten.ai/ns/narrative#Outcome_EliminateStrategyExecutionGap> ] ;
-    narr:variation [ narr:text "Production-ready is a status/milestone assertion, not a value outcome — structurally distinct from the rest." ; narr:over <https://aswritten.ai/ns/narrative#Obs_ProductionReady> ] ;
-    narr:variation [ narr:text "Style observation attaches via skos:related (not broader) — about how outcomes are phrased, an outlier from the outcome claims themselves." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_3> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "recompiles everything and gets us, you know, closer and closer to where we want to go" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_3> ] ;
+    narr:keyPhrase [ narr:text "Network effect differentiation: immediate bidirectional value flow" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_CascadingValue> ] ;
+    narr:keyPhrase [ narr:text "Payback period: Immediate (first new hire or departure)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Outcome_TotalValue> ] ;
+    narr:variation [ narr:text "The ROI model assumes a specific team size (10) and turnover rate, which may not generalize to all organizational structures." ; narr:over <https://aswritten.ai/ns/narrative#Outcome_TotalValue> ; narr:over <https://aswritten.ai/ns/narrative#Outcome_ToolOptimization> ] ;
+    narr:variation [ narr:text "The 'production-ready' status focuses on schema and tool-chain validation, distinct from the broader qualitative claims of strategy alignment." ; narr:over <https://aswritten.ai/ns/narrative#Obs_ProductionReady> ; narr:over <https://aswritten.ai/ns/narrative#Outcome_EliminateStrategyExecutionGap> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
