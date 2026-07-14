@@ -1,0 +1,59 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-3",
+    "regions" : [ "rule-of-three" ],
+    "evidence" : [ {
+      "quote" : "navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "Three matched inter-stage items form a deliberate triad.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-7",
+    "regions" : [ "antithesis" ],
+    "evidence" : [ {
+      "quote" : "missed the warm cache and rebuilt the entire 64,000-quad corpus",
+      "kind" : "framing-move"
+    } ],
+    "why" : "The sentence sharply contrasts expected cache reuse with full rebuilding.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-10",
+    "regions" : [ "antithesis" ],
+    "evidence" : [ {
+      "quote" : "the base ref the run was cut from, not the run's own freshly-committed work branch",
+      "kind" : "framing-move"
+    } ],
+    "why" : "Matched opposed alternatives are crystallized by the repeated ref framing and “not.”",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-11",
+    "regions" : [ "antithesis" ],
+    "evidence" : [ {
+      "quote" : "through pass one, never through these reads",
+      "kind" : "framing-move"
+    } ],
+    "why" : "The sentence opposes the document's actual route with the excluded read path.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-12",
+    "regions" : [ "metaphor" ],
+    "evidence" : [ {
+      "quote" : "one warm graph",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "“Warm” transfers a temperature state to a graph to characterize retained cache state.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-14",
+    "regions" : [ "antithesis" ],
+    "evidence" : [ {
+      "quote" : "silently revert the cost with no error",
+      "kind" : "framing-move"
+    } ],
+    "why" : "The phrase sets an apparently successful cache behavior against its silent cost reversal and absence of error.",
+    "reported" : false
+  } ],
+  "mints" : [ ],
+  "unmarked" : [ "src-1", "src-2", "src-4", "src-5", "src-6", "src-8", "src-9", "src-13", "src-15", "src-16" ]
+}
