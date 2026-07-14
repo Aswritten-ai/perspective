@@ -4,16 +4,11 @@
 GRAPH <https://aswritten.ai/narrative#Digest_NamingConventions> {
   <https://aswritten.ai/narrative#Digest_NamingConventions> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#NamingConventions> ;
-    narr:childCount "41"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers aswritten's running naming pass — tool, tier, and service renames driven by one constraint: the word must live in the writing/language/knowledge space and capture a whole perspective, not a data package ([naming constraints and direction](narr:https://aswritten.ai/narrative#Narrative_NamingConstraints)). Earliest (Mar 17): [tier named 'Professional' over 'Enterprise'](narr:https://aswritten.ai/narrative#Narrative_ProfessionalOverEnterprise), defined by service level not org size. Mar 19 opened the bigger sweep — [annotate flagged for cite/provenance/source](narr:https://aswritten.ai/narrative#Claim_AnnotateRename), the [internal marketplace named 'catalogue'](narr:https://aswritten.ai/narrative#Narrative_CatalogueInternalMarketplace). Mar 31 firmed the literal-description logic: [distillation → perspective creation](narr:https://aswritten.ai/narrative#Narrative_DistillationToPerspectiveCreation), the cascading [perspective=ID → id=ID param fix](narr:https://aswritten.ai/narrative#Narrative_IDParameterRename), and 'consult' [freed as a general word](narr:https://aswritten.ai/narrative#Claim_ConsultTermFreed). Apr 16 added a pitch-language rule: [say 'create a perspective', never 'train'](narr:https://aswritten.ai/narrative#Claim_CreatePerspectiveNotTrain). Alongside the decisions sits a thick layer of brand-stylization style observations (lowercase 'aswritten', backticked tool names, → as a flow operator, coined terms like worldview graph). The through-line is a metaphor-to-literal shift; several names remain explicitly open.""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_AnnotateRename> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_ConsultTermFreed> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_CreatePerspectiveNotTrain> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_ModuleNameTBD> ;
+    narr:childCount "38"^^xsd:integer ;
+    narr:generatedFrom "38e2139c17891b69c765f490a3a33c70af9521b0" ;
+    narr:narration """This hub tracks the evolution of aswritten’s lexicon, documenting a transition from technical metaphors toward a literal, writing-centric vocabulary. The trajectory began by anchoring service tiers to [service level rather than org size](narr:https://aswritten.ai/narrative#Narrative_ProfessionalOverEnterprise) and establishing [naming constraints](narr:https://aswritten.ai/narrative#Narrative_NamingConstraints) that prioritize 'whole perspective' over 'data package.' Subsequent shifts replaced obscure or metaphorical terms: [distillation became perspective creation](narr:https://aswritten.ai/narrative#Narrative_DistillationToPerspectiveCreation), and the internal marketplace was defined as a [catalogue](narr:https://aswritten.ai/narrative#Narrative_CatalogueInternalMarketplace). The project has also moved to [free 'consult'](narr:https://aswritten.ai/narrative#Position_ConsultTermFreed) from reserved status and enforce a [pitch-language rule](narr:https://aswritten.ai/narrative#Position_CreatePerspectiveNotTrain) against the word 'train.' More recently, the naming of the core intelligence moved from AGI to [Synthesizer (SII)](narr:https://aswritten.ai/narrative#Obs_SynthesizerNamingRationale), emphasizing human-guided agency. Alongside these decisions, a dense layer of [brand stylization](narr:https://aswritten.ai/narrative#StyleObs_BrandNameStylization) governs the use of backticked tool names, lowercase brand references, and arrow operators to maintain a consistent, code-adjacent identity.""" ;
     narr:covers <https://aswritten.ai/narrative#Narrative_CatalogueInternalMarketplace> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_DistillationToPerspectiveCreation> ;
-    narr:covers <https://aswritten.ai/narrative#Narrative_IDParameterRename> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_NamingConstraints> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_ProfessionalOverEnterprise> ;
     narr:covers <https://aswritten.ai/narrative#Obs_CreatePerspectivePitchQuote> ;
@@ -21,7 +16,12 @@ GRAPH <https://aswritten.ai/narrative#Digest_NamingConventions> {
     narr:covers <https://aswritten.ai/narrative#Obs_DistillationQuote> ;
     narr:covers <https://aswritten.ai/narrative#Obs_IDParamRedundancyQuote> ;
     narr:covers <https://aswritten.ai/narrative#Obs_ProfessionalNamingQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_SynthesizerNamingRationale> ;
     narr:covers <https://aswritten.ai/narrative#Observation_HumanReadableIDs> ;
+    narr:covers <https://aswritten.ai/narrative#Position_AnnotateRename> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ConsultTermFreed> ;
+    narr:covers <https://aswritten.ai/narrative#Position_CreatePerspectiveNotTrain> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ModuleNameTBD> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_1> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_3> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
@@ -32,32 +32,25 @@ GRAPH <https://aswritten.ai/narrative#Digest_NamingConventions> {
     narr:covers <https://aswritten.ai/narrative#StyleObs_BacktickCodeStyle> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BacktickToolNames> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BoldKeyTerms> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_BrandName> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrandNameBacktick> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrandNameLowercase> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrandNameStylization> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrandName_aswritten> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_BrandNames> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_CentristDraft> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_DeltaTable> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_CedarCedarAI> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_GitNative> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_InlineTaskRef> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_LensDraftingTerm> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_Lenses> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_SII_SynthesizerAnalogy> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_WorldviewBrandTerm> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_WorldviewGraph> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_aswrittenLowercase> ;
-    narr:keyPhrase [ narr:text "I should really change the word of the tool to provenance or cite. Annotate is kind of obscure." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AnnotateRename> ] ;
+    narr:keyPhrase [ narr:text "tier is defined by what you get, not who you are" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ProfessionalOverEnterprise> ] ;
     narr:keyPhrase [ narr:text "\"Distillation\" is a metaphor that needs explaining. \"Perspective creation\" is what it literally is" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_DistillationQuote> ] ;
     narr:keyPhrase [ narr:text "We should not say 'train'; create a perspective based on your historical meeting notes" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CreatePerspectivePitchQuote> ] ;
-    narr:keyPhrase [ narr:text "Can you also rename the param for share by ID from perspective=ID to perspective(id=ID)?" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_IDParamRedundancyQuote> ] ;
-    narr:keyPhrase [ narr:text "'Professional' chosen because the tier is defined by what you get, not who you are." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ProfessionalOverEnterprise> ] ;
-    narr:keyPhrase [ narr:text "never thought the curated part was particularly necessary" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_CuratedDroppedQuote> ] ;
-    narr:variation [ narr:text "Unresolved: the name for the installable unit of expertise is undecided — 'module' is a working term only, and code metaphors may break consistency." ; narr:over <https://aswritten.ai/narrative#Claim_ModuleNameTBD> ; narr:over <https://aswritten.ai/narrative#Narrative_NamingConstraints> ] ;
-    narr:variation [ narr:text "'Annotate' rename is flagged but not settled — three candidate words (cite, provenance, source) and no chosen one." ; narr:over <https://aswritten.ai/narrative#Claim_AnnotateRename> ; narr:over <https://aswritten.ai/narrative#Narrative_NamingConstraints> ] ;
-    narr:variation [ narr:text "A candidate direction was explicitly rejected: 'writ' deemed too medieval, legal, and singular — a road not taken." ; narr:over <https://aswritten.ai/narrative#Narrative_NamingConstraints> ] ;
-    narr:variation [ narr:text "Most children are descriptive brand-style observations (lowercase 'aswritten', backticks, arrow operator, coined terms), not naming decisions — a structurally distinct cluster from the active renames." ; narr:over <https://aswritten.ai/narrative#StyleObs_BrandNameStylization> ; narr:over <https://aswritten.ai/narrative#StyleObs_WorldviewGraph> ; narr:over <https://aswritten.ai/narrative#StyleObs_ArrowOperator> ] ;
-    narr:variation [ narr:text "Some renames create downstream redundancy rather than just clarity — the compile→perspective rename forced the perspective(perspective=...) param fix." ; narr:over <https://aswritten.ai/narrative#Narrative_IDParameterRename> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "a synthesizer makes music with a human guiding it. artificial sounds like a food flavoring from a lab." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SII_SynthesizerAnalogy> ] ;
+    narr:keyPhrase [ narr:text "Must live in the writing/language/knowledge space" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_NamingConstraints> ] ;
+    narr:variation [ narr:text "The term for the installable unit of expertise remains undecided, with 'module' serving only as a temporary placeholder." ; narr:over <https://aswritten.ai/narrative#Position_ModuleNameTBD> ] ;
+    narr:variation [ narr:text "While 'annotate' is slated for replacement, the specific choice between 'cite', 'provenance', or 'source' remains open." ; narr:over <https://aswritten.ai/narrative#Position_AnnotateRename> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
