@@ -82,7 +82,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Quotes](hub-Quotes.html): This hub is the verbatim record of the aswritten narrative — direct speech and attributed observations spanning January 
 - [RiskGuardrails](hub-RiskGuardrails.html): This hub gathers the risks and guardrails threaded through Aswritten's company narrative — product, sales, hiring, capit
 - [RoleTopology](hub-RoleTopology.html): This hub gathers how aswritten models *who occupies what* in an organization. The mainline distinction is firm and dated
-- [SalesDecks](hub-SalesDecks.html): This hub gathers the evolving sales-materials and sales-motion thinking. a demo-call prospect's early ask (Mar 11) was c
+- [SalesDecks](hub-SalesDecks.html): This hub tracks the evolution of sales-as-delivery, where the act of selling is indistinguishable from the product itsel
 - [ScalabilityPerformance](hub-ScalabilityPerformance.html): This hub gathers the scalability and performance work, dominated by a dated infra trajectory. In Mar (26th), memory reba
 - [SecurityPrivacyModel](hub-SecurityPrivacyModel.html): The hub gathers how secrets, identity, and compliance are handled. The spine is credential hygiene: the target credentia
 - [Segmentation](hub-Segmentation.html): This hub gathers competing cuts at *who the customer is*. The quantitative spine is a dev-shop ICP — [5-150 people, [amo
