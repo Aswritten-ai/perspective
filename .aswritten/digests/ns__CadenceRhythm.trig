@@ -4,29 +4,23 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__CadenceRhythm> {
   <https://aswritten.ai/narrative#Digest_ns__CadenceRhythm> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#CadenceRhythm> ;
-    narr:childCount "9"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers the document's cadence and rhythm devices. The dominant engine is the rule of three: a [git-native triad](narr:Observation_GitNativeTriad) of parallel -able suffixes, a [triadic list at the cursor](narr:StyleObs_10), and [triadic audiences](narr:StyleObs_4) widening scope to new hires, clients, and investors. Against that accumulating rhythm runs [sharp antithesis](narr:StyleObs_Antithesis) — They/We, lock-in/freedom, the parenthetical \"not X\" — and [anaphoric repetition](narr:StyleObs_Anaphora) hammering \"every single.\" Pacing swings between extremes: a [run-on value prop](narr:StyleObs_6) packing five parallel clauses into one <30-second sentence, versus [short punchy clauses](narr:StyleObs_ShortPunchy) and a [seven-word closer](narr:StyleObs_ShortCadence). [Rhetorical questions](narr:StyleObs_RhetoricalQ) appear both self-answered and as framed enterprise objections. The [sailing-metaphor self-correction](narr:StyleObs_4) — \"telltales… that's the right word\" — shows a spoken, self-aware register beneath the polished structure. Together these are handles for how the document sounds: triadic memorability, antithetical contrast, anaphoric scale, and deliberate tempo shifts between dense and clipped.""" ;
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "a01ed5a7f29cbdc52073bd24de69efc613d70c05" ;
+    narr:narration """This hub catalogs the document's rhythmic and rhetorical architecture. The primary engine is a [git-native triad](narr:Observation_GitNativeTriad) that anchors technical concepts in parallel -able suffixes, a pattern mirrored in [triadic lists](narr:StyleObs_10) designed for memorability. This structured cadence is frequently disrupted by [rhetorical questions](narr:StyleObs_RhetoricalQ) that shift between enterprise-grade objections and conversational self-interrogation. Pacing oscillates between [extended five-item lists](narr:StyleObs_6) that push the limits of triadic rhythm and [short, punchy declarative sentences](narr:StyleObs_ShortPunchy) that serve as emphatic anchors. The text also employs [anaphoric repetition](narr:StyleObs_Anaphora) to establish scale, while [sailing-metaphor self-corrections](narr:StyleObs_4) introduce a layer of spoken, self-aware register that contrasts with the otherwise polished, parallel syntax. Together, these devices create a tension between the systematic, version-controlled tone of the product and a more human, conversational cadence.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_10> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_4> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_6> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Anaphora> ;
-    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_Antithesis> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQ> ;
-    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_ShortCadence> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_ShortPunchy> ;
     narr:keyPhrase [ narr:text "git native, i.e. versionable, branchable, reviewable" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ] ;
-    narr:keyPhrase [ narr:text "They solve memory for individuals. We solve memory for organizations. They create lock-in. We create freedom." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Antithesis> ] ;
-    narr:keyPhrase [ narr:text "every single home, but every single venture, every single backend, every surface" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Anaphora> ] ;
-    narr:keyPhrase [ narr:text "Power is in the connections, not the pillars" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ShortCadence> ] ;
-    narr:keyPhrase [ narr:text "They serve as telltales. That's the right word. They serve as telltales" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_4> ] ;
+    narr:keyPhrase [ narr:text "explicit, reviewable, and testable" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_10> ] ;
     narr:keyPhrase [ narr:text "positioning, offering, product, teams, and process" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_6> ] ;
-    narr:keyPhrase [ narr:text "So what is the importance of narrative? I mean, it's everything" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQ> ] ;
-    narr:variation [ narr:text "The rule of three dominates, but StyleObs_6 deliberately breaks it — five parallel clauses and five-item lists extended 'for completeness' over triadic neatness." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_6> ; narr:over <https://aswritten.ai/ns/narrative#Observation_GitNativeTriad> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_10> ] ;
-    narr:variation [ narr:text "Tempo splits hard: a single <30-second run-on value prop versus clipped seven-word and conversational 'right?' cadences." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_6> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ShortCadence> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ShortPunchy> ] ;
-    narr:variation [ narr:text "Accumulation devices (triad, anaphora) sit beside their opposite — antithesis built on contrast and negation rather than additive rhythm." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Antithesis> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_Anaphora> ] ;
-    narr:variation [ narr:text "Rhetorical questions pull two ways: emphatic self-answer ('it's everything') versus a second-person enterprise objection about the shared repository." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_RhetoricalQ> ] ;
-    narr:variation [ narr:text "The telltales self-correction exposes an unpolished spoken register that cuts against the otherwise engineered cadence." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_4> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_ShortPunchy> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "every single home, but every single venture, every single backend, every surface" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_Anaphora> ] ;
+    narr:keyPhrase [ narr:text "We have a lot of knowledge locked in people's heads." ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_ShortPunchy> ] ;
+    narr:keyPhrase [ narr:text "They serve as telltales. That's the right word. They serve as telltales" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_4> ] ;
+    narr:variation [ narr:text "The [sailing-metaphor self-correction](narr:StyleObs_4) introduces a spontaneous, spoken-word register that breaks the document's rigid parallel structure." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_4> ] ;
+    narr:variation [ narr:text "The [five-item list](narr:StyleObs_6) pushes against the document's dominant 'rule of three' rhythm, favoring exhaustive completeness over triadic brevity." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_6> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
