@@ -4,36 +4,25 @@
 GRAPH <https://aswritten.ai/narrative#Digest_AICompanyizationCase> {
   <https://aswritten.ai/narrative#Digest_AICompanyizationCase> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#AICompanyizationCase> ;
-    narr:childCount "17"^^xsd:integer ;
-    narr:generatedFrom "b6a9d4d918338cfce5a392033500736cbdfb157d" ;
-    narr:narration """This hub gathers observations about capitalization and typographic emphasis as authorial style signals. The dominant pattern is [ALL-CAPS as conviction marker](narr:StyleObs_AllCapsIS) — particularly the recurring emphatic 'IS' — documented alongside [ALL-CAPS for architectural finality](narr:StyleObs_AllCapsEmphasis) (NOT, CHANGE DETECTION, FOCUS GENERATION) and [ALL-CAPS for severity annotation](narr:StyleObs_HighFrictionCaps) (HIGH FRICTION, P0, NOW). A parallel thread covers [bold markdown as terminology control](narr:StyleObs_BoldKeyTerms), ranging from [bold bullet lead-ins for scannable structure](narr:StyleObs_BoldBulletLeadins) to [bold as single-thesis foregrounding](narr:StyleObs_BoldCoreInsight) used sparingly. [Bold section headers stating principles as settled fact](narr:StyleObs_IsolationDayBoldSectionHeaders) and [bolded noun-phrase editorial headers](narr:StyleObs_BoldedSectionHeaders) represent a distinct register. Contrasting with all-caps conviction, [Scarlet's lowercase vernacular in first-person directives](narr:StyleObs_CutoverLowercaseVernacular) and [lowercase proper names in founder blockquotes](narr:StyleObs_LowercaseProperName) signal informal register. [Capitalized emphasis on architectural constraints](narr:StyleObs_AICompanyizedEmphasis) (WHOLE, TOWARD, AWAY) is framed as non-negotiable design intent rather than style.""" ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "0f2c74834817764ddc2c62187458e4ca4ca97045" ;
+    narr:narration """This hub tracks the interplay between typographic rigor and authorial voice. The architecture of the text relies on [ALL-CAPS for architectural finality](narr:StyleObs_AllCapsEmphasis) and [emphatic assertion](narr:StyleObs_AllCapsIS) to signal non-negotiable design constraints, such as [WHOLE, TOWARD, AWAY](narr:StyleObs_AICompanyizedEmphasis). This high-conviction register is balanced by [bold markdown as terminology control](narr:StyleObs_BoldKeyTerms), which anchors the document's taxonomy through [bold bullet lead-ins](narr:StyleObs_BoldBulletLeadins) and [bolded noun-phrase editorial headers](narr:StyleObs_BoldedSectionHeaders). A singular [bold core insight](narr:StyleObs_BoldCoreInsight) serves as the thesis anchor. Tension arises from the juxtaposition of this authoritative, structural typography with [informal lowercase vernacular](narr:StyleObs_LowercaseProperName) in founder blockquotes. Recent observations highlight a shift toward using [antithetical definition](narr:StyleObs_8) and [clinical analogies](narr:StyleObs_2) (e.g., the eye chart) to ground abstract review concepts, moving beyond simple emphasis into diagnostic, second-person decision heuristics.""" ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_2> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_8> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_AICompanyizedEmphasis> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_AllCapsEmphasis> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_AllCapsIS> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BoldBulletLeadins> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BoldCoreInsight> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldEmphasisPattern> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BoldKeyTerms> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_BoldLabels> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BoldedSectionHeaders> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_AICompanyizedEmphasis> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_CutoverLowercaseVernacular> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_EmphasisCaps> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_HighFrictionCaps> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_IsolationDayBoldSectionHeaders> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_LowercaseProperName> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_MCPChatbot_BoldDecision> ;
-    narr:keyPhrase [ narr:text "ALL-CAPS 'IS' used for emphatic assertion. Signals maximum conviction. Rhetorical device: typographic stress replacing spoken emphasis. Characteristic of the author's voice for high-conviction claims." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AllCapsIS> ] ;
-    narr:keyPhrase [ narr:text "ALL-CAPS used for definitional emphasis: NOT, CHANGE DETECTION, FOCUS GENERATION — signals architectural finality" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AllCapsEmphasis> ] ;
-    narr:keyPhrase [ narr:text "ALL-CAPS used selectively for severity signals (HIGH FRICTION, OOM, P0, NOW) — functions as inline severity annotation without formal alert syntax" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_HighFrictionCaps> ] ;
-    narr:keyPhrase [ narr:text "Bold sentence-case section headers state the operating principle as a settled fact before the body narrates how it was achieved. Each header is a policy declaration, not a topic label." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_IsolationDayBoldSectionHeaders> ] ;
-    narr:keyPhrase [ narr:text "Scarlet's direct speech is rendered in lowercase vernacular ('i'm calling it ok'), contrasting with the surrounding editorial prose in standard case." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_CutoverLowercaseVernacular> ] ;
-    narr:keyPhrase [ narr:text "All-caps used for semantic emphasis on key architectural constraints: WHOLE, TOWARD, AWAY. Signals non-negotiable design intent rather than stylistic preference." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AICompanyizedEmphasis> ] ;
-    narr:keyPhrase [ narr:text "Bold markdown used to foreground the single most important claim in the document. Signals to reader: this is the thesis. Used sparingly — only once for the core insight." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BoldCoreInsight> ] ;
-    narr:variation [ narr:text "ALL-CAPS serves at least three distinct functions — conviction/identity assertion, architectural finality, and inline severity triage — which may be the same device or three separate registers depending on reading." ; narr:over <https://aswritten.ai/narrative#StyleObs_AllCapsIS> ; narr:over <https://aswritten.ai/narrative#StyleObs_AllCapsEmphasis> ; narr:over <https://aswritten.ai/narrative#StyleObs_HighFrictionCaps> ] ;
-    narr:variation [ narr:text "Bold is documented both as sparingly-used single-thesis foregrounding and as heavy systematic vocabulary marking throughout — these are in tension as accounts of the same author's practice." ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldCoreInsight> ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldEmphasisPattern> ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldKeyTerms> ] ;
-    narr:variation [ narr:text "Lowercase as idiolect signal (informal first-person directives, proper names in blockquotes) runs counter to the all-caps conviction register — same author, opposite typographic direction." ; narr:over <https://aswritten.ai/narrative#StyleObs_CutoverLowercaseVernacular> ; narr:over <https://aswritten.ai/narrative#StyleObs_LowercaseProperName> ] ;
-    narr:variation [ narr:text "Bold section headers are described both as 'policy declarations stated as truth' and as 'editorial register signaling the key lesson before prose' — these framings differ on whether the device is architectural or rhetorical." ; narr:over <https://aswritten.ai/narrative#StyleObs_IsolationDayBoldSectionHeaders> ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldedSectionHeaders> ] ;
-    narr:writer "anthropic/claude-sonnet-4.6" .
+    narr:keyPhrase [ narr:text "ALL-CAPS used for definitional emphasis: NOT, CHANGE DETECTION, FOCUS GENERATION" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AllCapsEmphasis> ] ;
+    narr:keyPhrase [ narr:text "The money answer" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BoldedSectionHeaders> ] ;
+    narr:keyPhrase [ narr:text "narrative operates like a velocity or acceleration vector in these particle systems" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:keyPhrase [ narr:text "this isn't a hypothetical failure mode, it's the default state" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_8> ] ;
+    narr:keyPhrase [ narr:text "All-caps used for semantic emphasis on key architectural constraints: WHOLE, TOWARD, AWAY." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AICompanyizedEmphasis> ] ;
+    narr:variation [ narr:text "Typographic authority vs. behavioral misalignment: the reframe exists at the foundation level but the behavior has not followed." ; narr:over <https://aswritten.ai/narrative#StyleObs_2> ] ;
+    narr:variation [ narr:text "Declarative, zero-hedging diagnostic framing vs. informal, lowercase founder idiolect." ; narr:over <https://aswritten.ai/narrative#StyleObs_8> ; narr:over <https://aswritten.ai/narrative#StyleObs_LowercaseProperName> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
