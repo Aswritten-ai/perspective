@@ -1,0 +1,23 @@
+{
+  "bindings" : [ {
+    "name" : "claude-fable-5",
+    "verdict" : "mint",
+    "label" : "claude-fable-5",
+    "why" : "AI drafting/model tag distinct from existing Claude actors (Opus 4.6, Sonnet, generic Claude coworker); no existing actor named claude-fable-5, so mint per rule 7 with plain name as label."
+  }, {
+    "name" : "session",
+    "verdict" : "mint",
+    "label" : "session",
+    "why" : "Generic technical/session label, not a person or existing actor; no matching entity in EXISTING ACTORS, so mint distinctly rather than risk a false bind."
+  }, {
+    "name" : "Scarlet Dame",
+    "verdict" : "bind",
+    "target" : "Actor_ScarletDame",
+    "why" : "Exact full-name match to existing actor Actor_ScarletDame, founder of aswritten.ai, consistent with envelope's submitted_by and note context."
+  }, {
+    "name" : "scarlet@aswritten.ai",
+    "verdict" : "bind",
+    "target" : "Actor_ScarletDame",
+    "why" : "Email address matches envelope submitted_by/account for Scarlet Dame, founder of aswritten.ai, same identity as Actor_ScarletDame."
+  } ]
+}
