@@ -48,7 +48,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Narrative_CategoryCuratedExpertiseInstallation](hub-Narrative_CategoryCuratedExpertiseInstallation.html): The category began as 'curated expertise installation' (Strategy Doc V1), then narrowed: in Mar Scarlet dropped 'curated
 - [Narrative_ClojureOwnsLogic](hub-Narrative_ClojureOwnsLogic.html): This hub argues the orchestration logic belongs in Clojure, with the build-vs-wrap boundary drawn explicitly. The event-
 - [Narrative_ContinuousCompliance](hub-Narrative_ContinuousCompliance.html): This hub frames a move from snapshot-based to continuous compliance. The mainline diagnoses the problem — point-in-time 
-- [Narrative_EnterpriseShapePrimaryFocus](hub-Narrative_EnterpriseShapePrimaryFocus.html): On 2026-04-21 Scarlet applied Tony's additive-vs-incremental test to her funnel and tentatively named the the enterprise
+- [Narrative_EnterpriseShapePrimaryFocus](hub-Narrative_EnterpriseShapePrimaryFocus.html): The search for a primary sales focus has shifted toward the enterprise customer-shape as a tentative priority, defined n
 - [Narrative_ExpertiseOnDemandReframe](hub-Narrative_ExpertiseOnDemandReframe.html): This hub reframes the product from an ambient worldview compiled at session start to expertise invoked at the moment of 
 - [Narrative_OrgWorldview](hub-Narrative_OrgWorldview.html): This hub gathers the org's account of how aswritten builds its understanding of a client. Two foundation-level children 
 - [Narrative_PerspectiveOnSpec](hub-Narrative_PerspectiveOnSpec.html): This hub gathers the April thesis that a perspective built *on spec* — before any prospect interview — is itself the pit
