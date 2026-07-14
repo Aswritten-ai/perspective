@@ -1,0 +1,203 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-5",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "the live surface is not a second product or an experiment — it is the MVP product's front end that was never built",
+      "kind" : "framing-move"
+    } ],
+    "why" : "settles category by fiat, framed as settlement not argument",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-9",
+    "regions" : [ "informational" ],
+    "evidence" : [ {
+      "quote" : "We need to define the product value for our target actors",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "frames what facts/definitions must be established, controlling the terms of subsequent work",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-10",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "We need to clearly unify this with the past mcp only product, these are not two products, they are two surfaces of one system",
+      "kind" : "performed-act"
+    } ],
+    "why" : "issues a categorical ruling on product identity as settled fact",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-15",
+    "regions" : [ "pressure" ],
+    "evidence" : [ {
+      "quote" : "Simplify.",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "bare imperative, single word directive with no elaboration",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-20",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "All notifications and agent messages must be proxies through front.",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "must-modal issuing a binding rule",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-31",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "Theatre must feel like a chat flow with annotations that if removed would not move the chat bubbles or leave empty space.",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "must-modal setting a design constraint as rule",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-35",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "Note this perspective read at the consistent prefix (focus is last) needs to cache across multiple replies.",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "needs-to framing as technical requirement/rule",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-58",
+    "regions" : [ "pressure" ],
+    "evidence" : [ {
+      "quote" : "We need to move commentary, etc to the gutters.",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "need-to directive on design change",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-59",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "Ask/add note -> always just \"send\"",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "always-marker issuing a fixed rule for UI behavior",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-65",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "This is the MVP product, this is the front end that was never built.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "settles the unification question by declarative fiat",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-73",
+    "regions" : [ "rational-persuasion" ],
+    "evidence" : [ {
+      "quote" : "there is value in the framed primary source material because it is a huge noise reduction. It also saves us a lot of tokens",
+      "kind" : "framing-move"
+    } ],
+    "why" : "argues one side from cost/noise-reduction evidence",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-75",
+    "regions" : [ "rational-persuasion" ],
+    "evidence" : [ {
+      "quote" : "we're also arguing that the entire value of the product is that it doesn't do summary until read time, right? So then why are we doing all this filter",
+      "kind" : "framing-move"
+    } ],
+    "why" : "counter-argument exposing internal contradiction via logic",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-78",
+    "regions" : [ "rational-persuasion" ],
+    "evidence" : [ {
+      "quote" : "That AI summary is really a position where we've now dropped at least potentially some of the statements that support it.",
+      "kind" : "framing-move"
+    } ],
+    "why" : "structural logical inference driving the resolution",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-82",
+    "regions" : [ "rational-persuasion" ],
+    "evidence" : [ {
+      "quote" : "drop all expressions that don't support a position. That's basically the filter that we want.",
+      "kind" : "framing-move"
+    } ],
+    "why" : "derives the design rule from a logical chain about fidelity",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-93",
+    "regions" : [ "informational" ],
+    "evidence" : [ {
+      "quote" : "we need to be in the cents or tens of cents per message",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "supplies the cost constraint as the operative fact shaping the product",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-95",
+    "regions" : [ "rational-persuasion" ],
+    "evidence" : [ {
+      "quote" : "If we move our org's extraction into our subscription keys, that changes our cost profile hugely. Maybe that means we can eat user cost as a loss leader",
+      "kind" : "framing-move"
+    } ],
+    "why" : "conditional cost-logic argument for a strategic lever",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-109",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "if you were in the call, you can see the page, and if you click on a node that is linking out beyond the call, you can see it if you have access to that call.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "declares the access rule as settled policy, closing the open question",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-113",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "The wireframes page should be built with the styleguide components, and if you need missing components or layouts, they should be added and reviewed in the styleguide first and then reused.",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "should-modal issuing a mandated process discipline",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-117",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "profiles + flocking + arc as wizard of oz static but interactive page in product skin for demo. v2 roadmapped in product",
+      "kind" : "performed-act"
+    } ],
+    "why" : "issues a scoping ruling amending prior record",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-120",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "full depth for now, it's explicit share and this is a demo. only send it to people i want to see full depth",
+      "kind" : "performed-act"
+    } ],
+    "why" : "settles the depth-of-share question by fiat with rationale attached",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-123",
+    "regions" : [ "pressure" ],
+    "evidence" : [ {
+      "quote" : "Teams does need to jump the queue, for sure. I'd like to get that done before Fable moves off subscription, so this week.",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "deadline-bound insistence reordering priority",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-131",
+    "regions" : [ "rational-persuasion" ],
+    "evidence" : [ {
+      "quote" : "we definitely want and need to support things spread out over the document.",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "want-and-need framing asserting a design requirement from stated instinct",
+    "reported" : false
+  } ],
+  "mints" : [ ],
+  "unmarked" : [ "src-1", "src-2", "src-3", "src-4", "src-6", "src-7", "src-8", "src-11", "src-12", "src-13", "src-14", "src-16", "src-17", "src-18", "src-19", "src-21", "src-22", "src-23", "src-24", "src-25", "src-26", "src-27", "src-28", "src-29", "src-30", "src-32", "src-33", "src-34", "src-36", "src-37", "src-38", "src-39", "src-40", "src-41", "src-42", "src-43", "src-44", "src-45", "src-47", "src-48", "src-49", "src-50", "src-51", "src-52", "src-53", "src-54", "src-55", "src-56", "src-57", "src-60", "src-61", "src-62", "src-63", "src-64", "src-66", "src-67", "src-68", "src-69", "src-70", "src-71", "src-72", "src-74", "src-76", "src-77", "src-79", "src-80", "src-81", "src-83", "src-84", "src-85", "src-86", "src-87", "src-88", "src-89", "src-90", "src-91", "src-92", "src-94", "src-96", "src-97", "src-98", "src-99", "src-100", "src-101", "src-102", "src-103", "src-104", "src-105", "src-106", "src-107", "src-108", "src-110", "src-111", "src-112", "src-114", "src-115", "src-116", "src-118", "src-119", "src-121", "src-122", "src-124", "src-125", "src-126", "src-127", "src-128", "src-129", "src-130", "src-132", "src-133", "src-134", "src-135", "src-136", "src-137", "src-138", "src-139", "src-140", "src-141", "src-142" ]
+}
