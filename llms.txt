@@ -99,7 +99,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [ValueExchange](hub-ValueExchange.html): This hub gathers how value is exchanged and articulated around the collective-memory product. The pivotal moment is a re
 - [Vision](hub-Vision.html): Scarlet's Vision holds the steering-vector thesis as its conceptual spine — language, narrative, and meaning act as stee
 - [WhatDoesItDo](hub-WhatDoesItDo.html): This hub maps the functional and rhetorical architecture of As Written, a git-native organizational memory tool designed
-- [WhatIsIt](hub-WhatIsIt.html): This hub answers \"what is the product?\" and its mainline, dated April 28 2026, is positive-identity: the product is cu
+- [WhatIsIt](hub-WhatIsIt.html): This hub defines the product identity, centering on the curated expertise installation as the primary anchor. This frami
 - [WhatItsNot](hub-WhatItsNot.html): This hub collects the positioning negatives — what aswritten is *not*. The load-bearing boundary is search vs. aswritten
 
 ## Voice & style
