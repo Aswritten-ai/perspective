@@ -4,20 +4,22 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Narrative_PerspectiveVsInformation> {
   <https://aswritten.ai/narrative#Digest_Narrative_PerspectiveVsInformation> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Narrative_PerspectiveVsInformation> ;
-    narr:childCount "4"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub argues the load-bearing distinction for modules versus RAG: modules deliver *perspective*, not information. The mainline holds that [AIs already carry a singular opinion](narr:Claim_AIHasSingularOpinion) buried in the middle of their training set, which modules replace with curated, attributed perspective. The [perspective-not-information thesis](narr:Claim_PerspectiveNotInformation) frames this as the exact gap between a human expert and an AI — loading narratives, approaches, and framings about what information *means*, not just the information. Two children extend the case along different axes. A [later external-validation note (Apr 14)](narr:Claim_CustomerCTOAISlopConcern) recasts perspective defensively, as the guardrail against AI slop, citing the customer's CTO's own articulation of the problem. Separately, the [worldview-encoding-as-behavior claim](narr:Claim_WorldviewEncodesAIBehavior) shifts ground from epistemics to AI behavioral tics ('good catch', collaborative flatness). The cluster is dated Mar 19–22 with the the customer's CTO signal arriving later, so the framing has accreted rather than resolved.""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_AIHasSingularOpinion> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_PerspectiveNotInformation> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_CustomerCTOAISlopConcern> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_WorldviewEncodesAIBehavior> ;
-    narr:keyPhrase [ narr:text "they have a singular opinion in the middle of their training set and a number of narratives that we don't understand" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AIHasSingularOpinion> ] ;
-    narr:keyPhrase [ narr:text "This is the exact difference between a human expert and an AI. Not just loading a set of information." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_PerspectiveNotInformation> ] ;
-    narr:keyPhrase [ narr:text "the tools are just going to create AI slop. I'm just making it easier for someone to do a shitty job." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CustomerCTOAISlopConcern> ] ;
-    narr:keyPhrase [ narr:text "Perspective is the guardrail that prevents AI tools from amplifying bad judgment." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_CustomerCTOAISlopConcern> ] ;
-    narr:keyPhrase [ narr:text "Common AI criticisms — 'good catch', 'you're right', collaborative flatness — are the kind of behavior that worldview encoding can address." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_WorldviewEncodesAIBehavior> ] ;
-    narr:variation [ narr:text "Two framings of perspective's value coexist: positive (curated meaning/expertise) vs. defensive (guardrail against AI slop and bad-judgment amplification) — the latter arriving later via external validation." ; narr:over <https://aswritten.ai/narrative#Claim_PerspectiveNotInformation> ; narr:over <https://aswritten.ai/narrative#Claim_CustomerCTOAISlopConcern> ] ;
-    narr:variation [ narr:text "The case splits across two axes: epistemic (what information means/framing) vs. behavioral (correcting AI tone tics like 'good catch'/flatness) — a distinct argument for modules." ; narr:over <https://aswritten.ai/narrative#Claim_PerspectiveNotInformation> ; narr:over <https://aswritten.ai/narrative#Claim_WorldviewEncodesAIBehavior> ] ;
-    narr:variation [ narr:text "An admitted opacity sits inside the mainline: AI's existing opinion includes 'narratives that we don't understand' — a concession the curated-replacement claim glosses over." ; narr:over <https://aswritten.ai/narrative#Claim_AIHasSingularOpinion> ] ;
-    narr:writer "claude (subscription)" .
+    narr:childCount "8"^^xsd:integer ;
+    narr:generatedFrom "07b8f68b0cb818a530cfe09048c16401a46acd3c" ;
+    narr:narration """This hub centers on the thesis that [modules deliver curated perspective](narr:Position_PerspectiveNotInformation) rather than mere information, distinguishing expert-level AI behavior from standard RAG. The core argument posits that [AIs possess a singular, opaque opinion](narr:Position_AIHasSingularOpinion) derived from training data, which modules must overwrite to enable specific, attributed viewpoints. Recent developments (July 2026) have expanded this into a [marketing-facing dare](narr:Narrative_OpinionatedPromiseMissingArticulation) to explicitly promise 'opinionated' AI, while [independent design-based validation](narr:Position_DesignTokenParallelValidation) suggests this lens-driven architecture is a necessary, non-commodifiable component of expert systems. The [preservation of interpretation](narr:Position_InterpretationPreservation) is highlighted as the primary advantage over code-grounding, which often strips away the 'why' behind decision-making. However, the trajectory is not monolithic; [conversational steering](narr:Position_ConversationalSteeringAlternativeToRAG) is now presented as a structural alternative to RAG-based document retrieval, arguing that the 'conversational why' is the true engine of agent behavior, rather than static perspective modules alone.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_OpinionatedPromiseMissingArticulation> ;
+    narr:covers <https://aswritten.ai/narrative#Position_AIHasSingularOpinion> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ConversationalSteeringAlternativeToRAG> ;
+    narr:covers <https://aswritten.ai/narrative#Position_DesignTokenParallelValidation> ;
+    narr:covers <https://aswritten.ai/narrative#Position_InterpretationPreservation> ;
+    narr:covers <https://aswritten.ai/narrative#Position_LensIsIrreduciblePart> ;
+    narr:covers <https://aswritten.ai/narrative#Position_PerspectiveNotInformation> ;
+    narr:covers <https://aswritten.ai/narrative#Position_WorldviewEncodesAIBehavior> ;
+    narr:keyPhrase [ narr:text "Modules load a set of perspectives, narratives, approaches, processes, and opinions about how information is used" ; narr:phraseSource <https://aswritten.ai/narrative#Position_PerspectiveNotInformation> ] ;
+    narr:keyPhrase [ narr:text "it is the lens that controls all of that" ; narr:phraseSource <https://aswritten.ai/narrative#Position_LensIsIrreduciblePart> ] ;
+    narr:keyPhrase [ narr:text "The customer-facing promise 'have an opinion and here's why' is the missing marketing articulation" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_OpinionatedPromiseMissingArticulation> ] ;
+    narr:keyPhrase [ narr:text "Conversational steering through accumulated human-agent conversation is an alternative model to RAG" ; narr:phraseSource <https://aswritten.ai/narrative#Position_ConversationalSteeringAlternativeToRAG> ] ;
+    narr:variation [ narr:text "Conversational accumulation is proposed as a superior mechanism for behavior installation compared to static module-based perspective." ; narr:over <https://aswritten.ai/narrative#Position_ConversationalSteeringAlternativeToRAG> ] ;
+    narr:variation [ narr:text "The 'lens' is framed as an irreducible, non-commodifiable requirement for AI output quality, rather than just an optional enhancement." ; narr:over <https://aswritten.ai/narrative#Position_LensIsIrreduciblePart> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
