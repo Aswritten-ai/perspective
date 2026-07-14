@@ -1,0 +1,133 @@
+{
+  "placements" : [ {
+    "verdict" : "mint",
+    "leaf" : "Narrative_OneProductUnifiedSurfaces",
+    "title" : "One Product, Many Surfaces: The Live Surface Is the MVP's Own Front End",
+    "theme" : "New surfaces, integrations, and codebases (feed, theatre, transcription pipeline) are extensions of one unified product, not separate products or experiments — every downstream design fork inherits that constraint.",
+    "under" : [ "Narrative_MVPScopeDecision" ],
+    "supporting_segments" : [ "src-5", "src-9", "src-10", "src-11", "src-64", "src-65", "src-66", "src-67", "src-68", "src-69", "src-70" ],
+    "why" : "Scarlet's settlement that the live surface is 'the front end that was never built' plus the directives to unify with the MCP-only product and codebase, and the walking-dialogue consequences (no separate new-conversation affordance, narrowed upload semantics) all state one recurring, forward-applicable principle — a subject future integration decisions will keep testing against — not a one-time fact. No existing leaf states this unification claim; the closest candidates (Narrative_SeparationPrincipleProductVsOrg, Narrative_CoreConflationProductVsTooling, Narrative_InfrastructureVsProduct) run the opposite direction (separating tooling/infra from product), so mint rather than force a reuse.",
+    "consulted" : [ "Narrative_MVPScopeDecision", "Narrative_SeparationPrincipleProductVsOrg", "Narrative_CoreConflationProductVsTooling", "Narrative_InfrastructureVsProduct", "Narrative_GitHubAsInfrastructure" ]
+  }, {
+    "lineage" : {
+      "relation" : "extends",
+      "target" : "Narrative_DigestAsRecognitionAid"
+    },
+    "supporting_segments" : [ "src-4", "src-6", "src-32", "src-33", "src-71", "src-72", "src-73", "src-74", "src-75", "src-76", "src-77", "src-78", "src-79", "src-80", "src-81", "src-82", "src-83", "src-84", "src-85", "src-86", "src-103", "src-104", "src-105", "src-106", "src-128", "src-129", "src-130", "src-131", "src-133", "src-134", "src-139" ],
+    "under" : [ "Narrative_DigestAsRecognitionAid" ],
+    "why" : "A recurring, forward-applicable design subject: whether to extract a framed memory or the whole transcript resolves into a layered read-time composition model (expressions/positions/narratives/strata), formalized as a ruling and then grounded empirically (position-contiguity finding) and revisited in the open-questions list. This is thematic, not a single fact — it will keep being tested as extraction and rendering evolve. Narrative_DigestAsRecognitionAid states the closest existing principle (index never gates the store, compression accelerates recognition without foreclosing) but does not itself describe extraction-side whole-transcript capture or the layer-toggle UI, so it is the inspiration, not an exact fit.",
+    "verdict" : "mint",
+    "leaf" : "Narrative_ResolutionLayersReadTimeComposition",
+    "title" : "Resolution Layers: Extraction Captures Everything, Display Composes at Read Time",
+    "theme" : "Extraction always captures the whole transcript at maximal fidelity; the theatre composes read-time resolution layers (expressions→positions→narratives→strata) so no filtering happens upstream of the reader — the digest's own recognition-aid logic applied to a live surface.",
+    "consulted" : [ "Narrative_DigestAsRecognitionAid", "Narrative_ContentCommentarySplit", "Narrative_NavigationReplacesEmbeddedSnapshot", "Narrative_CiteConstellationModel", "Narrative_LossyCompressionProblem", "Narrative_HubMemoryProvenanceNonNegotiable" ]
+  }, {
+    "lineage" : {
+      "relation" : "extends",
+      "target" : "Narrative_FocusAsGoverningPrinciple"
+    },
+    "supporting_segments" : [ "src-7", "src-8", "src-12", "src-13", "src-14", "src-15" ],
+    "under" : [ "Narrative_FocusAsGoverningPrinciple" ],
+    "why" : "The architectural-render metaphor and the explicit claims that the product need not be finished for YC or sales demos, that clear/smooth/functional/valuable beats finished, and the one-word directive 'Simplify' together state a recurring fidelity-standard for demo work — a subject, not a one-off fact. Narrative_FocusAsGoverningPrinciple and Narrative_FocusOvertooling govern MVP scope generally but do not carry this specific fidelity-level claim, so mint as an extension.",
+    "verdict" : "mint",
+    "leaf" : "Narrative_RendersOverConstructionFidelity",
+    "title" : "Renders, Not Construction Documents: Demo Fidelity Is Vivid-Enough, Not Finished",
+    "theme" : "Sales and fundraising demos need vivid, functional renders of the product experience, not fully constructed features — clear, smooth, and valuable outranks finished, and simplification is the operative discipline.",
+    "consulted" : [ "Narrative_FocusAsGoverningPrinciple", "Narrative_FocusOvertooling", "Narrative_MVPScopeDecision", "Narrative_HeroVideoFormat" ]
+  }, {
+    "lineage" : {
+      "relation" : "extends",
+      "target" : "Narrative_UserAgentIngestionModel"
+    },
+    "supporting_segments" : [ "src-16", "src-17", "src-18", "src-19", "src-90", "src-91", "src-122", "src-123", "src-124", "src-136" ],
+    "under" : [ "Narrative_UserAgentIngestionModel" ],
+    "why" : "The gating map (Teams↔Escher, Zoom↔Taylor, Meet↔org suite, Otter↔individual devs), the demo-vs-MVP distinction for which channels must be real, and the explicit Teams-jumps-the-queue ruling all state one recurring prioritization principle applicable to any future integration decision. Narrative_UserAgentIngestionModel states the ingestion-mechanics spine (one protocol, many sources) but not the prioritization-by-named-stakeholder logic, so mint as an extension of it.",
+    "verdict" : "mint",
+    "leaf" : "Narrative_IntegrationGatingByBetaUserImpact",
+    "title" : "Integrations Are Prioritized by Which Named Client or Tester They Unlock",
+    "theme" : "Each transcription or comms integration is sequenced by the specific paying client or active beta tester it gates, not by generic feature completeness — and that mapping can reorder the build queue on demand.",
+    "consulted" : [ "Narrative_UserAgentIngestionModel", "Narrative_MCP_InstallationBarrier", "Narrative_NoCustodyDataPhilosophy" ]
+  }, {
+    "verdict" : "reuse",
+    "leaf" : "Narrative_FrontHITLSubstrate",
+    "supporting_segments" : [ "src-20", "src-21", "src-22", "src-23", "src-24", "src-25", "src-26", "src-27", "src-28", "src-29", "src-30", "src-137", "src-139" ],
+    "why" : "The proxy-through-Front directive, one-org-one-inbox model with switchable/inferred repo context, programmatic-inbox question, SMS-enterprise-only constraint, and required-feed-with-hidden-filters are all instances of Front functioning as the coordination substrate that collapses conversation state and channel routing — exactly what Narrative_FrontHITLSubstrate already names.",
+    "consulted" : [ "Narrative_FrontHITLSubstrate", "Position_OrgTierThreeCapabilities", "Narrative_V0_ChannelAgnostic" ]
+  }, {
+    "verdict" : "reuse",
+    "leaf" : "Narrative_ContentCommentarySplit",
+    "supporting_segments" : [ "src-31", "src-55", "src-56", "src-57", "src-58", "src-59", "src-60", "src-61", "src-62", "src-125", "src-126", "src-127" ],
+    "why" : "The theatre's chat-flow constraint, the push to move commentary/dimensional signals to gutters, the always-'send' affordance, and the ratified rail-and-glyph design language are the same content-layer/commentary-layer distinction already named in Narrative_ContentCommentarySplit, applied to UI rendering rather than the write model — an extension of the same theme, not a new one.",
+    "consulted" : [ "Narrative_ContentCommentarySplit", "Narrative_ReconciliationAsSetTransaction", "Narrative_DigestAsRecognitionAid" ]
+  }, {
+    "lineage" : {
+      "relation" : "extends",
+      "target" : "Narrative_NavigationReplacesEmbeddedSnapshot"
+    },
+    "supporting_segments" : [ "src-4", "src-34", "src-35", "src-36", "src-37", "src-38", "src-39", "src-40", "src-41", "src-42", "src-47", "src-48", "src-49", "src-50", "src-51", "src-52", "src-53", "src-97", "src-98", "src-99", "src-100", "src-101", "src-107", "src-108", "src-109", "src-110", "src-111", "src-119", "src-120", "src-121", "src-138", "src-139" ],
+    "under" : [ "Narrative_NavigationReplacesEmbeddedSnapshot" ],
+    "why" : "Traces one continuous, recurring access question — collaborator/public-share fork, non-collaborator fallback, per-actor perspective filtering for advisor subagents, the demo's single-access simplification — into a ruling that access falls out of navigation semantics (attendance grants the page). This is a subject that will keep being tested (the flagged digest-excerpt-leak tension is explicitly left open), not a settled fact. Narrative_NavigationReplacesEmbeddedSnapshot names the closest existing principle (navigation as the primary read path) but not the attendance-as-membership-primitive access rule, so mint as its extension.",
+    "verdict" : "mint",
+    "leaf" : "Narrative_AttendanceGrantsAccess",
+    "title" : "Attendance Grants the Page: Access Falls Out of Navigation, Not Role",
+    "theme" : "Visibility into a call's theatre and its linked memories is granted by having attended the source call; cross-links resolve against the target call's own access, and digest narrations of connected nodes are provisionally visible because the digest is abstraction, not source.",
+    "consulted" : [ "Narrative_NavigationReplacesEmbeddedSnapshot", "Narrative_PerspectiveShares_Distribution", "Narrative_ShareDataModel", "Narrative_ThreeLayerMemory", "Narrative_DigestAsRecognitionAid", "Narrative_NamedPerspectiveArchitecture" ]
+  }, {
+    "verdict" : "reuse",
+    "leaf" : "Narrative_VoiceMemoAsInput",
+    "supporting_segments" : [ "src-63", "src-139" ],
+    "why" : "Scarlet's want for a personal channel accepting both written notes and voice memos simultaneously, and the open-question restatement of the same personal-capture channel, are the exact continuation of the validated-input-format theme Narrative_VoiceMemoAsInput already names.",
+    "consulted" : [ "Narrative_VoiceMemoAsInput", "Narrative_UserAgentIngestionModel" ]
+  }, {
+    "verdict" : "reuse",
+    "leaf" : "Narrative_MVPScopeDecision",
+    "supporting_segments" : [ "src-1", "src-2", "src-4", "src-54", "src-87", "src-88", "src-89", "src-115", "src-116", "src-117", "src-118", "src-132" ],
+    "why" : "The strip-down framing, the explicit naming of this session as a repeat of the March 19 MVP scope decision, the voice-profiles/flocking segue and its resolution into demo-only scope, the MVP UI surface definition, and the amendment superseding a prior voice-profile ruling are all direct instances and amendments of the exact theme Narrative_MVPScopeDecision already names (MVP core vs. deferred vs. internal-only).",
+    "consulted" : [ "Narrative_MVPScopeDecision", "Position_RefractNotMVP", "Position_RegistryNotMVP", "Narrative_FocusAsGoverningPrinciple" ]
+  }, {
+    "lineage" : {
+      "relation" : "extends",
+      "target" : "Narrative_TokenCostSensitivity"
+    },
+    "supporting_segments" : [ "src-92", "src-93", "src-94", "src-95", "src-96", "src-135", "src-139" ],
+    "under" : [ "Narrative_TokenCostSensitivity" ],
+    "why" : "The recurring cost pressure, the three named levers (cost, frequency, whose keys), the shared fast-model backend design for theatre replies and notifications, and the follow-up naming this as a product-shaping constraint (not a debugging guardrail) state a subject that will keep recurring as pricing and cost analysis continues. Narrative_TokenCostSensitivity names the closest existing theme (cost differential influencing model choice) but not the conversational-mode-gating claim, so mint as its extension.",
+    "verdict" : "mint",
+    "leaf" : "Narrative_ExtractionCostGatesConversationalMode",
+    "title" : "Cents Per Message: Extraction Cost Gates Conversational Extraction",
+    "theme" : "Real-time, every-message extraction becomes viable only once per-message extraction cost falls to cents; the levers are unit cost, extraction frequency, and whose API keys absorb the spend.",
+    "consulted" : [ "Narrative_TokenCostSensitivity", "Position_OrgTierThreeCapabilities", "Narrative_PriceTheAccumulation" ]
+  }, {
+    "lineage" : {
+      "relation" : "extends",
+      "target" : "Narrative_DesignTokenPerspectiveParallel"
+    },
+    "supporting_segments" : [ "src-4", "src-112", "src-113", "src-114" ],
+    "under" : [ "Narrative_DesignTokenPerspectiveParallel" ],
+    "why" : "The directive that missing components must be added and reviewed in the styleguide before reuse in wireframes generalizes into a fixed build-order pipeline (artifact mock → styleguide component → wireframes/product) — a recurring discipline for all future component work. Narrative_DesignTokenPerspectiveParallel names the closest existing theme (design-token extraction structurally mirrors perspective extraction) but is about the analogy itself, not this build-order rule, so mint as its extension.",
+    "verdict" : "mint",
+    "leaf" : "Narrative_StyleguideBeforeProduct",
+    "title" : "Styleguide Before Product: New Components Are Reviewed Before They're Reused",
+    "theme" : "New UI components pass through the styleguide first — mocked, reviewed, and only then reused in wireframes and product — an ordering discipline for design work, not just a shared component library.",
+    "consulted" : [ "Narrative_DesignTokenPerspectiveParallel", "Narrative_BrandAsAIIdentity" ]
+  }, {
+    "verdict" : "reuse",
+    "leaf" : "Narrative_DigestAsRecognitionAid",
+    "supporting_segments" : [ "src-133" ],
+    "why" : "The commentary explicitly names this leaf by title, validating that the resolution-layers theatre is 'the digest made visible' — a direct instance of the digest-as-recognition-aid theme applied to a new surface.",
+    "consulted" : [ "Narrative_DigestAsRecognitionAid" ]
+  }, {
+    "verdict" : "reuse",
+    "leaf" : "Narrative_NavigationReplacesEmbeddedSnapshot",
+    "supporting_segments" : [ "src-133" ],
+    "why" : "The commentary explicitly names this leaf by title alongside digest-as-recognition-aid, crediting the theatre-as-graph-viewer design as an instance of navigation replacing embedded snapshots.",
+    "consulted" : [ "Narrative_NavigationReplacesEmbeddedSnapshot" ]
+  }, {
+    "verdict" : "reuse",
+    "leaf" : "Narrative_UserAgentIngestionModel",
+    "supporting_segments" : [ "src-136" ],
+    "why" : "The beta gating list is explicitly credited as operationalizing the June 9 ingestion-protocol finding (user's own access is the access; Otter's API enterprise-gated) — a direct application of the one-protocol-many-sources spine this leaf already names.",
+    "consulted" : [ "Narrative_UserAgentIngestionModel" ]
+  } ],
+  "unplaced" : [ "src-3", "src-43", "src-44", "src-45", "src-102", "src-140", "src-141", "src-142" ]
+}
