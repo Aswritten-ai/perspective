@@ -4,38 +4,31 @@
 GRAPH <https://aswritten.ai/narrative#Digest_PersonasJTBD> {
   <https://aswritten.ai/narrative#Digest_PersonasJTBD> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#PersonasJTBD> ;
-    narr:childCount "18"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub holds aswritten's persona/JTBD model, which has migrated over time. An original four-archetype scheme — [Knowledge Packager](narr:Archetype_KnowledgePackager), [Trust Seeker](narr:Archetype_TrustSeeker), [Tinkerer](narr:Archetype_Tinkerer), [Knowledge-Rich Consumer](narr:Archetype_KnowledgeRichConsumer) — was [restructured on 2026-03-19](narr:Narrative_ArchetypeTaxonomyRestructured) into three axes (whose expertise × context × consumer): the [expert who distributes](narr:Claim_ArchetypeExpertDistributes), the [leader who delegates](narr:Claim_ArchetypeLeaderDelegates), and the [professional who works with AI daily](narr:Claim_ArchetypeProfessionalDailyAI). On 2026-03-22 the Packager was mapped to Trigger 2 (Delegator), canonical example the customer's chief architect ('I wish we could clone me'). On 2026-04-23 [a beta user from outside tech was reclassified](narr:Narrative_OutsideTechBetaUserKnowledgePackagerReclassification) from C2 to Knowledge Packager, exposing a [typology axis collision](narr:Claim_TypologyAxisCollision) between AI-fluency and distribution-motion. Underlying JTBD signal: [structure for context and memory](narr:Obs_StructureContextMemory) as the core B2C job, with [the customer's chief architect as ideal first paid engagement](narr:Obs_PersonasJTBD) and [ops people](narr:StyleObs_OpsPersonaQuote) as a pitch target.""" ;
+    narr:childCount "14"^^xsd:integer ;
+    narr:generatedFrom "879fb6017c510d85dd468c0c7583c06ee76c55be" ;
+    narr:narration """The persona and Job-to-be-Done (JTBD) model has evolved from a four-archetype set—[Knowledge Packager](narr:Archetype_KnowledgePackager), [Trust Seeker](narr:Archetype_TrustSeeker), [Tinkerer](narr:Archetype_Tinkerer), and [Knowledge-Rich Consumer](narr:Archetype_KnowledgeRichConsumer)—into a [three-axis taxonomy](narr:Narrative_ArchetypeTaxonomyRestructured) defined by expertise, context, and consumption. This shift categorizes users as the [expert who distributes](narr:Position_ArchetypeExpertDistributes), the [leader who delegates](narr:Position_ArchetypeLeaderDelegates), or the [professional who works with AI daily](narr:Position_ArchetypeProfessionalDailyAI). 
+
+Underlying these models is the observation that the primary B2C job is [providing structure for context and memory](narr:Obs_StructureContextMemory). However, the taxonomy faces internal friction; a recent reclassification of a [beta user from outside tech](narr:Archetype_KnowledgeRichConsumer) highlighted a [typology axis collision](narr:Position_TypologyAxisCollision) between AI-fluency and distribution-motion. Furthermore, the founder's own usage patterns serve as a [cautionary research baseline](narr:Position_FounderAsPoorUserExample), as typical users may not maintain their graphs with the same rigor. Strategic focus is currently directed toward [architecture and standards teams](narr:Narrative_ArchitectureTeamsBeachhead) as an ideal beachhead, with [operations personnel](narr:StyleObs_OpsPersonaQuote) identified as a high-pain target for pitch development.""" ;
     narr:covers <https://aswritten.ai/narrative#Archetype_KnowledgePackager> ;
     narr:covers <https://aswritten.ai/narrative#Archetype_KnowledgeRichConsumer> ;
     narr:covers <https://aswritten.ai/narrative#Archetype_Tinkerer> ;
     narr:covers <https://aswritten.ai/narrative#Archetype_TrustSeeker> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_ArchetypeExpertDistributes> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_ArchetypeLeaderDelegates> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_ArchetypeProfessionalDailyAI> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_FounderAsPoorUserExample> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_OutsideTechBetaUserIsKnowledgePackager> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_TypologyAxisCollision> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_ArchetypeTaxonomyRestructured> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_ArchitectureTeamsBeachhead> ;
-    narr:covers <https://aswritten.ai/narrative#Narrative_OutsideTechBetaUserKnowledgePackagerReclassification> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_AsymmetricPPP> ;
     narr:covers <https://aswritten.ai/narrative#Obs_FounderPowerUserQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_PersonasJTBD> ;
     narr:covers <https://aswritten.ai/narrative#Obs_StructureContextMemory> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ArchetypeExpertDistributes> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ArchetypeLeaderDelegates> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ArchetypeProfessionalDailyAI> ;
+    narr:covers <https://aswritten.ai/narrative#Position_FounderAsPoorUserExample> ;
+    narr:covers <https://aswritten.ai/narrative#Position_TypologyAxisCollision> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_OpsPersonaQuote> ;
-    narr:keyPhrase [ narr:text "I wish we could clone me." ; narr:phraseSource <https://aswritten.ai/narrative#Archetype_KnowledgePackager> ] ;
     narr:keyPhrase [ narr:text "90% of what I see people chasing though is structure for context and memory." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_StructureContextMemory> ] ;
     narr:keyPhrase [ narr:text "I'm a poor example of a user because I am the power user par excellence" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_FounderPowerUserQuote> ] ;
-    narr:keyPhrase [ narr:text "a pretty opinionated end-to-end solution that currently doesn't target a single behavior." ; narr:phraseSource <https://aswritten.ai/narrative#Archetype_Tinkerer> ] ;
-    narr:keyPhrase [ narr:text "We're making 75 decisions a day." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_OpsPersonaQuote> ] ;
-    narr:keyPhrase [ narr:text "whose expertise × in what context × who consumes it" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ArchetypeTaxonomyRestructured> ] ;
-    narr:variation [ narr:text "Two competing taxonomies coexist: the superseded four-archetype model and the three-axis restructure — children still reference both." ; narr:over <https://aswritten.ai/narrative#Narrative_ArchetypeTaxonomyRestructured> ; narr:over <https://aswritten.ai/narrative#Archetype_KnowledgePackager> ; narr:over <https://aswritten.ai/narrative#Archetype_Tinkerer> ; narr:over <https://aswritten.ai/narrative#Claim_ArchetypeExpertDistributes> ] ;
-    narr:variation [ narr:text "The typology itself may be broken: fluency-vs-distribution axis collision misclassified a beta user from outside tech and may misclassify others — whether to fix it is explicitly open." ; narr:over <https://aswritten.ai/narrative#Claim_TypologyAxisCollision> ; narr:over <https://aswritten.ai/narrative#Narrative_OutsideTechBetaUserKnowledgePackagerReclassification> ; narr:over <https://aswritten.ai/narrative#Claim_OutsideTechBetaUserIsKnowledgePackager> ] ;
-    narr:variation [ narr:text "Sales-as-Delivery (pre-populated repo from the demo call) remains untested — an early prospect never received his repo; the follow-up was deferred." ; narr:over <https://aswritten.ai/narrative#Archetype_KnowledgePackager> ] ;
-    narr:variation [ narr:text "Existing context hacks are a barrier, not an on-ramp: tinkerers have 'shitty-but-working' setups and aswritten wraps the whole process rather than one flow." ; narr:over <https://aswritten.ai/narrative#Archetype_Tinkerer> ] ;
-    narr:variation [ narr:text "The founder is a poor user exemplar — most users won't maintain their graph as he does, a research/design caveat under all personas." ; narr:over <https://aswritten.ai/narrative#Claim_FounderAsPoorUserExample> ; narr:over <https://aswritten.ai/narrative#Obs_FounderPowerUserQuote> ] ;
-    narr:variation [ narr:text "Structurally distinct go-to-market outlier: architecture/standards teams proposed as beachhead — 'influence everyone but nobody understands them.'" ; narr:over <https://aswritten.ai/narrative#Narrative_ArchitectureTeamsBeachhead> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Look for operations people because they've got the most chaotic job right now... We're making 75 decisions a day." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_OpsPersonaQuote> ] ;
+    narr:keyPhrase [ narr:text "The fluency-vs-distribution axis collision may misclassify others in the typology" ; narr:phraseSource <https://aswritten.ai/narrative#Position_TypologyAxisCollision> ] ;
+    narr:variation [ narr:text "The typology may be fundamentally flawed due to the collision of AI-fluency and distribution-motion axes." ; narr:over <https://aswritten.ai/narrative#Position_TypologyAxisCollision> ] ;
+    narr:variation [ narr:text "The 'Tinkerer' archetype presents a barrier to adoption because existing 'shitty-but-working' solutions are already entrenched." ; narr:over <https://aswritten.ai/narrative#Archetype_Tinkerer> ] ;
+    narr:variation [ narr:text "Foundational usage patterns (the founder as power user) may create a disconnect between product design and typical user behavior." ; narr:over <https://aswritten.ai/narrative#Position_FounderAsPoorUserExample> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
