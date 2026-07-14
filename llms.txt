@@ -138,7 +138,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Rubric_Tailoring](hub-Rubric_Tailoring.html): This hub tracks the evolution of audience-tailoring assessments, mapping how content adapts to distinct stakeholder need
 - [RuleOfThree](hub-RuleOfThree.html): This hub gathers observations of the document's recurring rule-of-three rhetoric — triadic parallelism used for emphasis
 - [SecondPerson](hub-SecondPerson.html): This hub gathers style observations on second-person and direct address across aswritten's documents. The mainline is a 
-- [ShortPunchyCadence](hub-ShortPunchyCadence.html): This hub gathers style observations on a recurring short, punchy cadence across the founder's speech and writing. The do
+- [ShortPunchyCadence](hub-ShortPunchyCadence.html): This hub tracks the recurring staccato declarative rhythm defining the founder's communication, characterized by clipped
 - [Simile](hub-Simile.html): This hub collects the figurative devices the speaker reaches for — predominantly similes and conceptual metaphors drawn 
 - [SpeakerIdiolects](hub-SpeakerIdiolects.html): This hub collects observations about how individual speakers sound — their idiolects, register markers, and the editoria
 - [StockPhrases](hub-StockPhrases.html): This hub gathers recurring stock phrases observed in the speaker's style, spanning several registers. The dominant ancho
