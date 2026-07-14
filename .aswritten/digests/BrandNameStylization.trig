@@ -4,10 +4,12 @@
 GRAPH <https://aswritten.ai/narrative#Digest_BrandNameStylization> {
   <https://aswritten.ai/narrative#Digest_BrandNameStylization> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#BrandNameStylization> ;
-    narr:childCount "33"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers style observations whose dominant note is brand orthography: the [lowercase 'aswritten' with .ai TLD](narr:StyleObs_BrandName) read as a [code-adjacent, anti-corporate identity](narr:Claim_LowercaseBrandStylization), held [lowercase even at sentence start and in repo paths](narr:StyleObs_BrandNameLowercase). That lowercase rule recurs across dozens of children ([1](narr:StyleObs_AswrittenLowercase), [2](narr:StyleObs_aswrittenLowercase), [3](narr:StyleObservation_LowercaseSignal)) and extends to tool names — `compile`, `introspect`, `scope`, `lens` — in the same [code-style casing](narr:StyleObs_BrandNameStylization). The hub also sweeps in non-brand style facts: [staccato verb-only fragments](narr:StyleObs_1), [backtick code spans for tool/workflow names](narr:StyleObs_BacktickToolNames), [systematic bold for taxonomy terms](narr:StyleObs_BoldKeyTerms), all-caps conviction labels like [BOULDER](narr:StyleObs_ConvictionLabel), and a [bolded provisional research-branch flag](narr:StyleObs_AgentSim_ProvisionalFlag). So the region is recognizable as 'how aswritten writes itself' — orthography, formatting, register — not brand strategy.""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_LowercaseBrandStylization> ;
+    narr:childCount "31"^^xsd:integer ;
+    narr:generatedFrom "6411f91969dce364fb9b6ca3b27b856213fa0542" ;
+    narr:narration """This hub documents the evolving orthographic and rhetorical conventions of the organization. While early observations emphasized a [code-adjacent, anti-corporate identity](narr:Position_LowercaseBrandStylization) signaled by [consistent lowercase](narr:StyleObs_AswrittenLowercase) usage, recent entries from June 2026 introduce a more nuanced [capitalization policy](narr:Position_AswrittenAICompanyized). This policy distinguishes between [body prose](narr:Position_AswrittenAICompanyized) (where 'Aswritten' is capitalized as a subject) and [technical references](narr:Position_AswrittenAICompanyized) (where URLs and email addresses remain lowercase), while reserving all-caps for the [wordmark](narr:Position_AswrittenAICompanyized). Beyond brand naming, the hub tracks a [systematic taxonomy of formatting](narr:StyleObs_BoldKeyTerms), including [backtick code spans](narr:StyleObs_BacktickToolNames) for system primitives, [all-caps conviction markers](narr:StyleObs_ConvictionLabel), and [provisional metadata flags](narr:StyleObs_AgentSim_ProvisionalFlag) used to manage research-branch status. The rhetorical register is defined by [staccato declarative fragments](narr:StyleObs_1) and [refraction-based metaphors](narr:StyleObs_1), creating a document style that functions as both technical documentation and a [dialogue-within-document](narr:StyleObs_1) experience.""" ;
+    narr:covers <https://aswritten.ai/narrative#Observation_AswrittenCapQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Position_AswrittenAICompanyized> ;
+    narr:covers <https://aswritten.ai/narrative#Position_LowercaseBrandStylization> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_1> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_3> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
@@ -28,28 +30,20 @@ GRAPH <https://aswritten.ai/narrative#Digest_BrandNameStylization> {
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrandNameMCP> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrandNameStylization> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrandName_1> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_BrandName_AsWritten> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrandName_aswritten> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_BrandNames> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BrandStylization> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_CodeBlockPrimitive> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ConvictionLabel> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_Lenses> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_SortaRichBrand> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_WorldviewBrandTerm> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_aswrittenLowercase> ;
     narr:covers <https://aswritten.ai/narrative#StyleObservation_BrandName_1> ;
     narr:covers <https://aswritten.ai/narrative#StyleObservation_LowercaseSignal> ;
-    narr:keyPhrase [ narr:text "Lowercase 'aswritten' signals a code-adjacent, anti-corporate identity." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_LowercaseBrandStylization> ] ;
-    narr:keyPhrase [ narr:text "aswritten.ai" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_1> ] ;
-    narr:keyPhrase [ narr:text "Aswritten.ai" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_1> ] ;
-    narr:keyPhrase [ narr:text "Lowercase aswritten and aswritten.ai" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObservation_LowercaseSignal> ] ;
-    narr:keyPhrase [ narr:text "so her intern's work can cite her words, aswritten. Annotate your work." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AswrittenModeMarker> ] ;
-    narr:keyPhrase [ narr:text "aswritten/remember" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_Lenses> ] ;
-    narr:variation [ narr:text "Capitalization is NOT uniform: against the lowercase rule sit a capital-A 'Aswritten.ai', a title-case 'As Written' with quotation marks, and a title-case one-word 'Aswritten' paired with 'a collaborator'." ; narr:over <https://aswritten.ai/narrative#StyleObs_1> ; narr:over <https://aswritten.ai/narrative#StyleObs_BrandName_AsWritten> ; narr:over <https://aswritten.ai/narrative#StyleObs_BrandNames> ] ;
-    narr:variation [ narr:text "One/two-word split: most render 'aswritten' as one word, but one child reads it as two lowercase words 'as written'." ; narr:over <https://aswritten.ai/narrative#StyleObs_AsWrittenBrandName> ; narr:over <https://aswritten.ai/narrative#StyleObs_AswrittenLowercase> ] ;
-    narr:variation [ narr:text "'aswritten' is read not only as a name but as a mode-switch command/suffix — simultaneously brand, command, and rhetorical marker." ; narr:over <https://aswritten.ai/narrative#StyleObs_AswrittenModeMarker> ] ;
-    narr:variation [ narr:text "Distinct brand concepts surface that aren't the aswritten name at all: a hedged 'sorta rich' brand and 'worldview' as a product term." ; narr:over <https://aswritten.ai/narrative#StyleObs_SortaRichBrand> ; narr:over <https://aswritten.ai/narrative#StyleObs_WorldviewBrandTerm> ] ;
-    narr:variation [ narr:text "Many children under this hub carry no brand-name content — they document register, fragments, formatting, or conviction labels — so 'brand stylization' under-describes the bucket." ; narr:over <https://aswritten.ai/narrative#StyleObs_3> ; narr:over <https://aswritten.ai/narrative#StyleObs_7> ; narr:over <https://aswritten.ai/narrative#StyleObs_CodeBlockPrimitive> ; narr:over <https://aswritten.ai/narrative#StyleObs_ConvictionLabel> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "'Aswritten' is always capitalized in body prose, narratives, and anywhere it is the subject." ; narr:phraseSource <https://aswritten.ai/narrative#Position_AswrittenAICompanyized> ] ;
+    narr:keyPhrase [ narr:text "BOULDER used as an inline conviction label in all-caps" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ConvictionLabel> ] ;
+    narr:keyPhrase [ narr:text "Provisional — from research/agent-memory-architecture exploration branch, not yet promoted to main." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AgentSim_ProvisionalFlag> ] ;
+    narr:keyPhrase [ narr:text "I treated the models themselves like a computer, and a narrative architecture - an interconnected web of narratives that define a way of thinking - like a program that can be installed onto their hardware." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:keyPhrase [ narr:text "perspective + goal + termination criteria + escalation criteria = a bounded autonomous agent" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_CodeBlockPrimitive> ] ;
+    narr:variation [ narr:text "Tension between the original 'lowercase-as-identity' signal and the new 'capitalized-as-subject' formalization." ; narr:over <https://aswritten.ai/narrative#Position_LowercaseBrandStylization> ; narr:over <https://aswritten.ai/narrative#Position_AswrittenAICompanyized> ] ;
+    narr:variation [ narr:text "The use of all-caps as a formal conviction marker (BOULDER) versus its use as a logo wordmark." ; narr:over <https://aswritten.ai/narrative#StyleObs_ConvictionLabel> ; narr:over <https://aswritten.ai/narrative#Position_AswrittenAICompanyized> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
