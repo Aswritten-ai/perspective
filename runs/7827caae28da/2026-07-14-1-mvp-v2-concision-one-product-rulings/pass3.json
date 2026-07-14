@@ -1,0 +1,245 @@
+{
+  "reconciliations" : [ {
+    "segment_ids" : [ "src-2", "src-132" ],
+    "note" : "This is the second time she has made this exact move — the March 19 MVP redefinition (install–compile–cite–remember–review as core; Refraction, Registry, marketplace deferred) was MVP v1's version of it, and the July 11 MVP-cut decision record was its immediate predecessor. Second run of the Mar 19 MVP scope decision, amending the Jul 11 MVP-cut record — the strip-down move is becoming aswritten's recurring discipline.",
+    "targets" : [ "FocusSequencing" ],
+    "referents" : [ {
+      "ref" : "Narrative_MVPScopeDecision",
+      "relation" : "extends"
+    } ],
+    "principal" : "session"
+  }, {
+    "segment_ids" : [ "src-5", "src-64" ],
+    "note" : "The headline settlement: **the live surface is not a second product or an experiment — it is the MVP product's front end that was never built.** She opens by settling the unification question the typed notes raised, slowly and deliberately:",
+    "targets" : [ "ArchitectureOverview" ],
+    "referents" : [ {
+      "ref" : "src-65",
+      "relation" : "extends"
+    } ],
+    "principal" : "session"
+  }, {
+    "segment_ids" : [ "src-66" ],
+    "note" : "That immediately resolves an open question: can you start a new conversation in this web thing?",
+    "targets" : [ "CoreWorkflows" ],
+    "referents" : [ {
+      "ref" : "src-67",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-68",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-69" ],
+    "note" : "The upload affordance narrows accordingly: upload conversations — a transcript, or notes atop a conversation — not generalized notes.",
+    "targets" : [ "DataIntegrationFlows" ],
+    "referents" : [ {
+      "ref" : "src-70",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-71", "src-72", "src-74", "src-76", "src-77" ],
+    "note" : "The typed notes asked whether extracting a framed \"memory\" is still right versus extracting the entire transcript. Walking, she argues both sides: Then the counter, landing on the product's own core claim: Her resolution distinguishes venue: a memory written interactively with Claude, where the user approves the summary, is in essence first primary source material, and captures interstitial decisions that wouldn't survive as quotes. But the logic turned structural:",
+    "targets" : [ "ArchitectureOverview", "GovernanceSafetyTrust" ],
+    "referents" : [ {
+      "ref" : "src-73",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-75",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-78",
+      "relation" : "extends"
+    }, {
+      "ref" : "Position_IndexNeverGatesStore",
+      "relation" : "extends"
+    }, {
+      "ref" : "Narrative_HubMemoryProvenanceNonNegotiable",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-6", "src-79", "src-80", "src-81", "src-83", "src-85", "src-133" ],
+    "note" : "And the theatre's design question resolved into something she found genuinely elegant: **the theatre becomes the graph viewer**, with resolution layers (expressions → positions → narratives → strata) instead of a separate explore-graph feature. Messages in the theatre have **resolution layers**: at first resolution, every single quote from the call, no summary, no filter. At second resolution, only positions — each expandable to the expressions that support it, footnotes beneath. Then a narrative layer where positions are the footnotes, and strata above. The UI becomes layer navigation — an icon that steps an expression up a layer, collapsing siblings under their position, repeating up to strata, so different parts of the graph sit expanded at different levels. This answers the typed notes' \"Drop explore graph?\" — yes, structurally: The resolution-layers theatre is the digest made visible: consistent with digest-as-recognition-aid and navigation-replaces-embedded-snapshot.",
+    "targets" : [ "ArchitectureOverview" ],
+    "referents" : [ {
+      "ref" : "src-82",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-84",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-86",
+      "relation" : "extends"
+    }, {
+      "ref" : "Narrative_DigestAsRecognitionAid",
+      "relation" : "extends"
+    }, {
+      "ref" : "Narrative_NavigationReplacesEmbeddedSnapshot",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-88", "src-89", "src-90" ],
+    "note" : "The demo page shows the arc of narrative change, actor conviction, sentiment and conceptual narrative analysis over time — \"and in there we can show the flocking cause it's fun\" — the typed notes' architectural-renders metaphor executed: vivid renders, not CAD. The MVP UI surface is the feed — viewing calls, connecting integrations — plus the theatre, no overlay, with reactions, A/B-style clarifications, and response commentary. Demo shows email and text for real; Teams/Slack as a this-is-possible button.",
+    "targets" : [ "FocusSequencing" ],
+    "referents" : [ {
+      "ref" : "src-87",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-91",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-102", "src-103", "src-105", "src-106", "src-134" ],
+    "note" : "The memo's questions went to a design working session the same day. **1. The extraction fork — extract the whole transcript; the memory becomes a generated view.** The transcript is the committed source; extraction reads all of it; the PR review surface is the generated view (positions + claimed expressions, composed at read time); the default display is the positions layer with a timeline scrubber in the gutter. The venue distinction stands: interactive user-approved memories remain committed sources. The extraction ruling resolves the memory-vs-transcript tension by venue: user-approved summaries on their infrastructure are primary source; unilateral filtering on ours is replaced by read-time layers — \"no summary until read time\" applied to the pipeline itself.",
+    "targets" : [ "ArchitectureOverview", "GovernanceSafetyTrust" ],
+    "referents" : [ {
+      "ref" : "src-104",
+      "relation" : "extends"
+    }, {
+      "ref" : "Position_IndexNeverGatesStore",
+      "relation" : "extends"
+    }, {
+      "ref" : "Narrative_HubMemoryProvenanceNonNegotiable",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-107", "src-108", "src-110", "src-111", "src-138" ],
+    "note" : "**2. Access falls out of navigation semantics — attendance grants the page.** Reacting to the proposal that following a cross-memory link opens that node's home memory's theatre: Attendance is the membership primitive; cross-links resolve only with access to the target call; digest narrations of connected nodes are provisionally visible because the digest is the abstraction, not the source. The flagged counterpoint for the deeper pass: digest narrations embed verbatim witness excerpts, which weakens \"not showing the source.\" The attendance-based access ruling ratifies the attended-projection convergence from the clearance design work — attendance-scoped visibility is append-only-safe.",
+    "targets" : [ "GovernanceSafetyTrust" ],
+    "referents" : [ {
+      "ref" : "src-109",
+      "relation" : "extends"
+    }, {
+      "ref" : "Narrative_HubMemoryProvenanceNonNegotiable",
+      "relation" : "contradicts"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-112", "src-114" ],
+    "note" : "**3. Styleguide-first component discipline.** The pipeline for design work is: artifact mock (fast iteration) → styleguide component (reviewed) → wireframes/product.",
+    "targets" : [ "ModulesCapabilities" ],
+    "referents" : [ {
+      "ref" : "src-113",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-115", "src-116", "src-118", "src-119", "src-121" ],
+    "note" : "**4. Two amendments to the July 11 MVP-cut record.** Voice profiles and the flocking viewer move out of the product: superseding the July 11 \"voice-profile fullscreen IN, v1-thin\" ruling. And demo-era explicit shares are full depth, not stripped: stripped/anonymized/actor-scoped/tiered shares become v2 work.",
+    "targets" : [ "FocusSequencing" ],
+    "referents" : [ {
+      "ref" : "src-117",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-120",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-122", "src-124" ],
+    "note" : "**5. Teams jumps the integration queue.** Teams gates Escher, the actual paying client; the July 11 record had only named Zoom+Meet as the post-window integrations.",
+    "targets" : [ "DataIntegrationFlows" ],
+    "referents" : [ {
+      "ref" : "src-123",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-125", "src-126", "src-127", "src-128", "src-129", "src-130" ],
+    "note" : "**6. The conversation surface's design language.** Expressions must carry actors; the viewer's messages sit right, everyone else left; dimensional annotations collapse behind a glyph so the theatre still feels like a conversation (\"annotations that if removed would not move the chat bubbles\"); and for how narratives claim interspersed statements, gutter rails — solid where a narrative claims a statement, dotted where it passes through an interruption, parallel rails for overlap, bubbles never colored — reusing the same color vocabulary as the timeline ticks. On seeing the everything-interspersed comp built from the session's own conversation, and the narrated digest under each position title with node-links: the direction ratified; comps are the next step. One empirical finding grounded the design:** analysis of the newest multipass extractions (offsets content-verified) showed positions are 100% contiguous blocks — but by construction, not by nature: the extractor gives each expression exactly one position in document order. The genuine interleaving lives at the narrative grain (~32% of narratives split and resume across a document). The whole-transcript ruling will likely loosen position contiguity, so the rails design supports spread and overlap anyway — exactly Scarlet's instinct:",
+    "targets" : [ "ModulesCapabilities" ],
+    "referents" : [ {
+      "ref" : "src-131",
+      "relation" : "extends"
+    } ],
+    "principal" : "session"
+  }, {
+    "segment_ids" : [ "src-92", "src-94", "src-96", "src-135" ],
+    "note" : "The cost pressure, named as product-shaping: Levers: bring extraction cost down, control the number of extractions, and change whose keys it runs on: Two chat experiences share one backend: the theatre reply (loads the perspective, navigates from the ref of the extractor call, responds with message history; prompt caching must hold across replies; \"probably doesn't need to be a frontier model, it should be fast. Maybe Luna?\" — confirmed in-session as GPT-5.6 Luna, OpenAI's fast tier) and the post-extraction notification to all participants carrying the clarification questions. The cents-per-message target extends the Jul 12 extraction-cost policy from debugging guardrail to product-shaping constraint.",
+    "targets" : [ "PackagingPricing" ],
+    "referents" : [ {
+      "ref" : "src-93",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-95",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-98", "src-100" ],
+    "note" : "On the just-the-memory fallback her typed notes sketched, she pushed back on her own sketch — \"I just don't think that a single memory is good\" — and landed on collapsing the fork into one code path: For the demo: one access level; Wizard-of-Oz or talk-tracked versions for the rest.",
+    "targets" : [ "PackagingEntitlement" ],
+    "referents" : [ {
+      "ref" : "src-99",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-101",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-137" ],
+    "note" : "Front as the notification proxy extends the Org-tier three-capabilities position into the MVP notification path.",
+    "targets" : [ "PackagingEntitlement" ],
+    "referents" : [ {
+      "ref" : "src-20",
+      "relation" : "extends"
+    }, {
+      "ref" : "Position_OrgTierThreeCapabilities",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  }, {
+    "segment_ids" : [ "src-136" ],
+    "note" : "The beta gating list operationalizes the Jun 9 ingestion-protocol finding (the user's own access is the access; Otter's API is enterprise-gated).",
+    "targets" : [ "DataIntegrationFlows", "SecurityPrivacyModel" ],
+    "referents" : [ {
+      "ref" : "src-16",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-17",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-18",
+      "relation" : "extends"
+    }, {
+      "ref" : "src-19",
+      "relation" : "extends"
+    }, {
+      "ref" : "Narrative_NoCustodyDataPhilosophy",
+      "relation" : "extends"
+    }, {
+      "ref" : "Narrative_UserAgentIngestionModel",
+      "relation" : "extends"
+    } ],
+    "principal" : "Scarlet Dame"
+  } ],
+  "standalone" : [ {
+    "segment_id" : "src-1",
+    "why" : "Pure scene-setting narration with no distinct conclusion or bound referent — unendorsed model framing, not a position."
+  }, {
+    "segment_id" : "src-3",
+    "why" : "Transitional framing sentence with no conclusion of its own to reconcile."
+  }, {
+    "segment_id" : "src-4",
+    "why" : "Verdict new — references the absent July 11 MVP-cut record with no plausible referent; nothing to reconcile."
+  }, {
+    "segment_id" : "src-139",
+    "why" : "Closing open-items recap — enumerates unresolved questions, not a settled conclusion; unendorsed model composition."
+  }, {
+    "segment_id" : "src-140",
+    "why" : "Procedural QC note on the transcription pipeline's technical performance, not a position or session-level conclusion."
+  }, {
+    "segment_id" : "src-141",
+    "why" : "Procedural QC note on transcript normalization confidence, not a position or session-level conclusion."
+  }, {
+    "segment_id" : "src-142",
+    "why" : "Procedural QC note on audio/environment caveats, not a position or session-level conclusion."
+  } ],
+  "held" : [ ]
+}
