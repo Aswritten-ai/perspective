@@ -4,31 +4,26 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__Rubric_Flow> {
   <https://aswritten.ai/narrative#Digest_ns__Rubric_Flow> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#Rubric_Flow> ;
-    narr:childCount "13"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers rubric assessments of *flow* — logical progression, transitions, and structural coherence — across a wide span of artifacts. Written specs and decision records score highest: a [collective-memory doc](narr:Assess_Flow_collective_memory) and a [refinements/workflows spec](narr:Assess_Flow_cm) both earn \"excellent logical progression,\" and the ADR-templated assessments ([ADR-001](narr:RubricAssess_Flow_ADR001), [ADR-002](narr:RubricAssess_Flow_ADR002)) credit the template for coherence. Positioning and go-to-market pieces — the [rebrand](narr:Assess_Flow_rebrand), the [services offering](narr:Assessment_Flow_1), the [GTM motion](narr:RubricAssess_Flow_GTM), the [IP-crisis brief](narr:Assessment_Flow_IPCrisis) — are assessed on decision→solution→implication arcs with explicit headers. A second cluster covers *spoken* material: the [the customer's chief architect pitch](narr:Assessment_Flow_CustomerArchitect), an [advisor call](narr:RubricAssess_Flow), a [product walkthrough](narr:RubricAssess_Flow_1), and a [voice-memo-driven role analysis](narr:RubricAssess_Flow_20260107), judged on conversational coherence rather than document structure.""" ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "bcb14dc7ed47fac3d7c0f71a50350a5588d47322" ;
+    narr:narration """This hub catalogs rubric assessments of *flow*, evaluating how logical progression and structural coherence manifest across diverse artifacts. Formal documentation, including [refinements/workflows](narr:Assess_Flow_cm) and the [collective-memory doc](narr:Assess_Flow_collective_memory), relies on hierarchical headers and explicit section transitions to maintain rigor. The [ADR-001](narr:RubricAssess_Flow_ADR001) and [ADR-002](narr:RubricAssess_Flow_ADR002) assessments highlight how standardized templates enforce a reliable progression from context to consequence. In contrast, communicative artifacts like the [customer architect pitch](narr:Assessment_Flow_CustomerArchitect) and [advisor call](narr:RubricAssess_Flow) are judged on conversational naturalness, where coherence emerges through thematic clustering rather than rigid scaffolding. Strategic materials, such as the [GTM motion](narr:RubricAssess_Flow_GTM) and [IP-crisis brief](narr:Assessment_Flow_IPCrisis), occupy a middle ground, utilizing explicit headers to manage complex problem-to-solution arcs. Finally, spoken [product walkthroughs](narr:RubricAssess_Flow_1) and [general flow assessments](narr:RubricAssess_flow) reveal the tension between intentional structural repetition and the natural digressions inherent in live speech.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Flow_cm> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Flow_collective_memory> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assess_Flow_rebrand> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Flow_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Flow_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assessment_Flow_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Flow_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Flow> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Flow_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Flow_20260107> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Flow_ADR001> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Flow_ADR002> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Flow_GTM> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_flow> ;
     narr:keyPhrase [ narr:text "Excellent logical progression: refinements → workflows → specifications → implementation phases" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Flow_cm> ] ;
-    narr:keyPhrase [ narr:text "'Open Questions Resolved' section provides closure" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Flow_collective_memory> ] ;
+    narr:keyPhrase [ narr:text "Logical progression from decisions → workflows → architecture → data types" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Flow_collective_memory> ] ;
+    narr:keyPhrase [ narr:text "Natural conversational flow; effective transitions between sections" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Flow_CustomerArchitect> ] ;
     narr:keyPhrase [ narr:text "Some backtracking ('I forgot', 'let me step back'). Natural for spoken walkthrough." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Flow_1> ] ;
-    narr:keyPhrase [ narr:text "some formulaic scaffolding (NOT/IS pattern)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_flow> ] ;
-    narr:keyPhrase [ narr:text "Some repetition across sections (intentional for emphasis)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Flow> ] ;
-    narr:keyPhrase [ narr:text "minimal formulaic feel due to voice memo quotes" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Flow_20260107> ] ;
-    narr:variation [ narr:text "Written/spec artifacts get clean 'excellent progression' marks; spoken walkthroughs are forgiven backtracking and digressions ('I forgot', 'let me step back', 'some digressions typical of advisor calls') as natural to the medium — two different bars for 'good flow'." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Flow_cm> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow_1> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow> ] ;
-    narr:variation [ narr:text "Formulaic scaffolding cuts both ways: flagged as a mild flaw (NOT/IS pattern; explicit 'What was happening/What we did/Why this matters' transitions) yet credited elsewhere as the very thing aiding coherence (ADR template, consistent Pain→Value→Metrics→Change structure)." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_flow> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow_ADR001> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow_20260107> ] ;
-    narr:variation [ narr:text "Repetition is read as intentional emphasis here, not a flow defect — an outlier judgment that tolerates redundancy others would penalize." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow> ] ;
-    narr:variation [ narr:text "Mild dissent on tightness: GTM flagged that 'some sections could be tighter,' the lone note that progression alone isn't sufficient." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow_GTM> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Strong structural flow via ADR template; logical progression from context → decision → rationale → consequences" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Flow_ADR001> ] ;
+    narr:variation [ narr:text "Intentional repetition for emphasis vs. structural efficiency" ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow> ] ;
+    narr:variation [ narr:text "Formulaic scaffolding (e.g., IS/NOT patterns) as a constraint on natural flow" ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_flow> ] ;
+    narr:variation [ narr:text "Backtracking and digressions as acceptable artifacts of spoken coherence" ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Flow_1> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
