@@ -141,7 +141,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [ShortPunchyCadence](hub-ShortPunchyCadence.html): This hub tracks the recurring staccato declarative rhythm defining the founder's communication, characterized by clipped
 - [Simile](hub-Simile.html): This hub collects the figurative devices the speaker reaches for — predominantly similes and conceptual metaphors drawn 
 - [SpeakerIdiolects](hub-SpeakerIdiolects.html): This hub collects observations about how individual speakers sound — their idiolects, register markers, and the editoria
-- [StockPhrases](hub-StockPhrases.html): This hub gathers recurring stock phrases observed in the speaker's style, spanning several registers. The dominant ancho
+- [StockPhrases](hub-StockPhrases.html): This hub tracks recurring linguistic signatures that define the speaker's rhetorical style. The primary anchor remains t
 - [StyleMetrics](hub-StyleMetrics.html): This hub gathers per-document style and readability metrics across the org's corpus, computed on shared axes: active-voi
 - [Tagline](hub-Tagline.html): This hub gathers candidate taglines and brand-voice observations for aswritten.ai, whose name puns Latin *sic* (as writt
 - [TerminologyControl](hub-TerminologyControl.html): This hub maintains the project's controlled vocabulary, establishing a canonical lexicon for narrative architecture and 
