@@ -79,7 +79,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [ProductOverview](hub-ProductOverview.html): The ProductOverview hub gathers the shape of the aswritten product across UX, architecture, packaging, pricing, and tool
 - [Proof](hub-Proof.html): The proof hub tracks how aswritten demonstrates that it changes AI behavior — across sales pitch, technical verification
 - [QualityReviewGates](hub-QualityReviewGates.html): This hub spans the review, evaluation, and verification disciplines that gate knowledge quality. The review protocol clu
-- [Quotes](hub-Quotes.html): This hub collects the verbatim record — direct quotes and attributed observations — that anchor the aswritten narrative 
+- [Quotes](hub-Quotes.html): This hub is the verbatim record of the aswritten narrative — direct speech and attributed observations spanning January 
 - [RiskGuardrails](hub-RiskGuardrails.html): This hub gathers the risks and guardrails threaded through Aswritten's company narrative — product, sales, hiring, capit
 - [RoleTopology](hub-RoleTopology.html): This hub gathers how aswritten models *who occupies what* in an organization. The mainline distinction is firm and dated
 - [SalesDecks](hub-SalesDecks.html): This hub gathers the evolving sales-materials and sales-motion thinking. a demo-call prospect's early ask (Mar 11) was c
