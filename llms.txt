@@ -78,7 +78,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [ProductLadder](hub-ProductLadder.html): This hub gathers the product-and-go-to-market ladder. The commercial spine is the four-phase core expansion track: [a [a
 - [ProductOverview](hub-ProductOverview.html): The product trajectory has shifted from a focus on adaptive architectural infrastructure toward an immersive, consumer-f
 - [Proof](hub-Proof.html): The proof hub tracks how aswritten demonstrates that it changes AI behavior — across sales pitch, technical verification
-- [QualityReviewGates](hub-QualityReviewGates.html): This hub spans the review, evaluation, and verification disciplines that gate knowledge quality. The review protocol clu
+- [QualityReviewGates](hub-QualityReviewGates.html): This hub spans the review, evaluation, and verification disciplines that gate knowledge quality across the aswritten sys
 - [Quotes](hub-Quotes.html): This hub is the verbatim record of the aswritten narrative — direct speech and attributed observations spanning January 
 - [RiskGuardrails](hub-RiskGuardrails.html): This hub gathers the risks and guardrails threaded through Aswritten's company narrative — product, sales, hiring, capit
 - [RoleTopology](hub-RoleTopology.html): This hub gathers how aswritten models *who occupies what* in an organization. The mainline distinction is firm and dated
