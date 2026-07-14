@@ -8,7 +8,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 
 ## Areas
 - [ActorIncentiveAnalysis](hub-ActorIncentiveAnalysis.html): This hub maps the actors around the product and what each one wants. The buyer question is answered concretely in the VC
-- [Architecture](hub-Architecture.html): The Architecture hub frames an organization's worldview as the single source of truth from which everything else is rend
+- [Architecture](hub-Architecture.html): The Architecture hub defines an organization's worldview as the primary source of truth, treating all outputs—content, a
 - [ArchitectureOverview](hub-ArchitectureOverview.html): The architecture has transitioned from a directory-based compilation model to a transform-based perspective engine, wher
 - [AudienceFrames](hub-AudienceFrames.html): This hub gathers how the pitch and fundraising materials get reframed per audience. The structural spine is that every s
 - [Behaviors](hub-Behaviors.html): This hub gathers the system behaviors of a git-native memory product — both the low-level operations and the user-facing
