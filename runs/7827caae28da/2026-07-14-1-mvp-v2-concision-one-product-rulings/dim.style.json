@@ -1,0 +1,240 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-8",
+    "regions" : [ "metaphor", "analogy" ],
+    "evidence" : [ {
+      "quote" : "we're designing a new building and we don't need the whole thing designed to construction members in CAD, we need to create a set of renders that make the experience of the space vivid",
+      "kind" : "framing-move"
+    } ],
+    "why" : "extended architecture-render AS-comparison doing argumentative work about MVP fidelity",
+    "reported" : false,
+    "direction" : {
+      "verdict" : "mint",
+      "node" : "mint-1"
+    }
+  }, {
+    "segment_local_id" : "src-16",
+    "regions" : [ "parallelism", "anaphora" ],
+    "evidence" : [ {
+      "quote" : "Teams integration gates Escher, our actual paying client",
+      "kind" : "framing-move"
+    } ],
+    "why" : "opens a matched X-gates-Y series repeated across src-17/18/19",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-17",
+    "regions" : [ "parallelism", "anaphora" ],
+    "evidence" : [ {
+      "quote" : "Zoom gates Taylor testing, our most active beta tester",
+      "kind" : "framing-move"
+    } ],
+    "why" : "second clause in the repeated 'X gates Y' structure begun at src-16",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-18",
+    "regions" : [ "parallelism", "anaphora" ],
+    "evidence" : [ {
+      "quote" : "Google meet gates our org's secondary transcription path and the last org suite surface.",
+      "kind" : "framing-move"
+    } ],
+    "why" : "third clause continuing the anaphoric 'gates' pattern",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-19",
+    "regions" : [ "parallelism", "anaphora" ],
+    "evidence" : [ {
+      "quote" : "Otter and other transcription tools gate individual developer/entrepreneur testing/adoption",
+      "kind" : "framing-move"
+    } ],
+    "why" : "fourth and closing clause of the matched 'gates' series, completing a rule-of-four grid",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-15",
+    "regions" : [ "short-punchy-cadence" ],
+    "evidence" : [ {
+      "quote" : "Simplify.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "single-word imperative fragment functioning as terse emphasis",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-65",
+    "regions" : [ "antithesis" ],
+    "evidence" : [ {
+      "quote" : "it's not an experiment at the existing MVP product. This is the MVP product, this is the front end that was never built.",
+      "kind" : "framing-move"
+    } ],
+    "why" : "negated frame set against the asserted frame in deliberate contrast",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-5",
+    "regions" : [ "antithesis" ],
+    "evidence" : [ {
+      "quote" : "the live surface is not a second product or an experiment — it is the MVP product's front end that was never built",
+      "kind" : "framing-move"
+    } ],
+    "why" : "explicit not-X-but-Y contrast structuring the headline settlement",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-67",
+    "regions" : [ "rhetorical-question" ],
+    "evidence" : [ {
+      "quote" : "I'd say, arguably, no, right?",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "question posed with answer already supplied by the asker via 'arguably, no'",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-68",
+    "regions" : [ "antithesis", "parallelism" ],
+    "evidence" : [ {
+      "quote" : "What we're doing is not providing a home for conversation with AI. We're providing a home for perspective and the integration feed",
+      "kind" : "framing-move"
+    } ],
+    "why" : "not-X-but-Y matched clause pair defining the product by negation and restatement",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-70",
+    "regions" : [ "stock-phrase" ],
+    "evidence" : [ {
+      "quote" : "We're always expecting primary source quotes from a specific person, either with interspersed commentary or just a raw transcript.",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "recurring org formula 'primary source' names a settled category rather than describing this instance alone",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-75",
+    "regions" : [ "rhetorical-question", "antithesis" ],
+    "evidence" : [ {
+      "quote" : "we're also arguing that the entire value of the product is that it doesn't do summary until read time, right? So then why are we doing all this filter",
+      "kind" : "framing-move"
+    } ],
+    "why" : "posed question exposing contradiction between stated principle and practice, answer implied",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-79",
+    "regions" : [ "parallelism" ],
+    "evidence" : [ {
+      "quote" : "at first resolution, every single quote from the call, no summary, no filter",
+      "kind" : "framing-move"
+    } ],
+    "why" : "matched no-summary/no-filter clause pair defining the layer",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-80",
+    "regions" : [ "parallelism" ],
+    "evidence" : [ {
+      "quote" : "At second resolution, only positions — each expandable to the expressions that support it, footnotes beneath.",
+      "kind" : "framing-move"
+    } ],
+    "why" : "continues the anaphoric 'At Nth resolution' structure begun in src-79",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-81",
+    "regions" : [ "parallelism" ],
+    "evidence" : [ {
+      "quote" : "Then a narrative layer where positions are the footnotes, and strata above.",
+      "kind" : "framing-move"
+    } ],
+    "why" : "third beat of the resolution-layer triad, completing a rule-of-three ladder",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-83",
+    "regions" : [ "metaphor" ],
+    "evidence" : [ {
+      "quote" : "an icon that steps an expression up a layer, collapsing siblings under their position",
+      "kind" : "framing-move"
+    } ],
+    "why" : "spatial 'steps up' / 'collapsing' language treats the data structure as physical terrain",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-87",
+    "regions" : [ "antithesis" ],
+    "evidence" : [ {
+      "quote" : "Not included in the product itself. But we can include them in a one-off produced and brand-styled artifact",
+      "kind" : "framing-move"
+    } ],
+    "why" : "not-in-product-but-in-artifact contrast structuring the demo/product boundary",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-88",
+    "regions" : [ "metaphor" ],
+    "evidence" : [ {
+      "quote" : "and in there we can show the flocking cause it's fun",
+      "kind" : "framing-move"
+    } ],
+    "why" : "quoted 'flocking' names the visualization AS bird-flock behavior",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-93",
+    "regions" : [ "parallelism" ],
+    "evidence" : [ {
+      "quote" : "This product changes a lot if we can get extraction costs down enough. If we can get extraction costs down enough that you can actually converse with the thing",
+      "kind" : "framing-move"
+    } ],
+    "why" : "repeated conditional 'if we can get extraction costs down enough' clause opening consecutive sentences",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-97",
+    "regions" : [ "rhetorical-question", "rule-of-three" ],
+    "evidence" : [ {
+      "quote" : "what do you receive? And what do you ever see? How much is it going to be?",
+      "kind" : "framing-move"
+    } ],
+    "why" : "three successive posed questions in a rapid triad probing the same access gap",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-109",
+    "regions" : [ "rhetorical-question" ],
+    "evidence" : [ {
+      "quote" : "this is the real question — that should be okay, right, because they are not actually showing the source?",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "question posed with the answer presumed via 'right' tag and self-answered in the same breath",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-126",
+    "regions" : [ "metaphor", "antithesis" ],
+    "evidence" : [ {
+      "quote" : "annotations that if removed would not move the chat bubbles",
+      "kind" : "framing-move"
+    } ],
+    "why" : "physical-displacement metaphor testing whether annotation is load-bearing vs decorative",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-31",
+    "regions" : [ "metaphor" ],
+    "evidence" : [ {
+      "quote" : "Theatre must feel like a chat flow with annotations that if removed would not move the chat bubbles or leave empty space.",
+      "kind" : "framing-move"
+    } ],
+    "why" : "annotations treated AS physical objects that could 'move' bubbles or 'leave empty space'",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-57",
+    "regions" : [ "metaphor" ],
+    "evidence" : [ {
+      "quote" : "Gaps between messages, doesn't read like a conversation.",
+      "kind" : "framing-move"
+    } ],
+    "why" : "spatial 'gaps' figure for pacing/design failure",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-62",
+    "regions" : [ "antithesis" ],
+    "evidence" : [ {
+      "quote" : "Big bags between messages, does read like a conversation",
+      "kind" : "framing-move"
+    } ],
+    "why" : "mirrors and inverts src-57's judgment, forming a paired contrast across the two notes",
+    "reported" : false
+  } ],
+  "mints" : [ {
+    "id" : "mint-1",
+    "name" : "RendersNotBlueprints",
+    "title" : "renders, not construction-member CAD",
+    "theme" : "Fidelity is argued through an extended building-design comparison: vivid partial renders stand in contrast to fully engineered blueprints",
+    "regions" : [ "metaphor", "analogy" ]
+  } ],
+  "unmarked" : [ "src-1", "src-2", "src-3", "src-4", "src-6", "src-7", "src-9", "src-10", "src-11", "src-12", "src-13", "src-14", "src-20", "src-21", "src-22", "src-23", "src-24", "src-25", "src-26", "src-27", "src-28", "src-29", "src-30", "src-32", "src-33", "src-34", "src-35", "src-36", "src-37", "src-38", "src-39", "src-40", "src-41", "src-42", "src-43", "src-44", "src-45", "src-47", "src-48", "src-49", "src-50", "src-51", "src-52", "src-53", "src-54", "src-55", "src-56", "src-58", "src-59", "src-60", "src-61", "src-63", "src-64", "src-66", "src-69", "src-71", "src-72", "src-73", "src-74", "src-76", "src-77", "src-78", "src-82", "src-84", "src-85", "src-86", "src-89", "src-90", "src-91", "src-92", "src-94", "src-95", "src-96", "src-98", "src-99", "src-100", "src-101", "src-102", "src-103", "src-104", "src-105", "src-106", "src-107", "src-108", "src-110", "src-111", "src-112", "src-113", "src-114", "src-115", "src-116", "src-117", "src-118", "src-119", "src-120", "src-121", "src-122", "src-123", "src-124", "src-125", "src-127", "src-128", "src-129", "src-130", "src-131", "src-132", "src-133", "src-134", "src-135", "src-136", "src-137", "src-138", "src-139", "src-140", "src-141", "src-142" ]
+}
