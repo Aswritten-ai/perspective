@@ -4,34 +4,28 @@
 GRAPH <https://aswritten.ai/narrative#Digest_DataModelLifecycle> {
   <https://aswritten.ai/narrative#Digest_DataModelLifecycle> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#DataModelLifecycle> ;
-    narr:childCount "15"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers the evolving data model behind the knowledge-graph product. The foundational bet is that [RDF graphs beat vector stores](narr:Claim_KnowledgeGraphSuperior) for organizational truth and citation-style traceability. Several children specify *how* the model is shaped: [goals belong to a share, not the perspective](narr:Narrative_ShareDataModel) (Apr 2026), the [registry collapsed to paths only](narr:Narrative_DocumentAsSelfDescribing) so scope/refract run on text rather than brittle keyword metadata, and [reviews are RDF named graphs](narr:Obs_ReviewNamedGraphModel) that accumulate rather than transition state. Settledness is tracked by the [Notion→Stake→Boulder→Grave conviction framework](narr:Narrative_ConvictionFramework) with provenance per shift, while a parallel lineage imports [Park et al.'s recency/importance/relevance retrieval](narr:Observation_ParkMemoryMechanism) (May 2025, revisited Apr 2026). Strategic framings include [AI-to-AI provenance as moat](narr:Narrative_AItoAIProvenance) and [compiling two graphs — org worldview plus product knowledge](narr:Narrative_ProductKnowledgeSecondGraph). Infra reality intrudes via the [n8n SQLite→Postgres migration](narr:Claim_N8nPostgresMigration) (Mar 2026). A newly named [subgraph-segmentation gap](narr:Claim_SubgraphSegmentationGap) (Apr 2026) flags unfinished structural work.""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_KnowledgeGraphSuperior> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_N8nPostgresMigration> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_RegistrySimplification> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_SubgraphSegmentationGap> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_n8nPostgresMigration> ;
+    narr:childCount "13"^^xsd:integer ;
+    narr:generatedFrom "28167f5886a7baa241da644217ac2e3ea5c7cac6" ;
+    narr:narration """This hub tracks the evolution of the knowledge-graph data model, centering on provenance and the shift toward [ontology as speech acts](narr:Narrative_OntologyAsSpeechActs) rather than static facts. The architecture prioritizes [append-only logs](narr:Narrative_AppendOnlyConvictionLog) to enable temporal queries on how organizational conviction shifts, utilizing the [Notion→Stake→Boulder→Grave framework](narr:Narrative_ConvictionFramework) to track settledness. Data integrity is maintained by treating [reviews as RDF named graphs](narr:Obs_ReviewNamedGraphModel) and simplifying the [registry to paths only](narr:Narrative_DocumentAsSelfDescribing) to avoid brittle metadata. Strategic operations include [compiling dual graphs](narr:Narrative_ProductKnowledgeSecondGraph) for worldview and product knowledge, while memory retrieval is governed by [Park et al.'s recency/importance/relevance mechanism](narr:Observation_ParkMemoryMechanism). The model assumes [AI-to-AI provenance](narr:Narrative_AItoAIProvenance) as a structural moat, with recent validation from [git-native versioning](narr:Obs_GitNativeReaction) reinforcing the focus on goal evolution.""" ;
     narr:covers <https://aswritten.ai/narrative#Narrative_AItoAIProvenance> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AppendOnlyConvictionLog> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_ConvictionFramework> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_DocumentAsSelfDescribing> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_OntologyAsSpeechActs> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_ProductKnowledgeSecondGraph> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_ShareDataModel> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_ARBPainPoint4_Quote> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_AppendOnlyLog> ;
     narr:covers <https://aswritten.ai/narrative#Obs_GitNativeReaction> ;
+    narr:covers <https://aswritten.ai/narrative#Obs_OntologyAsSpeechActs> ;
     narr:covers <https://aswritten.ai/narrative#Obs_ReviewNamedGraphModel> ;
-    narr:covers <https://aswritten.ai/narrative#Obs_SessionStateAtom> ;
     narr:covers <https://aswritten.ai/narrative#Observation_ParkMemoryMechanism> ;
-    narr:keyPhrase [ narr:text "RDF knowledge graphs are asserted as superior to vector databases for maintaining organizational truth and enabling citation-style traceability of AI claims." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_KnowledgeGraphSuperior> ] ;
-    narr:keyPhrase [ narr:text "Goals are properties of a share, not the perspective. This prevents instance-specific goals from contaminating the reusable perspective." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ShareDataModel> ] ;
-    narr:keyPhrase [ narr:text "Registry simplified to paths only; scope and refract operate on actual text, not keyword annotations" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_DocumentAsSelfDescribing> ] ;
-    narr:keyPhrase [ narr:text "Notion: can be changed easily. Stake: planted but needs validation. Boulder: hard to move without others involved. Grave: done, settled." ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ConvictionFramework> ] ;
-    narr:keyPhrase [ narr:text "Reviews as RDF named graphs: each review carries reviewer identity, timestamp, lens used, feedback, and triples in scope. Enables accumulation, not state transition." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ReviewNamedGraphModel> ] ;
+    narr:covers <https://aswritten.ai/narrative#Position_RegistrySimplification> ;
+    narr:keyPhrase [ narr:text "Ontology modeled as actors, speech acts, and documents — not facts and entities" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_OntologyAsSpeechActs> ] ;
     narr:keyPhrase [ narr:text "The creators of this paper, they suggested a mechanism based on three different parameters. Recency, importance, and relevance to the current context." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_ParkMemoryMechanism> ] ;
-    narr:variation [ narr:text "Two competing models of 'how settled is knowledge': the discrete conviction ladder (Notion→Stake→Boulder→Grave) versus Park et al.'s continuous recency/importance/relevance retrieval — coexisting, not reconciled." ; narr:over <https://aswritten.ai/narrative#Narrative_ConvictionFramework> ; narr:over <https://aswritten.ai/narrative#Observation_ParkMemoryMechanism> ] ;
-    narr:variation [ narr:text "Newly named structural gap: no way to scope claims to a subgraph, so an experiment's local positioning bleeds into global truth — 'everything bridges to everything.' Unfinished, distinct from temporality." ; narr:over <https://aswritten.ai/narrative#Claim_SubgraphSegmentationGap> ] ;
-    narr:variation [ narr:text "Document-as-self-describing pushes against metadata entirely ('metadata is brittle and prone to drift'), in tension with model layers that still carry rich annotation (named-graph reviews with lens/identity/timestamp)." ; narr:over <https://aswritten.ai/narrative#Narrative_DocumentAsSelfDescribing> ; narr:over <https://aswritten.ai/narrative#Obs_ReviewNamedGraphModel> ] ;
-    narr:variation [ narr:text "Infra outliers under a conceptual hub: the n8n Postgres migration and the ephemeral session-state atom (lost on restart) are operational realities, not data-model design." ; narr:over <https://aswritten.ai/narrative#Claim_N8nPostgresMigration> ; narr:over <https://aswritten.ai/narrative#Obs_SessionStateAtom> ] ;
-    narr:variation [ narr:text "Customer-grounded origin: the customer's chief architect's verbatim contract-memory vision ('that's not in the contract — we confirmed this on the meeting at May 17') anchors the abstract model in a concrete July 2025 pain point." ; narr:over <https://aswritten.ai/narrative#Obs_ARBPainPoint4_Quote> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Conviction levels: notion → stake → boulder → grave" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ConvictionFramework> ] ;
+    narr:keyPhrase [ narr:text "Reviews as RDF named graphs: each review carries reviewer identity, timestamp, lens used, feedback, and triples in scope." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_ReviewNamedGraphModel> ] ;
+    narr:keyPhrase [ narr:text "The document speaks for itself; metadata is brittle and prone to drift" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_DocumentAsSelfDescribing> ] ;
+    narr:variation [ narr:text "The shift toward speech-act ontology pushes against traditional fact-based triple stores." ; narr:over <https://aswritten.ai/narrative#Narrative_OntologyAsSpeechActs> ] ;
+    narr:variation [ narr:text "Instance-specific goals are isolated within shares to prevent perspective contamination." ; narr:over <https://aswritten.ai/narrative#Narrative_ShareDataModel> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
