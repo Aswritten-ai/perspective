@@ -1,0 +1,55 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX aswr: <https://aswritten.ai/aswr#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  aswr:Tx_20260714T174907Z a prov:Activity ;
+      prov:generatedAtTime "2026-07-14T17:49:07Z"^^xsd:dateTime ;
+      prov:wasAssociatedWith "aswritten.ai" ;
+      prov:wasAttributedTo "scarlet@aswritten.ai" ;
+      aswr:draftedBy "claude-opus-4-8" ;
+      aswr:perspective "Aswritten-ai/perspective@main" ;
+      aswr:pipelinePin "afcb0b73bb42" ;
+      dct:title "Multipass reconciliations: 1Task437StageTimingFinding" ;
+      prov:generated narr:Recon_1Task437StageTimingFinding_1, narr:Recon_1Task437StageTimingFinding_2 .
+} ;
+INSERT DATA {
+  GRAPH aswr:Tx_20260714T174907Z {
+    narr:Recon_1Task437StageTimingFinding_1 a narr:Reconciliation ;
+        oa:hasTarget narr:ArchitectureOverview ;
+        narr:principal narr:Actor_Session ;
+        skos:note "Both the consult prefetch and the navigator's post-agent reads were building the graph against the run's own work branch. But the source-spur step commits the document and its source transaction to that same work branch mid-run, moving the tree sha — so the navigator's read missed the warm cache and rebuilt the entire 64,000-quad corpus for exactly the one transaction the run had just written." ;
+        narr:extends narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+        dct:source narr:Expr_1Task437StageTimingFinding_6 ;
+        dct:source narr:Expr_1Task437StageTimingFinding_7 ;
+        prov:generatedAtTime "2026-07-14T17:49:07Z"^^xsd:dateTime .
+
+    narr:Recon_1Task437StageTimingFinding_2 a narr:Reconciliation ;
+        oa:hasTarget narr:ArchitectureOverview ;
+        narr:principal narr:Actor_Session ;
+        skos:note "The navigator consults the prior perspective; the document under extraction reaches the engine through pass one, never through these reads." ;
+        narr:extends narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+        dct:source narr:Expr_1Task437StageTimingFinding_11 ;
+        prov:generatedAtTime "2026-07-14T17:49:07Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174907Z_pass2 a prov:Activity ;
+        aswr:runPass "pass2" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/pass2.json" ;
+        dct:isPartOf aswr:Tx_20260714T174907Z ;
+        prov:generatedAtTime "2026-07-14T17:49:07Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174907Z_pass3 a prov:Activity ;
+        aswr:runPass "pass3" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/pass3.json" ;
+        prov:generated narr:Recon_1Task437StageTimingFinding_1, narr:Recon_1Task437StageTimingFinding_2 ;
+        dct:isPartOf aswr:Tx_20260714T174907Z ;
+        prov:generatedAtTime "2026-07-14T17:49:07Z"^^xsd:dateTime .
+  }
+}

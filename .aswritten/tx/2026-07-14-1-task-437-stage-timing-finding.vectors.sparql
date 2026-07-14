@@ -1,0 +1,836 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX aswr: <https://aswritten.ai/aswr#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  aswr:Tx_20260714T174906Z a prov:Activity ;
+      prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime ;
+      prov:wasAssociatedWith "aswritten.ai" ;
+      prov:wasAttributedTo "scarlet@aswritten.ai" ;
+      aswr:draftedBy "claude-opus-4-8" ;
+      aswr:perspective "Aswritten-ai/perspective@main" ;
+      aswr:pipelinePin "afcb0b73bb42" ;
+      aswr:originPath ".aswritten/memories/2026-07-14-1-task-437-stage-timing-finding.md" ;
+      dct:title "Multipass fragment: 1Task437StageTimingFinding" ;
+      prov:generated narr:Conviction_1Task437StageTimingFinding_1, narr:Conviction_1Task437StageTimingFinding_2, narr:Conviction_1Task437StageTimingFinding_3, narr:Conviction_1Task437StageTimingFinding_4, narr:Conviction_1Task437StageTimingFinding_5, narr:Conviction_1Task437StageTimingFinding_6, narr:Conviction_1Task437StageTimingFinding_7, narr:Conviction_1Task437StageTimingFinding_8, narr:Conviction_1Task437StageTimingFinding_9, narr:Conviction_1Task437StageTimingFinding_10, narr:Conviction_1Task437StageTimingFinding_11, narr:Conviction_1Task437StageTimingFinding_12, narr:Conviction_1Task437StageTimingFinding_13, narr:Conviction_1Task437StageTimingFinding_14, narr:Conviction_1Task437StageTimingFinding_15, narr:Conviction_1Task437StageTimingFinding_16, narr:VecAffect_1Task437StageTimingFinding_8, narr:VecAffect_1Task437StageTimingFinding_9, narr:VecAffect_1Task437StageTimingFinding_12, narr:VecAffect_1Task437StageTimingFinding_15, narr:VecPower_1Task437StageTimingFinding_8, narr:VecPower_1Task437StageTimingFinding_9, narr:VecPower_1Task437StageTimingFinding_10, narr:VecPower_1Task437StageTimingFinding_12, narr:VecPower_1Task437StageTimingFinding_15, narr:VecRegister_1Task437StageTimingFinding_2, narr:VecRegister_1Task437StageTimingFinding_3, narr:VecRegister_1Task437StageTimingFinding_4, narr:VecRegister_1Task437StageTimingFinding_5, narr:VecRegister_1Task437StageTimingFinding_6, narr:VecRegister_1Task437StageTimingFinding_7, narr:VecRegister_1Task437StageTimingFinding_8, narr:VecRegister_1Task437StageTimingFinding_10, narr:VecRegister_1Task437StageTimingFinding_11, narr:VecRegister_1Task437StageTimingFinding_12, narr:VecRegister_1Task437StageTimingFinding_13, narr:VecRegister_1Task437StageTimingFinding_14, narr:VecRegister_1Task437StageTimingFinding_15, narr:VecRegister_1Task437StageTimingFinding_16, narr:VecRelational_1Task437StageTimingFinding_8, narr:VecRelational_1Task437StageTimingFinding_9, narr:VecStyle_1Task437StageTimingFinding_3, narr:VecStyle_1Task437StageTimingFinding_7, narr:VecStyle_1Task437StageTimingFinding_10, narr:VecStyle_1Task437StageTimingFinding_11, narr:VecStyle_1Task437StageTimingFinding_12, narr:VecStyle_1Task437StageTimingFinding_14, narr:VecTemporal_1Task437StageTimingFinding_1, narr:VecTemporal_1Task437StageTimingFinding_2, narr:VecTemporal_1Task437StageTimingFinding_3, narr:VecTemporal_1Task437StageTimingFinding_4, narr:VecTemporal_1Task437StageTimingFinding_5, narr:VecTemporal_1Task437StageTimingFinding_6, narr:VecTemporal_1Task437StageTimingFinding_7, narr:VecTemporal_1Task437StageTimingFinding_8, narr:VecTemporal_1Task437StageTimingFinding_9, narr:VecTemporal_1Task437StageTimingFinding_10, narr:VecTemporal_1Task437StageTimingFinding_11, narr:VecTemporal_1Task437StageTimingFinding_12, narr:VecTemporal_1Task437StageTimingFinding_13, narr:VecTemporal_1Task437StageTimingFinding_14, narr:VecTemporal_1Task437StageTimingFinding_15, narr:VecTemporal_1Task437StageTimingFinding_16, narr:VecValue_1Task437StageTimingFinding_8, narr:VecValue_1Task437StageTimingFinding_9, narr:VecValue_1Task437StageTimingFinding_15, narr:Narrative_ExtractionEngineDeadTimeReduction, narr:Narrative_StableRefCacheKeying, narr:Narrative_PromptCacheTTLDecoupling, narr:Position_MeasuringInterStageDeadTime, narr:Position_SelfInvalidatingGraphCacheDiagnosis, narr:Position_BaseRefOverWorkBranchFix, narr:Position_PromptCacheTTLDecoupling .
+} ;
+INSERT DATA {
+  GRAPH aswr:Tx_20260714T174906Z {
+    narr:Conviction_1Task437StageTimingFinding_1 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_1 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: Finding recorded 2026-07-14 while instrumenting the multipass extraction engine (task-437)." ;
+        narr:reported false ;
+        skos:note "A flat factual assertion supports a claim, but no settling or permanence marker raises it to decision or principle." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_2 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_2 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: 57% of the wall clock (575 of 1,002 seconds) was time with no LLM call in flight" ;
+        narr:reported false ;
+        skos:note "The measured result is asserted plainly and precisely, but it does not perform a decision." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_3 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_3 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: The three inter-stage gaps were navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds." ;
+        narr:reported false ;
+        skos:note "The breakdown is presented as a firm report, yet contains no ratification or operational commitment." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_4 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_4 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: The largest contributor identified and reproduced: a self-invalidating graph cache." ;
+        narr:reported false ;
+        skos:note "The reproduced diagnosis is asserted as established, but no decision or enduring principle is performed." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_5 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_5 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: The engine's graph service keys its corpus cache on owner, repo, ref, and the .aswritten tree sha." ;
+        narr:reported false ;
+        skos:note "This is an unhedged technical assertion, supporting a claim rather than a settled directive or principle." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_6 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_6 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: Both the consult prefetch and the navigator's post-agent reads were building the graph against the run's own work branch." ;
+        narr:reported false ;
+        skos:note "The causal account is stated plainly, but the segment does not record a settling act." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_7 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_7 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: the navigator's read missed the warm cache and rebuilt the entire 64,000-quad corpus" ;
+        narr:reported false ;
+        skos:note "The detailed causal assertion is strongly stated, but it remains an analysis rather than a performed decision." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_8 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_8 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: Scarlet's ruling: \"the base ref is correct.\"" ;
+        narr:reported true ;
+        skos:note "Although labeled a ruling, the quoted wording itself is a firm position; the segment does not directly perform Scarlet's declarative ratification." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_9 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_9 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: the base ref is correct." ;
+        narr:reported false ;
+        skos:note "Scarlet's direct declarative settles the position in the document, making it decision-grade rather than merely a claim." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_10 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_10 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: now read the base ref the run was cut from, not the run's own freshly-committed work branch" ;
+        narr:reported true ;
+        skos:note "The operational 'now ... not ...' rule records an implemented settling of how the reads are performed." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_11 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_11 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "intensifier: The navigator consults the prior perspective; the document under extraction reaches the engine through pass one, never through these reads." ;
+        narr:reported false ;
+        skos:note "The unqualified explanation and 'never' support a firm claim, but the segment does not itself ratify an operational decision." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_12 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_12 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: can no longer invalidate it" ;
+        narr:reported true ;
+        skos:note "The operational 'can no longer' formulation records a settled system guarantee, though it is not an identity-level principle." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_13 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_13 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: The dead time is also coupled to the prompt cache." ;
+        narr:reported false ;
+        skos:note "This is a plain causal assertion without a settling or permanence marker." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_14 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_14 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "intensifier: the 336-second gap already exceeds it" ;
+        narr:evidence "plain-assertion: silently revert the cost with no error" ;
+        narr:reported false ;
+        skos:note "The emphatic causal warning is asserted firmly, but it argues a consequence rather than recording a decision." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_15 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_15 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: approved the one-hour cache TTL" ;
+        narr:reported true ;
+        skos:note "Approval is a performed settling act that records the cache TTL as decided; it is not a broader bedrock principle." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Conviction_1Task437StageTimingFinding_16 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_16 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: The remaining inter-stage time is GitHub-IO and n8n-navigator-round-trip bound." ;
+        narr:reported false ;
+        skos:note "The remaining diagnosis is stated plainly, but no operational settling or permanence is expressed." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecAffect_1Task437StageTimingFinding_8 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_8 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_CalmPositive ;
+        narr:evidence "performed-act: Scarlet's ruling: \"the base ref is correct.\"" ;
+        narr:reported true ;
+        skos:note "The ruling is settled and approving rather than energized." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecAffect_1Task437StageTimingFinding_9 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_9 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_CalmPositive ;
+        narr:evidence "plain-signal: the base ref is correct." ;
+        narr:reported false ;
+        skos:note "A concise declarative confirmation carries settled approval." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecAffect_1Task437StageTimingFinding_12 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_12 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_CalmPositive ;
+        narr:evidence "lexical-marker: Both reads now share one warm graph and the run's own commit can no longer invalidate it." ;
+        narr:reported false ;
+        skos:note "“warm” and “can no longer” perform reassuring resolution." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecAffect_1Task437StageTimingFinding_15 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_15 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_CalmPositive ;
+        narr:evidence "performed-act: Scarlet approved the one-hour cache TTL to decouple the cache win from the dead time." ;
+        narr:reported true ;
+        skos:note "“approved” presents settled satisfaction with the remedy." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecPower_1Task437StageTimingFinding_8 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_8 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "framing-move: Scarlet's ruling" ;
+        narr:reported false ;
+        skos:note "Frames Scarlet as the authority issuing a ruling." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecPower_1Task437StageTimingFinding_9 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_9 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "performed-act: the base ref is correct." ;
+        narr:reported false ;
+        skos:note "Performs a categorical ruling within an agreed technical process." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecPower_1Task437StageTimingFinding_10 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_10 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_RationalPersuasion ;
+        narr:evidence "framing-move: now read the base ref the run was cut from, not the run's own freshly-committed work branch" ;
+        narr:reported true ;
+        skos:note "Presents a corrective design choice through an explicit contrast tied to the stated cache problem." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecPower_1Task437StageTimingFinding_12 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_12 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_RationalPersuasion ;
+        narr:evidence "plain-signal: the run's own commit can no longer invalidate it" ;
+        narr:reported true ;
+        skos:note "States the causal payoff of the change as a logical consequence." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecPower_1Task437StageTimingFinding_15 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_15 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "performed-act: Scarlet approved" ;
+        narr:reported true ;
+        skos:note "Attributes an approval decision to Scarlet as the document's authority holder." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_2 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_2 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "plain-signal: 57% of the wall clock (575 of 1,002 seconds)" ;
+        narr:evidence "lexical-marker: no LLM call in flight" ;
+        narr:reported false ;
+        skos:note "Precise operational measurement and native system terminology perform a technical register." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_3 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_3 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "plain-signal: navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds" ;
+        narr:reported false ;
+        skos:note "Stage names and exact timings use specialized pipeline vocabulary with precision over accessibility." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_4 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_4 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_MatterOfFact ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "framing-move: The largest contributor identified and reproduced: a self-invalidating graph cache." ;
+        narr:reported false ;
+        skos:note "The compressed diagnostic formulation is instrumental while naming a technical failure mode natively." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_5 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_5 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "lexical-marker: keys its corpus cache on owner, repo, ref, and the .aswritten tree sha" ;
+        narr:reported false ;
+        skos:note "Repository and cache-key terminology is used without explanatory paraphrase." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_6 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_6 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "lexical-marker: consult prefetch" ;
+        narr:evidence "lexical-marker: navigator's post-agent reads" ;
+        narr:reported false ;
+        skos:note "Internal pipeline component names are presented as assumed shared vocabulary." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_7 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_7 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "lexical-marker: source-spur step commits the document and its source transaction" ;
+        narr:evidence "lexical-marker: moving the tree sha" ;
+        narr:evidence "plain-signal: 64,000-quad corpus" ;
+        narr:reported false ;
+        skos:note "The causal explanation is densely specific and technically native." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_8 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_8 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Formal ;
+        narr:evidence "framing-move: Scarlet's ruling:" ;
+        narr:reported false ;
+        skos:note "The noun ruling frames the utterance as an authoritative adjudication rather than casual commentary." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_10 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_10 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "lexical-marker: read the base ref the run was cut from" ;
+        narr:evidence "lexical-marker: freshly-committed work branch" ;
+        narr:reported true ;
+        skos:note "Branch and reference terminology is used as unglossed operational vocabulary." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_11 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_11 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "lexical-marker: The navigator consults the prior perspective" ;
+        narr:evidence "lexical-marker: reaches the engine through pass one" ;
+        narr:reported false ;
+        skos:note "The sentence relies on named pipeline roles and pass structure as shared technical terms." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_12 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_12 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:region narr:Register_MatterOfFact ;
+        narr:evidence "lexical-marker: share one warm graph" ;
+        narr:evidence "lexical-marker: invalidate it" ;
+        narr:reported true ;
+        skos:note "It states an implementation consequence in compact, instrumental systems language." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_13 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_13 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_MatterOfFact ;
+        narr:evidence "plain-signal: The dead time is also coupled to the prompt cache." ;
+        narr:reported false ;
+        skos:note "The short declarative diagnosis is flat and instrumental." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_14 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_14 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "lexical-marker: Anthropic's default ephemeral cache lives five minutes" ;
+        narr:evidence "lexical-marker: cached prefix evaporate between passes" ;
+        narr:reported false ;
+        skos:note "Cache behavior and pass timing are explained with precise domain terminology." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_15 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_15 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Formal ;
+        narr:evidence "performed-act: Scarlet approved the one-hour cache TTL" ;
+        narr:reported true ;
+        skos:note "Approved frames the principal's decision as a formal authorization." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRegister_1Task437StageTimingFinding_16 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_16 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:region narr:Register_MatterOfFact ;
+        narr:evidence "lexical-marker: GitHub-IO and n8n-navigator-round-trip bound" ;
+        narr:reported false ;
+        skos:note "The sentence gives a compact technical attribution of the remaining delay." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRelational_1Task437StageTimingFinding_8 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_8 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "performed-act: Scarlet's ruling: \"the base ref is correct.\"" ;
+        narr:reported true ;
+        skos:note "Reports Scarlet issuing a ruling that settles the relevant technical choice." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecRelational_1Task437StageTimingFinding_9 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_9 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "performed-act: the base ref is correct." ;
+        narr:reported false ;
+        skos:note "Scarlet's declarative utterance performs a ruling on the correct choice." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecStyle_1Task437StageTimingFinding_3 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_3 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_RuleOfThree ;
+        narr:evidence "plain-signal: navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds" ;
+        narr:reported false ;
+        skos:note "Three matched inter-stage items form a deliberate triad." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecStyle_1Task437StageTimingFinding_7 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_7 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: missed the warm cache and rebuilt the entire 64,000-quad corpus" ;
+        narr:reported false ;
+        skos:note "The sentence sharply contrasts expected cache reuse with full rebuilding." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecStyle_1Task437StageTimingFinding_10 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_10 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: the base ref the run was cut from, not the run's own freshly-committed work branch" ;
+        narr:reported false ;
+        skos:note "Matched opposed alternatives are crystallized by the repeated ref framing and “not.”" ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecStyle_1Task437StageTimingFinding_11 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_11 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: through pass one, never through these reads" ;
+        narr:reported false ;
+        skos:note "The sentence opposes the document's actual route with the excluded read path." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecStyle_1Task437StageTimingFinding_12 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_12 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Metaphor ;
+        narr:evidence "lexical-marker: one warm graph" ;
+        narr:reported false ;
+        skos:note "“Warm” transfers a temperature state to a graph to characterize retained cache state." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecStyle_1Task437StageTimingFinding_14 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_14 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: silently revert the cost with no error" ;
+        narr:reported false ;
+        skos:note "The phrase sets an apparently successful cache behavior against its silent cost reversal and absence of error." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_1 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_1 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Past ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: Finding recorded 2026-07-14 while instrumenting the multipass extraction engine (task-437)." ;
+        narr:reported false ;
+        skos:note "A dated, specific finding is presented as an actual completed event." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_2 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_2 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Past ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: On a measured dev run, 57% of the wall clock (575 of 1,002 seconds) was time with no LLM call in flight" ;
+        narr:reported false ;
+        skos:note "Measured durations anchor attention to a particular completed run and its actual state." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_3 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_3 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Past ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: The three inter-stage gaps were navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds." ;
+        narr:reported false ;
+        skos:note "Named stages and exact durations construe actual recorded events concretely." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_4 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_4 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Past ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: The largest contributor identified and reproduced: a self-invalidating graph cache." ;
+        narr:reported false ;
+        skos:note "The cache behavior is presented as an identified and reproduced actual cause." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_5 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_5 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Present ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: The engine's graph service keys its corpus cache on owner, repo, ref, and the .aswritten tree sha." ;
+        narr:reported false ;
+        skos:note "The sentence states the current concrete mechanism of a named service." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_6 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_6 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Past ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: Both the consult prefetch and the navigator's post-agent reads were building the graph against the run's own work branch." ;
+        narr:reported false ;
+        skos:note "Specific reads and a branch are described as an actual prior operation." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_7 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_7 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Past ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: the source-spur step commits the document and its source transaction to that same work branch mid-run, moving the tree sha" ;
+        narr:evidence "intensifier: the navigator's read missed the warm cache and rebuilt the entire 64,000-quad corpus" ;
+        narr:reported false ;
+        skos:note "A specific mid-run commit and its concrete cache rebuild are narrated as actual events." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_8 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_8 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Past ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "framing-move: Scarlet's ruling: \"the base ref is correct.\"" ;
+        narr:reported false ;
+        skos:note "A named person's specific ruling is presented as a settled act and proposition." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_9 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_9 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Present ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: the base ref is correct." ;
+        narr:reported false ;
+        skos:note "The declarative utterance settles a current state concerning a specific artifact." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_10 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_10 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Present ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: The consult and navigate reads now read the base ref the run was cut from" ;
+        narr:evidence "framing-move: not the run's own freshly-committed work branch" ;
+        narr:reported true ;
+        skos:note "The contrast describes the current concrete read behavior after the change." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_11 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_11 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Present ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: The navigator consults the prior perspective; the document under extraction reaches the engine through pass one" ;
+        narr:reported false ;
+        skos:note "Named components and a specific document path are described as the current architecture." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_12 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_12 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Present ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "plain-signal: Both reads now share one warm graph and the run's own commit can no longer invalidate it." ;
+        narr:reported true ;
+        skos:note "The current shared cache state and its settled protection are stated concretely." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_13 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_13 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Present ;
+        narr:region narr:Temporal_Abstract ;
+        narr:evidence "plain-signal: The dead time is also coupled to the prompt cache." ;
+        narr:reported false ;
+        skos:note "The sentence states a current relationship at the level of system behavior rather than a single event." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_14 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_14 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Future ;
+        narr:region narr:Temporal_Irrealis ;
+        narr:region narr:Temporal_Abstract ;
+        narr:evidence "modal-marker: a slightly slower document would let the cached prefix evaporate between passes and silently revert the cost" ;
+        narr:reported false ;
+        skos:note "A hypothetical slower document introduces a possible future failure pattern at an abstract system level." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_15 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_15 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Past ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Concrete ;
+        narr:evidence "performed-act: Scarlet approved the one-hour cache TTL" ;
+        narr:reported true ;
+        skos:note "Approval of a specific configuration is presented as a completed act." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecTemporal_1Task437StageTimingFinding_16 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_16 ;
+        narr:dimension narr:Dim_Temporal ;
+        narr:region narr:Temporal_Present ;
+        narr:region narr:Temporal_Realis ;
+        narr:region narr:Temporal_Abstract ;
+        narr:evidence "plain-signal: The remaining inter-stage time is GitHub-IO and n8n-navigator-round-trip bound." ;
+        narr:reported false ;
+        skos:note "The sentence characterizes the current residual latency as a system-level constraint." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecValue_1Task437StageTimingFinding_8 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_8 ;
+        narr:dimension narr:Dim_Value ;
+        narr:region narr:Value_Autonomy ;
+        narr:evidence "performed-act: Scarlet's ruling: \"the base ref is correct.\"" ;
+        narr:reported true ;
+        skos:note "The ruling affirms the selected reference as the correct basis, carrying a self-directed choice." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecValue_1Task437StageTimingFinding_9 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_9 ;
+        narr:dimension narr:Dim_Value ;
+        narr:region narr:Value_Autonomy ;
+        narr:evidence "performed-act: the base ref is correct." ;
+        narr:reported false ;
+        skos:note "The declarative ruling directly asserts the chosen basis as correct." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:VecValue_1Task437StageTimingFinding_15 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1Task437StageTimingFinding_15 ;
+        narr:dimension narr:Dim_Value ;
+        narr:region narr:Value_Autonomy ;
+        narr:evidence "performed-act: Scarlet approved the one-hour cache TTL" ;
+        narr:reported true ;
+        skos:note "Approval records Scarlet's own authorization of the selected operating cadence." ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Narrative_ExtractionEngineDeadTimeReduction a narr:Narrative ;
+        dct:source narr:Sample_1Task437StageTimingFinding ;
+        narr:theme "The time between LLM calls in the multipass extraction engine is dead time that should be measured stage-by-stage and driven toward its true floor, not accepted as fixed overhead." ;
+        skos:broader narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+        narr:extends narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+        skos:note "Extraction Pipeline Dead Time Is a Measurable, Reducible Target" ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_1 narr:supports narr:Narrative_ExtractionEngineDeadTimeReduction .
+
+    narr:Expr_1Task437StageTimingFinding_2 narr:supports narr:Narrative_ExtractionEngineDeadTimeReduction .
+
+    narr:Expr_1Task437StageTimingFinding_3 narr:supports narr:Narrative_ExtractionEngineDeadTimeReduction .
+
+    narr:Expr_1Task437StageTimingFinding_16 narr:supports narr:Narrative_ExtractionEngineDeadTimeReduction .
+
+    narr:Narrative_StableRefCacheKeying a narr:Narrative ;
+        dct:source narr:Sample_1Task437StageTimingFinding ;
+        narr:theme "A corpus graph cache keyed on ref and tree sha self-invalidates when a run's own reads resolve against the work branch it is actively committing to; keying those reads to the stable base ref instead removes the self-inflicted invalidation without changing what data the pipeline consumes." ;
+        skos:broader narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+        narr:extends narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+        skos:note "Cache Keys Must Resolve Against a Stable Ref, Not the Run's Own Mutating Branch" ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_4 narr:supports narr:Narrative_StableRefCacheKeying .
+
+    narr:Expr_1Task437StageTimingFinding_5 narr:supports narr:Narrative_StableRefCacheKeying .
+
+    narr:Expr_1Task437StageTimingFinding_6 narr:supports narr:Narrative_StableRefCacheKeying .
+
+    narr:Expr_1Task437StageTimingFinding_7 narr:supports narr:Narrative_StableRefCacheKeying .
+
+    narr:Expr_1Task437StageTimingFinding_8 narr:supports narr:Narrative_StableRefCacheKeying .
+
+    narr:Expr_1Task437StageTimingFinding_9 narr:supports narr:Narrative_StableRefCacheKeying .
+
+    narr:Expr_1Task437StageTimingFinding_10 narr:supports narr:Narrative_StableRefCacheKeying .
+
+    narr:Expr_1Task437StageTimingFinding_11 narr:supports narr:Narrative_StableRefCacheKeying .
+
+    narr:Expr_1Task437StageTimingFinding_12 narr:supports narr:Narrative_StableRefCacheKeying .
+
+    narr:Narrative_PromptCacheTTLDecoupling a narr:Narrative ;
+        dct:source narr:Sample_1Task437StageTimingFinding ;
+        narr:theme "When a prompt cache's TTL is shorter than the pipeline's own inter-stage dead time, the cached prefix can evaporate between passes with no error, silently reverting the cost savings — the TTL must be set to outlast realistic dead-time gaps." ;
+        skos:broader narr:Narrative_ExtractionEngineDeadTimeReduction ;
+        skos:note "Prompt Cache TTL Must Outlast Pipeline Dead Time" ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Expr_1Task437StageTimingFinding_13 narr:supports narr:Narrative_PromptCacheTTLDecoupling .
+
+    narr:Expr_1Task437StageTimingFinding_14 narr:supports narr:Narrative_PromptCacheTTLDecoupling .
+
+    narr:Expr_1Task437StageTimingFinding_15 narr:supports narr:Narrative_PromptCacheTTLDecoupling .
+
+    narr:Position_MeasuringInterStageDeadTime a narr:Position ;
+        narr:frame "How much of the extraction engine's wall clock is inter-stage dead time, and where does it concentrate across the pipeline?" ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Position_MeasuringInterStageDeadTime narr:supports narr:Narrative_NavigationReplacesEmbeddedSnapshot .
+
+    narr:Expr_1Task437StageTimingFinding_1 narr:supports narr:Position_MeasuringInterStageDeadTime .
+
+    narr:Expr_1Task437StageTimingFinding_2 narr:supports narr:Position_MeasuringInterStageDeadTime .
+
+    narr:Expr_1Task437StageTimingFinding_3 narr:supports narr:Position_MeasuringInterStageDeadTime .
+
+    narr:Position_SelfInvalidatingGraphCacheDiagnosis a narr:Position ;
+        narr:frame "What causes the corpus graph cache to invalidate itself against the very transaction the run just wrote?" ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Position_SelfInvalidatingGraphCacheDiagnosis narr:supports narr:Narrative_NavigationReplacesEmbeddedSnapshot .
+
+    narr:Expr_1Task437StageTimingFinding_4 narr:supports narr:Position_SelfInvalidatingGraphCacheDiagnosis .
+
+    narr:Expr_1Task437StageTimingFinding_5 narr:supports narr:Position_SelfInvalidatingGraphCacheDiagnosis .
+
+    narr:Expr_1Task437StageTimingFinding_6 narr:supports narr:Position_SelfInvalidatingGraphCacheDiagnosis .
+
+    narr:Expr_1Task437StageTimingFinding_7 narr:supports narr:Position_SelfInvalidatingGraphCacheDiagnosis .
+
+    narr:Position_BaseRefOverWorkBranchFix a narr:Position ;
+        narr:frame "Should the engine's consult and navigate reads resolve against the run's own work branch, or against the base ref the run was cut from?" ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Position_BaseRefOverWorkBranchFix narr:supports narr:Narrative_NavigationReplacesEmbeddedSnapshot .
+
+    narr:Expr_1Task437StageTimingFinding_8 narr:supports narr:Position_BaseRefOverWorkBranchFix .
+
+    narr:Expr_1Task437StageTimingFinding_9 narr:supports narr:Position_BaseRefOverWorkBranchFix .
+
+    narr:Expr_1Task437StageTimingFinding_10 narr:supports narr:Position_BaseRefOverWorkBranchFix .
+
+    narr:Expr_1Task437StageTimingFinding_11 narr:supports narr:Position_BaseRefOverWorkBranchFix .
+
+    narr:Expr_1Task437StageTimingFinding_12 narr:supports narr:Position_BaseRefOverWorkBranchFix .
+
+    narr:Position_PromptCacheTTLDecoupling a narr:Position ;
+        narr:frame "How does inter-stage dead time interact with Anthropic's prompt-cache TTL, and what TTL keeps the cache win independent of that dead time?" ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    narr:Position_PromptCacheTTLDecoupling narr:supports narr:Narrative_NavigationReplacesEmbeddedSnapshot .
+
+    narr:Expr_1Task437StageTimingFinding_13 narr:supports narr:Position_PromptCacheTTLDecoupling .
+
+    narr:Expr_1Task437StageTimingFinding_14 narr:supports narr:Position_PromptCacheTTLDecoupling .
+
+    narr:Expr_1Task437StageTimingFinding_15 narr:supports narr:Position_PromptCacheTTLDecoupling .
+
+    aswr:Run_20260714T174906Z_dim_affect a prov:Activity ;
+        aswr:runPass "dim.affect" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/dim.affect.json" ;
+        prov:generated narr:VecAffect_1Task437StageTimingFinding_8, narr:VecAffect_1Task437StageTimingFinding_9, narr:VecAffect_1Task437StageTimingFinding_12, narr:VecAffect_1Task437StageTimingFinding_15 ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174906Z_dim_power a prov:Activity ;
+        aswr:runPass "dim.power" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/dim.power.json" ;
+        prov:generated narr:VecPower_1Task437StageTimingFinding_8, narr:VecPower_1Task437StageTimingFinding_9, narr:VecPower_1Task437StageTimingFinding_10, narr:VecPower_1Task437StageTimingFinding_12, narr:VecPower_1Task437StageTimingFinding_15 ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174906Z_dim_register a prov:Activity ;
+        aswr:runPass "dim.register" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/dim.register.json" ;
+        prov:generated narr:VecRegister_1Task437StageTimingFinding_2, narr:VecRegister_1Task437StageTimingFinding_3, narr:VecRegister_1Task437StageTimingFinding_4, narr:VecRegister_1Task437StageTimingFinding_5, narr:VecRegister_1Task437StageTimingFinding_6, narr:VecRegister_1Task437StageTimingFinding_7, narr:VecRegister_1Task437StageTimingFinding_8, narr:VecRegister_1Task437StageTimingFinding_10, narr:VecRegister_1Task437StageTimingFinding_11, narr:VecRegister_1Task437StageTimingFinding_12, narr:VecRegister_1Task437StageTimingFinding_13, narr:VecRegister_1Task437StageTimingFinding_14, narr:VecRegister_1Task437StageTimingFinding_15, narr:VecRegister_1Task437StageTimingFinding_16 ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174906Z_dim_relational a prov:Activity ;
+        aswr:runPass "dim.relational" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/dim.relational.json" ;
+        prov:generated narr:VecRelational_1Task437StageTimingFinding_8, narr:VecRelational_1Task437StageTimingFinding_9 ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174906Z_dim_style a prov:Activity ;
+        aswr:runPass "dim.style" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/dim.style.json" ;
+        prov:generated narr:VecStyle_1Task437StageTimingFinding_3, narr:VecStyle_1Task437StageTimingFinding_7, narr:VecStyle_1Task437StageTimingFinding_10, narr:VecStyle_1Task437StageTimingFinding_11, narr:VecStyle_1Task437StageTimingFinding_12, narr:VecStyle_1Task437StageTimingFinding_14 ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174906Z_dim_temporal a prov:Activity ;
+        aswr:runPass "dim.temporal" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/dim.temporal.json" ;
+        prov:generated narr:VecTemporal_1Task437StageTimingFinding_1, narr:VecTemporal_1Task437StageTimingFinding_2, narr:VecTemporal_1Task437StageTimingFinding_3, narr:VecTemporal_1Task437StageTimingFinding_4, narr:VecTemporal_1Task437StageTimingFinding_5, narr:VecTemporal_1Task437StageTimingFinding_6, narr:VecTemporal_1Task437StageTimingFinding_7, narr:VecTemporal_1Task437StageTimingFinding_8, narr:VecTemporal_1Task437StageTimingFinding_9, narr:VecTemporal_1Task437StageTimingFinding_10, narr:VecTemporal_1Task437StageTimingFinding_11, narr:VecTemporal_1Task437StageTimingFinding_12, narr:VecTemporal_1Task437StageTimingFinding_13, narr:VecTemporal_1Task437StageTimingFinding_14, narr:VecTemporal_1Task437StageTimingFinding_15, narr:VecTemporal_1Task437StageTimingFinding_16 ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174906Z_dim_value a prov:Activity ;
+        aswr:runPass "dim.value" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/dim.value.json" ;
+        prov:generated narr:VecValue_1Task437StageTimingFinding_8, narr:VecValue_1Task437StageTimingFinding_9, narr:VecValue_1Task437StageTimingFinding_15 ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174906Z_pass4 a prov:Activity ;
+        aswr:runPass "pass4" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/pass4.json" ;
+        prov:generated narr:Conviction_1Task437StageTimingFinding_1, narr:Conviction_1Task437StageTimingFinding_2, narr:Conviction_1Task437StageTimingFinding_3, narr:Conviction_1Task437StageTimingFinding_4, narr:Conviction_1Task437StageTimingFinding_5, narr:Conviction_1Task437StageTimingFinding_6, narr:Conviction_1Task437StageTimingFinding_7, narr:Conviction_1Task437StageTimingFinding_8, narr:Conviction_1Task437StageTimingFinding_9, narr:Conviction_1Task437StageTimingFinding_10, narr:Conviction_1Task437StageTimingFinding_11, narr:Conviction_1Task437StageTimingFinding_12, narr:Conviction_1Task437StageTimingFinding_13, narr:Conviction_1Task437StageTimingFinding_14, narr:Conviction_1Task437StageTimingFinding_15, narr:Conviction_1Task437StageTimingFinding_16 ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174906Z_pass5 a prov:Activity ;
+        aswr:runPass "pass5" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/pass5.json" ;
+        prov:generated narr:Narrative_ExtractionEngineDeadTimeReduction, narr:Narrative_StableRefCacheKeying, narr:Narrative_PromptCacheTTLDecoupling ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T174906Z_position a prov:Activity ;
+        aswr:runPass "position" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/0f559a77b68b/2026-07-14-1-task-437-stage-timing-finding/position.json" ;
+        prov:generated narr:Position_MeasuringInterStageDeadTime, narr:Position_SelfInvalidatingGraphCacheDiagnosis, narr:Position_BaseRefOverWorkBranchFix, narr:Position_PromptCacheTTLDecoupling ;
+        dct:isPartOf aswr:Tx_20260714T174906Z ;
+        prov:generatedAtTime "2026-07-14T17:49:06Z"^^xsd:dateTime .
+  }
+}
