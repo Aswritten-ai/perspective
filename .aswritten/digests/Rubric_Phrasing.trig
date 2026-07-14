@@ -4,33 +4,28 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Rubric_Phrasing> {
   <https://aswritten.ai/narrative#Digest_Rubric_Phrasing> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Rubric_Phrasing> ;
-    narr:childCount "15"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers per-document **phrasing assessments** from a rubric applied across pitches, calls, and plans. The through-line is consistent: strong idiolect, domain-specific verbs, and strategically deployed stock phrases that anchor themes and signal brand identity. Canonical product terms recur — [collective-memory / dollar-signs framing](narr:Assess_Phrasing_RevenueModelTAM), [continuation-machines and steering-vector vocabulary](narr:Rubric_Phrasing_ScarletDame), [compile/ingest/introspect verbs](narr:Rubric_Phrasing_PilotPlan). Memorable taglines do the load-bearing work: [\"The physics never changed. The substrate did\"](narr:RubricAssess_Phrasing), [\"gods of Olympus\" and \"MCP-native\"](narr:Rubric_Phrasing_FounderBetaUser), [\"separated at birth\" / \"I know Kung Fu\"](narr:Assessment_Phrasing_YC), [\"no one's selling that\"](narr:RubricAssess_Phrasing_WeeklyCall), and [\"builder trap\" / \"clean to sell\"](narr:RubricAssess_Phrasing_GTM). Across YC-facing material the [identity-and-chemistry phrasing](narr:Rubric_Phrasing_YC_Call) recurs, while strategic/financial docs lean on [domain terms like procurement threshold and retainer churn](narr:Assess_Phrasing_RevModel). No dates attach to these assessments; they read as a static evaluative layer, not a trajectory.""" ;
-    narr:covers <https://aswritten.ai/narrative#Assess_Phrasing_RevModel> ;
+    narr:childCount "12"^^xsd:integer ;
+    narr:generatedFrom "3ede756bc0e3b2809ca2eaf2894810aae5440848" ;
+    narr:narration """This hub aggregates [phrasing assessments](narr:Rubric_Assess_Phrasing) across organizational touchpoints, documenting a consistent reliance on high-agency idiolect and domain-specific verbs. The thematic span moves from [technical process descriptors](narr:Rubric_Phrasing_ScarletDame) like 'steering vector' and 'continuation machines' to [GTM-oriented metaphors](narr:RubricAssess_Phrasing_GTM) such as 'builder trap' and 'clean to sell.' Assessments highlight how [canonical product terms](narr:Assess_Phrasing_RevenueModelTAM) like 'collective memory' anchor brand identity, while [conversational idiolect](narr:Assessment_Phrasing_YC)—including 'separated at birth' and 'I know Kung Fu'—is deployed to signal chemistry. The [founder-facing narrative](narr:Rubric_Phrasing_FounderBetaUser) leverages distinct metaphors like 'gods of Olympus' and 'MCP-native,' contrasting with the [operational verbs](narr:Rubric_Phrasing_PilotPlan) of 'compile,' 'query,' and 'ingest' found in pilot planning. Across these artifacts, phrasing serves as a strategic tool for [thematic anchoring](narr:RubricAssess_Phrasing), moving between the technical substrate and the social dynamics of adoption.""" ;
     narr:covers <https://aswritten.ai/narrative#Assess_Phrasing_RevenueModelTAM> ;
     narr:covers <https://aswritten.ai/narrative#Assessment_Phrasing_YC> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Phrasing> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Phrasing_GTM> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Phrasing_Sample1> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Phrasing_TXReview> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Phrasing_WeeklyCall> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Assess_Phrasing> ;
-    narr:covers <https://aswritten.ai/narrative#Rubric_Phrasing_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Phrasing_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Phrasing_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Phrasing_PilotPlan> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Phrasing_ScarletDame> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Phrasing_YCDemoBeats> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Phrasing_YC_Call> ;
-    narr:keyPhrase [ narr:text "remove dollar signs" ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Phrasing_RevenueModelTAM> ] ;
     narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Phrasing> ] ;
-    narr:keyPhrase [ narr:text "I know Kung Fu" ; narr:phraseSource <https://aswritten.ai/narrative#Assessment_Phrasing_YC> ] ;
-    narr:keyPhrase [ narr:text "gods of Olympus" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Phrasing_FounderBetaUser> ] ;
-    narr:keyPhrase [ narr:text "no one's selling that" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Phrasing_WeeklyCall> ] ;
+    narr:keyPhrase [ narr:text "steering vector" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Phrasing_ScarletDame> ] ;
     narr:keyPhrase [ narr:text "builder trap" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Phrasing_GTM> ] ;
-    narr:variation [ narr:text "Idiolect strength is not uniform: most assessments call it 'strong,' but one flags it as merely 'present but not heavy' — a weaker-voice outlier." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Phrasing> ; narr:over <https://aswritten.ai/narrative#Rubric_Assess_Phrasing> ] ;
-    narr:variation [ narr:text "Two anchoring devices split the set: metaphor/analogy (GitHub, gods of Olympus, code-as-compilation) vs. consistent canonical terminology and arrow notation." ; narr:over <https://aswritten.ai/narrative#Assess_Phrasing_RevenueModelTAM> ; narr:over <https://aswritten.ai/narrative#Rubric_Phrasing_FounderBetaUser> ; narr:over <https://aswritten.ai/narrative#Rubric_Phrasing_ScarletDame> ] ;
-    narr:variation [ narr:text "Phrasing serves different jobs: identity/chemistry signaling ('separated at birth', 'snappy, snappy') vs. conceptual handles ('continuation machines', 'reusable organizational perspective')." ; narr:over <https://aswritten.ai/narrative#Assessment_Phrasing_YC> ; narr:over <https://aswritten.ai/narrative#Rubric_Phrasing_YCDemoBeats> ] ;
-    narr:variation [ narr:text "Some children cite supporting StyleObs observations (SeparatedAtBirth, NoOnesSellingThat); most stand alone without that scaffolding." ; narr:over <https://aswritten.ai/narrative#Assessment_Phrasing_YC> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Phrasing_WeeklyCall> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "gods of Olympus" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Phrasing_FounderBetaUser> ] ;
+    narr:keyPhrase [ narr:text "collective memory" ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Phrasing_RevenueModelTAM> ] ;
+    narr:keyPhrase [ narr:text "separated at birth" ; narr:phraseSource <https://aswritten.ai/narrative#Assessment_Phrasing_YC> ] ;
+    narr:variation [ narr:text "Tension between 'vibe coding' as a casual descriptor and the rigorous 'three-layer model' terminology." ; narr:over <https://aswritten.ai/narrative#Rubric_Phrasing_CustomerArchitect> ; narr:over <https://aswritten.ai/narrative#Rubric_Phrasing_FounderBetaUser> ] ;
+    narr:variation [ narr:text "The shift from 'narrative as code' abstractions to concrete 'deli email' analogies." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Phrasing> ; narr:over <https://aswritten.ai/narrative#Rubric_Phrasing_YC_Call> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
