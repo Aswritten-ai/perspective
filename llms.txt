@@ -17,7 +17,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [CaseStudies](hub-CaseStudies.html): This hub gathers case studies meant to demonstrate worldview compilation in action. Three are framed as direct compariso
 - [ChangeManagement](hub-ChangeManagement.html): This hub gathers how change flows through aswritten's repo-native operations — across handoffs, research promotion, revi
 - [CompetitiveLandscape](hub-CompetitiveLandscape.html): This hub positions aswritten against everyone adjacent by a single axis: rivals do orchestration or retrieval of what's 
-- [CompliancePosture](hub-CompliancePosture.html): This hub gathers how aswritten frames compliance — as both a revenue lever and an adoption gate. The mainline reads comp
+- [CompliancePosture](hub-CompliancePosture.html): The compliance posture at aswritten continues to evolve as a tension between productized tiers and bespoke requirements-
 - [Conviction](hub-Conviction.html): This hub defines the conviction construct as a measure of epistemic settledness, structured across a spectrum from ephem
 - [CoreNarratives](hub-CoreNarratives.html): This hub tracks the evolution of aswritten.ai’s competitive positioning, anchored by the thesis that the next bottleneck
 - [CoreWorkflows](hub-CoreWorkflows.html): This hub gathers the operational patterns aswritten runs on. The flagship is the session-to-document arc: Interview → Sa
