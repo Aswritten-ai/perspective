@@ -4,32 +4,26 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__Rubric_Register> {
   <https://aswritten.ai/narrative#Digest_ns__Rubric_Register> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#Rubric_Register> ;
-    narr:childCount "13"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub collects per-document **register assessments** under one rubric dimension across the corpus. The dominant reading is a [conversational-authoritative blend](narr:RubricAssess_register): direct, second-person address, active-voice dominance, and technical precision without jargon overload — surfaced in the [GTM strategic memo](narr:RubricAssess_Register_GTM), the [consulting pitch](narr:Assessment_Register_1), the [IP-crisis strategic piece](narr:Assessment_Register_IPCrisis), and the [the customer's chief architect enterprise assessment](narr:Assessment_Register_CustomerArchitect). But register is read as document-dependent, not uniform. A formal-technical cluster sits apart: the [architecture-doc assessment](narr:Assess_Register_cm) marks an authoritative tone with no casual markers, the [collective-memory doc](narr:Assess_Register_collective_memory) clear structured formality, and [ADR-001](narr:RubricAssess_Register_ADR001) a formal business register with first-person plural. Against that, the [founder/visionary material](narr:RubricAssess_Register) pushes to elevated and profane extremes, and [one assessment](narr:RubricAssess_Register_1) flags fillers as formality-reducing. The span runs architecture docs and ADRs through strategic memos to founder voice memos — recognizable as register-fit judgments, not a single verdict.""" ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "3fc75bbbd3f39f26eb07aa0963abefcef8fd6f4c" ;
+    narr:narration """This hub organizes register assessments across the corpus, mapping the tension between [conversational-authoritative](narr:RubricAssess_register) modes and [formal-technical](narr:Assess_Register_cm) standards. The dominant thread favors a [direct, second-person](narr:RubricAssess_register) approach, characterized by [active voice](narr:RubricAssess_Register_GTM) and [technical precision](narr:Assessment_Register_IPCrisis), as seen in [strategic memos](narr:RubricAssess_Register_GTM) and [enterprise-facing assessments](narr:Assessment_Register_CustomerArchitect). Conversely, [architecture documentation](narr:Assess_Register_cm) and [ADRs](narr:RubricAssess_Register_ADR001) maintain a distinct [formal business](narr:RubricAssess_Register_ADR001) or [structured technical](narr:Assess_Register_collective_memory) register, often prioritizing [first-person plural](narr:RubricAssess_Register_ADR001) ownership over the conversational 'you.' The thematic span is wide, encompassing [founder-visionary](narr:RubricAssess_Register) extremes—which may include [profanity](narr:RubricAssess_Register) or [elevated rhetoric](narr:RubricAssess_Register)—and [conversational](narr:RubricAssess_Register_1) styles that occasionally incorporate [fillers](narr:RubricAssess_Register_1). These assessments do not converge on a single verdict but rather evaluate register as a function of document context and intended audience.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Register_cm> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Register_collective_memory> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assess_Register_rebrand> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Register_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Register_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assessment_Register_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Register_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Register> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Register_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Register_20260107> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Register_ADR001> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Register_ADR002> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Register_GTM> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_register> ;
-    narr:keyPhrase [ narr:text "Formal technical register; authoritative tone; appropriate for architecture documentation; no casual markers" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Register_cm> ] ;
-    narr:keyPhrase [ narr:text "Authoritative strategic register; second-person address to reader; active voice dominant; technical precision without jargon overload" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Register_IPCrisis> ] ;
-    narr:keyPhrase [ narr:text "Formal business register appropriate for ADR; first-person plural establishes ownership" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Register_ADR001> ] ;
-    narr:keyPhrase [ narr:text "Professional yet conversational; mixes strategic formality with voice memo informality" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Register_20260107> ] ;
-    narr:keyPhrase [ narr:text "precipice of spirituality" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Register> ] ;
-    narr:keyPhrase [ narr:text "no fucking clue" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Register> ] ;
-    narr:variation [ narr:text "Formal-technical cluster (architecture docs, ADRs) directly opposes the conversational/second-person mainline — register judged by document type, not a single target." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Register_cm> ; narr:over <https://aswritten.ai/ns/narrative#Assess_Register_collective_memory> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Register_ADR001> ] ;
-    narr:variation [ narr:text "Profanity outlier: founder material accepts 'no fucking clue' as register-appropriate emphasis, far from 'professional formality' elsewhere." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Register> ] ;
-    narr:variation [ narr:text "Elevated/visionary register ('precipice of spirituality') treated as a strong fit for founder context — distinct from the analytical-strategic norm." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Register> ] ;
-    narr:variation [ narr:text "Fillers flagged as formality-reducing in one assessment, where elsewhere conversationality is praised — the same trait read as defect vs. virtue." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Register_1> ] ;
-    narr:variation [ narr:text "First-person plural (ADR ownership) vs. dominant second-person address — differing person/voice conventions across documents." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Register_ADR001> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_register> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "technical precision without jargon overload" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Register_IPCrisis> ] ;
+    narr:keyPhrase [ narr:text "Formal technical register; authoritative tone" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Register_cm> ] ;
+    narr:keyPhrase [ narr:text "first-person plural establishes ownership" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Register_ADR001> ] ;
+    narr:keyPhrase [ narr:text "Tony's quotes use profanity for emphasis" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Register> ] ;
+    narr:keyPhrase [ narr:text "Fillers reduce formality." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Register_1> ] ;
+    narr:variation [ narr:text "Formal-technical rigidity vs. conversational-authoritative flexibility." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Register_cm> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_register> ] ;
+    narr:variation [ narr:text "Inclusion of profanity and elevated visionary language as valid register choices." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Register> ] ;
+    narr:variation [ narr:text "Impact of filler words on perceived formality." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Register_1> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
