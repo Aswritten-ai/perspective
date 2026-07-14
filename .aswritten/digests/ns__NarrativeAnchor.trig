@@ -4,25 +4,20 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__NarrativeAnchor> {
   <https://aswritten.ai/narrative#Digest_ns__NarrativeAnchor> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#NarrativeAnchor> ;
-    narr:childCount "8"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers the meanings of *narrative* at the center of aswritten.ai. The substantive core casts [narrative as the control mechanism for AI](narr:Narrative_AI_Steering) — steering behavior and alignment — while a parallel framing casts it as [versionable, branchable, Git-native AI memory](narr:Narrative_SIC_WhatIsIt_1) that encodes style and conviction. The [positioning thesis](narr:Narrative_positioning) sharpens both into a single claim: not three AI tools for three personas, but one unified worldview, shifting from human-centric docs to AI-centric [collective memory](narr:StyleObs_keyphrase_1). A distinct [product value-prop](narr:NarrativeAnchor_DayOneProductivity) — Day 1 productivity, zero knowledge loss, tool freedom — attaches as broader framing. Running alongside are style/rhetoric observations: an extended [organism/DNA/phenotype metaphor](narr:StyleObs_1), [Git-parallel verb vocabulary](narr:StyleObs_5), and the anchor term [narrative architecture](narr:StyleObs_KeyPhrase_NarrArch). The region spans concept (steering, memory), positioning (unified worldview), value-prop, and voice — recognizable as the founder's worldview articulation, not pricing or implementation detail.""" ;
+    narr:childCount "6"^^xsd:integer ;
+    narr:generatedFrom "64a3d69ee28d5891bc5436326b8d8b102f225f44" ;
+    narr:narration """This hub defines the core of aswritten.ai, centering on [narrative as the fundamental control mechanism](narr:Narrative_AI_Steering) for AI alignment. This conceptual anchor is paired with a technical framing of [AI memory as a versionable, Git-native system](narr:Narrative_SIC_WhatIsIt_1) that encodes organizational style and conviction. These elements coalesce under the term [narrative architecture](narr:StyleObs_KeyPhrase_NarrArch), which serves as the primary product concept. The mission is further supported by a [Day 1 productivity value proposition](narr:NarrativeAnchor_DayOneProductivity) focused on eliminating onboarding friction and preventing knowledge loss. The rhetoric surrounding these claims employs a distinct [biological metaphor](narr:StyleObs_1) of organizations as organisms, expressed through a [rhythmic, declarative sentence structure](narr:StyleObs_5) that emphasizes direct, conversational engagement. The span of this hub covers the intersection of technical memory architecture, AI steering, and the specific linguistic phenotype used to articulate the founder's worldview.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#NarrativeAnchor_DayOneProductivity> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_AI_Steering> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_WhatIsIt_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Narrative_positioning> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_5> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_NarrArch> ;
-    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_keyphrase_1> ;
-    narr:keyPhrase [ narr:text "narrative architecture" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_NarrArch> ] ;
-    narr:keyPhrase [ narr:text "collective memory" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_keyphrase_1> ] ;
-    narr:keyPhrase [ narr:text "NOT three separate AI tools for three personas; IS one worldview that unifies how AI assists everyone in the organization" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_positioning> ] ;
+    narr:keyPhrase [ narr:text "narrative as the fundamental control mechanism for AI behavior and alignment." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_AI_Steering> ] ;
     narr:keyPhrase [ narr:text "AI memory that is versionable, collaborative, branchable, so Git native, and narrative driven." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_SIC_WhatIsIt_1> ] ;
+    narr:keyPhrase [ narr:text "narrative architecture" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_NarrArch> ] ;
     narr:keyPhrase [ narr:text "the treatment of an organization as an AI organism, right? Whose DNA, if you will, is expressed" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_1> ] ;
-    narr:variation [ narr:text "Two competing senses of 'narrative': a control/alignment mechanism for AI behavior vs. a continuity/memory substrate that preserves knowledge — emphasis differs." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_AI_Steering> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_WhatIsIt_1> ] ;
-    narr:variation [ narr:text "The DayOneProductivity child attaches as 'broader' (a structurally distinct value-prop/outcome framing), not as a peer concept like the 'related' narrative children." ; narr:over <https://aswritten.ai/ns/narrative#NarrativeAnchor_DayOneProductivity> ] ;
-    narr:variation [ narr:text "A whole register of children is style/orthography/rhetoric (metaphor, lowercase brand, Git-parallel verbs) rather than substantive product claims — different kind of evidence." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_1> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_5> ] ;
-    narr:variation [ narr:text "Positioning frames the offering as one unified worldview explicitly against the 'three separate tools' reading — a road deliberately not taken." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_positioning> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Day 1 Productivity + Zero Knowledge Loss + Tool Freedom" ; narr:phraseSource <https://aswritten.ai/ns/narrative#NarrativeAnchor_DayOneProductivity> ] ;
+    narr:variation [ narr:text "Tension exists between the abstract 'organism' metaphor and the concrete 'Git-native' technical implementation." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_1> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_SIC_WhatIsIt_1> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
