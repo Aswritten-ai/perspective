@@ -1,0 +1,215 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-8",
+    "regions" : [ "playful" ],
+    "evidence" : [ {
+      "quote" : "gorgeous lighting, ghosted artifacts of life, appliances, furniture, etc",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "The architectural metaphor is embellished with vivid, aesthetic detail rather than rendered as a bare specification.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-15",
+    "regions" : [ "matter-of-fact" ],
+    "evidence" : [ {
+      "quote" : "Simplify.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "A single imperative delivers the direction with compressed instrumental force.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-22",
+    "regions" : [ "matter-of-fact", "technical" ],
+    "evidence" : [ {
+      "quote" : "One GitHub org = front inbox",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The equation-like shorthand compresses an operational mapping into a technical maxim.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-31",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "annotations that if removed would not move the chat bubbles or leave empty space",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The design criterion is stated as a precise native constraint rather than explained conversationally.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-48",
+    "regions" : [ "casual", "playful" ],
+    "evidence" : [ {
+      "quote" : "That's a feature, no?",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "The parenthetical self-question and rhetorical tag keep the access proposal exploratory and lightly playful.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-56",
+    "regions" : [ "casual" ],
+    "evidence" : [ {
+      "quote" : "where does this go on mobile, maybe visible on select only? Could be icons on the gutter side? Need mocks for this)q",
+      "kind" : "hedge"
+    } ],
+    "why" : "The chained questions, tentative alternatives, and preserved stray character perform unedited thinking aloud.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-63",
+    "regions" : [ "enthusiastic" ],
+    "evidence" : [ {
+      "quote" : "I really want to be able to message an agent somewhere",
+      "kind" : "intensifier"
+    } ],
+    "why" : "The explicit intensifier directs energy toward a desired interaction rather than merely specifying it.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-65",
+    "regions" : [ "matter-of-fact" ],
+    "evidence" : [ {
+      "quote" : "I think this is one product, it's not an experiment at the existing MVP product.",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "The hedge opens a firm corrective distinction that is then stated in direct repeated clauses.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-67",
+    "regions" : [ "casual" ],
+    "evidence" : [ {
+      "quote" : "I'd say, arguably, no, right?",
+      "kind" : "hedge"
+    } ],
+    "why" : "Hedges and the tag question make the answer conversational and provisional.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-68",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "a home for perspective and the integration feed for calls and conversations and notes",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The product is defined through native system vocabulary in a compressed, precise contrast.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-73",
+    "regions" : [ "casual" ],
+    "evidence" : [ {
+      "quote" : "I'd argue that there is value",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "The first-person hedge frames the claim as conversational reasoning rather than formal exposition.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-75",
+    "regions" : [ "casual", "technical" ],
+    "evidence" : [ {
+      "quote" : "right? So then why are we doing all this filter, this arbitrary filter set on our infrastructure?",
+      "kind" : "modal-marker"
+    } ],
+    "why" : "A technical critique is delivered through spoken self-correction, tag questions, and an immediate rhetorical challenge.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-84",
+    "regions" : [ "enthusiastic" ],
+    "evidence" : [ {
+      "quote" : "I think that's a really elegant way to do that. I like that a lot.",
+      "kind" : "intensifier"
+    } ],
+    "why" : "Repeated explicit approval and the intensifier “really” make delight in the design audible.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-87",
+    "regions" : [ "casual", "playful" ],
+    "evidence" : [ {
+      "quote" : "one-off produced and brand-styled artifact slash fully comped and live page that I can show as the demo",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "“slash” construction and the self-conscious demo phrasing keep the product cut informal and performative.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-93",
+    "regions" : [ "casual" ],
+    "evidence" : [ {
+      "quote" : "right? But for that to happen, you know, we need to be in the cents or tens of cents per message.",
+      "kind" : "hedge"
+    } ],
+    "why" : "The cost constraint is technically specific but voiced with spoken fillers and a tag question.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-103",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "The extraction fork — extract the whole transcript; the memory becomes a generated view.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The numbered ruling uses compact domain terminology and a semicolon-separated prescription.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-109",
+    "regions" : [ "casual", "enthusiastic" ],
+    "evidence" : [ {
+      "quote" : "that's hot. yes, that.",
+      "kind" : "intensifier"
+    }, {
+      "quote" : "For now, we're going to say it's fine.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "An exuberant colloquial approval turns into a deliberately provisional spoken settlement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-113",
+    "regions" : [ "formal" ],
+    "evidence" : [ {
+      "quote" : "they should be added and reviewed in the styleguide first and then reused.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The directive adopts process-governing “should” language and an ordered protocol.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-117",
+    "regions" : [ "casual", "playful" ],
+    "evidence" : [ {
+      "quote" : "profiles + flocking + arc as wizard of oz static but interactive page in product skin for demo. v2 roadmapped in product",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "Abbreviated plus-sign syntax and “wizard of oz” make the roadmap ruling deliberately informal and playful.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-120",
+    "regions" : [ "casual" ],
+    "evidence" : [ {
+      "quote" : "only send it to people i want to see full depth",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "Lowercase, compressed phrasing presents the access rule as an unpolished conversational note.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-123",
+    "regions" : [ "casual", "enthusiastic" ],
+    "evidence" : [ {
+      "quote" : "for sure. I'd like to get that done before Fable moves off subscription, so this week.",
+      "kind" : "intensifier"
+    } ],
+    "why" : "“for sure” adds emphatic spoken energy to an otherwise operational scheduling directive.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-131",
+    "regions" : [ "enthusiastic" ],
+    "evidence" : [ {
+      "quote" : "we definitely want and need to support things spread out over the document.",
+      "kind" : "intensifier"
+    } ],
+    "why" : "“definitely” and the doubled “want and need” strongly reinforce the design requirement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-140",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "whisper.cpp + parselmouth prosody",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "The tooling names and prosody terminology are used as native implementation shorthand.",
+    "reported" : false
+  } ],
+  "mints" : [ ],
+  "unmarked" : [ "src-1", "src-2", "src-3", "src-4", "src-5", "src-6", "src-7", "src-9", "src-10", "src-11", "src-12", "src-13", "src-14", "src-16", "src-17", "src-18", "src-19", "src-20", "src-21", "src-23", "src-24", "src-25", "src-26", "src-27", "src-28", "src-29", "src-30", "src-32", "src-33", "src-34", "src-35", "src-36", "src-37", "src-38", "src-39", "src-40", "src-41", "src-42", "src-43", "src-44", "src-45", "src-47", "src-49", "src-50", "src-51", "src-52", "src-53", "src-54", "src-55", "src-57", "src-58", "src-59", "src-60", "src-61", "src-62", "src-64", "src-66", "src-69", "src-70", "src-71", "src-72", "src-74", "src-76", "src-77", "src-78", "src-79", "src-80", "src-81", "src-82", "src-83", "src-85", "src-86", "src-88", "src-89", "src-90", "src-91", "src-92", "src-94", "src-95", "src-96", "src-97", "src-98", "src-99", "src-100", "src-101", "src-102", "src-104", "src-105", "src-106", "src-107", "src-108", "src-110", "src-111", "src-112", "src-114", "src-115", "src-116", "src-118", "src-119", "src-121", "src-122", "src-124", "src-125", "src-126", "src-127", "src-128", "src-129", "src-130", "src-132", "src-133", "src-134", "src-135", "src-136", "src-137", "src-138", "src-139", "src-141", "src-142" ]
+}
