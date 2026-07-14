@@ -60,7 +60,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Narrative_TranscriptBootstrappingUnderplayed](hub-Narrative_TranscriptBootstrappingUnderplayed.html): This hub tracks the argument that transcript bootstrapping is aswritten's strongest underused onramp — and that the comp
 - [Narrative_UserFacingVsInternalLanguageSplit](hub-Narrative_UserFacingVsInternalLanguageSplit.html): This hub holds the deliberate two-layer language split: human words on the user-facing surface, engineering metaphor und
 - [NarrativeAnchor](hub-NarrativeAnchor.html): This hub gathers the meanings of *narrative* at the center of aswritten.ai. The substantive core casts narrative as the 
-- [NarrativeDrivenRoadmap](hub-NarrativeDrivenRoadmap.html): This roadmap hub braids two strands. The go-to-market strand reframes positioning from consulting-first toward a \"train
+- [NarrativeDrivenRoadmap](hub-NarrativeDrivenRoadmap.html): This roadmap hub continues to braid GTM strategy with technical implementation, though the focus has sharpened on the tr
 - [NorthStarMetrics](hub-NorthStarMetrics.html): This hub gathers the candidate \"north star\" signals — and they do not agree on one number. The strongest product claim
 - [OperatingModelShifts](hub-OperatingModelShifts.html): The operating model has evolved from early structural experiments into a unified strategy of curation and expert-driven 
 - [Opportunity](hub-Opportunity.html): The opportunity is framed through three distinct problem lenses, none crowned. The strategy-execution disconnect casts i
