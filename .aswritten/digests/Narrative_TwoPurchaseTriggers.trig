@@ -4,23 +4,15 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Narrative_TwoPurchaseTriggers> {
   <https://aswritten.ai/narrative#Digest_Narrative_TwoPurchaseTriggers> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Narrative_TwoPurchaseTriggers> ;
-    narr:childCount "4"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """Hub posits two distinct purchase triggers segmenting the market. [Trigger 1 — the solo professional](narr:Claim_Trigger1SoloProfessional) (archetype a beta user from outside tech) fires every session when AI output is generic without re-explaining context; high-frequency, moderate intensity, mapped to the Individual tier. [Trigger 2 — the delegator](narr:Claim_Trigger2Delegator) (archetype the customer's chief architect) fires occasionally but high-stakes when a team lead must let others work with their expertise, mapped to the Publisher/Organization tier. Cutting across both, framed Mar 22, is the [understanding-is-not-a-sale](narr:Claim_UnderstandingNotEqualSale) observation: every prospect saw value, none paid. The [an early prospect Mar 22 signal](narr:Claim_EarlyProspectMar22Signal) is the worked case — neither trigger firing — with a zero-cost pilot proposed and specified by Apr 24. By Apr 24 the framing shifts: the activation gap is reportedly closed not by improving the pitch but by removing the purchase moment via CPC-on-goal-URL, first payment arriving with first forward.""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_EarlyProspectMar22Signal> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_Trigger1SoloProfessional> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_Trigger2Delegator> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_UnderstandingNotEqualSale> ;
-    narr:keyPhrase [ narr:text "I can't get AI to do my work without babysitting it." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_Trigger1SoloProfessional> ] ;
-    narr:keyPhrase [ narr:text "Maps to Individual tier ([amount]/month)" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_Trigger1SoloProfessional> ] ;
-    narr:keyPhrase [ narr:text "I need someone else to work without me." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_Trigger2Delegator> ] ;
-    narr:keyPhrase [ narr:text "Maps to Publisher/Organization tier ([amount]-[amount]/month)" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_Trigger2Delegator> ] ;
-    narr:keyPhrase [ narr:text "I'm sold on the potential value of your application, but I don't feel a rush to begin using it." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_EarlyProspectMar22Signal> ] ;
-    narr:keyPhrase [ narr:text "Understanding the product value does not equal a sale." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_UnderstandingNotEqualSale> ] ;
-    narr:keyPhrase [ narr:text "first payment arrives with first forward" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_UnderstandingNotEqualSale> ] ;
-    narr:variation [ narr:text "Trigger-segmentation thesis is undercut by its own evidence: an engineering manager at the customer, the customer's chief architect, a collaborator, a founder beta user all saw value, none paid — understanding ≠ sale." ; narr:over <https://aswritten.ai/narrative#Claim_UnderstandingNotEqualSale> ] ;
-    narr:variation [ narr:text "an early prospect fits neither trigger (not hiring, no daily re-explanation pain) — an outlier where both triggers stay dormant, met with a free pilot bridge rather than a pitch." ; narr:over <https://aswritten.ai/narrative#Claim_EarlyProspectMar22Signal> ] ;
-    narr:variation [ narr:text "Apr 24 reframing pivots away from the trigger model itself: the fix is removing the purchase decision (CPC-on-goal-URL), not matching a pitch to a trigger." ; narr:over <https://aswritten.ai/narrative#Claim_UnderstandingNotEqualSale> ; narr:over <https://aswritten.ai/narrative#Claim_EarlyProspectMar22Signal> ] ;
-    narr:variation [ narr:text "Frequency/intensity profiles diverge sharply — Trigger 1 every session vs. Trigger 2 occasional-but-high-stakes — implying two different sales motions, not one." ; narr:over <https://aswritten.ai/narrative#Claim_Trigger1SoloProfessional> ; narr:over <https://aswritten.ai/narrative#Claim_Trigger2Delegator> ] ;
-    narr:writer "claude (subscription)" .
+    narr:childCount "3"^^xsd:integer ;
+    narr:generatedFrom "ad01b8eca10108d9161cacb5d1e0d4d387be5b6a" ;
+    narr:narration """The market segmentation model initially posited two distinct purchase triggers: the [solo professional](narr:Position_Trigger1SoloProfessional), whose daily need for context-aware AI output drives individual-tier adoption, and the [delegator](narr:Position_Trigger2Delegator), a high-stakes archetype seeking to scale expertise across teams. While these triggers framed early market entry, recent evidence suggests a shift in how value is communicated. The [current perspective](narr:Narrative_ShowVsDemoProof) challenges the necessity of hands-on trials for initial proof, arguing that value is fully demonstrable through clear, high-fidelity showing rather than requiring the user to input their own data. This reframes the 'try-it' requirement as a potential hedge, suggesting that 'their-own-data' is a conversion deepener rather than the primary mechanism for establishing initial value.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_ShowVsDemoProof> ;
+    narr:covers <https://aswritten.ai/narrative#Position_Trigger1SoloProfessional> ;
+    narr:covers <https://aswritten.ai/narrative#Position_Trigger2Delegator> ;
+    narr:keyPhrase [ narr:text "Information isn't enough to do your work. You need perspective. So does your AI." ; narr:phraseSource <https://aswritten.ai/narrative#Position_Trigger1SoloProfessional> ] ;
+    narr:keyPhrase [ narr:text "Stop being the bottleneck. Install your expertise so your team can work without you." ; narr:phraseSource <https://aswritten.ai/narrative#Position_Trigger2Delegator> ] ;
+    narr:keyPhrase [ narr:text "Value is proven by showing clearly; their-own-data is the conversion deepener, not the proof" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_ShowVsDemoProof> ] ;
+    narr:variation [ narr:text "The 'show-don't-try' model contradicts the earlier assumption that hands-on data integration is required to bridge the activation gap." ; narr:over <https://aswritten.ai/narrative#Narrative_ShowVsDemoProof> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
