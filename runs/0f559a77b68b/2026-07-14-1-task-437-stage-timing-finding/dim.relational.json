@@ -1,0 +1,23 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-8",
+    "regions" : [ "authority-ranking" ],
+    "evidence" : [ {
+      "quote" : "Scarlet's ruling: \"the base ref is correct.\"",
+      "kind" : "performed-act"
+    } ],
+    "why" : "Reports Scarlet issuing a ruling that settles the relevant technical choice.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-9",
+    "regions" : [ "authority-ranking" ],
+    "evidence" : [ {
+      "quote" : "the base ref is correct.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "Scarlet's declarative utterance performs a ruling on the correct choice.",
+    "reported" : false
+  } ],
+  "mints" : [ ],
+  "unmarked" : [ "src-1", "src-2", "src-3", "src-4", "src-5", "src-6", "src-7", "src-10", "src-11", "src-12", "src-13", "src-14", "src-15", "src-16" ]
+}
