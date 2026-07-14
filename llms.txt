@@ -56,7 +56,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Narrative_SalesAsDelivery](hub-Narrative_SalesAsDelivery.html): This hub holds the thesis that the sales motion and product delivery are one thing — Demo 1 *is* the sale, and every cal
 - [Narrative_SeparationPrincipleProductVsOrg](hub-Narrative_SeparationPrincipleProductVsOrg.html): This hub gathers a single dated demolition pass (Mar 2026) enacting one principle: collapse the product/org split by eli
 - [Narrative_ThreePartSeedingPattern](hub-Narrative_ThreePartSeedingPattern.html): A three-step onboarding playbook for seeding aswritten.ai from historical recordings, articulated around the enterprise 
-- [Narrative_TranscriptBootstrappingUnderplayed](hub-Narrative_TranscriptBootstrappingUnderplayed.html): This hub argues transcript bootstrapping is aswritten's strongest underused onramp — and that the company keeps failing 
+- [Narrative_TranscriptBootstrappingUnderplayed](hub-Narrative_TranscriptBootstrappingUnderplayed.html): This hub tracks the argument that transcript bootstrapping is aswritten's strongest underused onramp — and that the comp
 - [Narrative_UserFacingVsInternalLanguageSplit](hub-Narrative_UserFacingVsInternalLanguageSplit.html): This hub holds the deliberate two-layer language split: human words on the user-facing surface, engineering metaphor und
 - [NarrativeAnchor](hub-NarrativeAnchor.html): This hub gathers the meanings of *narrative* at the center of aswritten.ai. The substantive core casts narrative as the 
 - [NarrativeDrivenRoadmap](hub-NarrativeDrivenRoadmap.html): This roadmap hub braids two strands. The go-to-market strand reframes positioning from consulting-first toward a \"train
