@@ -4,39 +4,26 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__PositioningThesis> {
   <https://aswritten.ai/narrative#Digest_ns__PositioningThesis> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#PositioningThesis> ;
-    narr:childCount "21"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers how aswritten.ai positions itself, narrating an evolution rather than a settled label. The mainline reframes from a [\"better AI memory tool\"](narr:Narrative_PositioningShift) toward [infrastructure for organizational knowledge across stakeholders](narr:Positioning_1) (tracked Jan 2026), and ADR-002 fixes the market line as a [\"worldview layer for AI agents\"](narr:PositioningThesis_ADR002), explicitly *not* a semantic memory API. The differentiator is [one unified worldview, not three separate AI tools](narr:Narrative_positioning), with the org-vs-individual contrast doing the rhetorical work in [OrgMemory](narr:PositioningThesis_OrgMemory). Value lands as [day-1 productivity](narr:ValueProp_1), [zero knowledge loss](narr:ValueProp_2), [coding agents that understand strategy](narr:ValueProp_4), and [auto-generated content](narr:ValueProp_5). The buyer-facing translation runs from [the customer's chief architect's plain-language pitch](narr:Narrative_CustomerArchitectPitch) to a deliberate [worldview-as-product](narr:Narrative_WorldviewAsProduct) thesis. Multiple audiences and framings coexist here; the digest holds them open rather than crowning one.""" ;
+    narr:childCount "13"^^xsd:integer ;
+    narr:generatedFrom "09ccbae3b3ef3da10e9f87f2fcd6c9f86b7c171a" ;
+    narr:narration """This hub tracks the evolution of aswritten.ai’s strategic identity, centering on the shift from a tool-based narrative to a [worldview-as-product](narr:Narrative_WorldviewAsProduct) thesis. The core positioning, codified in [ADR-002](narr:PositioningThesis_ADR002), defines the platform as a \"worldview layer for AI agents\" rather than a semantic memory API. This is reinforced by a [unified worldview](narr:Narrative_positioning) strategy that contrasts sharply with the [individual-focused memory tools](narr:PositioningThesis_OrgMemory) currently dominating the market. The trajectory emphasizes a [platform-first approach](narr:Narrative_ProductVision), aiming to [extend software development rigor](narr:Narrative_SIC_Mission_1) into broader organizational operations. While the [customer architect's pitch](narr:Narrative_CustomerArchitectPitch) frames the value as an expert-knowledge extraction engine, the [strategic framing table](narr:Insight_FramingTable) suggests that enterprise-level adoption may require a distinct vocabulary—moving from \"AI memory\" to \"institutional methodology.\" The current focus remains on [Seed/Series A CEOs](narr:Observation_PositioningThesis_SeedSeriesA), leveraging the advisor network to establish the platform's [strategic alignment](narr:RubricAssess_Strategy_ADR001).""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Insight_FramingTable> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_CustomerArchitectPitch> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Narrative_PainFirstStructure> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Narrative_PositioningShift> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_ProductVision> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_SIC_Mission_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_WorldviewAsProduct> ;
     narr:covers <https://aswritten.ai/ns/narrative#Narrative_positioning> ;
     narr:covers <https://aswritten.ai/ns/narrative#Observation_PositioningThesis_SeedSeriesA> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Position_WorldviewAsPrimaryProduct> ;
     narr:covers <https://aswritten.ai/ns/narrative#PositioningThesis_ADR002> ;
     narr:covers <https://aswritten.ai/ns/narrative#PositioningThesis_OrgMemory> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Positioning_1> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Strategy_ADR001> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_PMF> ;
     narr:covers <https://aswritten.ai/ns/narrative#StyleObs_PlatformVsInfra> ;
-    narr:covers <https://aswritten.ai/ns/narrative#StyleObs_antithesis_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#ValueProp_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#ValueProp_2> ;
-    narr:covers <https://aswritten.ai/ns/narrative#ValueProp_3> ;
-    narr:covers <https://aswritten.ai/ns/narrative#ValueProp_4> ;
-    narr:covers <https://aswritten.ai/ns/narrative#ValueProp_5> ;
-    narr:keyPhrase [ narr:text "Worldview layer for AI agents" ; narr:phraseSource <https://aswritten.ai/ns/narrative#PositioningThesis_ADR002> ] ;
-    narr:keyPhrase [ narr:text "They solve memory for individuals. We solve memory for organizations. They create lock-in. We create freedom. They make onboarding take 3-6 months. We make it take 5 minutes." ; narr:phraseSource <https://aswritten.ai/ns/narrative#PositioningThesis_OrgMemory> ] ;
+    narr:keyPhrase [ narr:text "Market positioning: \"Worldview layer for AI agents\" (not \"semantic memory API\")" ; narr:phraseSource <https://aswritten.ai/ns/narrative#PositioningThesis_ADR002> ] ;
     narr:keyPhrase [ narr:text "We want to be a platform (complete product users adopt), not infrastructure (low-margin vendor others build on)" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_PlatformVsInfra> ] ;
-    narr:keyPhrase [ narr:text "Collective memory for AI that creates day one-through-exit institutional knowledge for new hires, clients, and investors." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Positioning_1> ] ;
-    narr:keyPhrase [ narr:text "An AI tool that extracts undocumented knowledge from senior members of staff in a conversational way, stores that as memories, and then everybody else can query it. So it's like being able to talk to those people without actually bothering them." ; narr:phraseSource <https://aswritten.ai/ns/narrative#Narrative_CustomerArchitectPitch> ] ;
-    narr:variation [ narr:text "Startup vs enterprise framing run as parallel tracks — deck language ('AI memory lock-in', 'organizational narrative') is rewritten to enterprise-resonant terms ('senior expert bottleneck', 'institutional knowledge'), implying no single audience message." ; narr:over <https://aswritten.ai/ns/narrative#Insight_FramingTable> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_CustomerArchitectPitch> ] ;
-    narr:variation [ narr:text "Target market tension: primary thesis names Seed/Series A CEOs via advisor network, yet the framing table and the customer's chief architect's pitch optimize for enterprise buyers." ; narr:over <https://aswritten.ai/ns/narrative#Observation_PositioningThesis_SeedSeriesA> ; narr:over <https://aswritten.ai/ns/narrative#Insight_FramingTable> ] ;
-    narr:variation [ narr:text "Platform-not-infrastructure is a stated commitment to build the complete product rather than license the underlying tech — a strategic fork that could have gone the other way." ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_PlatformVsInfra> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_ProductVision> ] ;
-    narr:variation [ narr:text "Tony's feedback pushes pain-first ordering (operational pain leads, ROI/cost slides moved to end), qualifying the worldview-led narrative for procurement audiences." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_PainFirstStructure> ] ;
-    narr:variation [ narr:text "Ambition spread: framings range from concrete 'four capabilities' product to the abstract claim that organizations shift from producing artifacts to producing worldview." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_PositioningShift> ; narr:over <https://aswritten.ai/ns/narrative#Narrative_WorldviewAsProduct> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "product market fit" ; narr:phraseSource <https://aswritten.ai/ns/narrative#StyleObs_KeyPhrase_PMF> ] ;
+    narr:variation [ narr:text "Enterprise-resonant framing shifts the focus from 'AI memory' to 'institutional methodology' and 'expert bottleneck' resolution." ; narr:over <https://aswritten.ai/ns/narrative#Insight_FramingTable> ] ;
+    narr:variation [ narr:text "The tension between 'platform' and 'infrastructure' remains a critical strategic boundary for long-term margin and adoption." ; narr:over <https://aswritten.ai/ns/narrative#Narrative_ProductVision> ; narr:over <https://aswritten.ai/ns/narrative#StyleObs_PlatformVsInfra> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
