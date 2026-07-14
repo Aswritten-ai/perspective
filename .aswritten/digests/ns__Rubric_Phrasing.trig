@@ -4,31 +4,25 @@
 GRAPH <https://aswritten.ai/narrative#Digest_ns__Rubric_Phrasing> {
   <https://aswritten.ai/narrative#Digest_ns__Rubric_Phrasing> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/ns/narrative#Rubric_Phrasing> ;
-    narr:childCount "14"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers per-document/per-transcript **phrasing** assessments from a writing rubric. The dominant finding repeats across nearly every child: a **strong idiolect** built from domain verbs and signature stock phrases. Strategic and brand material scores highest — the [rebrand's 'as written' signature](narr:Assess_Phrasing_rebrand), the [IP-crisis metaphor cluster](narr:Assessment_Phrasing_IPCrisis) ('IP as code', 'deepest lever'), the [GTM signature phrases](narr:RubricAssess_Phrasing_GTM), and the [Jan-7 voice-memo idiolect](narr:RubricAssess_Phrasing_20260107). A [core rubric assessment](narr:RubricAssess_Phrasing) catalogs the canonical metaphors ('narrative architecture', 'steering vector', 'resonant body') and notes deliberate self-correction. Multiple children attribute distinct voices to named speakers — [the customer's chief architect's verbs](narr:Assessment_Phrasing_CustomerArchitect), [Tony's call markers](narr:RubricAssess_Phrasing_TonyCall), an infrastructure advisor's infrastructure phrasing. Against this, the technical-documentation assessments read flatter: [the cm doc](narr:Assess_Phrasing_cm) and [collective-memory doc](narr:Assess_Phrasing_collective_memory) report consistent terminology but only generic stock phrases. The span is consistent terminology → strong branded idiolect → conversational authenticity, dated where transcripts carry dates.""" ;
+    narr:childCount "10"^^xsd:integer ;
+    narr:generatedFrom "83887e40d3ee942495e1d9134430d1fc51782771" ;
+    narr:narration """This hub catalogs phrasing assessments across organizational artifacts, mapping the transition from technical documentation to high-stakes strategic idiolect. The [core rubric assessment](narr:RubricAssess_Phrasing) establishes a baseline of 'narrative architecture' and 'steering vector' as canonical metaphors, while [GTM-focused assessments](narr:RubricAssess_Phrasing_GTM) and [IP-crisis analysis](narr:Assessment_Phrasing_IPCrisis) highlight the use of signature phrases like 'IP as code' to drive strategic alignment. A distinct idiolect emerges in [ADR-specific reviews](narr:RubricAssess_Phrasing_ADR002), which prioritize 'worldview layer' and 'strategy-execution disconnect' as shorthand for complex organizational states. In contrast, [technical documentation assessments](narr:Assess_Phrasing_cm) and [collective memory records](narr:Assess_Phrasing_collective_memory) maintain a flatter, functional register, relying on domain-specific terminology like 'Snapshot' and 'Transaction' without the branded metaphor clusters found in executive or customer-facing transcripts. The [customer architect's phrasing](narr:Assessment_Phrasing_CustomerArchitect) bridges these worlds, blending technical verbs with idiomatic, conversational markers.""" ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Phrasing_cm> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assess_Phrasing_collective_memory> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assess_Phrasing_rebrand> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Phrasing_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Phrasing_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#Assessment_Phrasing_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/ns/narrative#Assessment_Phrasing_IPCrisis> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_1> ;
-    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_20260107> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_ADR001> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_ADR002> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_GTM> ;
-    narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_TonyCall> ;
     narr:covers <https://aswritten.ai/ns/narrative#RubricAssess_phrasing> ;
-    narr:keyPhrase [ narr:text "Distinctive phrasing: 'narrative architecture,' 'steering vector,' 'resonant body.'" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing> ] ;
-    narr:keyPhrase [ narr:text "Strong idiolect: 'as written' signature phrase; domain verbs (draft, commit, compile); stock phrases establish brand voice" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Phrasing_rebrand> ] ;
-    narr:keyPhrase [ narr:text "Strong idiolect: 'IP as code', 'deepest lever', 'cascading value', 'compilation targets'; consistent terminology; memorable phrases" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Phrasing_IPCrisis> ] ;
-    narr:keyPhrase [ narr:text "Signature phrases ('state secrets to AI', 'IP as code', 'network effects') are memorable, repeatable, and aligned with strategic narrative." ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_GTM> ] ;
-    narr:keyPhrase [ narr:text "some stock phrases ('production ready', 'complete workflow')" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assess_Phrasing_cm> ] ;
-    narr:variation [ narr:text "Technical docs read flatter than strategic material: consistent terminology but generic stock phrases ('production ready', 'complete workflow') rather than branded idiolect." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Phrasing_cm> ; narr:over <https://aswritten.ai/ns/narrative#Assess_Phrasing_collective_memory> ] ;
-    narr:variation [ narr:text "Deliberate self-correction ('waymarkers... no, telltales') is read as a quality signal of word choice, not a defect." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing> ] ;
-    narr:variation [ narr:text "Conversational/authenticity markers — repeated 'right?', inside jokes like 'getting there', 'stupid exciting' — sit alongside the polished signature phrases." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_TonyCall> ] ;
-    narr:variation [ narr:text "Several assessments locate idiolect in specific named speakers (Tony, Scarlet, the customer's chief architect, an infrastructure advisor) rather than a single house voice — multiple distinct registers, not one." ; narr:over <https://aswritten.ai/ns/narrative#Assessment_Phrasing_CustomerArchitect> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_TonyCall> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "narrative architecture" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing> ] ;
+    narr:keyPhrase [ narr:text "IP as code" ; narr:phraseSource <https://aswritten.ai/ns/narrative#Assessment_Phrasing_IPCrisis> ] ;
+    narr:keyPhrase [ narr:text "worldview layer" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_ADR002> ] ;
+    narr:keyPhrase [ narr:text "living organizational worldview" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_phrasing> ] ;
+    narr:keyPhrase [ narr:text "state secrets to AI" ; narr:phraseSource <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_GTM> ] ;
+    narr:variation [ narr:text "Technical documentation prioritizes functional clarity over the branded metaphor clusters found in strategic discourse." ; narr:over <https://aswritten.ai/ns/narrative#Assess_Phrasing_cm> ; narr:over <https://aswritten.ai/ns/narrative#Assess_Phrasing_collective_memory> ] ;
+    narr:variation [ narr:text "Conversational authenticity is signaled through deliberate self-correction and non-standard phrasing, contrasting with the consistency of formal ADRs." ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing> ; narr:over <https://aswritten.ai/ns/narrative#RubricAssess_Phrasing_ADR001> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
