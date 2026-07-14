@@ -4,27 +4,21 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Narrative_April1SoftLaunch> {
   <https://aswritten.ai/narrative#Digest_Narrative_April1SoftLaunch> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Narrative_April1SoftLaunch> ;
-    narr:childCount "8"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """Anchored 2026-03-20, [April 1 is set as a forcing function](narr:Claim_April1ForcingFunction): after that date beta testing ends and public marketing, outreach, and tiered free-trial→paid push begin — advisors confirmed the date. The [above-the-line must-ship list](narr:Claim_AboveTheLine_April1) covers dev-branch merge, language pass, MVP slimming, initial modules/perspectives, GitHub abstraction, doc site, and sales assets — though the landing-page redo was later superseded by a deep-link move. Scarlet [scoped it at ~1.5 weeks](narr:Claim_WeekAndHalfWork), bulk concentrated in the following week. On 2026-03-23 the [below-the-line list was revised](narr:Claim_BelowTheLine_April1) around an [interview-driven distribution model](narr:Claim_MarketplaceInterviewDriven): marketplace browse/search, starter perspectives, and a content library all become downstream artifacts of interviews, not prerequisites. Supporting work followed: [outreach SMS/email templates](narr:Claim_OutreachTemplates) for inviting experts, and [a design collaborator's style-guide commitment](narr:Claim_DesignCollaboratorStyleGuide) unifying landing page, docs, and content site. One open decision remains: the [content-site subdomain](narr:Claim_ContentSiteSubdomain).""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_AboveTheLine_April1> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_April1ForcingFunction> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_BelowTheLine_April1> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_ContentSiteSubdomain> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_DesignCollaboratorStyleGuide> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_MarketplaceInterviewDriven> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_OutreachTemplates> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_WeekAndHalfWork> ;
-    narr:keyPhrase [ narr:text "After April 1, beta testing is done." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_April1ForcingFunction> ] ;
-    narr:keyPhrase [ narr:text "Advisors confirmed setting April 1 as the forcing function." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_April1ForcingFunction> ] ;
-    narr:keyPhrase [ narr:text "This is like a week and a half's work. Really the brunt of it is next week." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_WeekAndHalfWork> ] ;
-    narr:keyPhrase [ narr:text "distribution is interview-driven, not browse-driven" ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MarketplaceInterviewDriven> ] ;
-    narr:keyPhrase [ narr:text "No bait and switch." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_OutreachTemplates> ] ;
-    narr:keyPhrase [ narr:text "NOT comps — a system that AI can apply." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_DesignCollaboratorStyleGuide> ] ;
-    narr:keyPhrase [ narr:text "Content site subdomain is undecided." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_ContentSiteSubdomain> ] ;
-    narr:variation [ narr:text "The landing-page redo, listed above-the-line, was later superseded by a deep-link move — a must-ship item that changed after framing." ; narr:over <https://aswritten.ai/narrative#Claim_AboveTheLine_April1> ] ;
-    narr:variation [ narr:text "Below-the-line was substantially revised on 2026-03-23: marketplace browse/search, starter perspectives, and content library reframed as interview-created downstream artifacts; prior list also dropped content-site articles, 'module' naming, forking, and revenue-share infra." ; narr:over <https://aswritten.ai/narrative#Claim_BelowTheLine_April1> ; narr:over <https://aswritten.ai/narrative#Claim_MarketplaceInterviewDriven> ] ;
-    narr:variation [ narr:text "Scope risk: ~1.5 weeks of work but the bulk compressed into the single week after the session, against a fixed April 1 date." ; narr:over <https://aswritten.ai/narrative#Claim_WeekAndHalfWork> ; narr:over <https://aswritten.ai/narrative#Claim_April1ForcingFunction> ] ;
-    narr:variation [ narr:text "Unresolved decision: content-site subdomain (drafts vs perspectives vs aswritten.ai/interviews) — 'drafts' is internal framing but published version should feel like a media property." ; narr:over <https://aswritten.ai/narrative#Claim_ContentSiteSubdomain> ] ;
-    narr:writer "claude (subscription)" .
+    narr:childCount "7"^^xsd:integer ;
+    narr:generatedFrom "15a9ba14f7af89866bae862f87d18f5cf1419f87" ;
+    narr:narration """The April 1 launch remains anchored as a [forcing function](narr:Position_April1ForcingFunction) to transition from beta testing to public-facing marketing and tiered access. The [above-the-line requirements](narr:Position_AboveTheLine_April1) prioritize core stability—merging dev branches, finalizing the language pass, and shipping initial perspectives—while relegating secondary features to a [below-the-line status](narr:Position_BelowTheLine_April1). This shift is driven by a strategic pivot toward an [interview-first distribution model](narr:Position_MarketplaceInterviewDriven), where marketplace search and starter content are treated as downstream artifacts of expert interviews rather than launch-blocking prerequisites. Supporting infrastructure, including [outreach templates](narr:Position_OutreachTemplates) and a [unified style guide](narr:Position_DesignCollaboratorStyleGuide), is currently in development to ensure brand consistency across the landing page and documentation. A final decision remains pending regarding the [content-site subdomain](narr:Position_ContentSiteSubdomain), as the team seeks to move away from internal-facing naming conventions toward a more professional media-property identity.""" ;
+    narr:covers <https://aswritten.ai/narrative#Position_AboveTheLine_April1> ;
+    narr:covers <https://aswritten.ai/narrative#Position_April1ForcingFunction> ;
+    narr:covers <https://aswritten.ai/narrative#Position_BelowTheLine_April1> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ContentSiteSubdomain> ;
+    narr:covers <https://aswritten.ai/narrative#Position_DesignCollaboratorStyleGuide> ;
+    narr:covers <https://aswritten.ai/narrative#Position_MarketplaceInterviewDriven> ;
+    narr:covers <https://aswritten.ai/narrative#Position_OutreachTemplates> ;
+    narr:keyPhrase [ narr:text "April 1 is set as a forcing function for launch readiness." ; narr:phraseSource <https://aswritten.ai/narrative#Position_April1ForcingFunction> ] ;
+    narr:keyPhrase [ narr:text "distribution is interview-driven, not browse-driven." ; narr:phraseSource <https://aswritten.ai/narrative#Position_MarketplaceInterviewDriven> ] ;
+    narr:keyPhrase [ narr:text "a system that AI can apply." ; narr:phraseSource <https://aswritten.ai/narrative#Position_DesignCollaboratorStyleGuide> ] ;
+    narr:keyPhrase [ narr:text "The 'drafts' framing is internal; the published version should feel like a media property." ; narr:phraseSource <https://aswritten.ai/narrative#Position_ContentSiteSubdomain> ] ;
+    narr:variation [ narr:text "The 'above-the-line' list includes a landing page redo that was technically superseded by a deep-link move." ; narr:over <https://aswritten.ai/narrative#Position_AboveTheLine_April1> ] ;
+    narr:variation [ narr:text "The content site naming remains in flux, with tension between internal 'drafts' and external-facing branding." ; narr:over <https://aswritten.ai/narrative#Position_ContentSiteSubdomain> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
