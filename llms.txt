@@ -76,7 +76,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Process](hub-Process.html): A June 12 process-redesign session whose stated aim was \"I would like to improve the mess\", structured as correcting f
 - [ProcessPolicyUpdates](hub-ProcessPolicyUpdates.html): This hub tracks the evolution of process and policy, centering on the perspective-vs-implementation boundary established
 - [Product](hub-Product.html): This hub gathers Scarlet's product lineage and the through-line connecting it: extracting narrative from data to steer o
-- [ProductLadder](hub-ProductLadder.html): This hub gathers the product-and-go-to-market ladder. The commercial spine is the four-phase core expansion track: [a [a
+- [ProductLadder](hub-ProductLadder.html): This hub defines the product-and-go-to-market ladder, centering on a goal-directed agent primitive that unifies delegati
 - [ProductOverview](hub-ProductOverview.html): The product trajectory has shifted from a focus on adaptive architectural infrastructure toward an immersive, consumer-f
 - [Proof](hub-Proof.html): The proof strategy at aswritten has evolved from external validation toward recursive self-documentation, where the prod
 - [QualityReviewGates](hub-QualityReviewGates.html): This hub spans the review, evaluation, and verification disciplines that gate knowledge quality across the aswritten sys
