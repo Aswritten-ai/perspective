@@ -97,7 +97,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [TimingThesis](hub-TimingThesis.html): This hub gathers the \"why now\" arguments for the venture, running along two distinct rails. The first is IP leakage as
 - [ValueExchange](hub-ValueExchange.html): This hub gathers how value is exchanged and articulated around the collective-memory product. The pivotal moment is a re
 - [Vision](hub-Vision.html): Scarlet's Vision holds a steering-vector thesis as its through-line: language, narrative, and meaning act as steering ve
-- [WhatDoesItDo](hub-WhatDoesItDo.html): This hub answers \"what does it do\" in two registers that pull in different directions. The product spine: As Written i
+- [WhatDoesItDo](hub-WhatDoesItDo.html): This hub maps the functional and rhetorical architecture of As Written, a git-native organizational memory tool designed
 - [WhatIsIt](hub-WhatIsIt.html): This hub answers \"what is the product?\" and its mainline, dated April 28 2026, is positive-identity: the product is cu
 - [WhatItsNot](hub-WhatItsNot.html): This hub collects the positioning negatives — what aswritten is *not*. The load-bearing boundary is search vs. aswritten
 
