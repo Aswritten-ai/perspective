@@ -1,0 +1,46 @@
+{
+  "resolutions" : [ {
+    "commentary_local_id" : "src-6",
+    "phrase" : "Both the consult prefetch and the navigator's post-agent reads were building the graph against the run's own work branch.",
+    "verdict" : "confident",
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_NavigationReplacesEmbeddedSnapshot",
+        "relation" : "extends",
+        "why" : "Directly names the navigator as the perspective-consumer the 2026-06-16 decision established ('every internal consumer of the perspective... now reads the graph by navigating its collapsed digest') and adds a new operational detail — which ref that navigator's read was resolving against."
+      } ],
+      "targets" : [ "ArchitectureOverview", "Narrative_NavigationReplacesEmbeddedSnapshot" ]
+    },
+    "why" : "The phrase engages the content of the navigation-consumer architecture (who reads the graph and how) rather than merely naming it in passing; no other node in the perspective documents consumer read-paths at this grain.",
+    "consulted" : [ "ArchitectureOverview", "Narrative_NavigationReplacesEmbeddedSnapshot", "Position_NavigationDropsContextOrderOfMagnitude", "SystemTopology" ]
+  }, {
+    "commentary_local_id" : "src-7",
+    "phrase" : "the navigator's read missed the warm cache and rebuilt the entire 64,000-quad corpus for exactly the one transaction the run had just written",
+    "verdict" : "confident",
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_NavigationReplacesEmbeddedSnapshot",
+        "relation" : "extends",
+        "why" : "Continues src-6's diagnosis of the same navigator-read mechanism the 2026-06-16 decision established, adding the causal detail (source-spur commit moves the tree sha) that produced the cache miss."
+      } ],
+      "targets" : [ "ArchitectureOverview", "Narrative_NavigationReplacesEmbeddedSnapshot" ]
+    },
+    "why" : "Same referent as src-6 — a continuous causal account of the same navigation-read behavior, at the same grain, with no other candidate node addressing branch/tree-sha cache mechanics.",
+    "consulted" : [ "ArchitectureOverview", "Narrative_NavigationReplacesEmbeddedSnapshot", "SystemTopology" ]
+  }, {
+    "commentary_local_id" : "src-11",
+    "phrase" : "The navigator consults the prior perspective; the document under extraction reaches the engine through pass one, never through these reads.",
+    "verdict" : "confident",
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_NavigationReplacesEmbeddedSnapshot",
+        "relation" : "extends",
+        "why" : "Clarifies a scope detail of the established navigation architecture (consumers navigate the digest rather than receive an embedded snapshot) — specifically which data enters the engine via which path, a consequence not previously spelled out."
+      } ],
+      "targets" : [ "ArchitectureOverview", "Narrative_NavigationReplacesEmbeddedSnapshot" ]
+    },
+    "why" : "Explicitly names 'the navigator' consulting 'the prior perspective,' matching the 2026-06-16 decision's own language ('every internal consumer of the perspective... reads the graph by navigating') closely enough to be a determinate single match, not a loose thematic overlap.",
+    "consulted" : [ "ArchitectureOverview", "Narrative_NavigationReplacesEmbeddedSnapshot", "Narrative_SynchronousPerMessageIntegration" ]
+  } ],
+  "unreferenced_commentary" : [ "src-1", "src-2", "src-3", "src-4", "src-5", "src-8", "src-10", "src-12", "src-13", "src-14", "src-15", "src-16" ]
+}
