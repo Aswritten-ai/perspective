@@ -1,0 +1,265 @@
+{
+  "resolutions" : [ {
+    "commentary_local_id" : "src-2",
+    "phrase" : "the March 19 MVP redefinition (install–compile–cite–remember–review as core; Refraction, Registry, marketplace deferred) was MVP v1's version of it",
+    "verdict" : "confident",
+    "why" : "Exact match to the dated Mar 19 MVP scope decision node, down to the same five-verb core list and the same three deferred items (Refraction, Registry, marketplace).",
+    "consulted" : [ "FocusSequencing", "Narrative_MVPScopeDecision", "Position_RefractNotMVP", "Position_RegistryNotMVP" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_MVPScopeDecision",
+        "relation" : "extends",
+        "why" : "This commentary names the March 19 decision as the prior instance of the same strip-down move — engages and builds on its content rather than merely naming it."
+      } ],
+      "targets" : [ "FocusSequencing", "Narrative_MVPScopeDecision" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-2",
+    "phrase" : "the July 11 MVP-cut decision record was its immediate predecessor",
+    "verdict" : "new",
+    "why" : "No node dated July 11 or named as an 'MVP-cut decision record' appears anywhere in the map, area index, active surface, or served focus material — the reference is real within this document's history but absent from this perspective slice.",
+    "consulted" : [ "FocusSequencing", "ArchitectureOverview area index", "Active surface" ],
+    "binding" : null,
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-4",
+    "phrase" : "several of them amending the July 11 record",
+    "verdict" : "new",
+    "why" : "Same absent July 11 MVP-cut record referenced again; no plausible match found by navigating FocusSequencing, ModulesCapabilities, or ArchitectureOverview.",
+    "consulted" : [ "FocusSequencing", "ModulesCapabilities", "ArchitectureOverview" ],
+    "binding" : null,
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-74",
+    "phrase" : "landing on the product's own core claim",
+    "verdict" : "confident",
+    "why" : "The claim being landed on — that the product's entire value is not summarizing until read time — is the index-never-gates-store principle applied to the extraction pipeline itself; the parent narrative anchors it.",
+    "consulted" : [ "ArchitectureOverview", "Narrative_DigestAsRecognitionAid", "Position_IndexNeverGatesStore", "Differentiators", "Narrative_CitationEngineNotSynthesis" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Position_IndexNeverGatesStore",
+        "relation" : "extends",
+        "why" : "Applies the 'index must never gate the store / no anticipatory summary' principle to the extraction-pipeline filtering question."
+      }, {
+        "iri" : "Narrative_DigestAsRecognitionAid",
+        "relation" : "see",
+        "why" : "Parent narrative anchoring the read-time-summary framing being invoked."
+      } ],
+      "targets" : [ "ArchitectureOverview", "Narrative_DigestAsRecognitionAid" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-76",
+    "phrase" : "is in essence first primary source material, and captures interstitial decisions that wouldn't survive as quotes",
+    "verdict" : "confident",
+    "why" : "This directly engages and applies the non-negotiable provenance rule that hub/interactive memories must still count as primary source material carrying verbatim excerpts back to source.",
+    "consulted" : [ "GovernanceSafetyTrust", "Narrative_HubMemoryProvenanceNonNegotiable", "Narrative_ProvenanceCitationMoment" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_HubMemoryProvenanceNonNegotiable",
+        "relation" : "extends",
+        "why" : "Applies the provenance-survives-summarization rule to decide which extraction venue counts as primary source material."
+      } ],
+      "targets" : [ "GovernanceSafetyTrust" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-105",
+    "phrase" : "the PR review surface is the generated view (positions + claimed expressions, composed at read time)",
+    "verdict" : "confident",
+    "why" : "Names the existing PR-based review pipeline (TX commits to branch → PR opens → review) as the surface being reworked into a composed, read-time view.",
+    "consulted" : [ "CoreWorkflows", "Narrative_ReviewLoopIsRemember", "Observation_Pipeline", "Obs_ReviewFlowSteps" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_ReviewLoopIsRemember",
+        "relation" : "extends",
+        "why" : "Extends the review-is-just-another-remember pipeline by redefining what composes the PR view within it."
+      }, {
+        "iri" : "Observation_Pipeline",
+        "relation" : "see",
+        "why" : "Anchors the specific PR-opens-then-review step this ruling reworks."
+      } ],
+      "targets" : [ "CoreWorkflows" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-110",
+    "phrase" : "digest narrations of connected nodes are provisionally visible because the digest is the abstraction, not the source",
+    "verdict" : "confident",
+    "why" : "Directly reuses the digest/index-vs-store distinction — the digest as lossy abstraction that never gates the underlying store — to justify visibility of cross-linked digest narrations.",
+    "consulted" : [ "Narrative_DigestAsRecognitionAid", "Position_IndexNeverGatesStore", "GovernanceSafetyTrust" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Position_IndexNeverGatesStore",
+        "relation" : "extends",
+        "why" : "Extends the never-gates-store principle to justify visibility of abstracted digest narrations across an access boundary."
+      }, {
+        "iri" : "Narrative_DigestAsRecognitionAid",
+        "relation" : "see",
+        "why" : "Parent narrative anchoring the digest-as-abstraction framing."
+      } ],
+      "targets" : [ "Narrative_DigestAsRecognitionAid", "GovernanceSafetyTrust" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-111",
+    "phrase" : "digest narrations embed verbatim witness excerpts, which weakens \"not showing the source.\"",
+    "verdict" : "confident",
+    "why" : "Flags an unresolved tension with the non-negotiable rule that hub/digest narrations must carry verbatim excerpts — pushes against the 'digest is abstraction not source' claim just made.",
+    "consulted" : [ "Narrative_HubMemoryProvenanceNonNegotiable", "Narrative_DigestAsRecognitionAid", "GovernanceSafetyTrust" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_HubMemoryProvenanceNonNegotiable",
+        "relation" : "contradicts",
+        "why" : "The requirement that memories carry verbatim excerpts stands in unresolved tension with treating digest narrations as pure non-source abstraction."
+      } ],
+      "targets" : [ "GovernanceSafetyTrust", "Narrative_DigestAsRecognitionAid" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-115",
+    "phrase" : "Two amendments to the July 11 MVP-cut record",
+    "verdict" : "new",
+    "why" : "Same absent July 11 MVP-cut record; no node by this name or date found anywhere in the loaded perspective.",
+    "consulted" : [ "FocusSequencing", "ModulesCapabilities", "Active surface" ],
+    "binding" : null,
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-118",
+    "phrase" : "superseding the July 11 \"voice-profile fullscreen IN, v1-thin\" ruling",
+    "verdict" : "new",
+    "why" : "Names a specific prior ruling within the absent July 11 record; no such position node ('voice-profile fullscreen IN, v1-thin') surfaces in ModulesCapabilities, ArchitectureOverview, or the active surface.",
+    "consulted" : [ "ModulesCapabilities", "ArchitectureOverview", "Active surface" ],
+    "binding" : null,
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-124",
+    "phrase" : "the July 11 record had only named Zoom+Meet as the post-window integrations",
+    "verdict" : "new",
+    "why" : "Same absent July 11 record; the specific claim about it naming only Zoom+Meet cannot be checked against any node in this perspective.",
+    "consulted" : [ "FocusSequencing", "DataIntegrationFlows", "Active surface" ],
+    "binding" : null,
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-128",
+    "phrase" : "analysis of the newest multipass extractions (offsets content-verified) showed positions are 100% contiguous blocks",
+    "verdict" : "new",
+    "why" : "A fresh empirical finding produced within this session; no prior graph node states or measures position contiguity as an extraction-pipeline property.",
+    "consulted" : [ "ArchitectureOverview", "Narrative_TransformOverQuery", "Narrative_DigestAsRecognitionAid" ],
+    "binding" : null,
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-132",
+    "phrase" : "Second run of the Mar 19 MVP scope decision",
+    "verdict" : "confident",
+    "why" : "Explicitly names the March 19 MVP scope decision node as the pattern being repeated.",
+    "consulted" : [ "FocusSequencing", "Narrative_MVPScopeDecision" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_MVPScopeDecision",
+        "relation" : "extends",
+        "why" : "Names this session's strip-down as a repeat run of the same March 19 scoping move."
+      } ],
+      "targets" : [ "FocusSequencing", "Narrative_MVPScopeDecision" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-132",
+    "phrase" : "amending the Jul 11 MVP-cut record",
+    "verdict" : "new",
+    "why" : "Same absent July 11 MVP-cut record referenced a final time; no plausible match anywhere in the loaded perspective.",
+    "consulted" : [ "FocusSequencing", "Active surface" ],
+    "binding" : null,
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-133",
+    "phrase" : "consistent with digest-as-recognition-aid and navigation-replaces-embedded-snapshot",
+    "verdict" : "confident",
+    "why" : "Both narratives are named explicitly by title in the commentary itself, engaging their content to validate the new resolution-layers theatre design.",
+    "consulted" : [ "ArchitectureOverview", "Narrative_DigestAsRecognitionAid", "Narrative_NavigationReplacesEmbeddedSnapshot" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_DigestAsRecognitionAid",
+        "relation" : "extends",
+        "why" : "The resolution-layers theatre is offered as the digest's collapse/expand mechanism made visible in a new surface."
+      }, {
+        "iri" : "Narrative_NavigationReplacesEmbeddedSnapshot",
+        "relation" : "extends",
+        "why" : "The theatre-as-graph-viewer literally implements navigation-as-primary-read-path for a new consumer surface."
+      } ],
+      "targets" : [ "ArchitectureOverview", "Narrative_DigestAsRecognitionAid" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-134",
+    "phrase" : "\"no summary until read time\" applied to the pipeline itself",
+    "verdict" : "confident",
+    "why" : "Restates and applies both the never-gates-store principle and the primary-source-survives-summarization rule to resolve the extraction-fork ruling.",
+    "consulted" : [ "Position_IndexNeverGatesStore", "Narrative_HubMemoryProvenanceNonNegotiable", "ArchitectureOverview", "GovernanceSafetyTrust" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Position_IndexNeverGatesStore",
+        "relation" : "extends",
+        "why" : "The read-time-layers resolution is a direct application of the never-summarize-before-read principle to the ingestion pipeline."
+      }, {
+        "iri" : "Narrative_HubMemoryProvenanceNonNegotiable",
+        "relation" : "extends",
+        "why" : "The venue distinction (user-approved summaries as primary source) extends the provenance-survives-summarization rule."
+      } ],
+      "targets" : [ "ArchitectureOverview", "GovernanceSafetyTrust" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-135",
+    "phrase" : "the Jul 12 extraction-cost policy",
+    "verdict" : "new",
+    "why" : "No node dated July 12 or describing an extraction-cost debugging-guardrail policy is present anywhere in the loaded perspective.",
+    "consulted" : [ "ArchitectureOverview", "MetricsMonitoring (unexpanded)", "PackagingPricing (unexpanded)" ],
+    "binding" : null,
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-136",
+    "phrase" : "the Jun 9 ingestion-protocol finding (the user's own access is the access; Otter's API is enterprise-gated)",
+    "verdict" : "confident",
+    "why" : "Matches the June 9 ingestion-protocol source exactly: the no-custody processor-not-store principle and the one-protocol ingestion spine both carry that date and source.",
+    "consulted" : [ "DataIntegrationFlows", "SecurityPrivacyModel", "Narrative_NoCustodyDataPhilosophy", "Narrative_UserAgentIngestionModel" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Narrative_NoCustodyDataPhilosophy",
+        "relation" : "extends",
+        "why" : "'The user's own access is the access' is a direct restatement of the processor-not-store, no-custody principle from the same June 9 source."
+      }, {
+        "iri" : "Narrative_UserAgentIngestionModel",
+        "relation" : "extends",
+        "why" : "The beta gating-by-integration list operationalizes the one-protocol-many-sources ingestion spine from the same session."
+      } ],
+      "targets" : [ "DataIntegrationFlows", "SecurityPrivacyModel" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-137",
+    "phrase" : "the Org-tier three-capabilities position",
+    "verdict" : "confident",
+    "why" : "Named position exists verbatim on the active surface with Front-based agent-deployment monitoring as one of its three capabilities.",
+    "consulted" : [ "Active surface: Position_OrgTierThreeCapabilities", "PackagingEntitlement" ],
+    "binding" : {
+      "referents" : [ {
+        "iri" : "Position_OrgTierThreeCapabilities",
+        "relation" : "extends",
+        "why" : "Front-as-notification-proxy in the MVP path extends the external-agent-deployment capability already specified in this org-tier position."
+      } ],
+      "targets" : [ "PackagingEntitlement" ]
+    },
+    "candidates" : null
+  }, {
+    "commentary_local_id" : "src-138",
+    "phrase" : "the attended-projection convergence from the clearance design work",
+    "verdict" : "new",
+    "why" : "No node named 'clearance design work' or describing an 'attended-projection convergence' appears in GovernanceSafetyTrust, SecurityPrivacyModel, or the area index; RiskGuardrails (a plausible home) was not expanded and surfaced nothing on navigation of adjacent hubs.",
+    "consulted" : [ "GovernanceSafetyTrust", "SecurityPrivacyModel", "RiskGuardrails (named only, unexpanded)" ],
+    "binding" : null,
+    "candidates" : null
+  } ],
+  "unreferenced_commentary" : [ "src-1", "src-3", "src-5", "src-6", "src-64", "src-66", "src-69", "src-71", "src-72", "src-77", "src-79", "src-80", "src-81", "src-83", "src-85", "src-88", "src-89", "src-90", "src-92", "src-94", "src-96", "src-98", "src-100", "src-102", "src-103", "src-106", "src-107", "src-108", "src-112", "src-114", "src-116", "src-119", "src-121", "src-122", "src-125", "src-126", "src-127", "src-129", "src-130", "src-139", "src-140", "src-141", "src-142" ]
+}
