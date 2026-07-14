@@ -7,7 +7,7 @@
 Live install for MCP-capable agents: call aswritten_perspective with id "customer-architecture-demo-enterprise-c1cb" against https://aswritten.ai's MCP endpoint — see https://docs.aswritten.ai for setup.
 
 ## Areas
-- [ActorIncentiveAnalysis](hub-ActorIncentiveAnalysis.html): This hub maps the actors around the product and what each one wants. The buyer question is answered concretely in the VC
+- [ActorIncentiveAnalysis](hub-ActorIncentiveAnalysis.html): This hub maps the incentive structures surrounding product adoption, centering on the VC-channel go-to-market map which 
 - [Architecture](hub-Architecture.html): The Architecture hub defines an organization's worldview as the primary source of truth, treating all outputs—content, a
 - [ArchitectureOverview](hub-ArchitectureOverview.html): The architecture has transitioned from a directory-based compilation model to a transform-based perspective engine, wher
 - [AudienceFrames](hub-AudienceFrames.html): This hub gathers how the pitch and fundraising materials get reframed per audience. The structural spine is that every s
