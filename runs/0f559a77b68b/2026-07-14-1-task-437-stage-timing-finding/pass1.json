@@ -1,0 +1,200 @@
+{
+  "doc" : {
+    "title" : "The extraction engine's inter-stage dead time and the self-invalidating graph cache",
+    "date_stated" : "2026-07-14",
+    "actors_present" : [ "claude-opus-4-8", "Scarlet" ]
+  },
+  "segments" : [ {
+    "local_id" : "src-1",
+    "exact" : "Finding recorded 2026-07-14 while instrumenting the multipass extraction engine (task-437).",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : {
+      "date" : "2026-07-14",
+      "context" : "instrumenting the multipass extraction engine, task-437"
+    },
+    "note" : "editorial narration by the memo's composer"
+  }, {
+    "local_id" : "src-2",
+    "exact" : "On a measured dev run, 57% of the wall clock (575 of 1,002 seconds) was time with no LLM call in flight — the judgment chain sat idle between passes.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  }, {
+    "local_id" : "src-3",
+    "exact" : "The three inter-stage gaps were navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  }, {
+    "local_id" : "src-4",
+    "exact" : "The largest contributor identified and reproduced: a self-invalidating graph cache.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  }, {
+    "local_id" : "src-5",
+    "exact" : "The engine's graph service keys its corpus cache on owner, repo, ref, and the .aswritten tree sha.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  }, {
+    "local_id" : "src-6",
+    "exact" : "Both the consult prefetch and the navigator's post-agent reads were building the graph against the run's own work branch.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  }, {
+    "local_id" : "src-7",
+    "exact" : "But the source-spur step commits the document and its source transaction to that same work branch mid-run, moving the tree sha — so the navigator's read missed the warm cache and rebuilt the entire 64,000-quad corpus for exactly the one transaction the run had just written.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  }, {
+    "local_id" : "src-8",
+    "exact" : "Scarlet's ruling: \"the base ref is correct.\"",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "framing sentence introducing the quote; the quote itself is segmented separately"
+  }, {
+    "local_id" : "src-9",
+    "exact" : "the base ref is correct.",
+    "actor" : "Scarlet",
+    "act" : "declarative",
+    "footing" : null,
+    "circumstance" : null,
+    "note" : "direct quote claimed verbatim by the composer"
+  }, {
+    "local_id" : "src-10",
+    "exact" : "The consult and navigate reads now read the base ref the run was cut from, not the run's own freshly-committed work branch.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : "Scarlet"
+    },
+    "circumstance" : null,
+    "note" : "direct restatement of Scarlet's ruling just quoted above; principal attaches per precedence rule"
+  }, {
+    "local_id" : "src-11",
+    "exact" : "The navigator consults the prior perspective; the document under extraction reaches the engine through pass one, never through these reads.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  }, {
+    "local_id" : "src-12",
+    "exact" : "Both reads now share one warm graph and the run's own commit can no longer invalidate it.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : "Scarlet"
+    },
+    "circumstance" : null,
+    "note" : "continuation of the restated ruling's consequence"
+  }, {
+    "local_id" : "src-13",
+    "exact" : "The dead time is also coupled to the prompt cache.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  }, {
+    "local_id" : "src-14",
+    "exact" : "Anthropic's default ephemeral cache lives five minutes, and the 336-second gap already exceeds it — so a slightly slower document would let the cached prefix evaporate between passes and silently revert the cost with no error.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  }, {
+    "local_id" : "src-15",
+    "exact" : "Scarlet approved the one-hour cache TTL to decouple the cache win from the dead time.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : "Scarlet"
+    },
+    "circumstance" : null,
+    "note" : "reports Scarlet's approval decision; paraphrase attributing the decision to Scarlet as principal"
+  }, {
+    "local_id" : "src-16",
+    "exact" : "The remaining inter-stage time is GitHub-IO and n8n-navigator-round-trip bound.",
+    "actor" : "claude-opus-4-8",
+    "act" : "assertive",
+    "footing" : {
+      "animator" : "claude-opus-4-8",
+      "author" : "claude-opus-4-8",
+      "principal" : null
+    },
+    "circumstance" : null,
+    "note" : "editorial narration"
+  } ],
+  "coverage_gaps" : [ ]
+}
