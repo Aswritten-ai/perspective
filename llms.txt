@@ -65,7 +65,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [OperatingModelShifts](hub-OperatingModelShifts.html): The operating model has evolved from early structural experiments into a unified strategy of curation and expert-driven 
 - [Opportunity](hub-Opportunity.html): The opportunity is framed through three distinct problem lenses, none crowned. The strategy-execution disconnect casts i
 - [OrganizationalChangeManual](hub-OrganizationalChangeManual.html): This hub gathers field notes toward a manual for organizational change in AI adoption — the recurring claim being that t
-- [Outcomes](hub-Outcomes.html): This hub gathers the claimed outcomes of the product, dominated by a quantified ROI stack for a 10-person team: onboardi
+- [Outcomes](hub-Outcomes.html): This hub aggregates the projected organizational outcomes of the platform, structured around a quantified ROI model for 
 - [OutcomesProof](hub-OutcomesProof.html): OutcomesProof gathers heterogeneous evidence that the system delivers value. Commercially, the live-demo delivery gate t
 - [PackagingEntitlement](hub-PackagingEntitlement.html): This hub gathers how product access is packaged and what clients forfeit. The mainline, settled 2026-02-11, is a no-free
 - [PackagingPricing](hub-PackagingPricing.html): Pricing strategy has moved from flat per-repo models toward a multi-tier structure that distinguishes between self-serve
