@@ -1,0 +1,155 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-2",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "57% of the wall clock (575 of 1,002 seconds)",
+      "kind" : "plain-signal"
+    }, {
+      "quote" : "no LLM call in flight",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "Precise operational measurement and native system terminology perform a technical register.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-3",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "Stage names and exact timings use specialized pipeline vocabulary with precision over accessibility.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-4",
+    "regions" : [ "matter-of-fact", "technical" ],
+    "evidence" : [ {
+      "quote" : "The largest contributor identified and reproduced: a self-invalidating graph cache.",
+      "kind" : "framing-move"
+    } ],
+    "why" : "The compressed diagnostic formulation is instrumental while naming a technical failure mode natively.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-5",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "keys its corpus cache on owner, repo, ref, and the .aswritten tree sha",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "Repository and cache-key terminology is used without explanatory paraphrase.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-6",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "consult prefetch",
+      "kind" : "lexical-marker"
+    }, {
+      "quote" : "navigator's post-agent reads",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "Internal pipeline component names are presented as assumed shared vocabulary.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-7",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "source-spur step commits the document and its source transaction",
+      "kind" : "lexical-marker"
+    }, {
+      "quote" : "moving the tree sha",
+      "kind" : "lexical-marker"
+    }, {
+      "quote" : "64,000-quad corpus",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The causal explanation is densely specific and technically native.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-8",
+    "regions" : [ "formal" ],
+    "evidence" : [ {
+      "quote" : "Scarlet's ruling:",
+      "kind" : "framing-move"
+    } ],
+    "why" : "The noun ruling frames the utterance as an authoritative adjudication rather than casual commentary.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-10",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "read the base ref the run was cut from",
+      "kind" : "lexical-marker"
+    }, {
+      "quote" : "freshly-committed work branch",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "Branch and reference terminology is used as unglossed operational vocabulary.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-11",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "The navigator consults the prior perspective",
+      "kind" : "lexical-marker"
+    }, {
+      "quote" : "reaches the engine through pass one",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "The sentence relies on named pipeline roles and pass structure as shared technical terms.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-12",
+    "regions" : [ "technical", "matter-of-fact" ],
+    "evidence" : [ {
+      "quote" : "share one warm graph",
+      "kind" : "lexical-marker"
+    }, {
+      "quote" : "invalidate it",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "It states an implementation consequence in compact, instrumental systems language.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-13",
+    "regions" : [ "matter-of-fact" ],
+    "evidence" : [ {
+      "quote" : "The dead time is also coupled to the prompt cache.",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "The short declarative diagnosis is flat and instrumental.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-14",
+    "regions" : [ "technical" ],
+    "evidence" : [ {
+      "quote" : "Anthropic's default ephemeral cache lives five minutes",
+      "kind" : "lexical-marker"
+    }, {
+      "quote" : "cached prefix evaporate between passes",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "Cache behavior and pass timing are explained with precise domain terminology.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-15",
+    "regions" : [ "formal" ],
+    "evidence" : [ {
+      "quote" : "Scarlet approved the one-hour cache TTL",
+      "kind" : "performed-act"
+    } ],
+    "why" : "Approved frames the principal's decision as a formal authorization.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-16",
+    "regions" : [ "technical", "matter-of-fact" ],
+    "evidence" : [ {
+      "quote" : "GitHub-IO and n8n-navigator-round-trip bound",
+      "kind" : "lexical-marker"
+    } ],
+    "why" : "The sentence gives a compact technical attribution of the remaining delay.",
+    "reported" : false
+  } ],
+  "mints" : [ ],
+  "unmarked" : [ "src-1", "src-9" ]
+}
