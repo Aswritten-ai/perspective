@@ -148,7 +148,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [ToneAuthoritative](hub-ToneAuthoritative.html): The authoritative register of aswritten.ai is defined by a deliberate, agent-first voice that treats epistemological ter
 - [ToneDirectPersonal](hub-ToneDirectPersonal.html): This hub gathers stylistic observations about a direct, second-person, personal voice running through the product's mark
 - [ToneVoice](hub-ToneVoice.html): This hub gathers observations of a single brand voice across registers. The dominant mode is confident and agent-centere
-- [VerbChoice](hub-VerbChoice.html): This hub gathers style observations on verb choice across aswritten.ai's pitch and messaging. The dominant pattern is a 
+- [VerbChoice](hub-VerbChoice.html): This hub tracks the evolution of verb choice within aswritten.ai’s messaging, where technical precision meets organizati
 - [VoiceActive](hub-VoiceActive.html): This hub gathers style observations of an active, agentive voice across the company's writing. The dominant pattern is f
 
 ## Reference
