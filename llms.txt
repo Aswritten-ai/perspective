@@ -135,7 +135,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Rubric_Register](hub-Rubric_Register.html): This hub collects per-document register assessments under one rubric dimension across the corpus. The dominant reading i
 - [Rubric_Resonance](hub-Rubric_Resonance.html): This hub collects rubric assessments of resonance — how well each document, claim, or rebrand lands emotionally and memo
 - [Rubric_StrategicAlignment](hub-Rubric_StrategicAlignment.html): This hub aggregates strategic-alignment assessments, where the prevailing consensus identifies a high degree of strategi
-- [Rubric_Tailoring](hub-Rubric_Tailoring.html): This hub gathers per-document audience-tailoring assessments scored against the rubric. The dominant axis is *who the wr
+- [Rubric_Tailoring](hub-Rubric_Tailoring.html): This hub tracks the evolution of audience-tailoring assessments, mapping how content adapts to distinct stakeholder need
 - [RuleOfThree](hub-RuleOfThree.html): This hub gathers observations of the document's recurring rule-of-three rhetoric — triadic parallelism used for emphasis
 - [SecondPerson](hub-SecondPerson.html): This hub gathers style observations on second-person and direct address across aswritten's documents. The mainline is a 
 - [ShortPunchyCadence](hub-ShortPunchyCadence.html): This hub gathers style observations on a recurring short, punchy cadence across the founder's speech and writing. The do
