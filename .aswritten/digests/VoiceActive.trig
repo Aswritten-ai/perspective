@@ -4,28 +4,26 @@
 GRAPH <https://aswritten.ai/narrative#Digest_VoiceActive> {
   <https://aswritten.ai/narrative#Digest_VoiceActive> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#VoiceActive> ;
-    narr:childCount "10"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers style observations witnessing Scarlet's [predominantly active, agent-first voice](narr:StyleObs_ActiveVoice): subjects act ('Scarlet refactored', 'buyers apply', 'This validates') with passive reserved mostly for bug descriptions. The voice runs [first-person and declarative](narr:StyleObs_9), alternating long explanatory sentences with short punchy verdicts, and surfaces named commitments. [Imperative active flow](narr:StyleObs_ImperativeFlow) sharpens call-flow steps into staccato commands. Domain verbs like [onboards](narr:StyleObs_ActiveVoice_1) and [translates](narr:StyleObs_TranslatesFeedback) keep the register concrete. [Document-level meta-framing](narr:StyleObs_10) — explicit conviction/confidence labels and coined idiolect like 'compression anxiety' — sits atop the active prose as an epistemic-honesty device.""" ;
+    narr:childCount "11"^^xsd:integer ;
+    narr:generatedFrom "edb9f6070d05850ea732b36518ceed0603f28d08" ;
+    narr:narration """This hub tracks the [prescriptive active-voice mandate](narr:Position_ActiveVoice) governing Scarlet’s prose, which prioritizes direct subject-verb-object constructions to eliminate perceived pandering. The style is defined by [agent-first syntax](narr:StyleObs_ActiveVoice) where subjects perform concrete actions, rejecting modal-passive phrasing like 'had to explain' in favor of [direct, punchy verbs](narr:StyleObs_ActiveVoiceRule) such as [onboards](narr:StyleObs_ActiveVoice_1) and [translates](narr:StyleObs_TranslatesFeedback). Beyond sentence-level mechanics, the documentation employs [meta-framing devices](narr:StyleObs_10) like conviction labels and coined idiolects to signal epistemic honesty. The rhetorical structure frequently utilizes [antithesis](narr:StyleObs_9) to sharpen architectural distinctions, alternating between long explanatory prose and short, clinching verdicts. A notable [code-switching pattern](narr:StyleObs_12) persists, contrasting a formal analytical register with informal, unpunctuated personal asides, while metaphors like 'collective memory' serve to humanize the underlying technical system.""" ;
+    narr:covers <https://aswritten.ai/narrative#Observation_ActiveVoiceQuote> ;
+    narr:covers <https://aswritten.ai/narrative#Position_ActiveVoice> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_10> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_12> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_9> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ActiveVoice> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ActiveVoice1> ;
+    narr:covers <https://aswritten.ai/narrative#StyleObs_ActiveVoiceRule> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ActiveVoice_1> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_ImperativeFlow> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_Onboards> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_Profanity> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_TranslatesFeedback> ;
-    narr:keyPhrase [ narr:text "Predominantly active voice throughout. Subjects act: 'Scarlet refactored', 'The refactor separates', 'Flows orchestrate'. Passive used only for bug descriptions." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ActiveVoice> ] ;
-    narr:keyPhrase [ narr:text "Listen. Don't demo. Don't explain architecture." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ImperativeFlow> ] ;
-    narr:keyPhrase [ narr:text "The model translates feedback into triple modifications." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TranslatesFeedback> ] ;
+    narr:keyPhrase [ narr:text "Always use active voice. Cut 'had to explain', 'needed to figure out', 'tried to communicate'. Use 'explained', 'figured out', 'said'. 'had feels pandering.'" ; narr:phraseSource <https://aswritten.ai/narrative#Position_ActiveVoice> ] ;
     narr:keyPhrase [ narr:text "This validates the MCP-agnostic architecture claim" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_ActiveVoice1> ] ;
-    narr:keyPhrase [ narr:text "compression anxiety" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_10> ] ;
+    narr:keyPhrase [ narr:text "The model translates feedback into triple modifications." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_TranslatesFeedback> ] ;
     narr:keyPhrase [ narr:text "This is my life's work." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_9> ] ;
-    narr:variation [ narr:text "Not uniformly active/formal: deliberate code-switching drops into lowercase, unpunctuated informal register as contrast." ; narr:over <https://aswritten.ai/narrative#StyleObs_12> ] ;
-    narr:variation [ narr:text "Unguarded register coexists with the clean voice — profanity used as authenticity marker and intensifier in spoken transcript." ; narr:over <https://aswritten.ai/narrative#StyleObs_Profanity> ] ;
-    narr:variation [ narr:text "Active voice is not absolute: passive appears, scoped to bug descriptions — the one admitted exception." ; narr:over <https://aswritten.ai/narrative#StyleObs_ActiveVoice> ] ;
-    narr:variation [ narr:text "Three children attach as 'related' not 'broader' (onboards, profanity, translates-feedback) — adjacent style markers, not core active-voice instances." ; narr:over <https://aswritten.ai/narrative#StyleObs_Onboards> ; narr:over <https://aswritten.ai/narrative#StyleObs_Profanity> ; narr:over <https://aswritten.ai/narrative#StyleObs_TranslatesFeedback> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "compression anxiety" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_10> ] ;
+    narr:variation [ narr:text "Passive voice is explicitly permitted as a functional exception for describing bugs." ; narr:over <https://aswritten.ai/narrative#StyleObs_ActiveVoice> ] ;
+    narr:variation [ narr:text "The register oscillates between formal analytical rigor and raw, unpunctuated personal expression." ; narr:over <https://aswritten.ai/narrative#StyleObs_12> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
