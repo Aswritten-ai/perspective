@@ -4,43 +4,36 @@
 GRAPH <https://aswritten.ai/narrative#Digest_StockPhrases> {
   <https://aswritten.ai/narrative#Digest_StockPhrases> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#StockPhrases> ;
-    narr:childCount "25"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers captured stock phrases and idiolect markers across the aswritten.ai narrative — distinctive turns of speech treated as recognition handles for speakers and positioning. Several encode product/positioning canon: [institutional knowledge at the cursor](narr:StyleObs_StockPhrase_InstitutionalKnowledge), [senior expert bottleneck](narr:StyleObs_StockPhrase_SeniorExpertBottleneck), and the [graph-as-product marketplace term](narr:StyleObs_StockPhrase). Others are rhetorical reframes: the [builder-trap redefinition](narr:StyleObs_BuilderTrap), [optimization-not-prerequisite scope move](narr:StyleObs_OptimizationNotPrereq), and the [substrate metaphor](narr:StyleObs_3) for narrative architecture. A third band is personal idiolect tied to named speakers — [a design collaborator's route-one-in entry point](narr:StyleObs_RouteOneIn), [the customer's chief architect's killer use case](narr:StyleObs_KillerUseCase), [a beta user from outside tech's 'shit deal' teaching shorthand](narr:StyleObs_ShitDealIdiolect), [a founder beta user's 'like' hedging](narr:StyleObs_LikeFiller), and [Scarlet's 'zombie' env-var metaphor](narr:StyleObs_ZombieIdiolect). Technical-boundary idioms appear too: [thin LLM wrappers](narr:StyleObs_ThinWrapperIdiom), [fire-and-forget](narr:StyleObs_FeatureNotBug), [vibe coding](narr:StyleObs_VibeCoding). Conviction-weight markers ([FOUNDATION / settled design decision](narr:StyleObs_SettledDecisionMarker)) and brand-style rules (lowercase 'aswritten', [the 'Herself' sign-off](narr:StyleObs_Signature_1)) round out the span. No dates, no reconciliation.""" ;
+    narr:childCount "18"^^xsd:integer ;
+    narr:generatedFrom "5d99514959f2b3bf1c8c235abdd7329002155040" ;
+    narr:narration """This hub catalogs the rhetorical markers and idiolects that define the aswritten.ai narrative. These phrases function as recognition handles for positioning, technical conviction, and personal style. Positioning canon is anchored by terms like [institutional knowledge at the cursor](narr:StyleObs_StockPhrase_InstitutionalKnowledge) and the [senior expert bottleneck](narr:StyleObs_StockPhrase_SeniorExpertBottleneck), while [graph-as-product](narr:StyleObs_StockPhrase) nomenclature frames the marketplace thesis. Rhetorical reframes often employ specific structures, such as the [builder-trap redefinition](narr:StyleObs_BuilderTrap) or the [optimization-not-prerequisite](narr:StyleObs_OptimizationNotPrereq) scope move. Technical-boundary idioms range from [fire-and-forget](narr:StyleObs_FeatureNotBug) to the emergent [vibe coding](narr:StyleObs_VibeCoding). The collection also captures conviction-weight markers, including [settled design decisions](narr:StyleObs_SettledDecisionMarker) and the use of [all-caps FOUNDATION](narr:StyleObs_7) to signal formal taxonomy. Personal idiolects remain distinct, from [Scarlet's 'zombie' env-var metaphor](narr:StyleObs_ZombieIdiolect) to the [signature 'Herself' sign-off](narr:StyleObs_Signature_1). Finally, structural habits—such as the [rule of three](narr:StyleObs_3) and the use of [strikethrough for deprecation](narr:StyleObs_3)—serve as typographic enactments of the underlying narrative architecture.""" ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_3> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BuilderTrap> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_EverythingElseOpensUp> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_FeatureNotBug> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_KillerUseCase> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_LikeFiller> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_NoOnesSellingThat> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_OptimizationNotPrereq> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_RahRahIdiolect> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_RemoveDollarSigns> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_RouteOneIn> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_RunningAway> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_SeparatedAtBirth> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_SettledDecisionMarker> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_ShitDealIdiolect> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_Signature_1> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_StockPhrase> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_StockPhrase_InstitutionalKnowledge> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_StockPhrase_PucksOnTrucks> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_StockPhrase_SeniorExpertBottleneck> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_SuperpowerIdiom> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_ThinWrapperIdiom> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_VibeCoding> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ZombieIdiolect> ;
     narr:keyPhrase [ narr:text "institutional knowledge at the cursor" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_StockPhrase_InstitutionalKnowledge> ] ;
     narr:keyPhrase [ narr:text "senior expert bottleneck" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_StockPhrase_SeniorExpertBottleneck> ] ;
     narr:keyPhrase [ narr:text "The builder trap isn't \"building instead of selling\" — it's \"not knowing what you're selling\"" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_BuilderTrap> ] ;
-    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_3> ] ;
-    narr:keyPhrase [ narr:text "we were separated at birth" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_SeparatedAtBirth> ] ;
     narr:keyPhrase [ narr:text "fire-and-forget" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_FeatureNotBug> ] ;
-    narr:variation [ narr:text "Predicate split: most phrases attach via skos:broader (canonical/positioning), but a distinct subset is skos:related — looser idiolect and technical metaphors, not core taxonomy." ; narr:over <https://aswritten.ai/narrative#StyleObs_LikeFiller> ; narr:over <https://aswritten.ai/narrative#StyleObs_OptimizationNotPrereq> ; narr:over <https://aswritten.ai/narrative#StyleObs_RunningAway> ; narr:over <https://aswritten.ai/narrative#StyleObs_SettledDecisionMarker> ; narr:over <https://aswritten.ai/narrative#StyleObs_ShitDealIdiolect> ; narr:over <https://aswritten.ai/narrative#StyleObs_ThinWrapperIdiom> ; narr:over <https://aswritten.ai/narrative#StyleObs_ZombieIdiolect> ] ;
-    narr:variation [ narr:text "Register clash: high-conviction taxonomy markers sit beside casual discourse fillers — the hub mixes load-bearing positioning with throwaway speech tics." ; narr:over <https://aswritten.ai/narrative#StyleObs_SettledDecisionMarker> ; narr:over <https://aswritten.ai/narrative#StyleObs_LikeFiller> ; narr:over <https://aswritten.ai/narrative#StyleObs_RahRahIdiolect> ] ;
-    narr:variation [ narr:text "Some entries are canonical product/positioning terms; others are purely personal speaker brand markers (e.g. the 'Herself' sign-off) with no product content." ; narr:over <https://aswritten.ai/narrative#StyleObs_StockPhrase_InstitutionalKnowledge> ; narr:over <https://aswritten.ai/narrative#StyleObs_Signature_1> ] ;
-    narr:variation [ narr:text "Several phrases bridge colloquial-to-technical registers, repurposing everyday idiom as risk/architecture descriptors rather than mere style." ; narr:over <https://aswritten.ai/narrative#StyleObs_RunningAway> ; narr:over <https://aswritten.ai/narrative#StyleObs_ZombieIdiolect> ; narr:over <https://aswritten.ai/narrative#StyleObs_ThinWrapperIdiom> ; narr:over <https://aswritten.ai/narrative#StyleObs_VibeCoding> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Vibe Coding" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_VibeCoding> ] ;
+    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_3> ] ;
+    narr:keyPhrase [ narr:text "FOUNDATION" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "Dismissive framing of process patterns as 'quality gate theater' pushes against standard corporate terminology." ; narr:over <https://aswritten.ai/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "Conversational skepticism in 'no one's selling that' contrasts with the formal, canonical tone of other stock phrases." ; narr:over <https://aswritten.ai/narrative#StyleObs_NoOnesSellingThat> ] ;
+    narr:variation [ narr:text "The 'separated at birth' idiom introduces a personal, relational register absent from the technical-architectural markers." ; narr:over <https://aswritten.ai/narrative#StyleObs_SeparatedAtBirth> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
