@@ -136,7 +136,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Rubric_Resonance](hub-Rubric_Resonance.html): This hub aggregates rubric assessments evaluating the emotional and mnemonic resonance of organizational content. The co
 - [Rubric_StrategicAlignment](hub-Rubric_StrategicAlignment.html): This hub aggregates strategic-alignment assessments, where the prevailing consensus identifies a high degree of strategi
 - [Rubric_Tailoring](hub-Rubric_Tailoring.html): This hub tracks the evolution of audience-tailoring assessments, mapping how content adapts to distinct stakeholder need
-- [RuleOfThree](hub-RuleOfThree.html): This hub gathers observations of the document's recurring rule-of-three rhetoric — triadic parallelism used for emphasis
+- [RuleOfThree](hub-RuleOfThree.html): This hub tracks the document's reliance on triadic rhetorical structures to anchor complex value propositions. The patte
 - [SecondPerson](hub-SecondPerson.html): This hub tracks the evolution of aswritten’s conversational second-person register, which functions as a primary mechani
 - [ShortPunchyCadence](hub-ShortPunchyCadence.html): This hub tracks the recurring staccato declarative rhythm defining the founder's communication, characterized by clipped
 - [Simile](hub-Simile.html): This hub collects the figurative devices the speaker reaches for — predominantly similes and conceptual metaphors drawn 
