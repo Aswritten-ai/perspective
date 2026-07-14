@@ -29,7 +29,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [FeedbackLoops](hub-FeedbackLoops.html): This hub gathers the mechanics of how feedback enters and reshapes the product and its knowledge. Two loops sit at the c
 - [Flows](hub-Flows.html): This hub gathers the process flows of the system — how knowledge gets in, how it gets out, and how the loop closes. On c
 - [FocusSequencing](hub-FocusSequencing.html): This hub gathers competing go-to-market sequencing theses — how to enter, what to prove first, and when to expand. One m
-- [FrictionFailure](hub-FrictionFailure.html): A friction/failure region spanning where AI-accelerated work, sales, onboarding, and internal process all bind. The recu
+- [FrictionFailure](hub-FrictionFailure.html): This hub tracks the friction points in AI adoption, development, and sales. Development friction is dominated by AI code
 - [GovernanceSafetyTrust](hub-GovernanceSafetyTrust.html): This hub gathers two distinct registers of governance, safety, and trust. The conceptual register frames AI through AI i
 - [HiringPlan](hub-HiringPlan.html): This hub holds the company's staffing arc, rooted in a solo-founder capacity ceiling — \"Solo founder maxes out at ~1.5 
 - [InflectionPoints](hub-InflectionPoints.html): A mixed hub gathering the moments Scarlet flagged as inflections — strategic, market, and tactical. The dominant frame i
