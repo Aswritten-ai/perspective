@@ -4,36 +4,35 @@
 GRAPH <https://aswritten.ai/narrative#Digest_TechnologiesSocialSystems> {
   <https://aswritten.ai/narrative#Digest_TechnologiesSocialSystems> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#TechnologiesSocialSystems> ;
-    narr:childCount "17"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers the technical and conceptual scaffolding behind treating organizations as steerable systems. The intellectual roots run from [flocking simulations at NYU ITP](narr:Observation_FlockingInsight) and [generative systems](narr:Narrative_GenerativeSystems) to the 2019 claim that [LLMs are continuation machines, not thinking machines](narr:Narrative_LLMsContinuation), to [narrative-as-steering-vector](narr:Narrative_SteeringVector), with [a collaborator's language-as-code analytics](narr:Narrative_Aspen) and [Harmony Labs' narrative analysis at scale](narr:Narrative_HarmonyLabs) as industrial precedents. On the build side: an [MCP-agnostic architecture](narr:Claim_MCPAgnostic) now [validated in production via GitHub Copilot + GPT5.2 Codex](narr:Narrative_CrossPlatformValidation); [Front App as HITL coordination substrate](narr:Narrative_FrontHITLSubstrate); [Vouch.io identity for agent security](narr:Narrative_VouchIdentityForAgents); [perspective shares for distribution](narr:Narrative_PerspectiveShares_Distribution); and the [Fireflies/webhook transcription pipeline](narr:Obs_FirefliesWebhookQuote). The applied models extend these: [AI agents farming perspectives on the long tail](narr:Narrative_LongTailPerspectiveAutomation) (July 2025) and [prompt-driven development reshaping the developer role](narr:Claim_AIDevReplacement). The MCP claim is held as settled conviction; most others remain open or in-flight.""" ;
-    narr:covers <https://aswritten.ai/narrative#Claim_AIAgentLongTailInterviews> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_AIDevReplacement> ;
-    narr:covers <https://aswritten.ai/narrative#Claim_MCPAgnostic> ;
+    narr:childCount "18"^^xsd:integer ;
+    narr:generatedFrom "f1b43fa2ace055d7bf08068ca6e6c791b8625331" ;
+    narr:narration """This hub tracks the evolution of organizations as steerable, generative systems. The conceptual foundation rests on [flocking simulations](narr:Observation_FlockingInsight) and the 2019 thesis that [LLMs are continuation machines](narr:Narrative_LLMsContinuation) rather than thinkers, establishing [narrative as a steering vector](narr:Narrative_SteeringVector). Industrial precedents like [Harmony Labs](narr:Narrative_HarmonyLabs) and [Aspen](narr:Narrative_Aspen) inform the approach to language-as-code. 
+
+Recent development has shifted toward the [Agent Computer Interface](narr:Narrative_AgentComputerInterface), which frames the boundary between human and agent agency as the core design problem. This is supported by an [MCP-agnostic architecture](narr:Position_MCPAgnostic) now validated in production, alongside [Front App](narr:Narrative_FrontHITLSubstrate) for coordination, [Vouch.io](narr:Narrative_VouchIdentityForAgents) for security, and [perspective shares](narr:Narrative_PerspectiveShares_Distribution) for distribution. The [long-tail perspective farming](narr:Narrative_LongTailPerspectiveAutomation) model, which automates advisor interviews, represents a move toward scaling these systems. Emerging threads include a [neurosymbolic marriage](narr:Narrative_NeurosymbolicKGLLM) of knowledge graphs and LLMs, and a [Fireflies-based transcription pipeline](narr:Obs_FirefliesWebhookQuote) for data ingestion.""" ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_AgentComputerInterface> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_Aspen> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_CrossPlatformValidation> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_FrontHITLSubstrate> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_GenerativeSystems> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_HarmonyLabs> ;
-    narr:covers <https://aswritten.ai/narrative#Narrative_Aspen> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_LLMsContinuation> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_LongTailPerspectiveAutomation> ;
+    narr:covers <https://aswritten.ai/narrative#Narrative_NeurosymbolicKGLLM> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_PerspectiveShares_Distribution> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_SteeringVector> ;
     narr:covers <https://aswritten.ai/narrative#Narrative_VouchIdentityForAgents> ;
     narr:covers <https://aswritten.ai/narrative#Obs_FirefliesWebhookQuote> ;
-    narr:covers <https://aswritten.ai/narrative#Observation_ChatGPTtoClaudeShift> ;
+    narr:covers <https://aswritten.ai/narrative#Observation_CodeInferenceMoment> ;
     narr:covers <https://aswritten.ai/narrative#Observation_FlockingInsight> ;
     narr:covers <https://aswritten.ai/narrative#Observation_LLMContinuation> ;
+    narr:covers <https://aswritten.ai/narrative#Position_AIAgentLongTailInterviews> ;
+    narr:covers <https://aswritten.ai/narrative#Position_MCPAgnostic> ;
     narr:keyPhrase [ narr:text "LLMs are not thinking machines—they're continuation machines" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_LLMsContinuation> ] ;
-    narr:keyPhrase [ narr:text "This is a Boulder-level conviction — settled, central, hard to move." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_MCPAgnostic> ] ;
-    narr:keyPhrase [ narr:text "The incentives around the behavior of what seem like small actors within larger systems drive emergent behavior in larger networks in a way that creates incredibly complex, powerful and beautiful interactions." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_FlockingInsight> ] ;
-    narr:keyPhrase [ narr:text "developer becomes a 'cron job for AI' managing latency between AI outputs." ; narr:phraseSource <https://aswritten.ai/narrative#Claim_AIDevReplacement> ] ;
-    narr:keyPhrase [ narr:text "you connect your Fireflies or other transcription service, Zoom notes, Calendly transcription, whichever, Google Gemini on-meets transcription by webhook" ; narr:phraseSource <https://aswritten.ai/narrative#Obs_FirefliesWebhookQuote> ] ;
-    narr:keyPhrase [ narr:text "a distinctly kind of gross AI feel" ; narr:phraseSource <https://aswritten.ai/narrative#Observation_ChatGPTtoClaudeShift> ] ;
-    narr:variation [ narr:text "MCP is claimed platform-agnostic, yet observed practice is a pull toward Claude and away from ChatGPT's 'gross AI feel' — a lived preference cutting against the neutrality thesis." ; narr:over <https://aswritten.ai/narrative#Claim_MCPAgnostic> ; narr:over <https://aswritten.ai/narrative#Narrative_CrossPlatformValidation> ; narr:over <https://aswritten.ai/narrative#Observation_ChatGPTtoClaudeShift> ] ;
-    narr:variation [ narr:text "Long-tail automation explicitly weighs the value of Scarlet personally conducting interviews against farming perspectives via AI agents — the human-relationship value vs. scalable automation tension is named, not resolved." ; narr:over <https://aswritten.ai/narrative#Narrative_LongTailPerspectiveAutomation> ; narr:over <https://aswritten.ai/narrative#Claim_AIAgentLongTailInterviews> ] ;
-    narr:variation [ narr:text "Vouch.io carries an unresolved go-to-market fork: open-source as standard vs. sell as enterprise product." ; narr:over <https://aswritten.ai/narrative#Narrative_VouchIdentityForAgents> ] ;
-    narr:variation [ narr:text "The developer-as-'cron job for AI' framing is a diminished/displacement reading of the same automation tech the other claims frame as empowering." ; narr:over <https://aswritten.ai/narrative#Claim_AIDevReplacement> ] ;
-    narr:variation [ narr:text "Most claims here are open and in-flight, but the MCP-agnostic claim is held as settled Boulder-level conviction — a hardness outlier among otherwise mutable children." ; narr:over <https://aswritten.ai/narrative#Claim_MCPAgnostic> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Language, narrative, and meaning operate as steering vectors" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_SteeringVector> ] ;
+    narr:keyPhrase [ narr:text "MCP-agnostic architecture claim now has production evidence" ; narr:phraseSource <https://aswritten.ai/narrative#Position_MCPAgnostic> ] ;
+    narr:keyPhrase [ narr:text "where exactly is the boundary between what agents should be allowed to do and what humans should do?" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_AgentComputerInterface> ] ;
+    narr:keyPhrase [ narr:text "AI agents can autonomously farm perspectives from a large advisor network" ; narr:phraseSource <https://aswritten.ai/narrative#Narrative_LongTailPerspectiveAutomation> ] ;
+    narr:variation [ narr:text "The Agent Computer Interface introduces a gray-area tension between human oversight and agent autonomy that was absent in earlier, more deterministic system models." ; narr:over <https://aswritten.ai/narrative#Narrative_AgentComputerInterface> ] ;
+    narr:variation [ narr:text "The debate over whether agent security infrastructure should be open-source or proprietary remains unresolved." ; narr:over <https://aswritten.ai/narrative#Narrative_VouchIdentityForAgents> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
