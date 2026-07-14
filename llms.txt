@@ -43,7 +43,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [ModulesCapabilities](hub-ModulesCapabilities.html): This hub gathers the product's tool surface and capability decisions, mostly dated March–May 2026. The dominant arc is a
 - [Narrative_1](hub-Narrative_1.html): This hub holds the thesis that identity follows narrative architecture — that steering a narrative shapes what an AI bec
 - [Narrative_AIContextValidation](hub-Narrative_AIContextValidation.html): This hub gathers the case for AI context validation as a distinct value proposition. The throughline: Aswritten as conte
-- [Narrative_B2CPivot](hub-Narrative_B2CPivot.html): This hub holds aswritten's reframing of its primary market. On Mar 17, Scarlet and Tony independently converged on B2C o
+- [Narrative_B2CPivot](hub-Narrative_B2CPivot.html): The trajectory of aswritten’s market positioning has shifted from a binary choice between B2B and B2C toward a unified m
 - [Narrative_BoundedDomainFidelityArgument](hub-Narrative_BoundedDomainFidelityArgument.html): Argues that expertise modules are higher fidelity than org memory because courses, books, and consulting deliverables ar
 - [Narrative_CategoryCuratedExpertiseInstallation](hub-Narrative_CategoryCuratedExpertiseInstallation.html): The category began as 'curated expertise installation' (Strategy Doc V1), then narrowed: in Mar Scarlet dropped 'curated
 - [Narrative_ClojureOwnsLogic](hub-Narrative_ClojureOwnsLogic.html): This hub argues the orchestration logic belongs in Clojure, with the build-vs-wrap boundary drawn explicitly. The event-
