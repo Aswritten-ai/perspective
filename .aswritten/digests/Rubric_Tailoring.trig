@@ -4,33 +4,27 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Rubric_Tailoring> {
   <https://aswritten.ai/narrative#Digest_Rubric_Tailoring> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Rubric_Tailoring> ;
-    narr:childCount "15"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers rubric assessments of how well artifacts are *tailored to their audience*. The dominant audience is the [YC application context](narr:Assessment_Tailoring_YC) — recurring across the [overall rubric](narr:Rubric_Assess_Tailoring), the [Scarlet/Dame application](narr:Rubric_Tailoring_ScarletDame), the [YC call](narr:Rubric_Tailoring_YC_Call), and [revenue/TAM framing](narr:Assess_Tailoring_RevenueModelTAM) sourced for investors. A second cluster targets the enterprise technical buyer: the [the customer's chief architect Chief-Architect persona](narr:Rubric_Tailoring_CustomerArchitect) and the [pilot plan's tracked personas](narr:Rubric_Tailoring_PilotPlan). A third is explicitly internal/strategic — [GTM decision-making](narr:RubricAssess_Tailoring_GTM) and architecture sessions. Exemplars praised as \"highly tailored\" ([a design collaborator/Vouch context](narr:RubricAssess_Tailoring_Sample1), the customer's chief architect) sit alongside founder/operator, blog-general, and technical-product framings. Several entries close named gaps — the [dual-persona demo beats](narr:Rubric_Tailoring_YCDemoBeats) address a prior persona-tailoring gap.""" ;
-    narr:covers <https://aswritten.ai/narrative#Assess_Tailoring_RevModel> ;
+    narr:childCount "12"^^xsd:integer ;
+    narr:generatedFrom "4ee3dfa1b09322db9414ced26486e26d250bbe96" ;
+    narr:narration """This hub tracks rubric assessments of artifact tailoring, mapping how content is calibrated for specific audiences. The [YC application context](narr:Assessment_Tailoring_YC) remains a primary anchor, driving explicit decisions in the [Scarlet/Dame application](narr:Rubric_Tailoring_ScarletDame), [YC call materials](narr:Rubric_Tailoring_YC_Call), and [investor-facing TAM models](narr:Assess_Tailoring_RevenueModelTAM). A distinct, high-fidelity cluster focuses on the enterprise technical buyer, notably the [Chief Architect persona](narr:Rubric_Tailoring_CustomerArchitect) and the [multi-track pilot plan](narr:Rubric_Tailoring_PilotPlan), which segments messaging across junior developers, sales reps, and executive stakeholders. Internal strategic artifacts, such as [GTM decision-making](narr:RubricAssess_Tailoring_GTM) and [weekly sales calls](narr:RubricAssess_Tailoring_WeeklyCall), demonstrate a shift toward founder-operator and prospect-specific framing. The [overall rubric](narr:Rubric_Assess_Tailoring) acts as a meta-layer, contrasting internal architectural sessions with public-facing content. Efforts to bridge persona gaps are evident in the [dual-persona demo beats](narr:Rubric_Tailoring_YCDemoBeats), which explicitly target the execution team and YC partners.""" ;
     narr:covers <https://aswritten.ai/narrative#Assess_Tailoring_RevenueModelTAM> ;
     narr:covers <https://aswritten.ai/narrative#Assessment_Tailoring_YC> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Tailoring> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Tailoring_GTM> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Tailoring_Sample1> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Tailoring_TXReview> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Tailoring_WeeklyCall> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Assess_Tailoring> ;
-    narr:covers <https://aswritten.ai/narrative#Rubric_Tailoring_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Tailoring_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Tailoring_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Tailoring_PilotPlan> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Tailoring_ScarletDame> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Tailoring_YCDemoBeats> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Tailoring_YC_Call> ;
-    narr:keyPhrase [ narr:text "50-char tagline, 3-min demo video, 60-sec founder video" ; narr:phraseSource <https://aswritten.ai/narrative#Assessment_Tailoring_YC> ] ;
-    narr:keyPhrase [ narr:text "TAM sourced for investor audience (Census, McKinsey)" ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Tailoring_RevenueModelTAM> ] ;
-    narr:keyPhrase [ narr:text "cost sensitivity (3x token differential)" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Tailoring_CustomerArchitect> ] ;
+    narr:keyPhrase [ narr:text "50-char tagline, 3-min demo video, 60-sec founder video." ; narr:phraseSource <https://aswritten.ai/narrative#Assessment_Tailoring_YC> ] ;
+    narr:keyPhrase [ narr:text "Addresses compliance concerns (GDPR, ISO), cost sensitivity (3x token differential), integration patterns (MCP, JIRA)" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Tailoring_CustomerArchitect> ] ;
     narr:keyPhrase [ narr:text "Three distinct expansion tracks (Core/Enterprise/Executive) tailored to buyer personas" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Tailoring_PilotPlan> ] ;
-    narr:keyPhrase [ narr:text "personal vulnerability ('my life was frankly a mess') humanizes founder" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Tailoring> ] ;
     narr:keyPhrase [ narr:text "Dual-persona approach (Tony/Scarlet) addresses gap_demo_persona_tailoring" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Tailoring_YCDemoBeats> ] ;
-    narr:variation [ narr:text "Many entries flag under-tailoring: blog piece 'could be tailored further for specific buyer personas (technical vs. economic)', TXReview wants persona-specific examples, WeeklyCall wants explicit persona JTBD framing." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring_TXReview> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring_WeeklyCall> ] ;
-    narr:variation [ narr:text "Internal-only artifacts explicitly need adaptation before external use — GTM 'could be adapted for external pitch'; architecture session 'would need adaptation for external audiences'." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring_GTM> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring> ] ;
-    narr:variation [ narr:text "Audience targets diverge widely: YC investors vs. enterprise Chief Architect (compliance/cost) vs. founder/operator vs. general blog/LinkedIn reader — not a single audience." ; narr:over <https://aswritten.ai/narrative#Rubric_Assess_Tailoring> ; narr:over <https://aswritten.ai/narrative#Rubric_Tailoring_CustomerArchitect> ; narr:over <https://aswritten.ai/narrative#Assess_Tailoring_RevModel> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring> ] ;
-    narr:variation [ narr:text "Strongest exemplars ('highly tailored', deep audience understanding) contrast sharply with the gap-flagged entries above, marking a quality spread within the same rubric dimension." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring_Sample1> ; narr:over <https://aswritten.ai/narrative#Rubric_Tailoring_CustomerArchitect> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "balances technical depth (LLMs, embedding space, NLP) with narrative accessibility" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Tailoring> ] ;
+    narr:variation [ narr:text "Internal-facing content assumes high domain familiarity, requiring significant adaptation for external audiences." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring_GTM> ] ;
+    narr:variation [ narr:text "Some sales-context artifacts are noted as needing more explicit 'Job-to-be-Done' (JTBD) persona framing." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Tailoring_WeeklyCall> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
