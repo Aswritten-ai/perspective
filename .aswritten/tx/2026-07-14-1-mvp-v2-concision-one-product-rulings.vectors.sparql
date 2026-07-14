@@ -1,0 +1,2553 @@
+PREFIX narr: <https://aswritten.ai/narrative#>
+PREFIX aswr: <https://aswritten.ai/aswr#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX oa:   <http://www.w3.org/ns/oa#>
+
+INSERT DATA {
+  aswr:Tx_20260714T213829Z a prov:Activity ;
+      prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime ;
+      prov:wasAssociatedWith "aswritten.ai" ;
+      prov:wasAttributedTo "scarlet@aswritten.ai" ;
+      aswr:draftedBy "claude-fable-5" ;
+      aswr:perspective "Aswritten-ai/perspective@main" ;
+      aswr:pipelinePin "afcb0b73bb42" ;
+      aswr:originPath ".aswritten/memories/2026-07-14-1-mvp-v2-concision-one-product-rulings.md" ;
+      dct:title "Multipass fragment: 1MvpV2ConcisionOneProductRulings" ;
+      prov:generated narr:Conviction_1MvpV2ConcisionOneProductRulings_1, narr:Conviction_1MvpV2ConcisionOneProductRulings_3, narr:Conviction_1MvpV2ConcisionOneProductRulings_4, narr:Conviction_1MvpV2ConcisionOneProductRulings_5, narr:Conviction_1MvpV2ConcisionOneProductRulings_6, narr:Conviction_1MvpV2ConcisionOneProductRulings_7, narr:Conviction_1MvpV2ConcisionOneProductRulings_8, narr:Conviction_1MvpV2ConcisionOneProductRulings_9, narr:Conviction_1MvpV2ConcisionOneProductRulings_10, narr:Conviction_1MvpV2ConcisionOneProductRulings_11, narr:Conviction_1MvpV2ConcisionOneProductRulings_12, narr:Conviction_1MvpV2ConcisionOneProductRulings_14, narr:Conviction_1MvpV2ConcisionOneProductRulings_15, narr:Conviction_1MvpV2ConcisionOneProductRulings_16, narr:Conviction_1MvpV2ConcisionOneProductRulings_17, narr:Conviction_1MvpV2ConcisionOneProductRulings_18, narr:Conviction_1MvpV2ConcisionOneProductRulings_19, narr:Conviction_1MvpV2ConcisionOneProductRulings_20, narr:Conviction_1MvpV2ConcisionOneProductRulings_21, narr:Conviction_1MvpV2ConcisionOneProductRulings_22, narr:Conviction_1MvpV2ConcisionOneProductRulings_23, narr:Conviction_1MvpV2ConcisionOneProductRulings_25, narr:Conviction_1MvpV2ConcisionOneProductRulings_26, narr:Conviction_1MvpV2ConcisionOneProductRulings_27, narr:Conviction_1MvpV2ConcisionOneProductRulings_28, narr:Conviction_1MvpV2ConcisionOneProductRulings_29, narr:Conviction_1MvpV2ConcisionOneProductRulings_31, narr:Conviction_1MvpV2ConcisionOneProductRulings_34, narr:Conviction_1MvpV2ConcisionOneProductRulings_35, narr:Conviction_1MvpV2ConcisionOneProductRulings_36, narr:Conviction_1MvpV2ConcisionOneProductRulings_37, narr:Conviction_1MvpV2ConcisionOneProductRulings_40, narr:Conviction_1MvpV2ConcisionOneProductRulings_48, narr:Conviction_1MvpV2ConcisionOneProductRulings_49, narr:Conviction_1MvpV2ConcisionOneProductRulings_50, narr:Conviction_1MvpV2ConcisionOneProductRulings_52, narr:Conviction_1MvpV2ConcisionOneProductRulings_54, narr:Conviction_1MvpV2ConcisionOneProductRulings_56, narr:Conviction_1MvpV2ConcisionOneProductRulings_57, narr:Conviction_1MvpV2ConcisionOneProductRulings_58, narr:Conviction_1MvpV2ConcisionOneProductRulings_59, narr:Conviction_1MvpV2ConcisionOneProductRulings_60, narr:Conviction_1MvpV2ConcisionOneProductRulings_61, narr:Conviction_1MvpV2ConcisionOneProductRulings_63, narr:Conviction_1MvpV2ConcisionOneProductRulings_65, narr:Conviction_1MvpV2ConcisionOneProductRulings_67, narr:Conviction_1MvpV2ConcisionOneProductRulings_68, narr:Conviction_1MvpV2ConcisionOneProductRulings_70, narr:Conviction_1MvpV2ConcisionOneProductRulings_73, narr:Conviction_1MvpV2ConcisionOneProductRulings_75, narr:Conviction_1MvpV2ConcisionOneProductRulings_78, narr:Conviction_1MvpV2ConcisionOneProductRulings_82, narr:Conviction_1MvpV2ConcisionOneProductRulings_84, narr:Conviction_1MvpV2ConcisionOneProductRulings_86, narr:Conviction_1MvpV2ConcisionOneProductRulings_87, narr:Conviction_1MvpV2ConcisionOneProductRulings_91, narr:Conviction_1MvpV2ConcisionOneProductRulings_93, narr:Conviction_1MvpV2ConcisionOneProductRulings_95, narr:Conviction_1MvpV2ConcisionOneProductRulings_99, narr:Conviction_1MvpV2ConcisionOneProductRulings_103, narr:Conviction_1MvpV2ConcisionOneProductRulings_104, narr:Conviction_1MvpV2ConcisionOneProductRulings_107, narr:Conviction_1MvpV2ConcisionOneProductRulings_109, narr:Conviction_1MvpV2ConcisionOneProductRulings_113, narr:Conviction_1MvpV2ConcisionOneProductRulings_115, narr:Conviction_1MvpV2ConcisionOneProductRulings_117, narr:Conviction_1MvpV2ConcisionOneProductRulings_120, narr:Conviction_1MvpV2ConcisionOneProductRulings_122, narr:Conviction_1MvpV2ConcisionOneProductRulings_123, narr:Conviction_1MvpV2ConcisionOneProductRulings_125, narr:Conviction_1MvpV2ConcisionOneProductRulings_127, narr:Conviction_1MvpV2ConcisionOneProductRulings_131, narr:Conviction_1MvpV2ConcisionOneProductRulings_140, narr:VecAffect_1MvpV2ConcisionOneProductRulings_84, narr:VecAffect_1MvpV2ConcisionOneProductRulings_87, narr:VecAffect_1MvpV2ConcisionOneProductRulings_63, narr:VecAffect_1MvpV2ConcisionOneProductRulings_67, narr:VecAffect_1MvpV2ConcisionOneProductRulings_75, narr:VecAffect_1MvpV2ConcisionOneProductRulings_97, narr:VecAffect_1MvpV2ConcisionOneProductRulings_98, narr:VecAffect_1MvpV2ConcisionOneProductRulings_131, narr:VecPower_1MvpV2ConcisionOneProductRulings_5, narr:VecPower_1MvpV2ConcisionOneProductRulings_9, narr:VecPower_1MvpV2ConcisionOneProductRulings_10, narr:VecPower_1MvpV2ConcisionOneProductRulings_15, narr:VecPower_1MvpV2ConcisionOneProductRulings_20, narr:VecPower_1MvpV2ConcisionOneProductRulings_31, narr:VecPower_1MvpV2ConcisionOneProductRulings_35, narr:VecPower_1MvpV2ConcisionOneProductRulings_58, narr:VecPower_1MvpV2ConcisionOneProductRulings_59, narr:VecPower_1MvpV2ConcisionOneProductRulings_65, narr:VecPower_1MvpV2ConcisionOneProductRulings_73, narr:VecPower_1MvpV2ConcisionOneProductRulings_75, narr:VecPower_1MvpV2ConcisionOneProductRulings_78, narr:VecPower_1MvpV2ConcisionOneProductRulings_82, narr:VecPower_1MvpV2ConcisionOneProductRulings_93, narr:VecPower_1MvpV2ConcisionOneProductRulings_95, narr:VecPower_1MvpV2ConcisionOneProductRulings_109, narr:VecPower_1MvpV2ConcisionOneProductRulings_113, narr:VecPower_1MvpV2ConcisionOneProductRulings_117, narr:VecPower_1MvpV2ConcisionOneProductRulings_120, narr:VecPower_1MvpV2ConcisionOneProductRulings_123, narr:VecPower_1MvpV2ConcisionOneProductRulings_131, narr:VecRegister_1MvpV2ConcisionOneProductRulings_8, narr:VecRegister_1MvpV2ConcisionOneProductRulings_15, narr:VecRegister_1MvpV2ConcisionOneProductRulings_22, narr:VecRegister_1MvpV2ConcisionOneProductRulings_31, narr:VecRegister_1MvpV2ConcisionOneProductRulings_48, narr:VecRegister_1MvpV2ConcisionOneProductRulings_56, narr:VecRegister_1MvpV2ConcisionOneProductRulings_63, narr:VecRegister_1MvpV2ConcisionOneProductRulings_65, narr:VecRegister_1MvpV2ConcisionOneProductRulings_67, narr:VecRegister_1MvpV2ConcisionOneProductRulings_68, narr:VecRegister_1MvpV2ConcisionOneProductRulings_73, narr:VecRegister_1MvpV2ConcisionOneProductRulings_75, narr:VecRegister_1MvpV2ConcisionOneProductRulings_84, narr:VecRegister_1MvpV2ConcisionOneProductRulings_87, narr:VecRegister_1MvpV2ConcisionOneProductRulings_93, narr:VecRegister_1MvpV2ConcisionOneProductRulings_103, narr:VecRegister_1MvpV2ConcisionOneProductRulings_109, narr:VecRegister_1MvpV2ConcisionOneProductRulings_113, narr:VecRegister_1MvpV2ConcisionOneProductRulings_117, narr:VecRegister_1MvpV2ConcisionOneProductRulings_120, narr:VecRegister_1MvpV2ConcisionOneProductRulings_123, narr:VecRegister_1MvpV2ConcisionOneProductRulings_131, narr:VecRegister_1MvpV2ConcisionOneProductRulings_140, narr:DirRelational_TwoSurfacesOneSystem, narr:DirRelational_QueueJumpByNecessity, narr:DirRelational_GatingAsConsequence, narr:DirRelational_CostThresholdReshapesProduct, narr:DirRelational_AttendanceGrantsAccess, narr:VecRelational_1MvpV2ConcisionOneProductRulings_5, narr:VecRelational_1MvpV2ConcisionOneProductRulings_10, narr:VecRelational_1MvpV2ConcisionOneProductRulings_11, narr:VecRelational_1MvpV2ConcisionOneProductRulings_65, narr:VecRelational_1MvpV2ConcisionOneProductRulings_68, narr:VecRelational_1MvpV2ConcisionOneProductRulings_9, narr:VecRelational_1MvpV2ConcisionOneProductRulings_15, narr:VecRelational_1MvpV2ConcisionOneProductRulings_20, narr:VecRelational_1MvpV2ConcisionOneProductRulings_35, narr:VecRelational_1MvpV2ConcisionOneProductRulings_58, narr:VecRelational_1MvpV2ConcisionOneProductRulings_59, narr:VecRelational_1MvpV2ConcisionOneProductRulings_113, narr:VecRelational_1MvpV2ConcisionOneProductRulings_123, narr:VecRelational_1MvpV2ConcisionOneProductRulings_122, narr:VecRelational_1MvpV2ConcisionOneProductRulings_16, narr:VecRelational_1MvpV2ConcisionOneProductRulings_17, narr:VecRelational_1MvpV2ConcisionOneProductRulings_18, narr:VecRelational_1MvpV2ConcisionOneProductRulings_19, narr:VecRelational_1MvpV2ConcisionOneProductRulings_27, narr:VecRelational_1MvpV2ConcisionOneProductRulings_93, narr:VecRelational_1MvpV2ConcisionOneProductRulings_95, narr:VecRelational_1MvpV2ConcisionOneProductRulings_101, narr:VecRelational_1MvpV2ConcisionOneProductRulings_124, narr:VecRelational_1MvpV2ConcisionOneProductRulings_34, narr:VecRelational_1MvpV2ConcisionOneProductRulings_97, narr:VecRelational_1MvpV2ConcisionOneProductRulings_109, narr:VecRelational_1MvpV2ConcisionOneProductRulings_110, narr:VecRelational_1MvpV2ConcisionOneProductRulings_40, narr:VecRelational_1MvpV2ConcisionOneProductRulings_48, narr:VecRelational_1MvpV2ConcisionOneProductRulings_120, narr:VecRelational_1MvpV2ConcisionOneProductRulings_96, narr:VecRelational_1MvpV2ConcisionOneProductRulings_87, narr:VecRelational_1MvpV2ConcisionOneProductRulings_103, narr:VecRelational_1MvpV2ConcisionOneProductRulings_107, narr:VecRelational_1MvpV2ConcisionOneProductRulings_117, narr:VecRelational_1MvpV2ConcisionOneProductRulings_121, narr:VecRelational_1MvpV2ConcisionOneProductRulings_63, narr:DirStyle_RendersNotBlueprints, narr:VecStyle_1MvpV2ConcisionOneProductRulings_8, narr:VecStyle_1MvpV2ConcisionOneProductRulings_16, narr:VecStyle_1MvpV2ConcisionOneProductRulings_17, narr:VecStyle_1MvpV2ConcisionOneProductRulings_18, narr:VecStyle_1MvpV2ConcisionOneProductRulings_19, narr:VecStyle_1MvpV2ConcisionOneProductRulings_15, narr:VecStyle_1MvpV2ConcisionOneProductRulings_65, narr:VecStyle_1MvpV2ConcisionOneProductRulings_5, narr:VecStyle_1MvpV2ConcisionOneProductRulings_67, narr:VecStyle_1MvpV2ConcisionOneProductRulings_68, narr:VecStyle_1MvpV2ConcisionOneProductRulings_70, narr:VecStyle_1MvpV2ConcisionOneProductRulings_75, narr:VecStyle_1MvpV2ConcisionOneProductRulings_79, narr:VecStyle_1MvpV2ConcisionOneProductRulings_80, narr:VecStyle_1MvpV2ConcisionOneProductRulings_81, narr:VecStyle_1MvpV2ConcisionOneProductRulings_83, narr:VecStyle_1MvpV2ConcisionOneProductRulings_87, narr:VecStyle_1MvpV2ConcisionOneProductRulings_88, narr:VecStyle_1MvpV2ConcisionOneProductRulings_93, narr:VecStyle_1MvpV2ConcisionOneProductRulings_97, narr:VecStyle_1MvpV2ConcisionOneProductRulings_109, narr:VecStyle_1MvpV2ConcisionOneProductRulings_126, narr:VecStyle_1MvpV2ConcisionOneProductRulings_31, narr:VecStyle_1MvpV2ConcisionOneProductRulings_57, narr:VecStyle_1MvpV2ConcisionOneProductRulings_62, narr:Narrative_OneProductUnifiedSurfaces, narr:Narrative_ResolutionLayersReadTimeComposition, narr:Narrative_RendersOverConstructionFidelity, narr:Narrative_IntegrationGatingByBetaUserImpact, narr:Narrative_AttendanceGrantsAccess, narr:Narrative_ExtractionCostGatesConversationalMode, narr:Narrative_StyleguideBeforeProduct, narr:Position_MVPFrontEndUnification, narr:Position_ExtractionResolutionFidelity, narr:Position_TheatreAccessAndAttendanceModel, narr:Position_BetaIntegrationGatingPriority, narr:Position_StyleguideFirstComponentDiscipline, narr:Position_ConversationSurfaceDesignLanguage, narr:Position_FrontChannelRoutingArchitecture, narr:Position_VoiceProfilesFlockingScopeAmendment, narr:Position_ExtractionCostAsProductConstraint, narr:Position_MVPFidelityLevel .
+} ;
+INSERT DATA {
+  GRAPH aswr:Tx_20260714T213829Z {
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_1 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_1 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: called the next phase: strip everything down to core moments and roadmap the rest" ;
+        narr:reported false ;
+        skos:note "The assertive framing records an operational next phase rather than an open possibility." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_3 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_3 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: did not stay open" ;
+        narr:reported false ;
+        skos:note "This is an unhedged characterization, but it reports a condition rather than performing the settlement itself." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_4 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_4 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: produced rulings" ;
+        narr:evidence "commitment-marker: amending the July 11 record" ;
+        narr:reported false ;
+        skos:note "The segment explicitly records rulings and amendments as settled outcomes." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_5 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_5 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: The headline settlement" ;
+        narr:evidence "plain-assertion: is not a second product or an experiment" ;
+        narr:reported true ;
+        skos:note "The settlement framing and declarative formulation perform a product decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_6 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_6 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: the theatre becomes the graph viewer" ;
+        narr:reported true ;
+        skos:note "The core assertion is firm, but the segment is editorially rendered through another speaker rather than directly performed by the principal." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_7 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_7 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: The work now is to" ;
+        narr:evidence "plain-assertion: strip things down to core moments and roadmap the rest" ;
+        narr:reported false ;
+        skos:note "The present-tense task framing commits the work to a defined course." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_8 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_8 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: we don't need the whole thing designed to construction members in CAD" ;
+        narr:evidence "commitment-marker: we need to create a set of renders" ;
+        narr:reported false ;
+        skos:note "The contrast is strongly stated and action-oriented, but remains a design rationale rather than an explicit ratification." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_9 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_9 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: We need to define" ;
+        narr:reported false ;
+        skos:note "The directive states a required product-strategy task." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_10 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_10 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: We need to clearly unify" ;
+        narr:evidence "plain-assertion: these are not two products" ;
+        narr:reported false ;
+        skos:note "The directive and categorical distinction settle the unification requirement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_11 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_11 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: are not a separate codebase" ;
+        narr:evidence "plain-assertion: extensions of a single product" ;
+        narr:reported false ;
+        skos:note "The position is categorical but is not itself framed as a performed ruling." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_12 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_12 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: does not need to be finished for demos" ;
+        narr:reported false ;
+        skos:note "This is a plain, unhedged position, but not an explicit operational settlement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_14 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_14 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: More important than finished is" ;
+        narr:reported false ;
+        skos:note "The unhedged value judgment is firm, but remains a stated priority rather than a recorded decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_15 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_15 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: Simplify." ;
+        narr:reported false ;
+        skos:note "The imperative is a direct commitment to a course of action." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_16 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_16 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: gates Escher" ;
+        narr:reported false ;
+        skos:note "The flat assertion carries conviction, but does not itself settle an action." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_17 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_17 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: gates Taylor testing" ;
+        narr:reported false ;
+        skos:note "The flat assertion is firm but descriptive rather than decision-performing." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_18 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_18 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: gates our org's secondary transcription path" ;
+        narr:reported false ;
+        skos:note "The unhedged statement is a committed claim about dependency, not a ratification." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_19 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_19 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: gate individual developer/entrepreneur testing/adoption" ;
+        narr:reported false ;
+        skos:note "The flat dependency claim is assertive but not itself a settled directive." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_20 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_20 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: must be proxies through front" ;
+        narr:reported false ;
+        skos:note "“Must” establishes an operational rule." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_21 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_21 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: This is part of the enterprise sell" ;
+        narr:reported false ;
+        skos:note "The statement is unhedged but explanatory rather than a performed settlement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_22 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_22 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "plain-assertion: One GitHub org = front inbox" ;
+        narr:reported false ;
+        skos:note "The compressed equation presents a settled mapping." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_23 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_23 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "plain-assertion: Repo is switchable." ;
+        narr:evidence "plain-assertion: Repo/ref is inferred from convo" ;
+        narr:evidence "commitment-marker: assumes that call's ref unless you say otherwise" ;
+        narr:reported false ;
+        skos:note "The segment specifies default operational behavior and an exception rule." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_25 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_25 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "intensifier: We can certainly have unique GitHub-org@aswritten.ai" ;
+        narr:evidence "hedge: maybe org+[org]@" ;
+        narr:reported false ;
+        skos:note "The committed proposal is softened by an explicit alternative, so it remains a claim." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_26 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_26 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: are easy" ;
+        narr:reported false ;
+        skos:note "The unhedged evaluation is firm but not a decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_27 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_27 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: is an enterprise/premium and US only feature" ;
+        narr:reported false ;
+        skos:note "The categorical description is assertive but descriptive." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_28 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_28 ;
+        narr:conviction narr:Conviction_Notion ;
+        narr:evidence "hedge: possible" ;
+        narr:reported false ;
+        skos:note "The fragment leaves the scope open rather than asserting a settled channel plan." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_29 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_29 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: Feed is required." ;
+        narr:reported false ;
+        skos:note "“Required” makes the product-scope inclusion operationally settled." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_31 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_31 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: must feel like a chat flow" ;
+        narr:reported false ;
+        skos:note "The directive establishes a non-optional design requirement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_34 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_34 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: is answered by an agent that authenticates" ;
+        narr:reported false ;
+        skos:note "The architecture is described without hedging, but not explicitly ratified in this segment." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_35 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_35 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: needs to cache across multiple replies" ;
+        narr:reported false ;
+        skos:note "“Needs to” makes caching an implementation requirement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_36 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_36 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: loads a perspective that is just the memory" ;
+        narr:reported false ;
+        skos:note "The flat conditional behavior is asserted but not performed as a decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_37 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_37 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: are a feature" ;
+        narr:evidence "commitment-marker: should be rendered as CTA placeholders" ;
+        narr:reported false ;
+        skos:note "The statement is firm and recommends treatment, but does not explicitly record a settled ruling." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_40 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_40 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "epistemic-verb: I thought I decided" ;
+        narr:evidence "plain-assertion: either collaborator only or public/explicit share" ;
+        narr:reported false ;
+        skos:note "The remembered decision is asserted, but “I thought” introduces epistemic uncertainty." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_48 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_48 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "intensifier: would hugely simplify" ;
+        narr:evidence "hedge: should be fine" ;
+        narr:evidence "commitment-marker: We want them to be able to see depth" ;
+        narr:reported false ;
+        skos:note "The proposal has a committed core but includes an explicit uncertainty, so it remains a claim." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_49 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_49 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: is also related to" ;
+        narr:reported false ;
+        skos:note "The relation is stated plainly but is explanatory rather than settled." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_50 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_50 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "commitment-marker: I want them to load a perspective" ;
+        narr:reported false ;
+        skos:note "The first-person desire commits to a direction but leaves it conditional on a future setup." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_52 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_52 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: better would be" ;
+        narr:reported false ;
+        skos:note "The comparative recommendation is firm enough to defend but not settled as a decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_54 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_54 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: is the voice profiles" ;
+        narr:reported false ;
+        skos:note "The relation is stated without hedging but is not a performed decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_56 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_56 ;
+        narr:conviction narr:Conviction_Notion ;
+        narr:evidence "hedge: maybe visible on select only?" ;
+        narr:evidence "hedge: Could be icons on the gutter side?" ;
+        narr:evidence "commitment-marker: Need mocks for this" ;
+        narr:reported false ;
+        skos:note "Multiple alternatives and a request for mocks show active exploration rather than settlement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_57 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_57 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: doesn't read like a conversation" ;
+        narr:reported false ;
+        skos:note "The direct usability judgment is unhedged but does not settle the remedy." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_58 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_58 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: We need to move commentary" ;
+        narr:reported false ;
+        skos:note "The directive commits commentary to the gutters." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_59 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_59 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "intensifier: always just \"send\"" ;
+        narr:reported false ;
+        skos:note "“Always” states a settled interaction rule." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_60 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_60 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "commitment-marker: needs a designed home" ;
+        narr:reported false ;
+        skos:note "The requirement is firm, but the segment does not settle what that home will be." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_61 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_61 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: Filters are hidden" ;
+        narr:reported false ;
+        skos:note "This is a plain observation rather than a performed decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_63 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_63 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "intensifier: I really want to be able to message an agent somewhere" ;
+        narr:reported false ;
+        skos:note "“Really want” strongly marks commitment, but expresses a desire rather than a settled product decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_65 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_65 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: This is the MVP product" ;
+        narr:evidence "plain-assertion: this is the front end that was never built" ;
+        narr:reported false ;
+        skos:note "The declarative formulation performs the unification settlement despite the opening hedge." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_67 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_67 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "hedge: arguably" ;
+        narr:reported false ;
+        skos:note "The answer is asserted but explicitly qualified, so it remains a claim." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_68 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_68 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "plain-assertion: What we're doing is not providing a home for conversation with AI." ;
+        narr:evidence "commitment-marker: We're providing a home for perspective" ;
+        narr:reported false ;
+        skos:note "The contrast defines the product's operating purpose in present-tense terms." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_70 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_70 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "intensifier: We're always expecting primary source quotes" ;
+        narr:reported false ;
+        skos:note "“Always” establishes a stable input rule." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_73 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_73 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "epistemic-verb: I'd argue" ;
+        narr:evidence "intensifier: a huge noise reduction" ;
+        narr:reported false ;
+        skos:note "The argument is strongly held but explicitly presented as an argument rather than a settlement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_75 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_75 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "intensifier: the entire value of the product is that it doesn't do summary until read time" ;
+        narr:evidence "plain-assertion: why are we doing all this filter" ;
+        narr:reported false ;
+        skos:note "The core value claim is categorical, but the rhetorical question shows the speaker is arguing through the implication rather than recording a final ruling." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_78 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_78 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "intensifier: is really a position" ;
+        narr:evidence "hedge: at least potentially" ;
+        narr:reported false ;
+        skos:note "The assertion is strong but explicitly qualified by “potentially.”" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_82 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_82 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: drop all expressions that don't support a position" ;
+        narr:evidence "plain-assertion: That's basically the filter that we want." ;
+        narr:reported false ;
+        skos:note "The directive and concluding formulation settle the intended filter." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_84 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_84 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "epistemic-verb: I think that's a really elegant way to do that." ;
+        narr:evidence "intensifier: I like that a lot." ;
+        narr:reported false ;
+        skos:note "Strong approval is present, but the segment is evaluative rather than an explicit decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_86 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_86 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: I like this message-based graph browser." ;
+        narr:evidence "epistemic-verb: I think it's much more effective" ;
+        narr:evidence "intensifier: much more in line" ;
+        narr:reported false ;
+        skos:note "The repeated approval and comparison support a firm claim, but not a ratified decision in this segment." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_87 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_87 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: are not included. Not included in the product itself." ;
+        narr:evidence "commitment-marker: we can include them in a one-off produced and brand-styled artifact slash fully comped and live page" ;
+        narr:reported false ;
+        skos:note "The declarative cut and replacement demo treatment explicitly settle scope." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_91 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_91 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: required for MVP, but not for demo" ;
+        narr:reported false ;
+        skos:note "The contrast records a settled requirement boundary." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_93 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_93 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "commitment-marker: we need to be in the cents or tens of cents per message" ;
+        narr:reported false ;
+        skos:note "The cost target is firmly stated, but the segment presents pressure and conditions rather than a performed ruling." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_95 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_95 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "intensifier: changes our cost profile hugely" ;
+        narr:evidence "hedge: Maybe that means" ;
+        narr:reported false ;
+        skos:note "The first consequence is emphatic, but “Maybe” makes the business implication exploratory." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_99 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_99 ;
+        narr:conviction narr:Conviction_Notion ;
+        narr:evidence "hedge: Maybe that actually does become a single path" ;
+        narr:evidence "plain-assertion: does that work in the world of digest?" ;
+        narr:reported false ;
+        skos:note "The proposed path is explicitly tentative and followed by an unresolved feasibility question." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_103 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_103 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: extract the whole transcript; the memory becomes a generated view" ;
+        narr:reported true ;
+        skos:note "The numbered ruling and declarative formulation perform a settled extraction decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_104 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_104 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "epistemic-verb: I'm pretty sure about this" ;
+        narr:evidence "commitment-marker: we want to extract the whole transcript" ;
+        narr:evidence "hedge: We may start with the positions" ;
+        narr:reported false ;
+        skos:note "The speaker strongly favors the ruling but explicitly leaves the starting display tentative." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_107 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_107 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: attendance grants the page" ;
+        narr:reported true ;
+        skos:note "The numbered ruling states a settled access primitive." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_109 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_109 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: yes, that." ;
+        narr:evidence "commitment-marker: The answer is:" ;
+        narr:evidence "commitment-marker: For now, we're going to say it's fine." ;
+        narr:reported false ;
+        skos:note "The response ratifies the proposal and explicitly records a provisional operational decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_113 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_113 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: should be built with the styleguide components" ;
+        narr:evidence "commitment-marker: should be added and reviewed in the styleguide first and then reused" ;
+        narr:reported false ;
+        skos:note "The directive specifies a required design workflow." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_115 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_115 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: Two amendments to the July 11 MVP-cut record." ;
+        narr:reported true ;
+        skos:note "The heading explicitly records amendments to a prior decision record." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_117 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_117 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: v2 roadmapped in product" ;
+        narr:reported false ;
+        skos:note "The declarative scope statement fixes demo treatment and future product placement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_120 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_120 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "commitment-marker: full depth for now" ;
+        narr:evidence "commitment-marker: only send it to people i want to see full depth" ;
+        narr:reported false ;
+        skos:note "The statement sets the current sharing rule and recipient boundary." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_122 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_122 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: Teams jumps the integration queue." ;
+        narr:reported true ;
+        skos:note "The numbered ruling performs an integration-priority decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_123 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_123 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "intensifier: does need to jump the queue, for sure" ;
+        narr:evidence "commitment-marker: I'd like to get that done" ;
+        narr:evidence "commitment-marker: this week" ;
+        narr:reported false ;
+        skos:note "The directive is emphatic and time-bound, making the priority operational." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_125 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_125 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: The conversation surface's design language." ;
+        narr:reported true ;
+        skos:note "The numbered ruling heading records a settled design domain." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_127 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_127 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "performed-act: the direction ratified" ;
+        narr:evidence "commitment-marker: comps are the next step" ;
+        narr:reported true ;
+        skos:note "“Ratified” explicitly records settlement and the next action." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_131 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_131 ;
+        narr:conviction narr:Conviction_Decision ;
+        narr:evidence "intensifier: definitely want and need to support" ;
+        narr:evidence "commitment-marker: need to support things spread out over the document" ;
+        narr:reported false ;
+        skos:note "The intensifier and “need” make this a firm implementation requirement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Conviction_1MvpV2ConcisionOneProductRulings_140 a narr:ConvictionObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_140 ;
+        narr:conviction narr:Conviction_Claim ;
+        narr:evidence "plain-assertion: the loop failure mode itself is now build input" ;
+        narr:reported false ;
+        skos:note "The unhedged statement is firm but editorially describes an implication rather than performing a decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecAffect_1MvpV2ConcisionOneProductRulings_84 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_84 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_ActivatedPositive ;
+        narr:evidence "lexical-marker: I like that a lot." ;
+        narr:reported false ;
+        skos:note "Direct, intensified expression of delight at the design resolution." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecAffect_1MvpV2ConcisionOneProductRulings_87 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_87 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_CalmPositive ;
+        narr:evidence "framing-move: That leaves, I think, one big simplification for MVP" ;
+        narr:reported false ;
+        skos:note "Settled, satisfied tone landing on a simplification decision." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecAffect_1MvpV2ConcisionOneProductRulings_63 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_63 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_ActivatedPositive ;
+        narr:evidence "intensifier: I really want to be able to message an agent somewhere" ;
+        narr:reported false ;
+        skos:note "Eager, wishful intensity expressing a personal desire." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecAffect_1MvpV2ConcisionOneProductRulings_67 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_67 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_CalmNegative ;
+        narr:evidence "hedge: I'd say, arguably, no, right?" ;
+        narr:reported false ;
+        skos:note "Hedged, tentative self-questioning tone, low arousal uncertainty." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecAffect_1MvpV2ConcisionOneProductRulings_75 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_75 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_ActivatedNegative ;
+        narr:evidence "framing-move: Although at the danger that there is this initial single judgment of an LLM" ;
+        narr:reported false ;
+        skos:note "Raising an internal contradiction with alarmed, questioning energy." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecAffect_1MvpV2ConcisionOneProductRulings_97 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_97 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_ActivatedNegative ;
+        narr:evidence "intensifier: which is a common situation — what do you receive? And what do you ever see? How much is it going to be?" ;
+        narr:reported false ;
+        skos:note "Rapid stacked questions signal anxious urgency about an unresolved access gap." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecAffect_1MvpV2ConcisionOneProductRulings_98 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_98 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_ActivatedNegative ;
+        narr:evidence "lexical-marker: I just don't think that a single memory is good" ;
+        narr:reported false ;
+        skos:note "Blunt self-pushback carries mild frustration at her own earlier sketch." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecAffect_1MvpV2ConcisionOneProductRulings_131 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_131 ;
+        narr:dimension narr:Dim_Affect ;
+        narr:region narr:Affect_CalmPositive ;
+        narr:evidence "intensifier: we definitely want and need to support things spread out over the document." ;
+        narr:reported false ;
+        skos:note "Confident, settled affirmation of design instinct, not agitated." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_5 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_5 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "framing-move: the live surface is not a second product or an experiment — it is the MVP product's front end that was never built" ;
+        narr:reported false ;
+        skos:note "settles category by fiat, framed as settlement not argument" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_9 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_9 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Informational ;
+        narr:evidence "lexical-marker: We need to define the product value for our target actors" ;
+        narr:reported false ;
+        skos:note "frames what facts/definitions must be established, controlling the terms of subsequent work" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_10 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_10 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "performed-act: We need to clearly unify this with the past mcp only product, these are not two products, they are two surfaces of one system" ;
+        narr:reported false ;
+        skos:note "issues a categorical ruling on product identity as settled fact" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_15 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_15 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Pressure ;
+        narr:evidence "lexical-marker: Simplify." ;
+        narr:reported false ;
+        skos:note "bare imperative, single word directive with no elaboration" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_20 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_20 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "modal-marker: All notifications and agent messages must be proxies through front." ;
+        narr:reported false ;
+        skos:note "must-modal issuing a binding rule" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_31 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_31 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "modal-marker: Theatre must feel like a chat flow with annotations that if removed would not move the chat bubbles or leave empty space." ;
+        narr:reported false ;
+        skos:note "must-modal setting a design constraint as rule" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_35 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_35 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "modal-marker: Note this perspective read at the consistent prefix (focus is last) needs to cache across multiple replies." ;
+        narr:reported false ;
+        skos:note "needs-to framing as technical requirement/rule" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_58 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_58 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Pressure ;
+        narr:evidence "modal-marker: We need to move commentary, etc to the gutters." ;
+        narr:reported false ;
+        skos:note "need-to directive on design change" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_59 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_59 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "lexical-marker: Ask/add note -> always just \"send\"" ;
+        narr:reported false ;
+        skos:note "always-marker issuing a fixed rule for UI behavior" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_65 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_65 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "performed-act: This is the MVP product, this is the front end that was never built." ;
+        narr:reported false ;
+        skos:note "settles the unification question by declarative fiat" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_73 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_73 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_RationalPersuasion ;
+        narr:evidence "framing-move: there is value in the framed primary source material because it is a huge noise reduction. It also saves us a lot of tokens" ;
+        narr:reported false ;
+        skos:note "argues one side from cost/noise-reduction evidence" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_75 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_75 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_RationalPersuasion ;
+        narr:evidence "framing-move: we're also arguing that the entire value of the product is that it doesn't do summary until read time, right? So then why are we doing all this filter" ;
+        narr:reported false ;
+        skos:note "counter-argument exposing internal contradiction via logic" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_78 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_78 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_RationalPersuasion ;
+        narr:evidence "framing-move: That AI summary is really a position where we've now dropped at least potentially some of the statements that support it." ;
+        narr:reported false ;
+        skos:note "structural logical inference driving the resolution" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_82 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_82 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_RationalPersuasion ;
+        narr:evidence "framing-move: drop all expressions that don't support a position. That's basically the filter that we want." ;
+        narr:reported false ;
+        skos:note "derives the design rule from a logical chain about fidelity" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_93 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_93 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Informational ;
+        narr:evidence "plain-signal: we need to be in the cents or tens of cents per message" ;
+        narr:reported false ;
+        skos:note "supplies the cost constraint as the operative fact shaping the product" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_95 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_95 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_RationalPersuasion ;
+        narr:evidence "framing-move: If we move our org's extraction into our subscription keys, that changes our cost profile hugely. Maybe that means we can eat user cost as a loss leader" ;
+        narr:reported false ;
+        skos:note "conditional cost-logic argument for a strategic lever" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_109 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_109 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "performed-act: if you were in the call, you can see the page, and if you click on a node that is linking out beyond the call, you can see it if you have access to that call." ;
+        narr:reported false ;
+        skos:note "declares the access rule as settled policy, closing the open question" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_113 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_113 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "modal-marker: The wireframes page should be built with the styleguide components, and if you need missing components or layouts, they should be added and reviewed in the styleguide first and then reused." ;
+        narr:reported false ;
+        skos:note "should-modal issuing a mandated process discipline" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_117 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_117 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "performed-act: profiles + flocking + arc as wizard of oz static but interactive page in product skin for demo. v2 roadmapped in product" ;
+        narr:reported false ;
+        skos:note "issues a scoping ruling amending prior record" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_120 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_120 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Legitimate ;
+        narr:evidence "performed-act: full depth for now, it's explicit share and this is a demo. only send it to people i want to see full depth" ;
+        narr:reported false ;
+        skos:note "settles the depth-of-share question by fiat with rationale attached" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_123 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_123 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_Pressure ;
+        narr:evidence "lexical-marker: Teams does need to jump the queue, for sure. I'd like to get that done before Fable moves off subscription, so this week." ;
+        narr:reported false ;
+        skos:note "deadline-bound insistence reordering priority" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecPower_1MvpV2ConcisionOneProductRulings_131 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_131 ;
+        narr:dimension narr:Dim_Power ;
+        narr:region narr:Power_RationalPersuasion ;
+        narr:evidence "modal-marker: we definitely want and need to support things spread out over the document." ;
+        narr:reported false ;
+        skos:note "want-and-need framing asserting a design requirement from stated instinct" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_8 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_8 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Playful ;
+        narr:evidence "lexical-marker: gorgeous lighting, ghosted artifacts of life, appliances, furniture, etc" ;
+        narr:reported false ;
+        skos:note "The architectural metaphor is embellished with vivid, aesthetic detail rather than rendered as a bare specification." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_15 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_15 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_MatterOfFact ;
+        narr:evidence "performed-act: Simplify." ;
+        narr:reported false ;
+        skos:note "A single imperative delivers the direction with compressed instrumental force." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_22 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_22 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_MatterOfFact ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "plain-signal: One GitHub org = front inbox" ;
+        narr:reported false ;
+        skos:note "The equation-like shorthand compresses an operational mapping into a technical maxim." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_31 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_31 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "plain-signal: annotations that if removed would not move the chat bubbles or leave empty space" ;
+        narr:reported false ;
+        skos:note "The design criterion is stated as a precise native constraint rather than explained conversationally." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_48 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_48 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:region narr:Register_Playful ;
+        narr:evidence "modal-marker: That's a feature, no?" ;
+        narr:reported false ;
+        skos:note "The parenthetical self-question and rhetorical tag keep the access proposal exploratory and lightly playful." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_56 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_56 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:evidence "hedge: where does this go on mobile, maybe visible on select only? Could be icons on the gutter side? Need mocks for this)q" ;
+        narr:reported false ;
+        skos:note "The chained questions, tentative alternatives, and preserved stray character perform unedited thinking aloud." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_63 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_63 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Enthusiastic ;
+        narr:evidence "intensifier: I really want to be able to message an agent somewhere" ;
+        narr:reported false ;
+        skos:note "The explicit intensifier directs energy toward a desired interaction rather than merely specifying it." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_65 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_65 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_MatterOfFact ;
+        narr:evidence "modal-marker: I think this is one product, it's not an experiment at the existing MVP product." ;
+        narr:reported false ;
+        skos:note "The hedge opens a firm corrective distinction that is then stated in direct repeated clauses." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_67 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_67 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:evidence "hedge: I'd say, arguably, no, right?" ;
+        narr:reported false ;
+        skos:note "Hedges and the tag question make the answer conversational and provisional." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_68 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_68 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "plain-signal: a home for perspective and the integration feed for calls and conversations and notes" ;
+        narr:reported false ;
+        skos:note "The product is defined through native system vocabulary in a compressed, precise contrast." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_73 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_73 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:evidence "modal-marker: I'd argue that there is value" ;
+        narr:reported false ;
+        skos:note "The first-person hedge frames the claim as conversational reasoning rather than formal exposition." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_75 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_75 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "modal-marker: right? So then why are we doing all this filter, this arbitrary filter set on our infrastructure?" ;
+        narr:reported false ;
+        skos:note "A technical critique is delivered through spoken self-correction, tag questions, and an immediate rhetorical challenge." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_84 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_84 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Enthusiastic ;
+        narr:evidence "intensifier: I think that's a really elegant way to do that. I like that a lot." ;
+        narr:reported false ;
+        skos:note "Repeated explicit approval and the intensifier “really” make delight in the design audible." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_87 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_87 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:region narr:Register_Playful ;
+        narr:evidence "lexical-marker: one-off produced and brand-styled artifact slash fully comped and live page that I can show as the demo" ;
+        narr:reported false ;
+        skos:note "“slash” construction and the self-conscious demo phrasing keep the product cut informal and performative." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_93 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_93 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:evidence "hedge: right? But for that to happen, you know, we need to be in the cents or tens of cents per message." ;
+        narr:reported false ;
+        skos:note "The cost constraint is technically specific but voiced with spoken fillers and a tag question." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_103 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_103 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "performed-act: The extraction fork — extract the whole transcript; the memory becomes a generated view." ;
+        narr:reported false ;
+        skos:note "The numbered ruling uses compact domain terminology and a semicolon-separated prescription." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_109 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_109 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:region narr:Register_Enthusiastic ;
+        narr:evidence "intensifier: that's hot. yes, that." ;
+        narr:evidence "performed-act: For now, we're going to say it's fine." ;
+        narr:reported false ;
+        skos:note "An exuberant colloquial approval turns into a deliberately provisional spoken settlement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_113 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_113 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Formal ;
+        narr:evidence "performed-act: they should be added and reviewed in the styleguide first and then reused." ;
+        narr:reported false ;
+        skos:note "The directive adopts process-governing “should” language and an ordered protocol." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_117 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_117 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:region narr:Register_Playful ;
+        narr:evidence "lexical-marker: profiles + flocking + arc as wizard of oz static but interactive page in product skin for demo. v2 roadmapped in product" ;
+        narr:reported false ;
+        skos:note "Abbreviated plus-sign syntax and “wizard of oz” make the roadmap ruling deliberately informal and playful." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_120 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_120 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:evidence "plain-signal: only send it to people i want to see full depth" ;
+        narr:reported false ;
+        skos:note "Lowercase, compressed phrasing presents the access rule as an unpolished conversational note." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_123 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_123 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Casual ;
+        narr:region narr:Register_Enthusiastic ;
+        narr:evidence "intensifier: for sure. I'd like to get that done before Fable moves off subscription, so this week." ;
+        narr:reported false ;
+        skos:note "“for sure” adds emphatic spoken energy to an otherwise operational scheduling directive." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_131 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_131 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Enthusiastic ;
+        narr:evidence "intensifier: we definitely want and need to support things spread out over the document." ;
+        narr:reported false ;
+        skos:note "“definitely” and the doubled “want and need” strongly reinforce the design requirement." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRegister_1MvpV2ConcisionOneProductRulings_140 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_140 ;
+        narr:dimension narr:Dim_Register ;
+        narr:region narr:Register_Technical ;
+        narr:evidence "lexical-marker: whisper.cpp + parselmouth prosody" ;
+        narr:reported false ;
+        skos:note "The tooling names and prosody terminology are used as native implementation shorthand." ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:DirRelational_TwoSurfacesOneSystem a narr:DirectionalNode ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_CommunalSharing ;
+        narr:theme "Collapse apparent separateness into a single undifferentiated whole by declaring it so" ;
+        skos:note "these are not two products, they are two surfaces of one system" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:DirRelational_QueueJumpByNecessity a narr:DirectionalNode ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:theme "Reorder priority rank by asserting necessity rather than negotiating turn order" ;
+        skos:note "Teams does need to jump the queue, for sure" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:DirRelational_GatingAsConsequence a narr:DirectionalNode ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:theme "Frame a dependency as the consequence that unlocks a named stakeholder's value" ;
+        skos:note "X gates Y, our actual [stakeholder]" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:DirRelational_CostThresholdReshapesProduct a narr:DirectionalNode ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:theme "Name a cost threshold as the lever that reshapes what the product can become" ;
+        skos:note "this product changes a lot if we can get costs down enough" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:DirRelational_AttendanceGrantsAccess a narr:DirectionalNode ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_EqualityMatching ;
+        narr:theme "Resolve an access question by keying visibility to symmetric membership in the originating event" ;
+        skos:note "if you were in the call, you can see the page" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_5 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_5 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_CommunalSharing ;
+        narr:direction narr:DirRelational_TwoSurfacesOneSystem ;
+        narr:evidence "framing-move: the live surface is not a second product or an experiment — it is the MVP product's front end that was never built" ;
+        narr:reported false ;
+        skos:note "collapses two things into one undifferentiated body, denying separateness" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_10 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_10 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_CommunalSharing ;
+        narr:direction narr:DirRelational_TwoSurfacesOneSystem ;
+        narr:evidence "framing-move: these are not two products, they are two surfaces of one system" ;
+        narr:reported false ;
+        skos:note "explicit unification claim erasing boundary between surfaces" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_11 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_11 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_CommunalSharing ;
+        narr:direction narr:DirRelational_TwoSurfacesOneSystem ;
+        narr:evidence "framing-move: are not a separate codebase, they are extensions of a single product" ;
+        narr:reported false ;
+        skos:note "same unification move applied to codebase" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_65 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_65 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_CommunalSharing ;
+        narr:direction narr:DirRelational_TwoSurfacesOneSystem ;
+        narr:evidence "framing-move: I think this is one product, it's not an experiment at the existing MVP product. This is the MVP product, this is the front end that was never built." ;
+        narr:reported false ;
+        skos:note "direct performative unification of product identity" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_68 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_68 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_CommunalSharing ;
+        narr:direction narr:DirRelational_TwoSurfacesOneSystem ;
+        narr:evidence "framing-move: We're providing a home for perspective and the integration feed" ;
+        narr:reported false ;
+        skos:note "we-framing of shared provision, undifferentiated product identity" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_9 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_9 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "modal-marker: We need to define the product value" ;
+        narr:reported false ;
+        skos:note "directive obligation framing enacts authority over the collective task" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_15 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_15 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "performed-act: Simplify." ;
+        narr:reported false ;
+        skos:note "bare imperative, command form" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_20 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_20 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "modal-marker: All notifications and agent messages must be proxies through front." ;
+        narr:reported false ;
+        skos:note "must-language issuing a binding rule" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_35 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_35 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "modal-marker: needs to cache across multiple replies" ;
+        narr:reported false ;
+        skos:note "needs-to directive on system behavior" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_58 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_58 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "modal-marker: We need to move commentary, etc to the gutters." ;
+        narr:reported false ;
+        skos:note "directive with obligation modal" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_59 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_59 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "performed-act: Ask/add note -> always just \"send\"" ;
+        narr:reported false ;
+        skos:note "rule-setting imperative collapsing options to one command" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_113 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_113 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "modal-marker: they should be added and reviewed in the styleguide first and then reused" ;
+        narr:reported false ;
+        skos:note "should-language prescribing mandatory sequence/order of review" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_123 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_123 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:direction narr:DirRelational_QueueJumpByNecessity ;
+        narr:evidence "modal-marker: Teams does need to jump the queue, for sure." ;
+        narr:reported false ;
+        skos:note "asserts rank-reordering of the integration queue by directive need" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_122 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_122 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:direction narr:DirRelational_QueueJumpByNecessity ;
+        narr:evidence "framing-move: Teams jumps the integration queue" ;
+        narr:reported false ;
+        skos:note "queue-jump framing is rank reallocation performed as a title" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_16 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_16 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:direction narr:DirRelational_GatingAsConsequence ;
+        narr:evidence "framing-move: Teams integration gates Escher, our actual paying client" ;
+        narr:reported false ;
+        skos:note "gating framing ties feature to consequence/value of a paying relationship" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_17 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_17 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:direction narr:DirRelational_GatingAsConsequence ;
+        narr:evidence "framing-move: Zoom gates Taylor testing, our most active beta tester" ;
+        narr:reported false ;
+        skos:note "same gating-as-consequence structure" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_18 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_18 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:direction narr:DirRelational_GatingAsConsequence ;
+        narr:evidence "framing-move: Google meet gates our org's secondary transcription path and the last org suite surface." ;
+        narr:reported false ;
+        skos:note "same gating-as-consequence structure" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_19 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_19 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:direction narr:DirRelational_GatingAsConsequence ;
+        narr:evidence "framing-move: Otter and other transcription tools gate individual developer/entrepreneur testing/adoption" ;
+        narr:reported false ;
+        skos:note "same gating-as-consequence structure applied to a different actor tier" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_27 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_27 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:evidence "plain-signal: SMS is an enterprise/premium and US only feature." ;
+        narr:reported false ;
+        skos:note "tiered feature-to-price/segment mapping" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_93 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_93 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:direction narr:DirRelational_CostThresholdReshapesProduct ;
+        narr:evidence "plain-signal: we need to be in the cents or tens of cents per message" ;
+        narr:reported false ;
+        skos:note "explicit cost/consequence threshold framing product possibility" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_95 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_95 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:direction narr:DirRelational_CostThresholdReshapesProduct ;
+        narr:evidence "framing-move: Maybe that means we can eat user cost as a loss leader in a way that is significant" ;
+        narr:reported false ;
+        skos:note "cost/benefit tradeoff explicitly named as strategic lever" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_101 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_101 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:evidence "framing-move: What's required for MVP that our actual clients, i.e. Escher, could use." ;
+        narr:reported false ;
+        skos:note "scoping decided by proportional relevance to paying-client value" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_124 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_124 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:direction narr:DirRelational_GatingAsConsequence ;
+        narr:evidence "framing-move: Teams gates Escher, the actual paying client" ;
+        narr:reported true ;
+        skos:note "reports the gating-as-consequence pattern applied to Teams specifically" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_34 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_34 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_EqualityMatching ;
+        narr:evidence "framing-move: checks if you can read from the perspective (collaborator) then loads perspective" ;
+        narr:reported false ;
+        skos:note "access conditioned on matched reciprocal role/status rather than command" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_97 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_97 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_EqualityMatching ;
+        narr:evidence "framing-move: If you are an admin, collaborator, obviously you can see the whole experience and the perspective. But if you are a new participant who is not a repo collaborator" ;
+        narr:reported false ;
+        skos:note "graduated tiers of access matched to role membership" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_109 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_109 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_EqualityMatching ;
+        narr:direction narr:DirRelational_AttendanceGrantsAccess ;
+        narr:evidence "performed-act: if you were in the call, you can see the page, and if you click on a node that is linking out beyond the call, you can see it if you have access to that call" ;
+        narr:reported true ;
+        skos:note "ratifies an access rule keyed to symmetric membership condition (attendance = access)" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_110 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_110 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_EqualityMatching ;
+        narr:direction narr:DirRelational_AttendanceGrantsAccess ;
+        narr:evidence "framing-move: Attendance is the membership primitive; cross-links resolve only with access to the target call" ;
+        narr:reported true ;
+        skos:note "reports the attendance-equals-access rule as the resolved model" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_40 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_40 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_EqualityMatching ;
+        narr:evidence "framing-move: either collaborator only or public/explicit share (email or public link)" ;
+        narr:reported false ;
+        skos:note "binary matched-condition access scheme, no rank differentiation" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_48 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_48 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_EqualityMatching ;
+        narr:evidence "framing-move: collaborator only + explicit share would hugely simplify" ;
+        narr:reported false ;
+        skos:note "reduces access model to a matched pair of conditions" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_120 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_120 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:evidence "performed-act: only send it to people i want to see full depth" ;
+        narr:reported true ;
+        skos:note "ratifies a discretionary allocation decision proportional to demo value/consequence" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_96 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_96 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_MarketPricing ;
+        narr:evidence "hedge: it should be fast. Maybe Luna?" ;
+        narr:reported false ;
+        skos:note "speed/cost tradeoff drives model selection" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_87 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_87 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "performed-act: the flocking graph viewer and voice profiles are not included. Not included in the product itself." ;
+        narr:reported false ;
+        skos:note "declarative exclusion decision, command over scope" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_103 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_103 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "performed-act: extract the whole transcript; the memory becomes a generated view" ;
+        narr:reported false ;
+        skos:note "ruling delivered as settled architecture decision" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_107 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_107 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_EqualityMatching ;
+        narr:direction narr:DirRelational_AttendanceGrantsAccess ;
+        narr:evidence "framing-move: attendance grants the page" ;
+        narr:reported false ;
+        skos:note "titles the access rule as reciprocal membership grant" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_117 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_117 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "performed-act: profiles + flocking + arc as wizard of oz static but interactive page in product skin for demo. v2 roadmapped in product" ;
+        narr:reported false ;
+        skos:note "settled scope ruling delivered as fixed decision" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_121 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_121 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_AuthorityRanking ;
+        narr:evidence "framing-move: stripped/anonymized/actor-scoped/tiered shares become v2 work" ;
+        narr:reported true ;
+        skos:note "reports a scope-deferral ruling" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecRelational_1MvpV2ConcisionOneProductRulings_63 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_63 ;
+        narr:dimension narr:Dim_Relational ;
+        narr:region narr:Relational_CommunalSharing ;
+        narr:evidence "plain-signal: I really want to be able to message an agent somewhere" ;
+        narr:reported false ;
+        skos:note "personal desire statement, no relational model enacted toward audience" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:DirStyle_RendersNotBlueprints a narr:DirectionalNode ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Metaphor ;
+        narr:region narr:Style_Analogy ;
+        narr:theme "Fidelity is argued through an extended building-design comparison: vivid partial renders stand in contrast to fully engineered blueprints" ;
+        skos:note "renders, not construction-member CAD" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_8 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_8 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Metaphor ;
+        narr:region narr:Style_Analogy ;
+        narr:direction narr:DirStyle_RendersNotBlueprints ;
+        narr:evidence "framing-move: we're designing a new building and we don't need the whole thing designed to construction members in CAD, we need to create a set of renders that make the experience of the space vivid" ;
+        narr:reported false ;
+        skos:note "extended architecture-render AS-comparison doing argumentative work about MVP fidelity" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_16 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_16 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Parallelism ;
+        narr:region narr:Style_Anaphora ;
+        narr:evidence "framing-move: Teams integration gates Escher, our actual paying client" ;
+        narr:reported false ;
+        skos:note "opens a matched X-gates-Y series repeated across src-17/18/19" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_17 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_17 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Parallelism ;
+        narr:region narr:Style_Anaphora ;
+        narr:evidence "framing-move: Zoom gates Taylor testing, our most active beta tester" ;
+        narr:reported false ;
+        skos:note "second clause in the repeated 'X gates Y' structure begun at src-16" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_18 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_18 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Parallelism ;
+        narr:region narr:Style_Anaphora ;
+        narr:evidence "framing-move: Google meet gates our org's secondary transcription path and the last org suite surface." ;
+        narr:reported false ;
+        skos:note "third clause continuing the anaphoric 'gates' pattern" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_19 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_19 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Parallelism ;
+        narr:region narr:Style_Anaphora ;
+        narr:evidence "framing-move: Otter and other transcription tools gate individual developer/entrepreneur testing/adoption" ;
+        narr:reported false ;
+        skos:note "fourth and closing clause of the matched 'gates' series, completing a rule-of-four grid" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_15 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_15 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_ShortPunchyCadence ;
+        narr:evidence "plain-signal: Simplify." ;
+        narr:reported false ;
+        skos:note "single-word imperative fragment functioning as terse emphasis" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_65 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_65 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: it's not an experiment at the existing MVP product. This is the MVP product, this is the front end that was never built." ;
+        narr:reported false ;
+        skos:note "negated frame set against the asserted frame in deliberate contrast" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_5 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_5 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: the live surface is not a second product or an experiment — it is the MVP product's front end that was never built" ;
+        narr:reported true ;
+        skos:note "explicit not-X-but-Y contrast structuring the headline settlement" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_67 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_67 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_RhetoricalQuestion ;
+        narr:evidence "modal-marker: I'd say, arguably, no, right?" ;
+        narr:reported false ;
+        skos:note "question posed with answer already supplied by the asker via 'arguably, no'" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_68 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_68 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Antithesis ;
+        narr:region narr:Style_Parallelism ;
+        narr:evidence "framing-move: What we're doing is not providing a home for conversation with AI. We're providing a home for perspective and the integration feed" ;
+        narr:reported false ;
+        skos:note "not-X-but-Y matched clause pair defining the product by negation and restatement" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_70 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_70 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_StockPhrase ;
+        narr:evidence "lexical-marker: We're always expecting primary source quotes from a specific person, either with interspersed commentary or just a raw transcript." ;
+        narr:reported false ;
+        skos:note "recurring org formula 'primary source' names a settled category rather than describing this instance alone" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_75 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_75 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_RhetoricalQuestion ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: we're also arguing that the entire value of the product is that it doesn't do summary until read time, right? So then why are we doing all this filter" ;
+        narr:reported false ;
+        skos:note "posed question exposing contradiction between stated principle and practice, answer implied" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_79 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_79 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Parallelism ;
+        narr:evidence "framing-move: at first resolution, every single quote from the call, no summary, no filter" ;
+        narr:reported false ;
+        skos:note "matched no-summary/no-filter clause pair defining the layer" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_80 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_80 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Parallelism ;
+        narr:evidence "framing-move: At second resolution, only positions — each expandable to the expressions that support it, footnotes beneath." ;
+        narr:reported false ;
+        skos:note "continues the anaphoric 'At Nth resolution' structure begun in src-79" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_81 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_81 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Parallelism ;
+        narr:evidence "framing-move: Then a narrative layer where positions are the footnotes, and strata above." ;
+        narr:reported false ;
+        skos:note "third beat of the resolution-layer triad, completing a rule-of-three ladder" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_83 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_83 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Metaphor ;
+        narr:evidence "framing-move: an icon that steps an expression up a layer, collapsing siblings under their position" ;
+        narr:reported true ;
+        skos:note "spatial 'steps up' / 'collapsing' language treats the data structure as physical terrain" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_87 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_87 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: Not included in the product itself. But we can include them in a one-off produced and brand-styled artifact" ;
+        narr:reported false ;
+        skos:note "not-in-product-but-in-artifact contrast structuring the demo/product boundary" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_88 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_88 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Metaphor ;
+        narr:evidence "framing-move: and in there we can show the flocking cause it's fun" ;
+        narr:reported true ;
+        skos:note "quoted 'flocking' names the visualization AS bird-flock behavior" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_93 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_93 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Parallelism ;
+        narr:evidence "framing-move: This product changes a lot if we can get extraction costs down enough. If we can get extraction costs down enough that you can actually converse with the thing" ;
+        narr:reported false ;
+        skos:note "repeated conditional 'if we can get extraction costs down enough' clause opening consecutive sentences" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_97 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_97 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_RhetoricalQuestion ;
+        narr:region narr:Style_RuleOfThree ;
+        narr:evidence "framing-move: what do you receive? And what do you ever see? How much is it going to be?" ;
+        narr:reported false ;
+        skos:note "three successive posed questions in a rapid triad probing the same access gap" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_109 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_109 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_RhetoricalQuestion ;
+        narr:evidence "modal-marker: this is the real question — that should be okay, right, because they are not actually showing the source?" ;
+        narr:reported false ;
+        skos:note "question posed with the answer presumed via 'right' tag and self-answered in the same breath" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_126 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_126 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Metaphor ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: annotations that if removed would not move the chat bubbles" ;
+        narr:reported true ;
+        skos:note "physical-displacement metaphor testing whether annotation is load-bearing vs decorative" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_31 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_31 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Metaphor ;
+        narr:evidence "framing-move: Theatre must feel like a chat flow with annotations that if removed would not move the chat bubbles or leave empty space." ;
+        narr:reported false ;
+        skos:note "annotations treated AS physical objects that could 'move' bubbles or 'leave empty space'" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_57 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_57 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Metaphor ;
+        narr:evidence "framing-move: Gaps between messages, doesn't read like a conversation." ;
+        narr:reported false ;
+        skos:note "spatial 'gaps' figure for pacing/design failure" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:VecStyle_1MvpV2ConcisionOneProductRulings_62 a narr:VectorObservation ;
+        oa:hasTarget narr:Expr_1MvpV2ConcisionOneProductRulings_62 ;
+        narr:dimension narr:Dim_Style ;
+        narr:region narr:Style_Antithesis ;
+        narr:evidence "framing-move: Big bags between messages, does read like a conversation" ;
+        narr:reported false ;
+        skos:note "mirrors and inverts src-57's judgment, forming a paired contrast across the two notes" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Narrative_OneProductUnifiedSurfaces a narr:Narrative ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:theme "New surfaces, integrations, and codebases (feed, theatre, transcription pipeline) are extensions of one unified product, not separate products or experiments — every downstream design fork inherits that constraint." ;
+        skos:broader narr:Narrative_MVPScopeDecision ;
+        skos:note "One Product, Many Surfaces: The Live Surface Is the MVP's Own Front End" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_5 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_9 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_10 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_11 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_64 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_65 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_66 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_67 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_68 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_69 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_70 narr:supports narr:Narrative_OneProductUnifiedSurfaces .
+
+    narr:Narrative_ResolutionLayersReadTimeComposition a narr:Narrative ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:theme "Extraction always captures the whole transcript at maximal fidelity; the theatre composes read-time resolution layers (expressions→positions→narratives→strata) so no filtering happens upstream of the reader — the digest's own recognition-aid logic applied to a live surface." ;
+        skos:broader narr:Narrative_DigestAsRecognitionAid ;
+        narr:extends narr:Narrative_DigestAsRecognitionAid ;
+        skos:note "Resolution Layers: Extraction Captures Everything, Display Composes at Read Time" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_4 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_6 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_32 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_33 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_71 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_72 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_73 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_74 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_75 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_76 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_77 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_78 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_79 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_80 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_81 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_82 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_83 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_84 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_85 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_86 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_103 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_104 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_105 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_106 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_128 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_129 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_130 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_131 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_133 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_134 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_139 narr:supports narr:Narrative_ResolutionLayersReadTimeComposition .
+
+    narr:Narrative_RendersOverConstructionFidelity a narr:Narrative ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:theme "Sales and fundraising demos need vivid, functional renders of the product experience, not fully constructed features — clear, smooth, and valuable outranks finished, and simplification is the operative discipline." ;
+        skos:broader narr:Narrative_FocusAsGoverningPrinciple ;
+        narr:extends narr:Narrative_FocusAsGoverningPrinciple ;
+        skos:note "Renders, Not Construction Documents: Demo Fidelity Is Vivid-Enough, Not Finished" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_7 narr:supports narr:Narrative_RendersOverConstructionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_8 narr:supports narr:Narrative_RendersOverConstructionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_12 narr:supports narr:Narrative_RendersOverConstructionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_13 narr:supports narr:Narrative_RendersOverConstructionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_14 narr:supports narr:Narrative_RendersOverConstructionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_15 narr:supports narr:Narrative_RendersOverConstructionFidelity .
+
+    narr:Narrative_IntegrationGatingByBetaUserImpact a narr:Narrative ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:theme "Each transcription or comms integration is sequenced by the specific paying client or active beta tester it gates, not by generic feature completeness — and that mapping can reorder the build queue on demand." ;
+        skos:broader narr:Narrative_UserAgentIngestionModel ;
+        narr:extends narr:Narrative_UserAgentIngestionModel ;
+        skos:note "Integrations Are Prioritized by Which Named Client or Tester They Unlock" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_16 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_17 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_18 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_19 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_90 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_91 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_122 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_123 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_124 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_136 narr:supports narr:Narrative_IntegrationGatingByBetaUserImpact .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_20 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_21 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_22 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_23 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_24 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_25 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_26 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_27 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_28 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_29 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_30 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_137 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_139 narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_31 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_55 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_56 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_57 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_58 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_59 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_60 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_61 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_62 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_125 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_126 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_127 narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Narrative_AttendanceGrantsAccess a narr:Narrative ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:theme "Visibility into a call's theatre and its linked memories is granted by having attended the source call; cross-links resolve against the target call's own access, and digest narrations of connected nodes are provisionally visible because the digest is abstraction, not source." ;
+        skos:broader narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+        narr:extends narr:Narrative_NavigationReplacesEmbeddedSnapshot ;
+        skos:note "Attendance Grants the Page: Access Falls Out of Navigation, Not Role" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_4 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_34 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_35 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_36 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_37 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_38 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_39 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_40 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_41 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_42 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_47 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_48 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_49 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_50 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_51 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_52 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_53 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_97 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_98 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_99 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_100 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_101 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_107 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_108 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_109 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_110 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_111 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_119 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_120 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_121 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_138 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_139 narr:supports narr:Narrative_AttendanceGrantsAccess .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_63 narr:supports narr:Narrative_VoiceMemoAsInput .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_139 narr:supports narr:Narrative_VoiceMemoAsInput .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_1 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_2 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_4 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_54 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_87 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_88 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_89 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_115 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_116 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_117 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_118 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_132 narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Narrative_ExtractionCostGatesConversationalMode a narr:Narrative ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:theme "Real-time, every-message extraction becomes viable only once per-message extraction cost falls to cents; the levers are unit cost, extraction frequency, and whose API keys absorb the spend." ;
+        skos:broader narr:Narrative_TokenCostSensitivity ;
+        narr:extends narr:Narrative_TokenCostSensitivity ;
+        skos:note "Cents Per Message: Extraction Cost Gates Conversational Extraction" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_92 narr:supports narr:Narrative_ExtractionCostGatesConversationalMode .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_93 narr:supports narr:Narrative_ExtractionCostGatesConversationalMode .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_94 narr:supports narr:Narrative_ExtractionCostGatesConversationalMode .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_95 narr:supports narr:Narrative_ExtractionCostGatesConversationalMode .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_96 narr:supports narr:Narrative_ExtractionCostGatesConversationalMode .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_135 narr:supports narr:Narrative_ExtractionCostGatesConversationalMode .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_139 narr:supports narr:Narrative_ExtractionCostGatesConversationalMode .
+
+    narr:Narrative_StyleguideBeforeProduct a narr:Narrative ;
+        dct:source narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        narr:theme "New UI components pass through the styleguide first — mocked, reviewed, and only then reused in wireframes and product — an ordering discipline for design work, not just a shared component library." ;
+        skos:broader narr:Narrative_DesignTokenPerspectiveParallel ;
+        narr:extends narr:Narrative_DesignTokenPerspectiveParallel ;
+        skos:note "Styleguide Before Product: New Components Are Reviewed Before They're Reused" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_4 narr:supports narr:Narrative_StyleguideBeforeProduct .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_112 narr:supports narr:Narrative_StyleguideBeforeProduct .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_113 narr:supports narr:Narrative_StyleguideBeforeProduct .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_114 narr:supports narr:Narrative_StyleguideBeforeProduct .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_133 narr:supports narr:Narrative_DigestAsRecognitionAid .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_133 narr:supports narr:Narrative_NavigationReplacesEmbeddedSnapshot .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_136 narr:supports narr:Narrative_UserAgentIngestionModel .
+
+    narr:Position_MVPFrontEndUnification a narr:Position ;
+        narr:frame "Is the live surface (feed + extraction theatre) a second product or an experiment, or is it the MVP product's own front end that was never built?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_MVPFrontEndUnification narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_5 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_9 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_10 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_11 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_64 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_65 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_66 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_67 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_68 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_69 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_70 narr:supports narr:Position_MVPFrontEndUnification .
+
+    narr:Position_ExtractionResolutionFidelity a narr:Position ;
+        narr:frame "What is the right unit and moment of fidelity for extraction — a framed memory, the whole transcript, or resolution layers composed at read time?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_ExtractionResolutionFidelity narr:supports narr:Narrative_DigestAsRecognitionAid .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_6 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_32 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_33 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_71 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_72 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_73 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_74 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_75 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_76 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_77 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_78 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_79 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_80 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_81 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_82 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_83 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_84 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_85 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_86 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_103 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_104 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_105 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_106 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_128 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_129 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_130 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_131 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_134 narr:supports narr:Position_ExtractionResolutionFidelity .
+
+    narr:Position_TheatreAccessAndAttendanceModel a narr:Position ;
+        narr:frame "Who can see the theatre and the memories it links to — collaborator status, explicit share, attendance at the source call, or per-actor perspective filtering?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_TheatreAccessAndAttendanceModel narr:supports narr:Narrative_NavigationReplacesEmbeddedSnapshot .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_34 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_35 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_36 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_37 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_38 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_39 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_40 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_41 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_42 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_47 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_48 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_49 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_50 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_51 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_52 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_53 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_97 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_98 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_99 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_100 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_101 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_107 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_108 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_109 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_110 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_111 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_119 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_120 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_121 narr:supports narr:Position_TheatreAccessAndAttendanceModel .
+
+    narr:Position_BetaIntegrationGatingPriority a narr:Position ;
+        narr:frame "Which transcription/comms integrations gate which users and clients, and in what order should they ship relative to demo needs?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_BetaIntegrationGatingPriority narr:supports narr:Narrative_UserAgentIngestionModel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_16 narr:supports narr:Position_BetaIntegrationGatingPriority .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_17 narr:supports narr:Position_BetaIntegrationGatingPriority .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_18 narr:supports narr:Position_BetaIntegrationGatingPriority .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_19 narr:supports narr:Position_BetaIntegrationGatingPriority .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_90 narr:supports narr:Position_BetaIntegrationGatingPriority .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_91 narr:supports narr:Position_BetaIntegrationGatingPriority .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_122 narr:supports narr:Position_BetaIntegrationGatingPriority .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_123 narr:supports narr:Position_BetaIntegrationGatingPriority .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_124 narr:supports narr:Position_BetaIntegrationGatingPriority .
+
+    narr:Position_StyleguideFirstComponentDiscipline a narr:Position ;
+        narr:frame "Should new UI components be built ad hoc for a given screen, or must they pass through the styleguide first?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_StyleguideFirstComponentDiscipline narr:supports narr:Narrative_DesignTokenPerspectiveParallel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_112 narr:supports narr:Position_StyleguideFirstComponentDiscipline .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_113 narr:supports narr:Position_StyleguideFirstComponentDiscipline .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_114 narr:supports narr:Position_StyleguideFirstComponentDiscipline .
+
+    narr:Position_ConversationSurfaceDesignLanguage a narr:Position ;
+        narr:frame "How should the theatre carry dimensional annotations, reactions, and narrative claims without breaking the feel of an ordinary conversation?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_ConversationSurfaceDesignLanguage narr:supports narr:Narrative_ContentCommentarySplit .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_31 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_55 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_56 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_57 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_58 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_59 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_60 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_61 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_62 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_125 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_126 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_127 narr:supports narr:Position_ConversationSurfaceDesignLanguage .
+
+    narr:Position_FrontChannelRoutingArchitecture a narr:Position ;
+        narr:frame "How should notifications, inbox routing, and channel access map onto GitHub orgs, repos, and account tiers?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_FrontChannelRoutingArchitecture narr:supports narr:Narrative_FrontHITLSubstrate .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_20 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_21 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_22 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_23 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_24 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_25 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_26 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_27 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_28 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_29 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_30 narr:supports narr:Position_FrontChannelRoutingArchitecture .
+
+    narr:Position_VoiceProfilesFlockingScopeAmendment a narr:Position ;
+        narr:frame "Do voice profiles and the flocking graph viewer belong in the shipped MVP product, or only in a demo-skin artifact?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_VoiceProfilesFlockingScopeAmendment narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_54 narr:supports narr:Position_VoiceProfilesFlockingScopeAmendment .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_87 narr:supports narr:Position_VoiceProfilesFlockingScopeAmendment .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_88 narr:supports narr:Position_VoiceProfilesFlockingScopeAmendment .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_115 narr:supports narr:Position_VoiceProfilesFlockingScopeAmendment .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_116 narr:supports narr:Position_VoiceProfilesFlockingScopeAmendment .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_117 narr:supports narr:Position_VoiceProfilesFlockingScopeAmendment .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_118 narr:supports narr:Position_VoiceProfilesFlockingScopeAmendment .
+
+    narr:Position_ExtractionCostAsProductConstraint a narr:Position ;
+        narr:frame "How does per-message extraction cost bound what the product can afford to do, and which levers change that bound?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_ExtractionCostAsProductConstraint narr:supports narr:Narrative_TokenCostSensitivity .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_92 narr:supports narr:Position_ExtractionCostAsProductConstraint .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_93 narr:supports narr:Position_ExtractionCostAsProductConstraint .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_94 narr:supports narr:Position_ExtractionCostAsProductConstraint .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_95 narr:supports narr:Position_ExtractionCostAsProductConstraint .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_96 narr:supports narr:Position_ExtractionCostAsProductConstraint .
+
+    narr:Position_MVPFidelityLevel a narr:Position ;
+        narr:frame "What level of fidelity does the MVP actually need for demos and sales — full construction-grade completeness, or vivid-enough renders?" ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    narr:Position_MVPFidelityLevel narr:supports narr:Narrative_MVPScopeDecision .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_7 narr:supports narr:Position_MVPFidelityLevel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_8 narr:supports narr:Position_MVPFidelityLevel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_12 narr:supports narr:Position_MVPFidelityLevel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_13 narr:supports narr:Position_MVPFidelityLevel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_14 narr:supports narr:Position_MVPFidelityLevel .
+
+    narr:Expr_1MvpV2ConcisionOneProductRulings_15 narr:supports narr:Position_MVPFidelityLevel .
+
+    aswr:Miss_1MvpV2ConcisionOneProductRulings_affect_trip a aswr:Miss ;
+        aswr:missPass "affect" ;
+        aswr:missClass "floor" ;
+        aswr:missError "primary exhausted: src-139: evidence quote not verbatim in segment (even after normalization repair)" ;
+        aswr:missModel "openai/gpt-5.6-luna" ;
+        aswr:tripOutcome "fallback-validated" ;
+        aswr:tripFallbackModel "anthropic/claude-sonnet-5" ;
+        aswr:missScope narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Miss_1MvpV2ConcisionOneProductRulings_power_trip a aswr:Miss ;
+        aswr:missPass "power" ;
+        aswr:missClass "floor" ;
+        aswr:missError "0 of 141 segments marked" ;
+        aswr:missModel "openai/gpt-5.6-luna" ;
+        aswr:tripFloor "marked_zero" ;
+        aswr:tripRatio "0.0000"^^xsd:decimal ;
+        aswr:tripOutcome "fallback-won" ;
+        aswr:tripFallbackModel "anthropic/claude-sonnet-5" ;
+        aswr:missScope narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Miss_1MvpV2ConcisionOneProductRulings_relational_trip a aswr:Miss ;
+        aswr:missPass "relational" ;
+        aswr:missClass "floor" ;
+        aswr:missError "0 of 141 segments marked" ;
+        aswr:missModel "openai/gpt-5.6-luna" ;
+        aswr:tripFloor "marked_zero" ;
+        aswr:tripRatio "0.0000"^^xsd:decimal ;
+        aswr:tripOutcome "fallback-won" ;
+        aswr:tripFallbackModel "anthropic/claude-sonnet-5" ;
+        aswr:missScope narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Miss_1MvpV2ConcisionOneProductRulings_style_trip a aswr:Miss ;
+        aswr:missPass "style" ;
+        aswr:missClass "floor" ;
+        aswr:missError "primary exhausted: src-67: unknown region hedge; src-70: bad evidence kind parallelism; src-73: bad evidence kind parallelism; src-80: bad evidence kind parallelism; src-81: bad evidence kind parallelism; src-104: bad evidence kind parallelism; src-105: bad evidence kind parallelism" ;
+        aswr:missModel "openai/gpt-5.6-luna" ;
+        aswr:tripOutcome "fallback-validated" ;
+        aswr:tripFallbackModel "anthropic/claude-sonnet-5" ;
+        aswr:missScope narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Miss_1MvpV2ConcisionOneProductRulings_temporal a aswr:Miss ;
+        aswr:missPass "temporal" ;
+        aswr:missClass "content" ;
+        aswr:missError "src-1: regions must have 1..3; src-7: regions must have 1..3; src-8: regions must have 1..3; src-19: regions must have 1..3; src-21: regions must have 1..3; src-23: regions must have 1..3; src-32: regions must have 1..3; src-34: regions must have 1..3; src-37: regions must have 1..3; src-43: regions" ;
+        aswr:missModel "openai/gpt-5.6-luna" ;
+        aswr:missAttempts "3"^^xsd:integer ;
+        aswr:missScope narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Miss_1MvpV2ConcisionOneProductRulings_temporal_trip a aswr:Miss ;
+        aswr:missPass "temporal" ;
+        aswr:missClass "floor" ;
+        aswr:missError "both models exhausted: src-1: regions must have 1..3; src-7: regions must have 1..3; src-8: regions must have 1..3; src-19: regions must have 1..3; src-21: regions must have 1..3; src-23: regions must have 1..3; src-32: regions must have 1..3; src-34: regions must have 1..3; src-37: regions must hav" ;
+        aswr:missModel "openai/gpt-5.6-luna" ;
+        aswr:tripOutcome "exhausted" ;
+        aswr:tripFallbackModel "anthropic/claude-sonnet-5" ;
+        aswr:missScope narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Miss_1MvpV2ConcisionOneProductRulings_value_trip a aswr:Miss ;
+        aswr:missPass "value" ;
+        aswr:missClass "floor" ;
+        aswr:missError "0 of 141 segments marked" ;
+        aswr:missModel "openai/gpt-5.6-luna" ;
+        aswr:tripFloor "marked_zero" ;
+        aswr:tripRatio "0.0000"^^xsd:decimal ;
+        aswr:tripOutcome "fallback-failed" ;
+        aswr:tripFallbackModel "anthropic/claude-sonnet-5" ;
+        aswr:missScope narr:Sample_1MvpV2ConcisionOneProductRulings ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213829Z_dim_affect a prov:Activity ;
+        aswr:runPass "dim.affect" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/dim.affect.json" ;
+        prov:generated narr:VecAffect_1MvpV2ConcisionOneProductRulings_84, narr:VecAffect_1MvpV2ConcisionOneProductRulings_87, narr:VecAffect_1MvpV2ConcisionOneProductRulings_63, narr:VecAffect_1MvpV2ConcisionOneProductRulings_67, narr:VecAffect_1MvpV2ConcisionOneProductRulings_75, narr:VecAffect_1MvpV2ConcisionOneProductRulings_97, narr:VecAffect_1MvpV2ConcisionOneProductRulings_98, narr:VecAffect_1MvpV2ConcisionOneProductRulings_131 ;
+        dct:isPartOf aswr:Tx_20260714T213829Z ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213829Z_dim_power a prov:Activity ;
+        aswr:runPass "dim.power" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/dim.power.json" ;
+        prov:generated narr:VecPower_1MvpV2ConcisionOneProductRulings_5, narr:VecPower_1MvpV2ConcisionOneProductRulings_9, narr:VecPower_1MvpV2ConcisionOneProductRulings_10, narr:VecPower_1MvpV2ConcisionOneProductRulings_15, narr:VecPower_1MvpV2ConcisionOneProductRulings_20, narr:VecPower_1MvpV2ConcisionOneProductRulings_31, narr:VecPower_1MvpV2ConcisionOneProductRulings_35, narr:VecPower_1MvpV2ConcisionOneProductRulings_58, narr:VecPower_1MvpV2ConcisionOneProductRulings_59, narr:VecPower_1MvpV2ConcisionOneProductRulings_65, narr:VecPower_1MvpV2ConcisionOneProductRulings_73, narr:VecPower_1MvpV2ConcisionOneProductRulings_75, narr:VecPower_1MvpV2ConcisionOneProductRulings_78, narr:VecPower_1MvpV2ConcisionOneProductRulings_82, narr:VecPower_1MvpV2ConcisionOneProductRulings_93, narr:VecPower_1MvpV2ConcisionOneProductRulings_95, narr:VecPower_1MvpV2ConcisionOneProductRulings_109, narr:VecPower_1MvpV2ConcisionOneProductRulings_113, narr:VecPower_1MvpV2ConcisionOneProductRulings_117, narr:VecPower_1MvpV2ConcisionOneProductRulings_120, narr:VecPower_1MvpV2ConcisionOneProductRulings_123, narr:VecPower_1MvpV2ConcisionOneProductRulings_131 ;
+        dct:isPartOf aswr:Tx_20260714T213829Z ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213829Z_dim_register a prov:Activity ;
+        aswr:runPass "dim.register" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/dim.register.json" ;
+        prov:generated narr:VecRegister_1MvpV2ConcisionOneProductRulings_8, narr:VecRegister_1MvpV2ConcisionOneProductRulings_15, narr:VecRegister_1MvpV2ConcisionOneProductRulings_22, narr:VecRegister_1MvpV2ConcisionOneProductRulings_31, narr:VecRegister_1MvpV2ConcisionOneProductRulings_48, narr:VecRegister_1MvpV2ConcisionOneProductRulings_56, narr:VecRegister_1MvpV2ConcisionOneProductRulings_63, narr:VecRegister_1MvpV2ConcisionOneProductRulings_65, narr:VecRegister_1MvpV2ConcisionOneProductRulings_67, narr:VecRegister_1MvpV2ConcisionOneProductRulings_68, narr:VecRegister_1MvpV2ConcisionOneProductRulings_73, narr:VecRegister_1MvpV2ConcisionOneProductRulings_75, narr:VecRegister_1MvpV2ConcisionOneProductRulings_84, narr:VecRegister_1MvpV2ConcisionOneProductRulings_87, narr:VecRegister_1MvpV2ConcisionOneProductRulings_93, narr:VecRegister_1MvpV2ConcisionOneProductRulings_103, narr:VecRegister_1MvpV2ConcisionOneProductRulings_109, narr:VecRegister_1MvpV2ConcisionOneProductRulings_113, narr:VecRegister_1MvpV2ConcisionOneProductRulings_117, narr:VecRegister_1MvpV2ConcisionOneProductRulings_120, narr:VecRegister_1MvpV2ConcisionOneProductRulings_123, narr:VecRegister_1MvpV2ConcisionOneProductRulings_131, narr:VecRegister_1MvpV2ConcisionOneProductRulings_140 ;
+        dct:isPartOf aswr:Tx_20260714T213829Z ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213829Z_dim_relational a prov:Activity ;
+        aswr:runPass "dim.relational" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/dim.relational.json" ;
+        prov:generated narr:DirRelational_TwoSurfacesOneSystem, narr:DirRelational_QueueJumpByNecessity, narr:DirRelational_GatingAsConsequence, narr:DirRelational_CostThresholdReshapesProduct, narr:DirRelational_AttendanceGrantsAccess, narr:VecRelational_1MvpV2ConcisionOneProductRulings_5, narr:VecRelational_1MvpV2ConcisionOneProductRulings_10, narr:VecRelational_1MvpV2ConcisionOneProductRulings_11, narr:VecRelational_1MvpV2ConcisionOneProductRulings_65, narr:VecRelational_1MvpV2ConcisionOneProductRulings_68, narr:VecRelational_1MvpV2ConcisionOneProductRulings_9, narr:VecRelational_1MvpV2ConcisionOneProductRulings_15, narr:VecRelational_1MvpV2ConcisionOneProductRulings_20, narr:VecRelational_1MvpV2ConcisionOneProductRulings_35, narr:VecRelational_1MvpV2ConcisionOneProductRulings_58, narr:VecRelational_1MvpV2ConcisionOneProductRulings_59, narr:VecRelational_1MvpV2ConcisionOneProductRulings_113, narr:VecRelational_1MvpV2ConcisionOneProductRulings_123, narr:VecRelational_1MvpV2ConcisionOneProductRulings_122, narr:VecRelational_1MvpV2ConcisionOneProductRulings_16, narr:VecRelational_1MvpV2ConcisionOneProductRulings_17, narr:VecRelational_1MvpV2ConcisionOneProductRulings_18, narr:VecRelational_1MvpV2ConcisionOneProductRulings_19, narr:VecRelational_1MvpV2ConcisionOneProductRulings_27, narr:VecRelational_1MvpV2ConcisionOneProductRulings_93, narr:VecRelational_1MvpV2ConcisionOneProductRulings_95, narr:VecRelational_1MvpV2ConcisionOneProductRulings_101, narr:VecRelational_1MvpV2ConcisionOneProductRulings_124, narr:VecRelational_1MvpV2ConcisionOneProductRulings_34, narr:VecRelational_1MvpV2ConcisionOneProductRulings_97, narr:VecRelational_1MvpV2ConcisionOneProductRulings_109, narr:VecRelational_1MvpV2ConcisionOneProductRulings_110, narr:VecRelational_1MvpV2ConcisionOneProductRulings_40, narr:VecRelational_1MvpV2ConcisionOneProductRulings_48, narr:VecRelational_1MvpV2ConcisionOneProductRulings_120, narr:VecRelational_1MvpV2ConcisionOneProductRulings_96, narr:VecRelational_1MvpV2ConcisionOneProductRulings_87, narr:VecRelational_1MvpV2ConcisionOneProductRulings_103, narr:VecRelational_1MvpV2ConcisionOneProductRulings_107, narr:VecRelational_1MvpV2ConcisionOneProductRulings_117, narr:VecRelational_1MvpV2ConcisionOneProductRulings_121, narr:VecRelational_1MvpV2ConcisionOneProductRulings_63 ;
+        dct:isPartOf aswr:Tx_20260714T213829Z ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213829Z_dim_style a prov:Activity ;
+        aswr:runPass "dim.style" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/dim.style.json" ;
+        prov:generated narr:DirStyle_RendersNotBlueprints, narr:VecStyle_1MvpV2ConcisionOneProductRulings_8, narr:VecStyle_1MvpV2ConcisionOneProductRulings_16, narr:VecStyle_1MvpV2ConcisionOneProductRulings_17, narr:VecStyle_1MvpV2ConcisionOneProductRulings_18, narr:VecStyle_1MvpV2ConcisionOneProductRulings_19, narr:VecStyle_1MvpV2ConcisionOneProductRulings_15, narr:VecStyle_1MvpV2ConcisionOneProductRulings_65, narr:VecStyle_1MvpV2ConcisionOneProductRulings_5, narr:VecStyle_1MvpV2ConcisionOneProductRulings_67, narr:VecStyle_1MvpV2ConcisionOneProductRulings_68, narr:VecStyle_1MvpV2ConcisionOneProductRulings_70, narr:VecStyle_1MvpV2ConcisionOneProductRulings_75, narr:VecStyle_1MvpV2ConcisionOneProductRulings_79, narr:VecStyle_1MvpV2ConcisionOneProductRulings_80, narr:VecStyle_1MvpV2ConcisionOneProductRulings_81, narr:VecStyle_1MvpV2ConcisionOneProductRulings_83, narr:VecStyle_1MvpV2ConcisionOneProductRulings_87, narr:VecStyle_1MvpV2ConcisionOneProductRulings_88, narr:VecStyle_1MvpV2ConcisionOneProductRulings_93, narr:VecStyle_1MvpV2ConcisionOneProductRulings_97, narr:VecStyle_1MvpV2ConcisionOneProductRulings_109, narr:VecStyle_1MvpV2ConcisionOneProductRulings_126, narr:VecStyle_1MvpV2ConcisionOneProductRulings_31, narr:VecStyle_1MvpV2ConcisionOneProductRulings_57, narr:VecStyle_1MvpV2ConcisionOneProductRulings_62 ;
+        dct:isPartOf aswr:Tx_20260714T213829Z ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213829Z_dim_value a prov:Activity ;
+        aswr:runPass "dim.value" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/dim.value.json" ;
+        dct:isPartOf aswr:Tx_20260714T213829Z ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213829Z_pass4 a prov:Activity ;
+        aswr:runPass "pass4" ;
+        aswr:draftedBy "openai/gpt-5.6-luna" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/pass4.json" ;
+        prov:generated narr:Conviction_1MvpV2ConcisionOneProductRulings_1, narr:Conviction_1MvpV2ConcisionOneProductRulings_3, narr:Conviction_1MvpV2ConcisionOneProductRulings_4, narr:Conviction_1MvpV2ConcisionOneProductRulings_5, narr:Conviction_1MvpV2ConcisionOneProductRulings_6, narr:Conviction_1MvpV2ConcisionOneProductRulings_7, narr:Conviction_1MvpV2ConcisionOneProductRulings_8, narr:Conviction_1MvpV2ConcisionOneProductRulings_9, narr:Conviction_1MvpV2ConcisionOneProductRulings_10, narr:Conviction_1MvpV2ConcisionOneProductRulings_11, narr:Conviction_1MvpV2ConcisionOneProductRulings_12, narr:Conviction_1MvpV2ConcisionOneProductRulings_14, narr:Conviction_1MvpV2ConcisionOneProductRulings_15, narr:Conviction_1MvpV2ConcisionOneProductRulings_16, narr:Conviction_1MvpV2ConcisionOneProductRulings_17, narr:Conviction_1MvpV2ConcisionOneProductRulings_18, narr:Conviction_1MvpV2ConcisionOneProductRulings_19, narr:Conviction_1MvpV2ConcisionOneProductRulings_20, narr:Conviction_1MvpV2ConcisionOneProductRulings_21, narr:Conviction_1MvpV2ConcisionOneProductRulings_22, narr:Conviction_1MvpV2ConcisionOneProductRulings_23, narr:Conviction_1MvpV2ConcisionOneProductRulings_25, narr:Conviction_1MvpV2ConcisionOneProductRulings_26, narr:Conviction_1MvpV2ConcisionOneProductRulings_27, narr:Conviction_1MvpV2ConcisionOneProductRulings_28, narr:Conviction_1MvpV2ConcisionOneProductRulings_29, narr:Conviction_1MvpV2ConcisionOneProductRulings_31, narr:Conviction_1MvpV2ConcisionOneProductRulings_34, narr:Conviction_1MvpV2ConcisionOneProductRulings_35, narr:Conviction_1MvpV2ConcisionOneProductRulings_36, narr:Conviction_1MvpV2ConcisionOneProductRulings_37, narr:Conviction_1MvpV2ConcisionOneProductRulings_40, narr:Conviction_1MvpV2ConcisionOneProductRulings_48, narr:Conviction_1MvpV2ConcisionOneProductRulings_49, narr:Conviction_1MvpV2ConcisionOneProductRulings_50, narr:Conviction_1MvpV2ConcisionOneProductRulings_52, narr:Conviction_1MvpV2ConcisionOneProductRulings_54, narr:Conviction_1MvpV2ConcisionOneProductRulings_56, narr:Conviction_1MvpV2ConcisionOneProductRulings_57, narr:Conviction_1MvpV2ConcisionOneProductRulings_58, narr:Conviction_1MvpV2ConcisionOneProductRulings_59, narr:Conviction_1MvpV2ConcisionOneProductRulings_60, narr:Conviction_1MvpV2ConcisionOneProductRulings_61, narr:Conviction_1MvpV2ConcisionOneProductRulings_63, narr:Conviction_1MvpV2ConcisionOneProductRulings_65, narr:Conviction_1MvpV2ConcisionOneProductRulings_67, narr:Conviction_1MvpV2ConcisionOneProductRulings_68, narr:Conviction_1MvpV2ConcisionOneProductRulings_70, narr:Conviction_1MvpV2ConcisionOneProductRulings_73, narr:Conviction_1MvpV2ConcisionOneProductRulings_75, narr:Conviction_1MvpV2ConcisionOneProductRulings_78, narr:Conviction_1MvpV2ConcisionOneProductRulings_82, narr:Conviction_1MvpV2ConcisionOneProductRulings_84, narr:Conviction_1MvpV2ConcisionOneProductRulings_86, narr:Conviction_1MvpV2ConcisionOneProductRulings_87, narr:Conviction_1MvpV2ConcisionOneProductRulings_91, narr:Conviction_1MvpV2ConcisionOneProductRulings_93, narr:Conviction_1MvpV2ConcisionOneProductRulings_95, narr:Conviction_1MvpV2ConcisionOneProductRulings_99, narr:Conviction_1MvpV2ConcisionOneProductRulings_103, narr:Conviction_1MvpV2ConcisionOneProductRulings_104, narr:Conviction_1MvpV2ConcisionOneProductRulings_107, narr:Conviction_1MvpV2ConcisionOneProductRulings_109, narr:Conviction_1MvpV2ConcisionOneProductRulings_113, narr:Conviction_1MvpV2ConcisionOneProductRulings_115, narr:Conviction_1MvpV2ConcisionOneProductRulings_117, narr:Conviction_1MvpV2ConcisionOneProductRulings_120, narr:Conviction_1MvpV2ConcisionOneProductRulings_122, narr:Conviction_1MvpV2ConcisionOneProductRulings_123, narr:Conviction_1MvpV2ConcisionOneProductRulings_125, narr:Conviction_1MvpV2ConcisionOneProductRulings_127, narr:Conviction_1MvpV2ConcisionOneProductRulings_131, narr:Conviction_1MvpV2ConcisionOneProductRulings_140 ;
+        dct:isPartOf aswr:Tx_20260714T213829Z ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213829Z_pass5 a prov:Activity ;
+        aswr:runPass "pass5" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/pass5.json" ;
+        prov:generated narr:Narrative_OneProductUnifiedSurfaces, narr:Narrative_ResolutionLayersReadTimeComposition, narr:Narrative_RendersOverConstructionFidelity, narr:Narrative_IntegrationGatingByBetaUserImpact, narr:Narrative_AttendanceGrantsAccess, narr:Narrative_ExtractionCostGatesConversationalMode, narr:Narrative_StyleguideBeforeProduct ;
+        dct:isPartOf aswr:Tx_20260714T213829Z ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+
+    aswr:Run_20260714T213829Z_position a prov:Activity ;
+        aswr:runPass "position" ;
+        aswr:draftedBy "anthropic/claude-sonnet-5" ;
+        aswr:artifact "aswritten/runs:runs/7827caae28da/2026-07-14-1-mvp-v2-concision-one-product-rulings/position.json" ;
+        prov:generated narr:Position_MVPFrontEndUnification, narr:Position_ExtractionResolutionFidelity, narr:Position_TheatreAccessAndAttendanceModel, narr:Position_BetaIntegrationGatingPriority, narr:Position_StyleguideFirstComponentDiscipline, narr:Position_ConversationSurfaceDesignLanguage, narr:Position_FrontChannelRoutingArchitecture, narr:Position_VoiceProfilesFlockingScopeAmendment, narr:Position_ExtractionCostAsProductConstraint, narr:Position_MVPFidelityLevel ;
+        dct:isPartOf aswr:Tx_20260714T213829Z ;
+        prov:generatedAtTime "2026-07-14T21:38:29Z"^^xsd:dateTime .
+  }
+}
