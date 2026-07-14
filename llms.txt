@@ -123,7 +123,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [PlainLanguage](hub-PlainLanguage.html): This hub gathers observations of Scarlet's plain-language style across founder-facing documents. The dominant thread is 
 - [ProblemStakes](hub-ProblemStakes.html): This hub frames the stakes of the problem the pitch addresses, and across its children one rhetorical move dominates: op
 - [PunctuationTypography](hub-PunctuationTypography.html): This hub catalogs the typographic and punctuation conventions defining the project's prose architecture. The em-dash has
-- [RegisterFormality](hub-RegisterFormality.html): This hub collects observations about register and formality across the corpus. The dominant pattern is mixed register: s
+- [RegisterFormality](hub-RegisterFormality.html): This hub collects register and formality observations spanning the full range from zero-hedging declarative to self-crit
 - [ResonanceUse](hub-ResonanceUse.html): This hub gathers how *resonant framing* gets used — the rhetorical and structural devices that make dense thinking land.
 - [RhetoricalDevices](hub-RhetoricalDevices.html): This hub gathers observed rhetorical devices in the source document, spanning structure, contrast, metaphor, and repetit
 - [RhetoricalQuestion](hub-RhetoricalQuestion.html): This hub collects style observations on the rhetorical question as a recurring device across the org's writing. The domi
