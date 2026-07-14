@@ -69,7 +69,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [PackagingEntitlement](hub-PackagingEntitlement.html): This hub gathers how product access is packaged and what clients forfeit. The mainline, settled 2026-02-11, is a no-free
 - [PackagingPricing](hub-PackagingPricing.html): Pricing strategy has moved from flat per-repo models toward a multi-tier structure that distinguishes between self-serve
 - [PersonasJTBD](hub-PersonasJTBD.html): The persona and Job-to-be-Done (JTBD) model has evolved from a four-archetype set—Knowledge Packager, Trust Seeker, Tink
-- [PositioningThesis](hub-PositioningThesis.html): This hub gathers how aswritten.ai positions itself, narrating an evolution rather than a settled label. The mainline ref
+- [PositioningThesis](hub-PositioningThesis.html): This hub tracks the evolution of aswritten.ai’s strategic identity, centering on the shift from a tool-based narrative t
 - [PrimaryActors](hub-PrimaryActors.html): This hub gathers the cast of who the product is *for* and *with* — and the children do not agree on a single primary act
 - [Primitives](hub-Primitives.html): This hub gathers the write primitives and structural definitions underlying the aswritten knowledge graph. The keystone 
 - [Process](hub-Process.html): A June 12 process-redesign session whose stated aim was \"I would like to improve the mess\", structured as correcting f
