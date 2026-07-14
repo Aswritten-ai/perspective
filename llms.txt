@@ -124,7 +124,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [ProblemStakes](hub-ProblemStakes.html): This hub frames the stakes of the problem the pitch addresses, and across its children one rhetorical move dominates: op
 - [PunctuationTypography](hub-PunctuationTypography.html): This hub catalogs the typographic and punctuation conventions defining the project's prose architecture. The em-dash has
 - [RegisterFormality](hub-RegisterFormality.html): This hub collects register and formality observations spanning the full range from zero-hedging declarative to self-crit
-- [ResonanceUse](hub-ResonanceUse.html): This hub gathers how *resonant framing* gets used — the rhetorical and structural devices that make dense thinking land.
+- [ResonanceUse](hub-ResonanceUse.html): This hub tracks the mechanics of resonant framing, focusing on how dense, complex information is structured to land with
 - [RhetoricalDevices](hub-RhetoricalDevices.html): This hub gathers observed rhetorical devices in the source document, spanning structure, contrast, metaphor, and repetit
 - [RhetoricalQuestion](hub-RhetoricalQuestion.html): This hub tracks the rhetorical question as a primary structural and persuasive device. The opening hook remains a standa
 - [Rubric_Accuracy](hub-Rubric_Accuracy.html): This hub tracks accuracy assessments across the corpus, evaluating factual precision, named-entity integrity, and citati
