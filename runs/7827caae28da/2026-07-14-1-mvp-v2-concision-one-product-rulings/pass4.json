@@ -1,0 +1,772 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-1",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "called the next phase: strip everything down to core moments and roadmap the rest",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The assertive framing records an operational next phase rather than an open possibility.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-3",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "did not stay open",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "This is an unhedged characterization, but it reports a condition rather than performing the settlement itself.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-4",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "produced rulings",
+      "kind" : "performed-act"
+    }, {
+      "quote" : "amending the July 11 record",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The segment explicitly records rulings and amendments as settled outcomes.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-5",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "The headline settlement",
+      "kind" : "performed-act"
+    }, {
+      "quote" : "is not a second product or an experiment",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The settlement framing and declarative formulation perform a product decision.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-6",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "the theatre becomes the graph viewer",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The core assertion is firm, but the segment is editorially rendered through another speaker rather than directly performed by the principal.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-7",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "The work now is to",
+      "kind" : "commitment-marker"
+    }, {
+      "quote" : "strip things down to core moments and roadmap the rest",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The present-tense task framing commits the work to a defined course.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-8",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "we don't need the whole thing designed to construction members in CAD",
+      "kind" : "plain-assertion"
+    }, {
+      "quote" : "we need to create a set of renders",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The contrast is strongly stated and action-oriented, but remains a design rationale rather than an explicit ratification.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-9",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "We need to define",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The directive states a required product-strategy task.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-10",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "We need to clearly unify",
+      "kind" : "commitment-marker"
+    }, {
+      "quote" : "these are not two products",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The directive and categorical distinction settle the unification requirement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-11",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "are not a separate codebase",
+      "kind" : "plain-assertion"
+    }, {
+      "quote" : "extensions of a single product",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The position is categorical but is not itself framed as a performed ruling.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-12",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "does not need to be finished for demos",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "This is a plain, unhedged position, but not an explicit operational settlement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-14",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "More important than finished is",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The unhedged value judgment is firm, but remains a stated priority rather than a recorded decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-15",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "Simplify.",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The imperative is a direct commitment to a course of action.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-16",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "gates Escher",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The flat assertion carries conviction, but does not itself settle an action.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-17",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "gates Taylor testing",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The flat assertion is firm but descriptive rather than decision-performing.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-18",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "gates our org's secondary transcription path",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The unhedged statement is a committed claim about dependency, not a ratification.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-19",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "gate individual developer/entrepreneur testing/adoption",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The flat dependency claim is assertive but not itself a settled directive.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-20",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "must be proxies through front",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "“Must” establishes an operational rule.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-21",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "This is part of the enterprise sell",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The statement is unhedged but explanatory rather than a performed settlement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-22",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "One GitHub org = front inbox",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The compressed equation presents a settled mapping.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-23",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "Repo is switchable.",
+      "kind" : "plain-assertion"
+    }, {
+      "quote" : "Repo/ref is inferred from convo",
+      "kind" : "plain-assertion"
+    }, {
+      "quote" : "assumes that call's ref unless you say otherwise",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The segment specifies default operational behavior and an exception rule.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-25",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "We can certainly have unique GitHub-org@aswritten.ai",
+      "kind" : "intensifier"
+    }, {
+      "quote" : "maybe org+[org]@",
+      "kind" : "hedge"
+    } ],
+    "why" : "The committed proposal is softened by an explicit alternative, so it remains a claim.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-26",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "are easy",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The unhedged evaluation is firm but not a decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-27",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "is an enterprise/premium and US only feature",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The categorical description is assertive but descriptive.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-28",
+    "conviction" : "notion",
+    "evidence" : [ {
+      "quote" : "possible",
+      "kind" : "hedge"
+    } ],
+    "why" : "The fragment leaves the scope open rather than asserting a settled channel plan.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-29",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "Feed is required.",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "“Required” makes the product-scope inclusion operationally settled.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-31",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "must feel like a chat flow",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The directive establishes a non-optional design requirement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-34",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "is answered by an agent that authenticates",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The architecture is described without hedging, but not explicitly ratified in this segment.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-35",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "needs to cache across multiple replies",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "“Needs to” makes caching an implementation requirement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-36",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "loads a perspective that is just the memory",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The flat conditional behavior is asserted but not performed as a decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-37",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "are a feature",
+      "kind" : "plain-assertion"
+    }, {
+      "quote" : "should be rendered as CTA placeholders",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The statement is firm and recommends treatment, but does not explicitly record a settled ruling.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-40",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "I thought I decided",
+      "kind" : "epistemic-verb"
+    }, {
+      "quote" : "either collaborator only or public/explicit share",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The remembered decision is asserted, but “I thought” introduces epistemic uncertainty.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-48",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "would hugely simplify",
+      "kind" : "intensifier"
+    }, {
+      "quote" : "should be fine",
+      "kind" : "hedge"
+    }, {
+      "quote" : "We want them to be able to see depth",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The proposal has a committed core but includes an explicit uncertainty, so it remains a claim.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-49",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "is also related to",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The relation is stated plainly but is explanatory rather than settled.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-50",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "I want them to load a perspective",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The first-person desire commits to a direction but leaves it conditional on a future setup.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-52",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "better would be",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The comparative recommendation is firm enough to defend but not settled as a decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-54",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "is the voice profiles",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The relation is stated without hedging but is not a performed decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-56",
+    "conviction" : "notion",
+    "evidence" : [ {
+      "quote" : "maybe visible on select only?",
+      "kind" : "hedge"
+    }, {
+      "quote" : "Could be icons on the gutter side?",
+      "kind" : "hedge"
+    }, {
+      "quote" : "Need mocks for this",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "Multiple alternatives and a request for mocks show active exploration rather than settlement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-57",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "doesn't read like a conversation",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The direct usability judgment is unhedged but does not settle the remedy.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-58",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "We need to move commentary",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The directive commits commentary to the gutters.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-59",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "always just \"send\"",
+      "kind" : "intensifier"
+    } ],
+    "why" : "“Always” states a settled interaction rule.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-60",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "needs a designed home",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The requirement is firm, but the segment does not settle what that home will be.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-61",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "Filters are hidden",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "This is a plain observation rather than a performed decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-63",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "I really want to be able to message an agent somewhere",
+      "kind" : "intensifier"
+    } ],
+    "why" : "“Really want” strongly marks commitment, but expresses a desire rather than a settled product decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-65",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "This is the MVP product",
+      "kind" : "performed-act"
+    }, {
+      "quote" : "this is the front end that was never built",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The declarative formulation performs the unification settlement despite the opening hedge.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-67",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "arguably",
+      "kind" : "hedge"
+    } ],
+    "why" : "The answer is asserted but explicitly qualified, so it remains a claim.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-68",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "What we're doing is not providing a home for conversation with AI.",
+      "kind" : "plain-assertion"
+    }, {
+      "quote" : "We're providing a home for perspective",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The contrast defines the product's operating purpose in present-tense terms.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-70",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "We're always expecting primary source quotes",
+      "kind" : "intensifier"
+    } ],
+    "why" : "“Always” establishes a stable input rule.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-73",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "I'd argue",
+      "kind" : "epistemic-verb"
+    }, {
+      "quote" : "a huge noise reduction",
+      "kind" : "intensifier"
+    } ],
+    "why" : "The argument is strongly held but explicitly presented as an argument rather than a settlement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-75",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "the entire value of the product is that it doesn't do summary until read time",
+      "kind" : "intensifier"
+    }, {
+      "quote" : "why are we doing all this filter",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The core value claim is categorical, but the rhetorical question shows the speaker is arguing through the implication rather than recording a final ruling.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-78",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "is really a position",
+      "kind" : "intensifier"
+    }, {
+      "quote" : "at least potentially",
+      "kind" : "hedge"
+    } ],
+    "why" : "The assertion is strong but explicitly qualified by “potentially.”",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-82",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "drop all expressions that don't support a position",
+      "kind" : "commitment-marker"
+    }, {
+      "quote" : "That's basically the filter that we want.",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The directive and concluding formulation settle the intended filter.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-84",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "I think that's a really elegant way to do that.",
+      "kind" : "epistemic-verb"
+    }, {
+      "quote" : "I like that a lot.",
+      "kind" : "intensifier"
+    } ],
+    "why" : "Strong approval is present, but the segment is evaluative rather than an explicit decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-86",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "I like this message-based graph browser.",
+      "kind" : "plain-assertion"
+    }, {
+      "quote" : "I think it's much more effective",
+      "kind" : "epistemic-verb"
+    }, {
+      "quote" : "much more in line",
+      "kind" : "intensifier"
+    } ],
+    "why" : "The repeated approval and comparison support a firm claim, but not a ratified decision in this segment.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-87",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "are not included. Not included in the product itself.",
+      "kind" : "commitment-marker"
+    }, {
+      "quote" : "we can include them in a one-off produced and brand-styled artifact slash fully comped and live page",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The declarative cut and replacement demo treatment explicitly settle scope.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-91",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "required for MVP, but not for demo",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The contrast records a settled requirement boundary.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-93",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "we need to be in the cents or tens of cents per message",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The cost target is firmly stated, but the segment presents pressure and conditions rather than a performed ruling.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-95",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "changes our cost profile hugely",
+      "kind" : "intensifier"
+    }, {
+      "quote" : "Maybe that means",
+      "kind" : "hedge"
+    } ],
+    "why" : "The first consequence is emphatic, but “Maybe” makes the business implication exploratory.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-99",
+    "conviction" : "notion",
+    "evidence" : [ {
+      "quote" : "Maybe that actually does become a single path",
+      "kind" : "hedge"
+    }, {
+      "quote" : "does that work in the world of digest?",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The proposed path is explicitly tentative and followed by an unresolved feasibility question.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-103",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "extract the whole transcript; the memory becomes a generated view",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The numbered ruling and declarative formulation perform a settled extraction decision.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-104",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "I'm pretty sure about this",
+      "kind" : "epistemic-verb"
+    }, {
+      "quote" : "we want to extract the whole transcript",
+      "kind" : "commitment-marker"
+    }, {
+      "quote" : "We may start with the positions",
+      "kind" : "hedge"
+    } ],
+    "why" : "The speaker strongly favors the ruling but explicitly leaves the starting display tentative.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-107",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "attendance grants the page",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The numbered ruling states a settled access primitive.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-109",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "yes, that.",
+      "kind" : "performed-act"
+    }, {
+      "quote" : "The answer is:",
+      "kind" : "commitment-marker"
+    }, {
+      "quote" : "For now, we're going to say it's fine.",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The response ratifies the proposal and explicitly records a provisional operational decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-113",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "should be built with the styleguide components",
+      "kind" : "commitment-marker"
+    }, {
+      "quote" : "should be added and reviewed in the styleguide first and then reused",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The directive specifies a required design workflow.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-115",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "Two amendments to the July 11 MVP-cut record.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The heading explicitly records amendments to a prior decision record.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-117",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "v2 roadmapped in product",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The declarative scope statement fixes demo treatment and future product placement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-120",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "full depth for now",
+      "kind" : "commitment-marker"
+    }, {
+      "quote" : "only send it to people i want to see full depth",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The statement sets the current sharing rule and recipient boundary.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-122",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "Teams jumps the integration queue.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The numbered ruling performs an integration-priority decision.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-123",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "does need to jump the queue, for sure",
+      "kind" : "intensifier"
+    }, {
+      "quote" : "I'd like to get that done",
+      "kind" : "commitment-marker"
+    }, {
+      "quote" : "this week",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The directive is emphatic and time-bound, making the priority operational.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-125",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "The conversation surface's design language.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "The numbered ruling heading records a settled design domain.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-127",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "the direction ratified",
+      "kind" : "performed-act"
+    }, {
+      "quote" : "comps are the next step",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "“Ratified” explicitly records settlement and the next action.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-131",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "definitely want and need to support",
+      "kind" : "intensifier"
+    }, {
+      "quote" : "need to support things spread out over the document",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The intensifier and “need” make this a firm implementation requirement.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-140",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "the loop failure mode itself is now build input",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The unhedged statement is firm but editorially describes an implication rather than performing a decision.",
+    "reported" : false
+  } ],
+  "unmarked" : [ "src-2", "src-13", "src-24", "src-30", "src-32", "src-33", "src-38", "src-39", "src-41", "src-42", "src-43", "src-44", "src-45", "src-47", "src-51", "src-53", "src-55", "src-62", "src-64", "src-66", "src-69", "src-71", "src-72", "src-74", "src-76", "src-77", "src-79", "src-80", "src-81", "src-83", "src-85", "src-88", "src-89", "src-90", "src-92", "src-94", "src-96", "src-97", "src-98", "src-100", "src-101", "src-102", "src-105", "src-106", "src-108", "src-110", "src-111", "src-112", "src-114", "src-116", "src-118", "src-119", "src-121", "src-124", "src-126", "src-128", "src-129", "src-130", "src-132", "src-133", "src-134", "src-135", "src-136", "src-137", "src-138", "src-139", "src-141", "src-142" ]
+}
