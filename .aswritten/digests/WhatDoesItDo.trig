@@ -4,9 +4,11 @@
 GRAPH <https://aswritten.ai/narrative#Digest_WhatDoesItDo> {
   <https://aswritten.ai/narrative#Digest_WhatDoesItDo> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#WhatDoesItDo> ;
-    narr:childCount "22"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub answers \"what does it do\" in two registers that pull in different directions. The product spine: As Written is a [git-native organizational memory tool](narr:Observation_AsWrittenProduct) that compiles a worldview graph and exposes MCP tools; upstream it [extracts undocumented expert knowledge](narr:Observation_WhatDoesItDo_1) through conversational interviews; downstream it proves itself through a three-beat demo — [cold delegation](narr:Observation_Beat1_ColdDelegation) (real work with no briefing), a [citation layer](narr:Observation_Beat2_CitationLayer) tracing claims to conversations, and [gap honesty](narr:Observation_Beat3_GapHonesty) (it says what it doesn't know and who to ask). The demo's emotional core is the [user querying their own worldview](narr:Narrative_MemoryAsWitness) in real time. The V1 interface thesis: [MCP endpoint plus notifications, GitHub as infrastructure not interface](narr:Obs_V1UXVision), with [ambient capture inside Claude Code](narr:StyleObs_AmbientQuote). A large second register is style/craft analysis of how the pitch itself is written — bold beat markers, imperative call-flow, extraction-vs-retrieve verb discipline. The two registers (what the product does vs. how the pitch performs) coexist here rather than resolve.""" ;
+    narr:childCount "20"^^xsd:integer ;
+    narr:generatedFrom "59bd5ed36ac352bb25334d8e26ac6e9f09b65516" ;
+    narr:narration """This hub maps the functional and rhetorical architecture of As Written, a [git-native organizational memory tool](narr:Observation_AsWrittenProduct) designed to [extract undocumented expert knowledge](narr:Observation_WhatDoesItDo_1) into a version-controlled worldview. The product’s value proposition is validated through a [three-beat demo](narr:StyleObs_BoldBeats) that moves from [cold delegation](narr:Observation_Beat1_ColdDelegation) to [citation-backed truth](narr:Observation_Beat2_CitationLayer) and finally [epistemic gap honesty](narr:Observation_Beat3_GapHonesty). This process centers on the user [querying their own worldview](narr:Narrative_MemoryAsWitness) in real time. 
+
+Beyond the product, the hub documents a rigorous [rhetorical style](narr:StyleObs_7) characterized by [imperative, direct-address framing](narr:StyleObs_AmbientQuote) and [compressed, arrow-chained process flows](narr:StyleObs_ArrowChainFlow). While the [V1 UX vision](narr:Obs_V1UXVision) prioritizes GitHub as infrastructure, there remains an acknowledged [gap in explaining the actual organizational workflow](narr:Obs_HowItWorksGap) beyond the technical architecture. The narrative persists as a dual-track record: the product’s mechanics and the deliberate, high-conviction performance of the pitch itself.""" ;
     narr:covers <https://aswritten.ai/narrative#Narrative_MemoryAsWitness> ;
     narr:covers <https://aswritten.ai/narrative#Obs_HowItWorksGap> ;
     narr:covers <https://aswritten.ai/narrative#Obs_V1UXVision> ;
@@ -20,26 +22,19 @@ GRAPH <https://aswritten.ai/narrative#Digest_WhatDoesItDo> {
     narr:covers <https://aswritten.ai/narrative#Observation_WhatDoesItDo_1> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_7> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_AmbientQuote> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_Analogy_Citations> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ArrowChainFlow> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BoldBeats> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_BulletedConsequences> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_DontGiveThemAnOut> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_ExtractionPlainLanguage> ;
-    narr:covers <https://aswritten.ai/narrative#StyleObs_ImperativeFlow> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_Metaphor_CollapseDistinction> ;
     narr:covers <https://aswritten.ai/narrative#StyleObs_VerbChoice_Extract> ;
-    narr:keyPhrase [ narr:text "As Written: git-native organizational memory tool that compiles a worldview graph and exposes MCP tools for content introspection and generation." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_AsWrittenProduct> ] ;
-    narr:keyPhrase [ narr:text "aswritten extracts undocumented knowledge locked in senior experts' heads through conversational AI interviews, creating version-controlled organizational worldview." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_WhatDoesItDo_1> ] ;
-    narr:keyPhrase [ narr:text "Scarlet's articulated V1 UX: MCP endpoint + notifications; GitHub is infrastructure, not interface." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_V1UXVision> ] ;
-    narr:keyPhrase [ narr:text "Ask the AI to do real work that would normally require an hour of briefing." ; narr:phraseSource <https://aswritten.ai/narrative#Observation_Beat1_ColdDelegation> ] ;
     narr:keyPhrase [ narr:text "the application has the problem (clear), the benefit (clear), and the tech architecture (clear) — but is missing how the actual workflow within an organization works." ; narr:phraseSource <https://aswritten.ai/narrative#Obs_HowItWorksGap> ] ;
+    narr:keyPhrase [ narr:text "Don't give them an out before they need one." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_DontGiveThemAnOut> ] ;
     narr:keyPhrase [ narr:text "You don't have to open a new tool. You're just using Claude Code... And in the middle of your current work, it's like, you should save that" ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_AmbientQuote> ] ;
-    narr:variation [ narr:text "Explicit self-documented gap: problem, benefit, and architecture are clear, but the human-language organizational workflow is missing — the one thing the hub does not yet answer." ; narr:over <https://aswritten.ai/narrative#Obs_HowItWorksGap> ] ;
-    narr:variation [ narr:text "Two competing answers to 'what does it do': upstream knowledge extraction vs. downstream cold-delegation work product — the same tool framed from opposite ends." ; narr:over <https://aswritten.ai/narrative#Observation_WhatDoesItDo_1> ; narr:over <https://aswritten.ai/narrative#Observation_Beat1_ColdDelegation> ] ;
-    narr:variation [ narr:text "Present vs. future: 'Remember' is introduced as a concept, not a live feature — bridging to a later call rather than something it does today." ; narr:over <https://aswritten.ai/narrative#Observation_RememberAsConcept> ] ;
-    narr:variation [ narr:text "A large cluster of children are not product claims at all but style/craft analysis of how the pitch is written — a different axis from 'what it does'." ; narr:over <https://aswritten.ai/narrative#StyleObs_BoldBeats> ; narr:over <https://aswritten.ai/narrative#StyleObs_ImperativeFlow> ; narr:over <https://aswritten.ai/narrative#StyleObs_VerbChoice_Extract> ] ;
-    narr:variation [ narr:text "Interface positioning is a deliberate, potentially contestable stance: GitHub demoted to infrastructure, MCP + notifications as the real surface." ; narr:over <https://aswritten.ai/narrative#Obs_V1UXVision> ] ;
-    narr:variation [ narr:text "Prior manual precedent at Vouch — a hand-built 'narrative source of truth' as steering vectors — is what the product now automates." ; narr:over <https://aswritten.ai/narrative#Observation_VouchSSoT> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "This is my life's work." ; narr:phraseSource <https://aswritten.ai/narrative#StyleObs_7> ] ;
+    narr:variation [ narr:text "The product is framed as a conceptual 'remember' feature rather than a live tool in early calls." ; narr:over <https://aswritten.ai/narrative#Observation_RememberAsConcept> ] ;
+    narr:variation [ narr:text "The workflow relies on manual narrative seeding (Vouch) as a precursor to automated extraction." ; narr:over <https://aswritten.ai/narrative#Observation_VouchSSoT> ] ;
+    narr:variation [ narr:text "The pitch employs 'quality gate theater' as a dismissive framing of competing process patterns." ; narr:over <https://aswritten.ai/narrative#StyleObs_7> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
