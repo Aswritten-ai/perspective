@@ -1,0 +1,151 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-1",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "Finding recorded 2026-07-14 while instrumenting the multipass extraction engine (task-437).",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "A flat factual assertion supports a claim, but no settling or permanence marker raises it to decision or principle.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-2",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "57% of the wall clock (575 of 1,002 seconds) was time with no LLM call in flight",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The measured result is asserted plainly and precisely, but it does not perform a decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-3",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "The three inter-stage gaps were navigate-to-resolve at 336 seconds, resolve-to-position at 109 seconds, and position-to-narrative at 130 seconds.",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The breakdown is presented as a firm report, yet contains no ratification or operational commitment.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-4",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "The largest contributor identified and reproduced: a self-invalidating graph cache.",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The reproduced diagnosis is asserted as established, but no decision or enduring principle is performed.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-5",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "The engine's graph service keys its corpus cache on owner, repo, ref, and the .aswritten tree sha.",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "This is an unhedged technical assertion, supporting a claim rather than a settled directive or principle.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-6",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "Both the consult prefetch and the navigator's post-agent reads were building the graph against the run's own work branch.",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The causal account is stated plainly, but the segment does not record a settling act.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-7",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "the navigator's read missed the warm cache and rebuilt the entire 64,000-quad corpus",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The detailed causal assertion is strongly stated, but it remains an analysis rather than a performed decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-8",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "Scarlet's ruling: \"the base ref is correct.\"",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "Although labeled a ruling, the quoted wording itself is a firm position; the segment does not directly perform Scarlet's declarative ratification.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-9",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "the base ref is correct.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "Scarlet's direct declarative settles the position in the document, making it decision-grade rather than merely a claim.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-10",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "now read the base ref the run was cut from, not the run's own freshly-committed work branch",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The operational 'now ... not ...' rule records an implemented settling of how the reads are performed.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-11",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "The navigator consults the prior perspective; the document under extraction reaches the engine through pass one, never through these reads.",
+      "kind" : "intensifier"
+    } ],
+    "why" : "The unqualified explanation and 'never' support a firm claim, but the segment does not itself ratify an operational decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-12",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "can no longer invalidate it",
+      "kind" : "commitment-marker"
+    } ],
+    "why" : "The operational 'can no longer' formulation records a settled system guarantee, though it is not an identity-level principle.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-13",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "The dead time is also coupled to the prompt cache.",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "This is a plain causal assertion without a settling or permanence marker.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-14",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "the 336-second gap already exceeds it",
+      "kind" : "intensifier"
+    }, {
+      "quote" : "silently revert the cost with no error",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The emphatic causal warning is asserted firmly, but it argues a consequence rather than recording a decision.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-15",
+    "conviction" : "decision",
+    "evidence" : [ {
+      "quote" : "approved the one-hour cache TTL",
+      "kind" : "performed-act"
+    } ],
+    "why" : "Approval is a performed settling act that records the cache TTL as decided; it is not a broader bedrock principle.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-16",
+    "conviction" : "claim",
+    "evidence" : [ {
+      "quote" : "The remaining inter-stage time is GitHub-IO and n8n-navigator-round-trip bound.",
+      "kind" : "plain-assertion"
+    } ],
+    "why" : "The remaining diagnosis is stated plainly, but no operational settling or permanence is expressed.",
+    "reported" : false
+  } ],
+  "unmarked" : [ ]
+}
