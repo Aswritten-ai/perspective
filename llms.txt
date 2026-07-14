@@ -90,7 +90,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Signals](hub-Signals.html): A mixed gather of market, product, and self-observation signals — no single arc, several distinct registers. The stronge
 - [SolutionArchetypes](hub-SolutionArchetypes.html): This hub gathers solution archetypes and target use cases organized around a compiled organizational worldview that down
 - [StackOverview](hub-StackOverview.html): This hub gathers the As Written / Scarlet Dame technical-and-conceptual stack across two registers. The conceptual mainl
-- [Strategy](hub-Strategy.html): This hub gathers the strategic thesis that narrative is an organizational operating system — a framework embedding narra
+- [Strategy](hub-Strategy.html): This hub defines the narrative as an organizational operating system thesis, positioning the worldview as the primary pr
 - [StrategyOverview](hub-StrategyOverview.html): This hub gathers the strategy behind the strategic rebrand from storyBASE/witness to aswritten.ai, plus the foundational
 - [SystemTopology](hub-SystemTopology.html): This hub gathers how aswritten's system is structured across infrastructure, tooling, and perspective. The mainline is a
 - [TechnicalExplainers](hub-TechnicalExplainers.html): This hub gathers material on how technical concepts get *explained* — both a design decision and the deck/communication 
