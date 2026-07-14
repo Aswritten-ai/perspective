@@ -145,7 +145,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [StyleMetrics](hub-StyleMetrics.html): This hub gathers per-document style and readability metrics across the org's corpus, computed on shared axes: active-voi
 - [Tagline](hub-Tagline.html): This hub gathers candidate taglines and brand-voice observations for aswritten.ai, whose name puns Latin *sic* (as writt
 - [TerminologyControl](hub-TerminologyControl.html): This hub maintains the project's controlled vocabulary, establishing a canonical lexicon for narrative architecture and 
-- [ToneAuthoritative](hub-ToneAuthoritative.html): This hub tracks the authoritative register defining aswritten’s internal documentation. The style is characterized by ac
+- [ToneAuthoritative](hub-ToneAuthoritative.html): The authoritative register of aswritten.ai is defined by a deliberate, agent-first voice that treats epistemological ter
 - [ToneDirectPersonal](hub-ToneDirectPersonal.html): This hub gathers stylistic observations about a direct, second-person, personal voice running through the product's mark
 - [ToneVoice](hub-ToneVoice.html): This hub gathers observations of a single brand voice across registers. The dominant mode is confident and agent-centere
 - [VerbChoice](hub-VerbChoice.html): This hub gathers style observations on verb choice across aswritten.ai's pitch and messaging. The dominant pattern is a 
