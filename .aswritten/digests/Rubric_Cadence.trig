@@ -4,34 +4,31 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Rubric_Cadence> {
   <https://aswritten.ai/narrative#Digest_Rubric_Cadence> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Rubric_Cadence> ;
-    narr:childCount "15"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub gathers cadence assessments from a writing-style rubric, applied across pitch, memo, and demo documents. The dominant reading is near-unanimous: short, punchy sentences mixed with longer explanatory clauses, with rhythm devices recurring — triadic lists, em-dashes, blockquotes, section headers as beats. Editing directives push the same way, e.g. [the 'super snappy' note](narr:Rubric_Assess_Cadence) and [repeated 'Snappy, snappy'](narr:Rubric_Cadence_YC_Call). Measured averages, where given, span a wide band: [18.3 words with short declaratives](narr:Rubric_Cadence_CustomerArchitect), [an 18-word weekly-call mix](narr:RubricAssess_Cadence_WeeklyCall), [22 words flagged 'moderate, not short'](narr:Assess_Cadence_RevenueModelTAM), up to [28.5 words with longer explanatory passages](narr:RubricAssess_Cadence). The [telegraphic ScarletDame style](narr:Rubric_Cadence_ScarletDame) and [20-second YC demo beats](narr:Rubric_Cadence_YCDemoBeats) sit at the punchy end. Not every assessment is praise: [a founder beta user](narr:Rubric_Cadence_FounderBetaUser) is flagged as too long-form, and [one assessment docks for run-ons](narr:RubricAssess_Cadence).""" ;
-    narr:covers <https://aswritten.ai/narrative#Assess_Cadence_RevModel> ;
+    narr:childCount "12"^^xsd:integer ;
+    narr:generatedFrom "02dcaee798b49ee4ed797054dad65ac720d3dec2" ;
+    narr:narration """This hub collects cadence assessments applied across pitch, memo, demo, and call documents, building a recognizable style profile: short declaratives punched against longer explanatory clauses, with rhythm devices — em-dashes, triadic lists, bullet structures, section headers as beats — recurring across nearly every document assessed. [The GTM decision memo](narr:RubricAssess_Cadence_GTM) and [weekly-call mix](narr:RubricAssess_Cadence_WeeklyCall) both land on the same short-punchy-plus-explanatory formula, as does [the PilotPlan with its rule-of-three structures](narr:Rubric_Cadence_PilotPlan) and [the YC application with fast demo cuts](narr:Assessment_Cadence_YC). Measured averages span a meaningful band: [18.3 words with short declaratives](narr:Rubric_Cadence_CustomerArchitect) and [18 words for the weekly call](narr:RubricAssess_Cadence_WeeklyCall) sit at the tighter end; [22 words flagged 'moderate, not short'](narr:Assess_Cadence_RevenueModelTAM) occupies the middle; [28.5 words with longer explanatory passages](narr:RubricAssess_Cadence) marks the looser end. The punchy extreme is held by [the telegraphic ScarletDame style](narr:Rubric_Cadence_ScarletDame) and [20-second YC demo beats](narr:Rubric_Cadence_YCDemoBeats). Editing directives reinforce the short end: [a 'super snappy' directive](narr:Rubric_Assess_Cadence) and [repeated 'Snappy, snappy' emphasis](narr:Rubric_Cadence_YC_Call). Not all assessments are positive: [the FounderBetaUser document](narr:Rubric_Cadence_FounderBetaUser) is flagged as needing more short declaratives in analysis sections, and [one assessment docks for run-on sentences](narr:RubricAssess_Cadence).""" ;
     narr:covers <https://aswritten.ai/narrative#Assess_Cadence_RevenueModelTAM> ;
     narr:covers <https://aswritten.ai/narrative#Assessment_Cadence_YC> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Cadence> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Cadence_GTM> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Cadence_Sample1> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Cadence_TXReview> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Cadence_WeeklyCall> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Assess_Cadence> ;
-    narr:covers <https://aswritten.ai/narrative#Rubric_Cadence_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Cadence_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Cadence_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Cadence_PilotPlan> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Cadence_ScarletDame> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Cadence_YCDemoBeats> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Cadence_YC_Call> ;
-    narr:keyPhrase [ narr:text "The physics never changed. The substrate did" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Cadence> ] ;
-    narr:keyPhrase [ narr:text "varied sentence length (avg 28.5 words)" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Cadence> ] ;
     narr:keyPhrase [ narr:text "avg sentence length 22 words (moderate, not short)" ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Cadence_RevenueModelTAM> ] ;
-    narr:keyPhrase [ narr:text "Average 18.3 words/sentence with variation" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Cadence_CustomerArchitect> ] ;
-    narr:keyPhrase [ narr:text "Bootstrapped from [amount]to [amount]/event in 6 months" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Cadence_ScarletDame> ] ;
+    narr:keyPhrase [ narr:text "Cadence: varied sentence length (avg 28.5 words); short punchy declarations ('The physics never changed. The substrate did') balanced with longer explanatory passages; effective use of blockquotes for emphasis; triadic lists for rhythm; section headers create clear beats." ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Cadence> ] ;
+    narr:keyPhrase [ narr:text "Some run-on sentences reduce score slightly." ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Cadence> ] ;
+    narr:keyPhrase [ narr:text "Short, punchy sentences mixed with longer explanatory passages; 'super snappy' editing directive." ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Assess_Cadence> ] ;
+    narr:keyPhrase [ narr:text "Short, punchy sentences; repetition for emphasis ('Snappy, snappy'); rule of three. Strong rhythm." ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Cadence_YC_Call> ] ;
+    narr:keyPhrase [ narr:text "Telegraphic style in places ('Bootstrapped from [amount]to [amount]/event in 6 months')" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Cadence_ScarletDame> ] ;
     narr:keyPhrase [ narr:text "could benefit from more short declarative statements in analysis sections" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Cadence_FounderBetaUser> ] ;
-    narr:keyPhrase [ narr:text "'super snappy' editing directive" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Assess_Cadence> ] ;
-    narr:variation [ narr:text "Measured average sentence length spans a wide band (18 → 28.5 words) despite the shared 'short, punchy' ideal — RevenueModelTAM explicitly flags 22 words as 'moderate, not short'." ; narr:over <https://aswritten.ai/narrative#Rubric_Cadence_CustomerArchitect> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Cadence_WeeklyCall> ; narr:over <https://aswritten.ai/narrative#Assess_Cadence_RevenueModelTAM> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Cadence> ] ;
-    narr:variation [ narr:text "a founder beta user is the structural outlier — long analytical passages dominate, and it is told to add more short declaratives rather than praised for the punchy mix." ; narr:over <https://aswritten.ai/narrative#Rubric_Cadence_FounderBetaUser> ] ;
-    narr:variation [ narr:text "Not all assessments are clean wins: one notes run-on sentences reduce the score slightly." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Cadence> ] ;
-    narr:variation [ narr:text "TXReview is an empty assessment — no cadence content recorded, a gap rather than a judgment." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Cadence_TXReview> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "Average 18.3 words/sentence with variation." ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Cadence_CustomerArchitect> ] ;
+    narr:variation [ narr:text "Most assessments praise cadence; two explicitly flag deficiencies — run-on sentences docking a score and long analytical passages needing more short declaratives." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Cadence> ; narr:over <https://aswritten.ai/narrative#Rubric_Cadence_FounderBetaUser> ] ;
+    narr:variation [ narr:text "Measured averages span 18–28.5 words, meaning 'punchy' is not a single target: the 22-word 'moderate, not short' flag implies a threshold the other documents may or may not cross." ; narr:over <https://aswritten.ai/narrative#Assess_Cadence_RevenueModelTAM> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Cadence> ; narr:over <https://aswritten.ai/narrative#Rubric_Cadence_CustomerArchitect> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Cadence_WeeklyCall> ] ;
+    narr:variation [ narr:text "The ScarletDame telegraphic extreme and the YC demo 20-second beat structure represent a more compressed register than the 'mix' formula most other documents use." ; narr:over <https://aswritten.ai/narrative#Rubric_Cadence_ScarletDame> ; narr:over <https://aswritten.ai/narrative#Rubric_Cadence_YCDemoBeats> ] ;
+    narr:writer "anthropic/claude-sonnet-4.6" .
 }
