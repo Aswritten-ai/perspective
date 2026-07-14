@@ -133,7 +133,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Rubric_Novelty](hub-Rubric_Novelty.html): This hub aggregates novelty assessments evaluating the originality of framing, terminology, and metaphors across organiz
 - [Rubric_Phrasing](hub-Rubric_Phrasing.html): This hub catalogs phrasing assessments across organizational artifacts, mapping the transition from technical documentat
 - [Rubric_Register](hub-Rubric_Register.html): This hub collects per-document register assessments under one rubric dimension across the corpus. The dominant reading i
-- [Rubric_Resonance](hub-Rubric_Resonance.html): This hub collects rubric assessments of resonance — how well each document, claim, or rebrand lands emotionally and memo
+- [Rubric_Resonance](hub-Rubric_Resonance.html): This hub aggregates rubric assessments evaluating the emotional and mnemonic resonance of organizational content. The co
 - [Rubric_StrategicAlignment](hub-Rubric_StrategicAlignment.html): This hub aggregates strategic-alignment assessments, where the prevailing consensus identifies a high degree of strategi
 - [Rubric_Tailoring](hub-Rubric_Tailoring.html): This hub tracks the evolution of audience-tailoring assessments, mapping how content adapts to distinct stakeholder need
 - [RuleOfThree](hub-RuleOfThree.html): This hub gathers observations of the document's recurring rule-of-three rhetoric — triadic parallelism used for emphasis
