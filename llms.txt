@@ -82,7 +82,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [QualityReviewGates](hub-QualityReviewGates.html): This hub spans the review, evaluation, and verification disciplines that gate knowledge quality across the aswritten sys
 - [Quotes](hub-Quotes.html): This hub is the verbatim record of the aswritten narrative — direct speech and attributed observations spanning January 
 - [RiskGuardrails](hub-RiskGuardrails.html): This hub tracks the evolving risk profile and operational guardrails defining Aswritten's trajectory. The discourse cent
-- [RoleTopology](hub-RoleTopology.html): This hub gathers how aswritten models *who occupies what* in an organization. The mainline distinction is firm and dated
+- [RoleTopology](hub-RoleTopology.html): This hub tracks the evolution of organizational topology within aswritten, centering on the distinction between abstract
 - [SalesDecks](hub-SalesDecks.html): This hub tracks the evolution of sales-as-delivery, where the act of selling is indistinguishable from the product itsel
 - [ScalabilityPerformance](hub-ScalabilityPerformance.html): This hub gathers the scalability and performance work, dominated by a dated infra trajectory. In Mar (26th), memory reba
 - [SecurityPrivacyModel](hub-SecurityPrivacyModel.html): The hub gathers how secrets, identity, and compliance are handled. The spine is credential hygiene: the target credentia
