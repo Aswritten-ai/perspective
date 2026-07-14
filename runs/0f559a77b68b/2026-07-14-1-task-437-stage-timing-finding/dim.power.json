@@ -1,0 +1,50 @@
+{
+  "observations" : [ {
+    "segment_local_id" : "src-8",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "Scarlet's ruling",
+      "kind" : "framing-move"
+    } ],
+    "why" : "Frames Scarlet as the authority issuing a ruling.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-9",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "the base ref is correct.",
+      "kind" : "performed-act"
+    } ],
+    "why" : "Performs a categorical ruling within an agreed technical process.",
+    "reported" : false
+  }, {
+    "segment_local_id" : "src-10",
+    "regions" : [ "rational-persuasion" ],
+    "evidence" : [ {
+      "quote" : "now read the base ref the run was cut from, not the run's own freshly-committed work branch",
+      "kind" : "framing-move"
+    } ],
+    "why" : "Presents a corrective design choice through an explicit contrast tied to the stated cache problem.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-12",
+    "regions" : [ "rational-persuasion" ],
+    "evidence" : [ {
+      "quote" : "the run's own commit can no longer invalidate it",
+      "kind" : "plain-signal"
+    } ],
+    "why" : "States the causal payoff of the change as a logical consequence.",
+    "reported" : true
+  }, {
+    "segment_local_id" : "src-15",
+    "regions" : [ "legitimate" ],
+    "evidence" : [ {
+      "quote" : "Scarlet approved",
+      "kind" : "performed-act"
+    } ],
+    "why" : "Attributes an approval decision to Scarlet as the document's authority holder.",
+    "reported" : true
+  } ],
+  "mints" : [ ],
+  "unmarked" : [ "src-1", "src-2", "src-3", "src-4", "src-5", "src-6", "src-7", "src-11", "src-13", "src-14", "src-16" ]
+}
