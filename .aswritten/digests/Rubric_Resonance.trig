@@ -4,32 +4,27 @@
 GRAPH <https://aswritten.ai/narrative#Digest_Rubric_Resonance> {
   <https://aswritten.ai/narrative#Digest_Rubric_Resonance> a narr:Digest ;
     narr:digestOf <https://aswritten.ai/narrative#Rubric_Resonance> ;
-    narr:childCount "15"^^xsd:integer ;
-    narr:generatedFrom "d1b09a828565de86" ;
-    narr:narration """This hub collects ~15 **Resonance** rubric assessments across distinct pitch/narrative artifacts, each scoring how strongly the material lands through analogy, metaphor, founding story, and concrete example. The recurring verdict is *strong resonance via figurative grounding*: [Git/Kung-Fu analogies](narr:Assessment_Resonance_YC), the [GitHub-for-technical-founders analogy](narr:Assess_Resonance_RevenueModelTAM), [Matrix chips and 'a collaborator the mainframe guy'](narr:Rubric_Assess_Resonance), [Gods of Olympus + '75 decisions a day'](narr:Rubric_Resonance_FounderBetaUser), the [optometrist/phoropter extended analogy](narr:RubricAssess_Resonance_TXReview), and [flocking/particle-physics metaphors with a five-year-wait redemption arc](narr:RubricAssess_Resonance). Founding-story proof recurs — the ['deli email' chemistry signal](narr:Rubric_Resonance_YC_Call). Customer-grounded variants lean on real failure modes ([46/112 bugs, QA onboarding](narr:Rubric_Resonance_CustomerArchitect)) and direct quotes ([a design collaborator's mirrored consulting pain](narr:RubricAssess_Resonance_Sample1)). Framing devices recur: [WITH-vs-WITHOUT comparison](narr:Rubric_Resonance_YCDemoBeats), [the 'builder trap' reframe](narr:RubricAssess_Resonance_GTM), [steering-vector central metaphor](narr:Rubric_Resonance_ScarletDame).""" ;
-    narr:covers <https://aswritten.ai/narrative#Assess_Resonance_RevModel> ;
+    narr:childCount "12"^^xsd:integer ;
+    narr:generatedFrom "08823c072113f5ea49be81d60dd5ebdcb10ae56d" ;
+    narr:narration """This hub tracks the evolution of resonance-scoring across narrative artifacts, consistently validating the power of [figurative grounding](narr:RubricAssess_Resonance) to bridge technical complexity and human pain. The trajectory moves from high-level [founding-story proof](narr:Rubric_Resonance_YC_Call) and [foundational analogies](narr:Assessment_Resonance_YC) toward increasingly granular [customer-centric scenarios](narr:Rubric_Resonance_CustomerArchitect). While early assessments favored [broad metaphors](narr:Rubric_Resonance_FounderBetaUser) like 'Gods of Olympus' or 'Matrix chips' ([Rubric_Assess_Resonance](narr:Rubric_Assess_Resonance)), recent entries emphasize [concrete operational friction](narr:RubricAssess_Resonance_GTM) and [comparative framing](narr:Rubric_Resonance_YCDemoBeats) (WITH-vs-WITHOUT). The thematic span remains anchored in the tension between abstract 'dream bigger' slogans and the [visceral reality of failure modes](narr:Rubric_Resonance_CustomerArchitect), with [steering-vector metaphors](narr:Rubric_Resonance_ScarletDame) and [shared-memory analogies](narr:RubricAssess_Resonance_WeeklyCall) serving as the primary vehicles for maintaining narrative coherence across diverse audiences.""" ;
     narr:covers <https://aswritten.ai/narrative#Assess_Resonance_RevenueModelTAM> ;
     narr:covers <https://aswritten.ai/narrative#Assessment_Resonance_YC> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Resonance> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Resonance_GTM> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Resonance_Sample1> ;
-    narr:covers <https://aswritten.ai/narrative#RubricAssess_Resonance_TXReview> ;
     narr:covers <https://aswritten.ai/narrative#RubricAssess_Resonance_WeeklyCall> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Assess_Resonance> ;
-    narr:covers <https://aswritten.ai/narrative#Rubric_Resonance_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Resonance_CustomerArchitect> ;
+    narr:covers <https://aswritten.ai/narrative#Rubric_Resonance_FounderBetaUser> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Resonance_PilotPlan> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Resonance_ScarletDame> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Resonance_YCDemoBeats> ;
     narr:covers <https://aswritten.ai/narrative#Rubric_Resonance_YC_Call> ;
-    narr:keyPhrase [ narr:text "GitHub analogy is high-resonance for technical founders" ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Resonance_RevenueModelTAM> ] ;
-    narr:keyPhrase [ narr:text "five-year wait as redemption arc" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Resonance> ] ;
+    narr:keyPhrase [ narr:text "context leaves with departures" ; narr:phraseSource <https://aswritten.ai/narrative#Assess_Resonance_RevenueModelTAM> ] ;
     narr:keyPhrase [ narr:text "75 decisions a day" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Resonance_FounderBetaUser> ] ;
     narr:keyPhrase [ narr:text "46/112 bugs" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Resonance_CustomerArchitect> ] ;
-    narr:keyPhrase [ narr:text "WITH vs WITHOUT comparison is powerful framing" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Resonance_YCDemoBeats> ] ;
     narr:keyPhrase [ narr:text "deli email" ; narr:phraseSource <https://aswritten.ai/narrative#Rubric_Resonance_YC_Call> ] ;
-    narr:variation [ narr:text "Not all assessments are unqualified praise — several flag resonance as strong but under-supplied with concrete stories: 'could add case study', 'Could add more customer stories', 'Could use more analogies'." ; narr:over <https://aswritten.ai/narrative#Assess_Resonance_RevModel> ; narr:over <https://aswritten.ai/narrative#RubricAssess_Resonance_GTM> ; narr:over <https://aswritten.ai/narrative#Rubric_Resonance_ScarletDame> ] ;
-    narr:variation [ narr:text "Two resonance registers diverge: abstract/metaphor-driven (steering vectors, flocking, particle physics, Matrix) versus customer-grounded proof (real failure modes, demo reactions, direct quotes) — different mechanisms for landing." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Resonance> ; narr:over <https://aswritten.ai/narrative#Rubric_Resonance_CustomerArchitect> ; narr:over <https://aswritten.ai/narrative#Rubric_Resonance_FounderBetaUser> ] ;
-    narr:variation [ narr:text "Some entries anchor resonance in founder-stakes numbers ([amount]/[amount], McKinsey 33%) rather than analogy, locating emotional pull in financial concreteness." ; narr:over <https://aswritten.ai/narrative#Assess_Resonance_RevModel> ; narr:over <https://aswritten.ai/narrative#Assess_Resonance_RevenueModelTAM> ] ;
-    narr:writer "claude (subscription)" .
+    narr:keyPhrase [ narr:text "amazing product and not a product" ; narr:phraseSource <https://aswritten.ai/narrative#RubricAssess_Resonance_WeeklyCall> ] ;
+    narr:variation [ narr:text "Critique that the narrative could benefit from more customer stories despite strong concrete examples." ; narr:over <https://aswritten.ai/narrative#RubricAssess_Resonance_GTM> ] ;
+    narr:variation [ narr:text "Observation that the central metaphor (steering vector) is strong but would benefit from additional supporting analogies." ; narr:over <https://aswritten.ai/narrative#Rubric_Resonance_ScarletDame> ] ;
+    narr:writer "google/gemini-3.1-flash-lite" .
 }
