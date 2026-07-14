@@ -1,0 +1,66 @@
+{
+  "positions" : [ {
+    "name" : "MVPFrontEndUnification",
+    "frame" : "Is the live surface (feed + extraction theatre) a second product or an experiment, or is it the MVP product's own front end that was never built?",
+    "members" : [ "src-5", "src-9", "src-10", "src-11", "src-64", "src-65", "src-66", "src-67", "src-68", "src-69", "src-70" ],
+    "why" : "The headline settlement (src-5, src-65) is read together with the directives to unify the surface with the existing MCP-only product and codebase (src-9, src-10, src-11) and the walking dialogue that works through the practical consequences — no generic 'start a new conversation' affordance, upload narrowed to conversations rather than freeform notes (src-64, src-66, src-67, src-68, src-69, src-70). One directional read: the product is singular, and every design fork downstream inherits that constraint.",
+    "under" : [ "Narrative_MVPScopeDecision" ]
+  }, {
+    "name" : "ExtractionResolutionFidelity",
+    "frame" : "What is the right unit and moment of fidelity for extraction — a framed memory, the whole transcript, or resolution layers composed at read time?",
+    "members" : [ "src-6", "src-32", "src-33", "src-71", "src-72", "src-73", "src-74", "src-75", "src-76", "src-77", "src-78", "src-79", "src-80", "src-81", "src-82", "src-83", "src-84", "src-85", "src-86", "src-103", "src-104", "src-105", "src-106", "src-128", "src-129", "src-130", "src-131", "src-134" ],
+    "why" : "Read together, these argue both sides of memory-vs-transcript extraction (framed-memory noise reduction and interstitial capture vs. the risk of an unreviewed upfront filter contradicting the product's own no-summary-before-read-time claim), arrive at resolution layers (expressions→positions→narratives→strata) as the resolving design, formalize it as the extraction-fork ruling, and ground it in an empirical contiguity finding that anticipates loosening once whole-transcript extraction lands. The tension between primary-source fidelity and read-time-only summarization is held open rather than resolved.",
+    "under" : [ "Narrative_DigestAsRecognitionAid" ]
+  }, {
+    "name" : "TheatreAccessAndAttendanceModel",
+    "frame" : "Who can see the theatre and the memories it links to — collaborator status, explicit share, attendance at the source call, or per-actor perspective filtering?",
+    "members" : [ "src-34", "src-35", "src-36", "src-37", "src-38", "src-39", "src-40", "src-41", "src-42", "src-47", "src-48", "src-49", "src-50", "src-51", "src-52", "src-53", "src-97", "src-98", "src-99", "src-100", "src-101", "src-107", "src-108", "src-109", "src-110", "src-111", "src-119", "src-120", "src-121" ],
+    "why" : "Traces one continuous access question across surfaces: the collaborator/public-share fork, the fallback for non-collaborator participants, per-actor perspective filtering for named-advisor subagents, and the demo's single-access-level simplification — resolving into the ruling that access falls out of navigation semantics (attendance grants the page; cross-links resolve against the target call's access) and the adjacent ruling that explicit demo shares stay full depth for now. Holds open the flagged tension that digest narrations carry verbatim excerpts, which weakens the claim that abstraction never shows source.",
+    "under" : [ "Narrative_NavigationReplacesEmbeddedSnapshot" ]
+  }, {
+    "name" : "BetaIntegrationGatingPriority",
+    "frame" : "Which transcription/comms integrations gate which users and clients, and in what order should they ship relative to demo needs?",
+    "members" : [ "src-16", "src-17", "src-18", "src-19", "src-90", "src-91", "src-122", "src-123", "src-124" ],
+    "why" : "The beta-user-to-integration gating map (Teams↔Escher, Zoom↔Taylor, Meet↔org suite, Otter↔individual devs) is read together with the distinction between what a demo needs to show as real (email/text) versus a this-is-possible button (Teams/Slack), and the explicit ruling that Teams jumps the integration queue because it gates the actual paying client, ahead of the prior record's Zoom+Meet-only framing.",
+    "under" : [ "Narrative_UserAgentIngestionModel" ]
+  }, {
+    "name" : "StyleguideFirstComponentDiscipline",
+    "frame" : "Should new UI components be built ad hoc for a given screen, or must they pass through the styleguide first?",
+    "members" : [ "src-112", "src-113", "src-114" ],
+    "why" : "The directive that wireframes must be built from styleguide components, with missing components added and reviewed in the styleguide before reuse, generalizes into a fixed pipeline (artifact mock → styleguide component → wireframes/product) — a discipline read as structurally parallel to the design-token extraction process already established for the brand/perspective analogy.",
+    "under" : [ "Narrative_DesignTokenPerspectiveParallel" ]
+  }, {
+    "name" : "ConversationSurfaceDesignLanguage",
+    "frame" : "How should the theatre carry dimensional annotations, reactions, and narrative claims without breaking the feel of an ordinary conversation?",
+    "members" : [ "src-31", "src-55", "src-56", "src-57", "src-58", "src-59", "src-60", "src-61", "src-62", "src-125", "src-126", "src-127" ],
+    "why" : "Reads the theatre's chat-flow constraint (annotations that if removed would not move the chat bubbles), the push to move commentary and dimensional signals to the gutters, the always-'send' affordance, and hidden filters together with the later-formalized ruling: actor-scoped left/right positioning, glyph-collapsed dimensional annotations, and gutter rails for narrative claims reusing the timeline-tick color vocabulary — the same discipline applied first as design pressure, then as ratified rule.",
+    "under" : [ "Narrative_ContentCommentarySplit" ]
+  }, {
+    "name" : "FrontChannelRoutingArchitecture",
+    "frame" : "How should notifications, inbox routing, and channel access map onto GitHub orgs, repos, and account tiers?",
+    "members" : [ "src-20", "src-21", "src-22", "src-23", "src-24", "src-25", "src-26", "src-27", "src-28", "src-29", "src-30" ],
+    "why" : "Groups the directive that all notifications and agent messages proxy through Front, the one-org-one-inbox model with switchable/inferred repo context, the open question of programmatically creating Front inboxes, the SMS-as-enterprise-only-US-only constraint, and the feed-required-with-hidden-filters requirement — all instances of one design question about how organizational identity and channel access route through the Front substrate.",
+    "under" : [ "Narrative_FrontHITLSubstrate" ]
+  }, {
+    "name" : "VoiceProfilesFlockingScopeAmendment",
+    "frame" : "Do voice profiles and the flocking graph viewer belong in the shipped MVP product, or only in a demo-skin artifact?",
+    "members" : [ "src-54", "src-87", "src-88", "src-115", "src-116", "src-117", "src-118" ],
+    "why" : "The segue naming voice profiles as related to the access/filter discussion (src-54) leads into Scarlet's own simplification — excluding the flocking viewer and voice profiles from the product proper but including them in a one-off branded demo artifact showing narrative arc, conviction, sentiment, and flocking (src-87, src-88) — which is then formalized as a ruling superseding a prior fullscreen-voice-profile ruling.",
+    "under" : [ "Narrative_MVPScopeDecision" ]
+  }, {
+    "name" : "ExtractionCostAsProductConstraint",
+    "frame" : "How does per-message extraction cost bound what the product can afford to do, and which levers change that bound?",
+    "members" : [ "src-92", "src-93", "src-94", "src-95", "src-96" ],
+    "why" : "Names the recurring cost pressure (needing cents-to-tens-of-cents per message before every-message extraction is viable) together with the three levers under discussion — lowering extraction cost, controlling extraction frequency, and shifting whose API keys absorb the cost — and the shared-backend, fast-model design for theatre replies and notifications that inherits this same constraint.",
+    "under" : [ "Narrative_TokenCostSensitivity" ]
+  }, {
+    "name" : "MVPFidelityLevel",
+    "frame" : "What level of fidelity does the MVP actually need for demos and sales — full construction-grade completeness, or vivid-enough renders?",
+    "members" : [ "src-7", "src-8", "src-12", "src-13", "src-14", "src-15" ],
+    "why" : "The architectural-render metaphor (vivid renders with gorgeous lighting and ghosted life, not CAD construction members) is read together with the explicit claims that the product need not be finished for demos — both recorded and live YC, and sales — and that clear, smooth, functional, valuable outranks finished, closing on the one-word directive 'Simplify.'",
+    "under" : [ "Narrative_MVPScopeDecision" ]
+  } ],
+  "attaches" : [ ],
+  "position_revisions" : [ ],
+  "ungrouped" : [ "src-1", "src-2", "src-3", "src-4", "src-43", "src-44", "src-45", "src-63", "src-89", "src-102", "src-132", "src-133", "src-135", "src-136", "src-137", "src-138", "src-139", "src-140", "src-141", "src-142" ]
+}
