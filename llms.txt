@@ -51,7 +51,7 @@ Live install for MCP-capable agents: call aswritten_perspective with id "custome
 - [Narrative_ContinuousCompliance](hub-Narrative_ContinuousCompliance.html): This hub frames a move from snapshot-based to continuous compliance. The mainline diagnoses the problem — point-in-time 
 - [Narrative_EnterpriseShapePrimaryFocus](hub-Narrative_EnterpriseShapePrimaryFocus.html): The search for a primary sales focus has shifted toward the enterprise customer-shape as a tentative priority, defined n
 - [Narrative_ExpertiseOnDemandReframe](hub-Narrative_ExpertiseOnDemandReframe.html): The narrative trajectory has shifted from an ambient, session-based intelligence model toward installable expertise trig
-- [Narrative_OrgWorldview](hub-Narrative_OrgWorldview.html): This hub gathers the org's account of how aswritten builds its understanding of a client. Two foundation-level children 
+- [Narrative_OrgWorldview](hub-Narrative_OrgWorldview.html): This hub defines the organizational methodology for client engagement, centering on an extraction-based interview proces
 - [Narrative_PerspectiveOnSpec](hub-Narrative_PerspectiveOnSpec.html): This hub explores the thesis that a perspective built *on spec* functions as the primary sales instrument. The core thro
 - [Narrative_PerspectiveVsInformation](hub-Narrative_PerspectiveVsInformation.html): This hub centers on the thesis that modules deliver curated perspective rather than mere information, distinguishing exp
 - [Narrative_SalesAsDelivery](hub-Narrative_SalesAsDelivery.html): The core thesis that sales motion and product delivery are identical has evolved from a tactical principle into a codifi
